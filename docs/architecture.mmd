@@ -1,0 +1,22 @@
+flowchart TD
+    A[main.py / compare_baselines.py] --> B[sim.config.load_config]
+    B --> C[SimConfig]
+    C --> D[sim.env.SimulationEnv]
+
+    D --> E[sim.topology.TopologyModel]
+    E --> F[sim.orbit - SGP4 optional]
+
+    D --> G[env.export_state]
+    G --> H[scheduler policy]
+    H --> I[Action list]
+    I --> D
+
+    D --> J[Task arrivals and tile generation]
+    D --> K[Apply actions: LOCAL/OFFLOAD/WAIT]
+    D --> L[Advance transfers]
+    D --> M[Advance compute]
+    D --> N[Deadline and failure handling]
+    D --> O[sim.metrics.Metrics]
+
+    O --> P[summary JSON]
+    P --> Q[metrics.json / stdout]
