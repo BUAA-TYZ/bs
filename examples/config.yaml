@@ -1,0 +1,33 @@
+seed: 7
+num_sats: 5
+sim_steps: 200
+dt: 1.0
+
+# Task model
+task_arrival_rate: 0.4
+image_size_mb: 512
+num_tiles: 16
+compute_cost_per_tile: 4.0
+vram_base_gb: 0.8
+vram_alpha_per_mb: 0.002
+result_size_mb: 1.0
+deadline_steps: 0
+
+# Satellite resources
+mem_capacity_gb: 24
+vram_capacity_gb: 8
+compute_rate: 1.2
+
+# Policies
+transfer_fail_on_link_down: false
+vram_policy: "wait"  # wait|reject
+
+# Topology
+
+topology:
+  link_up_prob: 0.6
+  bandwidth_mbps_min: 50
+  bandwidth_mbps_max: 300
+  bandwidth_period: 60
+  bandwidth_noise: 5
+  latency_ms: 20
