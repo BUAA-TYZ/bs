@@ -1,39 +1,67 @@
+# 全局随机种子（保证实验可复现）
 seed: 7
-num_sats: 5
-sim_steps: 200
+# 卫星数量（不能超过 TLE 中可用卫星数量）
+num_sats: 20
+# 仿真总步数
+sim_steps: 800
+# 每个时间步长度（秒）
 dt: 1.0
 
-# Task model
-task_arrival_rate: 0.4
+# 任务模型
+# 泊松到达率：每步期望新任务数
+task_arrival_rate: 0.2
+# 每个遥感任务的原始图像大小（MB）
 image_size_mb: 512
+# 每张图像切分后的 tile 数量
 num_tiles: 16
+# 每个 tile 的计算成本（抽象单位）
 compute_cost_per_tile: 4.0
+# 每个 tile 的基础显存需求（GB）
 vram_base_gb: 0.8
+# 与 tile 数据大小成比例的附加显存需求（GB/MB）
 vram_alpha_per_mb: 0.002
+# 每个 tile 计算结果大小（MB），预留给后续回传建模
 result_size_mb: 1.0
+# 截止期（步数，相对任务释放时刻）；0 表示不启用
 deadline_steps: 0
 
-# Satellite resources
-mem_capacity_gb: 24
+# 卫星资源
+# 每颗卫星存储容量（GB）
+mem_capacity_gb: 256
+# 每颗卫星显存容量（GB）
 vram_capacity_gb: 8
+# 每颗卫星计算速率（每秒可处理的 compute_cost 单位）
 compute_rate: 1.2
 
-# Policies
+# 运行策略
+# 若为 true，传输中遇到断链则立即失败
 transfer_fail_on_link_down: false
-vram_policy: "wait"  # wait|reject
+# 显存不足时处理策略："wait" 等待，"reject" 直接失败
+vram_policy: "wait"
 
-# Topology
-
+# 拓扑配置（Skyfield）
 topology:
-  mode: skyfield
+  # 轨道传播起始时间（UTC，ISO8601）
   start_time_utc: "2026-03-20T00:00:00Z"
+  # TLE 文件路径（格式：name + line1 + line2）
   tle_file: "data/tle/starlink_cluster_24.tle"
+  # 地球半径（km），用于可见性判定
   earth_radius_km: 6378.137
+  # 双端最小仰角约束（度）
   min_elevation_deg: 0.0
+  # 最大通信距离（km）；0 表示不限制
   max_range_km: 8000
+  # 距离衰减尺度（km）；0 表示不按距离衰减带宽
   bandwidth_distance_scale_km: 2000
+  # 链路最小带宽（Mbps）
   bandwidth_mbps_min: 50
+  # 链路最大带宽（Mbps）
   bandwidth_mbps_max: 300
-  bandwidth_period: 60
+  # 带宽正弦波周期（步）；<=0 表示固定为最大带宽
+  bandwidth_period: 0
+  # 带宽噪声幅度（Mbps）
   bandwidth_noise: 5
+  # 单向链路时延（ms），用于估计与状态导出
   latency_ms: 20
+  # 可见性计算进程数；1 为单进程，>1 启用多进程
+  visibility_workers: 12

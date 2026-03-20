@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import atexit
+from concurrent.futures import ProcessPoolExecutor
 from dataclasses import dataclass
 from typing import Dict, List, Tuple
 import math
@@ -17,8 +19,6 @@ def link_key(i: int, j: int) -> str:
 @dataclass
 class TopologyConfig:
     num_sats: int
-    mode: str
-    link_up_prob: float
     bandwidth_mbps_min: float
     bandwidth_mbps_max: float
     bandwidth_period: int
@@ -31,6 +31,7 @@ class TopologyConfig:
     min_elevation_deg: float
     max_range_km: float
     bandwidth_distance_scale_km: float
+    visibility_workers: int
 
 
 class TopologyModel:
@@ -45,22 +46,17 @@ class TopologyModel:
         }
         self.t0 = parse_start_time_utc(cfg.start_time_utc)
         self.sat_recs = load_satellites(cfg.tle_lines) if cfg.tle_lines else []
-
-    def get_link(self, i: int, j: int, t: int) -> Link:
-        a, b = sorted((i, j))
-        # 链路可见性（up/down）简化为伯努利随机过程
-        up = self.rng.random() < self.cfg.link_up_prob
-        phase = self.phases[(a, b)]
-        if self.cfg.bandwidth_period <= 0:
-            bw = self.cfg.bandwidth_mbps_max
-        else:
-            # 带宽：正弦波 + 噪声，模拟随时间波动
-            base = (self.cfg.bandwidth_mbps_min + self.cfg.bandwidth_mbps_max) / 2.0
-            amp = (self.cfg.bandwidth_mbps_max - self.cfg.bandwidth_mbps_min) / 2.0
-            bw = base + amp * math.sin(2.0 * math.pi * t / self.cfg.bandwidth_period + phase)
-        noise = self.rng.uniform(-self.cfg.bandwidth_noise, self.cfg.bandwidth_noise)
-        bw = max(self.cfg.bandwidth_mbps_min, min(self.cfg.bandwidth_mbps_max, bw + noise))
-        return Link(i=a, j=b, up=up, bandwidth_mbps=bw, latency_ms=self.cfg.latency_ms)
+        self.visibility_workers = max(1, cfg.visibility_workers)
+        self._executor = None
+        if self.visibility_workers > 1:
+            try:
+                self._executor = ProcessPoolExecutor(max_workers=self.visibility_workers)
+            except Exception:
+                # Fallback for restricted environments (e.g. semaphore limits).
+                self._executor = None
+                self.visibility_workers = 1
+        if self._executor is not None:
+            atexit.register(self._executor.shutdown, wait=False, cancel_futures=True)
 
     def _get_bandwidth(self, a: int, b: int, t: int, distance_km: float) -> float:
         phase = self.phases[(a, b)]
@@ -77,58 +73,43 @@ class TopologyModel:
             bw = bw / (1.0 + distance_km / self.cfg.bandwidth_distance_scale_km)
         return bw
 
-    def _visible_orbit(self, i: int, j: int, t: int) -> Tuple[bool, float]:
-        if i >= len(self.sat_recs) or j >= len(self.sat_recs):
-            return False, 0.0
-        r1 = position_km(self.sat_recs[i], self.t0, t)
-        r2 = position_km(self.sat_recs[j], self.t0, t)
-        # 若星历计算失败，位置为原点，直接判不可见
-        if r1 == (0.0, 0.0, 0.0) or r2 == (0.0, 0.0, 0.0):
-            return False, 0.0
-        dx = r2[0] - r1[0]
-        dy = r2[1] - r1[1]
-        dz = r2[2] - r1[2]
-        distance_km = math.sqrt(dx * dx + dy * dy + dz * dz)
-        if self.cfg.max_range_km > 0 and distance_km > self.cfg.max_range_km:
-            return False, distance_km
-        # 地球遮挡判定：线段到地心的最小距离必须大于地球半径
-        r1_dot_r1 = r1[0] * r1[0] + r1[1] * r1[1] + r1[2] * r1[2]
-        r2_dot_r2 = r2[0] * r2[0] + r2[1] * r2[1] + r2[2] * r2[2]
-        r1_dot_r2 = r1[0] * r2[0] + r1[1] * r2[1] + r1[2] * r2[2]
-        # 参数化线段最短距离
-        denom = r1_dot_r1 - 2.0 * r1_dot_r2 + r2_dot_r2
-        if denom <= 0:
-            return False, distance_km
-        t_min = max(0.0, min(1.0, (r1_dot_r1 - r1_dot_r2) / denom))
-        cx = r1[0] + t_min * (r2[0] - r1[0])
-        cy = r1[1] + t_min * (r2[1] - r1[1])
-        cz = r1[2] + t_min * (r2[2] - r1[2])
-        min_dist = math.sqrt(cx * cx + cy * cy + cz * cz)
-        if min_dist <= self.cfg.earth_radius_km:
-            return False, distance_km
-        # 最小仰角约束（可选）
-        if self.cfg.min_elevation_deg > 0:
-            # elevation = 90 - angle(los, -r1)
-            los1 = (dx, dy, dz)
-            los2 = (-dx, -dy, -dz)
-            elev1 = _elevation_deg(r1, los1)
-            elev2 = _elevation_deg(r2, los2)
-            if elev1 < self.cfg.min_elevation_deg or elev2 < self.cfg.min_elevation_deg:
-                return False, distance_km
-        return True, distance_km
-
     def snapshot(self, t: int) -> Dict[str, Link]:
         links: Dict[str, Link] = {}
-        orbit_mode = self.cfg.mode == "skyfield"
-        for i in range(self.cfg.num_sats):
-            for j in range(i + 1, self.cfg.num_sats):
-                if orbit_mode:
-                    up, distance_km = self._visible_orbit(i, j, t)
-                    bw = self._get_bandwidth(i, j, t, distance_km)
-                    lk = Link(i=i, j=j, up=up, bandwidth_mbps=bw, latency_ms=self.cfg.latency_ms)
-                else:
-                    lk = self.get_link(i, j, t)
-                links[link_key(i, j)] = lk
+        n = min(self.cfg.num_sats, len(self.sat_recs))
+        positions = [position_km(self.sat_recs[i], self.t0, t) for i in range(n)]
+        pairs: List[Tuple[int, int]] = [
+            (i, j) for i in range(self.cfg.num_sats) for j in range(i + 1, self.cfg.num_sats)
+        ]
+
+        if self._executor is None or len(pairs) < 64:
+            results = [
+                _visible_from_positions(
+                    positions[i] if i < n else (0.0, 0.0, 0.0),
+                    positions[j] if j < n else (0.0, 0.0, 0.0),
+                    self.cfg.earth_radius_km,
+                    self.cfg.min_elevation_deg,
+                    self.cfg.max_range_km,
+                )
+                for i, j in pairs
+            ]
+        else:
+            tasks = [
+                (
+                    positions[i] if i < n else (0.0, 0.0, 0.0),
+                    positions[j] if j < n else (0.0, 0.0, 0.0),
+                    self.cfg.earth_radius_km,
+                    self.cfg.min_elevation_deg,
+                    self.cfg.max_range_km,
+                )
+                for i, j in pairs
+            ]
+            results = list(self._executor.map(_visible_task, tasks, chunksize=256))
+
+        for (i, j), (up, distance_km) in zip(pairs, results):
+            bw = self._get_bandwidth(i, j, t, distance_km)
+            links[link_key(i, j)] = Link(
+                i=i, j=j, up=up, bandwidth_mbps=bw, latency_ms=self.cfg.latency_ms
+            )
         return links
 
 
@@ -143,3 +124,47 @@ def _elevation_deg(r: Tuple[float, float, float], los: Tuple[float, float, float
     dot = max(-1.0, min(1.0, dot))
     angle = math.degrees(math.acos(dot))
     return 90.0 - angle
+
+
+def _visible_task(args: Tuple[Tuple[float, float, float], Tuple[float, float, float], float, float, float]) -> Tuple[bool, float]:
+    return _visible_from_positions(*args)
+
+
+def _visible_from_positions(
+    r1: Tuple[float, float, float],
+    r2: Tuple[float, float, float],
+    earth_radius_km: float,
+    min_elevation_deg: float,
+    max_range_km: float,
+) -> Tuple[bool, float]:
+    if r1 == (0.0, 0.0, 0.0) or r2 == (0.0, 0.0, 0.0):
+        return False, 0.0
+    dx = r2[0] - r1[0]
+    dy = r2[1] - r1[1]
+    dz = r2[2] - r1[2]
+    distance_km = math.sqrt(dx * dx + dy * dy + dz * dz)
+    if max_range_km > 0 and distance_km > max_range_km:
+        return False, distance_km
+
+    r1_norm = math.sqrt(r1[0] * r1[0] + r1[1] * r1[1] + r1[2] * r1[2])
+    r2_norm = math.sqrt(r2[0] * r2[0] + r2[1] * r2[1] + r2[2] * r2[2])
+    if r1_norm <= earth_radius_km or r2_norm <= earth_radius_km:
+        return False, distance_km
+
+    dot = r1[0] * r2[0] + r1[1] * r2[1] + r1[2] * r2[2]
+    cos_sep = dot / (r1_norm * r2_norm)
+    cos_sep = max(-1.0, min(1.0, cos_sep))
+    separation_deg = math.degrees(math.acos(cos_sep))
+    h1 = math.degrees(math.acos(max(-1.0, min(1.0, earth_radius_km / r1_norm))))
+    h2 = math.degrees(math.acos(max(-1.0, min(1.0, earth_radius_km / r2_norm))))
+    if separation_deg > (h1 + h2):
+        return False, distance_km
+
+    if min_elevation_deg > 0:
+        los1 = (dx, dy, dz)
+        los2 = (-dx, -dy, -dz)
+        elev1 = _elevation_deg(r1, los1)
+        elev2 = _elevation_deg(r2, los2)
+        if elev1 < min_elevation_deg or elev2 < min_elevation_deg:
+            return False, distance_km
+    return True, distance_km

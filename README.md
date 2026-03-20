@@ -6,7 +6,7 @@
 
 仿真每个时间步 `t=0..T-1` 的完整闭环：
 
-1. 更新星间拓扑（随机或星历可见性）
+1. 更新星间拓扑（基于 Skyfield 星历可见性）
 2. 生成新任务（图像切分为多个 tile）
 3. 调度器为每个 tile 选择 `LOCAL / OFFLOAD / WAIT`
 4. 推进链路传输（按带宽离散推进）
@@ -26,8 +26,7 @@ flowchart LR
     C --> C2[LoadAwareResourceFit]
     C --> C3[RandomPolicy]
     D --> E[TopologyModel]
-    E --> E1[random mode]
-    E --> E2[skyfield mode + orbit.py]
+    E --> E1[skyfield + orbit.py]
     D --> F[Task/Tile lifecycle]
     D --> G[Transfer engine]
     D --> H[Compute engine]
@@ -63,9 +62,7 @@ sequenceDiagram
 - `compare_baselines.py`：同一配置下对比 `greedy` 与 `load_aware`。
 - `sim/env.py`：核心环境；维护任务/Tile状态机、传输队列、执行队列、失败处理和统计调用。
 - `sim/entities.py`：核心数据结构（`Satellite/Task/Tile/Link/Transfer/Action/EnvState`）。
-- `sim/topology.py`：拓扑生成器。支持：
-  - `random`：链路 up/down 随机、带宽时变。
-  - `skyfield`：基于星历位置估计可见性（地球遮挡 + 最小仰角 + 可选最大距离）。
+- `sim/topology.py`：拓扑生成器（Skyfield）。基于星历位置估计可见性（地球遮挡 + 最小仰角 + 可选最大距离）。
 - `sim/orbit.py`：Skyfield 轨道位置计算（TLE -> `EarthSatellite` -> 指定时刻位置）。
 - `sim/scheduler/base.py`：调度器抽象接口 `SchedulerPolicy`。
 - `sim/scheduler/greedy.py`：基于最早完成时间的贪心。
@@ -83,8 +80,6 @@ sequenceDiagram
 ```bash
 pip install numpy pyyaml skyfield
 ```
-
-> 如果只用 `topology.mode: random`，理论上不需要 `skyfield`。
 
 ## 5.2 运行单个策略
 
@@ -129,15 +124,9 @@ python compare_baselines.py --config examples/config.yaml
 ### 拓扑（`topology`）
 
 - 通用：`latency_ms`, `bandwidth_mbps_min/max`, `bandwidth_period`, `bandwidth_noise`
-- `mode: random`：使用随机可见性模型（`link_up_prob`）
-- `mode: skyfield`：
-  - `start_time_utc`
-  - `tle_file`: 外部 TLE 文件路径（推荐）
-  - `tle_lines`: `[[line1, line2], ...]`（可选内联方式）
-  - `earth_radius_km`
-  - `min_elevation_deg`
-  - `max_range_km`（`0` 表示不限制）
-  - `bandwidth_distance_scale_km`（按距离衰减带宽，`0` 表示不衰减）
+- 星历：`start_time_utc`, `tle_file`（推荐）或 `tle_lines`（可选）
+- 可见性约束：`earth_radius_km`, `min_elevation_deg`, `max_range_km`
+- 链路模型：`bandwidth_distance_scale_km`（按距离衰减，`0` 表示不衰减）
 
 ## 7. 调度策略简述
 

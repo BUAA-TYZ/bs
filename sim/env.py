@@ -39,8 +39,6 @@ class SimulationEnv:
         tle_lines = _resolve_tle_lines(cfg.topology)
         topo_cfg = TopologyConfig(
             num_sats=cfg.num_sats,
-            mode=str(cfg.topology.get("mode", "random")),
-            link_up_prob=float(cfg.topology.get("link_up_prob", 0.6)),
             bandwidth_mbps_min=float(cfg.topology.get("bandwidth_mbps_min", 50.0)),
             bandwidth_mbps_max=float(cfg.topology.get("bandwidth_mbps_max", 300.0)),
             bandwidth_period=int(cfg.topology.get("bandwidth_period", 50)),
@@ -53,9 +51,10 @@ class SimulationEnv:
             min_elevation_deg=float(cfg.topology.get("min_elevation_deg", 0.0)),
             max_range_km=float(cfg.topology.get("max_range_km", 0.0)),
             bandwidth_distance_scale_km=float(cfg.topology.get("bandwidth_distance_scale_km", 0.0)),
+            visibility_workers=int(cfg.topology.get("visibility_workers", 1)),
         )
-        if topo_cfg.mode == "skyfield" and not topo_cfg.tle_lines:
-            raise ValueError("topology.mode=skyfield requires non-empty topology.tle_lines")
+        if not topo_cfg.tle_lines:
+            raise ValueError("Skyfield topology requires non-empty topology.tle_lines or topology.tle_file")
         self.topology = TopologyModel(topo_cfg)
         self.satellites: Dict[int, Satellite] = {
             i: Satellite(
@@ -70,13 +69,15 @@ class SimulationEnv:
         self.tiles: Dict[str, Tile] = {}
         self.transfers: List[Transfer] = []
         self.metrics = Metrics()
+        self._links_cache_time: Optional[int] = None
+        self._links_cache: Dict[str, object] = {}
 
     def reset(self) -> None:
         self.__init__(self.cfg)
 
     def step(self, actions: List[Action]) -> StepResult:
         t = self.time
-        links = self.topology.snapshot(t)
+        links = self._get_links(t)
 
         # 每步：任务到达 -> 调度决策 -> 传输推进 -> 计算推进 -> 统计
         self._task_arrivals(t)
@@ -90,7 +91,7 @@ class SimulationEnv:
         return StepResult(time=t, metrics=self.metrics)
 
     def export_state(self) -> EnvState:
-        links = self.topology.snapshot(self.time)
+        links = self._get_links(self.time)
         neighbors: Dict[int, List[int]] = {i: [] for i in range(self.cfg.num_sats)}
         link_view: Dict[str, Dict] = {}
         for k, lk in links.items():
@@ -188,10 +189,11 @@ class SimulationEnv:
 
     def _apply_actions(self, actions: List[Action], links: Dict[str, object]) -> None:
         action_map = {a.tile_id: a for a in actions}
+        transfer_tile_ids = {tr.tile_id for tr in self.transfers}
         for tile_id, tile in self.tiles.items():
             if tile.state not in (TileState.QUEUED, TileState.READY):
                 continue
-            if any(tr.tile_id == tile_id for tr in self.transfers):
+            if tile_id in transfer_tile_ids:
                 continue
             action = action_map.get(tile_id)
             if not action:
@@ -368,6 +370,12 @@ class SimulationEnv:
                 continue
             if tile.deadline is not None and self.time > tile.deadline:
                 self._fail_tile(tile, FailureReason.DEADLINE_MISS)
+
+    def _get_links(self, t: int) -> Dict[str, object]:
+        if self._links_cache_time != t:
+            self._links_cache = self.topology.snapshot(t)
+            self._links_cache_time = t
+        return self._links_cache
 
 
 def _resolve_tle_lines(topology_cfg: Dict[str, object]) -> List[tuple[str, str]]:
