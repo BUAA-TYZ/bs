@@ -26,13 +26,15 @@ def run_once(cfg_path: str, policy_name: str) -> Dict:
     env = SimulationEnv(cfg)
     policy = make_policy(policy_name, cfg.seed)
 
-    for _ in range(cfg.sim_steps):
-        state = env.export_state()
-        actions = policy.select_actions(state)
-        env.step(actions)
-
-    summary = env.metrics.summary()
-    return summary
+    try:
+        for _ in range(cfg.sim_steps):
+            state = env.export_state()
+            actions = policy.select_actions(state)
+            env.step(actions)
+        summary = env.metrics.summary()
+        return summary
+    finally:
+        env.close()
 
 
 def main() -> None:

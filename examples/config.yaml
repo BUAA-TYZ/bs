@@ -38,6 +38,9 @@ compute_rate: 1.2
 transfer_fail_on_link_down: false
 # 显存不足时处理策略："wait" 等待，"reject" 直接失败
 vram_policy: "wait"
+# Tile 生命周期日志路径（JSONL）；留空字符串则不记录
+# tile_lifecycle_log: "logs/tile_lifecycle.jsonl"
+tile_lifecycle_log: ""
 
 # 拓扑配置（Skyfield）
 topology:

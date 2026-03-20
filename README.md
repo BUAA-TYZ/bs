@@ -120,6 +120,7 @@ python compare_baselines.py --config examples/config.yaml
 - `compute_rate`：计算速率
 - `vram_policy`：`wait` 或 `reject`
 - `transfer_fail_on_link_down`：传输遇断链时失败还是等待重连
+- `tile_lifecycle_log`：tile 生命周期事件日志路径（JSONL，留空禁用）
 
 ### 拓扑（`topology`）
 
@@ -143,6 +144,11 @@ python compare_baselines.py --config examples/config.yaml
 - `resource`：平均队列长度、计算忙时、mem/vram 峰值
 - `network`：链路利用率（实际发送 / 可发送）
 - `failures`：失败原因计数（如 `mem_full`, `vram_oom`, `link_down`）
+
+## 8.1 生命周期日志（JSONL）
+
+当 `tile_lifecycle_log` 配置为非空时，会按行写出 tile 事件，常见事件包括：
+`created`, `queued`, `local_ready`, `tx_start`, `tx_end`, `compute_start`, `done`, `failed`。
 
 ## 9. 当前边界与后续方向
 

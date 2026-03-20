@@ -21,6 +21,7 @@ from sim.entities import (
     Transfer,
 )
 from sim.metrics import Metrics
+from sim.lifecycle import TileLifecycleLogger
 from sim.topology import TopologyConfig, TopologyModel, link_key
 
 
@@ -69,11 +70,16 @@ class SimulationEnv:
         self.tiles: Dict[str, Tile] = {}
         self.transfers: List[Transfer] = []
         self.metrics = Metrics()
+        self.lifecycle_logger = TileLifecycleLogger(cfg.tile_lifecycle_log)
         self._links_cache_time: Optional[int] = None
         self._links_cache: Dict[str, object] = {}
 
     def reset(self) -> None:
+        self.close()
         self.__init__(self.cfg)
+
+    def close(self) -> None:
+        self.lifecycle_logger.close()
 
     def step(self, actions: List[Action]) -> StepResult:
         t = self.time
@@ -175,6 +181,7 @@ class SimulationEnv:
                 self.tiles[tile_id] = tile
                 task.tile_ids.append(tile_id)
                 self.metrics.total_tiles += 1
+                self._log_tile_event(tile, "created", sat_from=None, sat_to=src)
                 self._enqueue_tile(src, tile)
 
     def _enqueue_tile(self, sat_id: int, tile: Tile) -> None:
@@ -186,6 +193,7 @@ class SimulationEnv:
         sat.mem_used_gb += needed_gb
         tile.state = TileState.QUEUED
         sat.queue.append(tile.tile_id)
+        self._log_tile_event(tile, "queued", sat_from=None, sat_to=sat_id)
 
     def _apply_actions(self, actions: List[Action], links: Dict[str, object]) -> None:
         action_map = {a.tile_id: a for a in actions}
@@ -203,6 +211,7 @@ class SimulationEnv:
             if action.action_type == ActionType.LOCAL:
                 # 本地计算，直接标记 READY
                 tile.state = TileState.READY
+                self._log_tile_event(tile, "local_ready", sat_from=tile.location, sat_to=tile.location)
                 continue
             if action.action_type == ActionType.OFFLOAD:
                 if action.target_sat_id is None:
@@ -238,6 +247,13 @@ class SimulationEnv:
                 if tile.tile_id in src_sat.queue:
                     src_sat.queue.remove(tile.tile_id)
                 self.transfers.append(transfer)
+                self._log_tile_event(
+                    tile,
+                    "tx_start",
+                    sat_from=transfer.src,
+                    sat_to=transfer.dst,
+                    extra={"remaining_mb": transfer.remaining_mb},
+                )
 
     def _advance_transfers(self, links: Dict[str, object]) -> None:
         still_transfers: List[Transfer] = []
@@ -266,6 +282,8 @@ class SimulationEnv:
                 tile.state = TileState.READY
                 tile.timestamps.end_tx = self.time
                 dst_sat.queue.append(tile.tile_id)
+                self._log_tile_event(tile, "tx_end", sat_from=tr.src, sat_to=tr.dst)
+                self._log_tile_event(tile, "queued", sat_from=tr.src, sat_to=tr.dst)
             else:
                 still_transfers.append(tr)
         self.transfers = still_transfers
@@ -294,6 +312,7 @@ class SimulationEnv:
                     tile.remaining_compute = tile.compute_cost / sat.compute_rate
                     sat.executing = next_tile_id
                     sat.vram_used_gb += tile.vram_req_gb
+                    self._log_tile_event(tile, "compute_start", sat_from=sat_id, sat_to=sat_id)
 
             if sat.executing is not None:
                 tile = self.tiles[sat.executing]
@@ -306,6 +325,7 @@ class SimulationEnv:
                     size_gb = tile.data_size_mb / 1024.0
                     sat.mem_used_gb = max(0.0, sat.mem_used_gb - size_gb)
                     self.metrics.record_tile_latency(tile.timestamps.end_compute - tile.timestamps.created)
+                    self._log_tile_event(tile, "done", sat_from=sat_id, sat_to=sat_id)
                     self._check_task_done(tile.parent_task_id)
 
     def _check_task_done(self, task_id: str) -> None:
@@ -340,6 +360,7 @@ class SimulationEnv:
         self.metrics.finalize_step()
 
     def _fail_tile(self, tile: Tile, reason: FailureReason) -> None:
+        sat_before = tile.location
         # If in transfer, release destination reservation and remove transfer entry
         for tr in list(self.transfers):
             if tr.tile_id == tile.tile_id:
@@ -361,6 +382,13 @@ class SimulationEnv:
         tile.state = TileState.FAILED
         tile.failure_reason = reason
         self.metrics.record_failure(reason.value)
+        self._log_tile_event(
+            tile,
+            "failed",
+            sat_from=sat_before,
+            sat_to=tile.location,
+            extra={"reason": reason.value},
+        )
 
     def _deadline_check(self) -> None:
         if self.cfg.deadline_steps <= 0:
@@ -376,6 +404,30 @@ class SimulationEnv:
             self._links_cache = self.topology.snapshot(t)
             self._links_cache_time = t
         return self._links_cache
+
+    def _log_tile_event(
+        self,
+        tile: Tile,
+        event: str,
+        sat_from: Optional[int],
+        sat_to: Optional[int],
+        extra: Optional[Dict[str, object]] = None,
+    ) -> None:
+        if not self.lifecycle_logger.enabled:
+            return
+        record: Dict[str, object] = {
+            "time": self.time,
+            "event": event,
+            "task_id": tile.parent_task_id,
+            "tile_id": tile.tile_id,
+            "state": tile.state.value,
+            "sat_from": sat_from,
+            "sat_to": sat_to,
+            "location": tile.location,
+        }
+        if extra:
+            record.update(extra)
+        self.lifecycle_logger.log(record)
 
 
 def _resolve_tle_lines(topology_cfg: Dict[str, object]) -> List[tuple[str, str]]:
