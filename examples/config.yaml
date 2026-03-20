@@ -25,7 +25,13 @@ vram_policy: "wait"  # wait|reject
 # Topology
 
 topology:
-  link_up_prob: 0.6
+  mode: skyfield
+  start_time_utc: "2026-03-20T00:00:00Z"
+  tle_file: "data/tle/starlink_cluster_24.tle"
+  earth_radius_km: 6378.137
+  min_elevation_deg: 0.0
+  max_range_km: 8000
+  bandwidth_distance_scale_km: 2000
   bandwidth_mbps_min: 50
   bandwidth_mbps_max: 300
   bandwidth_period: 60
