@@ -1,20 +1,11 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
 from datetime import datetime, timezone, timedelta
-from typing import List, Tuple
+from typing import Any, List, Tuple
 
-try:
-    from sgp4.api import Satrec, jday
-except Exception:  # pragma: no cover - 仅在缺少依赖时触发
-    Satrec = None
-    jday = None
+from skyfield.api import EarthSatellite, load
 
-
-@dataclass
-class EphemerisConfig:
-    start_time_utc: str
-    tle_lines: List[Tuple[str, str]]
+_TS = load.timescale() if load is not None else None
 
 
 def parse_start_time_utc(start_time_utc: str) -> datetime:
@@ -27,25 +18,22 @@ def parse_start_time_utc(start_time_utc: str) -> datetime:
     return dt.astimezone(timezone.utc)
 
 
-def load_satellites(tle_lines: List[Tuple[str, str]]) -> List[Satrec]:
-    if Satrec is None:
-        raise ImportError("sgp4 is required for ephemeris mode. Install with: pip install sgp4")
-    sats: List[Satrec] = []
+def load_satellites(tle_lines: List[Tuple[str, str]]) -> List[EarthSatellite]:
+    if load is None:
+        raise ImportError("skyfield is required for ephemeris mode. Install with: pip install skyfield")
+    sats: List[EarthSatellite] = []
     for line1, line2 in tle_lines:
-        sats.append(Satrec.twoline2rv(line1.strip(), line2.strip()))
+        sats.append(EarthSatellite(line1.strip(), line2.strip()))
     return sats
 
 
-def position_km(sat: Satrec, t0: datetime, t_seconds: float) -> Tuple[float, float, float]:
-    # SGP4 输出 TEME 坐标系下的地心惯性坐标 (km)
-    if jday is None:
+def position_km(sat: EarthSatellite, t0: datetime, t_seconds: float) -> Tuple[float, float, float]:
+    # Skyfield 返回地心惯性坐标（km）
+    if _TS is None:
         return (0.0, 0.0, 0.0)
     dt = t0 + timedelta(seconds=float(t_seconds))
-    jd, fr = jday(
-        dt.year, dt.month, dt.day, dt.hour, dt.minute, dt.second + dt.microsecond / 1e6
-    )
-    err, r, _v = sat.sgp4(jd, fr)
-    if err != 0:
-        # 出错时返回原点，后续会导致链路不可见
+    t = _TS.from_datetime(dt)
+    r = sat.at(t).position.km
+    if len(r) != 3:
         return (0.0, 0.0, 0.0)
-    return (r[0], r[1], r[2])
+    return (float(r[0]), float(r[1]), float(r[2]))

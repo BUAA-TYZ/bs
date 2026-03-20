@@ -6,7 +6,7 @@ import math
 import random
 
 from sim.entities import Link
-from sim.orbit import EphemerisConfig, load_satellites, parse_start_time_utc, position_km
+from sim.orbit import load_satellites, parse_start_time_utc, position_km
 
 
 def link_key(i: int, j: int) -> str:
@@ -77,12 +77,12 @@ class TopologyModel:
             bw = bw / (1.0 + distance_km / self.cfg.bandwidth_distance_scale_km)
         return bw
 
-    def _visible_sgp4(self, i: int, j: int, t: int) -> Tuple[bool, float]:
+    def _visible_orbit(self, i: int, j: int, t: int) -> Tuple[bool, float]:
         if i >= len(self.sat_recs) or j >= len(self.sat_recs):
             return False, 0.0
         r1 = position_km(self.sat_recs[i], self.t0, t)
         r2 = position_km(self.sat_recs[j], self.t0, t)
-        # 若 SGP4 出错，位置为原点，直接判不可见
+        # 若星历计算失败，位置为原点，直接判不可见
         if r1 == (0.0, 0.0, 0.0) or r2 == (0.0, 0.0, 0.0):
             return False, 0.0
         dx = r2[0] - r1[0]
@@ -119,10 +119,11 @@ class TopologyModel:
 
     def snapshot(self, t: int) -> Dict[str, Link]:
         links: Dict[str, Link] = {}
+        orbit_mode = self.cfg.mode == "skyfield"
         for i in range(self.cfg.num_sats):
             for j in range(i + 1, self.cfg.num_sats):
-                if self.cfg.mode == "sgp4":
-                    up, distance_km = self._visible_sgp4(i, j, t)
+                if orbit_mode:
+                    up, distance_km = self._visible_orbit(i, j, t)
                     bw = self._get_bandwidth(i, j, t, distance_km)
                     lk = Link(i=i, j=j, up=up, bandwidth_mbps=bw, latency_ms=self.cfg.latency_ms)
                 else:

@@ -11,6 +11,9 @@ class LoadAwareResourceFit(SchedulerPolicy):
     def select_actions(self, env_state: EnvState) -> List[Action]:
         actions: List[Action] = []
         dt = env_state.config["dt"]
+        # Heuristics: when local queue is high, prefer load spreading.
+        queue_trigger = 3
+        balancing_gain = 1.5
 
         for tile_id, tile in env_state.tiles.items():
             if tile["state"] not in ("QUEUED", "READY"):
@@ -34,7 +37,13 @@ class LoadAwareResourceFit(SchedulerPolicy):
                 if mem_headroom < tile["data_size_gb"]:
                     headroom_penalty += 1e6
                 compute_time = tile["compute_cost"] / sat["compute_rate"]
-                return queue_penalty + extra_tx + compute_time + headroom_penalty
+                score = queue_penalty + extra_tx + compute_time + headroom_penalty
+                # Encourage moving work away from overloaded source queue.
+                src_queue = env_state.satellites[src]["queue_len"]
+                if sat_id != src and src_queue >= queue_trigger:
+                    queue_gap = max(0, src_queue - sat["queue_len"])
+                    score -= balancing_gain * queue_gap
+                return score
 
             local_score = score_for(src, 0.0)
             if local_score < best_score:

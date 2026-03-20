@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Dict, List, Optional
 import random
 
@@ -35,6 +36,7 @@ class SimulationEnv:
         self.time = 0
         self.rng = np.random.default_rng(cfg.seed)
         self.py_rng = random.Random(cfg.seed)
+        tle_lines = _resolve_tle_lines(cfg.topology)
         topo_cfg = TopologyConfig(
             num_sats=cfg.num_sats,
             mode=str(cfg.topology.get("mode", "random")),
@@ -46,14 +48,14 @@ class SimulationEnv:
             latency_ms=float(cfg.topology.get("latency_ms", 20.0)),
             seed=cfg.seed,
             start_time_utc=str(cfg.topology.get("start_time_utc", "2025-01-01T00:00:00Z")),
-            tle_lines=[tuple(x) for x in cfg.topology.get("tle_lines", [])],
+            tle_lines=tle_lines,
             earth_radius_km=float(cfg.topology.get("earth_radius_km", 6378.137)),
             min_elevation_deg=float(cfg.topology.get("min_elevation_deg", 0.0)),
             max_range_km=float(cfg.topology.get("max_range_km", 0.0)),
             bandwidth_distance_scale_km=float(cfg.topology.get("bandwidth_distance_scale_km", 0.0)),
         )
-        if topo_cfg.mode == "sgp4" and not topo_cfg.tle_lines:
-            raise ValueError("topology.mode=sgp4 but topology.tle_lines is empty")
+        if topo_cfg.mode == "skyfield" and not topo_cfg.tle_lines:
+            raise ValueError("topology.mode=skyfield requires non-empty topology.tle_lines")
         self.topology = TopologyModel(topo_cfg)
         self.satellites: Dict[int, Satellite] = {
             i: Satellite(
@@ -366,3 +368,32 @@ class SimulationEnv:
                 continue
             if tile.deadline is not None and self.time > tile.deadline:
                 self._fail_tile(tile, FailureReason.DEADLINE_MISS)
+
+
+def _resolve_tle_lines(topology_cfg: Dict[str, object]) -> List[tuple[str, str]]:
+    raw_lines = topology_cfg.get("tle_lines", [])
+    if raw_lines:
+        return [tuple(x) for x in raw_lines]
+    tle_file = topology_cfg.get("tle_file")
+    if not tle_file:
+        return []
+    path = Path(str(tle_file)).expanduser()
+    if not path.exists():
+        raise FileNotFoundError(f"TLE file not found: {path}")
+    text_lines = [ln.strip() for ln in path.read_text(encoding="utf-8").splitlines() if ln.strip()]
+    pairs: List[tuple[str, str]] = []
+    idx = 0
+    while idx < len(text_lines):
+        line = text_lines[idx]
+        if line.startswith("1 ") and idx + 1 < len(text_lines) and text_lines[idx + 1].startswith("2 "):
+            pairs.append((line, text_lines[idx + 1]))
+            idx += 2
+            continue
+        if idx + 2 < len(text_lines) and text_lines[idx + 1].startswith("1 ") and text_lines[idx + 2].startswith("2 "):
+            pairs.append((text_lines[idx + 1], text_lines[idx + 2]))
+            idx += 3
+            continue
+        idx += 1
+    if not pairs:
+        raise ValueError(f"No valid TLE entries parsed from file: {path}")
+    return pairs
