@@ -26,6 +26,7 @@ class SimConfig:
     transfer_fail_on_link_down: bool
     vram_policy: str
     tile_lifecycle_log: str
+    ground_stations: list[Dict[str, Any]]
     topology: Dict[str, Any]
 
 
@@ -59,5 +60,6 @@ def load_config(path: str) -> SimConfig:
         transfer_fail_on_link_down=bool(get("transfer_fail_on_link_down", False)),
         vram_policy=str(get("vram_policy", "wait")),
         tile_lifecycle_log=str(get("tile_lifecycle_log", "")),
+        ground_stations=list(get("ground_stations", [])),
         topology=cfg.get("topology", {}),
     )

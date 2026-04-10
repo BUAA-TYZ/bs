@@ -3,9 +3,9 @@ seed: 7
 # 卫星数量（不能超过 TLE 中可用卫星数量）
 num_sats: 20
 # 仿真总步数
-sim_steps: 800
+sim_steps: 400
 # 每个时间步长度（秒）
-dt: 1.0
+dt: 10.0
 
 # 任务模型
 # 泊松到达率：每步期望新任务数
@@ -41,6 +41,33 @@ vram_policy: "wait"
 # Tile 生命周期日志路径（JSONL）；留空字符串则不记录
 # tile_lifecycle_log: "logs/tile_lifecycle.jsonl"
 tile_lifecycle_log: ""
+
+# 地面站配置：只有 tile 结果成功传回地面站才计为 DONE
+ground_stations:
+  # 演示地面站：靠近当前星座样例轨迹，便于在短时仿真里观测回传完成
+  - id: "gs_demo_pacific"
+    lat_deg: -52.0
+    lon_deg: -155.0
+    alt_m: 10
+    min_elevation_deg: 0
+    bandwidth_mbps: 800
+    latency_ms: 20
+  # 北京地面站
+  - id: "gs_beijing"
+    lat_deg: 39.9042
+    lon_deg: 116.4074
+    alt_m: 50
+    min_elevation_deg: 10
+    bandwidth_mbps: 500
+    latency_ms: 25
+  # 乌鲁木齐地面站
+  - id: "gs_urumqi"
+    lat_deg: 43.8256
+    lon_deg: 87.6168
+    alt_m: 800
+    min_elevation_deg: 10
+    bandwidth_mbps: 450
+    latency_ms: 30
 
 # 拓扑配置（Skyfield）
 topology:

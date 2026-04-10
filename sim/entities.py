@@ -11,6 +11,8 @@ class TileState(str, Enum):
     TRANSFERRING = "TRANSFERRING"
     READY = "READY"
     RUNNING = "RUNNING"
+    COMPUTED = "COMPUTED"
+    DOWNLINKING = "DOWNLINKING"
     DONE = "DONE"
     FAILED = "FAILED"
 
@@ -43,6 +45,8 @@ class TileTimestamps:
     end_tx: Optional[int] = None
     start_compute: Optional[int] = None
     end_compute: Optional[int] = None
+    start_downlink: Optional[int] = None
+    end_downlink: Optional[int] = None
 
 
 @dataclass
@@ -105,6 +109,26 @@ class Transfer:
     remaining_mb: float
     start_time: int
     link_key: str
+
+
+@dataclass
+class GroundStation:
+    gs_id: str
+    lat_deg: float
+    lon_deg: float
+    alt_m: float
+    min_elevation_deg: float
+    bandwidth_mbps: float
+    latency_ms: float
+
+
+@dataclass
+class DownlinkTransfer:
+    tile_id: str
+    src_sat: int
+    gs_id: str
+    remaining_mb: float
+    start_time: int
 
 
 @dataclass

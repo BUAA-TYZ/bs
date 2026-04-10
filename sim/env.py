@@ -11,8 +11,10 @@ from sim.config import SimConfig
 from sim.entities import (
     Action,
     ActionType,
+    DownlinkTransfer,
     EnvState,
     FailureReason,
+    GroundStation,
     Satellite,
     Task,
     Tile,
@@ -22,6 +24,7 @@ from sim.entities import (
 )
 from sim.metrics import Metrics
 from sim.lifecycle import TileLifecycleLogger
+from sim.orbit import build_ground_station, sat_to_ground_geometry
 from sim.topology import TopologyConfig, TopologyModel, link_key
 
 
@@ -69,6 +72,13 @@ class SimulationEnv:
         self.tasks: Dict[str, Task] = {}
         self.tiles: Dict[str, Tile] = {}
         self.transfers: List[Transfer] = []
+        self.downlink_transfers: List[DownlinkTransfer] = []
+        self.ground_stations = _load_ground_stations(cfg.ground_stations)
+        if not self.ground_stations:
+            raise ValueError("At least one ground station is required in config: ground_stations")
+        self.ground_station_objs = {
+            gs.gs_id: build_ground_station(gs.lat_deg, gs.lon_deg, gs.alt_m) for gs in self.ground_stations.values()
+        }
         self.metrics = Metrics()
         self.lifecycle_logger = TileLifecycleLogger(cfg.tile_lifecycle_log)
         self._links_cache_time: Optional[int] = None
@@ -90,6 +100,8 @@ class SimulationEnv:
         self._apply_actions(actions, links)
         self._advance_transfers(links)
         self._advance_compute()
+        self._start_downlinks()
+        self._advance_downlinks()
         self._deadline_check()
         self._update_stats(links)
 
@@ -318,22 +330,78 @@ class SimulationEnv:
                 tile = self.tiles[sat.executing]
                 tile.remaining_compute = max(0.0, float(tile.remaining_compute) - self.cfg.dt)
                 if tile.remaining_compute <= 1e-6:
-                    tile.state = TileState.DONE
+                    tile.state = TileState.COMPUTED
                     tile.timestamps.end_compute = self.time
                     sat.executing = None
                     sat.vram_used_gb = max(0.0, sat.vram_used_gb - tile.vram_req_gb)
                     size_gb = tile.data_size_mb / 1024.0
                     sat.mem_used_gb = max(0.0, sat.mem_used_gb - size_gb)
-                    self.metrics.record_tile_latency(tile.timestamps.end_compute - tile.timestamps.created)
-                    self._log_tile_event(tile, "done", sat_from=sat_id, sat_to=sat_id)
-                    self._check_task_done(tile.parent_task_id)
+                    self._log_tile_event(tile, "computed", sat_from=sat_id, sat_to=sat_id)
+
+    def _start_downlinks(self) -> None:
+        downlinking = {tr.tile_id for tr in self.downlink_transfers}
+        for tile in self.tiles.values():
+            if tile.state != TileState.COMPUTED:
+                continue
+            if tile.tile_id in downlinking:
+                continue
+            gs = self._select_ground_station(tile.location)
+            if gs is None:
+                continue
+            tr = DownlinkTransfer(
+                tile_id=tile.tile_id,
+                src_sat=tile.location,
+                gs_id=gs.gs_id,
+                remaining_mb=self.cfg.result_size_mb,
+                start_time=self.time,
+            )
+            tile.state = TileState.DOWNLINKING
+            tile.timestamps.start_downlink = self.time
+            self.downlink_transfers.append(tr)
+            self._log_tile_event(
+                tile,
+                "downlink_start",
+                sat_from=tile.location,
+                sat_to=gs.gs_id,
+                extra={"remaining_mb": tr.remaining_mb},
+            )
+
+    def _advance_downlinks(self) -> None:
+        still: List[DownlinkTransfer] = []
+        for tr in self.downlink_transfers:
+            tile = self.tiles[tr.tile_id]
+            gs = self.ground_stations.get(tr.gs_id)
+            if gs is None:
+                still.append(tr)
+                continue
+            elevation_deg, _distance_km = sat_to_ground_geometry(
+                sat=self.topology.sat_recs[tr.src_sat],
+                ground_station=self.ground_station_objs[tr.gs_id],
+                t0=self.topology.t0,
+                t_seconds=self.time,
+            )
+            if elevation_deg < gs.min_elevation_deg:
+                still.append(tr)
+                continue
+            sent = (gs.bandwidth_mbps / 8.0) * self.cfg.dt
+            tr.remaining_mb -= sent
+            if tr.remaining_mb <= 1e-6:
+                tile.state = TileState.DONE
+                tile.timestamps.end_downlink = self.time
+                self.metrics.record_tile_latency(tile.timestamps.end_downlink - tile.timestamps.created)
+                self._log_tile_event(tile, "downlink_end", sat_from=tr.src_sat, sat_to=tr.gs_id)
+                self._log_tile_event(tile, "done", sat_from=tr.src_sat, sat_to=tr.gs_id)
+                self._check_task_done(tile.parent_task_id)
+            else:
+                still.append(tr)
+        self.downlink_transfers = still
 
     def _check_task_done(self, task_id: str) -> None:
         task = self.tasks[task_id]
         for tid in task.tile_ids:
             if self.tiles[tid].state != TileState.DONE:
                 return
-        end_time = max(self.tiles[tid].timestamps.end_compute or 0 for tid in task.tile_ids)
+        end_time = max(self.tiles[tid].timestamps.end_downlink or 0 for tid in task.tile_ids)
         self.metrics.record_task_latency(end_time - task.release_time)
 
     def _update_stats(self, links: Dict[str, object]) -> None:
@@ -361,6 +429,7 @@ class SimulationEnv:
 
     def _fail_tile(self, tile: Tile, reason: FailureReason) -> None:
         sat_before = tile.location
+        self.downlink_transfers = [tr for tr in self.downlink_transfers if tr.tile_id != tile.tile_id]
         # If in transfer, release destination reservation and remove transfer entry
         for tr in list(self.transfers):
             if tr.tile_id == tile.tile_id:
@@ -409,8 +478,8 @@ class SimulationEnv:
         self,
         tile: Tile,
         event: str,
-        sat_from: Optional[int],
-        sat_to: Optional[int],
+        sat_from: Optional[object],
+        sat_to: Optional[object],
         extra: Optional[Dict[str, object]] = None,
     ) -> None:
         if not self.lifecycle_logger.enabled:
@@ -428,6 +497,23 @@ class SimulationEnv:
         if extra:
             record.update(extra)
         self.lifecycle_logger.log(record)
+
+    def _select_ground_station(self, sat_id: int) -> Optional[GroundStation]:
+        best: Optional[GroundStation] = None
+        best_bw = -1.0
+        for gs in self.ground_stations.values():
+            elevation_deg, _distance_km = sat_to_ground_geometry(
+                sat=self.topology.sat_recs[sat_id],
+                ground_station=self.ground_station_objs[gs.gs_id],
+                t0=self.topology.t0,
+                t_seconds=self.time,
+            )
+            if elevation_deg < gs.min_elevation_deg:
+                continue
+            if gs.bandwidth_mbps > best_bw:
+                best = gs
+                best_bw = gs.bandwidth_mbps
+        return best
 
 
 def _resolve_tle_lines(topology_cfg: Dict[str, object]) -> List[tuple[str, str]]:
@@ -457,3 +543,19 @@ def _resolve_tle_lines(topology_cfg: Dict[str, object]) -> List[tuple[str, str]]
     if not pairs:
         raise ValueError(f"No valid TLE entries parsed from file: {path}")
     return pairs
+
+
+def _load_ground_stations(raw_ground_stations: List[Dict[str, object]]) -> Dict[str, GroundStation]:
+    stations: Dict[str, GroundStation] = {}
+    for idx, item in enumerate(raw_ground_stations):
+        gs_id = str(item.get("id", f"gs_{idx}"))
+        stations[gs_id] = GroundStation(
+            gs_id=gs_id,
+            lat_deg=float(item.get("lat_deg", 0.0)),
+            lon_deg=float(item.get("lon_deg", 0.0)),
+            alt_m=float(item.get("alt_m", 0.0)),
+            min_elevation_deg=float(item.get("min_elevation_deg", 5.0)),
+            bandwidth_mbps=float(item.get("bandwidth_mbps", 200.0)),
+            latency_ms=float(item.get("latency_ms", 20.0)),
+        )
+    return stations

@@ -1,0 +1,16 @@
+# Ground stations are fixed Earth locations (WGS84), not orbital TLE objects.
+ground_stations:
+  - id: "gs_beijing"
+    lat_deg: 39.9042
+    lon_deg: 116.4074
+    alt_m: 50
+    min_elevation_deg: 10
+    bandwidth_mbps: 500
+    latency_ms: 25
+  - id: "gs_urumqi"
+    lat_deg: 43.8256
+    lon_deg: 87.6168
+    alt_m: 800
+    min_elevation_deg: 10
+    bandwidth_mbps: 450
+    latency_ms: 30

@@ -11,7 +11,8 @@
 3. 调度器为每个 tile 选择 `LOCAL / OFFLOAD / WAIT`
 4. 推进链路传输（按带宽离散推进）
 5. 推进卫星计算（受队列、算力、显存约束）
-6. 汇总指标与失败原因
+6. 推进卫星到地面站下传（结果传回地面站后才算完成）
+7. 汇总指标与失败原因
 
 输出结果写入 `metrics.json`，包含完成率、延迟、资源峰值、链路利用率和失败统计。
 
@@ -122,6 +123,12 @@ python compare_baselines.py --config examples/config.yaml
 - `transfer_fail_on_link_down`：传输遇断链时失败还是等待重连
 - `tile_lifecycle_log`：tile 生命周期事件日志路径（JSONL，留空禁用）
 
+### 地面站（`ground_stations`）
+
+- 每个地面站包含：`id`, `lat_deg`, `lon_deg`, `alt_m`
+- 下传约束：`min_elevation_deg`, `bandwidth_mbps`, `latency_ms`
+- 语义：tile 只有在计算完成并成功下传到地面站后才标记 `DONE`
+
 ### 拓扑（`topology`）
 
 - 通用：`latency_ms`, `bandwidth_mbps_min/max`, `bandwidth_period`, `bandwidth_noise`
@@ -148,7 +155,7 @@ python compare_baselines.py --config examples/config.yaml
 ## 8.1 生命周期日志（JSONL）
 
 当 `tile_lifecycle_log` 配置为非空时，会按行写出 tile 事件，常见事件包括：
-`created`, `queued`, `local_ready`, `tx_start`, `tx_end`, `compute_start`, `done`, `failed`。
+`created`, `queued`, `local_ready`, `tx_start`, `tx_end`, `compute_start`, `computed`, `downlink_start`, `downlink_end`, `done`, `failed`。
 
 ## 9. 当前边界与后续方向
 

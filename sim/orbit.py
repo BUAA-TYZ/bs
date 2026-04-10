@@ -3,7 +3,7 @@ from __future__ import annotations
 from datetime import datetime, timezone, timedelta
 from typing import List, Tuple
 
-from skyfield.api import EarthSatellite, load
+from skyfield.api import EarthSatellite, load, wgs84
 
 _TS = load.timescale() if load is not None else None
 
@@ -62,3 +62,23 @@ def link_geometry_km(
         range_km,
         separation_deg,
     )
+
+
+def build_ground_station(lat_deg: float, lon_deg: float, alt_m: float = 0.0):
+    return wgs84.latlon(latitude_degrees=lat_deg, longitude_degrees=lon_deg, elevation_m=alt_m)
+
+
+def sat_to_ground_geometry(
+    sat: EarthSatellite,
+    ground_station,
+    t0: datetime,
+    t_seconds: float,
+) -> Tuple[float, float]:
+    """Return (elevation_deg, distance_km) from ground station to satellite."""
+    if _TS is None:
+        return -90.0, 0.0
+    dt = t0 + timedelta(seconds=float(t_seconds))
+    t = _TS.from_datetime(dt)
+    topocentric = (sat - ground_station).at(t)
+    alt, _az, dist = topocentric.altaz()
+    return float(alt.degrees), float(dist.km)
