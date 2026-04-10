@@ -44,6 +44,23 @@ class GreedyEarliestFinish(SchedulerPolicy):
                     best_finish = finish
                     best_action = Action(tile_id=tile_id, action_type=ActionType.OFFLOAD, target_sat_id=nb)
 
+            # Ground-station offload (raw tile upload, then ground compute)
+            for opt in env_state.ground_options.get(src, []):
+                gs_id = opt["gs_id"]
+                bw = opt["bandwidth_mbps"]
+                tx_time = (tile["data_size_mb"] * 8.0) / max(1e-6, bw)
+                gs = env_state.ground_stations.get(gs_id, {})
+                gs_queue = gs.get("queue_len", 0) + gs.get("running", 0)
+                gs_rate = max(1e-9, gs.get("compute_rate", 1.0))
+                finish = gs_queue * dt + tx_time + tile["compute_cost"] / gs_rate
+                if finish < best_finish:
+                    best_finish = finish
+                    best_action = Action(
+                        tile_id=tile_id,
+                        action_type=ActionType.OFFLOAD,
+                        target_gs_id=gs_id,
+                    )
+
             actions.append(best_action)
 
         return actions

@@ -61,6 +61,23 @@ class LoadAwareResourceFit(SchedulerPolicy):
                     best_score = score
                     best_action = Action(tile_id=tile_id, action_type=ActionType.OFFLOAD, target_sat_id=nb)
 
+            for opt in env_state.ground_options.get(src, []):
+                gs_id = opt["gs_id"]
+                bw = opt["bandwidth_mbps"]
+                tx_time = (tile["data_size_mb"] * 8.0) / max(1e-6, bw)
+                gs = env_state.ground_stations.get(gs_id, {})
+                gs_queue = gs.get("queue_len", 0) + gs.get("running", 0)
+                gs_rate = max(1e-9, gs.get("compute_rate", 1.0))
+                # Ground station has no mem/vram limits in current model, only queue + compute.
+                score = gs_queue * dt + tx_time + tile["compute_cost"] / gs_rate
+                if score < best_score:
+                    best_score = score
+                    best_action = Action(
+                        tile_id=tile_id,
+                        action_type=ActionType.OFFLOAD,
+                        target_gs_id=gs_id,
+                    )
+
             actions.append(best_action)
 
         return actions

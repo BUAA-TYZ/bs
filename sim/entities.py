@@ -13,6 +13,8 @@ class TileState(str, Enum):
     RUNNING = "RUNNING"
     COMPUTED = "COMPUTED"
     DOWNLINKING = "DOWNLINKING"
+    GROUND_QUEUED = "GROUND_QUEUED"
+    GROUND_RUNNING = "GROUND_RUNNING"
     DONE = "DONE"
     FAILED = "FAILED"
 
@@ -36,6 +38,7 @@ class Action:
     tile_id: str
     action_type: ActionType
     target_sat_id: Optional[int] = None
+    target_gs_id: Optional[str] = None
 
 
 @dataclass
@@ -120,6 +123,7 @@ class GroundStation:
     min_elevation_deg: float
     bandwidth_mbps: float
     latency_ms: float
+    compute_rate: float
 
 
 @dataclass
@@ -132,9 +136,37 @@ class DownlinkTransfer:
 
 
 @dataclass
+class GroundTileTransfer:
+    tile_id: str
+    src_sat: int
+    gs_id: str
+    remaining_mb: float
+    start_time: int
+
+
+@dataclass
+class GroundTaskTransfer:
+    task_id: str
+    src_sat: int
+    gs_id: str
+    remaining_mb: float
+    start_time: int
+
+
+@dataclass
+class GroundTaskCompute:
+    task_id: str
+    gs_id: str
+    remaining_compute: float
+    start_time: int
+
+
+@dataclass
 class EnvState:
     time: int
     satellites: Dict[int, Dict]
+    ground_stations: Dict[str, Dict]
+    ground_options: Dict[int, List[Dict]]
     neighbors: Dict[int, List[int]]
     links: Dict[str, Dict]
     tiles: Dict[str, Dict]

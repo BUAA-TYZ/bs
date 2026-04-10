@@ -121,12 +121,14 @@ python compare_baselines.py --config examples/config.yaml
 - `compute_rate`：计算速率
 - `vram_policy`：`wait` 或 `reject`
 - `transfer_fail_on_link_down`：传输遇断链时失败还是等待重连
+- `pipeline_mode`：`distributed`（星间协同）或 `ground_compute`（星感地算）
 - `tile_lifecycle_log`：tile 生命周期事件日志路径（JSONL，留空禁用）
 
 ### 地面站（`ground_stations`）
 
 - 每个地面站包含：`id`, `lat_deg`, `lon_deg`, `alt_m`
 - 下传约束：`min_elevation_deg`, `bandwidth_mbps`, `latency_ms`
+- 地面算力：`compute_rate`（用于 `ground_compute` 模式）
 - 语义：tile 只有在计算完成并成功下传到地面站后才标记 `DONE`
 
 ### 拓扑（`topology`）
@@ -155,7 +157,7 @@ python compare_baselines.py --config examples/config.yaml
 ## 8.1 生命周期日志（JSONL）
 
 当 `tile_lifecycle_log` 配置为非空时，会按行写出 tile 事件，常见事件包括：
-`created`, `queued`, `local_ready`, `tx_start`, `tx_end`, `compute_start`, `computed`, `downlink_start`, `downlink_end`, `done`, `failed`。
+`created`, `queued`, `local_ready`, `tx_start`, `tx_end`, `compute_start`, `computed`, `downlink_start`, `downlink_end`, `ground_upload_start`, `ground_upload_end`, `ground_compute_start`, `ground_compute_end`, `done`, `failed`。
 
 ## 9. 当前边界与后续方向
 

@@ -25,6 +25,7 @@ class SimConfig:
     compute_rate: float
     transfer_fail_on_link_down: bool
     vram_policy: str
+    pipeline_mode: str
     tile_lifecycle_log: str
     ground_stations: list[Dict[str, Any]]
     topology: Dict[str, Any]
@@ -59,6 +60,7 @@ def load_config(path: str) -> SimConfig:
         compute_rate=float(get("compute_rate", 1.0)),
         transfer_fail_on_link_down=bool(get("transfer_fail_on_link_down", False)),
         vram_policy=str(get("vram_policy", "wait")),
+        pipeline_mode=str(get("pipeline_mode", "distributed")),
         tile_lifecycle_log=str(get("tile_lifecycle_log", "")),
         ground_stations=list(get("ground_stations", [])),
         topology=cfg.get("topology", {}),
