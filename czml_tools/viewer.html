@@ -1,82 +1,272 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CZML Viewer</title>
+    <title>卫星任务调度仿真 — 轨道可视化</title>
     <script src="https://cesium.com/downloads/cesiumjs/releases/1.120/Build/Cesium/Cesium.js"></script>
-    <link
-      href="https://cesium.com/downloads/cesiumjs/releases/1.120/Build/Cesium/Widgets/widgets.css"
-      rel="stylesheet"
-    />
+    <link href="https://cesium.com/downloads/cesiumjs/releases/1.120/Build/Cesium/Widgets/widgets.css" rel="stylesheet" />
     <style>
-      html,
-      body,
-      #cesiumContainer {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
+      * { box-sizing: border-box; }
+      html, body, #cesiumContainer {
+        width: 100%; height: 100%;
+        margin: 0; padding: 0;
+        overflow: hidden;
+        background: #000;
+        font-family: 'Segoe UI', Arial, sans-serif;
+      }
+
+      /* ── 侧边控制面板 ── */
+      #panel {
+        position: absolute;
+        top: 10px; left: 10px;
+        z-index: 10;
+        width: 300px;
+        background: rgba(15, 20, 30, 0.88);
+        color: #dde;
+        border-radius: 10px;
+        border: 1px solid rgba(100,150,255,0.25);
         overflow: hidden;
       }
-      .toolbar {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        z-index: 10;
-        background: rgba(0, 0, 0, 0.65);
+      #panel-header {
+        background: rgba(40, 80, 160, 0.7);
+        padding: 10px 14px;
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: 0.5px;
         color: #fff;
-        padding: 10px 12px;
-        border-radius: 8px;
-        font-family: sans-serif;
-        font-size: 13px;
       }
-      .toolbar input {
-        width: 280px;
+      #panel-body {
+        padding: 10px 14px 14px;
+        font-size: 12px;
       }
+      .row { margin-bottom: 8px; }
+      .row label { display: block; color: #aab; margin-bottom: 3px; font-size: 11px; }
+      .row input[type=text] {
+        width: 100%; padding: 5px 7px;
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(100,150,255,0.3);
+        border-radius: 5px; color: #eef;
+        font-size: 12px;
+      }
+      .row input[type=range] { width: 100%; }
+      .btn-row { display: flex; gap: 6px; margin-top: 4px; }
+      button {
+        flex: 1; padding: 6px 0;
+        background: rgba(50, 100, 200, 0.6);
+        border: 1px solid rgba(100,160,255,0.4);
+        border-radius: 5px; color: #ddf;
+        font-size: 12px; cursor: pointer;
+        transition: background 0.15s;
+      }
+      button:hover { background: rgba(70, 130, 255, 0.7); }
+      button.active { background: rgba(50,200,100,0.5); border-color: rgba(80,255,130,0.5); }
+
+      /* ── 图例 ── */
+      #legend {
+        margin-top: 10px;
+        padding-top: 8px;
+        border-top: 1px solid rgba(100,150,255,0.2);
+        font-size: 11px;
+      }
+      .legend-item { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+      .legend-dot {
+        width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0;
+      }
+
+      /* ── 状态栏 ── */
+      #status {
+        position: absolute;
+        bottom: 30px; left: 10px;
+        z-index: 10;
+        background: rgba(15,20,30,0.75);
+        color: #aab;
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 11px;
+        border: 1px solid rgba(100,150,255,0.15);
+        max-width: 400px;
+      }
+
+      /* ── 速度滑块标签 ── */
+      #speed-label { color: #7af; font-weight: bold; }
     </style>
   </head>
   <body>
-    <div class="toolbar">
-      <div><strong>CZML Viewer</strong></div>
-      <div>Token: set in source file</div>
-      <div>
-        CZML:
-        <input id="czmlPath" value="./starlink_cluster_24.czml" />
-        <button id="reloadBtn">Reload</button>
+    <div id="cesiumContainer"></div>
+
+    <!-- 控制面板 -->
+    <div id="panel">
+      <div id="panel-header">卫星任务调度仿真 — 轨道可视化</div>
+      <div id="panel-body">
+
+        <div class="row">
+          <label>CZML 文件路径</label>
+          <input id="czmlPath" type="text" value="./sim_visualization.czml" />
+        </div>
+        <div class="btn-row">
+          <button id="reloadBtn">加载 / 刷新</button>
+          <button id="zoomBtn">复位视角</button>
+        </div>
+
+        <div class="row" style="margin-top:10px;">
+          <label>播放速度：<span id="speed-label">60×</span></label>
+          <input id="speedSlider" type="range" min="1" max="600" value="60" step="1" />
+        </div>
+        <div class="btn-row">
+          <button id="playBtn" class="active">▶ 播放</button>
+          <button id="pauseBtn">⏸ 暂停</button>
+          <button id="resetBtn">⏮ 重置</button>
+        </div>
+
+        <div class="row" style="margin-top:10px;">
+          <label>
+            <input type="checkbox" id="toggleLabels" checked /> 显示标签
+          </label>
+          <label>
+            <input type="checkbox" id="togglePaths" checked /> 显示轨迹
+          </label>
+          <label>
+            <input type="checkbox" id="toggleGS" checked /> 显示地面站
+          </label>
+        </div>
+
+        <div id="legend">
+          <div class="legend-item">
+            <div class="legend-dot" style="background:#64c8ff;"></div>
+            <span>卫星（颜色按名称哈希区分）</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background:#ffdc32;"></div>
+            <span>地面站（标注带宽与最小仰角）</span>
+          </div>
+        </div>
+
+        <div id="info-box" style="margin-top:10px; font-size:11px; color:#8af; min-height:16px;"></div>
       </div>
     </div>
-    <div id="cesiumContainer"></div>
-    <script>
-      Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJhZGM0YzcyNi1lNzllLTRmMjAtYmRmZS1mMGUyMzFiOWE2OGUiLCJpZCI6NDA2MDI4LCJpYXQiOjE3NzM5MDU2ODB9.k_ePZdtM7iCNI5D68fD4gU9oFm4RXEDnuJlrgDAPOD0";
 
+    <!-- 状态栏 -->
+    <div id="status">加载中…</div>
+
+    <script>
+      // ── Cesium Ion Token ──
+      Cesium.Ion.defaultAccessToken =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJhZGM0YzcyNi1lNzllLTRmMjAtYmRmZS1mMGUyMzFiOWE2OGUiLCJpZCI6NDA2MDI4LCJpYXQiOjE3NzM5MDU2ODB9.k_ePZdtM7iCNI5D68fD4gU9oFm4RXEDnuJlrgDAPOD0";
+
+      // ── Viewer ──
       const viewer = new Cesium.Viewer("cesiumContainer", {
         timeline: true,
         animation: true,
         shouldAnimate: true,
         terrain: Cesium.Terrain.fromWorldTerrain(),
+        baseLayerPicker: false,
+        navigationHelpButton: false,
+        homeButton: false,
+        geocoder: false,
+        sceneModePicker: true,
       });
+
+      // 关闭默认大气雾气，让卫星轨迹更清晰
+      viewer.scene.globe.enableLighting = true;
+      viewer.scene.fog.enabled = false;
 
       let currentDataSource = null;
+      let allEntities = [];
 
-      async function loadCzml(path) {
-        if (currentDataSource) {
-          viewer.dataSources.remove(currentDataSource, true);
-        }
-        currentDataSource = await Cesium.CzmlDataSource.load(path);
-        viewer.dataSources.add(currentDataSource);
-        viewer.zoomTo(currentDataSource);
+      function updateInfo() {
+        const sats = allEntities.filter(e => e.id && e.id.startsWith("sat-"));
+        const gs   = allEntities.filter(e => e.id && e.id.startsWith("gs-"));
+        document.getElementById("info-box").textContent =
+          `卫星：${sats.length} 颗   地面站：${gs.length} 个`;
       }
 
-      document.getElementById("reloadBtn").addEventListener("click", async () => {
-        const path = document.getElementById("czmlPath").value.trim();
-        if (path) {
-          await loadCzml(path);
-        }
+      // ── 播放控制 ──
+      document.getElementById("playBtn").addEventListener("click", () => {
+        viewer.clock.shouldAnimate = true;
+      });
+      document.getElementById("pauseBtn").addEventListener("click", () => {
+        viewer.clock.shouldAnimate = false;
+      });
+      document.getElementById("resetBtn").addEventListener("click", () => {
+        viewer.clock.currentTime = viewer.clock.startTime;
+        viewer.clock.shouldAnimate = true;
       });
 
-      loadCzml("./starlink_cluster_24.czml");
+      // ── 速度滑块 ──
+      const speedSlider = document.getElementById("speedSlider");
+      const speedLabel  = document.getElementById("speed-label");
+      speedSlider.addEventListener("input", () => {
+        const v = parseInt(speedSlider.value);
+        viewer.clock.multiplier = v;
+        speedLabel.textContent = v + "×";
+      });
+
+      // ── 加载 / 复位 ──
+      document.getElementById("reloadBtn").addEventListener("click", async () => {
+        const path = document.getElementById("czmlPath").value.trim();
+        if (path) await loadCzml(path);
+      });
+      document.getElementById("zoomBtn").addEventListener("click", () => {
+        if (currentDataSource) viewer.zoomTo(currentDataSource);
+        else viewer.camera.flyHome(1.0);
+      });
+
+      // ── 显示切换 ──
+      document.getElementById("toggleLabels").addEventListener("change", function () {
+        allEntities.forEach(e => { if (e.label) e.label.show = new Cesium.ConstantProperty(this.checked); });
+      });
+      document.getElementById("togglePaths").addEventListener("change", function () {
+        allEntities
+          .filter(e => e.id && e.id.startsWith("orbit-"))
+          .forEach(e => { if (e.polyline) e.polyline.show = new Cesium.ConstantProperty(this.checked); });
+      });
+      document.getElementById("toggleGS").addEventListener("change", function () {
+        allEntities
+          .filter(e => e.id && e.id.startsWith("gs-"))
+          .forEach(e => {
+            if (e.billboard) e.billboard.show = new Cesium.ConstantProperty(this.checked);
+            if (e.label)     e.label.show     = new Cesium.ConstantProperty(this.checked);
+          });
+      });
+
+      // ── CZML 加载 ──
+      async function loadCzml(path) {
+        setStatus("加载中：" + path);
+        try {
+          if (currentDataSource) {
+            viewer.dataSources.remove(currentDataSource, true);
+          }
+          currentDataSource = await Cesium.CzmlDataSource.load(path);
+          viewer.dataSources.add(currentDataSource);
+          allEntities = currentDataSource.entities.values.slice();
+          setStatus(`已加载：${path}  |  实体数：${allEntities.length}`);
+          updateInfo();
+        } catch (e) {
+          setStatus("加载失败：" + e.message);
+          console.error(e);
+        }
+      }
+
+      // ── 实体点击显示信息 ──
+      viewer.screenSpaceEventHandler.setInputAction(movement => {
+        const picked = viewer.scene.pick(movement.position);
+        if (Cesium.defined(picked) && Cesium.defined(picked.id)) {
+          const e = picked.id;
+          const name = e.name || e.id;
+          setStatus(`选中：${name}  (id: ${e.id})`);
+        }
+      }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
+
+      // ── 状态栏 ──
+      function setStatus(msg) {
+        document.getElementById("status").textContent = msg;
+      }
+
+      // ── 初始加载 ──
+      // 同步速度滑块的初始值到 clock
+      viewer.clock.multiplier = parseInt(speedSlider.value);
+      loadCzml(document.getElementById("czmlPath").value);
     </script>
   </body>
 </html>
-
