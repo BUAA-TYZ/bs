@@ -12,6 +12,9 @@ class SimConfig:
     num_sats: int
     sim_steps: int
     dt: float
+    decision_interval_steps: int
+    topology_update_steps: int
+    ground_visibility_update_steps: int
     task_arrival_rate: float
     image_size_mb: float
     num_tiles: int
@@ -47,6 +50,9 @@ def load_config(path: str) -> SimConfig:
         num_sats=int(get("num_sats", 4)),
         sim_steps=int(get("sim_steps", 200)),
         dt=float(get("dt", 1.0)),
+        decision_interval_steps=max(1, int(get("decision_interval_steps", 1))),
+        topology_update_steps=max(1, int(get("topology_update_steps", 1))),
+        ground_visibility_update_steps=max(1, int(get("ground_visibility_update_steps", 1))),
         task_arrival_rate=float(get("task_arrival_rate", 0.3)),
         image_size_mb=float(get("image_size_mb", 512.0)),
         num_tiles=int(get("num_tiles", 16)),

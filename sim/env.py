@@ -44,6 +44,8 @@ class SimulationEnv:
         self.rng = np.random.default_rng(cfg.seed)
         self.py_rng = random.Random(cfg.seed)
         self.pipeline_mode = cfg.pipeline_mode
+        self.topology_update_steps = max(1, cfg.topology_update_steps)
+        self.ground_visibility_update_steps = max(1, cfg.ground_visibility_update_steps)
         if self.pipeline_mode not in {"distributed", "ground_compute"}:
             raise ValueError("pipeline_mode must be one of: distributed, ground_compute")
         tle_lines = _resolve_tle_lines(cfg.topology)
@@ -101,7 +103,11 @@ class SimulationEnv:
         self.lifecycle_logger = TileLifecycleLogger(cfg.tile_lifecycle_log)
         self._links_cache_time: Optional[int] = None
         self._links_cache: Dict[str, object] = {}
-        self._step_link_used_mb: Dict[str, float] = {}
+        self._ground_cache_time: Optional[int] = None
+        self._ground_geom_cache: Dict[tuple[int, str], tuple[float, float]] = {}
+        self._visible_gs_by_sat: Dict[int, List[str]] = {}
+        self._best_gs_by_sat: Dict[int, Optional[str]] = {}
+        self._computed_waiting_downlink: set[str] = set()
 
     def reset(self) -> None:
         self.close()
@@ -113,10 +119,10 @@ class SimulationEnv:
     def step(self, actions: List[Action]) -> StepResult:
         t = self.time
         links = self._get_links(t)
+        self._refresh_ground_cache(t)
 
         # 每步：任务到达 -> 调度决策/地算流程 -> 统计
         self._task_arrivals(t)
-        self._step_link_used_mb = {}
         if self.pipeline_mode == "distributed":
             self._apply_actions(actions, links)
             self._advance_transfers(links)
@@ -137,6 +143,7 @@ class SimulationEnv:
 
     def export_state(self) -> EnvState:
         links = self._get_links(self.time)
+        self._refresh_ground_cache(self.time)
         neighbors: Dict[int, List[int]] = {i: [] for i in range(self.cfg.num_sats)}
         link_view: Dict[str, Dict] = {}
         for k, lk in links.items():
@@ -170,25 +177,16 @@ class SimulationEnv:
 
         ground_options: Dict[int, List[Dict]] = {i: [] for i in range(self.cfg.num_sats)}
         for sat_id in range(self.cfg.num_sats):
-            for gs_id, gs in self.ground_stations.items():
-                elev_deg, _dist_km = sat_to_ground_geometry(
-                    sat=self.topology.sat_recs[sat_id],
-                    ground_station=self.ground_station_objs[gs_id],
-                    t0=self.topology.t0,
-                    t_seconds=self.time,
-                )
-                if elev_deg < gs.min_elevation_deg:
-                    continue
-                ground_options[sat_id].append(
-                    {
-                        "gs_id": gs_id,
-                        "bandwidth_mbps": gs.bandwidth_mbps,
-                    }
-                )
+            for gs_id in self._visible_gs_by_sat.get(sat_id, []):
+                gs = self.ground_stations[gs_id]
+                ground_options[sat_id].append({"gs_id": gs_id, "bandwidth_mbps": gs.bandwidth_mbps})
 
         tile_view: Dict[str, Dict] = {}
         in_transfer = {tr.tile_id for tr in self.transfers}
+        # 调度器只需要待调度的 tile，避免每步导出海量已完成状态。
         for tile_id, tile in self.tiles.items():
+            if tile.state not in (TileState.QUEUED, TileState.READY):
+                continue
             tile_view[tile_id] = {
                 "state": tile.state.value,
                 "location": tile.location,
@@ -289,13 +287,11 @@ class SimulationEnv:
         action_map = {a.tile_id: a for a in actions}
         transfer_tile_ids = {tr.tile_id for tr in self.transfers}
         transfer_tile_ids.update(tr.tile_id for tr in self.ground_tile_transfers)
-        for tile_id, tile in self.tiles.items():
-            if tile.state not in (TileState.QUEUED, TileState.READY):
+        for tile_id, action in action_map.items():
+            tile = self.tiles.get(tile_id)
+            if tile is None or tile.state not in (TileState.QUEUED, TileState.READY):
                 continue
             if tile_id in transfer_tile_ids:
-                continue
-            action = action_map.get(tile_id)
-            if not action:
                 continue
             if action.action_type == ActionType.WAIT:
                 continue
@@ -310,13 +306,7 @@ class SimulationEnv:
                     if gs is None:
                         self._fail_tile(tile, FailureReason.NO_ROUTE)
                         continue
-                    elevation_deg, _distance_km = sat_to_ground_geometry(
-                        sat=self.topology.sat_recs[tile.location],
-                        ground_station=self.ground_station_objs[gs.gs_id],
-                        t0=self.topology.t0,
-                        t_seconds=self.time,
-                    )
-                    if elevation_deg < gs.min_elevation_deg:
+                    if not self._is_ground_visible(tile.location, gs.gs_id):
                         self._fail_tile(tile, FailureReason.LINK_DOWN)
                         continue
                     tr = GroundTileTransfer(
@@ -397,8 +387,6 @@ class SimulationEnv:
                 continue
             rate_mb_s = lk.bandwidth_mbps / 8.0
             sent = rate_mb_s * self.cfg.dt
-            actual_sent = min(max(0.0, tr.remaining_mb), sent)
-            self._step_link_used_mb[tr.link_key] = self._step_link_used_mb.get(tr.link_key, 0.0) + actual_sent
             tr.remaining_mb -= sent
             if tr.remaining_mb <= 1e-6:
                 tile = self.tiles[tr.tile_id]
@@ -450,6 +438,7 @@ class SimulationEnv:
                 if tile.remaining_compute <= 1e-6:
                     tile.state = TileState.COMPUTED
                     tile.timestamps.end_compute = self.time
+                    self._computed_waiting_downlink.add(tile.tile_id)
                     sat.executing = None
                     sat.vram_used_gb = max(0.0, sat.vram_used_gb - tile.vram_req_gb)
                     size_gb = tile.data_size_mb / 1024.0
@@ -464,22 +453,10 @@ class SimulationEnv:
             if gs is None:
                 still.append(tr)
                 continue
-            elevation_deg, _distance_km = sat_to_ground_geometry(
-                sat=self.topology.sat_recs[tr.src_sat],
-                ground_station=self.ground_station_objs[tr.gs_id],
-                t0=self.topology.t0,
-                t_seconds=self.time,
-            )
-            if elevation_deg < gs.min_elevation_deg:
+            if not self._is_ground_visible(tr.src_sat, tr.gs_id):
                 still.append(tr)
                 continue
             sent = (gs.bandwidth_mbps / 8.0) * self.cfg.dt
-            actual_sent = min(max(0.0, tr.remaining_mb), sent)
-            self.metrics.update_link_usage(
-                f"sat{tr.src_sat}->{tr.gs_id}",
-                used_mb=actual_sent,
-                avail_mb=sent,
-            )
             tr.remaining_mb -= sent
             if tr.remaining_mb <= 1e-6:
                 src_sat = self.satellites[tr.src_sat]
@@ -553,13 +530,7 @@ class SimulationEnv:
             if gs is None:
                 still.append(tr)
                 continue
-            elevation_deg, _distance_km = sat_to_ground_geometry(
-                sat=self.topology.sat_recs[tr.src_sat],
-                ground_station=self.ground_station_objs[tr.gs_id],
-                t0=self.topology.t0,
-                t_seconds=self.time,
-            )
-            if elevation_deg < gs.min_elevation_deg:
+            if not self._is_ground_visible(tr.src_sat, tr.gs_id):
                 still.append(tr)
                 continue
             sent = (gs.bandwidth_mbps / 8.0) * self.cfg.dt
@@ -634,8 +605,10 @@ class SimulationEnv:
 
     def _start_downlinks(self) -> None:
         downlinking = {tr.tile_id for tr in self.downlink_transfers}
-        for tile in self.tiles.values():
-            if tile.state != TileState.COMPUTED:
+        for tile_id in list(self._computed_waiting_downlink):
+            tile = self.tiles.get(tile_id)
+            if tile is None or tile.state != TileState.COMPUTED:
+                self._computed_waiting_downlink.discard(tile_id)
                 continue
             if tile.tile_id in downlinking:
                 continue
@@ -652,6 +625,7 @@ class SimulationEnv:
             tile.state = TileState.DOWNLINKING
             tile.timestamps.start_downlink = self.time
             self.downlink_transfers.append(tr)
+            self._computed_waiting_downlink.discard(tile.tile_id)
             self._log_tile_event(
                 tile,
                 "downlink_start",
@@ -668,13 +642,7 @@ class SimulationEnv:
             if gs is None:
                 still.append(tr)
                 continue
-            elevation_deg, _distance_km = sat_to_ground_geometry(
-                sat=self.topology.sat_recs[tr.src_sat],
-                ground_station=self.ground_station_objs[tr.gs_id],
-                t0=self.topology.t0,
-                t_seconds=self.time,
-            )
-            if elevation_deg < gs.min_elevation_deg:
+            if not self._is_ground_visible(tr.src_sat, tr.gs_id):
                 still.append(tr)
                 continue
             sent = (gs.bandwidth_mbps / 8.0) * self.cfg.dt
@@ -708,17 +676,11 @@ class SimulationEnv:
                 self.metrics.update_compute_busy(sat_id, self.cfg.dt)
             self.metrics.update_mem_peak(sat_id, sat.mem_used_gb)
             self.metrics.update_vram_peak(sat_id, sat.vram_used_gb)
-        # link usage
-        for k, lk in links.items():
-            if not lk.up:
-                continue
-            avail = (lk.bandwidth_mbps / 8.0) * self.cfg.dt
-            used = self._step_link_used_mb.get(k, 0.0)
-            self.metrics.update_link_usage(k, used, avail)
         self.metrics.finalize_step()
 
     def _fail_tile(self, tile: Tile, reason: FailureReason) -> None:
         sat_before = tile.location
+        self._computed_waiting_downlink.discard(tile.tile_id)
         self.downlink_transfers = [tr for tr in self.downlink_transfers if tr.tile_id != tile.tile_id]
         self.ground_tile_transfers = [tr for tr in self.ground_tile_transfers if tr.tile_id != tile.tile_id]
         for gs_id, tid in list(self.ground_tile_running.items()):
@@ -765,9 +727,10 @@ class SimulationEnv:
                 self._fail_tile(tile, FailureReason.DEADLINE_MISS)
 
     def _get_links(self, t: int) -> Dict[str, object]:
-        if self._links_cache_time != t:
-            self._links_cache = self.topology.snapshot(t)
-            self._links_cache_time = t
+        sampled_t = (t // self.topology_update_steps) * self.topology_update_steps
+        if self._links_cache_time != sampled_t:
+            self._links_cache = self.topology.snapshot(sampled_t)
+            self._links_cache_time = sampled_t
         return self._links_cache
 
     def _log_tile_event(
@@ -817,21 +780,49 @@ class SimulationEnv:
         self.lifecycle_logger.log(record)
 
     def _select_ground_station(self, sat_id: int) -> Optional[GroundStation]:
-        best: Optional[GroundStation] = None
-        best_bw = -1.0
-        for gs in self.ground_stations.values():
-            elevation_deg, _distance_km = sat_to_ground_geometry(
-                sat=self.topology.sat_recs[sat_id],
-                ground_station=self.ground_station_objs[gs.gs_id],
-                t0=self.topology.t0,
-                t_seconds=self.time,
-            )
-            if elevation_deg < gs.min_elevation_deg:
-                continue
-            if gs.bandwidth_mbps > best_bw:
-                best = gs
-                best_bw = gs.bandwidth_mbps
-        return best
+        best_gs_id = self._best_gs_by_sat.get(sat_id)
+        if best_gs_id is None:
+            return None
+        return self.ground_stations.get(best_gs_id)
+
+    def _refresh_ground_cache(self, t: int) -> None:
+        sampled_t = (t // self.ground_visibility_update_steps) * self.ground_visibility_update_steps
+        if self._ground_cache_time == sampled_t:
+            return
+        self._ground_cache_time = sampled_t
+        self._ground_geom_cache = {}
+        self._visible_gs_by_sat = {i: [] for i in range(self.cfg.num_sats)}
+        self._best_gs_by_sat = {}
+
+        for sat_id in range(self.cfg.num_sats):
+            best_gs_id: Optional[str] = None
+            best_bw = -1.0
+            sat = self.topology.sat_recs[sat_id]
+            for gs_id, gs in self.ground_stations.items():
+                elev_deg, dist_km = sat_to_ground_geometry(
+                    sat=sat,
+                    ground_station=self.ground_station_objs[gs_id],
+                    t0=self.topology.t0,
+                    t_seconds=sampled_t,
+                )
+                self._ground_geom_cache[(sat_id, gs_id)] = (elev_deg, dist_km)
+                if elev_deg < gs.min_elevation_deg:
+                    continue
+                self._visible_gs_by_sat[sat_id].append(gs_id)
+                if gs.bandwidth_mbps > best_bw:
+                    best_bw = gs.bandwidth_mbps
+                    best_gs_id = gs_id
+            self._best_gs_by_sat[sat_id] = best_gs_id
+
+    def _is_ground_visible(self, sat_id: int, gs_id: str) -> bool:
+        geom = self._ground_geom_cache.get((sat_id, gs_id))
+        if geom is None:
+            return False
+        gs = self.ground_stations.get(gs_id)
+        if gs is None:
+            return False
+        elev_deg, _ = geom
+        return elev_deg >= gs.min_elevation_deg
 
 
 def _resolve_tle_lines(topology_cfg: Dict[str, object]) -> List[tuple[str, str]]:

@@ -21,8 +21,6 @@ class Metrics:
     compute_busy_time: Dict[int, float] = field(default_factory=dict)
     mem_peak: Dict[int, float] = field(default_factory=dict)
     vram_peak: Dict[int, float] = field(default_factory=dict)
-    link_used_mb: Dict[str, float] = field(default_factory=dict)
-    link_avail_mb: Dict[str, float] = field(default_factory=dict)
 
     def record_failure(self, reason: str) -> None:
         self.failure_reasons[reason] = self.failure_reasons.get(reason, 0) + 1
@@ -48,10 +46,6 @@ class Metrics:
     def update_vram_peak(self, sat_id: int, vram_gb: float) -> None:
         self.vram_peak[sat_id] = max(self.vram_peak.get(sat_id, 0.0), vram_gb)
 
-    def update_link_usage(self, link_key: str, used_mb: float, avail_mb: float) -> None:
-        self.link_used_mb[link_key] = self.link_used_mb.get(link_key, 0.0) + used_mb
-        self.link_avail_mb[link_key] = self.link_avail_mb.get(link_key, 0.0) + avail_mb
-
     def finalize_step(self) -> None:
         self.queue_len_steps += 1
 
@@ -73,11 +67,6 @@ class Metrics:
             sat_id: (self.queue_len_sum.get(sat_id, 0.0) / max(1, self.queue_len_steps))
             for sat_id in self.queue_len_sum
         }
-        # 链路利用率 = 实际发送 / 可发送
-        link_util = {
-            k: (self.link_used_mb.get(k, 0.0) / max(1e-9, self.link_avail_mb.get(k, 1e-9)))
-            for k in self.link_avail_mb
-        }
         return {
             "overall": {
                 "completed_tiles": self.completed_tiles,
@@ -98,9 +87,6 @@ class Metrics:
                 "compute_busy_time": self.compute_busy_time,
                 "mem_peak_gb": self.mem_peak,
                 "vram_peak_gb": self.vram_peak,
-            },
-            "network": {
-                "link_utilization": link_util,
             },
             "failures": self.failure_reasons,
         }

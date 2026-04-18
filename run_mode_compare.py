@@ -15,11 +15,14 @@ def run_with_mode(config_path: str, policy_name: str, mode: str) -> Dict:
     cfg.pipeline_mode = mode
     env = SimulationEnv(cfg)
     policy = make_policy(policy_name, cfg.seed)
+    decision_interval = max(1, cfg.decision_interval_steps)
+    cached_actions = []
     try:
-        for _ in range(cfg.sim_steps):
-            state = env.export_state()
-            actions = policy.select_actions(state)
-            env.step(actions)
+        for step_idx in range(cfg.sim_steps):
+            if step_idx % decision_interval == 0:
+                state = env.export_state()
+                cached_actions = policy.select_actions(state)
+            env.step(cached_actions)
         return env.metrics.summary()
     finally:
         env.close()
@@ -66,4 +69,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
