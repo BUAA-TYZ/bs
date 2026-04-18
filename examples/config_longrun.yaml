@@ -1,0 +1,69 @@
+# 长时仿真配置（6 小时）
+# 说明：该配置优先“可跑完”，用较粗粒度更新换取速度。
+
+seed: 7
+# 提升星座规模到 100 颗
+num_sats: 100
+
+# 6 小时，dt=10s => 2160 步
+sim_steps: 2160
+dt: 10.0
+
+# 调度每步执行（保持策略实时性）
+decision_interval_steps: 1
+# 每 8 步更新一次星间拓扑（约 80s），抵消 100 星规模计算开销
+topology_update_steps: 8
+# 每 8 步更新一次星地可见性（约 80s）
+ground_visibility_update_steps: 8
+
+task_arrival_rate: 0.01
+image_size_mb: 700
+num_tiles: 32
+compute_cost_per_tile: 6.0
+vram_base_gb: 0.8
+vram_alpha_per_mb: 0.0010
+result_size_mb: 0.2
+deadline_steps: 0
+
+mem_capacity_gb: 64
+vram_capacity_gb: 8
+compute_rate: 0.6
+
+transfer_fail_on_link_down: false
+vram_policy: "wait"
+pipeline_mode: "distributed"
+tile_lifecycle_log: ""
+
+ground_stations:
+  - id: "gs_beijing"
+    lat_deg: 39.9042
+    lon_deg: 116.4074
+    alt_m: 50
+    min_elevation_deg: 30
+    bandwidth_mbps: 300
+    latency_ms: 25
+    compute_rate: 8.0
+  - id: "gs_urumqi"
+    lat_deg: 43.8256
+    lon_deg: 87.6168
+    alt_m: 800
+    min_elevation_deg: 30
+    bandwidth_mbps: 300
+    latency_ms: 30
+    compute_rate: 8.0
+
+topology:
+  start_time_utc: "2026-03-20T00:00:00Z"
+  # 使用“中国上空 + 相对紧密”的 100 星子集
+  # 实测该集合在当前参数下完成量高于 china24 与 coverage100 版本
+  tle_file: "data/tle/starlink_china_cluster_100.tle"
+  earth_radius_km: 6378.137
+  min_elevation_deg: 0.0
+  max_range_km: 4500
+  bandwidth_mbps_min: 100
+  bandwidth_mbps_max: 600
+  bandwidth_distance_scale_km: 2500
+  bandwidth_period: 120
+  bandwidth_noise: 15
+  latency_ms: 20
+  visibility_workers: 1

@@ -1,0 +1,121 @@
+# ===========================================
+# 参数调研版（基于公开资料映射到本仿真抽象）
+# ===========================================
+# 说明：
+# - 该配置用于“更贴近真实量级”的实验，不是某一具体星座的精确工程参数。
+# - 参数来自公开资料 + 必要工程映射，便于你做对比实验和复现。
+
+# 随机种子（复现）
+seed: 7
+# 卫星数量（从 TLE 子集里截取）
+num_sats: 20
+# 仿真步数（360 * 5s = 30 分钟）
+sim_steps: 360
+# 每步时长（秒）
+dt: 5.0
+# 调度决策间隔步数：1=每步都调度，>1 可加速长时间仿真（近似）
+decision_interval_steps: 1
+# 拓扑刷新间隔步数：1=每步更新星间链路；>1 可显著提速
+topology_update_steps: 1
+# 星地可见性刷新间隔步数：1=每步更新；>1 可显著提速
+ground_visibility_update_steps: 1
+
+# -------------------------
+# 任务模型（遥感图像）
+# -------------------------
+# 任务到达率（泊松）：每步期望新任务数
+task_arrival_rate: 0.05
+# 单个遥感任务图像体量（MB）
+# 依据：Sentinel-2 L1C 单 tile 公开资料约 700 MB
+image_size_mb: 700
+# 切块数（每 tile 约 22 MB）
+num_tiles: 32
+# 每个 tile 的抽象计算量（单位由 compute_rate 决定）
+compute_cost_per_tile: 6.0
+# 显存需求模型：vram_req = base + alpha * tile_size_mb
+vram_base_gb: 0.8
+vram_alpha_per_mb: 0.0010
+# 结果回传体量（MB），远小于原图
+result_size_mb: 0.2
+# 截止期（步）；0 表示不启用
+deadline_steps: 0
+
+# -------------------------
+# 卫星资源（在轨计算较弱）
+# -------------------------
+# 卫星存储容量（GB）
+mem_capacity_gb: 64
+# 卫星显存容量（GB）
+# 参考 Jetson TX2 8GB 量级（公开规格）
+vram_capacity_gb: 8
+# 卫星计算速率（抽象单位/秒）
+compute_rate: 0.6
+
+# -------------------------
+# 运行策略
+# -------------------------
+# 传输遇断链是否立即失败
+transfer_fail_on_link_down: false
+# 显存不足策略：wait=等待；reject=直接失败
+vram_policy: "wait"
+# 处理模式：distributed（星间协同）| ground_compute（星感地算）
+pipeline_mode: "distributed"
+# tile 生命周期日志（JSONL），空字符串表示关闭
+tile_lifecycle_log: ""
+
+# -------------------------
+# 地面站（可作为卸载目标）
+# -------------------------
+ground_stations:
+  - id: "gs_beijing"
+    lat_deg: 39.9042
+    lon_deg: 116.4074
+    alt_m: 50
+    # 最小仰角门限（工程常用 10~15 度）
+    min_elevation_deg: 12
+    # 下行带宽（Mbps）
+    # 参考 Landsat-8 X 波段 384 Mbps，保守取 300 Mbps 量级
+    bandwidth_mbps: 300
+    latency_ms: 25
+    # 地面算力通常显著强于星上
+    compute_rate: 8.0
+
+  - id: "gs_urumqi"
+    lat_deg: 43.8256
+    lon_deg: 87.6168
+    alt_m: 800
+    min_elevation_deg: 12
+    bandwidth_mbps: 300
+    latency_ms: 30
+    compute_rate: 8.0
+
+# -------------------------
+# 拓扑（Skyfield + TLE）
+# -------------------------
+topology:
+  # 轨道传播起始时刻（UTC）
+  # 17:30 UTC 是 inc=43° 全球分散星座对北京可见性最低的窗口
+  start_time_utc: "2026-03-20T17:30:00Z"
+  # 24 颗 inc=43° 卫星，RAAN 每 15° 均匀分布全球
+  tle_file: "data/tle/global_sparse_inc43_24.tle"
+  # 地球半径（km）
+  earth_radius_km: 6378.137
+  # 星间附加仰角约束（度）；Earth occultation 已在几何可见性里体现
+  min_elevation_deg: 0.0
+  # 星间最大通信距离（km），用于限制超远链路
+  max_range_km: 4500
+  # 星间带宽最小值（Mbps）
+  bandwidth_mbps_min: 100
+  # 星间带宽最大值（Mbps）
+  # 公开星间激光链路能力可达 Gbps，但这里取保守中档用于仿真
+  bandwidth_mbps_max: 600
+  # 距离衰减尺度（km）
+  bandwidth_distance_scale_km: 2500
+  # 带宽周期扰动（步）
+  bandwidth_period: 120
+  # 带宽噪声幅值（Mbps）
+  bandwidth_noise: 15
+  # 传播时延（ms，抽象常数）
+  latency_ms: 20
+  # 可见性并行计算进程数
+  visibility_workers: 1

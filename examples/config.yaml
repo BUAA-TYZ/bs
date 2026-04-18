@@ -1,37 +1,44 @@
 # 全局随机种子（保证实验可复现）
 seed: 7
 # 卫星数量（不能超过 TLE 中可用卫星数量）
-num_sats: 20
-# 仿真总步数
-sim_steps: 400
+num_sats: 66
+# 仿真总步数（3600步 * 5s = 5小时，覆盖约3个轨道周期，确保每颗卫星至少有2次地面站过境机会）
+sim_steps: 3600
 # 每个时间步长度（秒）
-dt: 10.0
+dt: 5.0
+# 调度决策间隔步数：1=每步调度；>1 会提速但会降低调度实时性
+decision_interval_steps: 1
+# 拓扑刷新间隔步数：1=每步更新星间链路；>1 会提速但链路变化更粗粒度
+topology_update_steps: 1
+# 星地可见性刷新间隔步数：1=每步更新；>1 会提速但可见窗口边界更粗
+ground_visibility_update_steps: 1
 
 # 任务模型
 # 泊松到达率：每步期望新任务数
-task_arrival_rate: 0.2
+task_arrival_rate: 0.08
 # 每个遥感任务的原始图像大小（MB）
-image_size_mb: 512
+# 4096 MB：高分辨率多光谱遥感图（如 4 波段 * 16384x16384 px @ 16bit ≈ 4 GB）
+image_size_mb: 4096
 # 每张图像切分后的 tile 数量
-num_tiles: 16
+num_tiles: 32
 # 每个 tile 的计算成本（抽象单位）
-compute_cost_per_tile: 4.0
+compute_cost_per_tile: 6.0
 # 每个 tile 的基础显存需求（GB）
-vram_base_gb: 0.8
+vram_base_gb: 0.6
 # 与 tile 数据大小成比例的附加显存需求（GB/MB）
-vram_alpha_per_mb: 0.002
+vram_alpha_per_mb: 0.0012
 # 每个 tile 计算结果大小（MB），预留给后续回传建模
-result_size_mb: 1.0
+result_size_mb: 0.5
 # 截止期（步数，相对任务释放时刻）；0 表示不启用
 deadline_steps: 0
 
 # 卫星资源
 # 每颗卫星存储容量（GB）
-mem_capacity_gb: 256
+mem_capacity_gb: 48
 # 每颗卫星显存容量（GB）
 vram_capacity_gb: 8
 # 每颗卫星计算速率（每秒可处理的 compute_cost 单位）
-compute_rate: 1.2
+compute_rate: 0.5
 
 # 运行策略
 # 若为 true，传输中遇到断链则立即失败
@@ -51,43 +58,47 @@ ground_stations:
     lat_deg: 39.9042
     lon_deg: 116.4074
     alt_m: 50
-    min_elevation_deg: 10
-    bandwidth_mbps: 500
+    min_elevation_deg: 15
+    # 20 Mbps：S/X 波段小卫星有效吞吐，4096MB 需 ~1638s 传完（>>中位窗口375s）
+    bandwidth_mbps: 20
     latency_ms: 25
-    # 地面站计算速率（compute_cost 单位/秒），通常大于卫星
-    compute_rate: 12.0
+    compute_rate: 8.0
   # 乌鲁木齐地面站
   - id: "gs_urumqi"
     lat_deg: 43.8256
     lon_deg: 87.6168
     alt_m: 800
-    min_elevation_deg: 10
-    bandwidth_mbps: 450
+    min_elevation_deg: 15
+    bandwidth_mbps: 20
     latency_ms: 30
-    compute_rate: 10.0
+    compute_rate: 7.0
 
 # 拓扑配置（Skyfield）
 topology:
   # 轨道传播起始时间（UTC，ISO8601）
-  start_time_utc: "2026-03-20T00:00:00Z"
+  # 17:30 UTC 是 inc=43° 全球分散星座对北京可见性最低的窗口（约 1.5min/30min）
+  start_time_utc: "2026-03-20T17:30:00Z"
   # TLE 文件路径（格式：name + line1 + line2）
-  tle_file: "data/tle/starlink_china_24.tle"
+  # global_spread_inc53_24.tle：24 颗 inc=53° 卫星，RAAN 每 15° 均匀分布全球，
+  # 轨道面分散，每颗卫星每 ~97min 轨道周期仅过境中国一次（约5-8分钟窗口），
+  # 与集中在中国上空的旧 TLE 相比，地面站通信机会大幅减少
+  tle_file: "data/tle/global_spread_inc53_66.tle"
   # 地球半径（km），用于可见性判定
   earth_radius_km: 6378.137
   # 双端最小仰角约束（度）
   min_elevation_deg: 0.0
   # 最大通信距离（km）；0 表示不限制
-  max_range_km: 8000
+  max_range_km: 4500
   # 距离衰减尺度（km）；0 表示不按距离衰减带宽
   bandwidth_distance_scale_km: 2000
   # 链路最小带宽（Mbps）
-  bandwidth_mbps_min: 50
+  bandwidth_mbps_min: 20
   # 链路最大带宽（Mbps）
-  bandwidth_mbps_max: 300
+  bandwidth_mbps_max: 120
   # 带宽正弦波周期（步）；<=0 表示固定为最大带宽
-  bandwidth_period: 0
+  bandwidth_period: 120
   # 带宽噪声幅度（Mbps）
-  bandwidth_noise: 5
+  bandwidth_noise: 10
   # 单向链路时延（ms），用于估计与状态导出
   latency_ms: 20
   # 可见性计算进程数；1 为单进程，>1 启用多进程
