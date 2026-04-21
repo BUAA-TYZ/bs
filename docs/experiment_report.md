@@ -249,7 +249,136 @@ sim_steps: 3600   # 5 小时，覆盖约 3 个轨道周期
 | distributed 的内存效率更高 | tile 粒度小，计算完即释放，大幅减少 mem_full 失败 |
 | ground_compute 是强力 baseline | 在带宽充足时甚至优于分布式，是衡量分片真实收益的合理基准 |
 
+---
 
-1. 场景确定
-2. 决定技术 idea
+## Phase 2 — 窗口感知贪心策略（WindowAwareGreedy）
+
+### 设计动机
+
+`GreedyEarliestFinish` 在估算下传等待时间时，对不可见地面站的卫星使用固定 60s 惩罚。
+实际上，卫星的下次过境时间可能在 5~90 分钟之间，固定惩罚会导致错误的调度决策：
+- 对短期内会过境的卫星高估延迟（倾向于不必要地卸载）
+- 对长期不可见的卫星低估延迟（错误地倾向于本地计算）
+
+### 核心改进
+
+利用 `export_state()` 中 `satellites[sat_id]["next_gs_windows"]` 字段（`{gs_id: (starts_in_s, duration_s)}`）：
+
+| 情况 | 旧方案 (GreedyEarliestFinish) | 新方案 (WindowAwareGreedy) |
+|------|-------------------------------|---------------------------|
+| 当前可见地面站 | 0 s | 0 s（不变）|
+| 有预测过境窗口 | 60 s（固定惩罚）| `starts_in_s`（真实等待）|
+| 预测窗口内均无 | 60 s | 5400 s（1.5h 保守值）|
+
+### 文件位置
+
+`sim/scheduler/window_aware.py`
+
+---
+
+## Phase 3 — MARL 调度策略（IPPO + Parameter Sharing）
+
+### 架构设计
+
+**观测空间（89 维，num_gs=2 时）：**
+
+| 区块 | 维度 | 说明 |
+|------|------|------|
+| 自身状态 | 5 | 时间、队列、内存、显存、计算进度 |
+| 地面站窗口（×2 GS） | 8 | 可见性、窗口开始/持续时间、带宽 |
+| 邻居信息（×8 slots） | 48 | ISL 带宽、队列、内存、可见性、最近窗口 |
+| 待调度 tile（×4 slots） | 28 | 大小、计算量、显存需求、等待时间、任务聚合度 |
+
+**动作空间（12 维，离散，per tile slot）：**
+
+| 动作 | 含义 |
+|------|------|
+| 0 | WAIT（不动）|
+| 1 | LOCAL（本地计算）|
+| 2~9 | OFFLOAD 到邻居 slot 0~7（按 ISL 带宽降序）|
+| 10~11 | OFFLOAD 到地面站 gs_0 / gs_1 |
+
+**网络结构（SatActorCritic，~102K 参数）：**
+
+```
+Input (89-dim) →
+  Linear(89, 256) + LayerNorm + GELU →
+  Linear(256, 256) + LayerNorm + GELU →
+┌─────────────────────────────────────┐
+│ Policy head: Linear(256, 4×12)      │ → softmax per tile → action
+│ Value  head: Linear(256, 1)         │ → scalar baseline
+└─────────────────────────────────────┘
+```
+
+所有 66 颗卫星共享同一套权重（Parameter Sharing）。
+
+**训练算法：IPPO（Independent PPO）+ GAE(λ)**
+
+| 超参数 | 推荐值 |
+|--------|--------|
+| Rollout steps | 128 |
+| PPO epochs | 4 |
+| Minibatch size | 256 |
+| Learning rate | 3e-4 |
+| γ（discount） | 0.99 |
+| λ（GAE） | 0.95 |
+| clip_eps | 0.2 |
+| vf_coef | 0.5 |
+| ent_coef | 0.01 |
+
+**Reward 设计：**
+
+| 事件 | 奖励 |
+|------|------|
+| Tile 完成 | +1.0 |
+| 任务完成（所有 tile DONE）| +10.0 |
+| Tile 失败（mem_full/link_down 等）| -2.0 |
+| 每个等待中的 tile | -0.01/step |
+
+### 训练方式
+
+```bash
+# 完整训练（约 8~24 小时，取决于 CPU 性能）
+python train_marl.py \
+  --config examples/config.yaml \
+  --out-dir checkpoints/run01 \
+  --episodes 100 \
+  --rollout-steps 128 \
+  --ppo-epochs 4
+
+# 快速验证（小规模，约 5~30 分钟）
+python train_marl.py \
+  --config examples/config.yaml \
+  --out-dir checkpoints/quick \
+  --episodes 10 \
+  --rollout-steps 64
+
+# 使用 MARL 策略对比
+python run_mode_compare.py \
+  --config examples/config.yaml \
+  --policy marl \
+  --marl-checkpoint checkpoints/run01/best.pt
+```
+
+### 文件位置
+
+| 文件 | 说明 |
+|------|------|
+| `sim/marl/observation.py` | 89 维局部观测向量构建 |
+| `sim/marl/reward.py` | Reward shaping（tile/task/fail/wait）|
+| `sim/marl/actor.py` | SatActorCritic MLP 网络 |
+| `train_marl.py` | IPPO 训练主脚本 |
+| `sim/scheduler/marl_policy.py` | 推理接口（与 Greedy 相同接口）|
+| `checkpoints/best.pt` | 训练最佳权重（需运行训练后生成）|
+
+### 代码重构说明（env.py）
+
+为支持 MARL 训练的高效调用，对原 `sim/env.py`（1069 行）进行了重构：
+
+| 原位置 | 新位置 | 说明 |
+|--------|--------|------|
+| `_apply_actions` / `_advance_*` (distributed 逻辑) | `sim/pipeline/distributed.py` | `DistributedPipeline` 类 |
+| `_start_ground_task_*` / `_advance_ground_*` (ground 逻辑) | `sim/pipeline/ground.py` | `GroundPipeline` 类 |
+| `_refresh_ground_cache` / `_refresh_window_cache` / `_is_ground_visible` | `sim/cache/visibility.py` | `VisibilityCache` 类 |
+| 核心骨架 | `sim/env.py` | 从 1069 行减少到 613 行 |
 
