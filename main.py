@@ -9,22 +9,31 @@ from sim.env import SimulationEnv
 from sim.scheduler.greedy import GreedyEarliestFinish
 from sim.scheduler.load_aware import LoadAwareResourceFit
 from sim.scheduler.random_stub import RandomPolicy
+from sim.scheduler.window_aware import WindowAwareGreedy
 
 
-def make_policy(name: str, seed: int):
+def make_policy(name: str, seed: int, marl_checkpoint: str = ""):
     if name == "greedy":
         return GreedyEarliestFinish()
     if name == "load_aware":
         return LoadAwareResourceFit()
     if name == "random":
         return RandomPolicy(seed=seed)
+    if name == "window_aware":
+        return WindowAwareGreedy()
+    if name == "marl":
+        from sim.scheduler.marl_policy import MARLPolicy
+
+        if not marl_checkpoint:
+            raise ValueError("--marl-checkpoint must be specified for marl policy")
+        return MARLPolicy(checkpoint_path=marl_checkpoint)
     raise ValueError(f"Unknown policy: {name}")
 
 
-def run_once(cfg_path: str, policy_name: str) -> Dict:
+def run_once(cfg_path: str, policy_name: str, marl_checkpoint: str = "") -> Dict:
     cfg = load_config(cfg_path)
     env = SimulationEnv(cfg)
-    policy = make_policy(policy_name, cfg.seed)
+    policy = make_policy(policy_name, cfg.seed, marl_checkpoint=marl_checkpoint)
     decision_interval = max(1, cfg.decision_interval_steps)
     cached_actions = []
 
@@ -43,8 +52,15 @@ def run_once(cfg_path: str, policy_name: str) -> Dict:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", required=True, help="Path to YAML/JSON config")
-    parser.add_argument("--policy", default="greedy", help="greedy|load_aware|random")
+    parser.add_argument(
+        "--policy", default="greedy", help="greedy|load_aware|random|window_aware|marl"
+    )
     parser.add_argument("--output", default="metrics.json")
+    parser.add_argument(
+        "--marl-checkpoint",
+        default="",
+        help="Path to MARL checkpoint (.pt) when --policy=marl",
+    )
     args = parser.parse_args()
 
     summary = run_once(args.config, args.policy)
