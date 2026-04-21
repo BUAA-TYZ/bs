@@ -1,3 +1,21 @@
+"""仿真环境主入口。
+
+SimulationEnv 负责：
+  - 状态管理（卫星、任务、tile、传输、地面站）
+  - 步进控制（step / reset / close）
+  - 状态导出（export_state）
+  - 任务到达与 tile 入队
+  - 失败处理与截止检查
+  - 日志与统计
+
+具体 pipeline 逻辑已委托给：
+  sim.pipeline.distributed.DistributedPipeline
+  sim.pipeline.ground.GroundPipeline
+
+可见性与过境窗口缓存委托给：
+  sim.cache.visibility.VisibilityCache
+"""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -7,17 +25,17 @@ import random
 
 import numpy as np
 
+from sim.cache.visibility import VisibilityCache
 from sim.config import SimConfig
 from sim.entities import (
     Action,
-    ActionType,
     DownlinkTransfer,
     EnvState,
     FailureReason,
-    GroundTileTransfer,
+    GroundStation,
     GroundTaskCompute,
     GroundTaskTransfer,
-    GroundStation,
+    GroundTileTransfer,
     Satellite,
     Task,
     Tile,
@@ -25,16 +43,20 @@ from sim.entities import (
     TileTimestamps,
     Transfer,
 )
-from sim.metrics import Metrics
 from sim.lifecycle import TileLifecycleLogger
-from sim.orbit import build_ground_station, sat_to_ground_geometry
-from sim.topology import TopologyConfig, TopologyModel, link_key
+from sim.marl.reward import RewardConfig, StepEvents, compute_reward, diff_events
+from sim.metrics import Metrics
+from sim.orbit import build_ground_station
+from sim.pipeline.distributed import DistributedPipeline
+from sim.pipeline.ground import GroundPipeline
+from sim.topology import TopologyConfig, TopologyModel
 
 
 @dataclass
 class StepResult:
     time: int
     metrics: Metrics
+    reward: float = 0.0  # MARL reward（合作式，所有 Agent 共享）
 
 
 class SimulationEnv:
@@ -46,8 +68,13 @@ class SimulationEnv:
         self.pipeline_mode = cfg.pipeline_mode
         self.topology_update_steps = max(1, cfg.topology_update_steps)
         self.ground_visibility_update_steps = max(1, cfg.ground_visibility_update_steps)
+
         if self.pipeline_mode not in {"distributed", "ground_compute"}:
-            raise ValueError("pipeline_mode must be one of: distributed, ground_compute")
+            raise ValueError(
+                "pipeline_mode must be one of: distributed, ground_compute"
+            )
+
+        # ── 拓扑 ──────────────────────────────────────────────────────────
         tle_lines = _resolve_tle_lines(cfg.topology)
         topo_cfg = TopologyConfig(
             num_sats=cfg.num_sats,
@@ -57,17 +84,25 @@ class SimulationEnv:
             bandwidth_noise=float(cfg.topology.get("bandwidth_noise", 5.0)),
             latency_ms=float(cfg.topology.get("latency_ms", 20.0)),
             seed=cfg.seed,
-            start_time_utc=str(cfg.topology.get("start_time_utc", "2025-01-01T00:00:00Z")),
+            start_time_utc=str(
+                cfg.topology.get("start_time_utc", "2025-01-01T00:00:00Z")
+            ),
             tle_lines=tle_lines,
             earth_radius_km=float(cfg.topology.get("earth_radius_km", 6378.137)),
             min_elevation_deg=float(cfg.topology.get("min_elevation_deg", 0.0)),
             max_range_km=float(cfg.topology.get("max_range_km", 0.0)),
-            bandwidth_distance_scale_km=float(cfg.topology.get("bandwidth_distance_scale_km", 0.0)),
+            bandwidth_distance_scale_km=float(
+                cfg.topology.get("bandwidth_distance_scale_km", 0.0)
+            ),
             visibility_workers=int(cfg.topology.get("visibility_workers", 1)),
         )
         if not topo_cfg.tle_lines:
-            raise ValueError("Skyfield topology requires non-empty topology.tle_lines or topology.tle_file")
+            raise ValueError(
+                "Skyfield topology requires non-empty topology.tle_lines or topology.tle_file"
+            )
         self.topology = TopologyModel(topo_cfg)
+
+        # ── 实体状态 ──────────────────────────────────────────────────────
         self.satellites: Dict[int, Satellite] = {
             i: Satellite(
                 sat_id=i,
@@ -89,25 +124,51 @@ class SimulationEnv:
         self.ground_task_queued: Dict[int, List[str]] = {}
         self.ground_task_running: Dict[str, GroundTaskCompute] = {}
         self.task_source_mem_gb: Dict[str, float] = {}
+
+        # ── 地面站 ────────────────────────────────────────────────────────
         self.ground_stations = _load_ground_stations(cfg.ground_stations)
         if not self.ground_stations:
-            raise ValueError("At least one ground station is required in config: ground_stations")
+            raise ValueError(
+                "At least one ground station is required in config: ground_stations"
+            )
         self.ground_station_objs = {
-            gs.gs_id: build_ground_station(gs.lat_deg, gs.lon_deg, gs.alt_m) for gs in self.ground_stations.values()
+            gs.gs_id: build_ground_station(gs.lat_deg, gs.lon_deg, gs.alt_m)
+            for gs in self.ground_stations.values()
         }
         self.ground_compute_queue: Dict[str, List[str]] = {
             gs_id: [] for gs_id in self.ground_stations.keys()
         }
         self.ground_tile_queues = {gs_id: [] for gs_id in self.ground_stations.keys()}
+
+        # ── 统计 / 日志 ───────────────────────────────────────────────────
         self.metrics = Metrics()
         self.lifecycle_logger = TileLifecycleLogger(cfg.tile_lifecycle_log)
+
+        # ── 可见性 & 窗口缓存 ─────────────────────────────────────────────
+        gs_window_lookahead_s = float(cfg.topology.get("window_lookahead_s", 1800.0))
+        self.vis_cache = VisibilityCache(
+            num_sats=cfg.num_sats,
+            ground_visibility_update_steps=cfg.ground_visibility_update_steps,
+            gs_window_lookahead_s=gs_window_lookahead_s,
+        )
+
+        # ── 链路缓存 ──────────────────────────────────────────────────────
         self._links_cache_time: Optional[int] = None
         self._links_cache: Dict[str, object] = {}
-        self._ground_cache_time: Optional[int] = None
-        self._ground_geom_cache: Dict[tuple[int, str], tuple[float, float]] = {}
-        self._visible_gs_by_sat: Dict[int, List[str]] = {}
-        self._best_gs_by_sat: Dict[int, Optional[str]] = {}
+
+        # ── 内部辅助状态 ──────────────────────────────────────────────────
         self._computed_waiting_downlink: set[str] = set()
+        self._reward_cfg = RewardConfig()
+        # 任务级反向索引：task_id → tile_id 列表
+        self._task_tile_index: Dict[str, List[str]] = {}
+
+        # ── Pipeline 委托对象 ─────────────────────────────────────────────
+        self._dist_pipeline = DistributedPipeline(self)
+        self._ground_pipeline = GroundPipeline(self)
+
+    # ------------------------------------------------------------------ #
+    # 生命周期                                                              #
+    # ------------------------------------------------------------------ #
 
     def reset(self) -> None:
         self.close()
@@ -116,34 +177,68 @@ class SimulationEnv:
     def close(self) -> None:
         self.lifecycle_logger.close()
 
+    # ------------------------------------------------------------------ #
+    # 主步进                                                               #
+    # ------------------------------------------------------------------ #
+
     def step(self, actions: List[Action]) -> StepResult:
         t = self.time
         links = self._get_links(t)
-        self._refresh_ground_cache(t)
+        self.vis_cache.refresh(
+            t,
+            self.topology.sat_recs,
+            self.topology.t0,
+            self.ground_station_objs,
+            self.ground_stations,
+        )
 
-        # 每步：任务到达 -> 调度决策/地算流程 -> 统计
+        # reward 快照
+        tiles_done_before = self.metrics.completed_tiles
+        tasks_done_before = self.metrics.completed_tasks
+        failures_before = dict(self.metrics.failure_reasons)
+
         self._task_arrivals(t)
+
         if self.pipeline_mode == "distributed":
-            self._apply_actions(actions, links)
-            self._advance_transfers(links)
-            self._advance_ground_tile_transfers()
-            self._advance_compute()
-            self._advance_ground_tile_compute()
-            self._start_downlinks()
-            self._advance_downlinks()
+            self._dist_pipeline.run(actions, links)
         else:
-            self._start_ground_task_uploads()
-            self._advance_ground_task_uploads()
-            self._advance_ground_task_compute()
+            self._ground_pipeline.run()
+
         self._deadline_check()
         self._update_stats(links)
 
+        # reward 计算
+        num_waiting = sum(
+            1 for tile in self.tiles.values() if tile.state.value in ("QUEUED", "READY")
+        )
+        events = diff_events(
+            tiles_done_before,
+            tasks_done_before,
+            failures_before,
+            self.metrics.completed_tiles,
+            self.metrics.completed_tasks,
+            dict(self.metrics.failure_reasons),
+            num_waiting,
+        )
+        reward = compute_reward(events, self._reward_cfg)
+
         self.time += 1
-        return StepResult(time=t, metrics=self.metrics)
+        return StepResult(time=t, metrics=self.metrics, reward=reward)
+
+    # ------------------------------------------------------------------ #
+    # 状态导出                                                              #
+    # ------------------------------------------------------------------ #
 
     def export_state(self) -> EnvState:
         links = self._get_links(self.time)
-        self._refresh_ground_cache(self.time)
+        self.vis_cache.refresh(
+            self.time,
+            self.topology.sat_recs,
+            self.topology.t0,
+            self.ground_station_objs,
+            self.ground_stations,
+        )
+
         neighbors: Dict[int, List[int]] = {i: [] for i in range(self.cfg.num_sats)}
         link_view: Dict[str, Dict] = {}
         for k, lk in links.items():
@@ -158,11 +253,20 @@ class SimulationEnv:
 
         sat_view: Dict[int, Dict] = {}
         for sat_id, sat in self.satellites.items():
+            executing_remaining = 0.0
+            if sat.executing is not None:
+                exec_tile = self.tiles.get(sat.executing)
+                if exec_tile is not None and exec_tile.compute_cost > 0:
+                    executing_remaining = (
+                        exec_tile.remaining_compute or 0.0
+                    ) / exec_tile.compute_cost
             sat_view[sat_id] = {
                 "queue_len": len(sat.queue),
                 "compute_rate": sat.compute_rate,
                 "mem_remaining_gb": sat.mem_capacity_gb - sat.mem_used_gb,
                 "vram_remaining_gb": sat.vram_capacity_gb - sat.vram_used_gb,
+                "executing_remaining": executing_remaining,
+                "next_gs_windows": self.vis_cache.window_cache.get(sat_id, {}),
             }
 
         gs_view: Dict[str, Dict] = {}
@@ -175,18 +279,32 @@ class SimulationEnv:
                 "min_elevation_deg": gs.min_elevation_deg,
             }
 
-        ground_options: Dict[int, List[Dict]] = {i: [] for i in range(self.cfg.num_sats)}
+        ground_options: Dict[int, List[Dict]] = {
+            i: [] for i in range(self.cfg.num_sats)
+        }
         for sat_id in range(self.cfg.num_sats):
-            for gs_id in self._visible_gs_by_sat.get(sat_id, []):
+            for gs_id in self.vis_cache.visible_gs_by_sat.get(sat_id, []):
                 gs = self.ground_stations[gs_id]
-                ground_options[sat_id].append({"gs_id": gs_id, "bandwidth_mbps": gs.bandwidth_mbps})
+                ground_options[sat_id].append(
+                    {"gs_id": gs_id, "bandwidth_mbps": gs.bandwidth_mbps}
+                )
 
         tile_view: Dict[str, Dict] = {}
         in_transfer = {tr.tile_id for tr in self.transfers}
-        # 调度器只需要待调度的 tile，避免每步导出海量已完成状态。
         for tile_id, tile in self.tiles.items():
             if tile.state not in (TileState.QUEUED, TileState.READY):
                 continue
+            sibling_locations: Dict[int, int] = {}
+            for sibling_id in self._task_tile_index.get(tile.parent_task_id, []):
+                if sibling_id == tile_id:
+                    continue
+                sibling = self.tiles.get(sibling_id)
+                if sibling is not None and sibling.state not in (
+                    TileState.DONE,
+                    TileState.FAILED,
+                ):
+                    loc = sibling.location
+                    sibling_locations[loc] = sibling_locations.get(loc, 0) + 1
             tile_view[tile_id] = {
                 "state": tile.state.value,
                 "location": tile.location,
@@ -195,6 +313,11 @@ class SimulationEnv:
                 "compute_cost": tile.compute_cost,
                 "vram_req_gb": tile.vram_req_gb,
                 "in_transfer": tile_id in in_transfer,
+                "parent_task_id": tile.parent_task_id,
+                "waiting_time": self.time - tile.timestamps.created,
+                "result_size_mb": self.cfg.result_size_mb,
+                "sibling_locations": sibling_locations,
+                "task_pending_count": len(sibling_locations) + 1,
             }
 
         return EnvState(
@@ -207,17 +330,28 @@ class SimulationEnv:
             tiles=tile_view,
             config={
                 "dt": self.cfg.dt,
+                "num_sats": self.cfg.num_sats,
+                "num_tiles": self.cfg.num_tiles,
+                "result_size_mb": self.cfg.result_size_mb,
+                "mem_capacity_gb": self.cfg.mem_capacity_gb,
+                "vram_capacity_gb": self.cfg.vram_capacity_gb,
+                "gs_window_lookahead_s": self.vis_cache.lookahead_s,
             },
         )
 
+    # ------------------------------------------------------------------ #
+    # 任务到达 & tile 入队                                                  #
+    # ------------------------------------------------------------------ #
+
     def _task_arrivals(self, t: int) -> None:
         lam = self.cfg.task_arrival_rate
-        # 泊松到达
         num_tasks = int(self.rng.poisson(lam)) if lam > 0 else 0
         for _ in range(num_tasks):
             task_id = f"task_{len(self.tasks)}"
             src = self.py_rng.randrange(self.cfg.num_sats)
-            deadline = t + self.cfg.deadline_steps if self.cfg.deadline_steps > 0 else None
+            deadline = (
+                t + self.cfg.deadline_steps if self.cfg.deadline_steps > 0 else None
+            )
             task = Task(
                 task_id=task_id,
                 source_sat_id=src,
@@ -232,7 +366,6 @@ class SimulationEnv:
             created_tiles: List[Tile] = []
             for k in range(self.cfg.num_tiles):
                 tile_id = f"{task_id}_tile_{k}"
-                # tile 大小加入轻微噪声，模拟成像差异
                 size_mb = max(1.0, tile_size * (1.0 + self.rng.normal(0.0, 0.02)))
                 vram_req = self.cfg.vram_base_gb + self.cfg.vram_alpha_per_mb * size_mb
                 tile = Tile(
@@ -248,6 +381,7 @@ class SimulationEnv:
                 )
                 self.tiles[tile_id] = tile
                 task.tile_ids.append(tile_id)
+                self._task_tile_index.setdefault(task.task_id, []).append(tile_id)
                 self.metrics.total_tiles += 1
                 self._log_tile_event(tile, "created", sat_from=None, sat_to=src)
                 created_tiles.append(tile)
@@ -256,21 +390,7 @@ class SimulationEnv:
                 for tile in created_tiles:
                     self._enqueue_tile(src, tile)
             else:
-                self._enqueue_ground_task(task, created_tiles)
-
-    def _enqueue_ground_task(self, task: Task, tiles: List[Tile]) -> None:
-        src_sat = self.satellites[task.source_sat_id]
-        required_gb = task.image_size_mb / 1024.0
-        if src_sat.mem_used_gb + required_gb > src_sat.mem_capacity_gb:
-            for tile in tiles:
-                self._fail_tile(tile, FailureReason.MEM_FULL)
-            return
-        src_sat.mem_used_gb += required_gb
-        self.task_source_mem_gb[task.task_id] = required_gb
-        for tile in tiles:
-            tile.state = TileState.QUEUED
-            self._log_tile_event(tile, "queued", sat_from=None, sat_to=task.source_sat_id)
-        self.ground_task_queued.setdefault(task.source_sat_id, []).append(task.task_id)
+                self._ground_pipeline.enqueue_ground_task(task, created_tiles)
 
     def _enqueue_tile(self, sat_id: int, tile: Tile) -> None:
         sat = self.satellites[sat_id]
@@ -283,412 +403,24 @@ class SimulationEnv:
         sat.queue.append(tile.tile_id)
         self._log_tile_event(tile, "queued", sat_from=None, sat_to=sat_id)
 
-    def _apply_actions(self, actions: List[Action], links: Dict[str, object]) -> None:
-        action_map = {a.tile_id: a for a in actions}
-        transfer_tile_ids = {tr.tile_id for tr in self.transfers}
-        transfer_tile_ids.update(tr.tile_id for tr in self.ground_tile_transfers)
-        for tile_id, action in action_map.items():
-            tile = self.tiles.get(tile_id)
-            if tile is None or tile.state not in (TileState.QUEUED, TileState.READY):
-                continue
-            if tile_id in transfer_tile_ids:
-                continue
-            if action.action_type == ActionType.WAIT:
-                continue
-            if action.action_type == ActionType.LOCAL:
-                # 本地计算，直接标记 READY
-                tile.state = TileState.READY
-                self._log_tile_event(tile, "local_ready", sat_from=tile.location, sat_to=tile.location)
-                continue
-            if action.action_type == ActionType.OFFLOAD:
-                if action.target_gs_id is not None:
-                    gs = self.ground_stations.get(action.target_gs_id)
-                    if gs is None:
-                        self._fail_tile(tile, FailureReason.NO_ROUTE)
-                        continue
-                    if not self._is_ground_visible(tile.location, gs.gs_id):
-                        self._fail_tile(tile, FailureReason.LINK_DOWN)
-                        continue
-                    tr = GroundTileTransfer(
-                        tile_id=tile.tile_id,
-                        src_sat=tile.location,
-                        gs_id=gs.gs_id,
-                        remaining_mb=tile.data_size_mb,
-                        start_time=self.time,
-                    )
-                    tile.state = TileState.TRANSFERRING
-                    tile.timestamps.start_tx = self.time
-                    src_sat = self.satellites[tile.location]
-                    if tile.tile_id in src_sat.queue:
-                        src_sat.queue.remove(tile.tile_id)
-                    self.ground_tile_transfers.append(tr)
-                    self._log_tile_event(
-                        tile,
-                        "tx_start_ground",
-                        sat_from=tr.src_sat,
-                        sat_to=tr.gs_id,
-                        extra={"remaining_mb": tr.remaining_mb},
-                    )
-                    continue
-                if action.target_sat_id is None:
-                    continue
-                if action.target_sat_id == tile.location:
-                    tile.state = TileState.READY
-                    continue
-                lk = links.get(link_key(tile.location, action.target_sat_id))
-                if not lk:
-                    self._fail_tile(tile, FailureReason.NO_ROUTE)
-                    continue
-                if not lk.up:
-                    self._fail_tile(tile, FailureReason.LINK_DOWN)
-                    continue
-                dst = self.satellites[action.target_sat_id]
-                needed_gb = tile.data_size_mb / 1024.0
-                if dst.mem_used_gb + needed_gb > dst.mem_capacity_gb:
-                    self._fail_tile(tile, FailureReason.MEM_FULL)
-                    continue
-                # 预留目标存储，避免并发时超配
-                dst.mem_used_gb += needed_gb
-                transfer = Transfer(
-                    tile_id=tile_id,
-                    src=tile.location,
-                    dst=action.target_sat_id,
-                    remaining_mb=tile.data_size_mb,
-                    start_time=self.time,
-                    link_key=link_key(tile.location, action.target_sat_id),
-                )
-                tile.state = TileState.TRANSFERRING
-                tile.timestamps.start_tx = self.time
-                src_sat = self.satellites[tile.location]
-                if tile.tile_id in src_sat.queue:
-                    src_sat.queue.remove(tile.tile_id)
-                self.transfers.append(transfer)
-                self._log_tile_event(
-                    tile,
-                    "tx_start",
-                    sat_from=transfer.src,
-                    sat_to=transfer.dst,
-                    extra={"remaining_mb": transfer.remaining_mb},
-                )
-
-    def _advance_transfers(self, links: Dict[str, object]) -> None:
-        still_transfers: List[Transfer] = []
-        for tr in self.transfers:
-            lk = links.get(tr.link_key)
-            if not lk or not lk.up:
-                if self.cfg.transfer_fail_on_link_down:
-                    tile = self.tiles[tr.tile_id]
-                    dst_sat = self.satellites[tr.dst]
-                    size_gb = tile.data_size_mb / 1024.0
-                    dst_sat.mem_used_gb = max(0.0, dst_sat.mem_used_gb - size_gb)
-                    self._fail_tile(tile, FailureReason.LINK_DOWN)
-                else:
-                    still_transfers.append(tr)
-                continue
-            rate_mb_s = lk.bandwidth_mbps / 8.0
-            sent = rate_mb_s * self.cfg.dt
-            tr.remaining_mb -= sent
-            if tr.remaining_mb <= 1e-6:
-                tile = self.tiles[tr.tile_id]
-                src_sat = self.satellites[tr.src]
-                dst_sat = self.satellites[tr.dst]
-                size_gb = tile.data_size_mb / 1024.0
-                src_sat.mem_used_gb = max(0.0, src_sat.mem_used_gb - size_gb)
-                tile.location = tr.dst
-                tile.state = TileState.READY
-                tile.timestamps.end_tx = self.time
-                dst_sat.queue.append(tile.tile_id)
-                self._log_tile_event(tile, "tx_end", sat_from=tr.src, sat_to=tr.dst)
-                self._log_tile_event(tile, "queued", sat_from=tr.src, sat_to=tr.dst)
-            else:
-                still_transfers.append(tr)
-        self.transfers = still_transfers
-
-    def _advance_compute(self) -> None:
-        for sat_id, sat in self.satellites.items():
-            if sat.executing is None:
-                # pick first ready tile
-                next_tile_id = None
-                for tid in list(sat.queue):
-                    tile = self.tiles[tid]
-                    if tile.state == TileState.READY and tile.location == sat_id:
-                        next_tile_id = tid
-                        break
-                if next_tile_id is not None:
-                    tile = self.tiles[next_tile_id]
-                    if sat.vram_used_gb + tile.vram_req_gb > sat.vram_capacity_gb:
-                        if self.cfg.vram_policy == "reject":
-                            sat.queue.remove(next_tile_id)
-                            self._fail_tile(tile, FailureReason.VRAM_OOM)
-                        # vram_policy=wait 时保持在队列中等待
-                        continue
-                    sat.queue.remove(next_tile_id)
-                    tile.state = TileState.RUNNING
-                    tile.timestamps.start_compute = self.time
-                    tile.remaining_compute = tile.compute_cost / sat.compute_rate
-                    sat.executing = next_tile_id
-                    sat.vram_used_gb += tile.vram_req_gb
-                    # Capture peak immediately, otherwise same-step completion may hide usage.
-                    self.metrics.update_vram_peak(sat_id, sat.vram_used_gb)
-                    self._log_tile_event(tile, "compute_start", sat_from=sat_id, sat_to=sat_id)
-
-            if sat.executing is not None:
-                tile = self.tiles[sat.executing]
-                tile.remaining_compute = max(0.0, float(tile.remaining_compute) - self.cfg.dt)
-                if tile.remaining_compute <= 1e-6:
-                    tile.state = TileState.COMPUTED
-                    tile.timestamps.end_compute = self.time
-                    self._computed_waiting_downlink.add(tile.tile_id)
-                    sat.executing = None
-                    sat.vram_used_gb = max(0.0, sat.vram_used_gb - tile.vram_req_gb)
-                    size_gb = tile.data_size_mb / 1024.0
-                    sat.mem_used_gb = max(0.0, sat.mem_used_gb - size_gb)
-                    self._log_tile_event(tile, "computed", sat_from=sat_id, sat_to=sat_id)
-
-    def _advance_ground_tile_transfers(self) -> None:
-        still: List[GroundTileTransfer] = []
-        for tr in self.ground_tile_transfers:
-            tile = self.tiles[tr.tile_id]
-            gs = self.ground_stations.get(tr.gs_id)
-            if gs is None:
-                still.append(tr)
-                continue
-            if not self._is_ground_visible(tr.src_sat, tr.gs_id):
-                still.append(tr)
-                continue
-            sent = (gs.bandwidth_mbps / 8.0) * self.cfg.dt
-            tr.remaining_mb -= sent
-            if tr.remaining_mb <= 1e-6:
-                src_sat = self.satellites[tr.src_sat]
-                size_gb = tile.data_size_mb / 1024.0
-                src_sat.mem_used_gb = max(0.0, src_sat.mem_used_gb - size_gb)
-                tile.state = TileState.GROUND_QUEUED
-                tile.timestamps.end_tx = self.time
-                self.ground_tile_queues[tr.gs_id].append(tile.tile_id)
-                self._log_tile_event(tile, "tx_end_ground", sat_from=tr.src_sat, sat_to=tr.gs_id)
-            else:
-                still.append(tr)
-        self.ground_tile_transfers = still
-
-    def _advance_ground_tile_compute(self) -> None:
-        for gs_id, gs in self.ground_stations.items():
-            if gs_id not in self.ground_tile_running:
-                queue = self.ground_tile_queues.get(gs_id, [])
-                if queue:
-                    tid = queue.pop(0)
-                    tile = self.tiles[tid]
-                    tile.state = TileState.GROUND_RUNNING
-                    tile.remaining_compute = tile.compute_cost / max(1e-9, gs.compute_rate)
-                    self.ground_tile_running[gs_id] = tid
-                    self._log_tile_event(tile, "ground_compute_start", sat_from=tile.location, sat_to=gs_id)
-
-            if gs_id in self.ground_tile_running:
-                tid = self.ground_tile_running[gs_id]
-                tile = self.tiles[tid]
-                tile.remaining_compute = max(0.0, float(tile.remaining_compute) - self.cfg.dt)
-                if tile.remaining_compute <= 1e-6:
-                    tile.state = TileState.DONE
-                    tile.timestamps.end_compute = self.time
-                    tile.timestamps.end_downlink = self.time
-                    self.metrics.record_tile_latency((tile.timestamps.end_downlink or self.time) - tile.timestamps.created)
-                    self._log_tile_event(tile, "ground_compute_end", sat_from=tile.location, sat_to=gs_id)
-                    self._log_tile_event(tile, "done", sat_from=tile.location, sat_to=gs_id)
-                    self._check_task_done(tile.parent_task_id)
-                    self.ground_tile_running.pop(gs_id, None)
-
-    def _start_ground_task_uploads(self) -> None:
-        for sat_id, task_ids in self.ground_task_queued.items():
-            if not task_ids:
-                continue
-            gs = self._select_ground_station(sat_id)
-            if gs is None:
-                continue
-            still_waiting: List[str] = []
-            for task_id in task_ids:
-                if not self._task_has_pending_tiles(task_id):
-                    continue
-                if task_id in self.ground_task_transfering:
-                    still_waiting.append(task_id)
-                    continue
-                task = self.tasks[task_id]
-                tr = GroundTaskTransfer(
-                    task_id=task_id,
-                    src_sat=sat_id,
-                    gs_id=gs.gs_id,
-                    remaining_mb=task.image_size_mb,
-                    start_time=self.time,
-                )
-                self.ground_task_transfers.append(tr)
-                self.ground_task_transfering.add(task_id)
-                self._log_task_event(task_id, "ground_upload_start", sat_from=sat_id, sat_to=gs.gs_id)
-            self.ground_task_queued[sat_id] = still_waiting
-
-    def _advance_ground_task_uploads(self) -> None:
-        still: List[GroundTaskTransfer] = []
-        for tr in self.ground_task_transfers:
-            gs = self.ground_stations.get(tr.gs_id)
-            if gs is None:
-                still.append(tr)
-                continue
-            if not self._is_ground_visible(tr.src_sat, tr.gs_id):
-                still.append(tr)
-                continue
-            sent = (gs.bandwidth_mbps / 8.0) * self.cfg.dt
-            tr.remaining_mb -= sent
-            if tr.remaining_mb <= 1e-6:
-                self.ground_task_transfering.discard(tr.task_id)
-                src_mem = self.task_source_mem_gb.pop(tr.task_id, 0.0)
-                src_sat = self.satellites[tr.src_sat]
-                src_sat.mem_used_gb = max(0.0, src_sat.mem_used_gb - src_mem)
-                self.ground_task_queued.setdefault(tr.src_sat, [])
-                self.ground_task_queued[tr.src_sat] = [
-                    tid for tid in self.ground_task_queued[tr.src_sat] if tid != tr.task_id
-                ]
-                self._enqueue_ground_task_compute(tr.task_id, tr.gs_id)
-                self._log_task_event(tr.task_id, "ground_upload_end", sat_from=tr.src_sat, sat_to=tr.gs_id)
-            else:
-                still.append(tr)
-        self.ground_task_transfers = still
-
-    def _enqueue_ground_task_compute(self, task_id: str, gs_id: str) -> None:
-        if not self._task_has_pending_tiles(task_id):
-            return
-        self.ground_compute_queue.setdefault(gs_id, []).append(task_id)
-
-    def _advance_ground_task_compute(self) -> None:
-        # Dispatch idle ground stations.
-        for gs_id, gs in self.ground_stations.items():
-            if gs_id in self.ground_task_running:
-                continue
-            queue = self.ground_compute_queue.setdefault(gs_id, [])
-            if not queue:
-                continue
-            picked_task = queue.pop(0)
-            if not self._task_has_pending_tiles(picked_task):
-                continue
-            task = self.tasks[picked_task]
-            total_compute = self.cfg.compute_cost_per_tile * task.num_tiles
-            remaining = total_compute / max(1e-9, gs.compute_rate)
-            self.ground_task_running[gs_id] = GroundTaskCompute(
-                task_id=picked_task,
-                gs_id=gs_id,
-                remaining_compute=remaining,
-                start_time=self.time,
-            )
-            self._log_task_event(picked_task, "ground_compute_start", sat_from=gs_id, sat_to=gs_id)
-
-        # Advance running computations.
-        done_gs: List[str] = []
-        for gs_id, comp in self.ground_task_running.items():
-            comp.remaining_compute = max(0.0, comp.remaining_compute - self.cfg.dt)
-            if comp.remaining_compute > 1e-6:
-                continue
-            task = self.tasks[comp.task_id]
-            for tid in task.tile_ids:
-                tile = self.tiles[tid]
-                tile.state = TileState.DONE
-                tile.timestamps.end_compute = self.time
-                self.metrics.record_tile_latency((tile.timestamps.end_compute or self.time) - tile.timestamps.created)
-                self._log_tile_event(tile, "done", sat_from=task.source_sat_id, sat_to=comp.gs_id)
-            self._check_task_done(comp.task_id)
-            self._log_task_event(comp.task_id, "ground_compute_end", sat_from=comp.gs_id, sat_to=comp.gs_id)
-            done_gs.append(gs_id)
-        for gs_id in done_gs:
-            self.ground_task_running.pop(gs_id, None)
-
-    def _task_has_pending_tiles(self, task_id: str) -> bool:
-        task = self.tasks[task_id]
-        for tid in task.tile_ids:
-            if self.tiles[tid].state not in (TileState.DONE, TileState.FAILED):
-                return True
-        return False
-
-    def _start_downlinks(self) -> None:
-        downlinking = {tr.tile_id for tr in self.downlink_transfers}
-        for tile_id in list(self._computed_waiting_downlink):
-            tile = self.tiles.get(tile_id)
-            if tile is None or tile.state != TileState.COMPUTED:
-                self._computed_waiting_downlink.discard(tile_id)
-                continue
-            if tile.tile_id in downlinking:
-                continue
-            gs = self._select_ground_station(tile.location)
-            if gs is None:
-                continue
-            tr = DownlinkTransfer(
-                tile_id=tile.tile_id,
-                src_sat=tile.location,
-                gs_id=gs.gs_id,
-                remaining_mb=self.cfg.result_size_mb,
-                start_time=self.time,
-            )
-            tile.state = TileState.DOWNLINKING
-            tile.timestamps.start_downlink = self.time
-            self.downlink_transfers.append(tr)
-            self._computed_waiting_downlink.discard(tile.tile_id)
-            self._log_tile_event(
-                tile,
-                "downlink_start",
-                sat_from=tile.location,
-                sat_to=gs.gs_id,
-                extra={"remaining_mb": tr.remaining_mb},
-            )
-
-    def _advance_downlinks(self) -> None:
-        still: List[DownlinkTransfer] = []
-        for tr in self.downlink_transfers:
-            tile = self.tiles[tr.tile_id]
-            gs = self.ground_stations.get(tr.gs_id)
-            if gs is None:
-                still.append(tr)
-                continue
-            if not self._is_ground_visible(tr.src_sat, tr.gs_id):
-                still.append(tr)
-                continue
-            sent = (gs.bandwidth_mbps / 8.0) * self.cfg.dt
-            tr.remaining_mb -= sent
-            if tr.remaining_mb <= 1e-6:
-                tile.state = TileState.DONE
-                tile.timestamps.end_downlink = self.time
-                self.metrics.record_tile_latency(tile.timestamps.end_downlink - tile.timestamps.created)
-                self._log_tile_event(tile, "downlink_end", sat_from=tr.src_sat, sat_to=tr.gs_id)
-                self._log_tile_event(tile, "done", sat_from=tr.src_sat, sat_to=tr.gs_id)
-                self._check_task_done(tile.parent_task_id)
-            else:
-                still.append(tr)
-        self.downlink_transfers = still
-
-    def _check_task_done(self, task_id: str) -> None:
-        task = self.tasks[task_id]
-        for tid in task.tile_ids:
-            if self.tiles[tid].state != TileState.DONE:
-                return
-        if self.pipeline_mode == "distributed":
-            end_time = max(self.tiles[tid].timestamps.end_downlink or 0 for tid in task.tile_ids)
-        else:
-            end_time = max(self.tiles[tid].timestamps.end_compute or 0 for tid in task.tile_ids)
-        self.metrics.record_task_latency(end_time - task.release_time)
-
-    def _update_stats(self, links: Dict[str, object]) -> None:
-        for sat_id, sat in self.satellites.items():
-            self.metrics.update_queue_stats(sat_id, len(sat.queue))
-            if sat.executing is not None:
-                self.metrics.update_compute_busy(sat_id, self.cfg.dt)
-            self.metrics.update_mem_peak(sat_id, sat.mem_used_gb)
-            self.metrics.update_vram_peak(sat_id, sat.vram_used_gb)
-        self.metrics.finalize_step()
+    # ------------------------------------------------------------------ #
+    # 失败处理                                                              #
+    # ------------------------------------------------------------------ #
 
     def _fail_tile(self, tile: Tile, reason: FailureReason) -> None:
         sat_before = tile.location
         self._computed_waiting_downlink.discard(tile.tile_id)
-        self.downlink_transfers = [tr for tr in self.downlink_transfers if tr.tile_id != tile.tile_id]
-        self.ground_tile_transfers = [tr for tr in self.ground_tile_transfers if tr.tile_id != tile.tile_id]
+        self.downlink_transfers = [
+            tr for tr in self.downlink_transfers if tr.tile_id != tile.tile_id
+        ]
+        self.ground_tile_transfers = [
+            tr for tr in self.ground_tile_transfers if tr.tile_id != tile.tile_id
+        ]
         for gs_id, tid in list(self.ground_tile_running.items()):
             if tid == tile.tile_id:
                 self.ground_tile_running.pop(gs_id, None)
         for gs_id, q in self.ground_tile_queues.items():
             self.ground_tile_queues[gs_id] = [tid for tid in q if tid != tile.tile_id]
-        # If in transfer, release destination reservation and remove transfer entry
         for tr in list(self.transfers):
             if tr.tile_id == tile.tile_id:
                 dst_sat = self.satellites.get(tr.dst)
@@ -717,6 +449,10 @@ class SimulationEnv:
             extra={"reason": reason.value},
         )
 
+    # ------------------------------------------------------------------ #
+    # 截止检查 & 统计                                                        #
+    # ------------------------------------------------------------------ #
+
     def _deadline_check(self) -> None:
         if self.cfg.deadline_steps <= 0:
             return
@@ -726,12 +462,46 @@ class SimulationEnv:
             if tile.deadline is not None and self.time > tile.deadline:
                 self._fail_tile(tile, FailureReason.DEADLINE_MISS)
 
+    def _update_stats(self, links: Dict[str, object]) -> None:
+        for sat_id, sat in self.satellites.items():
+            self.metrics.update_queue_stats(sat_id, len(sat.queue))
+            if sat.executing is not None:
+                self.metrics.update_compute_busy(sat_id, self.cfg.dt)
+            self.metrics.update_mem_peak(sat_id, sat.mem_used_gb)
+            self.metrics.update_vram_peak(sat_id, sat.vram_used_gb)
+        self.metrics.finalize_step()
+
+    def _check_task_done(self, task_id: str) -> None:
+        task = self.tasks[task_id]
+        for tid in task.tile_ids:
+            if self.tiles[tid].state != TileState.DONE:
+                return
+        if self.pipeline_mode == "distributed":
+            end_time = max(
+                self.tiles[tid].timestamps.end_downlink or 0 for tid in task.tile_ids
+            )
+        else:
+            end_time = max(
+                self.tiles[tid].timestamps.end_compute or 0 for tid in task.tile_ids
+            )
+        self.metrics.record_task_latency(end_time - task.release_time)
+
+    # ------------------------------------------------------------------ #
+    # 辅助                                                                  #
+    # ------------------------------------------------------------------ #
+
     def _get_links(self, t: int) -> Dict[str, object]:
         sampled_t = (t // self.topology_update_steps) * self.topology_update_steps
         if self._links_cache_time != sampled_t:
             self._links_cache = self.topology.snapshot(sampled_t)
             self._links_cache_time = sampled_t
         return self._links_cache
+
+    def _select_ground_station(self, sat_id: int) -> Optional[GroundStation]:
+        best_gs_id = self.vis_cache.best_gs_by_sat.get(sat_id)
+        if best_gs_id is None:
+            return None
+        return self.ground_stations.get(best_gs_id)
 
     def _log_tile_event(
         self,
@@ -779,50 +549,10 @@ class SimulationEnv:
             record.update(extra)
         self.lifecycle_logger.log(record)
 
-    def _select_ground_station(self, sat_id: int) -> Optional[GroundStation]:
-        best_gs_id = self._best_gs_by_sat.get(sat_id)
-        if best_gs_id is None:
-            return None
-        return self.ground_stations.get(best_gs_id)
 
-    def _refresh_ground_cache(self, t: int) -> None:
-        sampled_t = (t // self.ground_visibility_update_steps) * self.ground_visibility_update_steps
-        if self._ground_cache_time == sampled_t:
-            return
-        self._ground_cache_time = sampled_t
-        self._ground_geom_cache = {}
-        self._visible_gs_by_sat = {i: [] for i in range(self.cfg.num_sats)}
-        self._best_gs_by_sat = {}
-
-        for sat_id in range(self.cfg.num_sats):
-            best_gs_id: Optional[str] = None
-            best_bw = -1.0
-            sat = self.topology.sat_recs[sat_id]
-            for gs_id, gs in self.ground_stations.items():
-                elev_deg, dist_km = sat_to_ground_geometry(
-                    sat=sat,
-                    ground_station=self.ground_station_objs[gs_id],
-                    t0=self.topology.t0,
-                    t_seconds=sampled_t,
-                )
-                self._ground_geom_cache[(sat_id, gs_id)] = (elev_deg, dist_km)
-                if elev_deg < gs.min_elevation_deg:
-                    continue
-                self._visible_gs_by_sat[sat_id].append(gs_id)
-                if gs.bandwidth_mbps > best_bw:
-                    best_bw = gs.bandwidth_mbps
-                    best_gs_id = gs_id
-            self._best_gs_by_sat[sat_id] = best_gs_id
-
-    def _is_ground_visible(self, sat_id: int, gs_id: str) -> bool:
-        geom = self._ground_geom_cache.get((sat_id, gs_id))
-        if geom is None:
-            return False
-        gs = self.ground_stations.get(gs_id)
-        if gs is None:
-            return False
-        elev_deg, _ = geom
-        return elev_deg >= gs.min_elevation_deg
+# ────────────────────────────────────────────────────────────────────── #
+# 模块级辅助函数                                                           #
+# ────────────────────────────────────────────────────────────────────── #
 
 
 def _resolve_tle_lines(topology_cfg: Dict[str, object]) -> List[tuple[str, str]]:
@@ -835,16 +565,26 @@ def _resolve_tle_lines(topology_cfg: Dict[str, object]) -> List[tuple[str, str]]
     path = Path(str(tle_file)).expanduser()
     if not path.exists():
         raise FileNotFoundError(f"TLE file not found: {path}")
-    text_lines = [ln.strip() for ln in path.read_text(encoding="utf-8").splitlines() if ln.strip()]
+    text_lines = [
+        ln.strip() for ln in path.read_text(encoding="utf-8").splitlines() if ln.strip()
+    ]
     pairs: List[tuple[str, str]] = []
     idx = 0
     while idx < len(text_lines):
         line = text_lines[idx]
-        if line.startswith("1 ") and idx + 1 < len(text_lines) and text_lines[idx + 1].startswith("2 "):
+        if (
+            line.startswith("1 ")
+            and idx + 1 < len(text_lines)
+            and text_lines[idx + 1].startswith("2 ")
+        ):
             pairs.append((line, text_lines[idx + 1]))
             idx += 2
             continue
-        if idx + 2 < len(text_lines) and text_lines[idx + 1].startswith("1 ") and text_lines[idx + 2].startswith("2 "):
+        if (
+            idx + 2 < len(text_lines)
+            and text_lines[idx + 1].startswith("1 ")
+            and text_lines[idx + 2].startswith("2 ")
+        ):
             pairs.append((text_lines[idx + 1], text_lines[idx + 2]))
             idx += 3
             continue
@@ -854,7 +594,9 @@ def _resolve_tle_lines(topology_cfg: Dict[str, object]) -> List[tuple[str, str]]
     return pairs
 
 
-def _load_ground_stations(raw_ground_stations: List[Dict[str, object]]) -> Dict[str, GroundStation]:
+def _load_ground_stations(
+    raw_ground_stations: List[Dict[str, object]],
+) -> Dict[str, GroundStation]:
     stations: Dict[str, GroundStation] = {}
     for idx, item in enumerate(raw_ground_stations):
         gs_id = str(item.get("id", f"gs_{idx}"))
