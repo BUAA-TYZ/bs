@@ -4,6 +4,8 @@ import argparse
 import json
 from typing import Dict
 
+from tqdm import tqdm
+
 from sim.config import load_config
 from sim.env import SimulationEnv
 from sim.scheduler.greedy import GreedyEarliestFinish
@@ -37,12 +39,16 @@ def run_once(cfg_path: str, policy_name: str, marl_checkpoint: str = "") -> Dict
     decision_interval = max(1, cfg.decision_interval_steps)
     cached_actions = []
 
+    total_sim_s = cfg.sim_steps * cfg.dt
     try:
-        for step_idx in range(cfg.sim_steps):
-            if step_idx % decision_interval == 0:
-                state = env.export_state()
-                cached_actions = policy.select_actions(state)
-            env.step(cached_actions)
+        with tqdm(total=cfg.sim_steps, unit="step", desc=policy_name) as pbar:
+            for step_idx in range(cfg.sim_steps):
+                if step_idx % decision_interval == 0:
+                    state = env.export_state()
+                    cached_actions = policy.select_actions(state)
+                env.step(cached_actions)
+                pbar.set_postfix_str(f"t={step_idx * cfg.dt:.0f}/{total_sim_s:.0f}s")
+                pbar.update(1)
         summary = env.metrics.summary()
         return summary
     finally:

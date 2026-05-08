@@ -1,0 +1,15 @@
+# Core scientific computing
+numpy>=1.20.0
+
+# Deep learning (CPU version by default)
+# For GPU support, install manually: https://pytorch.org/get-started/locally/
+torch>=2.0.0
+
+# Satellite orbit computation
+skyfield>=1.30
+
+# Config file parsing
+PyYAML>=5.3
+
+# Progress bar
+tqdm>=4.50.0
