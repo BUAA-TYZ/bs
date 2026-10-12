@@ -83,7 +83,7 @@ def build_obs(env_state: EnvState, sat_id: int) -> np.ndarray:
 
     # ── 自身状态（5 维）────────────────────────────────────────────────────────
     # [0] 时间归一化（用 lookahead 做尺度，让时间感知有意义）
-    obs[ptr] = min(1.0, env_state.time / max(1.0, lookahead_s * 10))
+    obs[ptr] = min(1.0, env_state.time * cfg["dt"] / max(1.0, lookahead_s * 10))
     ptr += 1
     # [1] 队列长度
     obs[ptr] = min(1.0, sat.get("queue_len", 0) / MAX_QUEUE)

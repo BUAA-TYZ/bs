@@ -1,0 +1,3613 @@
+{
+  "schema_version": 1,
+  "split": "test",
+  "checkpoints": {
+    "mappo_7": {
+      "path": "checkpoints/roles_mappo_7_v2_20261009/best.pt",
+      "sha256": "ab0574dec9354538b72be1d27a9ad8db669f19ac162fcadd39ba678732402cf7",
+      "algorithm": "mappo",
+      "episode": 18,
+      "training_seed": 7
+    },
+    "mappo_107": {
+      "path": "checkpoints/roles_mappo_107_v2_20261009/best.pt",
+      "sha256": "5ec3f12d3ea98d3b899dd7db9b72e2c479427b957b4fb69fe99d8a6693d0f57e",
+      "algorithm": "mappo",
+      "episode": 18,
+      "training_seed": 107
+    },
+    "ippo_7": {
+      "path": "checkpoints/roles_ippo_7_v2_20261009/best.pt",
+      "sha256": "a6e4a78150221c0d2ca305cf5353e36353fd3d37e1861d6c089f2cc7ca1c0a5b",
+      "algorithm": "ippo",
+      "episode": 0,
+      "training_seed": 7
+    },
+    "bc27_7": {
+      "path": "checkpoints/roles_mappo_warm27_7_v2_20261009/best.pt",
+      "sha256": "debf30f7af3d49ca0d315c043540bde2d4b995271ba1f2a0c1e22e2611cbc974",
+      "algorithm": "mappo",
+      "episode": 0,
+      "training_seed": 7
+    },
+    "bc27_ppo36_7": {
+      "path": "checkpoints/roles_mappo_warm27_7_v2_20261009/last.pt",
+      "sha256": "d89cedc353bed8f9a25ca22f0624849c879e18e2a3aac2a1a105f0b7844dca1f",
+      "algorithm": "mappo",
+      "episode": 36,
+      "training_seed": 7
+    }
+  },
+  "simulation_source_sha256": "721527860f242bdcf908cecf07321acc656eae4924abeaa7fd142f2b14a3d571",
+  "definition": "All generated tasks; all results delivered and aggregated within task age <= horizon",
+  "selection_scope": "Retrospective metric analysis of fixed checkpoints; no model reselection",
+  "follow_up": "Every task observed for at least the largest reported horizon",
+  "aggregate": {
+    "ground_compute": [
+      {
+        "horizon_seconds": 1800.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 101,
+        "mean_scenario_delivery_rate": 0.14141416206298238,
+        "pooled_delivery_rate": 0.13630229419703105,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      },
+      {
+        "horizon_seconds": 3600.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 195,
+        "mean_scenario_delivery_rate": 0.2699848608741531,
+        "pooled_delivery_rate": 0.2631578947368421,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      },
+      {
+        "horizon_seconds": 7200.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 311,
+        "mean_scenario_delivery_rate": 0.39684997096067876,
+        "pooled_delivery_rate": 0.41970310391363025,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      },
+      {
+        "horizon_seconds": 14400.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 469,
+        "mean_scenario_delivery_rate": 0.6170678051531047,
+        "pooled_delivery_rate": 0.6329284750337382,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      }
+    ],
+    "local": [
+      {
+        "horizon_seconds": 1800.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 0,
+        "mean_scenario_delivery_rate": 0.0,
+        "pooled_delivery_rate": 0.0,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      },
+      {
+        "horizon_seconds": 3600.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 3,
+        "mean_scenario_delivery_rate": 0.008421052631578947,
+        "pooled_delivery_rate": 0.004048582995951417,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      },
+      {
+        "horizon_seconds": 7200.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 27,
+        "mean_scenario_delivery_rate": 0.04567497082469859,
+        "pooled_delivery_rate": 0.03643724696356275,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      },
+      {
+        "horizon_seconds": 14400.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 149,
+        "mean_scenario_delivery_rate": 0.2278936157611294,
+        "pooled_delivery_rate": 0.20107962213225372,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      }
+    ],
+    "greedy": [
+      {
+        "horizon_seconds": 1800.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 94,
+        "mean_scenario_delivery_rate": 0.12527230936033115,
+        "pooled_delivery_rate": 0.12685560053981107,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      },
+      {
+        "horizon_seconds": 3600.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 152,
+        "mean_scenario_delivery_rate": 0.19929064583329556,
+        "pooled_delivery_rate": 0.20512820512820512,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      },
+      {
+        "horizon_seconds": 7200.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 281,
+        "mean_scenario_delivery_rate": 0.3542830777812629,
+        "pooled_delivery_rate": 0.3792172739541161,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      },
+      {
+        "horizon_seconds": 14400.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 437,
+        "mean_scenario_delivery_rate": 0.5747411390787072,
+        "pooled_delivery_rate": 0.5897435897435898,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      }
+    ],
+    "window_aware": [
+      {
+        "horizon_seconds": 1800.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 91,
+        "mean_scenario_delivery_rate": 0.12088195682115828,
+        "pooled_delivery_rate": 0.12280701754385964,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      },
+      {
+        "horizon_seconds": 3600.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 173,
+        "mean_scenario_delivery_rate": 0.22004067771309152,
+        "pooled_delivery_rate": 0.23346828609986506,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      },
+      {
+        "horizon_seconds": 7200.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 316,
+        "mean_scenario_delivery_rate": 0.39652147308227165,
+        "pooled_delivery_rate": 0.42645074224021595,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      },
+      {
+        "horizon_seconds": 14400.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 456,
+        "mean_scenario_delivery_rate": 0.5919053889244452,
+        "pooled_delivery_rate": 0.6153846153846154,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      }
+    ],
+    "predictive": [
+      {
+        "horizon_seconds": 1800.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 94,
+        "mean_scenario_delivery_rate": 0.12932155714823593,
+        "pooled_delivery_rate": 0.12685560053981107,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      },
+      {
+        "horizon_seconds": 3600.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 172,
+        "mean_scenario_delivery_rate": 0.2260947385947386,
+        "pooled_delivery_rate": 0.2321187584345479,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      },
+      {
+        "horizon_seconds": 7200.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 335,
+        "mean_scenario_delivery_rate": 0.42247217241318874,
+        "pooled_delivery_rate": 0.45209176788124156,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      },
+      {
+        "horizon_seconds": 14400.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 421,
+        "mean_scenario_delivery_rate": 0.5499465265526972,
+        "pooled_delivery_rate": 0.5681511470985156,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      }
+    ],
+    "mappo_7": [
+      {
+        "horizon_seconds": 1800.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 56,
+        "mean_scenario_delivery_rate": 0.06870279297230296,
+        "pooled_delivery_rate": 0.07557354925775979,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      },
+      {
+        "horizon_seconds": 3600.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 104,
+        "mean_scenario_delivery_rate": 0.14265816004926712,
+        "pooled_delivery_rate": 0.14035087719298245,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      },
+      {
+        "horizon_seconds": 7200.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 184,
+        "mean_scenario_delivery_rate": 0.25651387632331374,
+        "pooled_delivery_rate": 0.2483130904183536,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      },
+      {
+        "horizon_seconds": 14400.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 327,
+        "mean_scenario_delivery_rate": 0.4544134601031153,
+        "pooled_delivery_rate": 0.44129554655870445,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      }
+    ],
+    "mappo_107": [
+      {
+        "horizon_seconds": 1800.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 16,
+        "mean_scenario_delivery_rate": 0.027011959607240912,
+        "pooled_delivery_rate": 0.021592442645074223,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      },
+      {
+        "horizon_seconds": 3600.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 42,
+        "mean_scenario_delivery_rate": 0.07741554271499825,
+        "pooled_delivery_rate": 0.05668016194331984,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      },
+      {
+        "horizon_seconds": 7200.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 104,
+        "mean_scenario_delivery_rate": 0.1825713125350149,
+        "pooled_delivery_rate": 0.14035087719298245,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      },
+      {
+        "horizon_seconds": 14400.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 239,
+        "mean_scenario_delivery_rate": 0.36963500051068116,
+        "pooled_delivery_rate": 0.3225371120107962,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      }
+    ],
+    "ippo_7": [
+      {
+        "horizon_seconds": 1800.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 6,
+        "mean_scenario_delivery_rate": 0.018160919540229886,
+        "pooled_delivery_rate": 0.008097165991902834,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      },
+      {
+        "horizon_seconds": 3600.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 15,
+        "mean_scenario_delivery_rate": 0.04540229885057471,
+        "pooled_delivery_rate": 0.020242914979757085,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      },
+      {
+        "horizon_seconds": 7200.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 47,
+        "mean_scenario_delivery_rate": 0.1031395872729811,
+        "pooled_delivery_rate": 0.06342780026990553,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      },
+      {
+        "horizon_seconds": 14400.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 167,
+        "mean_scenario_delivery_rate": 0.2901200840901385,
+        "pooled_delivery_rate": 0.2253711201079622,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      }
+    ],
+    "bc27_7": [
+      {
+        "horizon_seconds": 1800.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 97,
+        "mean_scenario_delivery_rate": 0.1309927776397831,
+        "pooled_delivery_rate": 0.13090418353576247,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      },
+      {
+        "horizon_seconds": 3600.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 178,
+        "mean_scenario_delivery_rate": 0.22933048046931895,
+        "pooled_delivery_rate": 0.24021592442645073,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      },
+      {
+        "horizon_seconds": 7200.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 334,
+        "mean_scenario_delivery_rate": 0.4192728868227961,
+        "pooled_delivery_rate": 0.4507422402159244,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      },
+      {
+        "horizon_seconds": 14400.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 472,
+        "mean_scenario_delivery_rate": 0.6074588614652136,
+        "pooled_delivery_rate": 0.6369770580296896,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      }
+    ],
+    "bc27_ppo36_7": [
+      {
+        "horizon_seconds": 1800.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 97,
+        "mean_scenario_delivery_rate": 0.12991315550752938,
+        "pooled_delivery_rate": 0.13090418353576247,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      },
+      {
+        "horizon_seconds": 3600.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 174,
+        "mean_scenario_delivery_rate": 0.22555180300643096,
+        "pooled_delivery_rate": 0.23481781376518218,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      },
+      {
+        "horizon_seconds": 7200.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 329,
+        "mean_scenario_delivery_rate": 0.4149656997569883,
+        "pooled_delivery_rate": 0.44399460188933876,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      },
+      {
+        "horizon_seconds": 14400.0,
+        "total_tasks": 741,
+        "delivered_within_horizon": 467,
+        "mean_scenario_delivery_rate": 0.6004931048987311,
+        "pooled_delivery_rate": 0.6302294197031039,
+        "nonempty_cases": 6,
+        "empty_cases": 0
+      }
+    ]
+  },
+  "cases": [
+    {
+      "label": "ground_compute",
+      "seed": 91001,
+      "scenario": {
+        "id": "uniform24_test_a",
+        "seed": 91001,
+        "orbit_offset_seconds": 604800,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "uniform"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 8,
+          "not_delivered_within_horizon": 42,
+          "delivery_rate": 0.16
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 21,
+          "not_delivered_within_horizon": 29,
+          "delivery_rate": 0.42
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 22,
+          "not_delivered_within_horizon": 28,
+          "delivery_rate": 0.44
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 27,
+          "not_delivered_within_horizon": 23,
+          "delivery_rate": 0.54
+        }
+      ]
+    },
+    {
+      "label": "ground_compute",
+      "seed": 91002,
+      "scenario": {
+        "id": "uniform24_test_b",
+        "seed": 91002,
+        "orbit_offset_seconds": 604800,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "uniform"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 11,
+          "not_delivered_within_horizon": 47,
+          "delivery_rate": 0.1896551724137931
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 19,
+          "not_delivered_within_horizon": 39,
+          "delivery_rate": 0.3275862068965517
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 27,
+          "not_delivered_within_horizon": 31,
+          "delivery_rate": 0.46551724137931033
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 37,
+          "not_delivered_within_horizon": 21,
+          "delivery_rate": 0.6379310344827587
+        }
+      ]
+    },
+    {
+      "label": "ground_compute",
+      "seed": 91003,
+      "scenario": {
+        "id": "shared24_test_a",
+        "seed": 91003,
+        "orbit_offset_seconds": 633600,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 11,
+          "not_delivered_within_horizon": 77,
+          "delivery_rate": 0.125
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 16,
+          "not_delivered_within_horizon": 72,
+          "delivery_rate": 0.18181818181818182
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 26,
+          "not_delivered_within_horizon": 62,
+          "delivery_rate": 0.29545454545454547
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 54,
+          "not_delivered_within_horizon": 34,
+          "delivery_rate": 0.6136363636363636
+        }
+      ]
+    },
+    {
+      "label": "ground_compute",
+      "seed": 91004,
+      "scenario": {
+        "id": "shared24_test_b",
+        "seed": 91004,
+        "orbit_offset_seconds": 633600,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 9,
+          "not_delivered_within_horizon": 86,
+          "delivery_rate": 0.09473684210526316
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 12,
+          "not_delivered_within_horizon": 83,
+          "delivery_rate": 0.12631578947368421
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 21,
+          "not_delivered_within_horizon": 74,
+          "delivery_rate": 0.22105263157894736
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 58,
+          "not_delivered_within_horizon": 37,
+          "delivery_rate": 0.6105263157894737
+        }
+      ]
+    },
+    {
+      "label": "ground_compute",
+      "seed": 91005,
+      "scenario": {
+        "id": "shared48_ood_a",
+        "seed": 91005,
+        "orbit_offset_seconds": 662400,
+        "arrival_rate_per_second": 0.008,
+        "compute_cost_per_tile": 60,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 19.2,
+        "walker": {
+          "planes": 8,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 786,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 30,
+          "not_delivered_within_horizon": 217,
+          "delivery_rate": 0.1214574898785425
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 70,
+          "not_delivered_within_horizon": 177,
+          "delivery_rate": 0.2834008097165992
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 114,
+          "not_delivered_within_horizon": 133,
+          "delivery_rate": 0.46153846153846156
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 163,
+          "not_delivered_within_horizon": 84,
+          "delivery_rate": 0.659919028340081
+        }
+      ]
+    },
+    {
+      "label": "ground_compute",
+      "seed": 91006,
+      "scenario": {
+        "id": "shared48_ood_b",
+        "seed": 91006,
+        "orbit_offset_seconds": 662400,
+        "arrival_rate_per_second": 0.008,
+        "compute_cost_per_tile": 60,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 19.2,
+        "walker": {
+          "planes": 8,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 786,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 32,
+          "not_delivered_within_horizon": 171,
+          "delivery_rate": 0.15763546798029557
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 57,
+          "not_delivered_within_horizon": 146,
+          "delivery_rate": 0.28078817733990147
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 101,
+          "not_delivered_within_horizon": 102,
+          "delivery_rate": 0.4975369458128079
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 130,
+          "not_delivered_within_horizon": 73,
+          "delivery_rate": 0.6403940886699507
+        }
+      ]
+    },
+    {
+      "label": "local",
+      "seed": 91001,
+      "scenario": {
+        "id": "uniform24_test_a",
+        "seed": 91001,
+        "orbit_offset_seconds": 604800,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "uniform"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 50,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 48,
+          "delivery_rate": 0.04
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 4,
+          "not_delivered_within_horizon": 46,
+          "delivery_rate": 0.08
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 13,
+          "not_delivered_within_horizon": 37,
+          "delivery_rate": 0.26
+        }
+      ]
+    },
+    {
+      "label": "local",
+      "seed": 91002,
+      "scenario": {
+        "id": "uniform24_test_b",
+        "seed": 91002,
+        "orbit_offset_seconds": 604800,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "uniform"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 58,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 58,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 3,
+          "not_delivered_within_horizon": 55,
+          "delivery_rate": 0.05172413793103448
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 9,
+          "not_delivered_within_horizon": 49,
+          "delivery_rate": 0.15517241379310345
+        }
+      ]
+    },
+    {
+      "label": "local",
+      "seed": 91003,
+      "scenario": {
+        "id": "shared24_test_a",
+        "seed": 91003,
+        "orbit_offset_seconds": 633600,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 88,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 88,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 3,
+          "not_delivered_within_horizon": 85,
+          "delivery_rate": 0.03409090909090909
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 30,
+          "not_delivered_within_horizon": 58,
+          "delivery_rate": 0.3409090909090909
+        }
+      ]
+    },
+    {
+      "label": "local",
+      "seed": 91004,
+      "scenario": {
+        "id": "shared24_test_b",
+        "seed": 91004,
+        "orbit_offset_seconds": 633600,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 95,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 1,
+          "not_delivered_within_horizon": 94,
+          "delivery_rate": 0.010526315789473684
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 5,
+          "not_delivered_within_horizon": 90,
+          "delivery_rate": 0.05263157894736842
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 29,
+          "not_delivered_within_horizon": 66,
+          "delivery_rate": 0.30526315789473685
+        }
+      ]
+    },
+    {
+      "label": "local",
+      "seed": 91005,
+      "scenario": {
+        "id": "shared48_ood_a",
+        "seed": 91005,
+        "orbit_offset_seconds": 662400,
+        "arrival_rate_per_second": 0.008,
+        "compute_cost_per_tile": 60,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 19.2,
+        "walker": {
+          "planes": 8,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 786,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 247,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 247,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 4,
+          "not_delivered_within_horizon": 243,
+          "delivery_rate": 0.016194331983805668
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 33,
+          "not_delivered_within_horizon": 214,
+          "delivery_rate": 0.13360323886639677
+        }
+      ]
+    },
+    {
+      "label": "local",
+      "seed": 91006,
+      "scenario": {
+        "id": "shared48_ood_b",
+        "seed": 91006,
+        "orbit_offset_seconds": 662400,
+        "arrival_rate_per_second": 0.008,
+        "compute_cost_per_tile": 60,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 19.2,
+        "walker": {
+          "planes": 8,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 786,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 203,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 203,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 8,
+          "not_delivered_within_horizon": 195,
+          "delivery_rate": 0.03940886699507389
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 35,
+          "not_delivered_within_horizon": 168,
+          "delivery_rate": 0.1724137931034483
+        }
+      ]
+    },
+    {
+      "label": "greedy",
+      "seed": 91001,
+      "scenario": {
+        "id": "uniform24_test_a",
+        "seed": 91001,
+        "orbit_offset_seconds": 604800,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "uniform"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 4,
+          "not_delivered_within_horizon": 46,
+          "delivery_rate": 0.08
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 9,
+          "not_delivered_within_horizon": 41,
+          "delivery_rate": 0.18
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 12,
+          "not_delivered_within_horizon": 38,
+          "delivery_rate": 0.24
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 25,
+          "not_delivered_within_horizon": 25,
+          "delivery_rate": 0.5
+        }
+      ]
+    },
+    {
+      "label": "greedy",
+      "seed": 91002,
+      "scenario": {
+        "id": "uniform24_test_b",
+        "seed": 91002,
+        "orbit_offset_seconds": 604800,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "uniform"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 10,
+          "not_delivered_within_horizon": 48,
+          "delivery_rate": 0.1724137931034483
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 15,
+          "not_delivered_within_horizon": 43,
+          "delivery_rate": 0.25862068965517243
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 25,
+          "not_delivered_within_horizon": 33,
+          "delivery_rate": 0.43103448275862066
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 35,
+          "not_delivered_within_horizon": 23,
+          "delivery_rate": 0.603448275862069
+        }
+      ]
+    },
+    {
+      "label": "greedy",
+      "seed": 91003,
+      "scenario": {
+        "id": "shared24_test_a",
+        "seed": 91003,
+        "orbit_offset_seconds": 633600,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 13,
+          "not_delivered_within_horizon": 75,
+          "delivery_rate": 0.14772727272727273
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 18,
+          "not_delivered_within_horizon": 70,
+          "delivery_rate": 0.20454545454545456
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 31,
+          "not_delivered_within_horizon": 57,
+          "delivery_rate": 0.3522727272727273
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 52,
+          "not_delivered_within_horizon": 36,
+          "delivery_rate": 0.5909090909090909
+        }
+      ]
+    },
+    {
+      "label": "greedy",
+      "seed": 91004,
+      "scenario": {
+        "id": "shared24_test_b",
+        "seed": 91004,
+        "orbit_offset_seconds": 633600,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 9,
+          "not_delivered_within_horizon": 86,
+          "delivery_rate": 0.09473684210526316
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 11,
+          "not_delivered_within_horizon": 84,
+          "delivery_rate": 0.11578947368421053
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 25,
+          "not_delivered_within_horizon": 70,
+          "delivery_rate": 0.2631578947368421
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 51,
+          "not_delivered_within_horizon": 44,
+          "delivery_rate": 0.5368421052631579
+        }
+      ]
+    },
+    {
+      "label": "greedy",
+      "seed": 91005,
+      "scenario": {
+        "id": "shared48_ood_a",
+        "seed": 91005,
+        "orbit_offset_seconds": 662400,
+        "arrival_rate_per_second": 0.008,
+        "compute_cost_per_tile": 60,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 19.2,
+        "walker": {
+          "planes": 8,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 786,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 33,
+          "not_delivered_within_horizon": 214,
+          "delivery_rate": 0.13360323886639677
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 58,
+          "not_delivered_within_horizon": 189,
+          "delivery_rate": 0.23481781376518218
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 99,
+          "not_delivered_within_horizon": 148,
+          "delivery_rate": 0.4008097165991903
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 151,
+          "not_delivered_within_horizon": 96,
+          "delivery_rate": 0.611336032388664
+        }
+      ]
+    },
+    {
+      "label": "greedy",
+      "seed": 91006,
+      "scenario": {
+        "id": "shared48_ood_b",
+        "seed": 91006,
+        "orbit_offset_seconds": 662400,
+        "arrival_rate_per_second": 0.008,
+        "compute_cost_per_tile": 60,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 19.2,
+        "walker": {
+          "planes": 8,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 786,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 25,
+          "not_delivered_within_horizon": 178,
+          "delivery_rate": 0.12315270935960591
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 41,
+          "not_delivered_within_horizon": 162,
+          "delivery_rate": 0.2019704433497537
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 89,
+          "not_delivered_within_horizon": 114,
+          "delivery_rate": 0.43842364532019706
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 123,
+          "not_delivered_within_horizon": 80,
+          "delivery_rate": 0.6059113300492611
+        }
+      ]
+    },
+    {
+      "label": "window_aware",
+      "seed": 91001,
+      "scenario": {
+        "id": "uniform24_test_a",
+        "seed": 91001,
+        "orbit_offset_seconds": 604800,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "uniform"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 3,
+          "not_delivered_within_horizon": 47,
+          "delivery_rate": 0.06
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 8,
+          "not_delivered_within_horizon": 42,
+          "delivery_rate": 0.16
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 12,
+          "not_delivered_within_horizon": 38,
+          "delivery_rate": 0.24
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 24,
+          "not_delivered_within_horizon": 26,
+          "delivery_rate": 0.48
+        }
+      ]
+    },
+    {
+      "label": "window_aware",
+      "seed": 91002,
+      "scenario": {
+        "id": "uniform24_test_b",
+        "seed": 91002,
+        "orbit_offset_seconds": 604800,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "uniform"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 10,
+          "not_delivered_within_horizon": 48,
+          "delivery_rate": 0.1724137931034483
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 17,
+          "not_delivered_within_horizon": 41,
+          "delivery_rate": 0.29310344827586204
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 30,
+          "not_delivered_within_horizon": 28,
+          "delivery_rate": 0.5172413793103449
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 37,
+          "not_delivered_within_horizon": 21,
+          "delivery_rate": 0.6379310344827587
+        }
+      ]
+    },
+    {
+      "label": "window_aware",
+      "seed": 91003,
+      "scenario": {
+        "id": "shared24_test_a",
+        "seed": 91003,
+        "orbit_offset_seconds": 633600,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 13,
+          "not_delivered_within_horizon": 75,
+          "delivery_rate": 0.14772727272727273
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 19,
+          "not_delivered_within_horizon": 69,
+          "delivery_rate": 0.2159090909090909
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 34,
+          "not_delivered_within_horizon": 54,
+          "delivery_rate": 0.38636363636363635
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 51,
+          "not_delivered_within_horizon": 37,
+          "delivery_rate": 0.5795454545454546
+        }
+      ]
+    },
+    {
+      "label": "window_aware",
+      "seed": 91004,
+      "scenario": {
+        "id": "shared24_test_b",
+        "seed": 91004,
+        "orbit_offset_seconds": 633600,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 9,
+          "not_delivered_within_horizon": 86,
+          "delivery_rate": 0.09473684210526316
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 13,
+          "not_delivered_within_horizon": 82,
+          "delivery_rate": 0.1368421052631579
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 28,
+          "not_delivered_within_horizon": 67,
+          "delivery_rate": 0.29473684210526313
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 54,
+          "not_delivered_within_horizon": 41,
+          "delivery_rate": 0.5684210526315789
+        }
+      ]
+    },
+    {
+      "label": "window_aware",
+      "seed": 91005,
+      "scenario": {
+        "id": "shared48_ood_a",
+        "seed": 91005,
+        "orbit_offset_seconds": 662400,
+        "arrival_rate_per_second": 0.008,
+        "compute_cost_per_tile": 60,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 19.2,
+        "walker": {
+          "planes": 8,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 786,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 29,
+          "not_delivered_within_horizon": 218,
+          "delivery_rate": 0.11740890688259109
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 65,
+          "not_delivered_within_horizon": 182,
+          "delivery_rate": 0.2631578947368421
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 118,
+          "not_delivered_within_horizon": 129,
+          "delivery_rate": 0.4777327935222672
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 163,
+          "not_delivered_within_horizon": 84,
+          "delivery_rate": 0.659919028340081
+        }
+      ]
+    },
+    {
+      "label": "window_aware",
+      "seed": 91006,
+      "scenario": {
+        "id": "shared48_ood_b",
+        "seed": 91006,
+        "orbit_offset_seconds": 662400,
+        "arrival_rate_per_second": 0.008,
+        "compute_cost_per_tile": 60,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 19.2,
+        "walker": {
+          "planes": 8,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 786,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 27,
+          "not_delivered_within_horizon": 176,
+          "delivery_rate": 0.1330049261083744
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 51,
+          "not_delivered_within_horizon": 152,
+          "delivery_rate": 0.2512315270935961
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 94,
+          "not_delivered_within_horizon": 109,
+          "delivery_rate": 0.4630541871921182
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 127,
+          "not_delivered_within_horizon": 76,
+          "delivery_rate": 0.625615763546798
+        }
+      ]
+    },
+    {
+      "label": "predictive",
+      "seed": 91001,
+      "scenario": {
+        "id": "uniform24_test_a",
+        "seed": 91001,
+        "orbit_offset_seconds": 604800,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "uniform"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 4,
+          "not_delivered_within_horizon": 46,
+          "delivery_rate": 0.08
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 10,
+          "not_delivered_within_horizon": 40,
+          "delivery_rate": 0.2
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 16,
+          "not_delivered_within_horizon": 34,
+          "delivery_rate": 0.32
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 22,
+          "not_delivered_within_horizon": 28,
+          "delivery_rate": 0.44
+        }
+      ]
+    },
+    {
+      "label": "predictive",
+      "seed": 91002,
+      "scenario": {
+        "id": "uniform24_test_b",
+        "seed": 91002,
+        "orbit_offset_seconds": 604800,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "uniform"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 12,
+          "not_delivered_within_horizon": 46,
+          "delivery_rate": 0.20689655172413793
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 18,
+          "not_delivered_within_horizon": 40,
+          "delivery_rate": 0.3103448275862069
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 29,
+          "not_delivered_within_horizon": 29,
+          "delivery_rate": 0.5
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 34,
+          "not_delivered_within_horizon": 24,
+          "delivery_rate": 0.5862068965517241
+        }
+      ]
+    },
+    {
+      "label": "predictive",
+      "seed": 91003,
+      "scenario": {
+        "id": "shared24_test_a",
+        "seed": 91003,
+        "orbit_offset_seconds": 633600,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 13,
+          "not_delivered_within_horizon": 75,
+          "delivery_rate": 0.14772727272727273
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 19,
+          "not_delivered_within_horizon": 69,
+          "delivery_rate": 0.2159090909090909
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 35,
+          "not_delivered_within_horizon": 53,
+          "delivery_rate": 0.3977272727272727
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 52,
+          "not_delivered_within_horizon": 36,
+          "delivery_rate": 0.5909090909090909
+        }
+      ]
+    },
+    {
+      "label": "predictive",
+      "seed": 91004,
+      "scenario": {
+        "id": "shared24_test_b",
+        "seed": 91004,
+        "orbit_offset_seconds": 633600,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 8,
+          "not_delivered_within_horizon": 87,
+          "delivery_rate": 0.08421052631578947
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 12,
+          "not_delivered_within_horizon": 83,
+          "delivery_rate": 0.12631578947368421
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 30,
+          "not_delivered_within_horizon": 65,
+          "delivery_rate": 0.3157894736842105
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 48,
+          "not_delivered_within_horizon": 47,
+          "delivery_rate": 0.5052631578947369
+        }
+      ]
+    },
+    {
+      "label": "predictive",
+      "seed": 91005,
+      "scenario": {
+        "id": "shared48_ood_a",
+        "seed": 91005,
+        "orbit_offset_seconds": 662400,
+        "arrival_rate_per_second": 0.008,
+        "compute_cost_per_tile": 60,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 19.2,
+        "walker": {
+          "planes": 8,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 786,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 27,
+          "not_delivered_within_horizon": 220,
+          "delivery_rate": 0.10931174089068826
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 60,
+          "not_delivered_within_horizon": 187,
+          "delivery_rate": 0.242914979757085
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 122,
+          "not_delivered_within_horizon": 125,
+          "delivery_rate": 0.4939271255060729
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 146,
+          "not_delivered_within_horizon": 101,
+          "delivery_rate": 0.5910931174089069
+        }
+      ]
+    },
+    {
+      "label": "predictive",
+      "seed": 91006,
+      "scenario": {
+        "id": "shared48_ood_b",
+        "seed": 91006,
+        "orbit_offset_seconds": 662400,
+        "arrival_rate_per_second": 0.008,
+        "compute_cost_per_tile": 60,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 19.2,
+        "walker": {
+          "planes": 8,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 786,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 30,
+          "not_delivered_within_horizon": 173,
+          "delivery_rate": 0.1477832512315271
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 53,
+          "not_delivered_within_horizon": 150,
+          "delivery_rate": 0.26108374384236455
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 103,
+          "not_delivered_within_horizon": 100,
+          "delivery_rate": 0.5073891625615764
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 119,
+          "not_delivered_within_horizon": 84,
+          "delivery_rate": 0.5862068965517241
+        }
+      ]
+    },
+    {
+      "label": "mappo_7",
+      "seed": 91001,
+      "scenario": {
+        "id": "uniform24_test_a",
+        "seed": 91001,
+        "orbit_offset_seconds": 604800,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "uniform"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 48,
+          "delivery_rate": 0.04
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 9,
+          "not_delivered_within_horizon": 41,
+          "delivery_rate": 0.18
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 13,
+          "not_delivered_within_horizon": 37,
+          "delivery_rate": 0.26
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 22,
+          "not_delivered_within_horizon": 28,
+          "delivery_rate": 0.44
+        }
+      ]
+    },
+    {
+      "label": "mappo_7",
+      "seed": 91002,
+      "scenario": {
+        "id": "uniform24_test_b",
+        "seed": 91002,
+        "orbit_offset_seconds": 604800,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "uniform"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 6,
+          "not_delivered_within_horizon": 52,
+          "delivery_rate": 0.10344827586206896
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 13,
+          "not_delivered_within_horizon": 45,
+          "delivery_rate": 0.22413793103448276
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 22,
+          "not_delivered_within_horizon": 36,
+          "delivery_rate": 0.3793103448275862
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 31,
+          "not_delivered_within_horizon": 27,
+          "delivery_rate": 0.5344827586206896
+        }
+      ]
+    },
+    {
+      "label": "mappo_7",
+      "seed": 91003,
+      "scenario": {
+        "id": "shared24_test_a",
+        "seed": 91003,
+        "orbit_offset_seconds": 633600,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 5,
+          "not_delivered_within_horizon": 83,
+          "delivery_rate": 0.056818181818181816
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 9,
+          "not_delivered_within_horizon": 79,
+          "delivery_rate": 0.10227272727272728
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 18,
+          "not_delivered_within_horizon": 70,
+          "delivery_rate": 0.20454545454545456
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 42,
+          "not_delivered_within_horizon": 46,
+          "delivery_rate": 0.4772727272727273
+        }
+      ]
+    },
+    {
+      "label": "mappo_7",
+      "seed": 91004,
+      "scenario": {
+        "id": "shared24_test_b",
+        "seed": 91004,
+        "orbit_offset_seconds": 633600,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 3,
+          "not_delivered_within_horizon": 92,
+          "delivery_rate": 0.031578947368421054
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 4,
+          "not_delivered_within_horizon": 91,
+          "delivery_rate": 0.042105263157894736
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 18,
+          "not_delivered_within_horizon": 77,
+          "delivery_rate": 0.18947368421052632
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 40,
+          "not_delivered_within_horizon": 55,
+          "delivery_rate": 0.42105263157894735
+        }
+      ]
+    },
+    {
+      "label": "mappo_7",
+      "seed": 91005,
+      "scenario": {
+        "id": "shared48_ood_a",
+        "seed": 91005,
+        "orbit_offset_seconds": 662400,
+        "arrival_rate_per_second": 0.008,
+        "compute_cost_per_tile": 60,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 19.2,
+        "walker": {
+          "planes": 8,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 786,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 19,
+          "not_delivered_within_horizon": 228,
+          "delivery_rate": 0.07692307692307693
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 37,
+          "not_delivered_within_horizon": 210,
+          "delivery_rate": 0.14979757085020243
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 58,
+          "not_delivered_within_horizon": 189,
+          "delivery_rate": 0.23481781376518218
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 105,
+          "not_delivered_within_horizon": 142,
+          "delivery_rate": 0.4251012145748988
+        }
+      ]
+    },
+    {
+      "label": "mappo_7",
+      "seed": 91006,
+      "scenario": {
+        "id": "shared48_ood_b",
+        "seed": 91006,
+        "orbit_offset_seconds": 662400,
+        "arrival_rate_per_second": 0.008,
+        "compute_cost_per_tile": 60,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 19.2,
+        "walker": {
+          "planes": 8,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 786,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 21,
+          "not_delivered_within_horizon": 182,
+          "delivery_rate": 0.10344827586206896
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 32,
+          "not_delivered_within_horizon": 171,
+          "delivery_rate": 0.15763546798029557
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 55,
+          "not_delivered_within_horizon": 148,
+          "delivery_rate": 0.270935960591133
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 87,
+          "not_delivered_within_horizon": 116,
+          "delivery_rate": 0.42857142857142855
+        }
+      ]
+    },
+    {
+      "label": "mappo_107",
+      "seed": 91001,
+      "scenario": {
+        "id": "uniform24_test_a",
+        "seed": 91001,
+        "orbit_offset_seconds": 604800,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "uniform"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 48,
+          "delivery_rate": 0.04
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 6,
+          "not_delivered_within_horizon": 44,
+          "delivery_rate": 0.12
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 12,
+          "not_delivered_within_horizon": 38,
+          "delivery_rate": 0.24
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 20,
+          "not_delivered_within_horizon": 30,
+          "delivery_rate": 0.4
+        }
+      ]
+    },
+    {
+      "label": "mappo_107",
+      "seed": 91002,
+      "scenario": {
+        "id": "uniform24_test_b",
+        "seed": 91002,
+        "orbit_offset_seconds": 604800,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "uniform"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 4,
+          "not_delivered_within_horizon": 54,
+          "delivery_rate": 0.06896551724137931
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 11,
+          "not_delivered_within_horizon": 47,
+          "delivery_rate": 0.1896551724137931
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 22,
+          "not_delivered_within_horizon": 36,
+          "delivery_rate": 0.3793103448275862
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 28,
+          "not_delivered_within_horizon": 30,
+          "delivery_rate": 0.4827586206896552
+        }
+      ]
+    },
+    {
+      "label": "mappo_107",
+      "seed": 91003,
+      "scenario": {
+        "id": "shared24_test_a",
+        "seed": 91003,
+        "orbit_offset_seconds": 633600,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 88,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 4,
+          "not_delivered_within_horizon": 84,
+          "delivery_rate": 0.045454545454545456
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 12,
+          "not_delivered_within_horizon": 76,
+          "delivery_rate": 0.13636363636363635
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 37,
+          "not_delivered_within_horizon": 51,
+          "delivery_rate": 0.42045454545454547
+        }
+      ]
+    },
+    {
+      "label": "mappo_107",
+      "seed": 91004,
+      "scenario": {
+        "id": "shared24_test_b",
+        "seed": 91004,
+        "orbit_offset_seconds": 633600,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 1,
+          "not_delivered_within_horizon": 94,
+          "delivery_rate": 0.010526315789473684
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 93,
+          "delivery_rate": 0.021052631578947368
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 12,
+          "not_delivered_within_horizon": 83,
+          "delivery_rate": 0.12631578947368421
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 36,
+          "not_delivered_within_horizon": 59,
+          "delivery_rate": 0.37894736842105264
+        }
+      ]
+    },
+    {
+      "label": "mappo_107",
+      "seed": 91005,
+      "scenario": {
+        "id": "shared48_ood_a",
+        "seed": 91005,
+        "orbit_offset_seconds": 662400,
+        "arrival_rate_per_second": 0.008,
+        "compute_cost_per_tile": 60,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 19.2,
+        "walker": {
+          "planes": 8,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 786,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 245,
+          "delivery_rate": 0.008097165991902834
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 6,
+          "not_delivered_within_horizon": 241,
+          "delivery_rate": 0.024291497975708502
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 15,
+          "not_delivered_within_horizon": 232,
+          "delivery_rate": 0.06072874493927125
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 52,
+          "not_delivered_within_horizon": 195,
+          "delivery_rate": 0.21052631578947367
+        }
+      ]
+    },
+    {
+      "label": "mappo_107",
+      "seed": 91006,
+      "scenario": {
+        "id": "shared48_ood_b",
+        "seed": 91006,
+        "orbit_offset_seconds": 662400,
+        "arrival_rate_per_second": 0.008,
+        "compute_cost_per_tile": 60,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 19.2,
+        "walker": {
+          "planes": 8,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 786,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 7,
+          "not_delivered_within_horizon": 196,
+          "delivery_rate": 0.034482758620689655
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 13,
+          "not_delivered_within_horizon": 190,
+          "delivery_rate": 0.06403940886699508
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 31,
+          "not_delivered_within_horizon": 172,
+          "delivery_rate": 0.15270935960591134
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 66,
+          "not_delivered_within_horizon": 137,
+          "delivery_rate": 0.3251231527093596
+        }
+      ]
+    },
+    {
+      "label": "ippo_7",
+      "seed": 91001,
+      "scenario": {
+        "id": "uniform24_test_a",
+        "seed": 91001,
+        "orbit_offset_seconds": 604800,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "uniform"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 48,
+          "delivery_rate": 0.04
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 5,
+          "not_delivered_within_horizon": 45,
+          "delivery_rate": 0.1
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 9,
+          "not_delivered_within_horizon": 41,
+          "delivery_rate": 0.18
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 18,
+          "not_delivered_within_horizon": 32,
+          "delivery_rate": 0.36
+        }
+      ]
+    },
+    {
+      "label": "ippo_7",
+      "seed": 91002,
+      "scenario": {
+        "id": "uniform24_test_b",
+        "seed": 91002,
+        "orbit_offset_seconds": 604800,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "uniform"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 4,
+          "not_delivered_within_horizon": 54,
+          "delivery_rate": 0.06896551724137931
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 10,
+          "not_delivered_within_horizon": 48,
+          "delivery_rate": 0.1724137931034483
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 18,
+          "not_delivered_within_horizon": 40,
+          "delivery_rate": 0.3103448275862069
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 26,
+          "not_delivered_within_horizon": 32,
+          "delivery_rate": 0.4482758620689655
+        }
+      ]
+    },
+    {
+      "label": "ippo_7",
+      "seed": 91003,
+      "scenario": {
+        "id": "shared24_test_a",
+        "seed": 91003,
+        "orbit_offset_seconds": 633600,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 88,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 88,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 3,
+          "not_delivered_within_horizon": 85,
+          "delivery_rate": 0.03409090909090909
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 31,
+          "not_delivered_within_horizon": 57,
+          "delivery_rate": 0.3522727272727273
+        }
+      ]
+    },
+    {
+      "label": "ippo_7",
+      "seed": 91004,
+      "scenario": {
+        "id": "shared24_test_b",
+        "seed": 91004,
+        "orbit_offset_seconds": 633600,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 95,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 95,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 3,
+          "not_delivered_within_horizon": 92,
+          "delivery_rate": 0.031578947368421054
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 28,
+          "not_delivered_within_horizon": 67,
+          "delivery_rate": 0.29473684210526313
+        }
+      ]
+    },
+    {
+      "label": "ippo_7",
+      "seed": 91005,
+      "scenario": {
+        "id": "shared48_ood_a",
+        "seed": 91005,
+        "orbit_offset_seconds": 662400,
+        "arrival_rate_per_second": 0.008,
+        "compute_cost_per_tile": 60,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 19.2,
+        "walker": {
+          "planes": 8,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 786,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 247,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 247,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 7,
+          "not_delivered_within_horizon": 240,
+          "delivery_rate": 0.02834008097165992
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 34,
+          "not_delivered_within_horizon": 213,
+          "delivery_rate": 0.13765182186234817
+        }
+      ]
+    },
+    {
+      "label": "ippo_7",
+      "seed": 91006,
+      "scenario": {
+        "id": "shared48_ood_b",
+        "seed": 91006,
+        "orbit_offset_seconds": 662400,
+        "arrival_rate_per_second": 0.008,
+        "compute_cost_per_tile": 60,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 19.2,
+        "walker": {
+          "planes": 8,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 786,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 203,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 203,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 7,
+          "not_delivered_within_horizon": 196,
+          "delivery_rate": 0.034482758620689655
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 30,
+          "not_delivered_within_horizon": 173,
+          "delivery_rate": 0.1477832512315271
+        }
+      ]
+    },
+    {
+      "label": "bc27_7",
+      "seed": 91001,
+      "scenario": {
+        "id": "uniform24_test_a",
+        "seed": 91001,
+        "orbit_offset_seconds": 604800,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "uniform"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 3,
+          "not_delivered_within_horizon": 47,
+          "delivery_rate": 0.06
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 8,
+          "not_delivered_within_horizon": 42,
+          "delivery_rate": 0.16
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 14,
+          "not_delivered_within_horizon": 36,
+          "delivery_rate": 0.28
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 24,
+          "not_delivered_within_horizon": 26,
+          "delivery_rate": 0.48
+        }
+      ]
+    },
+    {
+      "label": "bc27_7",
+      "seed": 91002,
+      "scenario": {
+        "id": "uniform24_test_b",
+        "seed": 91002,
+        "orbit_offset_seconds": 604800,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "uniform"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 12,
+          "not_delivered_within_horizon": 46,
+          "delivery_rate": 0.20689655172413793
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 19,
+          "not_delivered_within_horizon": 39,
+          "delivery_rate": 0.3275862068965517
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 32,
+          "not_delivered_within_horizon": 26,
+          "delivery_rate": 0.5517241379310345
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 37,
+          "not_delivered_within_horizon": 21,
+          "delivery_rate": 0.6379310344827587
+        }
+      ]
+    },
+    {
+      "label": "bc27_7",
+      "seed": 91003,
+      "scenario": {
+        "id": "shared24_test_a",
+        "seed": 91003,
+        "orbit_offset_seconds": 633600,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 13,
+          "not_delivered_within_horizon": 75,
+          "delivery_rate": 0.14772727272727273
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 19,
+          "not_delivered_within_horizon": 69,
+          "delivery_rate": 0.2159090909090909
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 32,
+          "not_delivered_within_horizon": 56,
+          "delivery_rate": 0.36363636363636365
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 51,
+          "not_delivered_within_horizon": 37,
+          "delivery_rate": 0.5795454545454546
+        }
+      ]
+    },
+    {
+      "label": "bc27_7",
+      "seed": 91004,
+      "scenario": {
+        "id": "shared24_test_b",
+        "seed": 91004,
+        "orbit_offset_seconds": 633600,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 10,
+          "not_delivered_within_horizon": 85,
+          "delivery_rate": 0.10526315789473684
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 14,
+          "not_delivered_within_horizon": 81,
+          "delivery_rate": 0.14736842105263157
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 30,
+          "not_delivered_within_horizon": 65,
+          "delivery_rate": 0.3157894736842105
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 58,
+          "not_delivered_within_horizon": 37,
+          "delivery_rate": 0.6105263157894737
+        }
+      ]
+    },
+    {
+      "label": "bc27_7",
+      "seed": 91005,
+      "scenario": {
+        "id": "shared48_ood_a",
+        "seed": 91005,
+        "orbit_offset_seconds": 662400,
+        "arrival_rate_per_second": 0.008,
+        "compute_cost_per_tile": 60,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 19.2,
+        "walker": {
+          "planes": 8,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 786,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 28,
+          "not_delivered_within_horizon": 219,
+          "delivery_rate": 0.11336032388663968
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 64,
+          "not_delivered_within_horizon": 183,
+          "delivery_rate": 0.2591093117408907
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 124,
+          "not_delivered_within_horizon": 123,
+          "delivery_rate": 0.5020242914979757
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 172,
+          "not_delivered_within_horizon": 75,
+          "delivery_rate": 0.6963562753036437
+        }
+      ]
+    },
+    {
+      "label": "bc27_7",
+      "seed": 91006,
+      "scenario": {
+        "id": "shared48_ood_b",
+        "seed": 91006,
+        "orbit_offset_seconds": 662400,
+        "arrival_rate_per_second": 0.008,
+        "compute_cost_per_tile": 60,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 19.2,
+        "walker": {
+          "planes": 8,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 786,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 31,
+          "not_delivered_within_horizon": 172,
+          "delivery_rate": 0.15270935960591134
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 54,
+          "not_delivered_within_horizon": 149,
+          "delivery_rate": 0.2660098522167488
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 102,
+          "not_delivered_within_horizon": 101,
+          "delivery_rate": 0.5024630541871922
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 130,
+          "not_delivered_within_horizon": 73,
+          "delivery_rate": 0.6403940886699507
+        }
+      ]
+    },
+    {
+      "label": "bc27_ppo36_7",
+      "seed": 91001,
+      "scenario": {
+        "id": "uniform24_test_a",
+        "seed": 91001,
+        "orbit_offset_seconds": 604800,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "uniform"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 3,
+          "not_delivered_within_horizon": 47,
+          "delivery_rate": 0.06
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 8,
+          "not_delivered_within_horizon": 42,
+          "delivery_rate": 0.16
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 14,
+          "not_delivered_within_horizon": 36,
+          "delivery_rate": 0.28
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 50,
+          "delivered_within_horizon": 23,
+          "not_delivered_within_horizon": 27,
+          "delivery_rate": 0.46
+        }
+      ]
+    },
+    {
+      "label": "bc27_ppo36_7",
+      "seed": 91002,
+      "scenario": {
+        "id": "uniform24_test_b",
+        "seed": 91002,
+        "orbit_offset_seconds": 604800,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "uniform"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 12,
+          "not_delivered_within_horizon": 46,
+          "delivery_rate": 0.20689655172413793
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 19,
+          "not_delivered_within_horizon": 39,
+          "delivery_rate": 0.3275862068965517
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 32,
+          "not_delivered_within_horizon": 26,
+          "delivery_rate": 0.5517241379310345
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 58,
+          "delivered_within_horizon": 37,
+          "not_delivered_within_horizon": 21,
+          "delivery_rate": 0.6379310344827587
+        }
+      ]
+    },
+    {
+      "label": "bc27_ppo36_7",
+      "seed": 91003,
+      "scenario": {
+        "id": "shared24_test_a",
+        "seed": 91003,
+        "orbit_offset_seconds": 633600,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 13,
+          "not_delivered_within_horizon": 75,
+          "delivery_rate": 0.14772727272727273
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 19,
+          "not_delivered_within_horizon": 69,
+          "delivery_rate": 0.2159090909090909
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 32,
+          "not_delivered_within_horizon": 56,
+          "delivery_rate": 0.36363636363636365
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 88,
+          "delivered_within_horizon": 51,
+          "not_delivered_within_horizon": 37,
+          "delivery_rate": 0.5795454545454546
+        }
+      ]
+    },
+    {
+      "label": "bc27_ppo36_7",
+      "seed": 91004,
+      "scenario": {
+        "id": "shared24_test_b",
+        "seed": 91004,
+        "orbit_offset_seconds": 633600,
+        "arrival_rate_per_second": 0.006,
+        "compute_cost_per_tile": 40,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 4,
+        "walker": {
+          "planes": 4,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 620,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 9,
+          "not_delivered_within_horizon": 86,
+          "delivery_rate": 0.09473684210526316
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 13,
+          "not_delivered_within_horizon": 82,
+          "delivery_rate": 0.1368421052631579
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 29,
+          "not_delivered_within_horizon": 66,
+          "delivery_rate": 0.30526315789473685
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 95,
+          "delivered_within_horizon": 57,
+          "not_delivered_within_horizon": 38,
+          "delivery_rate": 0.6
+        }
+      ]
+    },
+    {
+      "label": "bc27_ppo36_7",
+      "seed": 91005,
+      "scenario": {
+        "id": "shared48_ood_a",
+        "seed": 91005,
+        "orbit_offset_seconds": 662400,
+        "arrival_rate_per_second": 0.008,
+        "compute_cost_per_tile": 60,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 19.2,
+        "walker": {
+          "planes": 8,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 786,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 29,
+          "not_delivered_within_horizon": 218,
+          "delivery_rate": 0.11740890688259109
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 61,
+          "not_delivered_within_horizon": 186,
+          "delivery_rate": 0.24696356275303644
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 119,
+          "not_delivered_within_horizon": 128,
+          "delivery_rate": 0.4817813765182186
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 247,
+          "delivered_within_horizon": 168,
+          "not_delivered_within_horizon": 79,
+          "delivery_rate": 0.680161943319838
+        }
+      ]
+    },
+    {
+      "label": "bc27_ppo36_7",
+      "seed": 91006,
+      "scenario": {
+        "id": "shared48_ood_b",
+        "seed": 91006,
+        "orbit_offset_seconds": 662400,
+        "arrival_rate_per_second": 0.008,
+        "compute_cost_per_tile": 60,
+        "isl_bandwidth_scale": 1,
+        "ground_bandwidth_scale": 19.2,
+        "walker": {
+          "planes": 8,
+          "satellites_per_plane": 6,
+          "phasing": 1,
+          "altitude_km": 786,
+          "inclination_deg": 98.2,
+          "raan_offset_deg": 15,
+          "phase_offset_deg": 20
+        },
+        "role_profile": "shared"
+      },
+      "curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 31,
+          "not_delivered_within_horizon": 172,
+          "delivery_rate": 0.15270935960591134
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 54,
+          "not_delivered_within_horizon": 149,
+          "delivery_rate": 0.2660098522167488
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 103,
+          "not_delivered_within_horizon": 100,
+          "delivery_rate": 0.5073891625615764
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 203,
+          "delivered_within_horizon": 131,
+          "not_delivered_within_horizon": 72,
+          "delivery_rate": 0.645320197044335
+        }
+      ]
+    }
+  ],
+  "input_path": "results/role_test_20261010.json",
+  "input_sha256": "c60377e7dbb493d023ab896a5fabe0ad76dedc4db6bdd738ed561fe4339c40ff",
+  "metric_source_sha256": "e991e3463c93b1076ece3dd01e01ebe2e57c25a01ee084ecf892c98e84bf648a",
+  "analysis_sha256": "17c617725ce417319f3be282f577871476fb289c092cb3ef03971c6e89f7a5ba"
+}

@@ -1,0 +1,64 @@
+{
+  "scope": "Routing and buffering development diagnostic, no learned policy comparison",
+  "runs": [
+    {
+      "case": "shared24_a",
+      "label": "ground_relay",
+      "metrics_path": "results/relay_contact_diagnostic_20261010/shared24_a/ground_relay/metrics.json",
+      "overall": {
+        "completed_tiles": 418,
+        "total_tiles": 984,
+        "completed_tasks": 10,
+        "total_tasks": 123,
+        "failed_tiles": 0,
+        "pending_tiles": 566,
+        "task_completion_rate": 0.08130081300813008,
+        "tile_completion_rate": 0.4247967479674797,
+        "failed_tasks": 0,
+        "pending_tasks": 113,
+        "aggregating_tasks": 0
+      },
+      "latency": {
+        "unit": "seconds",
+        "population": "completed_only",
+        "tile_mean": 9025.502392344497,
+        "tile_p95": 11460.0,
+        "tile_p99": 13140.0,
+        "task_mean": 8685.0,
+        "task_p95": 13900.0,
+        "task_p99": 13900.0
+      },
+      "task_age_delivery_curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 121,
+          "delivery_rate": 0.016260162601626018
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 121,
+          "delivery_rate": 0.016260162601626018
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 121,
+          "delivery_rate": 0.016260162601626018
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 10,
+          "not_delivered_within_horizon": 113,
+          "delivery_rate": 0.08130081300813008
+        }
+      ],
+      "completed_tasks_with_result_relay": 0
+    }
+  ]
+}

@@ -1,0 +1,989 @@
+{
+  "source_report": "results/cooperation_diagnostic_20261008/summary.json",
+  "source_report_sha256": "995fa67a7546d7f338d20e6d40796bf544f12bb64afe16f6ac5f83282212f654",
+  "scope": "development diagnosis; pending waits are right-censored, not completed latency",
+  "aggregate": {
+    "local": {
+      "completion_rate_scenario_mean": 0.37677853806886064,
+      "completed_tasks": 35,
+      "total_tasks": 91,
+      "completed_task_latency_pooled_seconds": 1944.5714285714287
+    },
+    "window_aware": {
+      "completion_rate_scenario_mean": 0.2832627348756381,
+      "completed_tasks": 26,
+      "total_tasks": 91,
+      "completed_task_latency_pooled_seconds": 1978.076923076923
+    },
+    "committed_window": {
+      "completion_rate_scenario_mean": 0.42456826327794067,
+      "completed_tasks": 39,
+      "total_tasks": 91,
+      "completed_task_latency_pooled_seconds": 1864.1025641025642
+    }
+  },
+  "pooled_local_stage_seconds": {
+    "arrival_to_compute": {
+      "count": 728,
+      "mean": 81.86813186813187,
+      "p95": 150.0
+    },
+    "compute": {
+      "count": 728,
+      "mean": 20.0,
+      "p95": 20.0
+    },
+    "completed_postcompute": {
+      "count": 280,
+      "mean": 1837.4642857142858,
+      "p95": 4860.5
+    },
+    "pending_postcompute": {
+      "count": 448,
+      "mean": 3053.75,
+      "p95": 5983.0
+    }
+  },
+  "groups": [
+    {
+      "name": "seed_10001",
+      "rows": [
+        {
+          "policy": "local",
+          "overall": {
+            "completed_tiles": 120,
+            "total_tiles": 248,
+            "completed_tasks": 15,
+            "total_tasks": 31,
+            "failed_tiles": 0,
+            "pending_tiles": 128,
+            "task_completion_rate": 0.4838709677419355,
+            "tile_completion_rate": 0.4838709677419355,
+            "failed_tasks": 0,
+            "pending_tasks": 16
+          },
+          "churn": {
+            "completed_isl_hops": 0,
+            "tiles_with_multiple_hops": 0,
+            "immediate_reverse_hops": 0,
+            "max_hops_per_tile": 0
+          },
+          "computed_unique_tiles": {
+            "source_satellite": 248,
+            "remote_satellite": 0,
+            "ground": 0
+          },
+          "terminal_tile_states": {
+            "DONE": 120,
+            "COMPUTED": 128
+          }
+        },
+        {
+          "policy": "window_aware",
+          "overall": {
+            "completed_tiles": 128,
+            "total_tiles": 248,
+            "completed_tasks": 11,
+            "total_tasks": 31,
+            "failed_tiles": 0,
+            "pending_tiles": 120,
+            "task_completion_rate": 0.3548387096774194,
+            "tile_completion_rate": 0.5161290322580645,
+            "failed_tasks": 0,
+            "pending_tasks": 20
+          },
+          "churn": {
+            "completed_isl_hops": 578,
+            "tiles_with_multiple_hops": 96,
+            "immediate_reverse_hops": 199,
+            "max_hops_per_tile": 26
+          },
+          "computed_unique_tiles": {
+            "source_satellite": 76,
+            "remote_satellite": 93,
+            "ground": 16
+          },
+          "terminal_tile_states": {
+            "DONE": 128,
+            "TRANSFERRING": 63,
+            "COMPUTED": 57
+          }
+        },
+        {
+          "policy": "committed_window",
+          "overall": {
+            "completed_tiles": 128,
+            "total_tiles": 248,
+            "completed_tasks": 16,
+            "total_tasks": 31,
+            "failed_tiles": 0,
+            "pending_tiles": 120,
+            "task_completion_rate": 0.5161290322580645,
+            "tile_completion_rate": 0.5161290322580645,
+            "failed_tasks": 0,
+            "pending_tasks": 15
+          },
+          "churn": {
+            "completed_isl_hops": 16,
+            "tiles_with_multiple_hops": 0,
+            "immediate_reverse_hops": 0,
+            "max_hops_per_tile": 1
+          },
+          "computed_unique_tiles": {
+            "source_satellite": 224,
+            "remote_satellite": 16,
+            "ground": 0
+          },
+          "terminal_tile_states": {
+            "DONE": 128,
+            "COMPUTED": 112,
+            "TRANSFERRING": 8
+          }
+        }
+      ],
+      "paired": [
+        {
+          "policy": "window_aware",
+          "gained_vs_local": [
+            "task_14",
+            "task_28",
+            "task_6"
+          ],
+          "lost_vs_local": [
+            "task_1",
+            "task_10",
+            "task_15",
+            "task_16",
+            "task_24",
+            "task_3",
+            "task_5"
+          ]
+        },
+        {
+          "policy": "committed_window",
+          "gained_vs_local": [
+            "task_6"
+          ],
+          "lost_vs_local": []
+        }
+      ],
+      "local_stage_seconds": {
+        "arrival_to_compute": {
+          "count": 248,
+          "mean": 80.0,
+          "p95": 150.0
+        },
+        "compute": {
+          "count": 248,
+          "mean": 20.0,
+          "p95": 20.0
+        },
+        "completed_postcompute": {
+          "count": 120,
+          "mean": 1722.0,
+          "p95": 4871.0
+        },
+        "pending_postcompute": {
+          "count": 128,
+          "mean": 2945.0,
+          "p95": 5983.0
+        }
+      },
+      "gained_task_witnesses": [
+        {
+          "task_id": "task_6",
+          "plan": {
+            "decision_step": 150,
+            "source": 20,
+            "target": 12,
+            "local_estimate_seconds": null,
+            "chosen_estimate_seconds": 1720.0
+          },
+          "source_satellite": 20,
+          "release_seconds": 1490.0,
+          "candidate_tiles": [
+            {
+              "tile_id": "task_6_tile_0",
+              "location": 12,
+              "timestamps_seconds": {
+                "created": 1490.0,
+                "start_tx": 1500.0,
+                "end_tx": 1700.0,
+                "start_compute": 1700.0,
+                "end_compute": 1720.0,
+                "start_downlink": 3200.0,
+                "end_downlink": 3210.0
+              }
+            },
+            {
+              "tile_id": "task_6_tile_1",
+              "location": 12,
+              "timestamps_seconds": {
+                "created": 1490.0,
+                "start_tx": 1500.0,
+                "end_tx": 1720.0,
+                "start_compute": 1740.0,
+                "end_compute": 1760.0,
+                "start_downlink": 3200.0,
+                "end_downlink": 3210.0
+              }
+            },
+            {
+              "tile_id": "task_6_tile_2",
+              "location": 12,
+              "timestamps_seconds": {
+                "created": 1490.0,
+                "start_tx": 1500.0,
+                "end_tx": 1720.0,
+                "start_compute": 1760.0,
+                "end_compute": 1780.0,
+                "start_downlink": 3200.0,
+                "end_downlink": 3210.0
+              }
+            },
+            {
+              "tile_id": "task_6_tile_3",
+              "location": 12,
+              "timestamps_seconds": {
+                "created": 1490.0,
+                "start_tx": 1500.0,
+                "end_tx": 1710.0,
+                "start_compute": 1720.0,
+                "end_compute": 1740.0,
+                "start_downlink": 3200.0,
+                "end_downlink": 3210.0
+              }
+            },
+            {
+              "tile_id": "task_6_tile_4",
+              "location": 12,
+              "timestamps_seconds": {
+                "created": 1490.0,
+                "start_tx": 1510.0,
+                "end_tx": 1730.0,
+                "start_compute": 1780.0,
+                "end_compute": 1800.0,
+                "start_downlink": 3200.0,
+                "end_downlink": 3210.0
+              }
+            },
+            {
+              "tile_id": "task_6_tile_5",
+              "location": 12,
+              "timestamps_seconds": {
+                "created": 1490.0,
+                "start_tx": 1510.0,
+                "end_tx": 1730.0,
+                "start_compute": 1800.0,
+                "end_compute": 1820.0,
+                "start_downlink": 3200.0,
+                "end_downlink": 3210.0
+              }
+            },
+            {
+              "tile_id": "task_6_tile_6",
+              "location": 12,
+              "timestamps_seconds": {
+                "created": 1490.0,
+                "start_tx": 1510.0,
+                "end_tx": 1730.0,
+                "start_compute": 1820.0,
+                "end_compute": 1840.0,
+                "start_downlink": 3200.0,
+                "end_downlink": 3210.0
+              }
+            },
+            {
+              "tile_id": "task_6_tile_7",
+              "location": 12,
+              "timestamps_seconds": {
+                "created": 1490.0,
+                "start_tx": 1510.0,
+                "end_tx": 1730.0,
+                "start_compute": 1840.0,
+                "end_compute": 1860.0,
+                "start_downlink": 3200.0,
+                "end_downlink": 3210.0
+              }
+            }
+          ],
+          "local_terminal_states": {
+            "task_6_tile_0": "COMPUTED",
+            "task_6_tile_1": "COMPUTED",
+            "task_6_tile_2": "COMPUTED",
+            "task_6_tile_3": "COMPUTED",
+            "task_6_tile_4": "COMPUTED",
+            "task_6_tile_5": "COMPUTED",
+            "task_6_tile_6": "COMPUTED",
+            "task_6_tile_7": "COMPUTED"
+          }
+        }
+      ]
+    },
+    {
+      "name": "seed_10002",
+      "rows": [
+        {
+          "policy": "local",
+          "overall": {
+            "completed_tiles": 48,
+            "total_tiles": 216,
+            "completed_tasks": 6,
+            "total_tasks": 27,
+            "failed_tiles": 0,
+            "pending_tiles": 168,
+            "task_completion_rate": 0.2222222222222222,
+            "tile_completion_rate": 0.2222222222222222,
+            "failed_tasks": 0,
+            "pending_tasks": 21
+          },
+          "churn": {
+            "completed_isl_hops": 0,
+            "tiles_with_multiple_hops": 0,
+            "immediate_reverse_hops": 0,
+            "max_hops_per_tile": 0
+          },
+          "computed_unique_tiles": {
+            "source_satellite": 216,
+            "remote_satellite": 0,
+            "ground": 0
+          },
+          "terminal_tile_states": {
+            "DONE": 48,
+            "COMPUTED": 168
+          }
+        },
+        {
+          "policy": "window_aware",
+          "overall": {
+            "completed_tiles": 80,
+            "total_tiles": 216,
+            "completed_tasks": 6,
+            "total_tasks": 27,
+            "failed_tiles": 0,
+            "pending_tiles": 136,
+            "task_completion_rate": 0.2222222222222222,
+            "tile_completion_rate": 0.37037037037037035,
+            "failed_tasks": 0,
+            "pending_tasks": 21
+          },
+          "churn": {
+            "completed_isl_hops": 580,
+            "tiles_with_multiple_hops": 98,
+            "immediate_reverse_hops": 234,
+            "max_hops_per_tile": 22
+          },
+          "computed_unique_tiles": {
+            "source_satellite": 71,
+            "remote_satellite": 95,
+            "ground": 0
+          },
+          "terminal_tile_states": {
+            "TRANSFERRING": 46,
+            "DONE": 80,
+            "COMPUTED": 86,
+            "READY": 4
+          }
+        },
+        {
+          "policy": "committed_window",
+          "overall": {
+            "completed_tiles": 72,
+            "total_tiles": 216,
+            "completed_tasks": 9,
+            "total_tasks": 27,
+            "failed_tiles": 0,
+            "pending_tiles": 144,
+            "task_completion_rate": 0.3333333333333333,
+            "tile_completion_rate": 0.3333333333333333,
+            "failed_tasks": 0,
+            "pending_tasks": 18
+          },
+          "churn": {
+            "completed_isl_hops": 48,
+            "tiles_with_multiple_hops": 0,
+            "immediate_reverse_hops": 0,
+            "max_hops_per_tile": 1
+          },
+          "computed_unique_tiles": {
+            "source_satellite": 168,
+            "remote_satellite": 48,
+            "ground": 0
+          },
+          "terminal_tile_states": {
+            "DONE": 72,
+            "COMPUTED": 144
+          }
+        }
+      ],
+      "paired": [
+        {
+          "policy": "window_aware",
+          "gained_vs_local": [
+            "task_3",
+            "task_8"
+          ],
+          "lost_vs_local": [
+            "task_0",
+            "task_1"
+          ]
+        },
+        {
+          "policy": "committed_window",
+          "gained_vs_local": [
+            "task_18",
+            "task_22",
+            "task_8"
+          ],
+          "lost_vs_local": []
+        }
+      ],
+      "local_stage_seconds": {
+        "arrival_to_compute": {
+          "count": 216,
+          "mean": 80.0,
+          "p95": 150.0
+        },
+        "compute": {
+          "count": 216,
+          "mean": 20.0,
+          "p95": 20.0
+        },
+        "completed_postcompute": {
+          "count": 48,
+          "mean": 2321.6666666666665,
+          "p95": 4663.0
+        },
+        "pending_postcompute": {
+          "count": 168,
+          "mean": 3241.904761904762,
+          "p95": 5753.0
+        }
+      },
+      "gained_task_witnesses": [
+        {
+          "task_id": "task_18",
+          "plan": {
+            "decision_step": 451,
+            "source": 22,
+            "target": 11,
+            "local_estimate_seconds": null,
+            "chosen_estimate_seconds": 1240.0
+          },
+          "source_satellite": 22,
+          "release_seconds": 4500.0,
+          "candidate_tiles": [
+            {
+              "tile_id": "task_18_tile_0",
+              "location": 11,
+              "timestamps_seconds": {
+                "created": 4500.0,
+                "start_tx": 4510.0,
+                "end_tx": 4810.0,
+                "start_compute": 4890.0,
+                "end_compute": 4910.0,
+                "start_downlink": 5740.0,
+                "end_downlink": 5750.0
+              }
+            },
+            {
+              "tile_id": "task_18_tile_1",
+              "location": 11,
+              "timestamps_seconds": {
+                "created": 4500.0,
+                "start_tx": 4510.0,
+                "end_tx": 4820.0,
+                "start_compute": 4950.0,
+                "end_compute": 4970.0,
+                "start_downlink": 5740.0,
+                "end_downlink": 5750.0
+              }
+            },
+            {
+              "tile_id": "task_18_tile_2",
+              "location": 11,
+              "timestamps_seconds": {
+                "created": 4500.0,
+                "start_tx": 4510.0,
+                "end_tx": 4810.0,
+                "start_compute": 4910.0,
+                "end_compute": 4930.0,
+                "start_downlink": 5740.0,
+                "end_downlink": 5750.0
+              }
+            },
+            {
+              "tile_id": "task_18_tile_3",
+              "location": 11,
+              "timestamps_seconds": {
+                "created": 4500.0,
+                "start_tx": 4510.0,
+                "end_tx": 4810.0,
+                "start_compute": 4930.0,
+                "end_compute": 4950.0,
+                "start_downlink": 5740.0,
+                "end_downlink": 5750.0
+              }
+            },
+            {
+              "tile_id": "task_18_tile_4",
+              "location": 11,
+              "timestamps_seconds": {
+                "created": 4500.0,
+                "start_tx": 4520.0,
+                "end_tx": 4830.0,
+                "start_compute": 4970.0,
+                "end_compute": 4990.0,
+                "start_downlink": 5740.0,
+                "end_downlink": 5750.0
+              }
+            },
+            {
+              "tile_id": "task_18_tile_5",
+              "location": 11,
+              "timestamps_seconds": {
+                "created": 4500.0,
+                "start_tx": 4520.0,
+                "end_tx": 4830.0,
+                "start_compute": 5010.0,
+                "end_compute": 5030.0,
+                "start_downlink": 5740.0,
+                "end_downlink": 5750.0
+              }
+            },
+            {
+              "tile_id": "task_18_tile_6",
+              "location": 11,
+              "timestamps_seconds": {
+                "created": 4500.0,
+                "start_tx": 4520.0,
+                "end_tx": 4830.0,
+                "start_compute": 5030.0,
+                "end_compute": 5050.0,
+                "start_downlink": 5740.0,
+                "end_downlink": 5750.0
+              }
+            },
+            {
+              "tile_id": "task_18_tile_7",
+              "location": 11,
+              "timestamps_seconds": {
+                "created": 4500.0,
+                "start_tx": 4520.0,
+                "end_tx": 4830.0,
+                "start_compute": 5050.0,
+                "end_compute": 5070.0,
+                "start_downlink": 5740.0,
+                "end_downlink": 5750.0
+              }
+            }
+          ],
+          "local_terminal_states": {
+            "task_18_tile_0": "COMPUTED",
+            "task_18_tile_1": "COMPUTED",
+            "task_18_tile_2": "COMPUTED",
+            "task_18_tile_3": "COMPUTED",
+            "task_18_tile_4": "COMPUTED",
+            "task_18_tile_5": "COMPUTED",
+            "task_18_tile_6": "COMPUTED",
+            "task_18_tile_7": "COMPUTED"
+          }
+        },
+        {
+          "task_id": "task_22",
+          "plan": {
+            "decision_step": 595,
+            "source": 23,
+            "target": 6,
+            "local_estimate_seconds": null,
+            "chosen_estimate_seconds": 700.0
+          },
+          "source_satellite": 23,
+          "release_seconds": 5940.0,
+          "candidate_tiles": [
+            {
+              "tile_id": "task_22_tile_0",
+              "location": 6,
+              "timestamps_seconds": {
+                "created": 5940.0,
+                "start_tx": 5950.0,
+                "end_tx": 6310.0,
+                "start_compute": 6360.0,
+                "end_compute": 6380.0,
+                "start_downlink": 6640.0,
+                "end_downlink": 6650.0
+              }
+            },
+            {
+              "tile_id": "task_22_tile_1",
+              "location": 6,
+              "timestamps_seconds": {
+                "created": 5940.0,
+                "start_tx": 5950.0,
+                "end_tx": 6300.0,
+                "start_compute": 6300.0,
+                "end_compute": 6320.0,
+                "start_downlink": 6640.0,
+                "end_downlink": 6650.0
+              }
+            },
+            {
+              "tile_id": "task_22_tile_2",
+              "location": 6,
+              "timestamps_seconds": {
+                "created": 5940.0,
+                "start_tx": 5950.0,
+                "end_tx": 6300.0,
+                "start_compute": 6320.0,
+                "end_compute": 6340.0,
+                "start_downlink": 6640.0,
+                "end_downlink": 6650.0
+              }
+            },
+            {
+              "tile_id": "task_22_tile_3",
+              "location": 6,
+              "timestamps_seconds": {
+                "created": 5940.0,
+                "start_tx": 5950.0,
+                "end_tx": 6300.0,
+                "start_compute": 6340.0,
+                "end_compute": 6360.0,
+                "start_downlink": 6640.0,
+                "end_downlink": 6650.0
+              }
+            },
+            {
+              "tile_id": "task_22_tile_4",
+              "location": 6,
+              "timestamps_seconds": {
+                "created": 5940.0,
+                "start_tx": 5960.0,
+                "end_tx": 6310.0,
+                "start_compute": 6380.0,
+                "end_compute": 6400.0,
+                "start_downlink": 6640.0,
+                "end_downlink": 6650.0
+              }
+            },
+            {
+              "tile_id": "task_22_tile_5",
+              "location": 6,
+              "timestamps_seconds": {
+                "created": 5940.0,
+                "start_tx": 5960.0,
+                "end_tx": 6310.0,
+                "start_compute": 6400.0,
+                "end_compute": 6420.0,
+                "start_downlink": 6640.0,
+                "end_downlink": 6650.0
+              }
+            },
+            {
+              "tile_id": "task_22_tile_6",
+              "location": 6,
+              "timestamps_seconds": {
+                "created": 5940.0,
+                "start_tx": 5960.0,
+                "end_tx": 6310.0,
+                "start_compute": 6420.0,
+                "end_compute": 6440.0,
+                "start_downlink": 6640.0,
+                "end_downlink": 6650.0
+              }
+            },
+            {
+              "tile_id": "task_22_tile_7",
+              "location": 6,
+              "timestamps_seconds": {
+                "created": 5940.0,
+                "start_tx": 5960.0,
+                "end_tx": 6310.0,
+                "start_compute": 6440.0,
+                "end_compute": 6460.0,
+                "start_downlink": 6640.0,
+                "end_downlink": 6650.0
+              }
+            }
+          ],
+          "local_terminal_states": {
+            "task_22_tile_0": "COMPUTED",
+            "task_22_tile_1": "COMPUTED",
+            "task_22_tile_2": "COMPUTED",
+            "task_22_tile_3": "COMPUTED",
+            "task_22_tile_4": "COMPUTED",
+            "task_22_tile_5": "COMPUTED",
+            "task_22_tile_6": "COMPUTED",
+            "task_22_tile_7": "COMPUTED"
+          }
+        },
+        {
+          "task_id": "task_8",
+          "plan": {
+            "decision_step": 233,
+            "source": 16,
+            "target": 8,
+            "local_estimate_seconds": null,
+            "chosen_estimate_seconds": 1630.0
+          },
+          "source_satellite": 16,
+          "release_seconds": 2320.0,
+          "candidate_tiles": [
+            {
+              "tile_id": "task_8_tile_0",
+              "location": 8,
+              "timestamps_seconds": {
+                "created": 2320.0,
+                "start_tx": 2330.0,
+                "end_tx": 2620.0,
+                "start_compute": 2620.0,
+                "end_compute": 2640.0,
+                "start_downlink": 3930.0,
+                "end_downlink": 3940.0
+              }
+            },
+            {
+              "tile_id": "task_8_tile_1",
+              "location": 8,
+              "timestamps_seconds": {
+                "created": 2320.0,
+                "start_tx": 2330.0,
+                "end_tx": 2620.0,
+                "start_compute": 2640.0,
+                "end_compute": 2660.0,
+                "start_downlink": 3930.0,
+                "end_downlink": 3940.0
+              }
+            },
+            {
+              "tile_id": "task_8_tile_2",
+              "location": 8,
+              "timestamps_seconds": {
+                "created": 2320.0,
+                "start_tx": 2330.0,
+                "end_tx": 2630.0,
+                "start_compute": 2660.0,
+                "end_compute": 2680.0,
+                "start_downlink": 3930.0,
+                "end_downlink": 3940.0
+              }
+            },
+            {
+              "tile_id": "task_8_tile_3",
+              "location": 8,
+              "timestamps_seconds": {
+                "created": 2320.0,
+                "start_tx": 2330.0,
+                "end_tx": 2630.0,
+                "start_compute": 2680.0,
+                "end_compute": 2700.0,
+                "start_downlink": 3930.0,
+                "end_downlink": 3940.0
+              }
+            },
+            {
+              "tile_id": "task_8_tile_4",
+              "location": 8,
+              "timestamps_seconds": {
+                "created": 2320.0,
+                "start_tx": 2340.0,
+                "end_tx": 2630.0,
+                "start_compute": 2700.0,
+                "end_compute": 2720.0,
+                "start_downlink": 3930.0,
+                "end_downlink": 3940.0
+              }
+            },
+            {
+              "tile_id": "task_8_tile_5",
+              "location": 8,
+              "timestamps_seconds": {
+                "created": 2320.0,
+                "start_tx": 2340.0,
+                "end_tx": 2630.0,
+                "start_compute": 2720.0,
+                "end_compute": 2740.0,
+                "start_downlink": 3930.0,
+                "end_downlink": 3940.0
+              }
+            },
+            {
+              "tile_id": "task_8_tile_6",
+              "location": 8,
+              "timestamps_seconds": {
+                "created": 2320.0,
+                "start_tx": 2340.0,
+                "end_tx": 2630.0,
+                "start_compute": 2740.0,
+                "end_compute": 2760.0,
+                "start_downlink": 3930.0,
+                "end_downlink": 3940.0
+              }
+            },
+            {
+              "tile_id": "task_8_tile_7",
+              "location": 8,
+              "timestamps_seconds": {
+                "created": 2320.0,
+                "start_tx": 2340.0,
+                "end_tx": 2630.0,
+                "start_compute": 2760.0,
+                "end_compute": 2780.0,
+                "start_downlink": 3930.0,
+                "end_downlink": 3940.0
+              }
+            }
+          ],
+          "local_terminal_states": {
+            "task_8_tile_0": "COMPUTED",
+            "task_8_tile_1": "COMPUTED",
+            "task_8_tile_2": "COMPUTED",
+            "task_8_tile_3": "COMPUTED",
+            "task_8_tile_4": "COMPUTED",
+            "task_8_tile_5": "COMPUTED",
+            "task_8_tile_6": "COMPUTED",
+            "task_8_tile_7": "COMPUTED"
+          }
+        }
+      ]
+    },
+    {
+      "name": "seed_10003",
+      "rows": [
+        {
+          "policy": "local",
+          "overall": {
+            "completed_tiles": 112,
+            "total_tiles": 264,
+            "completed_tasks": 14,
+            "total_tasks": 33,
+            "failed_tiles": 0,
+            "pending_tiles": 152,
+            "task_completion_rate": 0.42424242424242425,
+            "tile_completion_rate": 0.42424242424242425,
+            "failed_tasks": 0,
+            "pending_tasks": 19
+          },
+          "churn": {
+            "completed_isl_hops": 0,
+            "tiles_with_multiple_hops": 0,
+            "immediate_reverse_hops": 0,
+            "max_hops_per_tile": 0
+          },
+          "computed_unique_tiles": {
+            "source_satellite": 264,
+            "remote_satellite": 0,
+            "ground": 0
+          },
+          "terminal_tile_states": {
+            "DONE": 112,
+            "COMPUTED": 152
+          }
+        },
+        {
+          "policy": "window_aware",
+          "overall": {
+            "completed_tiles": 111,
+            "total_tiles": 264,
+            "completed_tasks": 9,
+            "total_tasks": 33,
+            "failed_tiles": 0,
+            "pending_tiles": 153,
+            "task_completion_rate": 0.2727272727272727,
+            "tile_completion_rate": 0.42045454545454547,
+            "failed_tasks": 0,
+            "pending_tasks": 24
+          },
+          "churn": {
+            "completed_isl_hops": 588,
+            "tiles_with_multiple_hops": 114,
+            "immediate_reverse_hops": 204,
+            "max_hops_per_tile": 39
+          },
+          "computed_unique_tiles": {
+            "source_satellite": 91,
+            "remote_satellite": 92,
+            "ground": 16
+          },
+          "terminal_tile_states": {
+            "DONE": 111,
+            "COMPUTED": 88,
+            "TRANSFERRING": 64,
+            "READY": 1
+          }
+        },
+        {
+          "policy": "committed_window",
+          "overall": {
+            "completed_tiles": 112,
+            "total_tiles": 264,
+            "completed_tasks": 14,
+            "total_tasks": 33,
+            "failed_tiles": 0,
+            "pending_tiles": 152,
+            "task_completion_rate": 0.42424242424242425,
+            "tile_completion_rate": 0.42424242424242425,
+            "failed_tasks": 0,
+            "pending_tasks": 19
+          },
+          "churn": {
+            "completed_isl_hops": 16,
+            "tiles_with_multiple_hops": 0,
+            "immediate_reverse_hops": 0,
+            "max_hops_per_tile": 1
+          },
+          "computed_unique_tiles": {
+            "source_satellite": 248,
+            "remote_satellite": 16,
+            "ground": 0
+          },
+          "terminal_tile_states": {
+            "DONE": 112,
+            "COMPUTED": 152
+          }
+        }
+      ],
+      "paired": [
+        {
+          "policy": "window_aware",
+          "gained_vs_local": [],
+          "lost_vs_local": [
+            "task_10",
+            "task_4",
+            "task_5",
+            "task_6",
+            "task_8"
+          ]
+        },
+        {
+          "policy": "committed_window",
+          "gained_vs_local": [],
+          "lost_vs_local": []
+        }
+      ],
+      "local_stage_seconds": {
+        "arrival_to_compute": {
+          "count": 264,
+          "mean": 85.15151515151516,
+          "p95": 150.0
+        },
+        "compute": {
+          "count": 264,
+          "mean": 20.0,
+          "p95": 20.0
+        },
+        "completed_postcompute": {
+          "count": 112,
+          "mean": 1753.6607142857142,
+          "p95": 4889.0
+        },
+        "pending_postcompute": {
+          "count": 152,
+          "mean": 2937.3684210526317,
+          "p95": 6432.499999999993
+        }
+      },
+      "gained_task_witnesses": []
+    }
+  ]
+}

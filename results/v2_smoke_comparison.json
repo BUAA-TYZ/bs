@@ -1,0 +1,2418 @@
+{
+  "model_version": "2.0",
+  "seeds": [
+    20001,
+    20002,
+    20003
+  ],
+  "checkpoints": {
+    "ippo": {
+      "path": "checkpoints/v2_verified/ippo/best.pt",
+      "sha256": "36a40e1d2cea2a2defcba8fa5eb69791c30a4314aed150ad42458ec4c74dd96d",
+      "algorithm": "ippo",
+      "episode": 1,
+      "training_seed": 7
+    },
+    "mappo": {
+      "path": "checkpoints/v2_verified/mappo/best.pt",
+      "sha256": "83df31ae2008faeda0937c07015d6f1c25b2e5f087a0c1ccc6920ce51b404712",
+      "algorithm": "mappo",
+      "episode": 1,
+      "training_seed": 7
+    }
+  },
+  "uncertainty_scope": "test-scenario seeds only; does not measure variability across independent training runs",
+  "aggregate": {
+    "greedy": {
+      "task_completion_rate_mean": 0.037037037037037035,
+      "task_completion_rate_std": 0.06415002990995841,
+      "completed_task_latency_seconds_pooled": 55.0,
+      "paired_completion_rate_delta_vs": "greedy",
+      "paired_delta_mean": 0.0,
+      "paired_bootstrap_95_ci": [
+        0.0,
+        0.0
+      ]
+    },
+    "window_aware": {
+      "task_completion_rate_mean": 0.037037037037037035,
+      "task_completion_rate_std": 0.06415002990995841,
+      "completed_task_latency_seconds_pooled": 55.0,
+      "paired_completion_rate_delta_vs": "greedy",
+      "paired_delta_mean": 0.0,
+      "paired_bootstrap_95_ci": [
+        0.0,
+        0.0
+      ]
+    },
+    "ippo": {
+      "task_completion_rate_mean": 0.041666666666666664,
+      "task_completion_rate_std": 0.07216878364870323,
+      "completed_task_latency_seconds_pooled": 30.0,
+      "paired_completion_rate_delta_vs": "greedy",
+      "paired_delta_mean": 0.004629629629629632,
+      "paired_bootstrap_95_ci": [
+        -0.1111111111111111,
+        0.125
+      ]
+    },
+    "mappo": {
+      "task_completion_rate_mean": 0.12037037037037036,
+      "task_completion_rate_std": 0.12525693757841375,
+      "completed_task_latency_seconds_pooled": 48.333333333333336,
+      "paired_completion_rate_delta_vs": "greedy",
+      "paired_delta_mean": 0.08333333333333333,
+      "paired_bootstrap_95_ci": [
+        0.0,
+        0.25
+      ]
+    }
+  },
+  "runs": [
+    {
+      "label": "greedy",
+      "seed": 20001,
+      "metrics": {
+        "model_version": "2.0",
+        "overall": {
+          "completed_tiles": 0,
+          "total_tiles": 32,
+          "completed_tasks": 0,
+          "total_tasks": 8,
+          "failed_tiles": 0,
+          "pending_tiles": 32,
+          "task_completion_rate": 0.0,
+          "tile_completion_rate": 0.0,
+          "failed_tasks": 0,
+          "pending_tasks": 8
+        },
+        "latency": {
+          "unit": "seconds",
+          "population": "completed_only",
+          "tile_mean": null,
+          "tile_p95": null,
+          "tile_p99": null,
+          "task_mean": null,
+          "task_p95": null,
+          "task_p99": null
+        },
+        "resource": {
+          "avg_queue_len": {
+            "0": 0.1,
+            "1": 0.45,
+            "2": 0.0,
+            "3": 0.7,
+            "4": 0.1,
+            "5": 1.2125,
+            "6": 0.3125,
+            "7": 0.1
+          },
+          "compute_busy_time": {
+            "5": 2.0,
+            "6": 2.0,
+            "1": 16.0,
+            "3": 6.0
+          },
+          "mem_peak_gb": {
+            "0": 0.0625,
+            "1": 0.0625,
+            "2": 0.0,
+            "3": 0.1722501415822296,
+            "4": 0.0625,
+            "5": 0.18750000000000003,
+            "6": 0.1875,
+            "7": 0.12499999999999999
+          },
+          "vram_peak_gb": {
+            "0": 0.0,
+            "1": 0.11646788199698552,
+            "2": 0.0,
+            "3": 0.1160633274478888,
+            "4": 0.0,
+            "5": 0.11655898908886628,
+            "6": 0.11570871330842752,
+            "7": 0.0
+          }
+        },
+        "failures": {},
+        "network": {
+          "sent_mb": {
+            "isl:0->4": 64.0,
+            "isl:4->0": 128.0,
+            "isl:1->3": 48.384144980203075,
+            "isl:3->1": 112.38414498020308,
+            "isl:1->5": 256.0,
+            "isl:5->1": 256.0,
+            "isl:3->5": 624.5783076167396,
+            "isl:5->3": 823.4839392079429,
+            "isl:3->6": 0.0,
+            "isl:6->3": 0.0,
+            "isl:5->6": 303.4410109111338,
+            "isl:6->5": 351.7322976027062,
+            "ground:gs_beijing": 0.0,
+            "ground:gs_urumqi": 100.0
+          },
+          "capacity_mb": {
+            "isl:0->4": 1154.8426314452622,
+            "isl:4->0": 1154.8426314452622,
+            "isl:1->3": 2015.7046520180634,
+            "isl:3->1": 2015.7046520180634,
+            "isl:1->5": 1317.533731064896,
+            "isl:5->1": 1317.533731064896,
+            "isl:3->5": 1992.013524206425,
+            "isl:5->3": 1992.013524206425,
+            "isl:3->6": 1198.029182312836,
+            "isl:6->3": 1198.029182312836,
+            "isl:5->6": 1364.874526931665,
+            "isl:6->5": 1364.874526931665,
+            "ground:gs_beijing": 1000.0,
+            "ground:gs_urumqi": 1000.0
+          },
+          "utilization": {
+            "isl:0->4": 0.0554188062142331,
+            "isl:4->0": 0.1108376124284662,
+            "isl:1->3": 0.024003588487907845,
+            "isl:3->1": 0.05575427177175358,
+            "isl:1->5": 0.1943024257854014,
+            "isl:5->1": 0.1943024257854014,
+            "isl:3->5": 0.313541198404041,
+            "isl:5->3": 0.41339274518028235,
+            "isl:3->6": 0.0,
+            "isl:6->3": 0.0,
+            "isl:5->6": 0.22232154306029195,
+            "isl:6->5": 0.2577030273936062,
+            "ground:gs_beijing": 0.0,
+            "ground:gs_urumqi": 0.1
+          }
+        },
+        "experiment": {
+          "config": {
+            "seed": 20001,
+            "num_sats": 8,
+            "sim_steps": 80,
+            "dt": 5.0,
+            "decision_interval_steps": 1,
+            "topology_update_steps": 1,
+            "ground_visibility_update_steps": 1,
+            "task_arrival_rate": 0.12,
+            "image_size_mb": 64.0,
+            "num_tiles": 4,
+            "compute_cost_per_tile": 1.0,
+            "vram_base_gb": 0.1,
+            "vram_alpha_per_mb": 0.001,
+            "result_size_mb": 0.1,
+            "deadline_steps": 0,
+            "mem_capacity_gb": 2.0,
+            "vram_capacity_gb": 1.0,
+            "compute_rate": 0.5,
+            "transfer_fail_on_link_down": false,
+            "vram_policy": "wait",
+            "pipeline_mode": "distributed",
+            "tile_lifecycle_log": "",
+            "ground_stations": [
+              {
+                "id": "gs_beijing",
+                "lat_deg": 39.9042,
+                "lon_deg": 116.4074,
+                "alt_m": 50,
+                "min_elevation_deg": 15,
+                "bandwidth_mbps": 20,
+                "receive_channels": 1,
+                "compute_rate": 8
+              },
+              {
+                "id": "gs_urumqi",
+                "lat_deg": 43.8256,
+                "lon_deg": 87.6168,
+                "alt_m": 800,
+                "min_elevation_deg": 15,
+                "bandwidth_mbps": 20,
+                "receive_channels": 1,
+                "compute_rate": 7
+              }
+            ],
+            "topology": {
+              "start_time_utc": "2026-03-20T17:30:00Z",
+              "tle_file": "data/tle/global_spread_inc53_66.tle",
+              "earth_radius_km": 6378.137,
+              "max_range_km": 4500,
+              "bandwidth_distance_scale_km": 2000,
+              "bandwidth_mbps_min": 20,
+              "bandwidth_mbps_max": 120,
+              "bandwidth_period": 120,
+              "bandwidth_noise": 10,
+              "latency_ms": 20,
+              "visibility_workers": 1,
+              "window_lookahead_s": 600
+            }
+          },
+          "elapsed_sim_seconds": 400.0,
+          "task_trace_sha256": "bbc214d7667daf45cafa38800f3bc1166aad063618e20405c8684051fe8136d9",
+          "tle_sha256": "ffe6ddc7fd3925f2e3bfea4f9376b2ed6a2d244f154e2218342b21bd19eef8bd",
+          "decision_tile_limit_per_sat": 4,
+          "source_sha256": "edf94f1532a6556fdac385a5c8e58dbe53a43dd0bb11cee29c7be6b9aed6d2c4",
+          "python_version": "3.12.13",
+          "packages": {
+            "numpy": "2.4.4",
+            "torch": "2.12.0",
+            "skyfield": "1.54",
+            "PyYAML": "6.0.3"
+          },
+          "policy": "greedy",
+          "checkpoint": null
+        }
+      }
+    },
+    {
+      "label": "greedy",
+      "seed": 20002,
+      "metrics": {
+        "model_version": "2.0",
+        "overall": {
+          "completed_tiles": 4,
+          "total_tiles": 36,
+          "completed_tasks": 1,
+          "total_tasks": 9,
+          "failed_tiles": 0,
+          "pending_tiles": 32,
+          "task_completion_rate": 0.1111111111111111,
+          "tile_completion_rate": 0.1111111111111111,
+          "failed_tasks": 0,
+          "pending_tasks": 8
+        },
+        "latency": {
+          "unit": "seconds",
+          "population": "completed_only",
+          "tile_mean": 47.5,
+          "tile_p95": 55.0,
+          "tile_p99": 55.0,
+          "task_mean": 55.0,
+          "task_p95": 55.0,
+          "task_p99": 55.0
+        },
+        "resource": {
+          "avg_queue_len": {
+            "0": 0.2625,
+            "1": 0.15,
+            "2": 0.125,
+            "3": 0.1,
+            "4": 0.4375,
+            "5": 0.1,
+            "6": 0.15,
+            "7": 0.225
+          },
+          "compute_busy_time": {
+            "0": 8.0,
+            "4": 16.0,
+            "1": 8.0,
+            "7": 8.0,
+            "2": 8.0
+          },
+          "mem_peak_gb": {
+            "0": 0.0625,
+            "1": 0.0625,
+            "2": 0.0625,
+            "3": 0.0625,
+            "4": 0.06250000000000001,
+            "5": 0.0625,
+            "6": 0.0625,
+            "7": 0.0625
+          },
+          "vram_peak_gb": {
+            "0": 0.11631960765837733,
+            "1": 0.11633904954008803,
+            "2": 0.11633870783012513,
+            "3": 0.0,
+            "4": 0.11639407688276632,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.11642189236063284
+          }
+        },
+        "failures": {},
+        "network": {
+          "sent_mb": {
+            "isl:0->4": 223.36078468324536,
+            "isl:4->0": 287.28631545885634,
+            "isl:1->3": 0.0,
+            "isl:3->1": 0.0,
+            "isl:1->5": 0.0,
+            "isl:5->1": 63.3762474004477,
+            "isl:3->5": 0.0,
+            "isl:5->3": 0.0,
+            "isl:3->6": 128.0,
+            "isl:6->3": 128.0,
+            "isl:5->6": 64.0,
+            "isl:6->5": 64.0,
+            "ground:gs_beijing": 0.0,
+            "ground:gs_urumqi": 64.0
+          },
+          "capacity_mb": {
+            "isl:0->4": 1154.7389066337548,
+            "isl:4->0": 1154.7389066337548,
+            "isl:1->3": 1145.959661674116,
+            "isl:3->1": 1145.959661674116,
+            "isl:1->5": 1154.6067718015706,
+            "isl:5->1": 1154.6067718015706,
+            "isl:3->5": 1697.863156384513,
+            "isl:5->3": 1697.863156384513,
+            "isl:3->6": 1263.2458284877011,
+            "isl:6->3": 1263.2458284877011,
+            "isl:5->6": 1157.5296991849748,
+            "isl:6->5": 1157.5296991849748,
+            "ground:gs_beijing": 1000.0,
+            "ground:gs_urumqi": 1000.0
+          },
+          "utilization": {
+            "isl:0->4": 0.19342968648590625,
+            "isl:4->0": 0.24878898061583551,
+            "isl:1->3": 0.0,
+            "isl:3->1": 0.0,
+            "isl:1->5": 0.0,
+            "isl:5->1": 0.05488989753763498,
+            "isl:3->5": 0.0,
+            "isl:5->3": 0.0,
+            "isl:3->6": 0.10132627958347237,
+            "isl:6->3": 0.10132627958347237,
+            "isl:5->6": 0.055290158036604045,
+            "isl:6->5": 0.055290158036604045,
+            "ground:gs_beijing": 0.0,
+            "ground:gs_urumqi": 0.064
+          }
+        },
+        "experiment": {
+          "config": {
+            "seed": 20002,
+            "num_sats": 8,
+            "sim_steps": 80,
+            "dt": 5.0,
+            "decision_interval_steps": 1,
+            "topology_update_steps": 1,
+            "ground_visibility_update_steps": 1,
+            "task_arrival_rate": 0.12,
+            "image_size_mb": 64.0,
+            "num_tiles": 4,
+            "compute_cost_per_tile": 1.0,
+            "vram_base_gb": 0.1,
+            "vram_alpha_per_mb": 0.001,
+            "result_size_mb": 0.1,
+            "deadline_steps": 0,
+            "mem_capacity_gb": 2.0,
+            "vram_capacity_gb": 1.0,
+            "compute_rate": 0.5,
+            "transfer_fail_on_link_down": false,
+            "vram_policy": "wait",
+            "pipeline_mode": "distributed",
+            "tile_lifecycle_log": "",
+            "ground_stations": [
+              {
+                "id": "gs_beijing",
+                "lat_deg": 39.9042,
+                "lon_deg": 116.4074,
+                "alt_m": 50,
+                "min_elevation_deg": 15,
+                "bandwidth_mbps": 20,
+                "receive_channels": 1,
+                "compute_rate": 8
+              },
+              {
+                "id": "gs_urumqi",
+                "lat_deg": 43.8256,
+                "lon_deg": 87.6168,
+                "alt_m": 800,
+                "min_elevation_deg": 15,
+                "bandwidth_mbps": 20,
+                "receive_channels": 1,
+                "compute_rate": 7
+              }
+            ],
+            "topology": {
+              "start_time_utc": "2026-03-20T17:30:00Z",
+              "tle_file": "data/tle/global_spread_inc53_66.tle",
+              "earth_radius_km": 6378.137,
+              "max_range_km": 4500,
+              "bandwidth_distance_scale_km": 2000,
+              "bandwidth_mbps_min": 20,
+              "bandwidth_mbps_max": 120,
+              "bandwidth_period": 120,
+              "bandwidth_noise": 10,
+              "latency_ms": 20,
+              "visibility_workers": 1,
+              "window_lookahead_s": 600
+            }
+          },
+          "elapsed_sim_seconds": 400.0,
+          "task_trace_sha256": "381f92f78ced8c2521e6753cdedce3203f20bf5c6029291925ba8e85f9167a83",
+          "tle_sha256": "ffe6ddc7fd3925f2e3bfea4f9376b2ed6a2d244f154e2218342b21bd19eef8bd",
+          "decision_tile_limit_per_sat": 4,
+          "source_sha256": "edf94f1532a6556fdac385a5c8e58dbe53a43dd0bb11cee29c7be6b9aed6d2c4",
+          "python_version": "3.12.13",
+          "packages": {
+            "numpy": "2.4.4",
+            "torch": "2.12.0",
+            "skyfield": "1.54",
+            "PyYAML": "6.0.3"
+          },
+          "policy": "greedy",
+          "checkpoint": null
+        }
+      }
+    },
+    {
+      "label": "greedy",
+      "seed": 20003,
+      "metrics": {
+        "model_version": "2.0",
+        "overall": {
+          "completed_tiles": 0,
+          "total_tiles": 28,
+          "completed_tasks": 0,
+          "total_tasks": 7,
+          "failed_tiles": 0,
+          "pending_tiles": 28,
+          "task_completion_rate": 0.0,
+          "tile_completion_rate": 0.0,
+          "failed_tasks": 0,
+          "pending_tasks": 7
+        },
+        "latency": {
+          "unit": "seconds",
+          "population": "completed_only",
+          "tile_mean": null,
+          "tile_p95": null,
+          "tile_p99": null,
+          "task_mean": null,
+          "task_p95": null,
+          "task_p99": null
+        },
+        "resource": {
+          "avg_queue_len": {
+            "0": 0.6375,
+            "1": 0.2625,
+            "2": 0.125,
+            "3": 0.8,
+            "4": 0.375,
+            "5": 0.9375,
+            "6": 0.0,
+            "7": 0.0
+          },
+          "compute_busy_time": {
+            "5": 8.0,
+            "1": 4.0,
+            "3": 6.0,
+            "2": 8.0,
+            "0": 16.0,
+            "4": 8.0
+          },
+          "mem_peak_gb": {
+            "0": 0.125,
+            "1": 0.0625,
+            "2": 0.0625,
+            "3": 0.12499999999999999,
+            "4": 0.125,
+            "5": 0.12493059833934965,
+            "6": 0.0,
+            "7": 0.0
+          },
+          "vram_peak_gb": {
+            "0": 0.11631323458299696,
+            "1": 0.11632835726027127,
+            "2": 0.11613633297226963,
+            "3": 0.11576722213550118,
+            "4": 0.11613509523739603,
+            "5": 0.1161338434900102,
+            "6": 0.0,
+            "7": 0.0
+          }
+        },
+        "failures": {},
+        "network": {
+          "sent_mb": {
+            "isl:0->4": 384.11440908540027,
+            "isl:4->0": 320.0,
+            "isl:1->3": 95.45997017945535,
+            "isl:3->1": 63.99999999999999,
+            "isl:1->5": 194.23916021588556,
+            "isl:5->1": 194.23916021588556,
+            "isl:3->5": 913.2208876469942,
+            "isl:5->3": 800.7887838136837,
+            "isl:3->6": 0.0,
+            "isl:6->3": 0.0,
+            "isl:5->6": 0.0,
+            "isl:6->5": 0.0,
+            "ground:gs_beijing": 0.0,
+            "ground:gs_urumqi": 0.0
+          },
+          "capacity_mb": {
+            "isl:0->4": 1306.3348459908502,
+            "isl:4->0": 1306.3348459908502,
+            "isl:1->3": 1767.58883886957,
+            "isl:3->1": 1767.58883886957,
+            "isl:1->5": 1302.7135526321943,
+            "isl:5->1": 1302.7135526321943,
+            "isl:3->5": 2654.4785796014135,
+            "isl:5->3": 2654.4785796014135,
+            "isl:3->6": 1362.7505331054565,
+            "isl:6->3": 1362.7505331054565,
+            "isl:5->6": 1234.1140091318928,
+            "isl:6->5": 1234.1140091318928,
+            "ground:gs_beijing": 1000.0,
+            "ground:gs_urumqi": 1000.0
+          },
+          "utilization": {
+            "isl:0->4": 0.2940397787475775,
+            "isl:4->0": 0.244960165444627,
+            "isl:1->3": 0.05400575523010492,
+            "isl:3->1": 0.03620751534102809,
+            "isl:1->5": 0.14910350769239805,
+            "isl:5->1": 0.14910350769239805,
+            "isl:3->5": 0.344030234285831,
+            "isl:5->3": 0.3016746075735624,
+            "isl:3->6": 0.0,
+            "isl:6->3": 0.0,
+            "isl:5->6": 0.0,
+            "isl:6->5": 0.0,
+            "ground:gs_beijing": 0.0,
+            "ground:gs_urumqi": 0.0
+          }
+        },
+        "experiment": {
+          "config": {
+            "seed": 20003,
+            "num_sats": 8,
+            "sim_steps": 80,
+            "dt": 5.0,
+            "decision_interval_steps": 1,
+            "topology_update_steps": 1,
+            "ground_visibility_update_steps": 1,
+            "task_arrival_rate": 0.12,
+            "image_size_mb": 64.0,
+            "num_tiles": 4,
+            "compute_cost_per_tile": 1.0,
+            "vram_base_gb": 0.1,
+            "vram_alpha_per_mb": 0.001,
+            "result_size_mb": 0.1,
+            "deadline_steps": 0,
+            "mem_capacity_gb": 2.0,
+            "vram_capacity_gb": 1.0,
+            "compute_rate": 0.5,
+            "transfer_fail_on_link_down": false,
+            "vram_policy": "wait",
+            "pipeline_mode": "distributed",
+            "tile_lifecycle_log": "",
+            "ground_stations": [
+              {
+                "id": "gs_beijing",
+                "lat_deg": 39.9042,
+                "lon_deg": 116.4074,
+                "alt_m": 50,
+                "min_elevation_deg": 15,
+                "bandwidth_mbps": 20,
+                "receive_channels": 1,
+                "compute_rate": 8
+              },
+              {
+                "id": "gs_urumqi",
+                "lat_deg": 43.8256,
+                "lon_deg": 87.6168,
+                "alt_m": 800,
+                "min_elevation_deg": 15,
+                "bandwidth_mbps": 20,
+                "receive_channels": 1,
+                "compute_rate": 7
+              }
+            ],
+            "topology": {
+              "start_time_utc": "2026-03-20T17:30:00Z",
+              "tle_file": "data/tle/global_spread_inc53_66.tle",
+              "earth_radius_km": 6378.137,
+              "max_range_km": 4500,
+              "bandwidth_distance_scale_km": 2000,
+              "bandwidth_mbps_min": 20,
+              "bandwidth_mbps_max": 120,
+              "bandwidth_period": 120,
+              "bandwidth_noise": 10,
+              "latency_ms": 20,
+              "visibility_workers": 1,
+              "window_lookahead_s": 600
+            }
+          },
+          "elapsed_sim_seconds": 400.0,
+          "task_trace_sha256": "84cc20348869cf9b61f8722492d36c2e3bead9810e8082d3f7ef045cf8a3e594",
+          "tle_sha256": "ffe6ddc7fd3925f2e3bfea4f9376b2ed6a2d244f154e2218342b21bd19eef8bd",
+          "decision_tile_limit_per_sat": 4,
+          "source_sha256": "edf94f1532a6556fdac385a5c8e58dbe53a43dd0bb11cee29c7be6b9aed6d2c4",
+          "python_version": "3.12.13",
+          "packages": {
+            "numpy": "2.4.4",
+            "torch": "2.12.0",
+            "skyfield": "1.54",
+            "PyYAML": "6.0.3"
+          },
+          "policy": "greedy",
+          "checkpoint": null
+        }
+      }
+    },
+    {
+      "label": "window_aware",
+      "seed": 20001,
+      "metrics": {
+        "model_version": "2.0",
+        "overall": {
+          "completed_tiles": 0,
+          "total_tiles": 32,
+          "completed_tasks": 0,
+          "total_tasks": 8,
+          "failed_tiles": 0,
+          "pending_tiles": 32,
+          "task_completion_rate": 0.0,
+          "tile_completion_rate": 0.0,
+          "failed_tasks": 0,
+          "pending_tasks": 8
+        },
+        "latency": {
+          "unit": "seconds",
+          "population": "completed_only",
+          "tile_mean": null,
+          "tile_p95": null,
+          "tile_p99": null,
+          "task_mean": null,
+          "task_p95": null,
+          "task_p99": null
+        },
+        "resource": {
+          "avg_queue_len": {
+            "0": 0.1,
+            "1": 0.45,
+            "2": 0.0,
+            "3": 0.7,
+            "4": 0.1,
+            "5": 1.2125,
+            "6": 0.3125,
+            "7": 0.1
+          },
+          "compute_busy_time": {
+            "5": 2.0,
+            "6": 2.0,
+            "1": 16.0,
+            "3": 6.0
+          },
+          "mem_peak_gb": {
+            "0": 0.0625,
+            "1": 0.0625,
+            "2": 0.0,
+            "3": 0.1722501415822296,
+            "4": 0.0625,
+            "5": 0.18750000000000003,
+            "6": 0.1875,
+            "7": 0.12499999999999999
+          },
+          "vram_peak_gb": {
+            "0": 0.0,
+            "1": 0.11646788199698552,
+            "2": 0.0,
+            "3": 0.1160633274478888,
+            "4": 0.0,
+            "5": 0.11655898908886628,
+            "6": 0.11570871330842752,
+            "7": 0.0
+          }
+        },
+        "failures": {},
+        "network": {
+          "sent_mb": {
+            "isl:0->4": 64.0,
+            "isl:4->0": 128.0,
+            "isl:1->3": 48.384144980203075,
+            "isl:3->1": 112.38414498020308,
+            "isl:1->5": 256.0,
+            "isl:5->1": 256.0,
+            "isl:3->5": 624.5783076167396,
+            "isl:5->3": 823.4839392079429,
+            "isl:3->6": 0.0,
+            "isl:6->3": 0.0,
+            "isl:5->6": 303.4410109111338,
+            "isl:6->5": 351.7322976027062,
+            "ground:gs_beijing": 0.0,
+            "ground:gs_urumqi": 100.0
+          },
+          "capacity_mb": {
+            "isl:0->4": 1154.8426314452622,
+            "isl:4->0": 1154.8426314452622,
+            "isl:1->3": 2015.7046520180634,
+            "isl:3->1": 2015.7046520180634,
+            "isl:1->5": 1317.533731064896,
+            "isl:5->1": 1317.533731064896,
+            "isl:3->5": 1992.013524206425,
+            "isl:5->3": 1992.013524206425,
+            "isl:3->6": 1198.029182312836,
+            "isl:6->3": 1198.029182312836,
+            "isl:5->6": 1364.874526931665,
+            "isl:6->5": 1364.874526931665,
+            "ground:gs_beijing": 1000.0,
+            "ground:gs_urumqi": 1000.0
+          },
+          "utilization": {
+            "isl:0->4": 0.0554188062142331,
+            "isl:4->0": 0.1108376124284662,
+            "isl:1->3": 0.024003588487907845,
+            "isl:3->1": 0.05575427177175358,
+            "isl:1->5": 0.1943024257854014,
+            "isl:5->1": 0.1943024257854014,
+            "isl:3->5": 0.313541198404041,
+            "isl:5->3": 0.41339274518028235,
+            "isl:3->6": 0.0,
+            "isl:6->3": 0.0,
+            "isl:5->6": 0.22232154306029195,
+            "isl:6->5": 0.2577030273936062,
+            "ground:gs_beijing": 0.0,
+            "ground:gs_urumqi": 0.1
+          }
+        },
+        "experiment": {
+          "config": {
+            "seed": 20001,
+            "num_sats": 8,
+            "sim_steps": 80,
+            "dt": 5.0,
+            "decision_interval_steps": 1,
+            "topology_update_steps": 1,
+            "ground_visibility_update_steps": 1,
+            "task_arrival_rate": 0.12,
+            "image_size_mb": 64.0,
+            "num_tiles": 4,
+            "compute_cost_per_tile": 1.0,
+            "vram_base_gb": 0.1,
+            "vram_alpha_per_mb": 0.001,
+            "result_size_mb": 0.1,
+            "deadline_steps": 0,
+            "mem_capacity_gb": 2.0,
+            "vram_capacity_gb": 1.0,
+            "compute_rate": 0.5,
+            "transfer_fail_on_link_down": false,
+            "vram_policy": "wait",
+            "pipeline_mode": "distributed",
+            "tile_lifecycle_log": "",
+            "ground_stations": [
+              {
+                "id": "gs_beijing",
+                "lat_deg": 39.9042,
+                "lon_deg": 116.4074,
+                "alt_m": 50,
+                "min_elevation_deg": 15,
+                "bandwidth_mbps": 20,
+                "receive_channels": 1,
+                "compute_rate": 8
+              },
+              {
+                "id": "gs_urumqi",
+                "lat_deg": 43.8256,
+                "lon_deg": 87.6168,
+                "alt_m": 800,
+                "min_elevation_deg": 15,
+                "bandwidth_mbps": 20,
+                "receive_channels": 1,
+                "compute_rate": 7
+              }
+            ],
+            "topology": {
+              "start_time_utc": "2026-03-20T17:30:00Z",
+              "tle_file": "data/tle/global_spread_inc53_66.tle",
+              "earth_radius_km": 6378.137,
+              "max_range_km": 4500,
+              "bandwidth_distance_scale_km": 2000,
+              "bandwidth_mbps_min": 20,
+              "bandwidth_mbps_max": 120,
+              "bandwidth_period": 120,
+              "bandwidth_noise": 10,
+              "latency_ms": 20,
+              "visibility_workers": 1,
+              "window_lookahead_s": 600
+            }
+          },
+          "elapsed_sim_seconds": 400.0,
+          "task_trace_sha256": "bbc214d7667daf45cafa38800f3bc1166aad063618e20405c8684051fe8136d9",
+          "tle_sha256": "ffe6ddc7fd3925f2e3bfea4f9376b2ed6a2d244f154e2218342b21bd19eef8bd",
+          "decision_tile_limit_per_sat": 4,
+          "source_sha256": "edf94f1532a6556fdac385a5c8e58dbe53a43dd0bb11cee29c7be6b9aed6d2c4",
+          "python_version": "3.12.13",
+          "packages": {
+            "numpy": "2.4.4",
+            "torch": "2.12.0",
+            "skyfield": "1.54",
+            "PyYAML": "6.0.3"
+          },
+          "policy": "window_aware",
+          "checkpoint": null
+        }
+      }
+    },
+    {
+      "label": "window_aware",
+      "seed": 20002,
+      "metrics": {
+        "model_version": "2.0",
+        "overall": {
+          "completed_tiles": 4,
+          "total_tiles": 36,
+          "completed_tasks": 1,
+          "total_tasks": 9,
+          "failed_tiles": 0,
+          "pending_tiles": 32,
+          "task_completion_rate": 0.1111111111111111,
+          "tile_completion_rate": 0.1111111111111111,
+          "failed_tasks": 0,
+          "pending_tasks": 8
+        },
+        "latency": {
+          "unit": "seconds",
+          "population": "completed_only",
+          "tile_mean": 47.5,
+          "tile_p95": 55.0,
+          "tile_p99": 55.0,
+          "task_mean": 55.0,
+          "task_p95": 55.0,
+          "task_p99": 55.0
+        },
+        "resource": {
+          "avg_queue_len": {
+            "0": 0.2625,
+            "1": 0.15,
+            "2": 0.125,
+            "3": 0.1,
+            "4": 0.4375,
+            "5": 0.1,
+            "6": 0.15,
+            "7": 0.225
+          },
+          "compute_busy_time": {
+            "0": 8.0,
+            "4": 16.0,
+            "1": 8.0,
+            "7": 8.0,
+            "2": 8.0
+          },
+          "mem_peak_gb": {
+            "0": 0.0625,
+            "1": 0.0625,
+            "2": 0.0625,
+            "3": 0.0625,
+            "4": 0.06250000000000001,
+            "5": 0.0625,
+            "6": 0.0625,
+            "7": 0.0625
+          },
+          "vram_peak_gb": {
+            "0": 0.11631960765837733,
+            "1": 0.11633904954008803,
+            "2": 0.11633870783012513,
+            "3": 0.0,
+            "4": 0.11639407688276632,
+            "5": 0.0,
+            "6": 0.0,
+            "7": 0.11642189236063284
+          }
+        },
+        "failures": {},
+        "network": {
+          "sent_mb": {
+            "isl:0->4": 223.36078468324536,
+            "isl:4->0": 287.28631545885634,
+            "isl:1->3": 0.0,
+            "isl:3->1": 0.0,
+            "isl:1->5": 0.0,
+            "isl:5->1": 63.3762474004477,
+            "isl:3->5": 0.0,
+            "isl:5->3": 0.0,
+            "isl:3->6": 128.0,
+            "isl:6->3": 128.0,
+            "isl:5->6": 64.0,
+            "isl:6->5": 64.0,
+            "ground:gs_beijing": 0.0,
+            "ground:gs_urumqi": 64.0
+          },
+          "capacity_mb": {
+            "isl:0->4": 1154.7389066337548,
+            "isl:4->0": 1154.7389066337548,
+            "isl:1->3": 1145.959661674116,
+            "isl:3->1": 1145.959661674116,
+            "isl:1->5": 1154.6067718015706,
+            "isl:5->1": 1154.6067718015706,
+            "isl:3->5": 1697.863156384513,
+            "isl:5->3": 1697.863156384513,
+            "isl:3->6": 1263.2458284877011,
+            "isl:6->3": 1263.2458284877011,
+            "isl:5->6": 1157.5296991849748,
+            "isl:6->5": 1157.5296991849748,
+            "ground:gs_beijing": 1000.0,
+            "ground:gs_urumqi": 1000.0
+          },
+          "utilization": {
+            "isl:0->4": 0.19342968648590625,
+            "isl:4->0": 0.24878898061583551,
+            "isl:1->3": 0.0,
+            "isl:3->1": 0.0,
+            "isl:1->5": 0.0,
+            "isl:5->1": 0.05488989753763498,
+            "isl:3->5": 0.0,
+            "isl:5->3": 0.0,
+            "isl:3->6": 0.10132627958347237,
+            "isl:6->3": 0.10132627958347237,
+            "isl:5->6": 0.055290158036604045,
+            "isl:6->5": 0.055290158036604045,
+            "ground:gs_beijing": 0.0,
+            "ground:gs_urumqi": 0.064
+          }
+        },
+        "experiment": {
+          "config": {
+            "seed": 20002,
+            "num_sats": 8,
+            "sim_steps": 80,
+            "dt": 5.0,
+            "decision_interval_steps": 1,
+            "topology_update_steps": 1,
+            "ground_visibility_update_steps": 1,
+            "task_arrival_rate": 0.12,
+            "image_size_mb": 64.0,
+            "num_tiles": 4,
+            "compute_cost_per_tile": 1.0,
+            "vram_base_gb": 0.1,
+            "vram_alpha_per_mb": 0.001,
+            "result_size_mb": 0.1,
+            "deadline_steps": 0,
+            "mem_capacity_gb": 2.0,
+            "vram_capacity_gb": 1.0,
+            "compute_rate": 0.5,
+            "transfer_fail_on_link_down": false,
+            "vram_policy": "wait",
+            "pipeline_mode": "distributed",
+            "tile_lifecycle_log": "",
+            "ground_stations": [
+              {
+                "id": "gs_beijing",
+                "lat_deg": 39.9042,
+                "lon_deg": 116.4074,
+                "alt_m": 50,
+                "min_elevation_deg": 15,
+                "bandwidth_mbps": 20,
+                "receive_channels": 1,
+                "compute_rate": 8
+              },
+              {
+                "id": "gs_urumqi",
+                "lat_deg": 43.8256,
+                "lon_deg": 87.6168,
+                "alt_m": 800,
+                "min_elevation_deg": 15,
+                "bandwidth_mbps": 20,
+                "receive_channels": 1,
+                "compute_rate": 7
+              }
+            ],
+            "topology": {
+              "start_time_utc": "2026-03-20T17:30:00Z",
+              "tle_file": "data/tle/global_spread_inc53_66.tle",
+              "earth_radius_km": 6378.137,
+              "max_range_km": 4500,
+              "bandwidth_distance_scale_km": 2000,
+              "bandwidth_mbps_min": 20,
+              "bandwidth_mbps_max": 120,
+              "bandwidth_period": 120,
+              "bandwidth_noise": 10,
+              "latency_ms": 20,
+              "visibility_workers": 1,
+              "window_lookahead_s": 600
+            }
+          },
+          "elapsed_sim_seconds": 400.0,
+          "task_trace_sha256": "381f92f78ced8c2521e6753cdedce3203f20bf5c6029291925ba8e85f9167a83",
+          "tle_sha256": "ffe6ddc7fd3925f2e3bfea4f9376b2ed6a2d244f154e2218342b21bd19eef8bd",
+          "decision_tile_limit_per_sat": 4,
+          "source_sha256": "edf94f1532a6556fdac385a5c8e58dbe53a43dd0bb11cee29c7be6b9aed6d2c4",
+          "python_version": "3.12.13",
+          "packages": {
+            "numpy": "2.4.4",
+            "torch": "2.12.0",
+            "skyfield": "1.54",
+            "PyYAML": "6.0.3"
+          },
+          "policy": "window_aware",
+          "checkpoint": null
+        }
+      }
+    },
+    {
+      "label": "window_aware",
+      "seed": 20003,
+      "metrics": {
+        "model_version": "2.0",
+        "overall": {
+          "completed_tiles": 0,
+          "total_tiles": 28,
+          "completed_tasks": 0,
+          "total_tasks": 7,
+          "failed_tiles": 0,
+          "pending_tiles": 28,
+          "task_completion_rate": 0.0,
+          "tile_completion_rate": 0.0,
+          "failed_tasks": 0,
+          "pending_tasks": 7
+        },
+        "latency": {
+          "unit": "seconds",
+          "population": "completed_only",
+          "tile_mean": null,
+          "tile_p95": null,
+          "tile_p99": null,
+          "task_mean": null,
+          "task_p95": null,
+          "task_p99": null
+        },
+        "resource": {
+          "avg_queue_len": {
+            "0": 0.6375,
+            "1": 0.2625,
+            "2": 0.125,
+            "3": 0.8,
+            "4": 0.375,
+            "5": 0.9375,
+            "6": 0.0,
+            "7": 0.0
+          },
+          "compute_busy_time": {
+            "5": 8.0,
+            "1": 4.0,
+            "3": 6.0,
+            "2": 8.0,
+            "0": 16.0,
+            "4": 8.0
+          },
+          "mem_peak_gb": {
+            "0": 0.125,
+            "1": 0.0625,
+            "2": 0.0625,
+            "3": 0.12499999999999999,
+            "4": 0.125,
+            "5": 0.12493059833934965,
+            "6": 0.0,
+            "7": 0.0
+          },
+          "vram_peak_gb": {
+            "0": 0.11631323458299696,
+            "1": 0.11632835726027127,
+            "2": 0.11613633297226963,
+            "3": 0.11576722213550118,
+            "4": 0.11613509523739603,
+            "5": 0.1161338434900102,
+            "6": 0.0,
+            "7": 0.0
+          }
+        },
+        "failures": {},
+        "network": {
+          "sent_mb": {
+            "isl:0->4": 384.11440908540027,
+            "isl:4->0": 320.0,
+            "isl:1->3": 95.45997017945535,
+            "isl:3->1": 63.99999999999999,
+            "isl:1->5": 194.23916021588556,
+            "isl:5->1": 194.23916021588556,
+            "isl:3->5": 913.2208876469942,
+            "isl:5->3": 800.7887838136837,
+            "isl:3->6": 0.0,
+            "isl:6->3": 0.0,
+            "isl:5->6": 0.0,
+            "isl:6->5": 0.0,
+            "ground:gs_beijing": 0.0,
+            "ground:gs_urumqi": 0.0
+          },
+          "capacity_mb": {
+            "isl:0->4": 1306.3348459908502,
+            "isl:4->0": 1306.3348459908502,
+            "isl:1->3": 1767.58883886957,
+            "isl:3->1": 1767.58883886957,
+            "isl:1->5": 1302.7135526321943,
+            "isl:5->1": 1302.7135526321943,
+            "isl:3->5": 2654.4785796014135,
+            "isl:5->3": 2654.4785796014135,
+            "isl:3->6": 1362.7505331054565,
+            "isl:6->3": 1362.7505331054565,
+            "isl:5->6": 1234.1140091318928,
+            "isl:6->5": 1234.1140091318928,
+            "ground:gs_beijing": 1000.0,
+            "ground:gs_urumqi": 1000.0
+          },
+          "utilization": {
+            "isl:0->4": 0.2940397787475775,
+            "isl:4->0": 0.244960165444627,
+            "isl:1->3": 0.05400575523010492,
+            "isl:3->1": 0.03620751534102809,
+            "isl:1->5": 0.14910350769239805,
+            "isl:5->1": 0.14910350769239805,
+            "isl:3->5": 0.344030234285831,
+            "isl:5->3": 0.3016746075735624,
+            "isl:3->6": 0.0,
+            "isl:6->3": 0.0,
+            "isl:5->6": 0.0,
+            "isl:6->5": 0.0,
+            "ground:gs_beijing": 0.0,
+            "ground:gs_urumqi": 0.0
+          }
+        },
+        "experiment": {
+          "config": {
+            "seed": 20003,
+            "num_sats": 8,
+            "sim_steps": 80,
+            "dt": 5.0,
+            "decision_interval_steps": 1,
+            "topology_update_steps": 1,
+            "ground_visibility_update_steps": 1,
+            "task_arrival_rate": 0.12,
+            "image_size_mb": 64.0,
+            "num_tiles": 4,
+            "compute_cost_per_tile": 1.0,
+            "vram_base_gb": 0.1,
+            "vram_alpha_per_mb": 0.001,
+            "result_size_mb": 0.1,
+            "deadline_steps": 0,
+            "mem_capacity_gb": 2.0,
+            "vram_capacity_gb": 1.0,
+            "compute_rate": 0.5,
+            "transfer_fail_on_link_down": false,
+            "vram_policy": "wait",
+            "pipeline_mode": "distributed",
+            "tile_lifecycle_log": "",
+            "ground_stations": [
+              {
+                "id": "gs_beijing",
+                "lat_deg": 39.9042,
+                "lon_deg": 116.4074,
+                "alt_m": 50,
+                "min_elevation_deg": 15,
+                "bandwidth_mbps": 20,
+                "receive_channels": 1,
+                "compute_rate": 8
+              },
+              {
+                "id": "gs_urumqi",
+                "lat_deg": 43.8256,
+                "lon_deg": 87.6168,
+                "alt_m": 800,
+                "min_elevation_deg": 15,
+                "bandwidth_mbps": 20,
+                "receive_channels": 1,
+                "compute_rate": 7
+              }
+            ],
+            "topology": {
+              "start_time_utc": "2026-03-20T17:30:00Z",
+              "tle_file": "data/tle/global_spread_inc53_66.tle",
+              "earth_radius_km": 6378.137,
+              "max_range_km": 4500,
+              "bandwidth_distance_scale_km": 2000,
+              "bandwidth_mbps_min": 20,
+              "bandwidth_mbps_max": 120,
+              "bandwidth_period": 120,
+              "bandwidth_noise": 10,
+              "latency_ms": 20,
+              "visibility_workers": 1,
+              "window_lookahead_s": 600
+            }
+          },
+          "elapsed_sim_seconds": 400.0,
+          "task_trace_sha256": "84cc20348869cf9b61f8722492d36c2e3bead9810e8082d3f7ef045cf8a3e594",
+          "tle_sha256": "ffe6ddc7fd3925f2e3bfea4f9376b2ed6a2d244f154e2218342b21bd19eef8bd",
+          "decision_tile_limit_per_sat": 4,
+          "source_sha256": "edf94f1532a6556fdac385a5c8e58dbe53a43dd0bb11cee29c7be6b9aed6d2c4",
+          "python_version": "3.12.13",
+          "packages": {
+            "numpy": "2.4.4",
+            "torch": "2.12.0",
+            "skyfield": "1.54",
+            "PyYAML": "6.0.3"
+          },
+          "policy": "window_aware",
+          "checkpoint": null
+        }
+      }
+    },
+    {
+      "label": "ippo",
+      "seed": 20001,
+      "metrics": {
+        "model_version": "2.0",
+        "overall": {
+          "completed_tiles": 7,
+          "total_tiles": 32,
+          "completed_tasks": 1,
+          "total_tasks": 8,
+          "failed_tiles": 0,
+          "pending_tiles": 25,
+          "task_completion_rate": 0.125,
+          "tile_completion_rate": 0.21875,
+          "failed_tasks": 0,
+          "pending_tasks": 7
+        },
+        "latency": {
+          "unit": "seconds",
+          "population": "completed_only",
+          "tile_mean": 25.0,
+          "tile_p95": 50.0,
+          "tile_p99": 50.0,
+          "task_mean": 30.0,
+          "task_p95": 30.0,
+          "task_p99": 30.0
+        },
+        "resource": {
+          "avg_queue_len": {
+            "0": 0.0,
+            "1": 0.4625,
+            "2": 0.0,
+            "3": 0.175,
+            "4": 0.2875,
+            "5": 1.2625,
+            "6": 0.75,
+            "7": 0.6
+          },
+          "compute_busy_time": {
+            "6": 2.0,
+            "3": 18.0,
+            "1": 4.0,
+            "7": 12.0,
+            "4": 4.0
+          },
+          "mem_peak_gb": {
+            "0": 0.0,
+            "1": 0.09346594211904774,
+            "2": 0.0,
+            "3": 0.07803530439326403,
+            "4": 0.0625,
+            "5": 0.1255395689262511,
+            "6": 0.09355662404153857,
+            "7": 0.10969259360158158
+          },
+          "vram_peak_gb": {
+            "0": 0.0,
+            "1": 0.11621100732088359,
+            "2": 0.0,
+            "3": 0.11655898908886628,
+            "4": 0.11607595288053352,
+            "5": 0.0,
+            "6": 0.11590977480031225,
+            "7": 0.1163246024468419
+          }
+        },
+        "failures": {},
+        "network": {
+          "sent_mb": {
+            "isl:0->4": 0.0,
+            "isl:4->0": 0.0,
+            "isl:1->3": 15.645797282016098,
+            "isl:3->1": 0.0,
+            "isl:1->5": 112.83161740829499,
+            "isl:5->1": 112.06428533108827,
+            "isl:3->5": 47.508627966782996,
+            "isl:5->3": 111.45946394521239,
+            "isl:3->6": 32.204786370882374,
+            "isl:6->3": 97.14115105053385,
+            "isl:5->6": 76.82712098589359,
+            "isl:6->5": 9.505975646193328,
+            "ground:gs_beijing": 0.0,
+            "ground:gs_urumqi": 16.764874192659015
+          },
+          "capacity_mb": {
+            "isl:0->4": 1154.8426314452622,
+            "isl:4->0": 1154.8426314452622,
+            "isl:1->3": 2015.7046520180634,
+            "isl:3->1": 2015.7046520180634,
+            "isl:1->5": 1317.533731064896,
+            "isl:5->1": 1317.533731064896,
+            "isl:3->5": 1992.013524206425,
+            "isl:5->3": 1992.013524206425,
+            "isl:3->6": 1198.029182312836,
+            "isl:6->3": 1198.029182312836,
+            "isl:5->6": 1364.874526931665,
+            "isl:6->5": 1364.874526931665,
+            "ground:gs_beijing": 1000.0,
+            "ground:gs_urumqi": 1000.0
+          },
+          "utilization": {
+            "isl:0->4": 0.0,
+            "isl:4->0": 0.0,
+            "isl:1->3": 0.007761949284758554,
+            "isl:3->1": 0.0,
+            "isl:1->5": 0.08563850378016423,
+            "isl:5->1": 0.08505610345210089,
+            "isl:3->5": 0.023849550913922334,
+            "isl:5->3": 0.055953166276627275,
+            "isl:3->6": 0.026881470707341155,
+            "isl:6->3": 0.08108412756941326,
+            "isl:5->6": 0.056288779276001594,
+            "isl:6->5": 0.006964724931575532,
+            "ground:gs_beijing": 0.0,
+            "ground:gs_urumqi": 0.016764874192659016
+          }
+        },
+        "experiment": {
+          "config": {
+            "seed": 20001,
+            "num_sats": 8,
+            "sim_steps": 80,
+            "dt": 5.0,
+            "decision_interval_steps": 1,
+            "topology_update_steps": 1,
+            "ground_visibility_update_steps": 1,
+            "task_arrival_rate": 0.12,
+            "image_size_mb": 64.0,
+            "num_tiles": 4,
+            "compute_cost_per_tile": 1.0,
+            "vram_base_gb": 0.1,
+            "vram_alpha_per_mb": 0.001,
+            "result_size_mb": 0.1,
+            "deadline_steps": 0,
+            "mem_capacity_gb": 2.0,
+            "vram_capacity_gb": 1.0,
+            "compute_rate": 0.5,
+            "transfer_fail_on_link_down": false,
+            "vram_policy": "wait",
+            "pipeline_mode": "distributed",
+            "tile_lifecycle_log": "",
+            "ground_stations": [
+              {
+                "id": "gs_beijing",
+                "lat_deg": 39.9042,
+                "lon_deg": 116.4074,
+                "alt_m": 50,
+                "min_elevation_deg": 15,
+                "bandwidth_mbps": 20,
+                "receive_channels": 1,
+                "compute_rate": 8
+              },
+              {
+                "id": "gs_urumqi",
+                "lat_deg": 43.8256,
+                "lon_deg": 87.6168,
+                "alt_m": 800,
+                "min_elevation_deg": 15,
+                "bandwidth_mbps": 20,
+                "receive_channels": 1,
+                "compute_rate": 7
+              }
+            ],
+            "topology": {
+              "start_time_utc": "2026-03-20T17:30:00Z",
+              "tle_file": "data/tle/global_spread_inc53_66.tle",
+              "earth_radius_km": 6378.137,
+              "max_range_km": 4500,
+              "bandwidth_distance_scale_km": 2000,
+              "bandwidth_mbps_min": 20,
+              "bandwidth_mbps_max": 120,
+              "bandwidth_period": 120,
+              "bandwidth_noise": 10,
+              "latency_ms": 20,
+              "visibility_workers": 1,
+              "window_lookahead_s": 600
+            }
+          },
+          "elapsed_sim_seconds": 400.0,
+          "task_trace_sha256": "bbc214d7667daf45cafa38800f3bc1166aad063618e20405c8684051fe8136d9",
+          "tle_sha256": "ffe6ddc7fd3925f2e3bfea4f9376b2ed6a2d244f154e2218342b21bd19eef8bd",
+          "decision_tile_limit_per_sat": 4,
+          "source_sha256": "edf94f1532a6556fdac385a5c8e58dbe53a43dd0bb11cee29c7be6b9aed6d2c4",
+          "python_version": "3.12.13",
+          "packages": {
+            "numpy": "2.4.4",
+            "torch": "2.12.0",
+            "skyfield": "1.54",
+            "PyYAML": "6.0.3"
+          },
+          "policy": "marl",
+          "checkpoint": "checkpoints/v2_verified/ippo/best.pt"
+        }
+      }
+    },
+    {
+      "label": "ippo",
+      "seed": 20002,
+      "metrics": {
+        "model_version": "2.0",
+        "overall": {
+          "completed_tiles": 3,
+          "total_tiles": 36,
+          "completed_tasks": 0,
+          "total_tasks": 9,
+          "failed_tiles": 0,
+          "pending_tiles": 33,
+          "task_completion_rate": 0.0,
+          "tile_completion_rate": 0.08333333333333333,
+          "failed_tasks": 0,
+          "pending_tasks": 9
+        },
+        "latency": {
+          "unit": "seconds",
+          "population": "completed_only",
+          "tile_mean": 21.666666666666668,
+          "tile_p95": 30.0,
+          "tile_p99": 30.0,
+          "task_mean": null,
+          "task_p95": null,
+          "task_p99": null
+        },
+        "resource": {
+          "avg_queue_len": {
+            "0": 0.0,
+            "1": 0.5375,
+            "2": 0.3625,
+            "3": 0.1125,
+            "4": 2.0875,
+            "5": 0.1,
+            "6": 0.0,
+            "7": 0.8875
+          },
+          "compute_busy_time": {
+            "4": 20.0,
+            "7": 10.0,
+            "3": 10.0,
+            "5": 4.0,
+            "2": 4.0
+          },
+          "mem_peak_gb": {
+            "0": 0.0,
+            "1": 0.0625,
+            "2": 0.0625,
+            "3": 0.06312499028416932,
+            "4": 0.09376889277484413,
+            "5": 0.07837262633934365,
+            "6": 0.0,
+            "7": 0.09421945366880666
+          },
+          "vram_peak_gb": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 0.11616869840140331,
+            "3": 0.11633904954008803,
+            "4": 0.11639407688276632,
+            "5": 0.11639917037196464,
+            "6": 0.0,
+            "7": 0.11642189236063284
+          }
+        },
+        "failures": {},
+        "network": {
+          "sent_mb": {
+            "isl:0->4": 0.0,
+            "isl:4->0": 0.0,
+            "isl:1->3": 96.25502163158959,
+            "isl:3->1": 31.856314138517654,
+            "isl:1->5": 0.0,
+            "isl:5->1": 16.20334381446625,
+            "isl:3->5": 32.65273974345253,
+            "isl:5->3": 47.79665618553374,
+            "isl:3->6": 0.0,
+            "isl:6->3": 0.0,
+            "isl:5->6": 0.0,
+            "isl:6->5": 0.0,
+            "ground:gs_beijing": 0.0,
+            "ground:gs_urumqi": 16.046729200845302
+          },
+          "capacity_mb": {
+            "isl:0->4": 1154.7389066337548,
+            "isl:4->0": 1154.7389066337548,
+            "isl:1->3": 1145.959661674116,
+            "isl:3->1": 1145.959661674116,
+            "isl:1->5": 1154.6067718015706,
+            "isl:5->1": 1154.6067718015706,
+            "isl:3->5": 1697.863156384513,
+            "isl:5->3": 1697.863156384513,
+            "isl:3->6": 1263.2458284877011,
+            "isl:6->3": 1263.2458284877011,
+            "isl:5->6": 1157.5296991849748,
+            "isl:6->5": 1157.5296991849748,
+            "ground:gs_beijing": 1000.0,
+            "ground:gs_urumqi": 1000.0
+          },
+          "utilization": {
+            "isl:0->4": 0.0,
+            "isl:4->0": 0.0,
+            "isl:1->3": 0.08399512203681934,
+            "isl:3->1": 0.02779880933328772,
+            "isl:1->5": 0.0,
+            "isl:5->1": 0.014033646961193242,
+            "isl:3->5": 0.01923166753496458,
+            "isl:5->3": 0.0281510650642267,
+            "isl:3->6": 0.0,
+            "isl:6->3": 0.0,
+            "isl:5->6": 0.0,
+            "isl:6->5": 0.0,
+            "ground:gs_beijing": 0.0,
+            "ground:gs_urumqi": 0.0160467292008453
+          }
+        },
+        "experiment": {
+          "config": {
+            "seed": 20002,
+            "num_sats": 8,
+            "sim_steps": 80,
+            "dt": 5.0,
+            "decision_interval_steps": 1,
+            "topology_update_steps": 1,
+            "ground_visibility_update_steps": 1,
+            "task_arrival_rate": 0.12,
+            "image_size_mb": 64.0,
+            "num_tiles": 4,
+            "compute_cost_per_tile": 1.0,
+            "vram_base_gb": 0.1,
+            "vram_alpha_per_mb": 0.001,
+            "result_size_mb": 0.1,
+            "deadline_steps": 0,
+            "mem_capacity_gb": 2.0,
+            "vram_capacity_gb": 1.0,
+            "compute_rate": 0.5,
+            "transfer_fail_on_link_down": false,
+            "vram_policy": "wait",
+            "pipeline_mode": "distributed",
+            "tile_lifecycle_log": "",
+            "ground_stations": [
+              {
+                "id": "gs_beijing",
+                "lat_deg": 39.9042,
+                "lon_deg": 116.4074,
+                "alt_m": 50,
+                "min_elevation_deg": 15,
+                "bandwidth_mbps": 20,
+                "receive_channels": 1,
+                "compute_rate": 8
+              },
+              {
+                "id": "gs_urumqi",
+                "lat_deg": 43.8256,
+                "lon_deg": 87.6168,
+                "alt_m": 800,
+                "min_elevation_deg": 15,
+                "bandwidth_mbps": 20,
+                "receive_channels": 1,
+                "compute_rate": 7
+              }
+            ],
+            "topology": {
+              "start_time_utc": "2026-03-20T17:30:00Z",
+              "tle_file": "data/tle/global_spread_inc53_66.tle",
+              "earth_radius_km": 6378.137,
+              "max_range_km": 4500,
+              "bandwidth_distance_scale_km": 2000,
+              "bandwidth_mbps_min": 20,
+              "bandwidth_mbps_max": 120,
+              "bandwidth_period": 120,
+              "bandwidth_noise": 10,
+              "latency_ms": 20,
+              "visibility_workers": 1,
+              "window_lookahead_s": 600
+            }
+          },
+          "elapsed_sim_seconds": 400.0,
+          "task_trace_sha256": "381f92f78ced8c2521e6753cdedce3203f20bf5c6029291925ba8e85f9167a83",
+          "tle_sha256": "ffe6ddc7fd3925f2e3bfea4f9376b2ed6a2d244f154e2218342b21bd19eef8bd",
+          "decision_tile_limit_per_sat": 4,
+          "source_sha256": "edf94f1532a6556fdac385a5c8e58dbe53a43dd0bb11cee29c7be6b9aed6d2c4",
+          "python_version": "3.12.13",
+          "packages": {
+            "numpy": "2.4.4",
+            "torch": "2.12.0",
+            "skyfield": "1.54",
+            "PyYAML": "6.0.3"
+          },
+          "policy": "marl",
+          "checkpoint": "checkpoints/v2_verified/ippo/best.pt"
+        }
+      }
+    },
+    {
+      "label": "ippo",
+      "seed": 20003,
+      "metrics": {
+        "model_version": "2.0",
+        "overall": {
+          "completed_tiles": 0,
+          "total_tiles": 28,
+          "completed_tasks": 0,
+          "total_tasks": 7,
+          "failed_tiles": 0,
+          "pending_tiles": 28,
+          "task_completion_rate": 0.0,
+          "tile_completion_rate": 0.0,
+          "failed_tasks": 0,
+          "pending_tasks": 7
+        },
+        "latency": {
+          "unit": "seconds",
+          "population": "completed_only",
+          "tile_mean": null,
+          "tile_p95": null,
+          "tile_p99": null,
+          "task_mean": null,
+          "task_p95": null,
+          "task_p99": null
+        },
+        "resource": {
+          "avg_queue_len": {
+            "0": 1.9375,
+            "1": 0.9,
+            "2": 1.3125,
+            "3": 0.875,
+            "4": 0.0,
+            "5": 0.0875,
+            "6": 0.075,
+            "7": 0.0
+          },
+          "compute_busy_time": {
+            "0": 20.0,
+            "6": 8.0,
+            "5": 12.0,
+            "2": 4.0
+          },
+          "mem_peak_gb": {
+            "0": 0.09388947859758053,
+            "1": 0.07833171148464198,
+            "2": 0.0625,
+            "3": 0.07844566138698365,
+            "4": 0.0,
+            "5": 0.0627631958273335,
+            "6": 0.046744293466786914,
+            "7": 0.0
+          },
+          "vram_peak_gb": {
+            "0": 0.11631323458299696,
+            "1": 0.0,
+            "2": 0.11613633297226963,
+            "3": 0.0,
+            "4": 0.0,
+            "5": 0.1162116725602734,
+            "6": 0.11626917222255648,
+            "7": 0.0
+          }
+        },
+        "failures": {},
+        "network": {
+          "sent_mb": {
+            "isl:0->4": 0.0,
+            "isl:4->0": 0.0,
+            "isl:1->3": 0.0,
+            "isl:3->1": 32.345516050283585,
+            "isl:1->5": 96.50491654450784,
+            "isl:5->1": 16.10156052730814,
+            "isl:3->5": 0.0,
+            "isl:5->3": 0.0,
+            "isl:3->6": 94.91500413632257,
+            "isl:6->3": 15.588877446877417,
+            "isl:5->6": 0.0,
+            "isl:6->5": 15.925217523667033,
+            "ground:gs_beijing": 0.0,
+            "ground:gs_urumqi": 0.0
+          },
+          "capacity_mb": {
+            "isl:0->4": 1306.3348459908502,
+            "isl:4->0": 1306.3348459908502,
+            "isl:1->3": 1767.58883886957,
+            "isl:3->1": 1767.58883886957,
+            "isl:1->5": 1302.7135526321943,
+            "isl:5->1": 1302.7135526321943,
+            "isl:3->5": 2654.4785796014135,
+            "isl:5->3": 2654.4785796014135,
+            "isl:3->6": 1362.7505331054565,
+            "isl:6->3": 1362.7505331054565,
+            "isl:5->6": 1234.1140091318928,
+            "isl:6->5": 1234.1140091318928,
+            "ground:gs_beijing": 1000.0,
+            "ground:gs_urumqi": 1000.0
+          },
+          "utilization": {
+            "isl:0->4": 0.0,
+            "isl:4->0": 0.0,
+            "isl:1->3": 0.0,
+            "isl:3->1": 0.01829923075943927,
+            "isl:1->5": 0.07407992060074534,
+            "isl:5->1": 0.012360016133074057,
+            "isl:3->5": 0.0,
+            "isl:5->3": 0.0,
+            "isl:3->6": 0.06964958136543804,
+            "isl:6->3": 0.011439274517363972,
+            "isl:5->6": 0.0,
+            "isl:6->5": 0.012904170446026488,
+            "ground:gs_beijing": 0.0,
+            "ground:gs_urumqi": 0.0
+          }
+        },
+        "experiment": {
+          "config": {
+            "seed": 20003,
+            "num_sats": 8,
+            "sim_steps": 80,
+            "dt": 5.0,
+            "decision_interval_steps": 1,
+            "topology_update_steps": 1,
+            "ground_visibility_update_steps": 1,
+            "task_arrival_rate": 0.12,
+            "image_size_mb": 64.0,
+            "num_tiles": 4,
+            "compute_cost_per_tile": 1.0,
+            "vram_base_gb": 0.1,
+            "vram_alpha_per_mb": 0.001,
+            "result_size_mb": 0.1,
+            "deadline_steps": 0,
+            "mem_capacity_gb": 2.0,
+            "vram_capacity_gb": 1.0,
+            "compute_rate": 0.5,
+            "transfer_fail_on_link_down": false,
+            "vram_policy": "wait",
+            "pipeline_mode": "distributed",
+            "tile_lifecycle_log": "",
+            "ground_stations": [
+              {
+                "id": "gs_beijing",
+                "lat_deg": 39.9042,
+                "lon_deg": 116.4074,
+                "alt_m": 50,
+                "min_elevation_deg": 15,
+                "bandwidth_mbps": 20,
+                "receive_channels": 1,
+                "compute_rate": 8
+              },
+              {
+                "id": "gs_urumqi",
+                "lat_deg": 43.8256,
+                "lon_deg": 87.6168,
+                "alt_m": 800,
+                "min_elevation_deg": 15,
+                "bandwidth_mbps": 20,
+                "receive_channels": 1,
+                "compute_rate": 7
+              }
+            ],
+            "topology": {
+              "start_time_utc": "2026-03-20T17:30:00Z",
+              "tle_file": "data/tle/global_spread_inc53_66.tle",
+              "earth_radius_km": 6378.137,
+              "max_range_km": 4500,
+              "bandwidth_distance_scale_km": 2000,
+              "bandwidth_mbps_min": 20,
+              "bandwidth_mbps_max": 120,
+              "bandwidth_period": 120,
+              "bandwidth_noise": 10,
+              "latency_ms": 20,
+              "visibility_workers": 1,
+              "window_lookahead_s": 600
+            }
+          },
+          "elapsed_sim_seconds": 400.0,
+          "task_trace_sha256": "84cc20348869cf9b61f8722492d36c2e3bead9810e8082d3f7ef045cf8a3e594",
+          "tle_sha256": "ffe6ddc7fd3925f2e3bfea4f9376b2ed6a2d244f154e2218342b21bd19eef8bd",
+          "decision_tile_limit_per_sat": 4,
+          "source_sha256": "edf94f1532a6556fdac385a5c8e58dbe53a43dd0bb11cee29c7be6b9aed6d2c4",
+          "python_version": "3.12.13",
+          "packages": {
+            "numpy": "2.4.4",
+            "torch": "2.12.0",
+            "skyfield": "1.54",
+            "PyYAML": "6.0.3"
+          },
+          "policy": "marl",
+          "checkpoint": "checkpoints/v2_verified/ippo/best.pt"
+        }
+      }
+    },
+    {
+      "label": "mappo",
+      "seed": 20001,
+      "metrics": {
+        "model_version": "2.0",
+        "overall": {
+          "completed_tiles": 8,
+          "total_tiles": 32,
+          "completed_tasks": 2,
+          "total_tasks": 8,
+          "failed_tiles": 0,
+          "pending_tiles": 24,
+          "task_completion_rate": 0.25,
+          "tile_completion_rate": 0.25,
+          "failed_tasks": 0,
+          "pending_tasks": 6
+        },
+        "latency": {
+          "unit": "seconds",
+          "population": "completed_only",
+          "tile_mean": 39.375,
+          "tile_p95": 55.0,
+          "tile_p99": 55.0,
+          "task_mean": 52.5,
+          "task_p95": 55.0,
+          "task_p99": 55.0
+        },
+        "resource": {
+          "avg_queue_len": {
+            "0": 0.025,
+            "1": 0.1,
+            "2": 0.0,
+            "3": 0.075,
+            "4": 0.075,
+            "5": 0.1875,
+            "6": 0.1125,
+            "7": 0.1
+          },
+          "compute_busy_time": {
+            "5": 12.0,
+            "1": 8.0,
+            "6": 10.0,
+            "3": 10.0,
+            "7": 4.0,
+            "4": 4.0,
+            "0": 4.0
+          },
+          "mem_peak_gb": {
+            "0": 0.031090065084213366,
+            "1": 0.062499999999999986,
+            "2": 0.0,
+            "3": 0.03156152088765918,
+            "4": 0.0625,
+            "5": 0.0625,
+            "6": 0.0625,
+            "7": 0.10927456785195915
+          },
+          "vram_peak_gb": {
+            "0": 0.11617881113288428,
+            "1": 0.11655898908886628,
+            "2": 0.0,
+            "3": 0.11608433760879551,
+            "4": 0.11608782047323202,
+            "5": 0.11646788199698552,
+            "6": 0.11625396105707746,
+            "7": 0.1163246024468419
+          }
+        },
+        "failures": {},
+        "network": {
+          "sent_mb": {
+            "isl:0->4": 0.0,
+            "isl:4->0": 31.836226646234486,
+            "isl:1->3": 31.690189281591035,
+            "isl:3->1": 16.558989088866277,
+            "isl:1->5": 32.64653864785114,
+            "isl:5->1": 47.45437899774408,
+            "isl:3->5": 0.0,
+            "isl:5->3": 16.036914213017653,
+            "isl:3->6": 0.0,
+            "isl:6->3": 48.4033349977585,
+            "isl:5->6": 80.10487806908488,
+            "isl:6->5": 15.972289302609486,
+            "ground:gs_beijing": 0.0,
+            "ground:gs_urumqi": 95.77255503356426
+          },
+          "capacity_mb": {
+            "isl:0->4": 1154.8426314452622,
+            "isl:4->0": 1154.8426314452622,
+            "isl:1->3": 2015.7046520180634,
+            "isl:3->1": 2015.7046520180634,
+            "isl:1->5": 1317.533731064896,
+            "isl:5->1": 1317.533731064896,
+            "isl:3->5": 1992.013524206425,
+            "isl:5->3": 1992.013524206425,
+            "isl:3->6": 1198.029182312836,
+            "isl:6->3": 1198.029182312836,
+            "isl:5->6": 1364.874526931665,
+            "isl:6->5": 1364.874526931665,
+            "ground:gs_beijing": 1000.0,
+            "ground:gs_urumqi": 1000.0
+          },
+          "utilization": {
+            "isl:0->4": 0.0,
+            "isl:4->0": 0.027567588673438642,
+            "isl:1->3": 0.01572164317320187,
+            "isl:3->1": 0.008214987782207037,
+            "isl:1->5": 0.024778522081149744,
+            "isl:5->1": 0.03601758184922453,
+            "isl:3->5": 0.0,
+            "isl:5->3": 0.00805060508783765,
+            "isl:3->6": 0.0,
+            "isl:6->3": 0.04040246741261696,
+            "isl:5->6": 0.05869028726704009,
+            "isl:6->5": 0.01170238654722081,
+            "ground:gs_beijing": 0.0,
+            "ground:gs_urumqi": 0.09577255503356426
+          }
+        },
+        "experiment": {
+          "config": {
+            "seed": 20001,
+            "num_sats": 8,
+            "sim_steps": 80,
+            "dt": 5.0,
+            "decision_interval_steps": 1,
+            "topology_update_steps": 1,
+            "ground_visibility_update_steps": 1,
+            "task_arrival_rate": 0.12,
+            "image_size_mb": 64.0,
+            "num_tiles": 4,
+            "compute_cost_per_tile": 1.0,
+            "vram_base_gb": 0.1,
+            "vram_alpha_per_mb": 0.001,
+            "result_size_mb": 0.1,
+            "deadline_steps": 0,
+            "mem_capacity_gb": 2.0,
+            "vram_capacity_gb": 1.0,
+            "compute_rate": 0.5,
+            "transfer_fail_on_link_down": false,
+            "vram_policy": "wait",
+            "pipeline_mode": "distributed",
+            "tile_lifecycle_log": "",
+            "ground_stations": [
+              {
+                "id": "gs_beijing",
+                "lat_deg": 39.9042,
+                "lon_deg": 116.4074,
+                "alt_m": 50,
+                "min_elevation_deg": 15,
+                "bandwidth_mbps": 20,
+                "receive_channels": 1,
+                "compute_rate": 8
+              },
+              {
+                "id": "gs_urumqi",
+                "lat_deg": 43.8256,
+                "lon_deg": 87.6168,
+                "alt_m": 800,
+                "min_elevation_deg": 15,
+                "bandwidth_mbps": 20,
+                "receive_channels": 1,
+                "compute_rate": 7
+              }
+            ],
+            "topology": {
+              "start_time_utc": "2026-03-20T17:30:00Z",
+              "tle_file": "data/tle/global_spread_inc53_66.tle",
+              "earth_radius_km": 6378.137,
+              "max_range_km": 4500,
+              "bandwidth_distance_scale_km": 2000,
+              "bandwidth_mbps_min": 20,
+              "bandwidth_mbps_max": 120,
+              "bandwidth_period": 120,
+              "bandwidth_noise": 10,
+              "latency_ms": 20,
+              "visibility_workers": 1,
+              "window_lookahead_s": 600
+            }
+          },
+          "elapsed_sim_seconds": 400.0,
+          "task_trace_sha256": "bbc214d7667daf45cafa38800f3bc1166aad063618e20405c8684051fe8136d9",
+          "tle_sha256": "ffe6ddc7fd3925f2e3bfea4f9376b2ed6a2d244f154e2218342b21bd19eef8bd",
+          "decision_tile_limit_per_sat": 4,
+          "source_sha256": "edf94f1532a6556fdac385a5c8e58dbe53a43dd0bb11cee29c7be6b9aed6d2c4",
+          "python_version": "3.12.13",
+          "packages": {
+            "numpy": "2.4.4",
+            "torch": "2.12.0",
+            "skyfield": "1.54",
+            "PyYAML": "6.0.3"
+          },
+          "policy": "marl",
+          "checkpoint": "checkpoints/v2_verified/mappo/best.pt"
+        }
+      }
+    },
+    {
+      "label": "mappo",
+      "seed": 20002,
+      "metrics": {
+        "model_version": "2.0",
+        "overall": {
+          "completed_tiles": 4,
+          "total_tiles": 36,
+          "completed_tasks": 1,
+          "total_tasks": 9,
+          "failed_tiles": 0,
+          "pending_tiles": 32,
+          "task_completion_rate": 0.1111111111111111,
+          "tile_completion_rate": 0.1111111111111111,
+          "failed_tasks": 0,
+          "pending_tasks": 8
+        },
+        "latency": {
+          "unit": "seconds",
+          "population": "completed_only",
+          "tile_mean": 30.0,
+          "tile_p95": 40.0,
+          "tile_p99": 40.0,
+          "task_mean": 40.0,
+          "task_p95": 40.0,
+          "task_p99": 40.0
+        },
+        "resource": {
+          "avg_queue_len": {
+            "0": 0.075,
+            "1": 0.075,
+            "2": 0.125,
+            "3": 0.025,
+            "4": 0.225,
+            "5": 0.075,
+            "6": 0.025,
+            "7": 0.225
+          },
+          "compute_busy_time": {
+            "4": 12.0,
+            "0": 12.0,
+            "7": 10.0,
+            "1": 4.0,
+            "5": 6.0,
+            "3": 2.0,
+            "6": 4.0,
+            "2": 8.0
+          },
+          "mem_peak_gb": {
+            "0": 0.03148579837067125,
+            "1": 0.0625,
+            "2": 0.0625,
+            "3": 0.03110968177589615,
+            "4": 0.06250000000000001,
+            "5": 0.0625,
+            "6": 0.01587262633934365,
+            "7": 0.0625
+          },
+          "vram_peak_gb": {
+            "0": 0.11639407688276632,
+            "1": 0.11620334381446626,
+            "2": 0.11633870783012513,
+            "3": 0.11560274476702977,
+            "4": 0.11611668111448886,
+            "5": 0.11639917037196464,
+            "6": 0.1162535693714879,
+            "7": 0.11642189236063284
+          }
+        },
+        "failures": {},
+        "network": {
+          "sent_mb": {
+            "isl:0->4": 0.0,
+            "isl:4->0": 96.44572937462699,
+            "isl:1->3": 31.856314138517657,
+            "isl:3->1": 0.0,
+            "isl:1->5": 32.73821991205264,
+            "isl:5->1": 32.60251418643088,
+            "isl:3->5": 0.0,
+            "isl:5->3": 0.0,
+            "isl:3->6": 16.2535693714879,
+            "isl:6->3": 0.0,
+            "isl:5->6": 15.78390649307061,
+            "isl:6->5": 0.0,
+            "ground:gs_beijing": 0.0,
+            "ground:gs_urumqi": 47.85338537994643
+          },
+          "capacity_mb": {
+            "isl:0->4": 1154.7389066337548,
+            "isl:4->0": 1154.7389066337548,
+            "isl:1->3": 1145.959661674116,
+            "isl:3->1": 1145.959661674116,
+            "isl:1->5": 1154.6067718015706,
+            "isl:5->1": 1154.6067718015706,
+            "isl:3->5": 1697.863156384513,
+            "isl:5->3": 1697.863156384513,
+            "isl:3->6": 1263.2458284877011,
+            "isl:6->3": 1263.2458284877011,
+            "isl:5->6": 1157.5296991849748,
+            "isl:6->5": 1157.5296991849748,
+            "ground:gs_beijing": 1000.0,
+            "ground:gs_urumqi": 1000.0
+          },
+          "utilization": {
+            "isl:0->4": 0.0,
+            "isl:4->0": 0.08352167647644387,
+            "isl:1->3": 0.027798809333287725,
+            "isl:3->1": 0.0,
+            "isl:1->5": 0.028354432618622295,
+            "isl:5->1": 0.028236898468523716,
+            "isl:3->5": 0.0,
+            "isl:5->3": 0.0,
+            "isl:3->6": 0.01286651339347458,
+            "isl:6->3": 0.0,
+            "isl:5->6": 0.013635854444325857,
+            "isl:6->5": 0.0,
+            "ground:gs_beijing": 0.0,
+            "ground:gs_urumqi": 0.047853385379946434
+          }
+        },
+        "experiment": {
+          "config": {
+            "seed": 20002,
+            "num_sats": 8,
+            "sim_steps": 80,
+            "dt": 5.0,
+            "decision_interval_steps": 1,
+            "topology_update_steps": 1,
+            "ground_visibility_update_steps": 1,
+            "task_arrival_rate": 0.12,
+            "image_size_mb": 64.0,
+            "num_tiles": 4,
+            "compute_cost_per_tile": 1.0,
+            "vram_base_gb": 0.1,
+            "vram_alpha_per_mb": 0.001,
+            "result_size_mb": 0.1,
+            "deadline_steps": 0,
+            "mem_capacity_gb": 2.0,
+            "vram_capacity_gb": 1.0,
+            "compute_rate": 0.5,
+            "transfer_fail_on_link_down": false,
+            "vram_policy": "wait",
+            "pipeline_mode": "distributed",
+            "tile_lifecycle_log": "",
+            "ground_stations": [
+              {
+                "id": "gs_beijing",
+                "lat_deg": 39.9042,
+                "lon_deg": 116.4074,
+                "alt_m": 50,
+                "min_elevation_deg": 15,
+                "bandwidth_mbps": 20,
+                "receive_channels": 1,
+                "compute_rate": 8
+              },
+              {
+                "id": "gs_urumqi",
+                "lat_deg": 43.8256,
+                "lon_deg": 87.6168,
+                "alt_m": 800,
+                "min_elevation_deg": 15,
+                "bandwidth_mbps": 20,
+                "receive_channels": 1,
+                "compute_rate": 7
+              }
+            ],
+            "topology": {
+              "start_time_utc": "2026-03-20T17:30:00Z",
+              "tle_file": "data/tle/global_spread_inc53_66.tle",
+              "earth_radius_km": 6378.137,
+              "max_range_km": 4500,
+              "bandwidth_distance_scale_km": 2000,
+              "bandwidth_mbps_min": 20,
+              "bandwidth_mbps_max": 120,
+              "bandwidth_period": 120,
+              "bandwidth_noise": 10,
+              "latency_ms": 20,
+              "visibility_workers": 1,
+              "window_lookahead_s": 600
+            }
+          },
+          "elapsed_sim_seconds": 400.0,
+          "task_trace_sha256": "381f92f78ced8c2521e6753cdedce3203f20bf5c6029291925ba8e85f9167a83",
+          "tle_sha256": "ffe6ddc7fd3925f2e3bfea4f9376b2ed6a2d244f154e2218342b21bd19eef8bd",
+          "decision_tile_limit_per_sat": 4,
+          "source_sha256": "edf94f1532a6556fdac385a5c8e58dbe53a43dd0bb11cee29c7be6b9aed6d2c4",
+          "python_version": "3.12.13",
+          "packages": {
+            "numpy": "2.4.4",
+            "torch": "2.12.0",
+            "skyfield": "1.54",
+            "PyYAML": "6.0.3"
+          },
+          "policy": "marl",
+          "checkpoint": "checkpoints/v2_verified/mappo/best.pt"
+        }
+      }
+    },
+    {
+      "label": "mappo",
+      "seed": 20003,
+      "metrics": {
+        "model_version": "2.0",
+        "overall": {
+          "completed_tiles": 0,
+          "total_tiles": 28,
+          "completed_tasks": 0,
+          "total_tasks": 7,
+          "failed_tiles": 0,
+          "pending_tiles": 28,
+          "task_completion_rate": 0.0,
+          "tile_completion_rate": 0.0,
+          "failed_tasks": 0,
+          "pending_tasks": 7
+        },
+        "latency": {
+          "unit": "seconds",
+          "population": "completed_only",
+          "tile_mean": null,
+          "tile_p95": null,
+          "tile_p99": null,
+          "task_mean": null,
+          "task_p95": null,
+          "task_p99": null
+        },
+        "resource": {
+          "avg_queue_len": {
+            "0": 0.225,
+            "1": 0.1,
+            "2": 0.125,
+            "3": 0.15,
+            "4": 0.075,
+            "5": 0.05,
+            "6": 0.0,
+            "7": 0.0
+          },
+          "compute_busy_time": {
+            "0": 12.0,
+            "1": 6.0,
+            "4": 12.0,
+            "3": 12.0,
+            "5": 6.0,
+            "2": 8.0
+          },
+          "mem_peak_gb": {
+            "0": 0.06250000000000001,
+            "1": 0.06258903109234935,
+            "2": 0.0625,
+            "3": 0.0625,
+            "4": 0.031207921241722864,
+            "5": 0.04703292047264928,
+            "6": 0.0,
+            "7": 0.0
+          },
+          "vram_peak_gb": {
+            "0": 0.11631323458299696,
+            "1": 0.1162116725602734,
+            "2": 0.11613633297226963,
+            "3": 0.11632835726027127,
+            "4": 0.11598992024212106,
+            "5": 0.1161338434900102,
+            "6": 0.0,
+            "7": 0.0
+          }
+        },
+        "failures": {},
+        "network": {
+          "sent_mb": {
+            "isl:0->4": 95.50426776440692,
+            "isl:4->0": 0.0,
+            "isl:1->3": 47.0278663461449,
+            "isl:3->1": 63.397534294584155,
+            "isl:1->5": 32.290617831414934,
+            "isl:5->1": 0.0,
+            "isl:3->5": 32.00493622258812,
+            "isl:5->3": 16.18905730410679,
+            "isl:3->6": 0.0,
+            "isl:6->3": 0.0,
+            "isl:5->6": 0.0,
+            "isl:6->5": 0.0,
+            "ground:gs_beijing": 0.0,
+            "ground:gs_urumqi": 0.0
+          },
+          "capacity_mb": {
+            "isl:0->4": 1306.3348459908502,
+            "isl:4->0": 1306.3348459908502,
+            "isl:1->3": 1767.58883886957,
+            "isl:3->1": 1767.58883886957,
+            "isl:1->5": 1302.7135526321943,
+            "isl:5->1": 1302.7135526321943,
+            "isl:3->5": 2654.4785796014135,
+            "isl:5->3": 2654.4785796014135,
+            "isl:3->6": 1362.7505331054565,
+            "isl:6->3": 1362.7505331054565,
+            "isl:5->6": 1234.1140091318928,
+            "isl:6->5": 1234.1140091318928,
+            "ground:gs_beijing": 1000.0,
+            "ground:gs_urumqi": 1000.0
+          },
+          "utilization": {
+            "isl:0->4": 0.07310856635074087,
+            "isl:4->0": 0.0,
+            "isl:1->3": 0.026605659252872817,
+            "isl:3->1": 0.03586667493053923,
+            "isl:1->5": 0.02478719728229603,
+            "isl:5->1": 0.0,
+            "isl:3->5": 0.012056957802761347,
+            "isl:5->3": 0.006098771121572839,
+            "isl:3->6": 0.0,
+            "isl:6->3": 0.0,
+            "isl:5->6": 0.0,
+            "isl:6->5": 0.0,
+            "ground:gs_beijing": 0.0,
+            "ground:gs_urumqi": 0.0
+          }
+        },
+        "experiment": {
+          "config": {
+            "seed": 20003,
+            "num_sats": 8,
+            "sim_steps": 80,
+            "dt": 5.0,
+            "decision_interval_steps": 1,
+            "topology_update_steps": 1,
+            "ground_visibility_update_steps": 1,
+            "task_arrival_rate": 0.12,
+            "image_size_mb": 64.0,
+            "num_tiles": 4,
+            "compute_cost_per_tile": 1.0,
+            "vram_base_gb": 0.1,
+            "vram_alpha_per_mb": 0.001,
+            "result_size_mb": 0.1,
+            "deadline_steps": 0,
+            "mem_capacity_gb": 2.0,
+            "vram_capacity_gb": 1.0,
+            "compute_rate": 0.5,
+            "transfer_fail_on_link_down": false,
+            "vram_policy": "wait",
+            "pipeline_mode": "distributed",
+            "tile_lifecycle_log": "",
+            "ground_stations": [
+              {
+                "id": "gs_beijing",
+                "lat_deg": 39.9042,
+                "lon_deg": 116.4074,
+                "alt_m": 50,
+                "min_elevation_deg": 15,
+                "bandwidth_mbps": 20,
+                "receive_channels": 1,
+                "compute_rate": 8
+              },
+              {
+                "id": "gs_urumqi",
+                "lat_deg": 43.8256,
+                "lon_deg": 87.6168,
+                "alt_m": 800,
+                "min_elevation_deg": 15,
+                "bandwidth_mbps": 20,
+                "receive_channels": 1,
+                "compute_rate": 7
+              }
+            ],
+            "topology": {
+              "start_time_utc": "2026-03-20T17:30:00Z",
+              "tle_file": "data/tle/global_spread_inc53_66.tle",
+              "earth_radius_km": 6378.137,
+              "max_range_km": 4500,
+              "bandwidth_distance_scale_km": 2000,
+              "bandwidth_mbps_min": 20,
+              "bandwidth_mbps_max": 120,
+              "bandwidth_period": 120,
+              "bandwidth_noise": 10,
+              "latency_ms": 20,
+              "visibility_workers": 1,
+              "window_lookahead_s": 600
+            }
+          },
+          "elapsed_sim_seconds": 400.0,
+          "task_trace_sha256": "84cc20348869cf9b61f8722492d36c2e3bead9810e8082d3f7ef045cf8a3e594",
+          "tle_sha256": "ffe6ddc7fd3925f2e3bfea4f9376b2ed6a2d244f154e2218342b21bd19eef8bd",
+          "decision_tile_limit_per_sat": 4,
+          "source_sha256": "edf94f1532a6556fdac385a5c8e58dbe53a43dd0bb11cee29c7be6b9aed6d2c4",
+          "python_version": "3.12.13",
+          "packages": {
+            "numpy": "2.4.4",
+            "torch": "2.12.0",
+            "skyfield": "1.54",
+            "PyYAML": "6.0.3"
+          },
+          "policy": "marl",
+          "checkpoint": "checkpoints/v2_verified/mappo/best.pt"
+        }
+      }
+    }
+  ]
+}

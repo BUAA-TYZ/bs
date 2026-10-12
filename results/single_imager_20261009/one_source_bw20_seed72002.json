@@ -1,0 +1,90 @@
+{
+  "seed": 72002,
+  "num_sats": 3,
+  "sim_steps": 8640,
+  "dt": 10.0,
+  "decision_interval_steps": 1,
+  "topology_update_steps": 1,
+  "ground_visibility_update_steps": 1,
+  "task_arrival_rate": 0.0125,
+  "image_size_mb": 128,
+  "num_tiles": 8,
+  "compute_cost_per_tile": 60,
+  "vram_base_gb": 0.1,
+  "vram_alpha_per_mb": 0.001,
+  "result_size_mb": 0.5,
+  "deadline_steps": 0,
+  "mem_capacity_gb": 8.0,
+  "vram_capacity_gb": 1.0,
+  "compute_rate": 0.5,
+  "transfer_fail_on_link_down": false,
+  "vram_policy": "wait",
+  "pipeline_mode": "distributed",
+  "tile_lifecycle_log": "",
+  "ground_stations": [
+    {
+      "id": "gs_beijing",
+      "lat_deg": 39.9042,
+      "lon_deg": 116.4074,
+      "alt_m": 50,
+      "min_elevation_deg": 15,
+      "bandwidth_mbps": 20,
+      "receive_channels": 1,
+      "compute_rate": 8
+    },
+    {
+      "id": "gs_urumqi",
+      "lat_deg": 43.8256,
+      "lon_deg": 87.6168,
+      "alt_m": 800,
+      "min_elevation_deg": 15,
+      "bandwidth_mbps": 20,
+      "receive_channels": 1,
+      "compute_rate": 7
+    }
+  ],
+  "topology": {
+    "start_time_utc": "2026-03-20T17:30:00Z",
+    "earth_radius_km": 6378.137,
+    "max_range_km": 4500,
+    "max_neighbors": 4,
+    "predict_contacts": true,
+    "precompute_visibility": true,
+    "contact_scan_s": 30,
+    "contact_update_s": 60,
+    "bandwidth_distance_scale_km": 2000,
+    "bandwidth_mbps_min": 20,
+    "bandwidth_mbps_max": 120,
+    "bandwidth_period": 60,
+    "bandwidth_noise": 10,
+    "latency_ms": 20,
+    "visibility_workers": 1,
+    "window_lookahead_s": 7200,
+    "tle_lines": [
+      [
+        "1 00001U          26079.72916667  .00000000  00000-0  00000+0 0    01",
+        "2 00001  98.2000  25.0000 0001000   0.0000  15.0000 14.56346372    07"
+      ],
+      [
+        "1 00002U          26079.72916667  .00000000  00000-0  00000+0 0    02",
+        "2 00002  98.2000  25.0000 0001000   0.0000  13.0000 14.56346372    06"
+      ],
+      [
+        "1 00003U          26079.72916667  .00000000  00000-0  00000+0 0    03",
+        "2 00003  98.2000  25.0000 0001000   0.0000  17.0000 14.56346372    01"
+      ]
+    ]
+  },
+  "ground_relay_delay_s": 10.0,
+  "aggregation_delay_s": 10.0,
+  "task_arrival_end_step": 2880,
+  "execution_commitment": true,
+  "task_source_sat_ids": [
+    0
+  ],
+  "satellite_compute_rates": [
+    0.1,
+    0.7,
+    0.7
+  ]
+}

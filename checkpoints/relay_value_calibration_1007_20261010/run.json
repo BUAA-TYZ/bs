@@ -1,0 +1,60 @@
+{
+  "args": {
+    "checkpoint": "checkpoints/relay_greedy_dagger_mappo_7_20261010/teacher_bc.pt",
+    "out_dir": "checkpoints/relay_value_calibration_1007_20261010",
+    "config": "examples/config_relay.yaml",
+    "distribution": "examples/scenario_roles.json",
+    "seed": 1007,
+    "train_cases": 18,
+    "probe_cases": 9,
+    "workers": 3,
+    "epochs": 32,
+    "minibatch": 256,
+    "rows_per_case": 512,
+    "uniform_rows": 512,
+    "lr": 0.0003
+  },
+  "source_sha256": "2ecefba4b90144c59f90aa6b1f4c0ac8306c9fda85d91e6235b56998908ff971",
+  "python_version": "3.12.13",
+  "packages": {
+    "numpy": "2.4.4",
+    "torch": "2.12.0",
+    "skyfield": "1.54",
+    "PyYAML": "6.0.3"
+  },
+  "actor_checkpoint_sha256": "cd3fdb8dfe5620b6178abdac08724bea010f73f6ea14d8415409fa36cf619345",
+  "scenario_distribution_sha256": "9e946fbb00dcba477f43413ba7cba814952c932d6fc608d2d218918c76a59d26",
+  "fit_seeds": [
+    1008,
+    1009,
+    1010,
+    1011,
+    1012,
+    1013,
+    1014,
+    1015,
+    1016,
+    1017,
+    1018,
+    1019,
+    1020,
+    1021,
+    1022,
+    1023,
+    1024,
+    1025
+  ],
+  "probe_seeds": [
+    1026,
+    1027,
+    1028,
+    1029,
+    1030,
+    1031,
+    1032,
+    1033,
+    1034
+  ],
+  "protocol": "fixed stochastic BC actor; equal-case 50% decision/50% uniform-time fitting; same rows and update budget",
+  "probe_scope": "unseen by critic fitting, sampled only from training distribution; not final test"
+}

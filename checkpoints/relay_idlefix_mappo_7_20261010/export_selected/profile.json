@@ -1,0 +1,30 @@
+{
+  "checkpoint": "checkpoints/relay_idlefix_mappo_7_20261010/best.pt",
+  "episode": 0,
+  "checkpoint_sha256": "c1c5f5953d13c16cc15ce4dd8ee3ad87fe9f13ccf6d2002999356a1a9536e443",
+  "actor_parameters": 28417,
+  "fp32_parameter_bytes": 113668,
+  "artifact_bytes": 139686,
+  "under_one_million_parameters": true,
+  "inference_batch_size": 1,
+  "input_shape": [
+    1,
+    254
+  ],
+  "output_shape": [
+    1,
+    4,
+    12
+  ],
+  "cpu_threads": 1,
+  "machine": "arm64",
+  "platform": "macOS-26.4.1-arm64-arm-64bit",
+  "median_ms": 0.067958,
+  "p95_ms": 0.07908605,
+  "feature_options": {
+    "feature_set": "role_contact",
+    "task_features": true,
+    "window_features": true
+  },
+  "scope": "CPU network only; excludes orbit prediction, features, masks, runtime memory; not flight hardware"
+}

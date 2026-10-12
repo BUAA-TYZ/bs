@@ -56,6 +56,8 @@ class GreedyEarliestFinish(SchedulerPolicy):
                 若 sat_id 当前不可见任何地面站，则对下传估算一个保守惩罚。
                 """
                 sat = env_state.satellites[sat_id]
+                if tile["vram_req_gb"] > env_state.config["vram_capacity_gb"]:
+                    return float("inf")
                 # 修复3：用 compute_cost/compute_rate 替代 queue_len*dt
                 single_tile_compute = compute_cost / sat["compute_rate"]
                 queue_wait = sat["queue_len"] * single_tile_compute
@@ -91,6 +93,8 @@ class GreedyEarliestFinish(SchedulerPolicy):
             #         （地面计算完直接 DONE，无需再下传，通常最快）
             # ------------------------------------------------------------------
             for nb in env_state.neighbors.get(src, []):
+                if env_state.satellites[nb]["mem_remaining_gb"] < tile["data_size_gb"]:
+                    continue
                 lk = env_state.links.get(link_key(src, nb))
                 if not lk or not lk["up"]:
                     continue

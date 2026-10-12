@@ -1,0 +1,182 @@
+{
+  "policy": "window_aware",
+  "seed": 0,
+  "metrics": {
+    "model_version": "2.0",
+    "overall": {
+      "completed_tiles": 0,
+      "total_tiles": 2,
+      "completed_tasks": 0,
+      "total_tasks": 1,
+      "failed_tiles": 0,
+      "pending_tiles": 2,
+      "task_completion_rate": 0.0,
+      "tile_completion_rate": 0.0,
+      "failed_tasks": 0,
+      "pending_tasks": 1
+    },
+    "latency": {
+      "unit": "seconds",
+      "population": "completed_only",
+      "tile_mean": null,
+      "tile_p95": null,
+      "tile_p99": null,
+      "task_mean": null,
+      "task_p95": null,
+      "task_p99": null
+    },
+    "resource": {
+      "avg_queue_len": {
+        "0": 0.0,
+        "1": 0.0
+      },
+      "compute_busy_time": {},
+      "mem_peak_gb": {
+        "0": 0.00390625,
+        "1": 0.00390625
+      },
+      "vram_peak_gb": {
+        "0": 0.0,
+        "1": 0.0
+      }
+    },
+    "failures": {},
+    "network": {
+      "sent_mb": {
+        "isl:0->1": 2.0000000000000004,
+        "isl:1->0": 0.0,
+        "ground:gs": 0.0
+      },
+      "capacity_mb": {
+        "isl:0->1": 2.0000000000000004,
+        "isl:1->0": 2.0000000000000004,
+        "ground:gs": 20.0
+      },
+      "utilization": {
+        "isl:0->1": 1.0,
+        "isl:1->0": 0.0,
+        "ground:gs": 0.0
+      }
+    },
+    "experiment": {
+      "config": {
+        "seed": 0,
+        "num_sats": 2,
+        "sim_steps": 20,
+        "dt": 1,
+        "decision_interval_steps": 1,
+        "topology_update_steps": 1,
+        "ground_visibility_update_steps": 1,
+        "task_arrival_rate": 0,
+        "image_size_mb": 4,
+        "num_tiles": 2,
+        "compute_cost_per_tile": 2,
+        "vram_base_gb": 0.1,
+        "vram_alpha_per_mb": 0.001,
+        "result_size_mb": 0.25,
+        "deadline_steps": 0,
+        "mem_capacity_gb": 1,
+        "vram_capacity_gb": 1,
+        "compute_rate": 1,
+        "transfer_fail_on_link_down": false,
+        "vram_policy": "wait",
+        "pipeline_mode": "distributed",
+        "tile_lifecycle_log": "results/cooperation_diagnostic_20261008/synthetic_slow/window_aware/events.jsonl",
+        "ground_stations": [
+          {
+            "id": "gs",
+            "bandwidth_mbps": 8,
+            "receive_channels": 1
+          }
+        ],
+        "topology": {
+          "start_time_utc": "2026-03-20T17:30:00Z",
+          "tle_file": "data/tle/global_spread_inc53_24.tle",
+          "earth_radius_km": 6378.137,
+          "max_range_km": 4500,
+          "bandwidth_distance_scale_km": 2000,
+          "bandwidth_mbps_min": 0.8,
+          "bandwidth_mbps_max": 0.8,
+          "bandwidth_period": 60,
+          "bandwidth_noise": 10,
+          "latency_ms": 20,
+          "visibility_workers": 1,
+          "window_lookahead_s": 1800
+        }
+      },
+      "elapsed_sim_seconds": 20,
+      "task_trace_sha256": "e021c579ae4dac64e26fab1607e0575aea30ecafa95324db9ab61cd6c3c8309f",
+      "tle_sha256": "bd9113d6668a53fad52f591a50b53d781c0b2e7351c478cc09eb3c46f57c01ea",
+      "decision_tile_limit_per_sat": 4,
+      "source_sha256": "481b4d38e205350c9d6d3157b5e56dff30957586f4106141ce177c04fe7e925f",
+      "python_version": "3.12.13",
+      "packages": {
+        "numpy": "2.4.4",
+        "torch": "2.12.0",
+        "skyfield": "1.54",
+        "PyYAML": "6.0.3"
+      }
+    }
+  },
+  "proposed_actions": {
+    "OFFLOAD_ISL": 2
+  },
+  "plans": {},
+  "completed_task_ids": [],
+  "tasks": {
+    "witness": {
+      "task_id": "witness",
+      "source_sat_id": 0,
+      "release_time": 0,
+      "image_size_mb": 4,
+      "num_tiles": 2,
+      "deadline": null,
+      "tile_ids": [
+        "witness_tile_0",
+        "witness_tile_1"
+      ]
+    }
+  },
+  "tiles": {
+    "witness_tile_0": {
+      "task_id": "witness",
+      "state": "TRANSFERRING",
+      "location": 0,
+      "timestamps_steps": {
+        "created": 0,
+        "start_tx": 0,
+        "end_tx": null,
+        "start_compute": null,
+        "end_compute": null,
+        "start_downlink": null,
+        "end_downlink": null
+      }
+    },
+    "witness_tile_1": {
+      "task_id": "witness",
+      "state": "TRANSFERRING",
+      "location": 0,
+      "timestamps_steps": {
+        "created": 0,
+        "start_tx": 0,
+        "end_tx": null,
+        "start_compute": null,
+        "end_compute": null,
+        "start_downlink": null,
+        "end_downlink": null
+      }
+    }
+  },
+  "event_counts": {
+    "queued": 2,
+    "tx_start": 2
+  },
+  "computed_unique_tiles": {
+    "source_satellite": 0,
+    "remote_satellite": 0,
+    "ground": 0
+  },
+  "completed_tasks_with_finished_isl_hop": [],
+  "completed_tasks_with_remote_satellite_compute": [],
+  "completed_tasks_with_ground_compute": []
+}

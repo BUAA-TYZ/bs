@@ -32,11 +32,14 @@ class TopologyConfig:
     max_range_km: float
     bandwidth_distance_scale_km: float
     visibility_workers: int
+    max_neighbors: int = 0
 
 
 class TopologyModel:
     def __init__(self, cfg: TopologyConfig) -> None:
         self.cfg = cfg
+        if cfg.max_neighbors < 0:
+            raise ValueError("max_neighbors must be nonnegative; zero means unlimited")
         self.rng = random.Random(cfg.seed)
         # 为每条链路生成固定相位，保证带宽随时间的变化可复现
         self.phases = {
@@ -73,10 +76,15 @@ class TopologyModel:
             bw = bw / (1.0 + distance_km / self.cfg.bandwidth_distance_scale_km)
         return bw
 
-    def snapshot(self, t: int) -> Dict[str, Link]:
+    def close(self) -> None:
+        if self._executor is not None:
+            self._executor.shutdown(wait=True, cancel_futures=True)
+            self._executor = None
+
+    def snapshot(self, t: int, dt: float = 1.0) -> Dict[str, Link]:
         links: Dict[str, Link] = {}
         n = min(self.cfg.num_sats, len(self.sat_recs))
-        positions = [position_km(self.sat_recs[i], self.t0, t) for i in range(n)]
+        positions = [position_km(self.sat_recs[i], self.t0, t * dt) for i in range(n)]
         pairs: List[Tuple[int, int]] = [
             (i, j) for i in range(self.cfg.num_sats) for j in range(i + 1, self.cfg.num_sats)
         ]
@@ -105,12 +113,26 @@ class TopologyModel:
             ]
             results = list(self._executor.map(_visible_task, tasks, chunksize=256))
 
+        allowed = bounded_edges(pairs, results, self.cfg.max_neighbors)
         for (i, j), (up, distance_km) in zip(pairs, results):
             bw = self._get_bandwidth(i, j, t, distance_km)
             links[link_key(i, j)] = Link(
-                i=i, j=j, up=up, bandwidth_mbps=bw, latency_ms=self.cfg.latency_ms
+                i=i, j=j, up=up and (i, j) in allowed, bandwidth_mbps=bw, latency_ms=self.cfg.latency_ms
             )
         return links
+
+
+def bounded_edges(pairs, geometry, max_neighbors):
+    """双方终端数同时受限；按距离确定性匹配，不依赖任务或未来负载。"""
+    candidates = sorted((distance, i, j) for (i, j), (up, distance) in zip(pairs, geometry) if up)
+    degree, allowed = {}, set()
+    for _, i, j in candidates:
+        if max_neighbors and (degree.get(i, 0) >= max_neighbors or degree.get(j, 0) >= max_neighbors):
+            continue
+        allowed.add((i, j))
+        degree[i] = degree.get(i, 0) + 1
+        degree[j] = degree.get(j, 0) + 1
+    return allowed
 
 
 def _elevation_deg(r: Tuple[float, float, float], los: Tuple[float, float, float]) -> float:

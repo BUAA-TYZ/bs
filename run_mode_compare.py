@@ -5,33 +5,22 @@ import json
 from pathlib import Path
 from typing import Dict
 
-from main import make_policy
+from main import run_config
 from sim.config import load_config
 from sim.env import SimulationEnv
 
 
-def run_with_mode(config_path: str, policy_name: str, mode: str) -> Dict:
+def run_with_mode(config_path: str, policy_name: str, mode: str, marl_checkpoint: str = "") -> Dict:
     cfg = load_config(config_path)
     cfg.pipeline_mode = mode
-    env = SimulationEnv(cfg)
-    policy = make_policy(policy_name, cfg.seed)
-    decision_interval = max(1, cfg.decision_interval_steps)
-    cached_actions = []
-    try:
-        for step_idx in range(cfg.sim_steps):
-            if step_idx % decision_interval == 0:
-                state = env.export_state()
-                cached_actions = policy.select_actions(state)
-            env.step(cached_actions)
-        return env.metrics.summary()
-    finally:
-        env.close()
+    return run_config(cfg, policy_name, marl_checkpoint)
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Compare completed tasks between pipeline modes.")
     parser.add_argument("--config", required=True, help="Path to config YAML/JSON.")
     parser.add_argument("--policy", default="greedy", help="greedy|load_aware|random")
+    parser.add_argument("--marl-checkpoint", default="")
     parser.add_argument(
         "--out-dir",
         default="results",
@@ -42,8 +31,8 @@ def main() -> None:
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    distributed = run_with_mode(args.config, args.policy, "distributed")
-    ground_compute = run_with_mode(args.config, args.policy, "ground_compute")
+    distributed = run_with_mode(args.config, args.policy, "distributed", args.marl_checkpoint)
+    ground_compute = run_with_mode(args.config, args.policy, "ground_compute", args.marl_checkpoint)
 
     (out_dir / "metrics_distributed.json").write_text(
         json.dumps(distributed, indent=2), encoding="utf-8"

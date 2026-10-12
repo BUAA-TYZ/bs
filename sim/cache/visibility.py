@@ -7,8 +7,10 @@ _is_ground_visible 抽离到此模块，减少 SimulationEnv 主体代码量。
 from __future__ import annotations
 
 from typing import Dict, List, Optional, Tuple
+import math
+import numpy as np
 
-from sim.orbit import next_gs_windows_for_sat, sat_to_ground_geometry
+from sim.orbit import next_gs_windows_for_sat, sat_to_ground_geometry, time_grid
 
 
 class VisibilityCache:
@@ -32,11 +34,13 @@ class VisibilityCache:
         ground_visibility_update_steps: int,
         gs_window_lookahead_s: float,
         gs_window_scan_step_s: float = 30.0,
+        dt: float = 1.0,
     ) -> None:
         self.num_sats = num_sats
         self.update_steps = max(1, ground_visibility_update_steps)
         self.lookahead_s = gs_window_lookahead_s
         self.scan_step_s = gs_window_scan_step_s
+        self.dt = dt
 
         # 可见性快照
         self._cache_time: Optional[int] = None
@@ -48,6 +52,32 @@ class VisibilityCache:
         self._window_cache_time: Optional[int] = None
         # {sat_id: {gs_id: (starts_in_s, duration_s) or None}}
         self.window_cache: Dict[int, Dict[str, Optional[tuple]]] = {}
+        self._precomputed = None
+
+    def precompute(self, sat_recs, t0, ground_station_objs, sim_steps):
+        stride = self.scan_step_s / self.dt
+        if not stride.is_integer():
+            return  # 非整步扫描继续使用原实现，避免改变采样时刻。
+        self._scan_stride = int(stride)
+        count = sim_steps + math.ceil(self.lookahead_s / self.dt) + 1
+        times = time_grid(t0, np.arange(count) * self.dt)
+        self._precomputed = {}
+        for sid, sat in enumerate(sat_recs[:self.num_sats]):
+            for gs_id, station in ground_station_objs.items():
+                altitude, _, distance = (sat - station).at(times).altaz()
+                self._precomputed[sid, gs_id] = (altitude.degrees, distance.km)
+
+    def _sampled_window(self, sid, gs_id, t, min_elev):
+        samples = int(self.lookahead_s / self.scan_step_s) + 1
+        altitude = self._precomputed[sid, gs_id][0][t:t + samples * self._scan_stride:self._scan_stride]
+        visible = altitude >= min_elev
+        starts = np.flatnonzero(visible)
+        if not len(starts):
+            return None
+        start = int(starts[0])
+        ends = np.flatnonzero(~visible[start + 1:])
+        end_s = (start + 1 + int(ends[0])) * self.scan_step_s if len(ends) else self.lookahead_s
+        return (start * self.scan_step_s, end_s - start * self.scan_step_s)
 
     def refresh(
         self,
@@ -86,12 +116,16 @@ class VisibilityCache:
                 best_bw = -1.0
                 sat = sat_recs[sat_id]
                 for gs_id, gs in ground_stations.items():
-                    elev_deg, dist_km = sat_to_ground_geometry(
-                        sat=sat,
-                        ground_station=ground_station_objs[gs_id],
-                        t0=t0,
-                        t_seconds=sampled_t,
-                    )
+                    if self._precomputed is not None:
+                        altitude, distance = self._precomputed[sat_id, gs_id]
+                        elev_deg, dist_km = float(altitude[sampled_t]), float(distance[sampled_t])
+                    else:
+                        elev_deg, dist_km = sat_to_ground_geometry(
+                            sat=sat,
+                            ground_station=ground_station_objs[gs_id],
+                            t0=t0,
+                            t_seconds=sampled_t * self.dt,
+                        )
                     self._geom_cache[(sat_id, gs_id)] = (elev_deg, dist_km)
                     if elev_deg < gs.min_elevation_deg:
                         continue
@@ -110,14 +144,30 @@ class VisibilityCache:
             ]
             self.window_cache = {}
             for sat_id in range(self.num_sats):
-                self.window_cache[sat_id] = next_gs_windows_for_sat(
-                    sat=sat_recs[sat_id],
-                    ground_stations=gs_list,
-                    t0=t0,
-                    t_now_s=float(sampled_t),
-                    lookahead_s=self.lookahead_s,
-                    scan_step_s=self.scan_step_s,
-                )
+                if self._precomputed is not None:
+                    self.window_cache[sat_id] = {gs_id: self._sampled_window(sat_id, gs_id, sampled_t, gs.min_elevation_deg)
+                                                  for gs_id, gs in ground_stations.items()}
+                else:
+                    self.window_cache[sat_id] = next_gs_windows_for_sat(
+                        sat=sat_recs[sat_id],
+                        ground_stations=gs_list,
+                        t0=t0,
+                        t_now_s=sampled_t * self.dt,
+                        lookahead_s=self.lookahead_s,
+                        scan_step_s=self.scan_step_s,
+                    )
+
+    def windows_at(self, sat_id: int, t: int) -> Dict[str, Optional[tuple]]:
+        elapsed = max(0.0, (t - (self._window_cache_time or 0)) * self.dt)
+        result = {}
+        for gs_id, window in self.window_cache.get(sat_id, {}).items():
+            if window is None or window[0] + window[1] <= elapsed:
+                result[gs_id] = None
+            else:
+                start, duration = window
+                result[gs_id] = (max(0.0, start - elapsed),
+                                 duration - max(0.0, elapsed - start))
+        return result
 
     def is_visible(self, sat_id: int, gs_id: str, ground_stations) -> bool:
         """判断卫星 sat_id 当前是否对地面站 gs_id 可见。"""

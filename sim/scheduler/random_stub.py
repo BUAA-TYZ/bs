@@ -19,8 +19,11 @@ class RandomPolicy(SchedulerPolicy):
             if tile["in_transfer"]:
                 continue
             src = tile["location"]
-            choices = [ActionType.LOCAL, ActionType.WAIT]
-            neighbors = env_state.neighbors.get(src, [])
+            choices = [ActionType.WAIT]
+            if tile["vram_req_gb"] <= env_state.config["vram_capacity_gb"]:
+                choices.append(ActionType.LOCAL)
+            neighbors = [nb for nb in env_state.neighbors.get(src, [])
+                         if env_state.satellites[nb]["mem_remaining_gb"] >= tile["data_size_gb"]]
             ground_opts = env_state.ground_options.get(src, [])
             if neighbors:
                 choices.append(ActionType.OFFLOAD)

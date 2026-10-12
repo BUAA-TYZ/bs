@@ -1,0 +1,82 @@
+{
+  "greedy": {
+    "completion_rate_mean": 0.0,
+    "completion_rate_by_training_seed": null,
+    "paired_delta_vs": "greedy",
+    "paired_delta_mean": 0.0,
+    "paired_crossed_bootstrap_95_ci": [
+      0.0,
+      0.0
+    ],
+    "completed_task_latency_seconds_pooled": null
+  },
+  "window_aware": {
+    "completion_rate_mean": 0.0,
+    "completion_rate_by_training_seed": null,
+    "paired_delta_vs": "greedy",
+    "paired_delta_mean": 0.0,
+    "paired_crossed_bootstrap_95_ci": [
+      0.0,
+      0.0
+    ],
+    "completed_task_latency_seconds_pooled": null
+  },
+  "mappo": {
+    "completion_rate_mean": 0.0049382716049382715,
+    "completion_rate_by_training_seed": [
+      0.0,
+      0.0,
+      0.0,
+      0.012345679012345678,
+      0.012345679012345678
+    ],
+    "paired_delta_vs": "greedy",
+    "paired_delta_mean": 0.0049382716049382715,
+    "paired_crossed_bootstrap_95_ci": [
+      0.0,
+      0.019753086419753086
+    ],
+    "completed_task_latency_seconds_pooled": 70.0
+  },
+  "feature_mlp": {
+    "completion_rate_mean": 0.0049382716049382715,
+    "completion_rate_by_training_seed": [
+      0.0,
+      0.0,
+      0.012345679012345678,
+      0.012345679012345678,
+      0.0
+    ],
+    "paired_delta_vs": "greedy",
+    "paired_delta_mean": 0.0049382716049382715,
+    "paired_crossed_bootstrap_95_ci": [
+      0.0,
+      0.019753086419753086
+    ],
+    "completed_task_latency_seconds_pooled": 70.0
+  },
+  "task_attention": {
+    "completion_rate_mean": 0.007407407407407407,
+    "completion_rate_by_training_seed": [
+      0.012345679012345678,
+      0.0,
+      0.0,
+      0.012345679012345678,
+      0.012345679012345678
+    ],
+    "paired_delta_vs": "greedy",
+    "paired_delta_mean": 0.007407407407407407,
+    "paired_crossed_bootstrap_95_ci": [
+      0.0,
+      0.024691358024691357
+    ],
+    "completed_task_latency_seconds_pooled": 50.0,
+    "structure_delta_vs_feature_mlp": {
+      "mean": 0.0024691358024691358,
+      "crossed_bootstrap_95_ci": [
+        -0.007407407407407407,
+        0.014814814814814814
+      ]
+    }
+  }
+}

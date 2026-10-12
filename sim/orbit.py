@@ -43,6 +43,15 @@ def position_km(
     return (float(r[0]), float(r[1]), float(r[2]))
 
 
+def positions_km_at_times(sat, t0: datetime, seconds):
+    """批量轨道传播，时间仍以同一历元后的秒数表示。"""
+    return sat.at(time_grid(t0, seconds)).position.km.T
+
+
+def time_grid(t0: datetime, seconds):
+    return _TS.from_datetimes([t0 + timedelta(seconds=float(t)) for t in seconds])
+
+
 def link_geometry_km(
     sat_a: EarthSatellite, sat_b: EarthSatellite, t0: datetime, t_seconds: float
 ) -> Tuple[Tuple[float, float, float], Tuple[float, float, float], float, float]:

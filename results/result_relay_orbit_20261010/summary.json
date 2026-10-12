@@ -1,0 +1,359 @@
+{
+  "scope": "Routing and buffering development diagnostic, no learned policy comparison",
+  "runs": [
+    {
+      "case": "shared24_a",
+      "label": "ground_direct",
+      "metrics_path": "results/result_relay_orbit_20261010/shared24_a/ground_direct/metrics.json",
+      "overall": {
+        "completed_tiles": 296,
+        "total_tiles": 984,
+        "completed_tasks": 37,
+        "total_tasks": 123,
+        "failed_tiles": 0,
+        "pending_tiles": 688,
+        "task_completion_rate": 0.3008130081300813,
+        "tile_completion_rate": 0.3008130081300813,
+        "failed_tasks": 0,
+        "pending_tasks": 86,
+        "aggregating_tasks": 0
+      },
+      "latency": {
+        "unit": "seconds",
+        "population": "completed_only",
+        "tile_mean": 6094.324324324324,
+        "tile_p95": 11540.0,
+        "tile_p99": 11700.0,
+        "task_mean": 6114.324324324324,
+        "task_p95": 11560.0,
+        "task_p99": 11720.0
+      },
+      "task_age_delivery_curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 8,
+          "not_delivered_within_horizon": 115,
+          "delivery_rate": 0.06504065040650407
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 10,
+          "not_delivered_within_horizon": 113,
+          "delivery_rate": 0.08130081300813008
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 20,
+          "not_delivered_within_horizon": 103,
+          "delivery_rate": 0.16260162601626016
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 37,
+          "not_delivered_within_horizon": 86,
+          "delivery_rate": 0.3008130081300813
+        }
+      ],
+      "completed_tasks_with_result_relay": 0
+    },
+    {
+      "case": "shared24_a",
+      "label": "ground_relay",
+      "metrics_path": "results/result_relay_orbit_20261010/shared24_a/ground_relay/metrics.json",
+      "overall": {
+        "completed_tiles": 345,
+        "total_tiles": 984,
+        "completed_tasks": 13,
+        "total_tasks": 123,
+        "failed_tiles": 0,
+        "pending_tiles": 639,
+        "task_completion_rate": 0.10569105691056911,
+        "tile_completion_rate": 0.35060975609756095,
+        "failed_tasks": 0,
+        "pending_tasks": 110,
+        "aggregating_tasks": 0
+      },
+      "latency": {
+        "unit": "seconds",
+        "population": "completed_only",
+        "tile_mean": 8213.449275362318,
+        "tile_p95": 12170.0,
+        "tile_p99": 13780.0,
+        "task_mean": 9010.0,
+        "task_p95": 13610.0,
+        "task_p99": 13610.0
+      },
+      "task_age_delivery_curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 121,
+          "delivery_rate": 0.016260162601626018
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 121,
+          "delivery_rate": 0.016260162601626018
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 121,
+          "delivery_rate": 0.016260162601626018
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 13,
+          "not_delivered_within_horizon": 110,
+          "delivery_rate": 0.10569105691056911
+        }
+      ],
+      "completed_tasks_with_result_relay": 0
+    },
+    {
+      "case": "shared24_a",
+      "label": "local_direct",
+      "metrics_path": "results/result_relay_orbit_20261010/shared24_a/local_direct/metrics.json",
+      "overall": {
+        "completed_tiles": 203,
+        "total_tiles": 984,
+        "completed_tasks": 22,
+        "total_tasks": 123,
+        "failed_tiles": 0,
+        "pending_tiles": 781,
+        "task_completion_rate": 0.17886178861788618,
+        "tile_completion_rate": 0.20630081300813008,
+        "failed_tasks": 0,
+        "pending_tasks": 101,
+        "aggregating_tasks": 0
+      },
+      "latency": {
+        "unit": "seconds",
+        "population": "completed_only",
+        "tile_mean": 9257.68472906404,
+        "tile_p95": 15080.0,
+        "tile_p99": 17060.0,
+        "task_mean": 10544.09090909091,
+        "task_p95": 15100.0,
+        "task_p99": 17240.0
+      },
+      "task_age_delivery_curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 123,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 123,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 4,
+          "not_delivered_within_horizon": 119,
+          "delivery_rate": 0.032520325203252036
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 20,
+          "not_delivered_within_horizon": 103,
+          "delivery_rate": 0.16260162601626016
+        }
+      ],
+      "completed_tasks_with_result_relay": 0
+    },
+    {
+      "case": "shared24_a",
+      "label": "local_relay",
+      "metrics_path": "results/result_relay_orbit_20261010/shared24_a/local_relay/metrics.json",
+      "overall": {
+        "completed_tiles": 459,
+        "total_tiles": 984,
+        "completed_tasks": 51,
+        "total_tasks": 123,
+        "failed_tiles": 0,
+        "pending_tiles": 525,
+        "task_completion_rate": 0.4146341463414634,
+        "tile_completion_rate": 0.46646341463414637,
+        "failed_tasks": 0,
+        "pending_tasks": 72,
+        "aggregating_tasks": 0
+      },
+      "latency": {
+        "unit": "seconds",
+        "population": "completed_only",
+        "tile_mean": 9263.790849673203,
+        "tile_p95": 15890.0,
+        "tile_p99": 17000.0,
+        "task_mean": 10571.56862745098,
+        "task_p95": 15780.0,
+        "task_p99": 16490.0
+      },
+      "task_age_delivery_curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 123,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 123,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 9,
+          "not_delivered_within_horizon": 114,
+          "delivery_rate": 0.07317073170731707
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 42,
+          "not_delivered_within_horizon": 81,
+          "delivery_rate": 0.34146341463414637
+        }
+      ],
+      "completed_tasks_with_result_relay": 51
+    },
+    {
+      "case": "shared24_a",
+      "label": "window_direct",
+      "metrics_path": "results/result_relay_orbit_20261010/shared24_a/window_direct/metrics.json",
+      "overall": {
+        "completed_tiles": 612,
+        "total_tiles": 984,
+        "completed_tasks": 74,
+        "total_tasks": 123,
+        "failed_tiles": 0,
+        "pending_tiles": 372,
+        "task_completion_rate": 0.6016260162601627,
+        "tile_completion_rate": 0.6219512195121951,
+        "failed_tasks": 0,
+        "pending_tasks": 49,
+        "aggregating_tasks": 0
+      },
+      "latency": {
+        "unit": "seconds",
+        "population": "completed_only",
+        "tile_mean": 3824.1830065359477,
+        "tile_p95": 7410.0,
+        "tile_p99": 8050.0,
+        "task_mean": 4266.351351351352,
+        "task_p95": 7910.0,
+        "task_p99": 12660.0
+      },
+      "task_age_delivery_curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 15,
+          "not_delivered_within_horizon": 108,
+          "delivery_rate": 0.12195121951219512
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 34,
+          "not_delivered_within_horizon": 89,
+          "delivery_rate": 0.2764227642276423
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 65,
+          "not_delivered_within_horizon": 58,
+          "delivery_rate": 0.5284552845528455
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 74,
+          "not_delivered_within_horizon": 49,
+          "delivery_rate": 0.6016260162601627
+        }
+      ],
+      "completed_tasks_with_result_relay": 0
+    },
+    {
+      "case": "shared24_a",
+      "label": "window_relay",
+      "metrics_path": "results/result_relay_orbit_20261010/shared24_a/window_relay/metrics.json",
+      "overall": {
+        "completed_tiles": 984,
+        "total_tiles": 984,
+        "completed_tasks": 123,
+        "total_tasks": 123,
+        "failed_tiles": 0,
+        "pending_tiles": 0,
+        "task_completion_rate": 1.0,
+        "tile_completion_rate": 1.0,
+        "failed_tasks": 0,
+        "pending_tasks": 0,
+        "aggregating_tasks": 0
+      },
+      "latency": {
+        "unit": "seconds",
+        "population": "completed_only",
+        "tile_mean": 2901.3414634146343,
+        "tile_p95": 5650.0,
+        "tile_p99": 7380.0,
+        "task_mean": 3401.7073170731705,
+        "task_p95": 7230.0,
+        "task_p99": 8040.0
+      },
+      "task_age_delivery_curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 26,
+          "not_delivered_within_horizon": 97,
+          "delivery_rate": 0.21138211382113822
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 81,
+          "not_delivered_within_horizon": 42,
+          "delivery_rate": 0.6585365853658537
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 116,
+          "not_delivered_within_horizon": 7,
+          "delivery_rate": 0.943089430894309
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 123,
+          "not_delivered_within_horizon": 0,
+          "delivery_rate": 1.0
+        }
+      ],
+      "completed_tasks_with_result_relay": 86
+    }
+  ]
+}

@@ -1,0 +1,304 @@
+{
+  "scope": "development diagnostics, two task seeds, no learning claims",
+  "source_sha256": "ae4e4ae77742a6fa3eb38295a36b3a24eed1e94691c184af0dfad41a3db19f28",
+  "main": [
+    {
+      "architecture": "uniform_homogeneous",
+      "cost": 6,
+      "scores": {
+        "ground_compute": {
+          "completed": 57,
+          "total": 102
+        },
+        "local": {
+          "completed": 73,
+          "total": 102
+        },
+        "predictive": {
+          "completed": 78,
+          "total": 102
+        },
+        "window_aware": {
+          "completed": 73,
+          "total": 102
+        }
+      }
+    },
+    {
+      "architecture": "uniform_homogeneous",
+      "cost": 60,
+      "scores": {
+        "ground_compute": {
+          "completed": 57,
+          "total": 102
+        },
+        "local": {
+          "completed": 72,
+          "total": 102
+        },
+        "predictive": {
+          "completed": 75,
+          "total": 102
+        },
+        "window_aware": {
+          "completed": 70,
+          "total": 102
+        }
+      }
+    },
+    {
+      "architecture": "uniform_heterogeneous",
+      "cost": 6,
+      "scores": {
+        "ground_compute": {
+          "completed": 57,
+          "total": 102
+        },
+        "local": {
+          "completed": 73,
+          "total": 102
+        },
+        "predictive": {
+          "completed": 78,
+          "total": 102
+        },
+        "window_aware": {
+          "completed": 77,
+          "total": 102
+        }
+      }
+    },
+    {
+      "architecture": "uniform_heterogeneous",
+      "cost": 60,
+      "scores": {
+        "ground_compute": {
+          "completed": 57,
+          "total": 102
+        },
+        "local": {
+          "completed": 24,
+          "total": 102
+        },
+        "predictive": {
+          "completed": 42,
+          "total": 102
+        },
+        "window_aware": {
+          "completed": 68,
+          "total": 102
+        }
+      }
+    },
+    {
+      "architecture": "clustered_homogeneous",
+      "cost": 6,
+      "scores": {
+        "ground_compute": {
+          "completed": 57,
+          "total": 102
+        },
+        "local": {
+          "completed": 73,
+          "total": 102
+        },
+        "predictive": {
+          "completed": 73,
+          "total": 102
+        },
+        "window_aware": {
+          "completed": 70,
+          "total": 102
+        }
+      }
+    },
+    {
+      "architecture": "clustered_homogeneous",
+      "cost": 60,
+      "scores": {
+        "ground_compute": {
+          "completed": 57,
+          "total": 102
+        },
+        "local": {
+          "completed": 72,
+          "total": 102
+        },
+        "predictive": {
+          "completed": 72,
+          "total": 102
+        },
+        "window_aware": {
+          "completed": 71,
+          "total": 102
+        }
+      }
+    },
+    {
+      "architecture": "clustered_heterogeneous",
+      "cost": 6,
+      "scores": {
+        "ground_compute": {
+          "completed": 57,
+          "total": 102
+        },
+        "local": {
+          "completed": 73,
+          "total": 102
+        },
+        "predictive": {
+          "completed": 73,
+          "total": 102
+        },
+        "window_aware": {
+          "completed": 70,
+          "total": 102
+        }
+      }
+    },
+    {
+      "architecture": "clustered_heterogeneous",
+      "cost": 60,
+      "scores": {
+        "ground_compute": {
+          "completed": 57,
+          "total": 102
+        },
+        "local": {
+          "completed": 24,
+          "total": 102
+        },
+        "predictive": {
+          "completed": 37,
+          "total": 102
+        },
+        "window_aware": {
+          "completed": 72,
+          "total": 102
+        }
+      }
+    }
+  ],
+  "sensitivity": [
+    {
+      "architecture": "wide20",
+      "cost": 60,
+      "scores": {
+        "ground_compute": {
+          "completed": 57,
+          "total": 102
+        },
+        "local": {
+          "completed": 24,
+          "total": 102
+        },
+        "predictive": {
+          "completed": 43,
+          "total": 102
+        },
+        "window_aware": {
+          "completed": 69,
+          "total": 102
+        }
+      }
+    },
+    {
+      "architecture": "strong_ground384",
+      "cost": 60,
+      "scores": {
+        "ground_compute": {
+          "completed": 73,
+          "total": 102
+        },
+        "local": {
+          "completed": 24,
+          "total": 102
+        },
+        "predictive": {
+          "completed": 37,
+          "total": 102
+        },
+        "window_aware": {
+          "completed": 72,
+          "total": 102
+        }
+      }
+    },
+    {
+      "architecture": "lookahead7200",
+      "cost": 60,
+      "scores": {
+        "predictive": {
+          "completed": 69,
+          "total": 102
+        }
+      }
+    }
+  ],
+  "lookahead_pairs": [
+    {
+      "seed": 71001,
+      "total_tasks": 51,
+      "common_completed_tasks": 18,
+      "reference_only_completed_tasks": 0,
+      "candidate_only_completed_tasks": 13,
+      "neither_completed_tasks": 20,
+      "reference_failed_tasks": 0,
+      "candidate_failed_tasks": 0,
+      "reference_pending_tasks": 33,
+      "candidate_pending_tasks": 20,
+      "latency_population": "common_completed_only; selection_bias_remains",
+      "reference_latency_mean_seconds": 9203.333333333334,
+      "candidate_latency_mean_seconds": 7151.111111111111,
+      "reference_latency_p95_seconds": 19480,
+      "candidate_latency_p95_seconds": 19480.0,
+      "candidate_minus_reference_latency_mean_seconds": -2052.222222222222,
+      "ratio_of_mean_latencies_reference_over_candidate": 1.2869794903666874,
+      "candidate_faster_tasks": 9,
+      "candidate_slower_tasks": 0,
+      "equal_latency_tasks": 9
+    },
+    {
+      "seed": 71002,
+      "total_tasks": 51,
+      "common_completed_tasks": 19,
+      "reference_only_completed_tasks": 0,
+      "candidate_only_completed_tasks": 19,
+      "neither_completed_tasks": 13,
+      "reference_failed_tasks": 0,
+      "candidate_failed_tasks": 0,
+      "reference_pending_tasks": 32,
+      "candidate_pending_tasks": 13,
+      "latency_population": "common_completed_only; selection_bias_remains",
+      "reference_latency_mean_seconds": 8445.78947368421,
+      "candidate_latency_mean_seconds": 7193.1578947368425,
+      "reference_latency_p95_seconds": 19060,
+      "candidate_latency_p95_seconds": 19060.0,
+      "candidate_minus_reference_latency_mean_seconds": -1252.6315789473683,
+      "ratio_of_mean_latencies_reference_over_candidate": 1.174142094095266,
+      "candidate_faster_tasks": 5,
+      "candidate_slower_tasks": 2,
+      "equal_latency_tasks": 12
+    }
+  ],
+  "forecast_coverage": [
+    {
+      "scope": "source-to-any-station; first 12 hours, 30 second samples",
+      "horizon_s": 1800,
+      "no_contact_fraction": 0.8529513888888889,
+      "samples": 11520
+    },
+    {
+      "scope": "source-to-any-station; first 12 hours, 30 second samples",
+      "horizon_s": 7200,
+      "no_contact_fraction": 0.56640625,
+      "samples": 11520
+    },
+    {
+      "scope": "source-to-any-station; first 12 hours, 30 second samples",
+      "horizon_s": 21600,
+      "no_contact_fraction": 0.24184027777777778,
+      "samples": 11520
+    }
+  ]
+}

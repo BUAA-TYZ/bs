@@ -9,6 +9,7 @@ class TileState(str, Enum):
     CREATED = "CREATED"
     QUEUED = "QUEUED"
     TRANSFERRING = "TRANSFERRING"
+    RESULT_TRANSFERRING = "RESULT_TRANSFERRING"
     READY = "READY"
     RUNNING = "RUNNING"
     COMPUTED = "COMPUTED"
@@ -65,6 +66,11 @@ class Tile:
     deadline: Optional[int] = None
     remaining_compute: Optional[float] = None
     failure_reason: Optional[FailureReason] = None
+    memory_holders: set[int] = field(default_factory=set)
+    result_memory_holders: set[int] = field(default_factory=set)
+    result_available_time: Optional[int] = None
+    result_path: List[int] = field(default_factory=list)
+    raw_relay_path: List[int] = field(default_factory=list)
 
 
 @dataclass
@@ -76,6 +82,9 @@ class Task:
     num_tiles: int
     deadline: Optional[int]
     tile_ids: List[str] = field(default_factory=list)
+    results_ready_time: Optional[int] = None
+    completion_time: Optional[int] = None
+    failure_reason: Optional[str] = None
 
 
 @dataclass
@@ -112,6 +121,7 @@ class Transfer:
     remaining_mb: float
     start_time: int
     link_key: str
+    is_result: bool = False
 
 
 @dataclass
@@ -124,6 +134,7 @@ class GroundStation:
     bandwidth_mbps: float
     latency_ms: float
     compute_rate: float
+    receive_channels: int = 1
 
 
 @dataclass
@@ -171,3 +182,4 @@ class EnvState:
     links: Dict[str, Dict]
     tiles: Dict[str, Dict]
     config: Dict
+    pending_task_tiles: Dict[str, Dict[str, Dict]] = field(default_factory=dict)

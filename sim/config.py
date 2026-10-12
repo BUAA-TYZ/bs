@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any, Dict
 import json
+import math
 import yaml
 
 
@@ -32,6 +33,49 @@ class SimConfig:
     tile_lifecycle_log: str
     ground_stations: list[Dict[str, Any]]
     topology: Dict[str, Any]
+    ground_relay_delay_s: float = 0.0
+    aggregation_delay_s: float = 0.0
+    task_arrival_end_step: int | None = None
+    execution_commitment: bool = False
+    task_source_sat_ids: list[int] | None = None
+    satellite_compute_rates: list[float] | None = None
+    result_buffering: bool = False
+    result_relay: bool = False
+    relay_max_hops: int = 8
+    relay_contact_guard: bool = False
+
+    def __post_init__(self) -> None:
+        if self.result_relay and not self.result_buffering:
+            raise ValueError("result_relay requires result_buffering")
+        if self.relay_contact_guard and not self.topology.get("predict_contacts", False):
+            raise ValueError("relay_contact_guard requires predict_contacts")
+        if type(self.relay_max_hops) is not int or self.relay_max_hops < 1:
+            raise ValueError("relay_max_hops must be a positive integer")
+        for name in ("num_sats", "sim_steps", "dt", "num_tiles", "image_size_mb",
+                     "compute_cost_per_tile", "compute_rate", "mem_capacity_gb",
+                     "vram_capacity_gb"):
+            if getattr(self, name) <= 0:
+                raise ValueError(f"{name} must be positive")
+        if self.task_arrival_rate < 0 or self.result_size_mb < 0:
+            raise ValueError("task_arrival_rate and result_size_mb must be nonnegative")
+        if self.vram_policy not in {"wait", "reject"}:
+            raise ValueError("vram_policy must be wait or reject")
+        for name in ("ground_relay_delay_s", "aggregation_delay_s"):
+            if not math.isfinite(getattr(self, name)) or getattr(self, name) < 0:
+                raise ValueError(f"{name} must be finite and nonnegative")
+        if self.task_arrival_end_step is not None and not 0 <= self.task_arrival_end_step <= self.sim_steps:
+            raise ValueError("task_arrival_end_step must be within the simulation horizon")
+        if self.task_source_sat_ids is not None:
+            ids = self.task_source_sat_ids
+            if (not isinstance(ids, list) or not ids or
+                    any(type(sid) is not int or not 0 <= sid < self.num_sats for sid in ids) or
+                    len(set(ids)) != len(ids)):
+                raise ValueError("task_source_sat_ids must be nonempty, unique satellite IDs")
+        if self.satellite_compute_rates is not None:
+            rates = self.satellite_compute_rates
+            if (not isinstance(rates, list) or len(rates) != self.num_sats or
+                    any(type(rate) not in (int, float) or not math.isfinite(rate) or rate <= 0 for rate in rates)):
+                raise ValueError("satellite_compute_rates must contain one finite positive rate per satellite")
 
 
 def load_config(path: str) -> SimConfig:
@@ -70,4 +114,15 @@ def load_config(path: str) -> SimConfig:
         tile_lifecycle_log=str(get("tile_lifecycle_log", "")),
         ground_stations=list(get("ground_stations", [])),
         topology=cfg.get("topology", {}),
+        ground_relay_delay_s=float(get("ground_relay_delay_s", 0.0)),
+        aggregation_delay_s=float(get("aggregation_delay_s", 0.0)),
+        task_arrival_end_step=(int(cfg["task_arrival_end_step"])
+                               if cfg.get("task_arrival_end_step") is not None else None),
+        execution_commitment=bool(get("execution_commitment", False)),
+        task_source_sat_ids=get("task_source_sat_ids", None),
+        satellite_compute_rates=get("satellite_compute_rates", None),
+        result_buffering=bool(get("result_buffering", False)),
+        result_relay=bool(get("result_relay", False)),
+        relay_max_hops=get("relay_max_hops", 8),
+        relay_contact_guard=bool(get("relay_contact_guard", False)),
     )

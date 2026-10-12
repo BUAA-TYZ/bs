@@ -27,6 +27,8 @@ class LoadAwareResourceFit(SchedulerPolicy):
 
             def score_for(sat_id: int, extra_tx: float) -> float:
                 sat = env_state.satellites[sat_id]
+                if tile["vram_req_gb"] > env_state.config["vram_capacity_gb"]:
+                    return float("inf")
                 queue_penalty = sat["queue_len"] * dt
                 vram_headroom = sat["vram_remaining_gb"]
                 mem_headroom = sat["mem_remaining_gb"]
@@ -34,8 +36,8 @@ class LoadAwareResourceFit(SchedulerPolicy):
                 headroom_penalty = 0.0
                 if vram_headroom < tile["vram_req_gb"]:
                     headroom_penalty += 1e6
-                if mem_headroom < tile["data_size_gb"]:
-                    headroom_penalty += 1e6
+                if sat_id != src and mem_headroom < tile["data_size_gb"]:
+                    return float("inf")
                 compute_time = tile["compute_cost"] / sat["compute_rate"]
                 score = queue_penalty + extra_tx + compute_time + headroom_penalty
                 # Encourage moving work away from overloaded source queue.

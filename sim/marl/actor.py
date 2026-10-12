@@ -29,6 +29,9 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 from sim.marl.observation import MAX_NEIGHBORS, MAX_TILES_PER_SAT, obs_dim
+from sim.marl.features import feature_dim
+from sim.marl.task_actor import TaskDestinationActor
+from sim.marl.attention_q import AttentionQCritic
 
 # 动作维度常数
 ACT_DIM_BASE = 1 + 1 + MAX_NEIGHBORS  # WAIT + LOCAL + 邻居
@@ -50,12 +53,21 @@ class SatActorCritic(nn.Module):
         隐藏层宽度，默认 256。
     """
 
-    def __init__(self, num_gs: int = 2, hidden: int = 256) -> None:
+    def __init__(self, num_gs: int = 2, hidden: int = 256, critic_dim: int = 0,
+                 feature_set: str = "base", encoder: str = "mlp",
+                 task_features: bool = True, window_features: bool = True,
+                 critic_kind: str = "value") -> None:
         super().__init__()
         self.num_gs = num_gs
-        self.in_dim = obs_dim(num_gs)
+        self.feature_options = dict(feature_set=feature_set, task_features=task_features,
+                                    window_features=window_features)
+        self.in_dim = feature_dim(num_gs, feature_set)
+        if encoder not in ("mlp", "task_attention") or (encoder == "task_attention" and feature_set not in ("task_window", "contact_window", "role_contact")):
+            raise ValueError("task_attention requires task_window features; supported encoders: mlp, task_attention")
         self.act_dim = act_dim(num_gs)
         self.num_tiles = MAX_TILES_PER_SAT
+        self.critic_dim = critic_dim
+        self.hidden = hidden
 
         # 共享 trunk
         self.trunk = nn.Sequential(
@@ -72,9 +84,21 @@ class SatActorCritic(nn.Module):
 
         # Value head：标量 baseline（全局 reward 的估计）
         self.value_head = nn.Linear(hidden, 1)
+        self.central_critic = nn.Sequential(
+            nn.Linear(critic_dim, hidden), nn.LayerNorm(hidden), nn.GELU(),
+            nn.Linear(hidden, hidden), nn.LayerNorm(hidden), nn.GELU(), nn.Linear(hidden, 1),
+        ) if critic_dim else None
+        if critic_kind == "attention_q":
+            token_dim = self.in_dim + self.num_tiles * self.act_dim
+            if not critic_dim or critic_dim % token_dim:
+                raise ValueError("Attention Q input must contain whole observation/action tokens")
+            self.central_critic = AttentionQCritic(token_dim, hidden)
+        elif critic_kind != "value":
+            raise ValueError(f"Unknown critic kind: {critic_kind}")
 
         # 权重初始化（正交初始化 + policy head 缩小尺度）
         self._init_weights()
+        self.task_actor = TaskDestinationActor(num_gs, hidden, feature_set) if encoder == "task_attention" else None
 
     def _init_weights(self) -> None:
         for m in self.trunk.modules():
@@ -86,7 +110,7 @@ class SatActorCritic(nn.Module):
         nn.init.orthogonal_(self.value_head.weight, gain=1.0)
         nn.init.zeros_(self.value_head.bias)
 
-    def forward(self, obs: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
+    def forward(self, obs: torch.Tensor, critic_obs: torch.Tensor | None = None) -> Tuple[torch.Tensor, torch.Tensor]:
         """前向传播。
 
         Parameters
@@ -102,8 +126,12 @@ class SatActorCritic(nn.Module):
             shape (batch, 1)，状态价值估计。
         """
         feat = self.trunk(obs)
-        logits = self.policy_head(feat).view(-1, self.num_tiles, self.act_dim)
-        value = self.value_head(feat)
+        logits = (self.task_actor(obs) if self.task_actor is not None else
+                  self.policy_head(feat).view(-1, self.num_tiles, self.act_dim))
+        if self.central_critic is not None and critic_obs is not None:
+            value = self.central_critic(critic_obs)
+        else:
+            value = self.value_head(feat)
         return logits, value
 
     def get_action_and_value(
@@ -111,6 +139,8 @@ class SatActorCritic(nn.Module):
         obs: torch.Tensor,
         tile_mask: torch.Tensor,
         action: torch.Tensor | None = None,
+        action_mask: torch.Tensor | None = None,
+        critic_obs: torch.Tensor | None = None,
     ) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
         """采样动作并计算 log_prob 和 entropy（用于 PPO 训练）。
 
@@ -131,13 +161,17 @@ class SatActorCritic(nn.Module):
         entropy:  shape (batch,)，per-sample 联合 entropy（有效 tile 均值）
         value:    shape (batch, 1)
         """
-        logits, value = self.forward(obs)
+        logits, value = self.forward(obs, critic_obs)
         # logits: (batch, num_tiles, act_dim)
 
         # 对无效 tile slot，将所有 logit 置 0（均匀分布），避免全 -inf NaN
         # 无效 slot 的 log_prob / entropy 不计入最终统计
         invalid_mask = ~tile_mask.unsqueeze(-1).expand_as(logits)  # (B, T, A)
         logits_safe = logits.masked_fill(invalid_mask, 0.0)
+        if action_mask is not None:
+            if not action_mask.any(dim=-1).all():
+                raise ValueError("Every action slot must have at least one feasible action")
+            logits_safe = logits_safe.masked_fill(~action_mask, torch.finfo(logits.dtype).min)
 
         # 对每个 tile slot 独立建 Categorical 分布
         dist = torch.distributions.Categorical(logits=logits_safe)  # (batch, num_tiles)
@@ -156,10 +190,14 @@ class SatActorCritic(nn.Module):
 
         return action, log_prob, entropy, value
 
-    def get_value(self, obs: torch.Tensor) -> torch.Tensor:
+    def get_value(self, obs: torch.Tensor, critic_obs: torch.Tensor | None = None) -> torch.Tensor:
         """仅计算状态价值（GAE 计算时用）。
 
         Returns shape (batch, 1)。
         """
+        if self.central_critic is not None:
+            if critic_obs is None:
+                raise ValueError("MAPPO value estimation requires centralized training observations")
+            return self.central_critic(critic_obs)
         feat = self.trunk(obs)
         return self.value_head(feat)

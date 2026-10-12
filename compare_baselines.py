@@ -10,10 +10,12 @@ def format_summary(name: str, summary: Dict) -> str:
     overall = summary["overall"]
     latency = summary["latency"]
     failures = summary["failures"]
+    mean = "n/a" if latency["tile_mean"] is None else f"{latency['tile_mean']:.2f}s"
+    p95 = "n/a" if latency["tile_p95"] is None else f"{latency['tile_p95']:.2f}s"
     return (
         f"{name}: tiles {overall['completed_tiles']}/{overall['total_tiles']}, "
         f"tasks {overall['completed_tasks']}/{overall['total_tasks']}, "
-        f"tile_mean {latency['tile_mean']:.2f}, tile_p95 {latency['tile_p95']:.2f}, "
+        f"tile_mean {mean}, tile_p95 {p95}, "
         f"failures {sum(failures.values())}"
     )
 

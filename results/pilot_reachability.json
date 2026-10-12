@@ -1,0 +1,545 @@
+{
+  "scope": "offline optimistic upper bound only; zero transfer/compute delay and unlimited capacity/storage",
+  "runs": [
+    {
+      "seed": 10001,
+      "total_tasks": 26,
+      "optimistically_reachable_tasks": 0,
+      "completion_rate_upper_bound": 0.0,
+      "ground_visible_seconds_per_sat": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        305.0
+      ],
+      "experiment": {
+        "config": {
+          "seed": 10001,
+          "num_sats": 8,
+          "sim_steps": 240,
+          "dt": 5.0,
+          "decision_interval_steps": 1,
+          "topology_update_steps": 1,
+          "ground_visibility_update_steps": 1,
+          "task_arrival_rate": 0.08,
+          "image_size_mb": 256.0,
+          "num_tiles": 4,
+          "compute_cost_per_tile": 3.0,
+          "vram_base_gb": 0.1,
+          "vram_alpha_per_mb": 0.001,
+          "result_size_mb": 0.5,
+          "deadline_steps": 0,
+          "mem_capacity_gb": 4.0,
+          "vram_capacity_gb": 1.0,
+          "compute_rate": 0.5,
+          "transfer_fail_on_link_down": false,
+          "vram_policy": "wait",
+          "pipeline_mode": "distributed",
+          "tile_lifecycle_log": "",
+          "ground_stations": [
+            {
+              "id": "gs_beijing",
+              "lat_deg": 39.9042,
+              "lon_deg": 116.4074,
+              "alt_m": 50,
+              "min_elevation_deg": 15,
+              "bandwidth_mbps": 20,
+              "receive_channels": 1,
+              "compute_rate": 8
+            },
+            {
+              "id": "gs_urumqi",
+              "lat_deg": 43.8256,
+              "lon_deg": 87.6168,
+              "alt_m": 800,
+              "min_elevation_deg": 15,
+              "bandwidth_mbps": 20,
+              "receive_channels": 1,
+              "compute_rate": 7
+            }
+          ],
+          "topology": {
+            "start_time_utc": "2026-03-20T17:30:00Z",
+            "tle_file": "data/tle/global_spread_inc53_66.tle",
+            "earth_radius_km": 6378.137,
+            "max_range_km": 4500,
+            "bandwidth_distance_scale_km": 2000,
+            "bandwidth_mbps_min": 20,
+            "bandwidth_mbps_max": 120,
+            "bandwidth_period": 120,
+            "bandwidth_noise": 10,
+            "latency_ms": 20,
+            "visibility_workers": 1,
+            "window_lookahead_s": 600
+          }
+        },
+        "elapsed_sim_seconds": 1200.0,
+        "task_trace_sha256": "88fefcfa6425cb66bc023b84aa35d42b92c5fd5d334d91a68ca9c7358b665394",
+        "tle_sha256": "ffe6ddc7fd3925f2e3bfea4f9376b2ed6a2d244f154e2218342b21bd19eef8bd",
+        "decision_tile_limit_per_sat": 4,
+        "source_sha256": "7cdba374e8f632e02aa6c16f51e56e16a981d3a717565978c90d4ac4dc5f19ed",
+        "python_version": "3.12.13",
+        "packages": {
+          "numpy": "2.4.4",
+          "torch": "2.12.0",
+          "skyfield": "1.54",
+          "PyYAML": "6.0.3"
+        }
+      }
+    },
+    {
+      "seed": 10002,
+      "total_tasks": 15,
+      "optimistically_reachable_tasks": 0,
+      "completion_rate_upper_bound": 0.0,
+      "ground_visible_seconds_per_sat": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        305.0
+      ],
+      "experiment": {
+        "config": {
+          "seed": 10002,
+          "num_sats": 8,
+          "sim_steps": 240,
+          "dt": 5.0,
+          "decision_interval_steps": 1,
+          "topology_update_steps": 1,
+          "ground_visibility_update_steps": 1,
+          "task_arrival_rate": 0.08,
+          "image_size_mb": 256.0,
+          "num_tiles": 4,
+          "compute_cost_per_tile": 3.0,
+          "vram_base_gb": 0.1,
+          "vram_alpha_per_mb": 0.001,
+          "result_size_mb": 0.5,
+          "deadline_steps": 0,
+          "mem_capacity_gb": 4.0,
+          "vram_capacity_gb": 1.0,
+          "compute_rate": 0.5,
+          "transfer_fail_on_link_down": false,
+          "vram_policy": "wait",
+          "pipeline_mode": "distributed",
+          "tile_lifecycle_log": "",
+          "ground_stations": [
+            {
+              "id": "gs_beijing",
+              "lat_deg": 39.9042,
+              "lon_deg": 116.4074,
+              "alt_m": 50,
+              "min_elevation_deg": 15,
+              "bandwidth_mbps": 20,
+              "receive_channels": 1,
+              "compute_rate": 8
+            },
+            {
+              "id": "gs_urumqi",
+              "lat_deg": 43.8256,
+              "lon_deg": 87.6168,
+              "alt_m": 800,
+              "min_elevation_deg": 15,
+              "bandwidth_mbps": 20,
+              "receive_channels": 1,
+              "compute_rate": 7
+            }
+          ],
+          "topology": {
+            "start_time_utc": "2026-03-20T17:30:00Z",
+            "tle_file": "data/tle/global_spread_inc53_66.tle",
+            "earth_radius_km": 6378.137,
+            "max_range_km": 4500,
+            "bandwidth_distance_scale_km": 2000,
+            "bandwidth_mbps_min": 20,
+            "bandwidth_mbps_max": 120,
+            "bandwidth_period": 120,
+            "bandwidth_noise": 10,
+            "latency_ms": 20,
+            "visibility_workers": 1,
+            "window_lookahead_s": 600
+          }
+        },
+        "elapsed_sim_seconds": 1200.0,
+        "task_trace_sha256": "7a745c10dba2feec4d2fe46a621c45bb4cdb29c97a119c9fb8241f33dd0f1b12",
+        "tle_sha256": "ffe6ddc7fd3925f2e3bfea4f9376b2ed6a2d244f154e2218342b21bd19eef8bd",
+        "decision_tile_limit_per_sat": 4,
+        "source_sha256": "7cdba374e8f632e02aa6c16f51e56e16a981d3a717565978c90d4ac4dc5f19ed",
+        "python_version": "3.12.13",
+        "packages": {
+          "numpy": "2.4.4",
+          "torch": "2.12.0",
+          "skyfield": "1.54",
+          "PyYAML": "6.0.3"
+        }
+      }
+    },
+    {
+      "seed": 10003,
+      "total_tasks": 21,
+      "optimistically_reachable_tasks": 0,
+      "completion_rate_upper_bound": 0.0,
+      "ground_visible_seconds_per_sat": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        305.0
+      ],
+      "experiment": {
+        "config": {
+          "seed": 10003,
+          "num_sats": 8,
+          "sim_steps": 240,
+          "dt": 5.0,
+          "decision_interval_steps": 1,
+          "topology_update_steps": 1,
+          "ground_visibility_update_steps": 1,
+          "task_arrival_rate": 0.08,
+          "image_size_mb": 256.0,
+          "num_tiles": 4,
+          "compute_cost_per_tile": 3.0,
+          "vram_base_gb": 0.1,
+          "vram_alpha_per_mb": 0.001,
+          "result_size_mb": 0.5,
+          "deadline_steps": 0,
+          "mem_capacity_gb": 4.0,
+          "vram_capacity_gb": 1.0,
+          "compute_rate": 0.5,
+          "transfer_fail_on_link_down": false,
+          "vram_policy": "wait",
+          "pipeline_mode": "distributed",
+          "tile_lifecycle_log": "",
+          "ground_stations": [
+            {
+              "id": "gs_beijing",
+              "lat_deg": 39.9042,
+              "lon_deg": 116.4074,
+              "alt_m": 50,
+              "min_elevation_deg": 15,
+              "bandwidth_mbps": 20,
+              "receive_channels": 1,
+              "compute_rate": 8
+            },
+            {
+              "id": "gs_urumqi",
+              "lat_deg": 43.8256,
+              "lon_deg": 87.6168,
+              "alt_m": 800,
+              "min_elevation_deg": 15,
+              "bandwidth_mbps": 20,
+              "receive_channels": 1,
+              "compute_rate": 7
+            }
+          ],
+          "topology": {
+            "start_time_utc": "2026-03-20T17:30:00Z",
+            "tle_file": "data/tle/global_spread_inc53_66.tle",
+            "earth_radius_km": 6378.137,
+            "max_range_km": 4500,
+            "bandwidth_distance_scale_km": 2000,
+            "bandwidth_mbps_min": 20,
+            "bandwidth_mbps_max": 120,
+            "bandwidth_period": 120,
+            "bandwidth_noise": 10,
+            "latency_ms": 20,
+            "visibility_workers": 1,
+            "window_lookahead_s": 600
+          }
+        },
+        "elapsed_sim_seconds": 1200.0,
+        "task_trace_sha256": "e6aba2144e4a47b3942b8aaa3fdd9b74f1839968098c56e5cca7dcda1cf1680f",
+        "tle_sha256": "ffe6ddc7fd3925f2e3bfea4f9376b2ed6a2d244f154e2218342b21bd19eef8bd",
+        "decision_tile_limit_per_sat": 4,
+        "source_sha256": "7cdba374e8f632e02aa6c16f51e56e16a981d3a717565978c90d4ac4dc5f19ed",
+        "python_version": "3.12.13",
+        "packages": {
+          "numpy": "2.4.4",
+          "torch": "2.12.0",
+          "skyfield": "1.54",
+          "PyYAML": "6.0.3"
+        }
+      }
+    },
+    {
+      "seed": 20001,
+      "total_tasks": 16,
+      "optimistically_reachable_tasks": 1,
+      "completion_rate_upper_bound": 0.0625,
+      "ground_visible_seconds_per_sat": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        305.0
+      ],
+      "experiment": {
+        "config": {
+          "seed": 20001,
+          "num_sats": 8,
+          "sim_steps": 240,
+          "dt": 5.0,
+          "decision_interval_steps": 1,
+          "topology_update_steps": 1,
+          "ground_visibility_update_steps": 1,
+          "task_arrival_rate": 0.08,
+          "image_size_mb": 256.0,
+          "num_tiles": 4,
+          "compute_cost_per_tile": 3.0,
+          "vram_base_gb": 0.1,
+          "vram_alpha_per_mb": 0.001,
+          "result_size_mb": 0.5,
+          "deadline_steps": 0,
+          "mem_capacity_gb": 4.0,
+          "vram_capacity_gb": 1.0,
+          "compute_rate": 0.5,
+          "transfer_fail_on_link_down": false,
+          "vram_policy": "wait",
+          "pipeline_mode": "distributed",
+          "tile_lifecycle_log": "",
+          "ground_stations": [
+            {
+              "id": "gs_beijing",
+              "lat_deg": 39.9042,
+              "lon_deg": 116.4074,
+              "alt_m": 50,
+              "min_elevation_deg": 15,
+              "bandwidth_mbps": 20,
+              "receive_channels": 1,
+              "compute_rate": 8
+            },
+            {
+              "id": "gs_urumqi",
+              "lat_deg": 43.8256,
+              "lon_deg": 87.6168,
+              "alt_m": 800,
+              "min_elevation_deg": 15,
+              "bandwidth_mbps": 20,
+              "receive_channels": 1,
+              "compute_rate": 7
+            }
+          ],
+          "topology": {
+            "start_time_utc": "2026-03-20T17:30:00Z",
+            "tle_file": "data/tle/global_spread_inc53_66.tle",
+            "earth_radius_km": 6378.137,
+            "max_range_km": 4500,
+            "bandwidth_distance_scale_km": 2000,
+            "bandwidth_mbps_min": 20,
+            "bandwidth_mbps_max": 120,
+            "bandwidth_period": 120,
+            "bandwidth_noise": 10,
+            "latency_ms": 20,
+            "visibility_workers": 1,
+            "window_lookahead_s": 600
+          }
+        },
+        "elapsed_sim_seconds": 1200.0,
+        "task_trace_sha256": "2e72126a9ea1425cb3d396a50905bf70c1184a0e77b399ad841b3438b9936ef0",
+        "tle_sha256": "ffe6ddc7fd3925f2e3bfea4f9376b2ed6a2d244f154e2218342b21bd19eef8bd",
+        "decision_tile_limit_per_sat": 4,
+        "source_sha256": "7cdba374e8f632e02aa6c16f51e56e16a981d3a717565978c90d4ac4dc5f19ed",
+        "python_version": "3.12.13",
+        "packages": {
+          "numpy": "2.4.4",
+          "torch": "2.12.0",
+          "skyfield": "1.54",
+          "PyYAML": "6.0.3"
+        }
+      }
+    },
+    {
+      "seed": 20002,
+      "total_tasks": 27,
+      "optimistically_reachable_tasks": 1,
+      "completion_rate_upper_bound": 0.037037037037037035,
+      "ground_visible_seconds_per_sat": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        305.0
+      ],
+      "experiment": {
+        "config": {
+          "seed": 20002,
+          "num_sats": 8,
+          "sim_steps": 240,
+          "dt": 5.0,
+          "decision_interval_steps": 1,
+          "topology_update_steps": 1,
+          "ground_visibility_update_steps": 1,
+          "task_arrival_rate": 0.08,
+          "image_size_mb": 256.0,
+          "num_tiles": 4,
+          "compute_cost_per_tile": 3.0,
+          "vram_base_gb": 0.1,
+          "vram_alpha_per_mb": 0.001,
+          "result_size_mb": 0.5,
+          "deadline_steps": 0,
+          "mem_capacity_gb": 4.0,
+          "vram_capacity_gb": 1.0,
+          "compute_rate": 0.5,
+          "transfer_fail_on_link_down": false,
+          "vram_policy": "wait",
+          "pipeline_mode": "distributed",
+          "tile_lifecycle_log": "",
+          "ground_stations": [
+            {
+              "id": "gs_beijing",
+              "lat_deg": 39.9042,
+              "lon_deg": 116.4074,
+              "alt_m": 50,
+              "min_elevation_deg": 15,
+              "bandwidth_mbps": 20,
+              "receive_channels": 1,
+              "compute_rate": 8
+            },
+            {
+              "id": "gs_urumqi",
+              "lat_deg": 43.8256,
+              "lon_deg": 87.6168,
+              "alt_m": 800,
+              "min_elevation_deg": 15,
+              "bandwidth_mbps": 20,
+              "receive_channels": 1,
+              "compute_rate": 7
+            }
+          ],
+          "topology": {
+            "start_time_utc": "2026-03-20T17:30:00Z",
+            "tle_file": "data/tle/global_spread_inc53_66.tle",
+            "earth_radius_km": 6378.137,
+            "max_range_km": 4500,
+            "bandwidth_distance_scale_km": 2000,
+            "bandwidth_mbps_min": 20,
+            "bandwidth_mbps_max": 120,
+            "bandwidth_period": 120,
+            "bandwidth_noise": 10,
+            "latency_ms": 20,
+            "visibility_workers": 1,
+            "window_lookahead_s": 600
+          }
+        },
+        "elapsed_sim_seconds": 1200.0,
+        "task_trace_sha256": "c816051e6b24bea62bdcbd7a8b817bb497fed3cad905f5d6a0f8319c7c6ab24c",
+        "tle_sha256": "ffe6ddc7fd3925f2e3bfea4f9376b2ed6a2d244f154e2218342b21bd19eef8bd",
+        "decision_tile_limit_per_sat": 4,
+        "source_sha256": "7cdba374e8f632e02aa6c16f51e56e16a981d3a717565978c90d4ac4dc5f19ed",
+        "python_version": "3.12.13",
+        "packages": {
+          "numpy": "2.4.4",
+          "torch": "2.12.0",
+          "skyfield": "1.54",
+          "PyYAML": "6.0.3"
+        }
+      }
+    },
+    {
+      "seed": 20003,
+      "total_tasks": 17,
+      "optimistically_reachable_tasks": 0,
+      "completion_rate_upper_bound": 0.0,
+      "ground_visible_seconds_per_sat": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        305.0
+      ],
+      "experiment": {
+        "config": {
+          "seed": 20003,
+          "num_sats": 8,
+          "sim_steps": 240,
+          "dt": 5.0,
+          "decision_interval_steps": 1,
+          "topology_update_steps": 1,
+          "ground_visibility_update_steps": 1,
+          "task_arrival_rate": 0.08,
+          "image_size_mb": 256.0,
+          "num_tiles": 4,
+          "compute_cost_per_tile": 3.0,
+          "vram_base_gb": 0.1,
+          "vram_alpha_per_mb": 0.001,
+          "result_size_mb": 0.5,
+          "deadline_steps": 0,
+          "mem_capacity_gb": 4.0,
+          "vram_capacity_gb": 1.0,
+          "compute_rate": 0.5,
+          "transfer_fail_on_link_down": false,
+          "vram_policy": "wait",
+          "pipeline_mode": "distributed",
+          "tile_lifecycle_log": "",
+          "ground_stations": [
+            {
+              "id": "gs_beijing",
+              "lat_deg": 39.9042,
+              "lon_deg": 116.4074,
+              "alt_m": 50,
+              "min_elevation_deg": 15,
+              "bandwidth_mbps": 20,
+              "receive_channels": 1,
+              "compute_rate": 8
+            },
+            {
+              "id": "gs_urumqi",
+              "lat_deg": 43.8256,
+              "lon_deg": 87.6168,
+              "alt_m": 800,
+              "min_elevation_deg": 15,
+              "bandwidth_mbps": 20,
+              "receive_channels": 1,
+              "compute_rate": 7
+            }
+          ],
+          "topology": {
+            "start_time_utc": "2026-03-20T17:30:00Z",
+            "tle_file": "data/tle/global_spread_inc53_66.tle",
+            "earth_radius_km": 6378.137,
+            "max_range_km": 4500,
+            "bandwidth_distance_scale_km": 2000,
+            "bandwidth_mbps_min": 20,
+            "bandwidth_mbps_max": 120,
+            "bandwidth_period": 120,
+            "bandwidth_noise": 10,
+            "latency_ms": 20,
+            "visibility_workers": 1,
+            "window_lookahead_s": 600
+          }
+        },
+        "elapsed_sim_seconds": 1200.0,
+        "task_trace_sha256": "06db5190c1cfda242fae4c3cb032ebf932bbaf8bce24daeac8349bbdc56ade2d",
+        "tle_sha256": "ffe6ddc7fd3925f2e3bfea4f9376b2ed6a2d244f154e2218342b21bd19eef8bd",
+        "decision_tile_limit_per_sat": 4,
+        "source_sha256": "7cdba374e8f632e02aa6c16f51e56e16a981d3a717565978c90d4ac4dc5f19ed",
+        "python_version": "3.12.13",
+        "packages": {
+          "numpy": "2.4.4",
+          "torch": "2.12.0",
+          "skyfield": "1.54",
+          "PyYAML": "6.0.3"
+        }
+      }
+    }
+  ]
+}

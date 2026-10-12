@@ -1,0 +1,146 @@
+{
+  "algorithm": "comappo_adapted",
+  "model_version": "2.0",
+  "source_sha256": "6ec840d4f801fa6860edcdfa4e3cb4d980e357565e230736cea47332e89fa72b",
+  "python_version": "3.12.13",
+  "packages": {
+    "numpy": "2.4.4",
+    "torch": "2.12.0",
+    "skyfield": "1.54",
+    "PyYAML": "6.0.3"
+  },
+  "observation_version": 2,
+  "model_config": {
+    "num_gs": 2,
+    "hidden": 64,
+    "critic_dim": 1096,
+    "feature_set": "base",
+    "encoder": "mlp",
+    "task_features": true,
+    "window_features": true,
+    "critic_kind": "attention_q"
+  },
+  "ground_station_ids": [
+    "gs_beijing",
+    "gs_urumqi"
+  ],
+  "config": {
+    "seed": 7,
+    "num_sats": 8,
+    "sim_steps": 240,
+    "dt": 5.0,
+    "decision_interval_steps": 1,
+    "topology_update_steps": 1,
+    "ground_visibility_update_steps": 1,
+    "task_arrival_rate": 0.08,
+    "image_size_mb": 256.0,
+    "num_tiles": 4,
+    "compute_cost_per_tile": 3.0,
+    "vram_base_gb": 0.1,
+    "vram_alpha_per_mb": 0.001,
+    "result_size_mb": 0.5,
+    "deadline_steps": 0,
+    "mem_capacity_gb": 4.0,
+    "vram_capacity_gb": 1.0,
+    "compute_rate": 0.5,
+    "transfer_fail_on_link_down": false,
+    "vram_policy": "wait",
+    "pipeline_mode": "distributed",
+    "tile_lifecycle_log": "",
+    "ground_stations": [
+      {
+        "id": "gs_beijing",
+        "lat_deg": 39.9042,
+        "lon_deg": 116.4074,
+        "alt_m": 50,
+        "min_elevation_deg": 15,
+        "bandwidth_mbps": 20,
+        "receive_channels": 1,
+        "compute_rate": 8
+      },
+      {
+        "id": "gs_urumqi",
+        "lat_deg": 43.8256,
+        "lon_deg": 87.6168,
+        "alt_m": 800,
+        "min_elevation_deg": 15,
+        "bandwidth_mbps": 20,
+        "receive_channels": 1,
+        "compute_rate": 7
+      }
+    ],
+    "topology": {
+      "start_time_utc": "2026-03-20T17:30:00Z",
+      "tle_file": "data/tle/global_spread_inc53_66.tle",
+      "earth_radius_km": 6378.137,
+      "max_range_km": 4500,
+      "bandwidth_distance_scale_km": 2000,
+      "bandwidth_mbps_min": 20,
+      "bandwidth_mbps_max": 120,
+      "bandwidth_period": 120,
+      "bandwidth_noise": 10,
+      "latency_ms": 20,
+      "visibility_workers": 1,
+      "window_lookahead_s": 600
+    }
+  },
+  "training_args": {
+    "config": "examples/config_pilot.yaml",
+    "out_dir": "/Users/bytedance/Projects/bs/results/comappo_pilot/comappo_adapted/207",
+    "algorithm": "comappo_adapted",
+    "counterfactual_samples": 16,
+    "features": "base",
+    "encoder": "mlp",
+    "no_task_features": false,
+    "no_window_features": false,
+    "reward_mode": "task",
+    "shaping_coef": 0.0,
+    "episodes": 6,
+    "rollout_steps": 128,
+    "ppo_epochs": 4,
+    "minibatch": 256,
+    "hidden": 64,
+    "lr": 0.0003,
+    "gamma": 1.0,
+    "lam": 0.95,
+    "clip_eps": 0.2,
+    "vf_coef": 0.5,
+    "ent_coef": 0.01,
+    "max_grad_norm": 0.5,
+    "device": "cpu",
+    "seed": 207,
+    "torch_threads": 1,
+    "eval_every": 3,
+    "validation_seeds": "10001,10002,10003"
+  },
+  "seed": 207,
+  "parameter_count": 42866,
+  "environment_steps": 1440,
+  "information_assumption": "instantaneous task summaries and one-hop telemetry; no control-plane cost",
+  "training_seeds": [
+    208,
+    209,
+    210,
+    211,
+    212,
+    213
+  ],
+  "validation_seeds": [
+    10001,
+    10002,
+    10003
+  ],
+  "selection": "validation task completion rate, then completed-task mean latency",
+  "paper_adaptation": {
+    "source": "https://arxiv.org/html/2212.05757v2",
+    "scope": "attention action-value critic and counterfactual PPO learning component only",
+    "differences": [
+      "shared parameters",
+      "Monte Carlo marginalization of per-satellite joint tile actions",
+      "fixed simulator resource allocation",
+      "remote-sensing task model and common reward",
+      "local network widths and common PPO budget"
+    ],
+    "counterfactual_samples": 16
+  }
+}

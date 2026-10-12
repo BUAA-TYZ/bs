@@ -1,0 +1,22 @@
+{"time": 0, "time_seconds": 0, "event": "queued", "task_id": "witness", "tile_id": "witness_tile_0", "state": "QUEUED", "sat_from": null, "sat_to": 0, "location": 0}
+{"time": 0, "time_seconds": 0, "event": "queued", "task_id": "witness", "tile_id": "witness_tile_1", "state": "QUEUED", "sat_from": null, "sat_to": 0, "location": 0}
+{"time": 0, "time_seconds": 0, "event": "tx_start", "task_id": "witness", "tile_id": "witness_tile_0", "state": "TRANSFERRING", "sat_from": 0, "sat_to": 1, "location": 0, "remaining_mb": 2}
+{"time": 0, "time_seconds": 0, "event": "tx_start", "task_id": "witness", "tile_id": "witness_tile_1", "state": "TRANSFERRING", "sat_from": 0, "sat_to": 1, "location": 0, "remaining_mb": 2}
+{"time": 3, "time_seconds": 3, "event": "tx_end", "task_id": "witness", "tile_id": "witness_tile_0", "state": "READY", "sat_from": 0, "sat_to": 1, "location": 1}
+{"time": 3, "time_seconds": 3, "event": "queued", "task_id": "witness", "tile_id": "witness_tile_0", "state": "READY", "sat_from": 0, "sat_to": 1, "location": 1}
+{"time": 3, "time_seconds": 3, "event": "tx_end", "task_id": "witness", "tile_id": "witness_tile_1", "state": "READY", "sat_from": 0, "sat_to": 1, "location": 1}
+{"time": 3, "time_seconds": 3, "event": "queued", "task_id": "witness", "tile_id": "witness_tile_1", "state": "READY", "sat_from": 0, "sat_to": 1, "location": 1}
+{"time": 4, "time_seconds": 4, "event": "local_ready", "task_id": "witness", "tile_id": "witness_tile_0", "state": "READY", "sat_from": 1, "sat_to": 1, "location": 1}
+{"time": 4, "time_seconds": 4, "event": "local_ready", "task_id": "witness", "tile_id": "witness_tile_1", "state": "READY", "sat_from": 1, "sat_to": 1, "location": 1}
+{"time": 4, "time_seconds": 4, "event": "compute_start", "task_id": "witness", "tile_id": "witness_tile_0", "state": "RUNNING", "sat_from": 1, "sat_to": 1, "location": 1}
+{"time": 5, "time_seconds": 5, "event": "local_ready", "task_id": "witness", "tile_id": "witness_tile_1", "state": "READY", "sat_from": 1, "sat_to": 1, "location": 1}
+{"time": 5, "time_seconds": 5, "event": "computed", "task_id": "witness", "tile_id": "witness_tile_0", "state": "COMPUTED", "sat_from": 1, "sat_to": 1, "location": 1}
+{"time": 6, "time_seconds": 6, "event": "local_ready", "task_id": "witness", "tile_id": "witness_tile_1", "state": "READY", "sat_from": 1, "sat_to": 1, "location": 1}
+{"time": 6, "time_seconds": 6, "event": "compute_start", "task_id": "witness", "tile_id": "witness_tile_1", "state": "RUNNING", "sat_from": 1, "sat_to": 1, "location": 1}
+{"time": 7, "time_seconds": 7, "event": "computed", "task_id": "witness", "tile_id": "witness_tile_1", "state": "COMPUTED", "sat_from": 1, "sat_to": 1, "location": 1}
+{"time": 10, "time_seconds": 10, "event": "downlink_start", "task_id": "witness", "tile_id": "witness_tile_0", "state": "DOWNLINKING", "sat_from": 1, "sat_to": "gs", "location": 1, "remaining_mb": 0.25}
+{"time": 10, "time_seconds": 10, "event": "downlink_start", "task_id": "witness", "tile_id": "witness_tile_1", "state": "DOWNLINKING", "sat_from": 1, "sat_to": "gs", "location": 1, "remaining_mb": 0.25}
+{"time": 10, "time_seconds": 10, "event": "downlink_end", "task_id": "witness", "tile_id": "witness_tile_0", "state": "DONE", "sat_from": 1, "sat_to": "gs", "location": 1}
+{"time": 10, "time_seconds": 10, "event": "done", "task_id": "witness", "tile_id": "witness_tile_0", "state": "DONE", "sat_from": 1, "sat_to": "gs", "location": 1}
+{"time": 10, "time_seconds": 10, "event": "downlink_end", "task_id": "witness", "tile_id": "witness_tile_1", "state": "DONE", "sat_from": 1, "sat_to": "gs", "location": 1}
+{"time": 10, "time_seconds": 10, "event": "done", "task_id": "witness", "tile_id": "witness_tile_1", "state": "DONE", "sat_from": 1, "sat_to": "gs", "location": 1}

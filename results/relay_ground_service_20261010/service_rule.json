@@ -1,0 +1,146 @@
+{
+  "scope": "development service-rule diagnostic; not trained-policy performance",
+  "case": "shared24_a",
+  "service_rule": "oldest task per satellite/station; shared round-robin station capacity",
+  "implementation_sha256": "ab8fd8e12a17694a4d329f0825cfb817d8c28943fd20c228e3e48b796af156dd",
+  "runs": [
+    {
+      "label": "ground_tiles",
+      "overall": {
+        "completed_tiles": 442,
+        "total_tiles": 984,
+        "completed_tasks": 54,
+        "total_tasks": 123,
+        "failed_tiles": 0,
+        "pending_tiles": 542,
+        "task_completion_rate": 0.43902439024390244,
+        "tile_completion_rate": 0.4491869918699187,
+        "failed_tasks": 0,
+        "pending_tasks": 69,
+        "aggregating_tasks": 0
+      },
+      "task_age_delivery_curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 7,
+          "not_delivered_within_horizon": 116,
+          "delivery_rate": 0.056910569105691054
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 19,
+          "not_delivered_within_horizon": 104,
+          "delivery_rate": 0.15447154471544716
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 43,
+          "not_delivered_within_horizon": 80,
+          "delivery_rate": 0.34959349593495936
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 54,
+          "not_delivered_within_horizon": 69,
+          "delivery_rate": 0.43902439024390244
+        }
+      ]
+    },
+    {
+      "label": "ground_relay",
+      "overall": {
+        "completed_tiles": 562,
+        "total_tiles": 984,
+        "completed_tasks": 46,
+        "total_tasks": 123,
+        "failed_tiles": 0,
+        "pending_tiles": 422,
+        "task_completion_rate": 0.37398373983739835,
+        "tile_completion_rate": 0.5711382113821138,
+        "failed_tasks": 0,
+        "pending_tasks": 77,
+        "aggregating_tasks": 0
+      },
+      "task_age_delivery_curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 121,
+          "delivery_rate": 0.016260162601626018
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 4,
+          "not_delivered_within_horizon": 119,
+          "delivery_rate": 0.032520325203252036
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 16,
+          "not_delivered_within_horizon": 107,
+          "delivery_rate": 0.13008130081300814
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 46,
+          "not_delivered_within_horizon": 77,
+          "delivery_rate": 0.37398373983739835
+        }
+      ]
+    },
+    {
+      "label": "window_relay",
+      "overall": {
+        "completed_tiles": 983,
+        "total_tiles": 984,
+        "completed_tasks": 122,
+        "total_tasks": 123,
+        "failed_tiles": 0,
+        "pending_tiles": 1,
+        "task_completion_rate": 0.991869918699187,
+        "tile_completion_rate": 0.9989837398373984,
+        "failed_tasks": 0,
+        "pending_tasks": 1,
+        "aggregating_tasks": 0
+      },
+      "task_age_delivery_curve": [
+        {
+          "horizon_seconds": 1800.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 18,
+          "not_delivered_within_horizon": 105,
+          "delivery_rate": 0.14634146341463414
+        },
+        {
+          "horizon_seconds": 3600.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 74,
+          "not_delivered_within_horizon": 49,
+          "delivery_rate": 0.6016260162601627
+        },
+        {
+          "horizon_seconds": 7200.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 111,
+          "not_delivered_within_horizon": 12,
+          "delivery_rate": 0.9024390243902439
+        },
+        {
+          "horizon_seconds": 14400.0,
+          "total_tasks": 123,
+          "delivered_within_horizon": 122,
+          "not_delivered_within_horizon": 1,
+          "delivery_rate": 0.991869918699187
+        }
+      ]
+    }
+  ]
+}

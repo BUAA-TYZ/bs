@@ -1,0 +1,49 @@
+{"time": 0, "time_seconds": 0, "event": "created", "task_id": "image", "tile_id": "image_0", "state": "CREATED", "sat_from": null, "sat_to": 0, "location": 0}
+{"time": 0, "time_seconds": 0, "event": "created", "task_id": "image", "tile_id": "image_1", "state": "CREATED", "sat_from": null, "sat_to": 0, "location": 0}
+{"time": 0, "time_seconds": 0, "event": "created", "task_id": "image", "tile_id": "image_2", "state": "CREATED", "sat_from": null, "sat_to": 0, "location": 0}
+{"time": 0, "time_seconds": 0, "event": "created", "task_id": "image", "tile_id": "image_3", "state": "CREATED", "sat_from": null, "sat_to": 0, "location": 0}
+{"time": 0, "time_seconds": 0, "event": "queued", "task_id": "image", "tile_id": "image_0", "state": "QUEUED", "sat_from": null, "sat_to": 0, "location": 0}
+{"time": 0, "time_seconds": 0, "event": "queued", "task_id": "image", "tile_id": "image_1", "state": "QUEUED", "sat_from": null, "sat_to": 0, "location": 0}
+{"time": 0, "time_seconds": 0, "event": "queued", "task_id": "image", "tile_id": "image_2", "state": "QUEUED", "sat_from": null, "sat_to": 0, "location": 0}
+{"time": 0, "time_seconds": 0, "event": "queued", "task_id": "image", "tile_id": "image_3", "state": "QUEUED", "sat_from": null, "sat_to": 0, "location": 0}
+{"time": 0, "time_seconds": 0, "event": "local_ready", "task_id": "image", "tile_id": "image_0", "state": "READY", "sat_from": 0, "sat_to": 0, "location": 0}
+{"time": 0, "time_seconds": 0, "event": "local_ready", "task_id": "image", "tile_id": "image_1", "state": "READY", "sat_from": 0, "sat_to": 0, "location": 0}
+{"time": 0, "time_seconds": 0, "event": "local_ready", "task_id": "image", "tile_id": "image_2", "state": "READY", "sat_from": 0, "sat_to": 0, "location": 0}
+{"time": 0, "time_seconds": 0, "event": "local_ready", "task_id": "image", "tile_id": "image_3", "state": "READY", "sat_from": 0, "sat_to": 0, "location": 0}
+{"time": 0, "time_seconds": 0, "event": "compute_start", "task_id": "image", "tile_id": "image_0", "state": "RUNNING", "sat_from": 0, "sat_to": 0, "location": 0}
+{"time": 0, "time_seconds": 0, "event": "computed", "task_id": "image", "tile_id": "image_0", "state": "COMPUTED", "sat_from": 0, "sat_to": 0, "location": 0}
+{"time": 1, "time_seconds": 1, "event": "compute_start", "task_id": "image", "tile_id": "image_1", "state": "RUNNING", "sat_from": 0, "sat_to": 0, "location": 0}
+{"time": 1, "time_seconds": 1, "event": "computed", "task_id": "image", "tile_id": "image_1", "state": "COMPUTED", "sat_from": 0, "sat_to": 0, "location": 0}
+{"time": 1, "time_seconds": 1, "event": "result_tx_start", "task_id": "image", "tile_id": "image_0", "state": "RESULT_TRANSFERRING", "sat_from": 0, "sat_to": 1, "location": 0, "remaining_mb": 1}
+{"time": 1, "time_seconds": 1, "event": "result_tx_end", "task_id": "image", "tile_id": "image_0", "state": "COMPUTED", "sat_from": 0, "sat_to": 1, "location": 1, "arrival_step": 2}
+{"time": 2, "time_seconds": 2, "event": "compute_start", "task_id": "image", "tile_id": "image_2", "state": "RUNNING", "sat_from": 0, "sat_to": 0, "location": 0}
+{"time": 2, "time_seconds": 2, "event": "computed", "task_id": "image", "tile_id": "image_2", "state": "COMPUTED", "sat_from": 0, "sat_to": 0, "location": 0}
+{"time": 2, "time_seconds": 2, "event": "result_tx_start", "task_id": "image", "tile_id": "image_0", "state": "RESULT_TRANSFERRING", "sat_from": 1, "sat_to": 2, "location": 1, "remaining_mb": 1}
+{"time": 2, "time_seconds": 2, "event": "result_tx_start", "task_id": "image", "tile_id": "image_1", "state": "RESULT_TRANSFERRING", "sat_from": 0, "sat_to": 1, "location": 0, "remaining_mb": 1}
+{"time": 2, "time_seconds": 2, "event": "result_tx_end", "task_id": "image", "tile_id": "image_0", "state": "COMPUTED", "sat_from": 1, "sat_to": 2, "location": 2, "arrival_step": 3}
+{"time": 2, "time_seconds": 2, "event": "result_tx_end", "task_id": "image", "tile_id": "image_1", "state": "COMPUTED", "sat_from": 0, "sat_to": 1, "location": 1, "arrival_step": 3}
+{"time": 3, "time_seconds": 3, "event": "compute_start", "task_id": "image", "tile_id": "image_3", "state": "RUNNING", "sat_from": 0, "sat_to": 0, "location": 0}
+{"time": 3, "time_seconds": 3, "event": "computed", "task_id": "image", "tile_id": "image_3", "state": "COMPUTED", "sat_from": 0, "sat_to": 0, "location": 0}
+{"time": 3, "time_seconds": 3, "event": "downlink_start", "task_id": "image", "tile_id": "image_0", "state": "DOWNLINKING", "sat_from": 2, "sat_to": "gs", "location": 2, "remaining_mb": 1}
+{"time": 3, "time_seconds": 3, "event": "result_tx_start", "task_id": "image", "tile_id": "image_1", "state": "RESULT_TRANSFERRING", "sat_from": 1, "sat_to": 2, "location": 1, "remaining_mb": 1}
+{"time": 3, "time_seconds": 3, "event": "result_tx_start", "task_id": "image", "tile_id": "image_2", "state": "RESULT_TRANSFERRING", "sat_from": 0, "sat_to": 1, "location": 0, "remaining_mb": 1}
+{"time": 3, "time_seconds": 3, "event": "result_tx_end", "task_id": "image", "tile_id": "image_1", "state": "COMPUTED", "sat_from": 1, "sat_to": 2, "location": 2, "arrival_step": 4}
+{"time": 3, "time_seconds": 3, "event": "result_tx_end", "task_id": "image", "tile_id": "image_2", "state": "COMPUTED", "sat_from": 0, "sat_to": 1, "location": 1, "arrival_step": 4}
+{"time": 3, "time_seconds": 3, "event": "downlink_end", "task_id": "image", "tile_id": "image_0", "state": "DONE", "sat_from": 2, "sat_to": "gs", "location": 2}
+{"time": 3, "time_seconds": 3, "event": "done", "task_id": "image", "tile_id": "image_0", "state": "DONE", "sat_from": 2, "sat_to": "gs", "location": 2}
+{"time": 4, "time_seconds": 4, "event": "downlink_start", "task_id": "image", "tile_id": "image_1", "state": "DOWNLINKING", "sat_from": 2, "sat_to": "gs", "location": 2, "remaining_mb": 1}
+{"time": 4, "time_seconds": 4, "event": "result_tx_start", "task_id": "image", "tile_id": "image_2", "state": "RESULT_TRANSFERRING", "sat_from": 1, "sat_to": 2, "location": 1, "remaining_mb": 1}
+{"time": 4, "time_seconds": 4, "event": "result_tx_start", "task_id": "image", "tile_id": "image_3", "state": "RESULT_TRANSFERRING", "sat_from": 0, "sat_to": 1, "location": 0, "remaining_mb": 1}
+{"time": 4, "time_seconds": 4, "event": "result_tx_end", "task_id": "image", "tile_id": "image_2", "state": "COMPUTED", "sat_from": 1, "sat_to": 2, "location": 2, "arrival_step": 5}
+{"time": 4, "time_seconds": 4, "event": "result_tx_end", "task_id": "image", "tile_id": "image_3", "state": "COMPUTED", "sat_from": 0, "sat_to": 1, "location": 1, "arrival_step": 5}
+{"time": 4, "time_seconds": 4, "event": "downlink_end", "task_id": "image", "tile_id": "image_1", "state": "DONE", "sat_from": 2, "sat_to": "gs", "location": 2}
+{"time": 4, "time_seconds": 4, "event": "done", "task_id": "image", "tile_id": "image_1", "state": "DONE", "sat_from": 2, "sat_to": "gs", "location": 2}
+{"time": 5, "time_seconds": 5, "event": "downlink_start", "task_id": "image", "tile_id": "image_2", "state": "DOWNLINKING", "sat_from": 2, "sat_to": "gs", "location": 2, "remaining_mb": 1}
+{"time": 5, "time_seconds": 5, "event": "result_tx_start", "task_id": "image", "tile_id": "image_3", "state": "RESULT_TRANSFERRING", "sat_from": 1, "sat_to": 2, "location": 1, "remaining_mb": 1}
+{"time": 5, "time_seconds": 5, "event": "result_tx_end", "task_id": "image", "tile_id": "image_3", "state": "COMPUTED", "sat_from": 1, "sat_to": 2, "location": 2, "arrival_step": 6}
+{"time": 5, "time_seconds": 5, "event": "downlink_end", "task_id": "image", "tile_id": "image_2", "state": "DONE", "sat_from": 2, "sat_to": "gs", "location": 2}
+{"time": 5, "time_seconds": 5, "event": "done", "task_id": "image", "tile_id": "image_2", "state": "DONE", "sat_from": 2, "sat_to": "gs", "location": 2}
+{"time": 6, "time_seconds": 6, "event": "downlink_start", "task_id": "image", "tile_id": "image_3", "state": "DOWNLINKING", "sat_from": 2, "sat_to": "gs", "location": 2, "remaining_mb": 1}
+{"time": 6, "time_seconds": 6, "event": "downlink_end", "task_id": "image", "tile_id": "image_3", "state": "DONE", "sat_from": 2, "sat_to": "gs", "location": 2}
+{"time": 6, "time_seconds": 6, "event": "done", "task_id": "image", "tile_id": "image_3", "state": "DONE", "sat_from": 2, "sat_to": "gs", "location": 2}
+{"time": 9, "time_seconds": 9, "event": "task_delivered", "task_id": "image", "tile_id": null, "sat_from": null, "sat_to": null}

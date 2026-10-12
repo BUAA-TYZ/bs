@@ -1,0 +1,254 @@
+{
+  "args": {
+    "config": "examples/config_relay.yaml",
+    "distribution": "examples/scenario_roles.json",
+    "workers": 3,
+    "policies": [
+      "greedy",
+      "reservation_calendar",
+      "reservation_deferred"
+    ],
+    "fresh_seed": 20261012,
+    "fresh_count": 9,
+    "reference_dir": [
+      "results/relay_deferred_fresh_20261012"
+    ],
+    "out_dir": "results/relay_deferred_fresh_20261012_v2"
+  },
+  "source_sha256": "97bf5af6aca2cc379a40639135cd81879e60f1fd2b6fef0d7cea016ed8f706d6",
+  "python_version": "3.12.13",
+  "packages": {
+    "numpy": "2.4.4",
+    "torch": "2.12.0",
+    "skyfield": "1.54",
+    "PyYAML": "6.0.3"
+  },
+  "distribution_sha256": "9e946fbb00dcba477f43413ba7cba814952c932d6fc608d2d218918c76a59d26",
+  "runner_sha256": "01fd77171f015c63db7ee3465c50deec3262da14b683f35e6791ffaf69c4d6a9",
+  "policies": [
+    "greedy",
+    "reservation_calendar",
+    "reservation_deferred"
+  ],
+  "seeds": [
+    20261013,
+    20261014,
+    20261015,
+    20261016,
+    20261017,
+    20261018,
+    20261019,
+    20261020,
+    20261021
+  ],
+  "cases": [
+    {
+      "id": "train_20261012_1",
+      "seed": 20261013,
+      "orbit_offset_seconds": 109491.21624125859,
+      "arrival_rate_per_second": 0.007746519988038186,
+      "compute_cost_per_tile": 64.46947042303958,
+      "isl_bandwidth_scale": 0.9948398346679145,
+      "ground_bandwidth_scale": 1.8738818478900052,
+      "walker": {
+        "planes": 2,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 626.020971955823,
+        "inclination_deg": 69.64999235604118,
+        "raan_offset_deg": 284.4937516806629,
+        "phase_offset_deg": 357.00513128193296
+      },
+      "role_profile": "shared",
+      "num_sats": 12,
+      "num_task_sources": 8,
+      "effective_arrival_rate_per_second": 0.007746519988038186,
+      "config_sha256": "475b6c4073ff5754e3112f7abf05c3ca8b625bd83074809d0398609eae5b9b1f"
+    },
+    {
+      "id": "train_20261012_2",
+      "seed": 20261014,
+      "orbit_offset_seconds": 92568.5430886207,
+      "arrival_rate_per_second": 0.011615947908044088,
+      "compute_cost_per_tile": 61.37115987485732,
+      "isl_bandwidth_scale": 0.7754879569579398,
+      "ground_bandwidth_scale": 5.307327508233939,
+      "walker": {
+        "planes": 6,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 649.5578998084961,
+        "inclination_deg": 83.63359418543729,
+        "raan_offset_deg": 240.4507295053975,
+        "phase_offset_deg": 310.4497799496391
+      },
+      "role_profile": "shared",
+      "num_sats": 36,
+      "num_task_sources": 24,
+      "effective_arrival_rate_per_second": 0.03484784372413226,
+      "config_sha256": "9e9bc86b470c4fd7de6cda4007413b14b84abda057516e982afc8d1be7b5dfe0"
+    },
+    {
+      "id": "train_20261012_3",
+      "seed": 20261015,
+      "orbit_offset_seconds": 78883.55383829807,
+      "arrival_rate_per_second": 0.006199891745619613,
+      "compute_cost_per_tile": 25.790462253909983,
+      "isl_bandwidth_scale": 1.106587177118384,
+      "ground_bandwidth_scale": 17.21143194335619,
+      "walker": {
+        "planes": 4,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 681.3335267277922,
+        "inclination_deg": 78.65946154734789,
+        "raan_offset_deg": 93.34646467356984,
+        "phase_offset_deg": 323.8025384834227
+      },
+      "role_profile": "near",
+      "num_sats": 24,
+      "num_task_sources": 8,
+      "effective_arrival_rate_per_second": 0.006199891745619613,
+      "config_sha256": "9ec350e26131170142e3fb47c082c1d0d23354e09c072b65d07709778c784b51"
+    },
+    {
+      "id": "train_20261012_4",
+      "seed": 20261016,
+      "orbit_offset_seconds": 24783.79972185979,
+      "arrival_rate_per_second": 0.009881985198814374,
+      "compute_cost_per_tile": 59.395348194461846,
+      "isl_bandwidth_scale": 1.333137404012877,
+      "ground_bandwidth_scale": 10.52804862528486,
+      "walker": {
+        "planes": 6,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 768.7328010029973,
+        "inclination_deg": 56.03943556542572,
+        "raan_offset_deg": 258.200252223037,
+        "phase_offset_deg": 188.34852214505372
+      },
+      "role_profile": "near",
+      "num_sats": 36,
+      "num_task_sources": 12,
+      "effective_arrival_rate_per_second": 0.014822977798221563,
+      "config_sha256": "5f3d3bbf08b8308513867dc939299769038d9e585407617d34f1434cd9f8aeed"
+    },
+    {
+      "id": "train_20261012_5",
+      "seed": 20261017,
+      "orbit_offset_seconds": 122641.89766509322,
+      "arrival_rate_per_second": 0.005888679016098917,
+      "compute_cost_per_tile": 83.90476259223523,
+      "isl_bandwidth_scale": 1.2049316719621848,
+      "ground_bandwidth_scale": 13.606776700573894,
+      "walker": {
+        "planes": 2,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 758.0855031512727,
+        "inclination_deg": 97.1672882483834,
+        "raan_offset_deg": 16.4987228461027,
+        "phase_offset_deg": 231.45936311349942
+      },
+      "role_profile": "uniform",
+      "num_sats": 12,
+      "num_task_sources": 4,
+      "effective_arrival_rate_per_second": 0.0029443395080494587,
+      "config_sha256": "59a84f27c0f11719215a9cccda331b5839d802d00a91ae21970854435e5a8b90"
+    },
+    {
+      "id": "train_20261012_6",
+      "seed": 20261018,
+      "orbit_offset_seconds": 79091.03529172199,
+      "arrival_rate_per_second": 0.004786867394199456,
+      "compute_cost_per_tile": 28.491614086196403,
+      "isl_bandwidth_scale": 1.2285200821591231,
+      "ground_bandwidth_scale": 15.19932825451031,
+      "walker": {
+        "planes": 6,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 716.9791927800338,
+        "inclination_deg": 63.812566938550376,
+        "raan_offset_deg": 294.6269412964787,
+        "phase_offset_deg": 137.58112580996948
+      },
+      "role_profile": "uniform",
+      "num_sats": 36,
+      "num_task_sources": 12,
+      "effective_arrival_rate_per_second": 0.007180301091299185,
+      "config_sha256": "94b691ebe9d67afb17877fd340d2d0366846b6705dcf998ea57020439b0c854b"
+    },
+    {
+      "id": "train_20261012_7",
+      "seed": 20261019,
+      "orbit_offset_seconds": 65217.83162700978,
+      "arrival_rate_per_second": 0.011439110436952041,
+      "compute_cost_per_tile": 78.50284676763182,
+      "isl_bandwidth_scale": 1.1163299224086645,
+      "ground_bandwidth_scale": 5.437024651436186,
+      "walker": {
+        "planes": 4,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 674.3686068167282,
+        "inclination_deg": 78.5146736983382,
+        "raan_offset_deg": 125.6595667339847,
+        "phase_offset_deg": 230.17108407046473
+      },
+      "role_profile": "shared",
+      "num_sats": 24,
+      "num_task_sources": 16,
+      "effective_arrival_rate_per_second": 0.022878220873904082,
+      "config_sha256": "290907e7f38b09b8109f6d5e6ec697a130381291b9c936a2ab1cee721ec276af"
+    },
+    {
+      "id": "train_20261012_8",
+      "seed": 20261020,
+      "orbit_offset_seconds": 78611.2781038662,
+      "arrival_rate_per_second": 0.010136637226080282,
+      "compute_cost_per_tile": 84.93678939268769,
+      "isl_bandwidth_scale": 0.9859711721723342,
+      "ground_bandwidth_scale": 7.591915930617325,
+      "walker": {
+        "planes": 4,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 630.8685980524425,
+        "inclination_deg": 62.32826995218155,
+        "raan_offset_deg": 342.7026745252006,
+        "phase_offset_deg": 33.00222708689634
+      },
+      "role_profile": "uniform",
+      "num_sats": 24,
+      "num_task_sources": 8,
+      "effective_arrival_rate_per_second": 0.010136637226080282,
+      "config_sha256": "8f64b7ae96c9b19ca4df029531e5677c9d02261c2ad09542af652ca0282c2aa6"
+    },
+    {
+      "id": "train_20261012_9",
+      "seed": 20261021,
+      "orbit_offset_seconds": 100778.83109597192,
+      "arrival_rate_per_second": 0.010552483419966719,
+      "compute_cost_per_tile": 26.367775402626304,
+      "isl_bandwidth_scale": 0.5502217824468225,
+      "ground_bandwidth_scale": 3.5303760019750134,
+      "walker": {
+        "planes": 2,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 756.5910807728717,
+        "inclination_deg": 74.38386248356414,
+        "raan_offset_deg": 124.02922250153127,
+        "phase_offset_deg": 243.5498067139387
+      },
+      "role_profile": "near",
+      "num_sats": 12,
+      "num_task_sources": 4,
+      "effective_arrival_rate_per_second": 0.0052762417099833595,
+      "config_sha256": "14cdc78f630622117e19112deea33e7b20cf937eebd82043149945b45faefd62"
+    }
+  ],
+  "scope": "new random development diagnostic panel; not final test or a literature-method comparison"
+}

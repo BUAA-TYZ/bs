@@ -1,0 +1,30 @@
+{
+  "checkpoint": "checkpoints/committed_cold_20261009/best.pt",
+  "episode": 30,
+  "checkpoint_sha256": "bd1655cc1a689e2f9e304a3ee70a96772b91785b9d8ef6e03c1697e14611edfd",
+  "actor_parameters": 28417,
+  "fp32_parameter_bytes": 113668,
+  "artifact_bytes": 139686,
+  "under_one_million_parameters": true,
+  "inference_batch_size": 1,
+  "input_shape": [
+    1,
+    254
+  ],
+  "output_shape": [
+    1,
+    4,
+    12
+  ],
+  "cpu_threads": 1,
+  "machine": "arm64",
+  "platform": "macOS-26.4.1-arm64-arm-64bit",
+  "median_ms": 0.07114599999999999,
+  "p95_ms": 0.10308305,
+  "feature_options": {
+    "feature_set": "contact_window",
+    "task_features": true,
+    "window_features": true
+  },
+  "scope": "CPU network only; excludes orbit prediction, features, masks, runtime memory; not flight hardware"
+}

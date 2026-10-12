@@ -1,5 +1,9 @@
 # 卫星分布式任务调度仿真 — 实验报告
 
+> 历史记录：以下数值来自模型 v2.0 之前的实现，存在轨道时间尺度、并发带宽和指标单位问题。
+> 不能作为当前版本的性能结论，也不能与新结果直接比较。
+> 当前研究与验证协议见 [research_plan.md](research_plan.md)，运行方式以仓库 README 顶部为准。
+
 ## 背景与研究问题
 
 本仿真对比两种卫星遥感图像处理模式：
@@ -381,4 +385,3 @@ python run_mode_compare.py \
 | `_start_ground_task_*` / `_advance_ground_*` (ground 逻辑) | `sim/pipeline/ground.py` | `GroundPipeline` 类 |
 | `_refresh_ground_cache` / `_refresh_window_cache` / `_is_ground_visible` | `sim/cache/visibility.py` | `VisibilityCache` 类 |
 | 核心骨架 | `sim/env.py` | 从 1069 行减少到 613 行 |
-

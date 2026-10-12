@@ -1,0 +1,200 @@
+{
+  "model_version": "2.0",
+  "overall": {
+    "completed_tiles": 0,
+    "total_tiles": 4,
+    "completed_tasks": 0,
+    "total_tasks": 1,
+    "failed_tiles": 0,
+    "pending_tiles": 4,
+    "task_completion_rate": 0.0,
+    "tile_completion_rate": 0.0,
+    "failed_tasks": 0,
+    "pending_tasks": 1,
+    "aggregating_tasks": 0
+  },
+  "latency": {
+    "unit": "seconds",
+    "population": "completed_only",
+    "tile_mean": null,
+    "tile_p95": null,
+    "tile_p99": null,
+    "task_mean": null,
+    "task_p95": null,
+    "task_p99": null
+  },
+  "resource": {
+    "avg_queue_len": {
+      "0": 0.1,
+      "1": 0.0,
+      "2": 0.0
+    },
+    "compute_busy_time": {
+      "0": 4.0
+    },
+    "mem_peak_gb": {
+      "0": 0.015625,
+      "1": 0.0,
+      "2": 0.0
+    },
+    "vram_peak_gb": {
+      "0": 0.1,
+      "1": 0.0,
+      "2": 0.0
+    }
+  },
+  "failures": {},
+  "network": {
+    "sent_mb": {
+      "isl:0->1": 0.0,
+      "isl:1->0": 0.0,
+      "isl:1->2": 0.0,
+      "isl:2->1": 0.0,
+      "ground:gs": 0.0
+    },
+    "capacity_mb": {
+      "isl:0->1": 0.6000000000000003,
+      "isl:1->0": 0.6000000000000003,
+      "isl:1->2": 0.6000000000000003,
+      "isl:2->1": 0.6000000000000003,
+      "ground:gs": 60.0
+    },
+    "utilization": {
+      "isl:0->1": 0.0,
+      "isl:1->0": 0.0,
+      "isl:1->2": 0.0,
+      "isl:2->1": 0.0,
+      "ground:gs": 0.0
+    }
+  },
+  "task_outcomes": [
+    {
+      "task_id": "image",
+      "source_sat_id": 0,
+      "release_seconds": 0,
+      "deadline_seconds": null,
+      "results_ready_seconds": null,
+      "completion_seconds": null,
+      "latency_seconds": null,
+      "status": "pending",
+      "stage": null,
+      "failure_reason": null,
+      "observed_age_seconds": 60,
+      "result_relay_hops": 0,
+      "raw_relay_hops": 0
+    }
+  ],
+  "experiment": {
+    "config": {
+      "seed": 7,
+      "num_sats": 3,
+      "sim_steps": 60,
+      "dt": 1,
+      "decision_interval_steps": 1,
+      "topology_update_steps": 1,
+      "ground_visibility_update_steps": 1,
+      "task_arrival_rate": 0,
+      "image_size_mb": 16,
+      "num_tiles": 4,
+      "compute_cost_per_tile": 1,
+      "vram_base_gb": 0.1,
+      "vram_alpha_per_mb": 0.001,
+      "result_size_mb": 1,
+      "deadline_steps": 0,
+      "mem_capacity_gb": 8.0,
+      "vram_capacity_gb": 1.0,
+      "compute_rate": 1,
+      "transfer_fail_on_link_down": false,
+      "vram_policy": "wait",
+      "pipeline_mode": "distributed",
+      "tile_lifecycle_log": "results/result_relay_synthetic_v2_20261010/insufficient_capacity/window_direct/events.jsonl",
+      "ground_stations": [
+        {
+          "id": "gs",
+          "bandwidth_mbps": 8,
+          "compute_rate": 1
+        }
+      ],
+      "topology": {
+        "start_time_utc": "2026-03-20T17:30:00Z",
+        "tle_file": "data/tle/global_spread_inc53_24.tle",
+        "earth_radius_km": 6378.137,
+        "max_range_km": 4500,
+        "max_neighbors": 4,
+        "predict_contacts": false,
+        "precompute_visibility": false,
+        "contact_scan_s": 30,
+        "contact_update_s": 60,
+        "bandwidth_distance_scale_km": 2000,
+        "bandwidth_mbps_min": 20,
+        "bandwidth_mbps_max": 0.08,
+        "bandwidth_period": 60,
+        "bandwidth_noise": 10,
+        "latency_ms": 20,
+        "visibility_workers": 1,
+        "window_lookahead_s": 7200
+      },
+      "ground_relay_delay_s": 0,
+      "aggregation_delay_s": 2,
+      "task_arrival_end_step": 0,
+      "execution_commitment": true,
+      "task_source_sat_ids": null,
+      "satellite_compute_rates": null,
+      "result_buffering": true,
+      "result_relay": false,
+      "relay_max_hops": 8
+    },
+    "elapsed_sim_seconds": 60,
+    "task_trace_sha256": "9e91f317b0a0a8bf056db22dbb056aa323eab17496eb27f0eace721b17f5a08a",
+    "tle_sha256": "bd9113d6668a53fad52f591a50b53d781c0b2e7351c478cc09eb3c46f57c01ea",
+    "decision_tile_limit_per_sat": 4,
+    "delivery_semantics": "all_results_at_ground_plus_fixed_relay_and_aggregation_v1",
+    "aggregation_model": "uncontended_fixed_delay_rounded_up_to_step",
+    "effective_postprocessing_delay_seconds": 2,
+    "splitting_delay_seconds": 0.0,
+    "result_buffering": true,
+    "result_relay": false,
+    "routing_information": "current global link graph and predicted ground windows; instantaneous telemetry; no control-plane cost",
+    "source_sha256": "6a4e38dba113928ac7a88c0130579289faeaa9c71a323747240a434c1b9f7359",
+    "python_version": "3.12.13",
+    "packages": {
+      "numpy": "2.4.4",
+      "torch": "2.12.0",
+      "skyfield": "1.54",
+      "PyYAML": "6.0.3"
+    },
+    "policy": "window_direct"
+  },
+  "task_age_delivery_curve": [
+    {
+      "horizon_seconds": 5.0,
+      "total_tasks": 1,
+      "delivered_within_horizon": 0,
+      "not_delivered_within_horizon": 1,
+      "delivery_rate": 0.0
+    },
+    {
+      "horizon_seconds": 10.0,
+      "total_tasks": 1,
+      "delivered_within_horizon": 0,
+      "not_delivered_within_horizon": 1,
+      "delivery_rate": 0.0
+    },
+    {
+      "horizon_seconds": 30.0,
+      "total_tasks": 1,
+      "delivered_within_horizon": 0,
+      "not_delivered_within_horizon": 1,
+      "delivery_rate": 0.0
+    },
+    {
+      "horizon_seconds": 60.0,
+      "total_tasks": 1,
+      "delivered_within_horizon": 0,
+      "not_delivered_within_horizon": 1,
+      "delivery_rate": 0.0
+    }
+  ],
+  "result_paths": {},
+  "raw_relay_paths": {}
+}

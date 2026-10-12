@@ -61,6 +61,8 @@ ground_stations:
     min_elevation_deg: 15
     # 20 Mbps：S/X 波段小卫星有效吞吐，4096MB 需 ~1638s 传完（>>中位窗口375s）
     bandwidth_mbps: 20
+    # 每通道带宽；一个接收通道同一时刻只接入一颗卫星
+    receive_channels: 1
     latency_ms: 25
     compute_rate: 8.0
   # 乌鲁木齐地面站
@@ -70,6 +72,7 @@ ground_stations:
     alt_m: 800
     min_elevation_deg: 15
     bandwidth_mbps: 20
+    receive_channels: 1
     latency_ms: 30
     compute_rate: 7.0
 
@@ -102,4 +105,4 @@ topology:
   # 单向链路时延（ms），用于估计与状态导出
   latency_ms: 20
   # 可见性计算进程数；1 为单进程，>1 启用多进程
-  visibility_workers: 12
+  visibility_workers: 18

@@ -30,6 +30,34 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Dict
 
+from sim.entities import TileState
+
+
+def task_potential(env, horizons_seconds=None) -> float:
+    """任务进度势函数；只使用训练环境状态，终止时由调用方归零。"""
+    potential = 0.0
+    for task in env.tasks.values():
+        states = [env.tiles[tid].state for tid in task.tile_ids]
+        if states and TileState.FAILED not in states:
+            weight = 1.0
+            if horizons_seconds:
+                age = (env.time - task.release_time) * env.cfg.dt
+                weight = sum(age <= horizon for horizon in horizons_seconds) / len(horizons_seconds)
+            potential += weight * (states.count(TileState.DONE) / len(states)) ** 2
+    return potential
+
+
+def delivered_task_reward(env, horizons_seconds):
+    """仅在完整任务交付时奖励，和等权交付曲线的分子一致。"""
+    return sum(sum((task.completion_time - task.release_time) * env.cfg.dt <= horizon
+                   for horizon in horizons_seconds) / len(horizons_seconds)
+               for task in env.tasks.values() if task.completion_time == env.time)
+
+
+def shaped_task_reward(new_tasks, previous_potential, next_potential, gamma, coefficient, terminal):
+    next_potential = 0.0 if terminal else next_potential
+    return float(new_tasks) + coefficient * (gamma * next_potential - previous_potential)
+
 
 @dataclass
 class RewardConfig:

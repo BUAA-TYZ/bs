@@ -8,6 +8,7 @@ import math
 
 @dataclass
 class Metrics:
+    step_seconds: float = 1.0
     total_tiles: int = 0
     completed_tiles: int = 0
     failed_tiles: int = 0
@@ -21,6 +22,8 @@ class Metrics:
     compute_busy_time: Dict[int, float] = field(default_factory=dict)
     mem_peak: Dict[int, float] = field(default_factory=dict)
     vram_peak: Dict[int, float] = field(default_factory=dict)
+    network_sent_mb: Dict[str, float] = field(default_factory=dict)
+    network_capacity_mb: Dict[str, float] = field(default_factory=dict)
 
     def record_failure(self, reason: str) -> None:
         self.failure_reasons[reason] = self.failure_reasons.get(reason, 0) + 1
@@ -28,11 +31,15 @@ class Metrics:
 
     def record_tile_latency(self, latency: float) -> None:
         self.completed_tiles += 1
-        self.tile_latencies.append(latency)
+        self.tile_latencies.append(latency * self.step_seconds)
 
     def record_task_latency(self, latency: float) -> None:
         self.completed_tasks += 1
-        self.task_latencies.append(latency)
+        self.task_latencies.append(latency * self.step_seconds)
+
+    def record_network(self, key: str, sent_mb: float, capacity_mb: float) -> None:
+        self.network_sent_mb[key] = self.network_sent_mb.get(key, 0.0) + sent_mb
+        self.network_capacity_mb[key] = self.network_capacity_mb.get(key, 0.0) + capacity_mb
 
     def update_queue_stats(self, sat_id: int, queue_len: int) -> None:
         self.queue_len_sum[sat_id] = self.queue_len_sum.get(sat_id, 0.0) + queue_len
@@ -51,7 +58,7 @@ class Metrics:
 
     def _percentiles(self, values: List[float], ps: List[float]) -> Dict[str, float]:
         if not values:
-            return {f"p{int(p)}": math.nan for p in ps}
+            return {f"p{int(p)}": None for p in ps}
         arr = sorted(values)
         res = {}
         for p in ps:
@@ -68,17 +75,24 @@ class Metrics:
             for sat_id in self.queue_len_sum
         }
         return {
+            "model_version": "2.0",
             "overall": {
                 "completed_tiles": self.completed_tiles,
                 "total_tiles": self.total_tiles,
                 "completed_tasks": self.completed_tasks,
                 "total_tasks": self.total_tasks,
+                "failed_tiles": self.failed_tiles,
+                "pending_tiles": self.total_tiles - self.completed_tiles - self.failed_tiles,
+                "task_completion_rate": self.completed_tasks / max(1, self.total_tasks),
+                "tile_completion_rate": self.completed_tiles / max(1, self.total_tiles),
             },
             "latency": {
-                "tile_mean": sum(self.tile_latencies) / max(1, len(self.tile_latencies)),
+                "unit": "seconds",
+                "population": "completed_only",
+                "tile_mean": sum(self.tile_latencies) / len(self.tile_latencies) if self.tile_latencies else None,
                 "tile_p95": tile_p["p95"],
                 "tile_p99": tile_p["p99"],
-                "task_mean": sum(self.task_latencies) / max(1, len(self.task_latencies)),
+                "task_mean": sum(self.task_latencies) / len(self.task_latencies) if self.task_latencies else None,
                 "task_p95": task_p["p95"],
                 "task_p99": task_p["p99"],
             },
@@ -89,6 +103,13 @@ class Metrics:
                 "vram_peak_gb": self.vram_peak,
             },
             "failures": self.failure_reasons,
+            "network": {
+                "sent_mb": dict(self.network_sent_mb),
+                "capacity_mb": dict(self.network_capacity_mb),
+                "utilization": {key: self.network_sent_mb.get(key, 0.0) / capacity
+                                if capacity > 0 else 0.0
+                                for key, capacity in self.network_capacity_mb.items()},
+            },
         }
 
     def to_json(self, path: str) -> None:

@@ -99,6 +99,8 @@ class WindowAwareGreedy(SchedulerPolicy):
                 extra_tx: 从当前卫星传到 sat_id 的传输时间（LOCAL 时为 0）。
                 """
                 sat = env_state.satellites[sat_id]
+                if tile["vram_req_gb"] > env_state.config["vram_capacity_gb"]:
+                    return float("inf")
                 single_tile_compute = compute_cost / max(1e-9, sat["compute_rate"])
                 queue_wait = sat["queue_len"] * single_tile_compute
                 compute_time = single_tile_compute
@@ -123,6 +125,8 @@ class WindowAwareGreedy(SchedulerPolicy):
 
             # ── 选项 B/C：1跳 ISL 卸载到邻居（B），或 2跳到地面（C）─────
             for nb in env_state.neighbors.get(src, []):
+                if env_state.satellites[nb]["mem_remaining_gb"] < tile["data_size_gb"]:
+                    continue
                 lk = env_state.links.get(link_key(src, nb))
                 if not lk or not lk["up"]:
                     continue

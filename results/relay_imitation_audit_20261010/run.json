@@ -1,0 +1,14 @@
+{
+  "source_sha256": "1b7eca2040dd8316acf65acffcc53b967b4295414b67e5b4edc128f1d3a7ddf4",
+  "python_version": "3.12.13",
+  "packages": {
+    "numpy": "2.4.4",
+    "torch": "2.12.0",
+    "skyfield": "1.54",
+    "PyYAML": "6.0.3"
+  },
+  "checkpoint": "checkpoints/relay_age_mappo_7_20261010/best.pt",
+  "checkpoint_source_sha256": "20e0658438a3198d7a686721f05e282b3e369ede3bbe1478f5ff9ce208d34a0e",
+  "teacher": "greedy",
+  "scope": "development diagnosis only; no fitting"
+}

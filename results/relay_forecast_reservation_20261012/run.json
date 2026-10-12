@@ -1,0 +1,44 @@
+{
+  "args": {
+    "config": "examples/config_relay.yaml",
+    "distribution": "examples/scenario_roles.json",
+    "workers": 3,
+    "policies": [
+      "greedy",
+      "reservation_joint_sequential",
+      "reservation_calendar",
+      "reservation_guarded",
+      "reservation_multihop",
+      "reservation_forecast"
+    ],
+    "out_dir": "results/relay_forecast_reservation_20261012"
+  },
+  "source_sha256": "788917dc169125d24a5d1b9a74c2dadfe45b2940e4ed44747f29ba7a0ec047c9",
+  "python_version": "3.12.13",
+  "packages": {
+    "numpy": "2.4.4",
+    "torch": "2.12.0",
+    "skyfield": "1.54",
+    "PyYAML": "6.0.3"
+  },
+  "distribution_sha256": "9e946fbb00dcba477f43413ba7cba814952c932d6fc608d2d218918c76a59d26",
+  "policies": [
+    "greedy",
+    "reservation_joint_sequential",
+    "reservation_calendar",
+    "reservation_guarded",
+    "reservation_multihop",
+    "reservation_forecast"
+  ],
+  "seeds": [
+    81001,
+    81002,
+    81003,
+    81004,
+    81005,
+    81006,
+    81007,
+    81008
+  ],
+  "scope": "existing development panel; not final test or a literature-method comparison"
+}

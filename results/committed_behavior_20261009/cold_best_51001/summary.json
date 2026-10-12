@@ -1,0 +1,633 @@
+{
+  "seed": 51001,
+  "policy": "marl",
+  "checkpoint": "checkpoints/committed_cold_20261009/best.pt",
+  "proposed_actions": {
+    "OFFLOAD_ISL": 168,
+    "WAIT": 4288
+  },
+  "same_state_local_comparison": {
+    "tile_decisions": 4456,
+    "different_decisions": 4456
+  },
+  "completed_task_ids": [
+    "task_12",
+    "task_13",
+    "task_14",
+    "task_3",
+    "task_7"
+  ],
+  "isl_sent_mb": 21504.0,
+  "event_counts": {
+    "compute_start": 168,
+    "computed": 168,
+    "created": 168,
+    "done": 40,
+    "downlink_end": 40,
+    "downlink_start": 40,
+    "queued": 336,
+    "task_delivered": 5,
+    "tx_end": 168,
+    "tx_start": 168
+  },
+  "computed_unique_tiles": {
+    "source_satellite": 0,
+    "remote_satellite": 168,
+    "ground": 0
+  },
+  "completed_tasks_with_finished_isl_hop": [
+    "task_12",
+    "task_13",
+    "task_14",
+    "task_3",
+    "task_7"
+  ],
+  "completed_tasks_with_remote_satellite_compute": [
+    "task_12",
+    "task_13",
+    "task_14",
+    "task_3",
+    "task_7"
+  ],
+  "completed_tasks_with_ground_compute": [],
+  "metrics": {
+    "model_version": "2.0",
+    "overall": {
+      "completed_tiles": 40,
+      "total_tiles": 168,
+      "completed_tasks": 5,
+      "total_tasks": 21,
+      "failed_tiles": 0,
+      "pending_tiles": 128,
+      "task_completion_rate": 0.23809523809523808,
+      "tile_completion_rate": 0.23809523809523808,
+      "failed_tasks": 0,
+      "pending_tasks": 16,
+      "aggregating_tasks": 0
+    },
+    "latency": {
+      "unit": "seconds",
+      "population": "completed_only",
+      "tile_mean": 3108.0,
+      "tile_p95": 3700.0,
+      "tile_p99": 3700.0,
+      "task_mean": 3128.0,
+      "task_p95": 3720.0,
+      "task_p99": 3720.0
+    },
+    "resource": {
+      "avg_queue_len": {
+        "0": 0.18981481481481483,
+        "1": 0.06666666666666667,
+        "2": 1.7944444444444445,
+        "3": 0.9407407407407408,
+        "4": 0.37407407407407406,
+        "5": 0.022222222222222223,
+        "6": 0.9166666666666666,
+        "7": 1.385185185185185,
+        "8": 0.06666666666666667,
+        "9": 0.5407407407407407,
+        "10": 0.6592592592592592,
+        "11": 1.6074074074074074
+      },
+      "compute_busy_time": {
+        "1": 128.0,
+        "8": 128.0,
+        "3": 96.0,
+        "6": 224.0,
+        "4": 160.0,
+        "0": 128.0,
+        "2": 64.0,
+        "11": 160.0,
+        "10": 192.0,
+        "7": 64.0
+      },
+      "mem_peak_gb": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0000000000000002,
+        "3": 2.4935418817414856,
+        "4": 1.5064581182585146,
+        "5": 1.0,
+        "6": 2.0,
+        "7": 1.0,
+        "8": 1.0,
+        "9": 1.0000000000000002,
+        "10": 1.0000000000000002,
+        "11": 2.0
+      },
+      "vram_peak_gb": {
+        "0": 0.23307983116627265,
+        "1": 0.23230968581967892,
+        "2": 0.23056151350122603,
+        "3": 0.23065959668601907,
+        "4": 0.23400681249165667,
+        "5": 0.0,
+        "6": 0.2325193858323104,
+        "7": 0.23046263465627476,
+        "8": 0.2300330538551953,
+        "9": 0.0,
+        "10": 0.2324462753661158,
+        "11": 0.23313850449962886
+      }
+    },
+    "failures": {},
+    "network": {
+      "sent_mb": {
+        "isl:0->7": 0.0,
+        "isl:7->0": 2048.000000000001,
+        "isl:2->5": 0.0,
+        "isl:5->2": 1023.9999999999999,
+        "ground:gs_beijing": 0.0,
+        "ground:gs_urumqi": 20.0,
+        "isl:1->9": 0.0,
+        "isl:9->1": 1024.0,
+        "isl:3->11": 2551.8588168090687,
+        "isl:11->3": 505.3868869032811,
+        "isl:7->10": 1023.9999999999999,
+        "isl:10->7": 1024.0000000000002,
+        "isl:5->8": 1023.9999999999999,
+        "isl:8->5": 0.0,
+        "isl:1->4": 0.0,
+        "isl:4->1": 1023.9999999999998,
+        "isl:3->6": 2568.141183190931,
+        "isl:6->3": 1023.9999999999999,
+        "isl:0->8": 1023.9999999999998,
+        "isl:8->0": 0.0,
+        "isl:2->10": 2047.9999999999995,
+        "isl:10->2": 0.0,
+        "isl:4->11": 0.0,
+        "isl:11->4": 2566.6131130967187,
+        "isl:6->9": 0.0,
+        "isl:9->6": 1024.0
+      },
+      "capacity_mb": {
+        "isl:0->7": 9613.708436901772,
+        "isl:7->0": 9613.708436901772,
+        "isl:2->5": 10237.777532988459,
+        "isl:5->2": 10237.777532988459,
+        "ground:gs_beijing": 32400.0,
+        "ground:gs_urumqi": 32400.0,
+        "isl:1->9": 10848.236705351193,
+        "isl:9->1": 10848.236705351193,
+        "isl:3->11": 10662.424328177507,
+        "isl:11->3": 10662.424328177507,
+        "isl:7->10": 10683.994479465211,
+        "isl:10->7": 10683.994479465211,
+        "isl:5->8": 10782.9762891169,
+        "isl:8->5": 10782.9762891169,
+        "isl:1->4": 10801.623032220747,
+        "isl:4->1": 10801.623032220747,
+        "isl:3->6": 10614.344166377974,
+        "isl:6->3": 10614.344166377974,
+        "isl:0->8": 9833.898795876214,
+        "isl:8->0": 9833.898795876214,
+        "isl:2->10": 9770.000688602453,
+        "isl:10->2": 9770.000688602453,
+        "isl:4->11": 8211.05231020277,
+        "isl:11->4": 8211.05231020277,
+        "isl:6->9": 8297.4725230587,
+        "isl:9->6": 8297.4725230587
+      },
+      "utilization": {
+        "isl:0->7": 0.0,
+        "isl:7->0": 0.2130291357847767,
+        "isl:2->5": 0.0,
+        "isl:5->2": 0.10002170849097257,
+        "ground:gs_beijing": 0.0,
+        "ground:gs_urumqi": 0.0006172839506172839,
+        "isl:1->9": 0.0,
+        "isl:9->1": 0.09439322055858936,
+        "isl:3->11": 0.23933195099591853,
+        "isl:11->3": 0.047398872090252404,
+        "isl:7->10": 0.0958443026124866,
+        "isl:10->7": 0.09584430261248662,
+        "isl:5->8": 0.09496450446928165,
+        "isl:8->5": 0.0,
+        "isl:1->4": 0.0,
+        "isl:4->1": 0.09480056811327842,
+        "isl:3->6": 0.24195005767061728,
+        "isl:6->3": 0.09647322377614484,
+        "isl:0->8": 0.1041296052822313,
+        "isl:8->0": 0.0,
+        "isl:2->10": 0.20962127488784804,
+        "isl:10->2": 0.0,
+        "isl:4->11": 0.0,
+        "isl:11->4": 0.3125802900935772,
+        "isl:6->9": 0.0,
+        "isl:9->6": 0.12341107453556503
+      }
+    },
+    "task_outcomes": [
+      {
+        "task_id": "task_0",
+        "source_sat_id": 6,
+        "release_seconds": 70.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 10730.0
+      },
+      {
+        "task_id": "task_1",
+        "source_sat_id": 9,
+        "release_seconds": 320.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 10480.0
+      },
+      {
+        "task_id": "task_2",
+        "source_sat_id": 4,
+        "release_seconds": 800.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 10000.0
+      },
+      {
+        "task_id": "task_3",
+        "source_sat_id": 5,
+        "release_seconds": 850.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 4050.0,
+        "completion_seconds": 4070.0,
+        "latency_seconds": 3220.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 9950.0
+      },
+      {
+        "task_id": "task_4",
+        "source_sat_id": 11,
+        "release_seconds": 900.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 9900.0
+      },
+      {
+        "task_id": "task_5",
+        "source_sat_id": 3,
+        "release_seconds": 950.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 9850.0
+      },
+      {
+        "task_id": "task_6",
+        "source_sat_id": 9,
+        "release_seconds": 1430.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 9370.0
+      },
+      {
+        "task_id": "task_7",
+        "source_sat_id": 0,
+        "release_seconds": 1490.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 4050.0,
+        "completion_seconds": 4070.0,
+        "latency_seconds": 2580.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 9310.0
+      },
+      {
+        "task_id": "task_8",
+        "source_sat_id": 7,
+        "release_seconds": 1540.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 9260.0
+      },
+      {
+        "task_id": "task_9",
+        "source_sat_id": 11,
+        "release_seconds": 1700.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 9100.0
+      },
+      {
+        "task_id": "task_10",
+        "source_sat_id": 3,
+        "release_seconds": 1820.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 8980.0
+      },
+      {
+        "task_id": "task_11",
+        "source_sat_id": 5,
+        "release_seconds": 3040.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 7760.0
+      },
+      {
+        "task_id": "task_12",
+        "source_sat_id": 3,
+        "release_seconds": 3060.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 5570.0,
+        "completion_seconds": 5590.0,
+        "latency_seconds": 2530.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 7740.0
+      },
+      {
+        "task_id": "task_13",
+        "source_sat_id": 2,
+        "release_seconds": 3390.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 7090.0,
+        "completion_seconds": 7110.0,
+        "latency_seconds": 3720.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 7410.0
+      },
+      {
+        "task_id": "task_14",
+        "source_sat_id": 7,
+        "release_seconds": 3520.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 7090.0,
+        "completion_seconds": 7110.0,
+        "latency_seconds": 3590.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 7280.0
+      },
+      {
+        "task_id": "task_15",
+        "source_sat_id": 7,
+        "release_seconds": 4800.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 6000.0
+      },
+      {
+        "task_id": "task_16",
+        "source_sat_id": 3,
+        "release_seconds": 5180.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 5620.0
+      },
+      {
+        "task_id": "task_17",
+        "source_sat_id": 10,
+        "release_seconds": 5670.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 5130.0
+      },
+      {
+        "task_id": "task_18",
+        "source_sat_id": 2,
+        "release_seconds": 6160.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 4640.0
+      },
+      {
+        "task_id": "task_19",
+        "source_sat_id": 3,
+        "release_seconds": 6630.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 4170.0
+      },
+      {
+        "task_id": "task_20",
+        "source_sat_id": 11,
+        "release_seconds": 6870.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 3930.0
+      }
+    ],
+    "experiment": {
+      "config": {
+        "seed": 51001,
+        "num_sats": 12,
+        "sim_steps": 1080,
+        "dt": 10.0,
+        "decision_interval_steps": 1,
+        "topology_update_steps": 1,
+        "ground_visibility_update_steps": 1,
+        "task_arrival_rate": 0.03,
+        "image_size_mb": 1024.0,
+        "num_tiles": 8,
+        "compute_cost_per_tile": 4,
+        "vram_base_gb": 0.1,
+        "vram_alpha_per_mb": 0.001,
+        "result_size_mb": 0.5,
+        "deadline_steps": 0,
+        "mem_capacity_gb": 8.0,
+        "vram_capacity_gb": 1.0,
+        "compute_rate": 0.5,
+        "transfer_fail_on_link_down": false,
+        "vram_policy": "wait",
+        "pipeline_mode": "distributed",
+        "tile_lifecycle_log": "results/committed_behavior_20261009/cold_best_51001/events.jsonl",
+        "ground_stations": [
+          {
+            "id": "gs_beijing",
+            "lat_deg": 39.9042,
+            "lon_deg": 116.4074,
+            "alt_m": 50,
+            "min_elevation_deg": 15,
+            "bandwidth_mbps": 24.0,
+            "receive_channels": 1,
+            "compute_rate": 8
+          },
+          {
+            "id": "gs_urumqi",
+            "lat_deg": 43.8256,
+            "lon_deg": 87.6168,
+            "alt_m": 800,
+            "min_elevation_deg": 15,
+            "bandwidth_mbps": 24.0,
+            "receive_channels": 1,
+            "compute_rate": 7
+          }
+        ],
+        "topology": {
+          "start_time_utc": "2026-03-21T03:30:00+00:00",
+          "earth_radius_km": 6378.137,
+          "max_range_km": 4500,
+          "max_neighbors": 4,
+          "predict_contacts": true,
+          "precompute_visibility": true,
+          "contact_scan_s": 30,
+          "contact_update_s": 60,
+          "bandwidth_distance_scale_km": 2000,
+          "bandwidth_mbps_min": 24.0,
+          "bandwidth_mbps_max": 144.0,
+          "bandwidth_period": 60,
+          "bandwidth_noise": 12.0,
+          "latency_ms": 20,
+          "visibility_workers": 1,
+          "window_lookahead_s": 1800,
+          "tle_lines": [
+            [
+              "1 00001U          26079.72916667  .00000000  00000-0  00000+0 0    01",
+              "2 00001  53.0000  25.0000 0001000   0.0000  15.0000 15.05491974    00"
+            ],
+            [
+              "1 00002U          26079.72916667  .00000000  00000-0  00000+0 0    02",
+              "2 00002  53.0000  25.0000 0001000   0.0000 105.0000 15.05491974    01"
+            ],
+            [
+              "1 00003U          26079.72916667  .00000000  00000-0  00000+0 0    03",
+              "2 00003  53.0000  25.0000 0001000   0.0000 195.0000 15.05491974    01"
+            ],
+            [
+              "1 00004U          26079.72916667  .00000000  00000-0  00000+0 0    04",
+              "2 00004  53.0000  25.0000 0001000   0.0000 285.0000 15.05491974    02"
+            ],
+            [
+              "1 00005U          26079.72916667  .00000000  00000-0  00000+0 0    05",
+              "2 00005  53.0000 145.0000 0001000   0.0000  45.0000 15.05491974    00"
+            ],
+            [
+              "1 00006U          26079.72916667  .00000000  00000-0  00000+0 0    06",
+              "2 00006  53.0000 145.0000 0001000   0.0000 135.0000 15.05491974    01"
+            ],
+            [
+              "1 00007U          26079.72916667  .00000000  00000-0  00000+0 0    07",
+              "2 00007  53.0000 145.0000 0001000   0.0000 225.0000 15.05491974    02"
+            ],
+            [
+              "1 00008U          26079.72916667  .00000000  00000-0  00000+0 0    08",
+              "2 00008  53.0000 145.0000 0001000   0.0000 315.0000 15.05491974    03"
+            ],
+            [
+              "1 00009U          26079.72916667  .00000000  00000-0  00000+0 0    09",
+              "2 00009  53.0000 265.0000 0001000   0.0000  75.0000 15.05491974    00"
+            ],
+            [
+              "1 00010U          26079.72916667  .00000000  00000-0  00000+0 0    01",
+              "2 00010  53.0000 265.0000 0001000   0.0000 165.0000 15.05491974    02"
+            ],
+            [
+              "1 00011U          26079.72916667  .00000000  00000-0  00000+0 0    02",
+              "2 00011  53.0000 265.0000 0001000   0.0000 255.0000 15.05491974    03"
+            ],
+            [
+              "1 00012U          26079.72916667  .00000000  00000-0  00000+0 0    03",
+              "2 00012  53.0000 265.0000 0001000   0.0000 345.0000 15.05491974    04"
+            ]
+          ]
+        },
+        "ground_relay_delay_s": 10.0,
+        "aggregation_delay_s": 10.0,
+        "task_arrival_end_step": 720,
+        "execution_commitment": true
+      },
+      "elapsed_sim_seconds": 10800.0,
+      "task_trace_sha256": "4e21b3045a385b2e5c9b0e350aa69c36911bbc15dc20b89a5543db3adf201d37",
+      "tle_sha256": "987d72ef2f2563e6e42b81ca5a4060ef3faa340b5980202af9ab8f6a24dd79ab",
+      "decision_tile_limit_per_sat": 4,
+      "delivery_semantics": "all_results_at_ground_plus_fixed_relay_and_aggregation_v1",
+      "aggregation_model": "uncontended_fixed_delay_rounded_up_to_step",
+      "effective_postprocessing_delay_seconds": 20.0,
+      "splitting_delay_seconds": 0.0,
+      "source_sha256": "1e4c3b3500872fc6dd4327f04ce125909d5a7aad99e5471ce31d1488c8172589",
+      "python_version": "3.12.13",
+      "packages": {
+        "numpy": "2.4.4",
+        "torch": "2.12.0",
+        "skyfield": "1.54",
+        "PyYAML": "6.0.3"
+      }
+    }
+  }
+}

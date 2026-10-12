@@ -1,0 +1,92 @@
+{
+  "series": {
+    "MAPPO_seed7": {
+      "episodes": [
+        0,
+        18,
+        36,
+        54,
+        72
+      ],
+      "validation_rate_percent": [
+        53.50949210885588,
+        54.265709652124315,
+        53.44794447900736,
+        53.56704178882231,
+        53.677675763192234
+      ],
+      "completed_tasks": [
+        351,
+        358,
+        349,
+        351,
+        355
+      ]
+    },
+    "MAPPO_seed107": {
+      "episodes": [
+        0,
+        18,
+        36,
+        54,
+        72
+      ],
+      "validation_rate_percent": [
+        42.915828641260404,
+        47.24889269607759,
+        43.619880757701154,
+        41.51228966942053,
+        46.630655975031246
+      ],
+      "completed_tasks": [
+        234,
+        281,
+        245,
+        229,
+        283
+      ]
+    },
+    "IPPO_seed7": {
+      "episodes": [
+        0,
+        18,
+        36,
+        54,
+        72
+      ],
+      "validation_rate_percent": [
+        43.13335111136612,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "completed_tasks": [
+        232,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "MAPPO_BC27_seed7": {
+      "episodes": [
+        0,
+        18,
+        36
+      ],
+      "validation_rate_percent": [
+        64.45584375015147,
+        64.30997072347755,
+        63.819811971717
+      ],
+      "completed_tasks": [
+        478,
+        476,
+        471
+      ]
+    }
+  },
+  "script_sha256": "efe7fdd353734d31c2d21012741c7cf5cfc8430e321ca796eb2f7e3ce2d83b23",
+  "scope": "Development validation curves; individual runs, no confidence interval or convergence claim"
+}

@@ -1,0 +1,40 @@
+{
+  "args": {
+    "config": "examples/config_relay.yaml",
+    "distribution": "examples/scenario_roles.json",
+    "workers": 3,
+    "policies": [
+      "greedy",
+      "reservation",
+      "reservation_joint_sequential",
+      "reservation_joint"
+    ],
+    "out_dir": "results/relay_joint_reservation_20261010"
+  },
+  "source_sha256": "1ac509f9db971706f68fa11b61f9096f6effa3f0ce8b2d5998352b496958cccf",
+  "python_version": "3.12.13",
+  "packages": {
+    "numpy": "2.4.4",
+    "torch": "2.12.0",
+    "skyfield": "1.54",
+    "PyYAML": "6.0.3"
+  },
+  "distribution_sha256": "9e946fbb00dcba477f43413ba7cba814952c932d6fc608d2d218918c76a59d26",
+  "policies": [
+    "greedy",
+    "reservation",
+    "reservation_joint_sequential",
+    "reservation_joint"
+  ],
+  "seeds": [
+    81001,
+    81002,
+    81003,
+    81004,
+    81005,
+    81006,
+    81007,
+    81008
+  ],
+  "scope": "existing development panel; not final test or a literature-method comparison"
+}

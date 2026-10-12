@@ -1,0 +1,14 @@
+{
+  "source_sha256": "90429f827924a69710669f2a42b172ec77524ae3d9ec0a6ae5a5eb16c08ba8d1",
+  "python_version": "3.12.13",
+  "packages": {
+    "numpy": "2.4.4",
+    "torch": "2.12.0",
+    "skyfield": "1.54",
+    "PyYAML": "6.0.3"
+  },
+  "checkpoint": "checkpoints/relay_greedy_dagger_mappo_7_20261010/teacher_bc.pt",
+  "checkpoint_source_sha256": "90429f827924a69710669f2a42b172ec77524ae3d9ec0a6ae5a5eb16c08ba8d1",
+  "teacher": "greedy",
+  "scope": "development diagnosis only; no fitting"
+}

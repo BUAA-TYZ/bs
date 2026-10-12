@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "walker": {
+    "layouts": [
+      {"planes": 3, "satellites_per_plane": 4, "phasing": 1},
+      {"planes": 3, "satellites_per_plane": 8, "phasing": 1},
+      {"planes": 6, "satellites_per_plane": 8, "phasing": 1}
+    ],
+    "altitude_km": [500, 650],
+    "inclination_deg": [45, 70],
+    "raan_offset_deg": [0, 360],
+    "phase_offset_deg": [0, 360]
+  },
+  "training": {
+    "orbit_offset_seconds": [0, 21600],
+    "arrival_rate_per_second": [0.002, 0.012],
+    "compute_cost_per_tile": [3, 18],
+    "isl_bandwidth_scale": [0.5, 1.5],
+    "ground_bandwidth_scale": [0.5, 1.5]
+  },
+  "validation": [
+    {"id": "val_light", "seed": 51001, "orbit_offset_seconds": 36000, "arrival_rate_per_second": 0.003, "compute_cost_per_tile": 4, "isl_bandwidth_scale": 1.2, "ground_bandwidth_scale": 1.2,
+      "walker": {"planes": 3, "satellites_per_plane": 4, "phasing": 1, "altitude_km": 550, "inclination_deg": 53, "raan_offset_deg": 25, "phase_offset_deg": 15}},
+    {"id": "val_balanced", "seed": 51002, "orbit_offset_seconds": 46800, "arrival_rate_per_second": 0.006, "compute_cost_per_tile": 9, "isl_bandwidth_scale": 1, "ground_bandwidth_scale": 1,
+      "walker": {"planes": 3, "satellites_per_plane": 8, "phasing": 1, "altitude_km": 580, "inclination_deg": 60, "raan_offset_deg": 110, "phase_offset_deg": 50}},
+    {"id": "val_constrained", "seed": 51003, "orbit_offset_seconds": 57600, "arrival_rate_per_second": 0.01, "compute_cost_per_tile": 16, "isl_bandwidth_scale": 0.6, "ground_bandwidth_scale": 0.6,
+      "walker": {"planes": 6, "satellites_per_plane": 8, "phasing": 1, "altitude_km": 620, "inclination_deg": 65, "raan_offset_deg": 210, "phase_offset_deg": 95}}
+  ],
+  "test": [
+    {"id": "test_light", "seed": 61001, "orbit_offset_seconds": 86400, "arrival_rate_per_second": 0.003, "compute_cost_per_tile": 4, "isl_bandwidth_scale": 1.2, "ground_bandwidth_scale": 1.2,
+      "walker": {"planes": 3, "satellites_per_plane": 4, "phasing": 1, "altitude_km": 540, "inclination_deg": 55, "raan_offset_deg": 60, "phase_offset_deg": 20}},
+    {"id": "test_balanced", "seed": 61002, "orbit_offset_seconds": 100800, "arrival_rate_per_second": 0.006, "compute_cost_per_tile": 9, "isl_bandwidth_scale": 1, "ground_bandwidth_scale": 1,
+      "walker": {"planes": 3, "satellites_per_plane": 8, "phasing": 1, "altitude_km": 590, "inclination_deg": 62, "raan_offset_deg": 150, "phase_offset_deg": 70}},
+    {"id": "test_constrained", "seed": 61003, "orbit_offset_seconds": 115200, "arrival_rate_per_second": 0.01, "compute_cost_per_tile": 16, "isl_bandwidth_scale": 0.6, "ground_bandwidth_scale": 0.6,
+      "walker": {"planes": 6, "satellites_per_plane": 8, "phasing": 1, "altitude_km": 640, "inclination_deg": 68, "raan_offset_deg": 250, "phase_offset_deg": 110}},
+    {"id": "test_shift_load", "seed": 61004, "orbit_offset_seconds": 129600, "arrival_rate_per_second": 0.016, "compute_cost_per_tile": 12, "isl_bandwidth_scale": 1, "ground_bandwidth_scale": 1,
+      "walker": {"planes": 4, "satellites_per_plane": 9, "phasing": 1, "altitude_km": 600, "inclination_deg": 58, "raan_offset_deg": 90, "phase_offset_deg": 130}},
+    {"id": "test_shift_link", "seed": 61005, "orbit_offset_seconds": 144000, "arrival_rate_per_second": 0.006, "compute_cost_per_tile": 9, "isl_bandwidth_scale": 0.35, "ground_bandwidth_scale": 0.35,
+      "walker": {"planes": 6, "satellites_per_plane": 10, "phasing": 1, "altitude_km": 570, "inclination_deg": 50, "raan_offset_deg": 300, "phase_offset_deg": 170}}
+  ]
+}

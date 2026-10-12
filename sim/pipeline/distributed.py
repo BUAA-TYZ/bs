@@ -24,6 +24,8 @@ from sim.entities import (
     Transfer,
 )
 from sim.topology import link_key
+from sim.network import advance_ground_transfers, fair_bytes
+from sim.routing import delivery_route
 
 if TYPE_CHECKING:
     from sim.env import SimulationEnv
@@ -40,13 +42,35 @@ class DistributedPipeline:
     # ------------------------------------------------------------------ #
 
     def run(self, actions: List[Action], links: Dict[str, object]) -> None:
-        self.apply_actions(actions, links)
-        self.advance_transfers(links)
-        self.advance_ground_tile_transfers()
-        self.advance_compute()
+        if self.env.pipeline_mode in {"ground_relay", "ground_tiles"}:
+            self.route_raw_tiles(links)
+        else:
+            self.apply_actions(actions, links)
+            self.advance_compute()
         self.advance_ground_tile_compute()
-        self.start_downlinks()
+        self.start_downlinks(links)
+        self.advance_transfers(links)
+        advance_ground_transfers(self.env, self.env.ground_tile_transfers + self.env.downlink_transfers)
+        self.advance_ground_tile_transfers()
         self.advance_downlinks()
+
+    def route_raw_tiles(self, links):
+        env = self.env
+        for tile in sorted(env.tiles.values(), key=lambda t: (t.timestamps.created, t.tile_id)):
+            if tile.state not in (TileState.QUEUED, TileState.READY):
+                continue
+            if not tile.raw_relay_path:
+                tile.raw_relay_path = [tile.location]
+            route = delivery_route(env, tile.location, tile.data_size_mb,
+                                   {} if env.pipeline_mode == "ground_tiles" else links,
+                                   tile.raw_relay_path)
+            if route is None:
+                continue
+            kind, target = route
+            if kind == "ground":
+                self._offload_to_gs(tile, target)
+            else:
+                self._offload_to_sat(tile, target, links)
 
     # ------------------------------------------------------------------ #
     # 调度决策                                                              #
@@ -61,6 +85,8 @@ class DistributedPipeline:
         for tile_id, action in action_map.items():
             tile = env.tiles.get(tile_id)
             if tile is None or tile.state not in (TileState.QUEUED, TileState.READY):
+                continue
+            if env.cfg.execution_commitment and tile.state == TileState.READY:
                 continue
             if tile_id in transfer_tile_ids:
                 continue
@@ -127,11 +153,9 @@ class DistributedPipeline:
             env._fail_tile(tile, FailureReason.LINK_DOWN)
             return
         dst = env.satellites[target_sat_id]
-        needed_gb = tile.data_size_mb / 1024.0
-        if dst.mem_used_gb + needed_gb > dst.mem_capacity_gb:
+        if not env._reserve_tile_memory(tile, target_sat_id):
             env._fail_tile(tile, FailureReason.MEM_FULL)
             return
-        dst.mem_used_gb += needed_gb
         transfer = Transfer(
             tile_id=tile.tile_id,
             src=tile.location,
@@ -161,30 +185,49 @@ class DistributedPipeline:
     def advance_transfers(self, links: Dict[str, object]) -> None:
         env = self.env
         still_transfers: List[Transfer] = []
+        # 每个方向单独计容量；同向 tile 共享带宽，不因切片而扩容。
+        groups = {}
         for tr in env.transfers:
+            groups.setdefault((tr.src, tr.dst), []).append(tr)
+        for key, lk in links.items():
+            if not lk.up:
+                continue
+            capacity = lk.bandwidth_mbps / 8.0 * env.cfg.dt
+            for src, dst in ((lk.i, lk.j), (lk.j, lk.i)):
+                flows = groups.get((src, dst), [])
+                allocations = fair_bytes([tr.remaining_mb for tr in flows], capacity)
+                for tr, amount in zip(flows, allocations):
+                    tr.remaining_mb = max(0.0, tr.remaining_mb - amount)
+                env.metrics.record_network(f"isl:{src}->{dst}", sum(allocations), capacity)
+        for tr in list(env.transfers):
             lk = links.get(tr.link_key)
             if not lk or not lk.up:
                 if env.cfg.transfer_fail_on_link_down:
                     tile = env.tiles[tr.tile_id]
-                    dst_sat = env.satellites[tr.dst]
-                    size_gb = tile.data_size_mb / 1024.0
-                    dst_sat.mem_used_gb = max(0.0, dst_sat.mem_used_gb - size_gb)
                     env._fail_tile(tile, FailureReason.LINK_DOWN)
                 else:
                     still_transfers.append(tr)
                 continue
-            rate_mb_s = lk.bandwidth_mbps / 8.0
-            sent = rate_mb_s * env.cfg.dt
-            tr.remaining_mb -= sent
             if tr.remaining_mb <= 1e-6:
                 tile = env.tiles[tr.tile_id]
                 src_sat = env.satellites[tr.src]
                 dst_sat = env.satellites[tr.dst]
-                size_gb = tile.data_size_mb / 1024.0
-                src_sat.mem_used_gb = max(0.0, src_sat.mem_used_gb - size_gb)
+                if tr.is_result:
+                    env._release_result_memory(tile, tr.src)
+                    tile.location = tr.dst
+                    tile.state = TileState.COMPUTED
+                    tile.result_available_time = env.time + 1
+                    tile.result_path.append(tr.dst)
+                    env._computed_waiting_downlink.add(tile.tile_id)
+                    env._log_tile_event(tile, "result_tx_end", sat_from=tr.src, sat_to=tr.dst,
+                                        extra={"arrival_step": env.time + 1})
+                    continue
+                env._release_tile_memory(tile, tr.src)
                 tile.location = tr.dst
+                if tile.raw_relay_path:
+                    tile.raw_relay_path.append(tr.dst)
                 tile.state = TileState.READY
-                tile.timestamps.end_tx = env.time
+                tile.timestamps.end_tx = env.time + 1
                 dst_sat.queue.append(tile.tile_id)
                 env._log_tile_event(tile, "tx_end", sat_from=tr.src, sat_to=tr.dst)
                 env._log_tile_event(tile, "queued", sat_from=tr.src, sat_to=tr.dst)
@@ -226,17 +269,22 @@ class DistributedPipeline:
 
             if sat.executing is not None:
                 tile = env.tiles[sat.executing]
+                env.metrics.update_compute_busy(sat_id, min(env.cfg.dt, float(tile.remaining_compute)))
                 tile.remaining_compute = max(
                     0.0, float(tile.remaining_compute) - env.cfg.dt
                 )
                 if tile.remaining_compute <= 1e-6:
                     tile.state = TileState.COMPUTED
-                    tile.timestamps.end_compute = env.time
+                    tile.timestamps.end_compute = env.time + 1
                     env._computed_waiting_downlink.add(tile.tile_id)
                     sat.executing = None
                     sat.vram_used_gb = max(0.0, sat.vram_used_gb - tile.vram_req_gb)
-                    size_gb = tile.data_size_mb / 1024.0
-                    sat.mem_used_gb = max(0.0, sat.mem_used_gb - size_gb)
+                    env._release_tile_memory(tile, sat_id)
+                    tile.result_available_time = env.time + 1
+                    tile.result_path = [sat_id]
+                    if env.cfg.result_buffering and not env._reserve_result_memory(tile, sat_id):
+                        env._fail_tile(tile, FailureReason.MEM_FULL)
+                        continue
                     env._log_tile_event(
                         tile, "computed", sat_from=sat_id, sat_to=sat_id
                     )
@@ -257,14 +305,11 @@ class DistributedPipeline:
             if not env.vis_cache.is_visible(tr.src_sat, tr.gs_id, env.ground_stations):
                 still.append(tr)
                 continue
-            sent = (gs.bandwidth_mbps / 8.0) * env.cfg.dt
-            tr.remaining_mb -= sent
             if tr.remaining_mb <= 1e-6:
                 src_sat = env.satellites[tr.src_sat]
-                size_gb = tile.data_size_mb / 1024.0
-                src_sat.mem_used_gb = max(0.0, src_sat.mem_used_gb - size_gb)
+                env._release_tile_memory(tile, tr.src_sat)
                 tile.state = TileState.GROUND_QUEUED
-                tile.timestamps.end_tx = env.time
+                tile.timestamps.end_tx = env.time + 1
                 env.ground_tile_queues[tr.gs_id].append(tile.tile_id)
                 env._log_tile_event(
                     tile, "tx_end_ground", sat_from=tr.src_sat, sat_to=tr.gs_id
@@ -286,6 +331,7 @@ class DistributedPipeline:
                     tid = queue.pop(0)
                     tile = env.tiles[tid]
                     tile.state = TileState.GROUND_RUNNING
+                    tile.timestamps.start_compute = env.time
                     tile.remaining_compute = tile.compute_cost / max(
                         1e-9, gs.compute_rate
                     )
@@ -305,8 +351,8 @@ class DistributedPipeline:
                 )
                 if tile.remaining_compute <= 1e-6:
                     tile.state = TileState.DONE
-                    tile.timestamps.end_compute = env.time
-                    tile.timestamps.end_downlink = env.time
+                    tile.timestamps.end_compute = env.time + 1
+                    tile.timestamps.end_downlink = env.time + 1
                     env.metrics.record_tile_latency(
                         (tile.timestamps.end_downlink or env.time)
                         - tile.timestamps.created
@@ -327,17 +373,42 @@ class DistributedPipeline:
     # 下行链路                                                              #
     # ------------------------------------------------------------------ #
 
-    def start_downlinks(self) -> None:
+    def start_downlinks(self, links=None) -> None:
         env = self.env
         downlinking = {tr.tile_id for tr in env.downlink_transfers}
-        for tile_id in list(env._computed_waiting_downlink):
+        pending = list(env._computed_waiting_downlink)
+        if env.cfg.result_buffering:
+            pending.sort(key=lambda tid: (env.tiles[tid].timestamps.created, tid))
+        for tile_id in pending:
             tile = env.tiles.get(tile_id)
             if tile is None or tile.state != TileState.COMPUTED:
                 env._computed_waiting_downlink.discard(tile_id)
                 continue
+            if tile.timestamps.end_compute is not None and tile.timestamps.end_compute > env.time:
+                continue
+            if tile.result_available_time is not None and tile.result_available_time > env.time:
+                continue
             if tile.tile_id in downlinking:
                 continue
             gs = env._select_ground_station(tile.location)
+            if env.cfg.result_relay:
+                route = delivery_route(env, tile.location, env.cfg.result_size_mb,
+                                       links if links is not None else env._get_links(env.time), tile.result_path)
+                if route is None:
+                    continue
+                kind, target = route
+                if kind == "sat":
+                    if not env._reserve_result_memory(tile, target):
+                        continue
+                    env.transfers.append(Transfer(tile.tile_id, tile.location, target,
+                                                  env.cfg.result_size_mb, env.time,
+                                                  link_key(tile.location, target), is_result=True))
+                    tile.state = TileState.RESULT_TRANSFERRING
+                    env._computed_waiting_downlink.discard(tile.tile_id)
+                    env._log_tile_event(tile, "result_tx_start", sat_from=tile.location, sat_to=target,
+                                        extra={"remaining_mb": env.cfg.result_size_mb})
+                    continue
+                gs = env.ground_stations[target]
             if gs is None:
                 continue
             tr = DownlinkTransfer(
@@ -371,11 +442,10 @@ class DistributedPipeline:
             if not env.vis_cache.is_visible(tr.src_sat, tr.gs_id, env.ground_stations):
                 still.append(tr)
                 continue
-            sent = (gs.bandwidth_mbps / 8.0) * env.cfg.dt
-            tr.remaining_mb -= sent
             if tr.remaining_mb <= 1e-6:
                 tile.state = TileState.DONE
-                tile.timestamps.end_downlink = env.time
+                env._release_result_memory(tile, tr.src_sat)
+                tile.timestamps.end_downlink = env.time + 1
                 env.metrics.record_tile_latency(
                     tile.timestamps.end_downlink - tile.timestamps.created
                 )

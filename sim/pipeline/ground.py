@@ -18,6 +18,7 @@ from sim.entities import (
     Tile,
     TileState,
 )
+from sim.network import advance_ground_transfers
 
 if TYPE_CHECKING:
     from sim.env import SimulationEnv
@@ -34,9 +35,28 @@ class GroundPipeline:
     # ------------------------------------------------------------------ #
 
     def run(self) -> None:
-        self.start_ground_task_uploads()
-        self.advance_ground_task_uploads()
         self.advance_ground_task_compute()
+        self.start_ground_task_uploads()
+        advance_ground_transfers(self.env, self.env.ground_task_transfers)
+        self.advance_ground_task_uploads()
+
+    def cancel_failed_tasks(self) -> None:
+        env = self.env
+        failed = {task_id for task_id in env.task_source_mem_gb
+                  if not self._task_has_pending_tiles(task_id)}
+        failed.update(comp.task_id for comp in env.ground_task_running.values()
+                      if not self._task_has_pending_tiles(comp.task_id))
+        for task_id in failed:
+            sat = env.satellites[env.tasks[task_id].source_sat_id]
+            sat.mem_used_gb = max(0.0, sat.mem_used_gb - env.task_source_mem_gb.pop(task_id, 0.0))
+            env.ground_task_transfering.discard(task_id)
+        env.ground_task_transfers = [tr for tr in env.ground_task_transfers if tr.task_id not in failed]
+        env.ground_task_running = {gs: comp for gs, comp in env.ground_task_running.items()
+                                   if comp.task_id not in failed}
+        for sat, queue in env.ground_task_queued.items():
+            env.ground_task_queued[sat] = [tid for tid in queue if tid not in failed]
+        for gs, queue in env.ground_compute_queue.items():
+            env.ground_compute_queue[gs] = [tid for tid in queue if self._task_has_pending_tiles(tid)]
 
     # ------------------------------------------------------------------ #
     # 任务入队（由 env._task_arrivals 调用）                                #
@@ -51,6 +71,7 @@ class GroundPipeline:
                 env._fail_tile(tile, FailureReason.MEM_FULL)
             return
         src_sat.mem_used_gb += required_gb
+        env.metrics.update_mem_peak(task.source_sat_id, src_sat.mem_used_gb)
         env.task_source_mem_gb[task.task_id] = required_gb
         for tile in tiles:
             tile.state = TileState.QUEUED
@@ -111,8 +132,6 @@ class GroundPipeline:
             if not env.vis_cache.is_visible(tr.src_sat, tr.gs_id, env.ground_stations):
                 still.append(tr)
                 continue
-            sent = (gs.bandwidth_mbps / 8.0) * env.cfg.dt
-            tr.remaining_mb -= sent
             if tr.remaining_mb <= 1e-6:
                 env.ground_task_transfering.discard(tr.task_id)
                 src_mem = env.task_source_mem_gb.pop(tr.task_id, 0.0)
@@ -183,7 +202,7 @@ class GroundPipeline:
             for tid in task.tile_ids:
                 tile = env.tiles[tid]
                 tile.state = TileState.DONE
-                tile.timestamps.end_compute = env.time
+                tile.timestamps.end_compute = env.time + 1
                 env.metrics.record_tile_latency(
                     (tile.timestamps.end_compute or env.time) - tile.timestamps.created
                 )
