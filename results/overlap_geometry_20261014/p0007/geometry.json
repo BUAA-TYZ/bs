@@ -1,0 +1,94 @@
+{
+  "args": {
+    "distribution": "examples/overlap_proxy/distribution.json",
+    "profile": "p0007",
+    "image": "data/workload_assets/dota_mirror/P0007.png",
+    "output_dir": "results/overlap_geometry_20261014/p0007"
+  },
+  "image_sha256": "0821677ab2be8f0fa44133cec37cb99f123e4f8f7af264258e1b230dcdbb21dd",
+  "distribution_sha256": "2eb45831d5d2906c76998d9d746d2a4724edb7eab7acc27094434b8f5a9ce28b",
+  "runner_sha256": "c70635a432efed43d43270cb41a7234ef2c07eca1b337cc35641b9bb3d1d5d79",
+  "workload": {
+    "model": "overlapping_window_packets_v1",
+    "parameters": {
+      "width_px": 1490,
+      "height_px": 2137,
+      "bands": 3,
+      "bits_per_sample": 8,
+      "window_px": 1024,
+      "stride_px": 824,
+      "windows_per_tile_axis": 2,
+      "compute_cost_per_window": 0.0898910670592967,
+      "result_size_mb_per_window": 0.0025813333333333335
+    },
+    "coordinate_convention": "xyxy, upper bounds exclusive",
+    "edge_rule": "shift_last_window_to_edge_no_padding",
+    "packet_rule": "independent_full_windows_no_pixel_deduplication",
+    "result_rule": "per_window_outputs_before_global_merge",
+    "image_size_mb": 9.55239,
+    "num_windows": 6,
+    "num_tiles": 2,
+    "processed_pixels": 6291456,
+    "coverage_multiplier": 1.975879125538216,
+    "packet_input_mb": 18.874368,
+    "total_compute_cost": 0.5393464023557801,
+    "unmerged_result_mb": 0.015488000000000002,
+    "tiles": [
+      {
+        "windows_xyxy": [
+          [
+            0,
+            0,
+            1024,
+            1024
+          ],
+          [
+            466,
+            0,
+            1490,
+            1024
+          ],
+          [
+            0,
+            824,
+            1024,
+            1848
+          ],
+          [
+            466,
+            824,
+            1490,
+            1848
+          ]
+        ],
+        "data_size_mb": 12.582912,
+        "compute_cost": 0.3595642682371868,
+        "result_size_mb": 0.010325333333333334
+      },
+      {
+        "windows_xyxy": [
+          [
+            0,
+            1113,
+            1024,
+            2137
+          ],
+          [
+            466,
+            1113,
+            1490,
+            2137
+          ]
+        ],
+        "data_size_mb": 6.291456,
+        "compute_cost": 0.1797821341185934,
+        "result_size_mb": 0.005162666666666667
+      }
+    ]
+  },
+  "coverage_sum_pixels": 6291456,
+  "coverage_min": 1,
+  "coverage_max": 4,
+  "source": "DOTA val P0007 via isaaccorley/dota fixed mirror; see workload calibration protocol",
+  "display": "Original preview resized for display only; workload uses original pixels. Coverage map sampled every four pixels only for display."
+}

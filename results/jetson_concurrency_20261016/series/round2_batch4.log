@@ -1,0 +1,6 @@
+Creating new Ultralytics Settings v0.0.6 file ✅ 
+View Ultralytics Settings with 'yolo settings' or at '/home/tianyz/bs_concurrency_20261016_2MTC8n/series/round2_batch4/ultralytics_config/settings.json'
+Update Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.
+batch4: warmup
+batch4: 56 windows, elapsed 30.6s
+{"mode": "batch4", "status": "passed", "summary": {"windows": 64, "cohorts": 16, "cohort_mean_s": 2.0805961998703424, "cohort_p95_s": 2.129793040920049, "windows_per_s": 1.9225258607361053, "full_64_window_service_s": 33.28953919792548, "measured_wall_s": 34.987110489048064}, "memory": {"min_available_bytes": 5135413248, "max_unavailable_bytes": 27053273088, "swap_in_pages": 0, "swap_out_pages": 0, "process_max_rss_bytes": 1486921728, "scope": "System-wide MemAvailable observation, not exact per-process physical allocation"}, "error": null}

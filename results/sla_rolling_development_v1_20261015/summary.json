@@ -1,0 +1,517 @@
+{
+  "source_sha256": "4ebe4058e6672a78c6e6006d3d32cb45fa53844648a82505ae9796c036fadf11",
+  "python_version": "3.12.13",
+  "packages": {
+    "numpy": "2.4.4",
+    "torch": "2.12.0",
+    "skyfield": "1.54",
+    "PyYAML": "6.0.3"
+  },
+  "args": {
+    "prepared_dir": "results/highres_three_days_prepared_20261015",
+    "out_dir": "results/sla_rolling_development_v1_20261015",
+    "methods": [
+      "cgs_compute_adapted",
+      "rolling_h30",
+      "rolling_h60",
+      "rolling_h120",
+      "rolling_no_guard"
+    ],
+    "case_ids": [
+      "day01"
+    ],
+    "workers": 3,
+    "split": "development"
+  },
+  "method_specs": {
+    "cgs_compute_adapted": {
+      "policy": "cgs_compute_adapted",
+      "kwargs": {}
+    },
+    "rolling_h30": {
+      "policy": "rolling_admission",
+      "kwargs": {
+        "commit_horizon_s": 30,
+        "guard_returns": true
+      }
+    },
+    "rolling_h60": {
+      "policy": "rolling_admission",
+      "kwargs": {
+        "commit_horizon_s": 60,
+        "guard_returns": true
+      }
+    },
+    "rolling_h120": {
+      "policy": "rolling_admission",
+      "kwargs": {
+        "commit_horizon_s": 120,
+        "guard_returns": true
+      }
+    },
+    "rolling_no_guard": {
+      "policy": "rolling_admission",
+      "kwargs": {
+        "commit_horizon_s": 30,
+        "guard_returns": false
+      }
+    }
+  },
+  "analysis_source_sha256": {
+    "/Users/bytedance/Projects/bs/analysis/evaluate_sla_research.py": "b4f0a77b7e83a29bfc90f0efe4b31c1d90872e119a44482c39a0d36c74b7a4b7",
+    "analysis/evaluate_literature.py": "59c7eab9cb4ae342c480307e147cf7c0277689ad7274591754a28a6314acfcad",
+    "analysis/report_short_deadline.py": "719b7ec2955f2e8e630bc87b725c22965f44bbc1ced54679ae6f32200a7746ab"
+  },
+  "case_info": [
+    {
+      "id": "day01",
+      "calendar_day": "2026-10-15",
+      "epoch_offset_seconds": 60180,
+      "all_qualifying_events_retained": true,
+      "num_acquisitions": 21,
+      "split": "development"
+    }
+  ],
+  "provenance": {
+    "scope": "specification-based network pilot with proxy compute; not flight measurements or final MARL evaluation",
+    "epoch": "2026-10-15T00:00:00Z",
+    "orbit": {
+      "architecture": "heterogeneous",
+      "source_ids": [
+        0,
+        1
+      ],
+      "imagers": {
+        "count": 2,
+        "altitude_km": 620,
+        "inclination_deg": 97.9,
+        "raan_deg": [
+          357.5,
+          12.5
+        ],
+        "phase_deg": [
+          0,
+          15
+        ]
+      },
+      "helpers": {
+        "count": 22,
+        "description": "two 550 km, 53 degree planes; 11 per plane; RAAN 0 and 90; Walker phase 1"
+      },
+      "synthetic_tle": true
+    },
+    "nominal_rates_mbps": {
+      "isl": 10000,
+      "downlink": 1200
+    },
+    "payload_efficiency_assumption": 1,
+    "parameter_evidence": "docs/thesis/highres_link_evidence.md",
+    "compute_proxy": "RGB detector CPU/MPS calibration on one Apple M5 Pro; native PAN/MS preprocessing, codec, flight hardware uncalibrated",
+    "result_proxy": "187 bytes per window transferred from old measured RGB workload; high-resolution detection density unvalidated",
+    "aggregation_proxy": "fixed old measured merge time; full-strip merge scaling uncalibrated",
+    "assumptions": [
+      "64 GB per-node data buffer is a design allocation, not a SCOT80 memory specification",
+      "four simultaneous ISL neighbors, 4500 km design range, instantaneous acquisition, zero terminal setup delay",
+      "one Beijing-coordinate receiver, one satellite at a time using aggregate 1.2 Gbps",
+      "full topology prediction and current queue information; no control-plane delay",
+      "day episodes start empty before first acquisition; no cross-day residual carry-over",
+      "fixed one-second decision cadence for every dt; packet batch shared by all star heuristics",
+      "source compression and image conversion are excluded timing terms; equal representation for both paths"
+    ],
+    "workload": {
+      "model": "overlapping_native_window_packets_v2",
+      "parameters": {
+        "width_px": 46668,
+        "height_px": 66668,
+        "bands": 3,
+        "bits_per_sample": 8,
+        "window_px": 1024,
+        "stride_px": 824,
+        "windows_per_tile_axis": 4,
+        "compute_cost_per_window": 0.07026846144969265,
+        "result_size_mb_per_window": 0.000187,
+        "transport_components": [
+          {
+            "name": "PAN",
+            "downsample": 1,
+            "bands": 1,
+            "bits_per_sample": 12
+          },
+          {
+            "name": "MS",
+            "downsample": 4,
+            "bands": 6,
+            "bits_per_sample": 12
+          }
+        ],
+        "transport_compression_ratio": 3
+      },
+      "coordinate_convention": "xyxy, upper bounds exclusive",
+      "edge_rule": "shift_last_window_to_edge_no_padding",
+      "packet_rule": "independent_full_windows_no_pixel_deduplication",
+      "result_rule": "per_window_outputs_before_global_merge",
+      "image_size_mb": 2138.9927789999997,
+      "num_windows": 4617,
+      "num_tiles": 315,
+      "processed_pixels": 4841275392,
+      "coverage_multiplier": 1.5560486527476958,
+      "packet_input_mb": 3328.3768320000004,
+      "total_compute_cost": 324.429486513231,
+      "unmerged_result_mb": 0.863379,
+      "transport": {
+        "format": "native_components_packed_bitstream",
+        "pixel_mapping": "floor(start/downsample), ceil(end/downsample)",
+        "packing": "per_component_contiguous_bits_ceil_to_byte; no row padding or headers",
+        "compression_ratio": 3,
+        "compression_assumption": "Uncompressed/compressed size ratio; fixed modeling assumption, not measured codec performance",
+        "unique_uncompressed_mb": 6416.978336999999,
+        "inference_window_mb": 3.145728,
+        "inference_rule": "bands/bits_per_sample define model input and VRAM proxy, independently of native transport",
+        "compute_rule": "Per-window processing proxy; not a measured native PAN/MS pipeline; decode/pansharpen cost not modeled",
+        "component_rasters": [
+          {
+            "name": "PAN",
+            "downsample": 1,
+            "bands": 1,
+            "bits_per_sample": 12,
+            "width_px": 46668,
+            "height_px": 66668,
+            "packed_bytes": 4666893336
+          },
+          {
+            "name": "MS",
+            "downsample": 4,
+            "bands": 6,
+            "bits_per_sample": 12,
+            "width_px": 11667,
+            "height_px": 16667,
+            "packed_bytes": 1750085001
+          }
+        ]
+      }
+    },
+    "maximum_packet_mb": 11.534336000000001,
+    "serialization_seconds": {
+      "whole_image_downlink": 14.259951859999997,
+      "largest_packet_isl": 0.009227468800000001,
+      "largest_packet_downlink": 0.07689557333333334
+    }
+  },
+  "primary_seconds": 300,
+  "scope": "paired short-SLA heuristic research; not MARL or original-paper full reproduction",
+  "prepared_configs_sha256": {
+    "results/highres_three_days_prepared_20261015/day01_config.json": "92dd8747108137cf3cdab877765a6d8d4d133f5316f36aaf58fdbbe8df89b679"
+  },
+  "elapsed_s": 143.52816170779988,
+  "aggregate": [
+    {
+      "method": "cgs_compute_adapted",
+      "cases": 1,
+      "on_time_tasks": 19,
+      "total_tasks": 21,
+      "on_time_rate": 0.9047619047619048,
+      "capped_mean_latency_300s": 217.14285714285714,
+      "delivery_rates": [
+        0.0,
+        0.09523809523809523,
+        0.23809523809523808,
+        0.9047619047619048,
+        1.0
+      ]
+    },
+    {
+      "method": "rolling_h30",
+      "cases": 1,
+      "on_time_tasks": 17,
+      "total_tasks": 21,
+      "on_time_rate": 0.8095238095238095,
+      "capped_mean_latency_300s": 216.1904761904762,
+      "delivery_rates": [
+        0.0,
+        0.09523809523809523,
+        0.3333333333333333,
+        0.8095238095238095,
+        1.0
+      ]
+    },
+    {
+      "method": "rolling_h60",
+      "cases": 1,
+      "on_time_tasks": 17,
+      "total_tasks": 21,
+      "on_time_rate": 0.8095238095238095,
+      "capped_mean_latency_300s": 210.76190476190476,
+      "delivery_rates": [
+        0.0,
+        0.09523809523809523,
+        0.3333333333333333,
+        0.8095238095238095,
+        1.0
+      ]
+    },
+    {
+      "method": "rolling_h120",
+      "cases": 1,
+      "on_time_tasks": 18,
+      "total_tasks": 21,
+      "on_time_rate": 0.8571428571428571,
+      "capped_mean_latency_300s": 213.85714285714286,
+      "delivery_rates": [
+        0.0,
+        0.09523809523809523,
+        0.2857142857142857,
+        0.8571428571428571,
+        1.0
+      ]
+    },
+    {
+      "method": "rolling_no_guard",
+      "cases": 1,
+      "on_time_tasks": 17,
+      "total_tasks": 21,
+      "on_time_rate": 0.8095238095238095,
+      "capped_mean_latency_300s": 216.1904761904762,
+      "delivery_rates": [
+        0.0,
+        0.09523809523809523,
+        0.3333333333333333,
+        0.8095238095238095,
+        1.0
+      ]
+    }
+  ],
+  "daily": [
+    {
+      "case": "day01",
+      "method": "cgs_compute_adapted",
+      "total_tasks": 21,
+      "on_time_tasks": 19,
+      "on_time_rate": 0.9047619047619048,
+      "capped_mean_latency_300s": 217.14285714285714,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 21,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 19,
+          "delivery_rate": 0.09523809523809523
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 5,
+          "not_delivered_within_horizon": 16,
+          "delivery_rate": 0.23809523809523808
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 19,
+          "not_delivered_within_horizon": 2,
+          "delivery_rate": 0.9047619047619048
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 21,
+          "not_delivered_within_horizon": 0,
+          "delivery_rate": 1.0
+        }
+      ]
+    },
+    {
+      "case": "day01",
+      "method": "rolling_h30",
+      "total_tasks": 21,
+      "on_time_tasks": 17,
+      "on_time_rate": 0.8095238095238095,
+      "capped_mean_latency_300s": 216.1904761904762,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 21,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 19,
+          "delivery_rate": 0.09523809523809523
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 7,
+          "not_delivered_within_horizon": 14,
+          "delivery_rate": 0.3333333333333333
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 17,
+          "not_delivered_within_horizon": 4,
+          "delivery_rate": 0.8095238095238095
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 21,
+          "not_delivered_within_horizon": 0,
+          "delivery_rate": 1.0
+        }
+      ]
+    },
+    {
+      "case": "day01",
+      "method": "rolling_h60",
+      "total_tasks": 21,
+      "on_time_tasks": 17,
+      "on_time_rate": 0.8095238095238095,
+      "capped_mean_latency_300s": 210.76190476190476,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 21,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 19,
+          "delivery_rate": 0.09523809523809523
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 7,
+          "not_delivered_within_horizon": 14,
+          "delivery_rate": 0.3333333333333333
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 17,
+          "not_delivered_within_horizon": 4,
+          "delivery_rate": 0.8095238095238095
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 21,
+          "not_delivered_within_horizon": 0,
+          "delivery_rate": 1.0
+        }
+      ]
+    },
+    {
+      "case": "day01",
+      "method": "rolling_h120",
+      "total_tasks": 21,
+      "on_time_tasks": 18,
+      "on_time_rate": 0.8571428571428571,
+      "capped_mean_latency_300s": 213.85714285714286,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 21,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 19,
+          "delivery_rate": 0.09523809523809523
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 6,
+          "not_delivered_within_horizon": 15,
+          "delivery_rate": 0.2857142857142857
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 18,
+          "not_delivered_within_horizon": 3,
+          "delivery_rate": 0.8571428571428571
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 21,
+          "not_delivered_within_horizon": 0,
+          "delivery_rate": 1.0
+        }
+      ]
+    },
+    {
+      "case": "day01",
+      "method": "rolling_no_guard",
+      "total_tasks": 21,
+      "on_time_tasks": 17,
+      "on_time_rate": 0.8095238095238095,
+      "capped_mean_latency_300s": 216.1904761904762,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 21,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 19,
+          "delivery_rate": 0.09523809523809523
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 7,
+          "not_delivered_within_horizon": 14,
+          "delivery_rate": 0.3333333333333333
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 17,
+          "not_delivered_within_horizon": 4,
+          "delivery_rate": 0.8095238095238095
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 21,
+          "not_delivered_within_horizon": 0,
+          "delivery_rate": 1.0
+        }
+      ]
+    }
+  ],
+  "records": [
+    "day01_cgs_compute_adapted.json",
+    "day01_rolling_h30.json",
+    "day01_rolling_h60.json",
+    "day01_rolling_h120.json",
+    "day01_rolling_no_guard.json"
+  ]
+}

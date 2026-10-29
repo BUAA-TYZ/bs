@@ -1,0 +1,153 @@
+{
+  "scope": "冻结SAR场景失败任务的事件归因：从时刻0重跑一个方法，导出逐分片时间线并分类。",
+  "method": "cgs_compute_adapted",
+  "panel_record": "results/sar_dispatch_20261016/smoke/cgs_compute_adapted.json",
+  "panel_record_sha256": "2dde81455db655ed9679a4ef0c45e4e801e57dffc85395b020b76f40c91b7263",
+  "bound_sha256": "db6462105f594d1b011ffc2107dc981a8b63b3b115ccc202131b1a4ff5286c8e",
+  "script_sha256": "25ff53ac28161c21d403a8cce1dc3120d869ebd0bad76652ff2c8ea87be30724",
+  "source_sha256": "0a9c36d184fd79ef0104dc57efa961a72cda60f3ee2ea9850589fc4b8ddf3ca4",
+  "python_version": "3.12.13",
+  "packages": {
+    "numpy": "2.4.4",
+    "torch": "2.12.0",
+    "skyfield": "1.54",
+    "PyYAML": "6.0.3"
+  },
+  "replay_identical_to_panel": true,
+  "wall_seconds": 98.60515104200022,
+  "receiver_busy_steps_share": 0.0009903846153846154,
+  "late_or_failed_tasks": 4,
+  "cause_counts": {
+    "unfinished_at_horizon": 4
+  },
+  "timeline_file": "cgs_compute_adapted_tile_timelines.json.gz",
+  "timeline_sha256": "45f5b92d6c48cdeb4ab6e2512807a8b505e8fc179a0ffaedbf7fe048a2129c0e",
+  "tasks": [
+    {
+      "task_id": "task_0",
+      "source_sat_id": 18,
+      "release_seconds": 565.0,
+      "status": "pending",
+      "latency_seconds": null,
+      "cause": "unfinished_at_horizon",
+      "processor_split": {
+        "source": 4,
+        "helper": 12
+      },
+      "evidence": {
+        "tail_tile": {
+          "tile_id": "task_0_tile_0",
+          "state": "COMPUTED",
+          "failure_reason": null,
+          "processor": 18,
+          "result_hops": 7,
+          "raw_relay_hops": 0,
+          "input_route": [],
+          "ground_relay_target": null,
+          "created": 565.0,
+          "start_tx": null,
+          "end_tx": null,
+          "start_compute": 566.0,
+          "end_compute": 568.12,
+          "start_downlink": null,
+          "end_downlink": null
+        }
+      }
+    },
+    {
+      "task_id": "task_1",
+      "source_sat_id": 18,
+      "release_seconds": 595.0,
+      "status": "pending",
+      "latency_seconds": null,
+      "cause": "unfinished_at_horizon",
+      "processor_split": {
+        "source": 2,
+        "helper": 6,
+        "ground": 8
+      },
+      "evidence": {
+        "tail_tile": {
+          "tile_id": "task_1_tile_1",
+          "state": "COMPUTED",
+          "failure_reason": null,
+          "processor": 38,
+          "result_hops": 8,
+          "raw_relay_hops": 0,
+          "input_route": [],
+          "ground_relay_target": null,
+          "created": 595.0,
+          "start_tx": 596.0,
+          "end_tx": 599.53,
+          "start_compute": 599.53,
+          "end_compute": 601.65,
+          "start_downlink": null,
+          "end_downlink": null
+        }
+      }
+    },
+    {
+      "task_id": "task_2",
+      "source_sat_id": 18,
+      "release_seconds": 625.0,
+      "status": "pending",
+      "latency_seconds": null,
+      "cause": "unfinished_at_horizon",
+      "processor_split": {
+        "helper": 14,
+        "source": 2
+      },
+      "evidence": {
+        "tail_tile": {
+          "tile_id": "task_2_tile_6",
+          "state": "COMPUTED",
+          "failure_reason": null,
+          "processor": 18,
+          "result_hops": 8,
+          "raw_relay_hops": 0,
+          "input_route": [],
+          "ground_relay_target": null,
+          "created": 625.0,
+          "start_tx": null,
+          "end_tx": null,
+          "start_compute": 626.0,
+          "end_compute": 628.12,
+          "start_downlink": null,
+          "end_downlink": null
+        }
+      }
+    },
+    {
+      "task_id": "task_3",
+      "source_sat_id": 18,
+      "release_seconds": 715.0,
+      "status": "pending",
+      "latency_seconds": null,
+      "cause": "unfinished_at_horizon",
+      "processor_split": {
+        "source": 3,
+        "helper": 7,
+        "ground": 6
+      },
+      "evidence": {
+        "tail_tile": {
+          "tile_id": "task_3_tile_0",
+          "state": "COMPUTED",
+          "failure_reason": null,
+          "processor": 18,
+          "result_hops": 7,
+          "raw_relay_hops": 0,
+          "input_route": [],
+          "ground_relay_target": null,
+          "created": 715.0,
+          "start_tx": null,
+          "end_tx": null,
+          "start_compute": 716.0,
+          "end_compute": 718.12,
+          "start_downlink": null,
+          "end_downlink": null
+        }
+      }
+    }
+  ]
+}

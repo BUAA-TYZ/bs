@@ -1,0 +1,857 @@
+{
+  "created_utc": "2026-10-21T17:10:36.072298+00:00",
+  "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations.json?type=waterlevels",
+  "source_sha256": "675fee26a8cc5fa44efdaef4e913559fefb225e25cff9aff429ad03cddf89908",
+  "entry_sha256": "958b94013920882929281480669b09d14d2c2bb3eaa85203be1aec72e715b9c8",
+  "targets": [
+    {
+      "target_id": "la_harbor",
+      "lat_deg": 33.72,
+      "lon_deg": -118.272,
+      "radius_km": 0,
+      "noaa_station_id": "9410660",
+      "noaa_station_name": "Los Angeles",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/9410660.json"
+    },
+    {
+      "target_id": "san_francisco_bay",
+      "lat_deg": 37.806305,
+      "lon_deg": -122.46589,
+      "radius_km": 0,
+      "noaa_station_id": "9414290",
+      "noaa_station_name": "San Francisco",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/9414290.json"
+    },
+    {
+      "target_id": "new_york_harbor",
+      "lat_deg": 40.700554,
+      "lon_deg": -74.01417,
+      "radius_km": 0,
+      "noaa_station_id": "8518750",
+      "noaa_station_name": "The Battery",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8518750.json"
+    },
+    {
+      "target_id": "savannah_approach",
+      "lat_deg": 32.034695,
+      "lon_deg": -80.90303,
+      "radius_km": 0,
+      "noaa_station_id": "8670870",
+      "noaa_station_name": "Fort Pulaski",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8670870.json"
+    },
+    {
+      "target_id": "houston_ship_channel",
+      "lat_deg": 29.681667,
+      "lon_deg": -94.985,
+      "radius_km": 0,
+      "noaa_station_id": "8770613",
+      "noaa_station_name": "Morgans Point, Barbours Cut",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8770613.json"
+    },
+    {
+      "target_id": "noaa_9449424",
+      "lat_deg": 48.862717,
+      "lon_deg": -122.75858,
+      "radius_km": 0,
+      "noaa_station_id": "9449424",
+      "noaa_station_name": "Cherry Point",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/9449424.json"
+    },
+    {
+      "target_id": "noaa_8724580",
+      "lat_deg": 24.5557,
+      "lon_deg": -81.8079,
+      "radius_km": 0,
+      "noaa_station_id": "8724580",
+      "noaa_station_name": "Key West",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8724580.json"
+    },
+    {
+      "target_id": "noaa_8410140",
+      "lat_deg": 44.90461,
+      "lon_deg": -66.98289,
+      "radius_km": 0,
+      "noaa_station_id": "8410140",
+      "noaa_station_name": "Eastport",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8410140.json"
+    },
+    {
+      "target_id": "noaa_8737048",
+      "lat_deg": 30.70461,
+      "lon_deg": -88.03961,
+      "radius_km": 0,
+      "noaa_station_id": "8737048",
+      "noaa_station_name": "Mobile State Docks",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8737048.json"
+    },
+    {
+      "target_id": "noaa_9432780",
+      "lat_deg": 43.345,
+      "lon_deg": -124.322,
+      "radius_km": 0,
+      "noaa_station_id": "9432780",
+      "noaa_station_name": "Charleston",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/9432780.json"
+    },
+    {
+      "target_id": "noaa_8654467",
+      "lat_deg": 35.2086,
+      "lon_deg": -75.7042,
+      "radius_km": 0,
+      "noaa_station_id": "8654467",
+      "noaa_station_name": "USCG Station Hatteras",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8654467.json"
+    },
+    {
+      "target_id": "noaa_8779770",
+      "lat_deg": 26.061167,
+      "lon_deg": -97.21553,
+      "radius_km": 0,
+      "noaa_station_id": "8779770",
+      "noaa_station_name": "Port Isabel",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8779770.json"
+    },
+    {
+      "target_id": "noaa_8721604",
+      "lat_deg": 28.4158,
+      "lon_deg": -80.5931,
+      "radius_km": 0,
+      "noaa_station_id": "8721604",
+      "noaa_station_name": "Trident Pier, Port Canaveral",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8721604.json"
+    },
+    {
+      "target_id": "noaa_8635027",
+      "lat_deg": 38.31975,
+      "lon_deg": -77.0366,
+      "radius_km": 0,
+      "noaa_station_id": "8635027",
+      "noaa_station_name": "Dahlgren",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8635027.json"
+    },
+    {
+      "target_id": "noaa_8419870",
+      "lat_deg": 43.079723,
+      "lon_deg": -70.74111,
+      "radius_km": 0,
+      "noaa_station_id": "8419870",
+      "noaa_station_name": "Seavey Island",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8419870.json"
+    },
+    {
+      "target_id": "noaa_8764314",
+      "lat_deg": 29.3675,
+      "lon_deg": -91.3839,
+      "radius_km": 0,
+      "noaa_station_id": "8764314",
+      "noaa_station_name": "Eugene Island, North of, Atchafalaya Bay",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8764314.json"
+    },
+    {
+      "target_id": "noaa_9440357",
+      "lat_deg": 45.9867,
+      "lon_deg": -122.8367,
+      "radius_km": 0,
+      "noaa_station_id": "9440357",
+      "noaa_station_name": "TEMCO Kalama Terminal",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/9440357.json"
+    },
+    {
+      "target_id": "noaa_8728690",
+      "lat_deg": 29.724445,
+      "lon_deg": -84.98055,
+      "radius_km": 0,
+      "noaa_station_id": "8728690",
+      "noaa_station_name": "Apalachicola",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8728690.json"
+    },
+    {
+      "target_id": "noaa_9418767",
+      "lat_deg": 40.766907,
+      "lon_deg": -124.21735,
+      "radius_km": 0,
+      "noaa_station_id": "9418767",
+      "noaa_station_name": "North Spit",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/9418767.json"
+    },
+    {
+      "target_id": "noaa_9412110",
+      "lat_deg": 35.168888,
+      "lon_deg": -120.754166,
+      "radius_km": 0,
+      "noaa_station_id": "9412110",
+      "noaa_station_name": "Port San Luis",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/9412110.json"
+    },
+    {
+      "target_id": "noaa_8661070",
+      "lat_deg": 33.655,
+      "lon_deg": -78.9183,
+      "radius_km": 0,
+      "noaa_station_id": "8661070",
+      "noaa_station_name": "Springmaid Pier",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8661070.json"
+    },
+    {
+      "target_id": "noaa_8722956",
+      "lat_deg": 26.081667,
+      "lon_deg": -80.11667,
+      "radius_km": 0,
+      "noaa_station_id": "8722956",
+      "noaa_station_name": "South Port Everglades",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8722956.json"
+    },
+    {
+      "target_id": "noaa_8774230",
+      "lat_deg": 28.2283,
+      "lon_deg": -96.795,
+      "radius_km": 0,
+      "noaa_station_id": "8774230",
+      "noaa_station_name": "Aransas Wildlife Refuge",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8774230.json"
+    },
+    {
+      "target_id": "noaa_8726724",
+      "lat_deg": 27.9783,
+      "lon_deg": -82.8317,
+      "radius_km": 0,
+      "noaa_station_id": "8726724",
+      "noaa_station_name": "Clearwater Beach",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8726724.json"
+    },
+    {
+      "target_id": "noaa_8720357",
+      "lat_deg": 30.192417,
+      "lon_deg": -81.68889,
+      "radius_km": 0,
+      "noaa_station_id": "8720357",
+      "noaa_station_name": "I-295 Buckman Bridge",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8720357.json"
+    },
+    {
+      "target_id": "noaa_8449130",
+      "lat_deg": 41.285,
+      "lon_deg": -70.0967,
+      "radius_km": 0,
+      "noaa_station_id": "8449130",
+      "noaa_station_name": "Nantucket Island",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8449130.json"
+    },
+    {
+      "target_id": "noaa_8760721",
+      "lat_deg": 29.179306,
+      "lon_deg": -89.258835,
+      "radius_km": 0,
+      "noaa_station_id": "8760721",
+      "noaa_station_name": "Pilottown",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8760721.json"
+    },
+    {
+      "target_id": "noaa_8536110",
+      "lat_deg": 38.9683,
+      "lon_deg": -74.96,
+      "radius_km": 0,
+      "noaa_station_id": "8536110",
+      "noaa_station_name": "Cape May",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8536110.json"
+    },
+    {
+      "target_id": "noaa_8518979",
+      "lat_deg": 42.35264,
+      "lon_deg": -73.79486,
+      "radius_km": 0,
+      "noaa_station_id": "8518979",
+      "noaa_station_name": "Coxsackie, Hudson River",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8518979.json"
+    },
+    {
+      "target_id": "noaa_8639348",
+      "lat_deg": 36.778194,
+      "lon_deg": -76.301865,
+      "radius_km": 0,
+      "noaa_station_id": "8639348",
+      "noaa_station_name": "Money Point",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8639348.json"
+    },
+    {
+      "target_id": "noaa_8767816",
+      "lat_deg": 30.223612,
+      "lon_deg": -93.221664,
+      "radius_km": 0,
+      "noaa_station_id": "8767816",
+      "noaa_station_name": "Lake Charles",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8767816.json"
+    },
+    {
+      "target_id": "noaa_8725520",
+      "lat_deg": 26.647778,
+      "lon_deg": -81.87111,
+      "radius_km": 0,
+      "noaa_station_id": "8725520",
+      "noaa_station_name": "Fort Myers",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8725520.json"
+    },
+    {
+      "target_id": "noaa_9442396",
+      "lat_deg": 47.912838,
+      "lon_deg": -124.63574,
+      "radius_km": 0,
+      "noaa_station_id": "9442396",
+      "noaa_station_name": "La Push, Quillayute River",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/9442396.json"
+    },
+    {
+      "target_id": "noaa_8461490",
+      "lat_deg": 41.371666,
+      "lon_deg": -72.09556,
+      "radius_km": 0,
+      "noaa_station_id": "8461490",
+      "noaa_station_name": "New London",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8461490.json"
+    },
+    {
+      "target_id": "noaa_9416841",
+      "lat_deg": 38.914555,
+      "lon_deg": -123.71108,
+      "radius_km": 0,
+      "noaa_station_id": "9416841",
+      "noaa_station_name": "Arena Cove",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/9416841.json"
+    },
+    {
+      "target_id": "noaa_9410170",
+      "lat_deg": 32.715557,
+      "lon_deg": -117.17667,
+      "radius_km": 0,
+      "noaa_station_id": "9410170",
+      "noaa_station_name": "San Diego",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/9410170.json"
+    },
+    {
+      "target_id": "noaa_9446484",
+      "lat_deg": 47.2667,
+      "lon_deg": -122.4133,
+      "radius_km": 0,
+      "noaa_station_id": "9446484",
+      "noaa_station_name": "Tacoma",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/9446484.json"
+    },
+    {
+      "target_id": "noaa_9435380",
+      "lat_deg": 44.625446,
+      "lon_deg": -124.044945,
+      "radius_km": 0,
+      "noaa_station_id": "9435380",
+      "noaa_station_name": "South Beach",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/9435380.json"
+    },
+    {
+      "target_id": "noaa_9413450",
+      "lat_deg": 36.60889,
+      "lon_deg": -121.89139,
+      "radius_km": 0,
+      "noaa_station_id": "9413450",
+      "noaa_station_name": "Monterey",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/9413450.json"
+    },
+    {
+      "target_id": "noaa_8727520",
+      "lat_deg": 29.135,
+      "lon_deg": -83.0317,
+      "radius_km": 0,
+      "noaa_station_id": "8727520",
+      "noaa_station_name": "Cedar Key",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8727520.json"
+    },
+    {
+      "target_id": "noaa_9411340",
+      "lat_deg": 34.40459,
+      "lon_deg": -119.6925,
+      "radius_km": 0,
+      "noaa_station_id": "9411340",
+      "noaa_station_name": "Santa Barbara",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/9411340.json"
+    },
+    {
+      "target_id": "noaa_8747437",
+      "lat_deg": 30.326342,
+      "lon_deg": -89.3258,
+      "radius_km": 0,
+      "noaa_station_id": "8747437",
+      "noaa_station_name": "Bay Waveland Yacht Club",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8747437.json"
+    },
+    {
+      "target_id": "noaa_8665530",
+      "lat_deg": 32.780834,
+      "lon_deg": -79.923615,
+      "radius_km": 0,
+      "noaa_station_id": "8665530",
+      "noaa_station_name": "Charleston",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8665530.json"
+    },
+    {
+      "target_id": "noaa_8658163",
+      "lat_deg": 34.213306,
+      "lon_deg": -77.7867,
+      "radius_km": 0,
+      "noaa_station_id": "8658163",
+      "noaa_station_name": "Wrightsville Beach",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8658163.json"
+    },
+    {
+      "target_id": "noaa_9441102",
+      "lat_deg": 46.90431,
+      "lon_deg": -124.10508,
+      "radius_km": 0,
+      "noaa_station_id": "9441102",
+      "noaa_station_name": "Westport",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/9441102.json"
+    },
+    {
+      "target_id": "noaa_8772985",
+      "lat_deg": 28.771639,
+      "lon_deg": -95.61684,
+      "radius_km": 0,
+      "noaa_station_id": "8772985",
+      "noaa_station_name": "Sargent",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8772985.json"
+    },
+    {
+      "target_id": "noaa_9416131",
+      "lat_deg": 38.56225,
+      "lon_deg": -121.5463,
+      "radius_km": 0,
+      "noaa_station_id": "9416131",
+      "noaa_station_name": "Port of West Sacramento, Washington Lake",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/9416131.json"
+    },
+    {
+      "target_id": "noaa_8573364",
+      "lat_deg": 39.213444,
+      "lon_deg": -76.24455,
+      "radius_km": 0,
+      "noaa_station_id": "8573364",
+      "noaa_station_name": "Tolchester Beach",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8573364.json"
+    },
+    {
+      "target_id": "noaa_8546252",
+      "lat_deg": 39.979683,
+      "lon_deg": -75.079315,
+      "radius_km": 0,
+      "noaa_station_id": "8546252",
+      "noaa_station_name": "Bridesburg",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8546252.json"
+    },
+    {
+      "target_id": "noaa_8413320",
+      "lat_deg": 44.392193,
+      "lon_deg": -68.20428,
+      "radius_km": 0,
+      "noaa_station_id": "8413320",
+      "noaa_station_name": "Bar Harbor",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8413320.json"
+    },
+    {
+      "target_id": "noaa_9419750",
+      "lat_deg": 41.74561,
+      "lon_deg": -124.18439,
+      "radius_km": 0,
+      "noaa_station_id": "9419750",
+      "noaa_station_name": "Crescent City",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/9419750.json"
+    },
+    {
+      "target_id": "noaa_8631044",
+      "lat_deg": 37.607777,
+      "lon_deg": -75.68584,
+      "radius_km": 0,
+      "noaa_station_id": "8631044",
+      "noaa_station_name": "Wachapreague",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8631044.json"
+    },
+    {
+      "target_id": "noaa_8656483",
+      "lat_deg": 34.71733,
+      "lon_deg": -76.67066,
+      "radius_km": 0,
+      "noaa_station_id": "8656483",
+      "noaa_station_name": "Beaufort, Duke Marine Lab",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8656483.json"
+    },
+    {
+      "target_id": "noaa_8729210",
+      "lat_deg": 30.21375,
+      "lon_deg": -85.878586,
+      "radius_km": 0,
+      "noaa_station_id": "8729210",
+      "noaa_station_name": "Panama City Beach",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8729210.json"
+    },
+    {
+      "target_id": "noaa_9437540",
+      "lat_deg": 45.55453,
+      "lon_deg": -123.918945,
+      "radius_km": 0,
+      "noaa_station_id": "9437540",
+      "noaa_station_name": "Garibaldi",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/9437540.json"
+    },
+    {
+      "target_id": "noaa_8771367",
+      "lat_deg": 29.469,
+      "lon_deg": -93.72,
+      "radius_km": 0,
+      "noaa_station_id": "8771367",
+      "noaa_station_name": "Sabine Offshore Light",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8771367.json"
+    },
+    {
+      "target_id": "noaa_9444090",
+      "lat_deg": 48.125,
+      "lon_deg": -123.44,
+      "radius_km": 0,
+      "noaa_station_id": "9444090",
+      "noaa_station_name": "Port Angeles",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/9444090.json"
+    },
+    {
+      "target_id": "noaa_8762075",
+      "lat_deg": 29.1142,
+      "lon_deg": -90.1993,
+      "radius_km": 0,
+      "noaa_station_id": "8762075",
+      "noaa_station_name": "Port Fourchon, Belle Pass",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8762075.json"
+    },
+    {
+      "target_id": "noaa_8766072",
+      "lat_deg": 29.551695,
+      "lon_deg": -92.30519,
+      "radius_km": 0,
+      "noaa_station_id": "8766072",
+      "noaa_station_name": "Freshwater Canal Locks",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8766072.json"
+    },
+    {
+      "target_id": "noaa_8467150",
+      "lat_deg": 41.17582,
+      "lon_deg": -73.18397,
+      "radius_km": 0,
+      "noaa_station_id": "8467150",
+      "noaa_station_name": "Bridgeport",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8467150.json"
+    },
+    {
+      "target_id": "noaa_8729840",
+      "lat_deg": 30.4044,
+      "lon_deg": -87.2112,
+      "radius_km": 0,
+      "noaa_station_id": "8729840",
+      "noaa_station_name": "Pensacola",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8729840.json"
+    },
+    {
+      "target_id": "noaa_8447386",
+      "lat_deg": 41.7043,
+      "lon_deg": -71.1641,
+      "radius_km": 0,
+      "noaa_station_id": "8447386",
+      "noaa_station_name": "Fall River",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8447386.json"
+    },
+    {
+      "target_id": "noaa_8775222",
+      "lat_deg": 27.8461,
+      "lon_deg": -97.5207,
+      "radius_km": 0,
+      "noaa_station_id": "8775222",
+      "noaa_station_name": "Viola Turning Basin",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8775222.json"
+    },
+    {
+      "target_id": "noaa_8651370",
+      "lat_deg": 36.1833,
+      "lon_deg": -75.7467,
+      "radius_km": 0,
+      "noaa_station_id": "8651370",
+      "noaa_station_name": "Duck",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8651370.json"
+    },
+    {
+      "target_id": "noaa_8761927",
+      "lat_deg": 30.027222,
+      "lon_deg": -90.113335,
+      "radius_km": 0,
+      "noaa_station_id": "8761927",
+      "noaa_station_name": "New Canal Station",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8761927.json"
+    },
+    {
+      "target_id": "noaa_8418150",
+      "lat_deg": 43.658054,
+      "lon_deg": -70.24416,
+      "radius_km": 0,
+      "noaa_station_id": "8418150",
+      "noaa_station_name": "Portland",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8418150.json"
+    },
+    {
+      "target_id": "noaa_8571421",
+      "lat_deg": 38.22,
+      "lon_deg": -76.0383,
+      "radius_km": 0,
+      "noaa_station_id": "8571421",
+      "noaa_station_name": "Bishops Head",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8571421.json"
+    },
+    {
+      "target_id": "noaa_9439040",
+      "lat_deg": 46.207306,
+      "lon_deg": -123.7683,
+      "radius_km": 0,
+      "noaa_station_id": "9439040",
+      "noaa_station_name": "Astoria",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/9439040.json"
+    },
+    {
+      "target_id": "noaa_8723970",
+      "lat_deg": 24.711,
+      "lon_deg": -81.1065,
+      "radius_km": 0,
+      "noaa_station_id": "8723970",
+      "noaa_station_name": "Vaca Key, Florida Bay",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8723970.json"
+    },
+    {
+      "target_id": "noaa_8443970",
+      "lat_deg": 42.35389,
+      "lon_deg": -71.05028,
+      "radius_km": 0,
+      "noaa_station_id": "8443970",
+      "noaa_station_name": "Boston",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8443970.json"
+    },
+    {
+      "target_id": "noaa_8570283",
+      "lat_deg": 38.32833,
+      "lon_deg": -75.09167,
+      "radius_km": 0,
+      "noaa_station_id": "8570283",
+      "noaa_station_name": "Ocean City Inlet",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8570283.json"
+    },
+    {
+      "target_id": "noaa_9431647",
+      "lat_deg": 42.739,
+      "lon_deg": -124.4983,
+      "radius_km": 0,
+      "noaa_station_id": "9431647",
+      "noaa_station_name": "Port Orford",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/9431647.json"
+    },
+    {
+      "target_id": "noaa_8679598",
+      "lat_deg": 30.7781,
+      "lon_deg": -81.4914,
+      "radius_km": 0,
+      "noaa_station_id": "8679598",
+      "noaa_station_name": "Kings Bay MSF Pier",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8679598.json"
+    },
+    {
+      "target_id": "noaa_8534720",
+      "lat_deg": 39.356667,
+      "lon_deg": -74.41805,
+      "radius_km": 0,
+      "noaa_station_id": "8534720",
+      "noaa_station_name": "Atlantic City",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8534720.json"
+    },
+    {
+      "target_id": "noaa_8551910",
+      "lat_deg": 39.558334,
+      "lon_deg": -75.571945,
+      "radius_km": 0,
+      "noaa_station_id": "8551910",
+      "noaa_station_name": "Reedy Point",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8551910.json"
+    },
+    {
+      "target_id": "noaa_8741533",
+      "lat_deg": 30.367777,
+      "lon_deg": -88.56306,
+      "radius_km": 0,
+      "noaa_station_id": "8741533",
+      "noaa_station_name": "Pascagoula NOAA Lab",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8741533.json"
+    },
+    {
+      "target_id": "noaa_8594900",
+      "lat_deg": 38.873333,
+      "lon_deg": -77.02167,
+      "radius_km": 0,
+      "noaa_station_id": "8594900",
+      "noaa_station_name": "Washington",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8594900.json"
+    },
+    {
+      "target_id": "noaa_8771972",
+      "lat_deg": 29.095,
+      "lon_deg": -95.1133,
+      "radius_km": 0,
+      "noaa_station_id": "8771972",
+      "noaa_station_name": "San Luis Pass",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8771972.json"
+    },
+    {
+      "target_id": "noaa_8722670",
+      "lat_deg": 26.612778,
+      "lon_deg": -80.034164,
+      "radius_km": 0,
+      "noaa_station_id": "8722670",
+      "noaa_station_name": "Lake Worth Pier, Atlantic Ocean",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8722670.json"
+    },
+    {
+      "target_id": "noaa_8770520",
+      "lat_deg": 29.98,
+      "lon_deg": -93.8817,
+      "radius_km": 0,
+      "noaa_station_id": "8770520",
+      "noaa_station_name": "Rainbow Bridge",
+      "source_url": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/8770520.json"
+    }
+  ],
+  "selection": "Original five + farthest point; CONUS tidal non-Great-Lakes, minimum 20km separation",
+  "sets": {
+    "coast40": [
+      "la_harbor",
+      "san_francisco_bay",
+      "new_york_harbor",
+      "savannah_approach",
+      "houston_ship_channel",
+      "noaa_9449424",
+      "noaa_8724580",
+      "noaa_8410140",
+      "noaa_8737048",
+      "noaa_9432780",
+      "noaa_8654467",
+      "noaa_8779770",
+      "noaa_8721604",
+      "noaa_8635027",
+      "noaa_8419870",
+      "noaa_8764314",
+      "noaa_9440357",
+      "noaa_8728690",
+      "noaa_9418767",
+      "noaa_9412110",
+      "noaa_8661070",
+      "noaa_8722956",
+      "noaa_8774230",
+      "noaa_8726724",
+      "noaa_8720357",
+      "noaa_8449130",
+      "noaa_8760721",
+      "noaa_8536110",
+      "noaa_8518979",
+      "noaa_8639348",
+      "noaa_8767816",
+      "noaa_8725520",
+      "noaa_9442396",
+      "noaa_8461490",
+      "noaa_9416841",
+      "noaa_9410170",
+      "noaa_9446484",
+      "noaa_9435380",
+      "noaa_9413450",
+      "noaa_8727520"
+    ],
+    "coast80": [
+      "la_harbor",
+      "san_francisco_bay",
+      "new_york_harbor",
+      "savannah_approach",
+      "houston_ship_channel",
+      "noaa_9449424",
+      "noaa_8724580",
+      "noaa_8410140",
+      "noaa_8737048",
+      "noaa_9432780",
+      "noaa_8654467",
+      "noaa_8779770",
+      "noaa_8721604",
+      "noaa_8635027",
+      "noaa_8419870",
+      "noaa_8764314",
+      "noaa_9440357",
+      "noaa_8728690",
+      "noaa_9418767",
+      "noaa_9412110",
+      "noaa_8661070",
+      "noaa_8722956",
+      "noaa_8774230",
+      "noaa_8726724",
+      "noaa_8720357",
+      "noaa_8449130",
+      "noaa_8760721",
+      "noaa_8536110",
+      "noaa_8518979",
+      "noaa_8639348",
+      "noaa_8767816",
+      "noaa_8725520",
+      "noaa_9442396",
+      "noaa_8461490",
+      "noaa_9416841",
+      "noaa_9410170",
+      "noaa_9446484",
+      "noaa_9435380",
+      "noaa_9413450",
+      "noaa_8727520",
+      "noaa_9411340",
+      "noaa_8747437",
+      "noaa_8665530",
+      "noaa_8658163",
+      "noaa_9441102",
+      "noaa_8772985",
+      "noaa_9416131",
+      "noaa_8573364",
+      "noaa_8546252",
+      "noaa_8413320",
+      "noaa_9419750",
+      "noaa_8631044",
+      "noaa_8656483",
+      "noaa_8729210",
+      "noaa_9437540",
+      "noaa_8771367",
+      "noaa_9444090",
+      "noaa_8762075",
+      "noaa_8766072",
+      "noaa_8467150",
+      "noaa_8729840",
+      "noaa_8447386",
+      "noaa_8775222",
+      "noaa_8651370",
+      "noaa_8761927",
+      "noaa_8418150",
+      "noaa_8571421",
+      "noaa_9439040",
+      "noaa_8723970",
+      "noaa_8443970",
+      "noaa_8570283",
+      "noaa_9431647",
+      "noaa_8679598",
+      "noaa_8534720",
+      "noaa_8551910",
+      "noaa_8741533",
+      "noaa_8594900",
+      "noaa_8771972",
+      "noaa_8722670",
+      "noaa_8770520"
+    ]
+  },
+  "date": "2026-10-15",
+  "no_scheduler_run": true
+}

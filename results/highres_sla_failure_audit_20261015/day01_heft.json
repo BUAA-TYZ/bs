@@ -1,0 +1,5153 @@
+{
+  "scope": "development diagnostic; exact original config and policy; observer is read-only",
+  "config": "results/highres_fixed_three_days_20261015/day01_config.json",
+  "policy": "heft_adapted",
+  "source_before": {
+    "source_sha256": "7531449b51d5ea36cc1876c280e3876db06790184b7160407b2014f3bd68c336",
+    "python_version": "3.12.13",
+    "packages": {
+      "numpy": "2.4.4",
+      "torch": "2.12.0",
+      "skyfield": "1.54",
+      "PyYAML": "6.0.3"
+    }
+  },
+  "source_after": {
+    "source_sha256": "7531449b51d5ea36cc1876c280e3876db06790184b7160407b2014f3bd68c336",
+    "python_version": "3.12.13",
+    "packages": {
+      "numpy": "2.4.4",
+      "torch": "2.12.0",
+      "skyfield": "1.54",
+      "PyYAML": "6.0.3"
+    }
+  },
+  "elapsed_s": 62.07503491733223,
+  "task_outcomes": [
+    {
+      "task_id": "task_0",
+      "source_sat_id": 1,
+      "release_seconds": 120.0,
+      "deadline_seconds": null,
+      "results_ready_seconds": 209.0,
+      "completion_seconds": 210.0,
+      "latency_seconds": 90.0,
+      "status": "completed",
+      "stage": null,
+      "failure_reason": null,
+      "observed_age_seconds": 20550.0,
+      "result_relay_hops": 1395,
+      "raw_relay_hops": 0,
+      "sla_snapshot": {
+        "states": {
+          "DONE": 315
+        },
+        "computed_waiting_locations": {},
+        "max_hops_waiting": 0
+      },
+      "compute_distribution": {
+        "1": 84,
+        "0": 78,
+        "21": 75,
+        "22": 78
+      },
+      "last_compute_seconds": 203.0,
+      "first_delivery_seconds": 129.0,
+      "p50_delivery_seconds": 171.0,
+      "p95_delivery_seconds": 208.0,
+      "last_compute_tiles": [
+        {
+          "tile_id": "task_0_tile_310",
+          "compute_location": 22,
+          "result_path": [
+            22,
+            1,
+            12,
+            11,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 120.0,
+            "start_tx": 125.0,
+            "end_tx": 126.0,
+            "start_compute": 202.0,
+            "end_compute": 203.0,
+            "start_downlink": 208.0,
+            "end_downlink": 209.0
+          }
+        },
+        {
+          "tile_id": "task_0_tile_311",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            12,
+            11,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 120.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 202.0,
+            "end_compute": 203.0,
+            "start_downlink": 207.0,
+            "end_downlink": 208.0
+          }
+        },
+        {
+          "tile_id": "task_0_tile_312",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            20,
+            11,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 120.0,
+            "start_tx": 125.0,
+            "end_tx": 126.0,
+            "start_compute": 202.0,
+            "end_compute": 203.0,
+            "start_downlink": 207.0,
+            "end_downlink": 208.0
+          }
+        },
+        {
+          "tile_id": "task_0_tile_313",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            20,
+            11,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 120.0,
+            "start_tx": 125.0,
+            "end_tx": 126.0,
+            "start_compute": 202.0,
+            "end_compute": 203.0,
+            "start_downlink": 207.0,
+            "end_downlink": 208.0
+          }
+        },
+        {
+          "tile_id": "task_0_tile_314",
+          "compute_location": 22,
+          "result_path": [
+            22,
+            1,
+            12,
+            11,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 120.0,
+            "start_tx": 125.0,
+            "end_tx": 126.0,
+            "start_compute": 202.0,
+            "end_compute": 203.0,
+            "start_downlink": 208.0,
+            "end_downlink": 209.0
+          }
+        }
+      ],
+      "last_delivery_tiles": [
+        {
+          "tile_id": "task_0_tile_313",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            20,
+            11,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 120.0,
+            "start_tx": 125.0,
+            "end_tx": 126.0,
+            "start_compute": 202.0,
+            "end_compute": 203.0,
+            "start_downlink": 207.0,
+            "end_downlink": 208.0
+          }
+        },
+        {
+          "tile_id": "task_0_tile_303",
+          "compute_location": 22,
+          "result_path": [
+            22,
+            1,
+            12,
+            11,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 120.0,
+            "start_tx": 125.0,
+            "end_tx": 126.0,
+            "start_compute": 201.0,
+            "end_compute": 203.0,
+            "start_downlink": 208.0,
+            "end_downlink": 209.0
+          }
+        },
+        {
+          "tile_id": "task_0_tile_306",
+          "compute_location": 22,
+          "result_path": [
+            22,
+            1,
+            12,
+            11,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 120.0,
+            "start_tx": 125.0,
+            "end_tx": 126.0,
+            "start_compute": 202.0,
+            "end_compute": 203.0,
+            "start_downlink": 208.0,
+            "end_downlink": 209.0
+          }
+        },
+        {
+          "tile_id": "task_0_tile_310",
+          "compute_location": 22,
+          "result_path": [
+            22,
+            1,
+            12,
+            11,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 120.0,
+            "start_tx": 125.0,
+            "end_tx": 126.0,
+            "start_compute": 202.0,
+            "end_compute": 203.0,
+            "start_downlink": 208.0,
+            "end_downlink": 209.0
+          }
+        },
+        {
+          "tile_id": "task_0_tile_314",
+          "compute_location": 22,
+          "result_path": [
+            22,
+            1,
+            12,
+            11,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 120.0,
+            "start_tx": 125.0,
+            "end_tx": 126.0,
+            "start_compute": 202.0,
+            "end_compute": 203.0,
+            "start_downlink": 208.0,
+            "end_downlink": 209.0
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "task_1",
+      "source_sat_id": 1,
+      "release_seconds": 150.0,
+      "deadline_seconds": null,
+      "results_ready_seconds": 421.0,
+      "completion_seconds": 422.0,
+      "latency_seconds": 272.0,
+      "status": "completed",
+      "stage": null,
+      "failure_reason": null,
+      "observed_age_seconds": 20520.0,
+      "result_relay_hops": 1386,
+      "raw_relay_hops": 0,
+      "sla_snapshot": {
+        "states": {
+          "DONE": 315
+        },
+        "computed_waiting_locations": {},
+        "max_hops_waiting": 0
+      },
+      "compute_distribution": {
+        "22": 79,
+        "1": 76,
+        "21": 81,
+        "0": 79
+      },
+      "last_compute_seconds": 285.0,
+      "first_delivery_seconds": 209.0,
+      "p50_delivery_seconds": 252.0,
+      "p95_delivery_seconds": 421.0,
+      "last_compute_tiles": [
+        {
+          "tile_id": "task_1_tile_310",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            12,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 150.0,
+            "start_tx": 155.0,
+            "end_tx": 156.0,
+            "start_compute": 283.0,
+            "end_compute": 284.0,
+            "start_downlink": 420.0,
+            "end_downlink": 421.0
+          }
+        },
+        {
+          "tile_id": "task_1_tile_311",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            20,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 150.0,
+            "start_tx": 155.0,
+            "end_tx": 156.0,
+            "start_compute": 283.0,
+            "end_compute": 284.0,
+            "start_downlink": 420.0,
+            "end_downlink": 421.0
+          }
+        },
+        {
+          "tile_id": "task_1_tile_312",
+          "compute_location": 22,
+          "result_path": [
+            22,
+            21,
+            20,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 150.0,
+            "start_tx": 155.0,
+            "end_tx": 156.0,
+            "start_compute": 283.0,
+            "end_compute": 284.0,
+            "start_downlink": 420.0,
+            "end_downlink": 421.0
+          }
+        },
+        {
+          "tile_id": "task_1_tile_314",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            12,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 150.0,
+            "start_tx": 155.0,
+            "end_tx": 156.0,
+            "start_compute": 283.0,
+            "end_compute": 284.0,
+            "start_downlink": 420.0,
+            "end_downlink": 421.0
+          }
+        },
+        {
+          "tile_id": "task_1_tile_313",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            12,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 150.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 283.0,
+            "end_compute": 285.0,
+            "start_downlink": 420.0,
+            "end_downlink": 421.0
+          }
+        }
+      ],
+      "last_delivery_tiles": [
+        {
+          "tile_id": "task_1_tile_310",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            12,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 150.0,
+            "start_tx": 155.0,
+            "end_tx": 156.0,
+            "start_compute": 283.0,
+            "end_compute": 284.0,
+            "start_downlink": 420.0,
+            "end_downlink": 421.0
+          }
+        },
+        {
+          "tile_id": "task_1_tile_311",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            20,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 150.0,
+            "start_tx": 155.0,
+            "end_tx": 156.0,
+            "start_compute": 283.0,
+            "end_compute": 284.0,
+            "start_downlink": 420.0,
+            "end_downlink": 421.0
+          }
+        },
+        {
+          "tile_id": "task_1_tile_312",
+          "compute_location": 22,
+          "result_path": [
+            22,
+            21,
+            20,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 150.0,
+            "start_tx": 155.0,
+            "end_tx": 156.0,
+            "start_compute": 283.0,
+            "end_compute": 284.0,
+            "start_downlink": 420.0,
+            "end_downlink": 421.0
+          }
+        },
+        {
+          "tile_id": "task_1_tile_313",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            12,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 150.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 283.0,
+            "end_compute": 285.0,
+            "start_downlink": 420.0,
+            "end_downlink": 421.0
+          }
+        },
+        {
+          "tile_id": "task_1_tile_314",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            12,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 150.0,
+            "start_tx": 155.0,
+            "end_tx": 156.0,
+            "start_compute": 283.0,
+            "end_compute": 284.0,
+            "start_downlink": 420.0,
+            "end_downlink": 421.0
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "task_2",
+      "source_sat_id": 1,
+      "release_seconds": 180.0,
+      "deadline_seconds": null,
+      "results_ready_seconds": 421.0,
+      "completion_seconds": 422.0,
+      "latency_seconds": 242.0,
+      "status": "completed",
+      "stage": null,
+      "failure_reason": null,
+      "observed_age_seconds": 20490.0,
+      "result_relay_hops": 1403,
+      "raw_relay_hops": 0,
+      "sla_snapshot": {
+        "states": {
+          "DONE": 315
+        },
+        "computed_waiting_locations": {},
+        "max_hops_waiting": 0
+      },
+      "compute_distribution": {
+        "12": 137,
+        "21": 42,
+        "0": 45,
+        "22": 44,
+        "1": 47
+      },
+      "last_compute_seconds": 329.0,
+      "first_delivery_seconds": 188.0,
+      "p50_delivery_seconds": 421.0,
+      "p95_delivery_seconds": 421.0,
+      "last_compute_tiles": [
+        {
+          "tile_id": "task_2_tile_310",
+          "compute_location": 22,
+          "result_path": [
+            22,
+            21,
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 180.0,
+            "start_tx": 185.0,
+            "end_tx": 186.0,
+            "start_compute": 328.0,
+            "end_compute": 329.0,
+            "start_downlink": 420.0,
+            "end_downlink": 421.0
+          }
+        },
+        {
+          "tile_id": "task_2_tile_311",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 180.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 328.0,
+            "end_compute": 329.0,
+            "start_downlink": 420.0,
+            "end_downlink": 421.0
+          }
+        },
+        {
+          "tile_id": "task_2_tile_312",
+          "compute_location": 12,
+          "result_path": [
+            12,
+            11,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 180.0,
+            "start_tx": 185.0,
+            "end_tx": 186.0,
+            "start_compute": 328.0,
+            "end_compute": 329.0,
+            "start_downlink": 420.0,
+            "end_downlink": 421.0
+          }
+        },
+        {
+          "tile_id": "task_2_tile_313",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 180.0,
+            "start_tx": 185.0,
+            "end_tx": 186.0,
+            "start_compute": 328.0,
+            "end_compute": 329.0,
+            "start_downlink": 420.0,
+            "end_downlink": 421.0
+          }
+        },
+        {
+          "tile_id": "task_2_tile_314",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 180.0,
+            "start_tx": 185.0,
+            "end_tx": 186.0,
+            "start_compute": 328.0,
+            "end_compute": 329.0,
+            "start_downlink": 420.0,
+            "end_downlink": 421.0
+          }
+        }
+      ],
+      "last_delivery_tiles": [
+        {
+          "tile_id": "task_2_tile_310",
+          "compute_location": 22,
+          "result_path": [
+            22,
+            21,
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 180.0,
+            "start_tx": 185.0,
+            "end_tx": 186.0,
+            "start_compute": 328.0,
+            "end_compute": 329.0,
+            "start_downlink": 420.0,
+            "end_downlink": 421.0
+          }
+        },
+        {
+          "tile_id": "task_2_tile_311",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 180.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 328.0,
+            "end_compute": 329.0,
+            "start_downlink": 420.0,
+            "end_downlink": 421.0
+          }
+        },
+        {
+          "tile_id": "task_2_tile_312",
+          "compute_location": 12,
+          "result_path": [
+            12,
+            11,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 180.0,
+            "start_tx": 185.0,
+            "end_tx": 186.0,
+            "start_compute": 328.0,
+            "end_compute": 329.0,
+            "start_downlink": 420.0,
+            "end_downlink": 421.0
+          }
+        },
+        {
+          "tile_id": "task_2_tile_313",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 180.0,
+            "start_tx": 185.0,
+            "end_tx": 186.0,
+            "start_compute": 328.0,
+            "end_compute": 329.0,
+            "start_downlink": 420.0,
+            "end_downlink": 421.0
+          }
+        },
+        {
+          "tile_id": "task_2_tile_314",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 180.0,
+            "start_tx": 185.0,
+            "end_tx": 186.0,
+            "start_compute": 328.0,
+            "end_compute": 329.0,
+            "start_downlink": 420.0,
+            "end_downlink": 421.0
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "task_3",
+      "source_sat_id": 0,
+      "release_seconds": 260.0,
+      "deadline_seconds": null,
+      "results_ready_seconds": 421.0,
+      "completion_seconds": 422.0,
+      "latency_seconds": 162.0,
+      "status": "completed",
+      "stage": null,
+      "failure_reason": null,
+      "observed_age_seconds": 20410.0,
+      "result_relay_hops": 1504,
+      "raw_relay_hops": 0,
+      "sla_snapshot": {
+        "states": {
+          "DONE": 315
+        },
+        "computed_waiting_locations": {},
+        "max_hops_waiting": 0
+      },
+      "compute_distribution": {
+        "20": 111,
+        "1": 52,
+        "12": 49,
+        "0": 52,
+        "21": 51
+      },
+      "last_compute_seconds": 381.0,
+      "first_delivery_seconds": 268.0,
+      "p50_delivery_seconds": 421.0,
+      "p95_delivery_seconds": 421.0,
+      "last_compute_tiles": [
+        {
+          "tile_id": "task_3_tile_314",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            11,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 260.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 379.0,
+            "end_compute": 380.0,
+            "start_downlink": 420.0,
+            "end_downlink": 421.0
+          }
+        },
+        {
+          "tile_id": "task_3_tile_310",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 260.0,
+            "start_tx": 265.0,
+            "end_tx": 266.0,
+            "start_compute": 379.0,
+            "end_compute": 381.0,
+            "start_downlink": 420.0,
+            "end_downlink": 421.0
+          }
+        },
+        {
+          "tile_id": "task_3_tile_311",
+          "compute_location": 20,
+          "result_path": [
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 260.0,
+            "start_tx": 265.0,
+            "end_tx": 266.0,
+            "start_compute": 379.0,
+            "end_compute": 381.0,
+            "start_downlink": 420.0,
+            "end_downlink": 421.0
+          }
+        },
+        {
+          "tile_id": "task_3_tile_312",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 260.0,
+            "start_tx": 265.0,
+            "end_tx": 266.0,
+            "start_compute": 379.0,
+            "end_compute": 381.0,
+            "start_downlink": 420.0,
+            "end_downlink": 421.0
+          }
+        },
+        {
+          "tile_id": "task_3_tile_313",
+          "compute_location": 12,
+          "result_path": [
+            12,
+            11,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 260.0,
+            "start_tx": 265.0,
+            "end_tx": 266.0,
+            "start_compute": 379.0,
+            "end_compute": 381.0,
+            "start_downlink": 420.0,
+            "end_downlink": 421.0
+          }
+        }
+      ],
+      "last_delivery_tiles": [
+        {
+          "tile_id": "task_3_tile_310",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 260.0,
+            "start_tx": 265.0,
+            "end_tx": 266.0,
+            "start_compute": 379.0,
+            "end_compute": 381.0,
+            "start_downlink": 420.0,
+            "end_downlink": 421.0
+          }
+        },
+        {
+          "tile_id": "task_3_tile_311",
+          "compute_location": 20,
+          "result_path": [
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 260.0,
+            "start_tx": 265.0,
+            "end_tx": 266.0,
+            "start_compute": 379.0,
+            "end_compute": 381.0,
+            "start_downlink": 420.0,
+            "end_downlink": 421.0
+          }
+        },
+        {
+          "tile_id": "task_3_tile_312",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 260.0,
+            "start_tx": 265.0,
+            "end_tx": 266.0,
+            "start_compute": 379.0,
+            "end_compute": 381.0,
+            "start_downlink": 420.0,
+            "end_downlink": 421.0
+          }
+        },
+        {
+          "tile_id": "task_3_tile_313",
+          "compute_location": 12,
+          "result_path": [
+            12,
+            11,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 260.0,
+            "start_tx": 265.0,
+            "end_tx": 266.0,
+            "start_compute": 379.0,
+            "end_compute": 381.0,
+            "start_downlink": 420.0,
+            "end_downlink": 421.0
+          }
+        },
+        {
+          "tile_id": "task_3_tile_314",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            11,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 260.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 379.0,
+            "end_compute": 380.0,
+            "start_downlink": 420.0,
+            "end_downlink": 421.0
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "task_4",
+      "source_sat_id": 0,
+      "release_seconds": 290.0,
+      "deadline_seconds": null,
+      "results_ready_seconds": 453.0,
+      "completion_seconds": 454.0,
+      "latency_seconds": 164.0,
+      "status": "completed",
+      "stage": null,
+      "failure_reason": null,
+      "observed_age_seconds": 20380.0,
+      "result_relay_hops": 1572,
+      "raw_relay_hops": 0,
+      "sla_snapshot": {
+        "states": {
+          "DONE": 315
+        },
+        "computed_waiting_locations": {},
+        "max_hops_waiting": 0
+      },
+      "compute_distribution": {
+        "0": 63,
+        "21": 66,
+        "20": 63,
+        "1": 60,
+        "12": 63
+      },
+      "last_compute_seconds": 446.0,
+      "first_delivery_seconds": 421.0,
+      "p50_delivery_seconds": 421.0,
+      "p95_delivery_seconds": 450.0,
+      "last_compute_tiles": [
+        {
+          "tile_id": "task_4_tile_310",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            11,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 290.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 444.0,
+            "end_compute": 445.0,
+            "start_downlink": 450.0,
+            "end_downlink": 451.0
+          }
+        },
+        {
+          "tile_id": "task_4_tile_311",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 290.0,
+            "start_tx": 295.0,
+            "end_tx": 296.0,
+            "start_compute": 444.0,
+            "end_compute": 445.0,
+            "start_downlink": 450.0,
+            "end_downlink": 451.0
+          }
+        },
+        {
+          "tile_id": "task_4_tile_312",
+          "compute_location": 20,
+          "result_path": [
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 290.0,
+            "start_tx": 295.0,
+            "end_tx": 296.0,
+            "start_compute": 444.0,
+            "end_compute": 445.0,
+            "start_downlink": 449.0,
+            "end_downlink": 450.0
+          }
+        },
+        {
+          "tile_id": "task_4_tile_314",
+          "compute_location": 12,
+          "result_path": [
+            12,
+            11,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 290.0,
+            "start_tx": 295.0,
+            "end_tx": 296.0,
+            "start_compute": 444.0,
+            "end_compute": 445.0,
+            "start_downlink": 450.0,
+            "end_downlink": 451.0
+          }
+        },
+        {
+          "tile_id": "task_4_tile_313",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 290.0,
+            "start_tx": 295.0,
+            "end_tx": 296.0,
+            "start_compute": 444.0,
+            "end_compute": 446.0,
+            "start_downlink": 452.0,
+            "end_downlink": 453.0
+          }
+        }
+      ],
+      "last_delivery_tiles": [
+        {
+          "tile_id": "task_4_tile_310",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            11,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 290.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 444.0,
+            "end_compute": 445.0,
+            "start_downlink": 450.0,
+            "end_downlink": 451.0
+          }
+        },
+        {
+          "tile_id": "task_4_tile_311",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 290.0,
+            "start_tx": 295.0,
+            "end_tx": 296.0,
+            "start_compute": 444.0,
+            "end_compute": 445.0,
+            "start_downlink": 450.0,
+            "end_downlink": 451.0
+          }
+        },
+        {
+          "tile_id": "task_4_tile_314",
+          "compute_location": 12,
+          "result_path": [
+            12,
+            11,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 290.0,
+            "start_tx": 295.0,
+            "end_tx": 296.0,
+            "start_compute": 444.0,
+            "end_compute": 445.0,
+            "start_downlink": 450.0,
+            "end_downlink": 451.0
+          }
+        },
+        {
+          "tile_id": "task_4_tile_298",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 290.0,
+            "start_tx": 295.0,
+            "end_tx": 296.0,
+            "start_compute": 443.0,
+            "end_compute": 445.0,
+            "start_downlink": 451.0,
+            "end_downlink": 452.0
+          }
+        },
+        {
+          "tile_id": "task_4_tile_313",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 290.0,
+            "start_tx": 295.0,
+            "end_tx": 296.0,
+            "start_compute": 444.0,
+            "end_compute": 446.0,
+            "start_downlink": 452.0,
+            "end_downlink": 453.0
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "task_5",
+      "source_sat_id": 0,
+      "release_seconds": 320.0,
+      "deadline_seconds": null,
+      "results_ready_seconds": 516.0,
+      "completion_seconds": 517.0,
+      "latency_seconds": 197.0,
+      "status": "completed",
+      "stage": null,
+      "failure_reason": null,
+      "observed_age_seconds": 20350.0,
+      "result_relay_hops": 1563,
+      "raw_relay_hops": 0,
+      "sla_snapshot": {
+        "states": {
+          "DONE": 315
+        },
+        "computed_waiting_locations": {},
+        "max_hops_waiting": 0
+      },
+      "compute_distribution": {
+        "12": 63,
+        "0": 66,
+        "21": 63,
+        "20": 60,
+        "1": 63
+      },
+      "last_compute_seconds": 510.0,
+      "first_delivery_seconds": 452.0,
+      "p50_delivery_seconds": 486.0,
+      "p95_delivery_seconds": 515.0,
+      "last_compute_tiles": [
+        {
+          "tile_id": "task_5_tile_310",
+          "compute_location": 12,
+          "result_path": [
+            12,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 320.0,
+            "start_tx": 325.0,
+            "end_tx": 326.0,
+            "start_compute": 509.0,
+            "end_compute": 510.0,
+            "start_downlink": 514.0,
+            "end_downlink": 515.0
+          }
+        },
+        {
+          "tile_id": "task_5_tile_311",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 320.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 509.0,
+            "end_compute": 510.0,
+            "start_downlink": 514.0,
+            "end_downlink": 515.0
+          }
+        },
+        {
+          "tile_id": "task_5_tile_312",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 320.0,
+            "start_tx": 325.0,
+            "end_tx": 326.0,
+            "start_compute": 509.0,
+            "end_compute": 510.0,
+            "start_downlink": 515.0,
+            "end_downlink": 516.0
+          }
+        },
+        {
+          "tile_id": "task_5_tile_313",
+          "compute_location": 20,
+          "result_path": [
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 320.0,
+            "start_tx": 325.0,
+            "end_tx": 326.0,
+            "start_compute": 509.0,
+            "end_compute": 510.0,
+            "start_downlink": 514.0,
+            "end_downlink": 515.0
+          }
+        },
+        {
+          "tile_id": "task_5_tile_314",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 320.0,
+            "start_tx": 325.0,
+            "end_tx": 326.0,
+            "start_compute": 509.0,
+            "end_compute": 510.0,
+            "start_downlink": 515.0,
+            "end_downlink": 516.0
+          }
+        }
+      ],
+      "last_delivery_tiles": [
+        {
+          "tile_id": "task_5_tile_305",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 320.0,
+            "start_tx": 325.0,
+            "end_tx": 326.0,
+            "start_compute": 509.0,
+            "end_compute": 510.0,
+            "start_downlink": 515.0,
+            "end_downlink": 516.0
+          }
+        },
+        {
+          "tile_id": "task_5_tile_308",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 320.0,
+            "start_tx": 325.0,
+            "end_tx": 326.0,
+            "start_compute": 509.0,
+            "end_compute": 510.0,
+            "start_downlink": 515.0,
+            "end_downlink": 516.0
+          }
+        },
+        {
+          "tile_id": "task_5_tile_309",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 320.0,
+            "start_tx": 325.0,
+            "end_tx": 326.0,
+            "start_compute": 509.0,
+            "end_compute": 510.0,
+            "start_downlink": 515.0,
+            "end_downlink": 516.0
+          }
+        },
+        {
+          "tile_id": "task_5_tile_312",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 320.0,
+            "start_tx": 325.0,
+            "end_tx": 326.0,
+            "start_compute": 509.0,
+            "end_compute": 510.0,
+            "start_downlink": 515.0,
+            "end_downlink": 516.0
+          }
+        },
+        {
+          "tile_id": "task_5_tile_314",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 320.0,
+            "start_tx": 325.0,
+            "end_tx": 326.0,
+            "start_compute": 509.0,
+            "end_compute": 510.0,
+            "start_downlink": 515.0,
+            "end_downlink": 516.0
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "task_6",
+      "source_sat_id": 0,
+      "release_seconds": 370.0,
+      "deadline_seconds": null,
+      "results_ready_seconds": 554.0,
+      "completion_seconds": 555.0,
+      "latency_seconds": 185.0,
+      "status": "completed",
+      "stage": null,
+      "failure_reason": null,
+      "observed_age_seconds": 20300.0,
+      "result_relay_hops": 1294,
+      "raw_relay_hops": 0,
+      "sla_snapshot": {
+        "states": {
+          "DONE": 315
+        },
+        "computed_waiting_locations": {},
+        "max_hops_waiting": 0
+      },
+      "compute_distribution": {
+        "11": 167,
+        "1": 40,
+        "0": 37,
+        "21": 34,
+        "20": 37
+      },
+      "last_compute_seconds": 548.0,
+      "first_delivery_seconds": 421.0,
+      "p50_delivery_seconds": 522.0,
+      "p95_delivery_seconds": 552.0,
+      "last_compute_tiles": [
+        {
+          "tile_id": "task_6_tile_310",
+          "compute_location": 11,
+          "result_path": [
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 370.0,
+            "start_tx": 375.0,
+            "end_tx": 376.0,
+            "start_compute": 546.0,
+            "end_compute": 548.0,
+            "start_downlink": 551.0,
+            "end_downlink": 552.0
+          }
+        },
+        {
+          "tile_id": "task_6_tile_311",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 370.0,
+            "start_tx": 375.0,
+            "end_tx": 376.0,
+            "start_compute": 546.0,
+            "end_compute": 548.0,
+            "start_downlink": 553.0,
+            "end_downlink": 554.0
+          }
+        },
+        {
+          "tile_id": "task_6_tile_312",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 370.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 546.0,
+            "end_compute": 548.0,
+            "start_downlink": 552.0,
+            "end_downlink": 553.0
+          }
+        },
+        {
+          "tile_id": "task_6_tile_313",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 370.0,
+            "start_tx": 375.0,
+            "end_tx": 376.0,
+            "start_compute": 546.0,
+            "end_compute": 548.0,
+            "start_downlink": 553.0,
+            "end_downlink": 554.0
+          }
+        },
+        {
+          "tile_id": "task_6_tile_314",
+          "compute_location": 20,
+          "result_path": [
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 370.0,
+            "start_tx": 375.0,
+            "end_tx": 376.0,
+            "start_compute": 547.0,
+            "end_compute": 548.0,
+            "start_downlink": 552.0,
+            "end_downlink": 553.0
+          }
+        }
+      ],
+      "last_delivery_tiles": [
+        {
+          "tile_id": "task_6_tile_309",
+          "compute_location": 20,
+          "result_path": [
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 370.0,
+            "start_tx": 375.0,
+            "end_tx": 376.0,
+            "start_compute": 546.0,
+            "end_compute": 548.0,
+            "start_downlink": 552.0,
+            "end_downlink": 553.0
+          }
+        },
+        {
+          "tile_id": "task_6_tile_312",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 370.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 546.0,
+            "end_compute": 548.0,
+            "start_downlink": 552.0,
+            "end_downlink": 553.0
+          }
+        },
+        {
+          "tile_id": "task_6_tile_314",
+          "compute_location": 20,
+          "result_path": [
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 370.0,
+            "start_tx": 375.0,
+            "end_tx": 376.0,
+            "start_compute": 547.0,
+            "end_compute": 548.0,
+            "start_downlink": 552.0,
+            "end_downlink": 553.0
+          }
+        },
+        {
+          "tile_id": "task_6_tile_311",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 370.0,
+            "start_tx": 375.0,
+            "end_tx": 376.0,
+            "start_compute": 546.0,
+            "end_compute": 548.0,
+            "start_downlink": 553.0,
+            "end_downlink": 554.0
+          }
+        },
+        {
+          "tile_id": "task_6_tile_313",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 370.0,
+            "start_tx": 375.0,
+            "end_tx": 376.0,
+            "start_compute": 546.0,
+            "end_compute": 548.0,
+            "start_downlink": 553.0,
+            "end_downlink": 554.0
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "task_7",
+      "source_sat_id": 0,
+      "release_seconds": 400.0,
+      "deadline_seconds": null,
+      "results_ready_seconds": 619.0,
+      "completion_seconds": 620.0,
+      "latency_seconds": 220.0,
+      "status": "completed",
+      "stage": null,
+      "failure_reason": null,
+      "observed_age_seconds": 20270.0,
+      "result_relay_hops": 1320,
+      "raw_relay_hops": 0,
+      "sla_snapshot": {
+        "states": {
+          "DONE": 315
+        },
+        "computed_waiting_locations": {},
+        "max_hops_waiting": 0
+      },
+      "compute_distribution": {
+        "20": 63,
+        "11": 66,
+        "1": 63,
+        "0": 60,
+        "21": 63
+      },
+      "last_compute_seconds": 613.0,
+      "first_delivery_seconds": 553.0,
+      "p50_delivery_seconds": 587.0,
+      "p95_delivery_seconds": 617.0,
+      "last_compute_tiles": [
+        {
+          "tile_id": "task_7_tile_314",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 400.0,
+            "start_tx": 405.0,
+            "end_tx": 406.0,
+            "start_compute": 611.0,
+            "end_compute": 612.0,
+            "start_downlink": 617.0,
+            "end_downlink": 618.0
+          }
+        },
+        {
+          "tile_id": "task_7_tile_310",
+          "compute_location": 20,
+          "result_path": [
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 400.0,
+            "start_tx": 405.0,
+            "end_tx": 406.0,
+            "start_compute": 611.0,
+            "end_compute": 613.0,
+            "start_downlink": 617.0,
+            "end_downlink": 618.0
+          }
+        },
+        {
+          "tile_id": "task_7_tile_311",
+          "compute_location": 11,
+          "result_path": [
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 400.0,
+            "start_tx": 405.0,
+            "end_tx": 406.0,
+            "start_compute": 611.0,
+            "end_compute": 613.0,
+            "start_downlink": 616.0,
+            "end_downlink": 617.0
+          }
+        },
+        {
+          "tile_id": "task_7_tile_312",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 400.0,
+            "start_tx": 405.0,
+            "end_tx": 406.0,
+            "start_compute": 611.0,
+            "end_compute": 613.0,
+            "start_downlink": 618.0,
+            "end_downlink": 619.0
+          }
+        },
+        {
+          "tile_id": "task_7_tile_313",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 400.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 611.0,
+            "end_compute": 613.0,
+            "start_downlink": 617.0,
+            "end_downlink": 618.0
+          }
+        }
+      ],
+      "last_delivery_tiles": [
+        {
+          "tile_id": "task_7_tile_309",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 400.0,
+            "start_tx": 405.0,
+            "end_tx": 406.0,
+            "start_compute": 611.0,
+            "end_compute": 612.0,
+            "start_downlink": 617.0,
+            "end_downlink": 618.0
+          }
+        },
+        {
+          "tile_id": "task_7_tile_310",
+          "compute_location": 20,
+          "result_path": [
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 400.0,
+            "start_tx": 405.0,
+            "end_tx": 406.0,
+            "start_compute": 611.0,
+            "end_compute": 613.0,
+            "start_downlink": 617.0,
+            "end_downlink": 618.0
+          }
+        },
+        {
+          "tile_id": "task_7_tile_313",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 400.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 611.0,
+            "end_compute": 613.0,
+            "start_downlink": 617.0,
+            "end_downlink": 618.0
+          }
+        },
+        {
+          "tile_id": "task_7_tile_314",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 400.0,
+            "start_tx": 405.0,
+            "end_tx": 406.0,
+            "start_compute": 611.0,
+            "end_compute": 612.0,
+            "start_downlink": 617.0,
+            "end_downlink": 618.0
+          }
+        },
+        {
+          "tile_id": "task_7_tile_312",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 400.0,
+            "start_tx": 405.0,
+            "end_tx": 406.0,
+            "start_compute": 611.0,
+            "end_compute": 613.0,
+            "start_downlink": 618.0,
+            "end_downlink": 619.0
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "task_8",
+      "source_sat_id": 0,
+      "release_seconds": 430.0,
+      "deadline_seconds": null,
+      "results_ready_seconds": 684.0,
+      "completion_seconds": 685.0,
+      "latency_seconds": 255.0,
+      "status": "completed",
+      "stage": null,
+      "failure_reason": null,
+      "observed_age_seconds": 20240.0,
+      "result_relay_hops": 1320,
+      "raw_relay_hops": 0,
+      "sla_snapshot": {
+        "states": {
+          "DONE": 315
+        },
+        "computed_waiting_locations": {},
+        "max_hops_waiting": 0
+      },
+      "compute_distribution": {
+        "21": 63,
+        "20": 66,
+        "11": 63,
+        "1": 60,
+        "0": 63
+      },
+      "last_compute_seconds": 678.0,
+      "first_delivery_seconds": 618.0,
+      "p50_delivery_seconds": 652.0,
+      "p95_delivery_seconds": 681.0,
+      "last_compute_tiles": [
+        {
+          "tile_id": "task_8_tile_310",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 430.0,
+            "start_tx": 435.0,
+            "end_tx": 436.0,
+            "start_compute": 676.0,
+            "end_compute": 677.0,
+            "start_downlink": 682.0,
+            "end_downlink": 683.0
+          }
+        },
+        {
+          "tile_id": "task_8_tile_311",
+          "compute_location": 20,
+          "result_path": [
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 430.0,
+            "start_tx": 435.0,
+            "end_tx": 436.0,
+            "start_compute": 676.0,
+            "end_compute": 677.0,
+            "start_downlink": 681.0,
+            "end_downlink": 682.0
+          }
+        },
+        {
+          "tile_id": "task_8_tile_312",
+          "compute_location": 11,
+          "result_path": [
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 430.0,
+            "start_tx": 435.0,
+            "end_tx": 436.0,
+            "start_compute": 676.0,
+            "end_compute": 677.0,
+            "start_downlink": 680.0,
+            "end_downlink": 681.0
+          }
+        },
+        {
+          "tile_id": "task_8_tile_314",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 430.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 676.0,
+            "end_compute": 677.0,
+            "start_downlink": 681.0,
+            "end_downlink": 682.0
+          }
+        },
+        {
+          "tile_id": "task_8_tile_313",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 430.0,
+            "start_tx": 435.0,
+            "end_tx": 436.0,
+            "start_compute": 676.0,
+            "end_compute": 678.0,
+            "start_downlink": 683.0,
+            "end_downlink": 684.0
+          }
+        }
+      ],
+      "last_delivery_tiles": [
+        {
+          "tile_id": "task_8_tile_298",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 430.0,
+            "start_tx": 435.0,
+            "end_tx": 436.0,
+            "start_compute": 675.0,
+            "end_compute": 677.0,
+            "start_downlink": 682.0,
+            "end_downlink": 683.0
+          }
+        },
+        {
+          "tile_id": "task_8_tile_302",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 430.0,
+            "start_tx": 435.0,
+            "end_tx": 436.0,
+            "start_compute": 676.0,
+            "end_compute": 677.0,
+            "start_downlink": 682.0,
+            "end_downlink": 683.0
+          }
+        },
+        {
+          "tile_id": "task_8_tile_306",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 430.0,
+            "start_tx": 435.0,
+            "end_tx": 436.0,
+            "start_compute": 676.0,
+            "end_compute": 677.0,
+            "start_downlink": 682.0,
+            "end_downlink": 683.0
+          }
+        },
+        {
+          "tile_id": "task_8_tile_310",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 430.0,
+            "start_tx": 435.0,
+            "end_tx": 436.0,
+            "start_compute": 676.0,
+            "end_compute": 677.0,
+            "start_downlink": 682.0,
+            "end_downlink": 683.0
+          }
+        },
+        {
+          "tile_id": "task_8_tile_313",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 430.0,
+            "start_tx": 435.0,
+            "end_tx": 436.0,
+            "start_compute": 676.0,
+            "end_compute": 678.0,
+            "start_downlink": 683.0,
+            "end_downlink": 684.0
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "task_9",
+      "source_sat_id": 0,
+      "release_seconds": 460.0,
+      "deadline_seconds": null,
+      "results_ready_seconds": 715.0,
+      "completion_seconds": 716.0,
+      "latency_seconds": 256.0,
+      "status": "completed",
+      "stage": null,
+      "failure_reason": null,
+      "observed_age_seconds": 20210.0,
+      "result_relay_hops": 1257,
+      "raw_relay_hops": 0,
+      "sla_snapshot": {
+        "states": {
+          "DONE": 315
+        },
+        "computed_waiting_locations": {},
+        "max_hops_waiting": 0
+      },
+      "compute_distribution": {
+        "12": 188,
+        "1": 31,
+        "0": 31,
+        "20": 31,
+        "11": 34
+      },
+      "last_compute_seconds": 709.0,
+      "first_delivery_seconds": 516.0,
+      "p50_delivery_seconds": 684.0,
+      "p95_delivery_seconds": 713.0,
+      "last_compute_tiles": [
+        {
+          "tile_id": "task_9_tile_310",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 460.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 708.0,
+            "end_compute": 709.0,
+            "start_downlink": 713.0,
+            "end_downlink": 714.0
+          }
+        },
+        {
+          "tile_id": "task_9_tile_311",
+          "compute_location": 20,
+          "result_path": [
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 460.0,
+            "start_tx": 465.0,
+            "end_tx": 466.0,
+            "start_compute": 708.0,
+            "end_compute": 709.0,
+            "start_downlink": 713.0,
+            "end_downlink": 714.0
+          }
+        },
+        {
+          "tile_id": "task_9_tile_312",
+          "compute_location": 11,
+          "result_path": [
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 460.0,
+            "start_tx": 465.0,
+            "end_tx": 466.0,
+            "start_compute": 708.0,
+            "end_compute": 709.0,
+            "start_downlink": 712.0,
+            "end_downlink": 713.0
+          }
+        },
+        {
+          "tile_id": "task_9_tile_313",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 460.0,
+            "start_tx": 465.0,
+            "end_tx": 466.0,
+            "start_compute": 708.0,
+            "end_compute": 709.0,
+            "start_downlink": 714.0,
+            "end_downlink": 715.0
+          }
+        },
+        {
+          "tile_id": "task_9_tile_314",
+          "compute_location": 12,
+          "result_path": [
+            12,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 460.0,
+            "start_tx": 465.0,
+            "end_tx": 466.0,
+            "start_compute": 708.0,
+            "end_compute": 709.0,
+            "start_downlink": 713.0,
+            "end_downlink": 714.0
+          }
+        }
+      ],
+      "last_delivery_tiles": [
+        {
+          "tile_id": "task_9_tile_310",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 460.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 708.0,
+            "end_compute": 709.0,
+            "start_downlink": 713.0,
+            "end_downlink": 714.0
+          }
+        },
+        {
+          "tile_id": "task_9_tile_311",
+          "compute_location": 20,
+          "result_path": [
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 460.0,
+            "start_tx": 465.0,
+            "end_tx": 466.0,
+            "start_compute": 708.0,
+            "end_compute": 709.0,
+            "start_downlink": 713.0,
+            "end_downlink": 714.0
+          }
+        },
+        {
+          "tile_id": "task_9_tile_314",
+          "compute_location": 12,
+          "result_path": [
+            12,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 460.0,
+            "start_tx": 465.0,
+            "end_tx": 466.0,
+            "start_compute": 708.0,
+            "end_compute": 709.0,
+            "start_downlink": 713.0,
+            "end_downlink": 714.0
+          }
+        },
+        {
+          "tile_id": "task_9_tile_298",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 460.0,
+            "start_tx": 465.0,
+            "end_tx": 466.0,
+            "start_compute": 707.0,
+            "end_compute": 709.0,
+            "start_downlink": 714.0,
+            "end_downlink": 715.0
+          }
+        },
+        {
+          "tile_id": "task_9_tile_313",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 460.0,
+            "start_tx": 465.0,
+            "end_tx": 466.0,
+            "start_compute": 708.0,
+            "end_compute": 709.0,
+            "start_downlink": 714.0,
+            "end_downlink": 715.0
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "task_10",
+      "source_sat_id": 0,
+      "release_seconds": 490.0,
+      "deadline_seconds": null,
+      "results_ready_seconds": 779.0,
+      "completion_seconds": 780.0,
+      "latency_seconds": 290.0,
+      "status": "completed",
+      "stage": null,
+      "failure_reason": null,
+      "observed_age_seconds": 20180.0,
+      "result_relay_hops": 1210,
+      "raw_relay_hops": 0,
+      "sla_snapshot": {
+        "states": {
+          "DONE": 315
+        },
+        "computed_waiting_locations": {},
+        "max_hops_waiting": 0
+      },
+      "compute_distribution": {
+        "12": 63,
+        "0": 66,
+        "20": 63,
+        "11": 60,
+        "1": 63
+      },
+      "last_compute_seconds": 774.0,
+      "first_delivery_seconds": 714.0,
+      "p50_delivery_seconds": 748.0,
+      "p95_delivery_seconds": 778.0,
+      "last_compute_tiles": [
+        {
+          "tile_id": "task_10_tile_310",
+          "compute_location": 12,
+          "result_path": [
+            12,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 490.0,
+            "start_tx": 495.0,
+            "end_tx": 496.0,
+            "start_compute": 772.0,
+            "end_compute": 774.0,
+            "start_downlink": 778.0,
+            "end_downlink": 779.0
+          }
+        },
+        {
+          "tile_id": "task_10_tile_311",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 490.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 772.0,
+            "end_compute": 774.0,
+            "start_downlink": 778.0,
+            "end_downlink": 779.0
+          }
+        },
+        {
+          "tile_id": "task_10_tile_312",
+          "compute_location": 20,
+          "result_path": [
+            20,
+            19,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 490.0,
+            "start_tx": 495.0,
+            "end_tx": 496.0,
+            "start_compute": 773.0,
+            "end_compute": 774.0,
+            "start_downlink": 777.0,
+            "end_downlink": 778.0
+          }
+        },
+        {
+          "tile_id": "task_10_tile_313",
+          "compute_location": 11,
+          "result_path": [
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 490.0,
+            "start_tx": 495.0,
+            "end_tx": 496.0,
+            "start_compute": 773.0,
+            "end_compute": 774.0,
+            "start_downlink": 777.0,
+            "end_downlink": 778.0
+          }
+        },
+        {
+          "tile_id": "task_10_tile_314",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 490.0,
+            "start_tx": 495.0,
+            "end_tx": 496.0,
+            "start_compute": 773.0,
+            "end_compute": 774.0,
+            "start_downlink": 778.0,
+            "end_downlink": 779.0
+          }
+        }
+      ],
+      "last_delivery_tiles": [
+        {
+          "tile_id": "task_10_tile_313",
+          "compute_location": 11,
+          "result_path": [
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 490.0,
+            "start_tx": 495.0,
+            "end_tx": 496.0,
+            "start_compute": 773.0,
+            "end_compute": 774.0,
+            "start_downlink": 777.0,
+            "end_downlink": 778.0
+          }
+        },
+        {
+          "tile_id": "task_10_tile_309",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 490.0,
+            "start_tx": 495.0,
+            "end_tx": 496.0,
+            "start_compute": 772.0,
+            "end_compute": 774.0,
+            "start_downlink": 778.0,
+            "end_downlink": 779.0
+          }
+        },
+        {
+          "tile_id": "task_10_tile_310",
+          "compute_location": 12,
+          "result_path": [
+            12,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 490.0,
+            "start_tx": 495.0,
+            "end_tx": 496.0,
+            "start_compute": 772.0,
+            "end_compute": 774.0,
+            "start_downlink": 778.0,
+            "end_downlink": 779.0
+          }
+        },
+        {
+          "tile_id": "task_10_tile_311",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 490.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 772.0,
+            "end_compute": 774.0,
+            "start_downlink": 778.0,
+            "end_downlink": 779.0
+          }
+        },
+        {
+          "tile_id": "task_10_tile_314",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 490.0,
+            "start_tx": 495.0,
+            "end_tx": 496.0,
+            "start_compute": 773.0,
+            "end_compute": 774.0,
+            "start_downlink": 778.0,
+            "end_downlink": 779.0
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "task_11",
+      "source_sat_id": 0,
+      "release_seconds": 520.0,
+      "deadline_seconds": null,
+      "results_ready_seconds": 961.0,
+      "completion_seconds": 962.0,
+      "latency_seconds": 442.0,
+      "status": "completed",
+      "stage": null,
+      "failure_reason": null,
+      "observed_age_seconds": 20150.0,
+      "result_relay_hops": 1211,
+      "raw_relay_hops": 0,
+      "sla_snapshot": {
+        "states": {
+          "DONE": 195,
+          "COMPUTED": 20,
+          "RUNNING": 5,
+          "READY": 95
+        },
+        "computed_waiting_locations": {
+          "8": 5,
+          "9": 4,
+          "10": 4,
+          "11": 3,
+          "19": 1,
+          "1": 1,
+          "12": 1,
+          "0": 1
+        },
+        "max_hops_waiting": 4
+      },
+      "compute_distribution": {
+        "1": 63,
+        "12": 66,
+        "0": 63,
+        "20": 60,
+        "11": 63
+      },
+      "last_compute_seconds": 839.0,
+      "first_delivery_seconds": 779.0,
+      "p50_delivery_seconds": 813.0,
+      "p95_delivery_seconds": 961.0,
+      "last_compute_tiles": [
+        {
+          "tile_id": "task_11_tile_310",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            11,
+            10,
+            9,
+            8,
+            7
+          ],
+          "timestamps_seconds": {
+            "created": 520.0,
+            "start_tx": 525.0,
+            "end_tx": 526.0,
+            "start_compute": 837.0,
+            "end_compute": 839.0,
+            "start_downlink": 960.0,
+            "end_downlink": 961.0
+          }
+        },
+        {
+          "tile_id": "task_11_tile_311",
+          "compute_location": 12,
+          "result_path": [
+            12,
+            11,
+            10,
+            9,
+            8,
+            7
+          ],
+          "timestamps_seconds": {
+            "created": 520.0,
+            "start_tx": 525.0,
+            "end_tx": 526.0,
+            "start_compute": 837.0,
+            "end_compute": 839.0,
+            "start_downlink": 960.0,
+            "end_downlink": 961.0
+          }
+        },
+        {
+          "tile_id": "task_11_tile_312",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            11,
+            10,
+            9,
+            8,
+            7
+          ],
+          "timestamps_seconds": {
+            "created": 520.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 837.0,
+            "end_compute": 839.0,
+            "start_downlink": 960.0,
+            "end_downlink": 961.0
+          }
+        },
+        {
+          "tile_id": "task_11_tile_313",
+          "compute_location": 20,
+          "result_path": [
+            20,
+            19,
+            10,
+            9,
+            8,
+            7
+          ],
+          "timestamps_seconds": {
+            "created": 520.0,
+            "start_tx": 525.0,
+            "end_tx": 526.0,
+            "start_compute": 837.0,
+            "end_compute": 839.0,
+            "start_downlink": 960.0,
+            "end_downlink": 961.0
+          }
+        },
+        {
+          "tile_id": "task_11_tile_314",
+          "compute_location": 11,
+          "result_path": [
+            11,
+            10,
+            9,
+            8,
+            7
+          ],
+          "timestamps_seconds": {
+            "created": 520.0,
+            "start_tx": 525.0,
+            "end_tx": 526.0,
+            "start_compute": 838.0,
+            "end_compute": 839.0,
+            "start_downlink": 960.0,
+            "end_downlink": 961.0
+          }
+        }
+      ],
+      "last_delivery_tiles": [
+        {
+          "tile_id": "task_11_tile_310",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            11,
+            10,
+            9,
+            8,
+            7
+          ],
+          "timestamps_seconds": {
+            "created": 520.0,
+            "start_tx": 525.0,
+            "end_tx": 526.0,
+            "start_compute": 837.0,
+            "end_compute": 839.0,
+            "start_downlink": 960.0,
+            "end_downlink": 961.0
+          }
+        },
+        {
+          "tile_id": "task_11_tile_311",
+          "compute_location": 12,
+          "result_path": [
+            12,
+            11,
+            10,
+            9,
+            8,
+            7
+          ],
+          "timestamps_seconds": {
+            "created": 520.0,
+            "start_tx": 525.0,
+            "end_tx": 526.0,
+            "start_compute": 837.0,
+            "end_compute": 839.0,
+            "start_downlink": 960.0,
+            "end_downlink": 961.0
+          }
+        },
+        {
+          "tile_id": "task_11_tile_312",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            11,
+            10,
+            9,
+            8,
+            7
+          ],
+          "timestamps_seconds": {
+            "created": 520.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 837.0,
+            "end_compute": 839.0,
+            "start_downlink": 960.0,
+            "end_downlink": 961.0
+          }
+        },
+        {
+          "tile_id": "task_11_tile_313",
+          "compute_location": 20,
+          "result_path": [
+            20,
+            19,
+            10,
+            9,
+            8,
+            7
+          ],
+          "timestamps_seconds": {
+            "created": 520.0,
+            "start_tx": 525.0,
+            "end_tx": 526.0,
+            "start_compute": 837.0,
+            "end_compute": 839.0,
+            "start_downlink": 960.0,
+            "end_downlink": 961.0
+          }
+        },
+        {
+          "tile_id": "task_11_tile_314",
+          "compute_location": 11,
+          "result_path": [
+            11,
+            10,
+            9,
+            8,
+            7
+          ],
+          "timestamps_seconds": {
+            "created": 520.0,
+            "start_tx": 525.0,
+            "end_tx": 526.0,
+            "start_compute": 838.0,
+            "end_compute": 839.0,
+            "start_downlink": 960.0,
+            "end_downlink": 961.0
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "task_12",
+      "source_sat_id": 1,
+      "release_seconds": 5850.0,
+      "deadline_seconds": null,
+      "results_ready_seconds": 5939.0,
+      "completion_seconds": 5940.0,
+      "latency_seconds": 90.0,
+      "status": "completed",
+      "stage": null,
+      "failure_reason": null,
+      "observed_age_seconds": 14820.0,
+      "result_relay_hops": 1422,
+      "raw_relay_hops": 0,
+      "sla_snapshot": {
+        "states": {
+          "DONE": 315
+        },
+        "computed_waiting_locations": {},
+        "max_hops_waiting": 0
+      },
+      "compute_distribution": {
+        "1": 84,
+        "0": 78,
+        "21": 75,
+        "22": 78
+      },
+      "last_compute_seconds": 5933.0,
+      "first_delivery_seconds": 5921.0,
+      "p50_delivery_seconds": 5921.0,
+      "p95_delivery_seconds": 5938.0,
+      "last_compute_tiles": [
+        {
+          "tile_id": "task_12_tile_310",
+          "compute_location": 22,
+          "result_path": [
+            22,
+            21,
+            20,
+            11,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5850.0,
+            "start_tx": 5855.0,
+            "end_tx": 5856.0,
+            "start_compute": 5932.0,
+            "end_compute": 5933.0,
+            "start_downlink": 5938.0,
+            "end_downlink": 5939.0
+          }
+        },
+        {
+          "tile_id": "task_12_tile_311",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            20,
+            11,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5850.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 5932.0,
+            "end_compute": 5933.0,
+            "start_downlink": 5938.0,
+            "end_downlink": 5939.0
+          }
+        },
+        {
+          "tile_id": "task_12_tile_312",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            20,
+            11,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5850.0,
+            "start_tx": 5855.0,
+            "end_tx": 5856.0,
+            "start_compute": 5932.0,
+            "end_compute": 5933.0,
+            "start_downlink": 5937.0,
+            "end_downlink": 5938.0
+          }
+        },
+        {
+          "tile_id": "task_12_tile_313",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            20,
+            11,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5850.0,
+            "start_tx": 5855.0,
+            "end_tx": 5856.0,
+            "start_compute": 5932.0,
+            "end_compute": 5933.0,
+            "start_downlink": 5937.0,
+            "end_downlink": 5938.0
+          }
+        },
+        {
+          "tile_id": "task_12_tile_314",
+          "compute_location": 22,
+          "result_path": [
+            22,
+            21,
+            20,
+            11,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5850.0,
+            "start_tx": 5855.0,
+            "end_tx": 5856.0,
+            "start_compute": 5932.0,
+            "end_compute": 5933.0,
+            "start_downlink": 5938.0,
+            "end_downlink": 5939.0
+          }
+        }
+      ],
+      "last_delivery_tiles": [
+        {
+          "tile_id": "task_12_tile_306",
+          "compute_location": 22,
+          "result_path": [
+            22,
+            21,
+            20,
+            11,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5850.0,
+            "start_tx": 5855.0,
+            "end_tx": 5856.0,
+            "start_compute": 5932.0,
+            "end_compute": 5933.0,
+            "start_downlink": 5938.0,
+            "end_downlink": 5939.0
+          }
+        },
+        {
+          "tile_id": "task_12_tile_307",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            20,
+            11,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5850.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 5932.0,
+            "end_compute": 5933.0,
+            "start_downlink": 5938.0,
+            "end_downlink": 5939.0
+          }
+        },
+        {
+          "tile_id": "task_12_tile_310",
+          "compute_location": 22,
+          "result_path": [
+            22,
+            21,
+            20,
+            11,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5850.0,
+            "start_tx": 5855.0,
+            "end_tx": 5856.0,
+            "start_compute": 5932.0,
+            "end_compute": 5933.0,
+            "start_downlink": 5938.0,
+            "end_downlink": 5939.0
+          }
+        },
+        {
+          "tile_id": "task_12_tile_311",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            20,
+            11,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5850.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 5932.0,
+            "end_compute": 5933.0,
+            "start_downlink": 5938.0,
+            "end_downlink": 5939.0
+          }
+        },
+        {
+          "tile_id": "task_12_tile_314",
+          "compute_location": 22,
+          "result_path": [
+            22,
+            21,
+            20,
+            11,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5850.0,
+            "start_tx": 5855.0,
+            "end_tx": 5856.0,
+            "start_compute": 5932.0,
+            "end_compute": 5933.0,
+            "start_downlink": 5938.0,
+            "end_downlink": 5939.0
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "task_13",
+      "source_sat_id": 1,
+      "release_seconds": 5880.0,
+      "deadline_seconds": null,
+      "results_ready_seconds": 6020.0,
+      "completion_seconds": 6021.0,
+      "latency_seconds": 141.0,
+      "status": "completed",
+      "stage": null,
+      "failure_reason": null,
+      "observed_age_seconds": 14790.0,
+      "result_relay_hops": 1372,
+      "raw_relay_hops": 0,
+      "sla_snapshot": {
+        "states": {
+          "DONE": 315
+        },
+        "computed_waiting_locations": {},
+        "max_hops_waiting": 0
+      },
+      "compute_distribution": {
+        "22": 79,
+        "1": 76,
+        "21": 81,
+        "0": 79
+      },
+      "last_compute_seconds": 6015.0,
+      "first_delivery_seconds": 5940.0,
+      "p50_delivery_seconds": 5982.0,
+      "p95_delivery_seconds": 6019.0,
+      "last_compute_tiles": [
+        {
+          "tile_id": "task_13_tile_310",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            20,
+            11,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5880.0,
+            "start_tx": 5885.0,
+            "end_tx": 5886.0,
+            "start_compute": 6013.0,
+            "end_compute": 6014.0,
+            "start_downlink": 6018.0,
+            "end_downlink": 6019.0
+          }
+        },
+        {
+          "tile_id": "task_13_tile_311",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            20,
+            11,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5880.0,
+            "start_tx": 5885.0,
+            "end_tx": 5886.0,
+            "start_compute": 6013.0,
+            "end_compute": 6014.0,
+            "start_downlink": 6018.0,
+            "end_downlink": 6019.0
+          }
+        },
+        {
+          "tile_id": "task_13_tile_312",
+          "compute_location": 22,
+          "result_path": [
+            22,
+            21,
+            20,
+            11,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5880.0,
+            "start_tx": 5885.0,
+            "end_tx": 5886.0,
+            "start_compute": 6013.0,
+            "end_compute": 6014.0,
+            "start_downlink": 6019.0,
+            "end_downlink": 6020.0
+          }
+        },
+        {
+          "tile_id": "task_13_tile_314",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            20,
+            11,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5880.0,
+            "start_tx": 5885.0,
+            "end_tx": 5886.0,
+            "start_compute": 6013.0,
+            "end_compute": 6014.0,
+            "start_downlink": 6018.0,
+            "end_downlink": 6019.0
+          }
+        },
+        {
+          "tile_id": "task_13_tile_313",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            20,
+            11,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5880.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 6013.0,
+            "end_compute": 6015.0,
+            "start_downlink": 6019.0,
+            "end_downlink": 6020.0
+          }
+        }
+      ],
+      "last_delivery_tiles": [
+        {
+          "tile_id": "task_13_tile_302",
+          "compute_location": 22,
+          "result_path": [
+            22,
+            21,
+            20,
+            11,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5880.0,
+            "start_tx": 5885.0,
+            "end_tx": 5886.0,
+            "start_compute": 6012.0,
+            "end_compute": 6014.0,
+            "start_downlink": 6019.0,
+            "end_downlink": 6020.0
+          }
+        },
+        {
+          "tile_id": "task_13_tile_305",
+          "compute_location": 22,
+          "result_path": [
+            22,
+            21,
+            20,
+            11,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5880.0,
+            "start_tx": 5885.0,
+            "end_tx": 5886.0,
+            "start_compute": 6013.0,
+            "end_compute": 6014.0,
+            "start_downlink": 6019.0,
+            "end_downlink": 6020.0
+          }
+        },
+        {
+          "tile_id": "task_13_tile_308",
+          "compute_location": 22,
+          "result_path": [
+            22,
+            21,
+            20,
+            11,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5880.0,
+            "start_tx": 5885.0,
+            "end_tx": 5886.0,
+            "start_compute": 6013.0,
+            "end_compute": 6014.0,
+            "start_downlink": 6019.0,
+            "end_downlink": 6020.0
+          }
+        },
+        {
+          "tile_id": "task_13_tile_312",
+          "compute_location": 22,
+          "result_path": [
+            22,
+            21,
+            20,
+            11,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5880.0,
+            "start_tx": 5885.0,
+            "end_tx": 5886.0,
+            "start_compute": 6013.0,
+            "end_compute": 6014.0,
+            "start_downlink": 6019.0,
+            "end_downlink": 6020.0
+          }
+        },
+        {
+          "tile_id": "task_13_tile_313",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            20,
+            11,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5880.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 6013.0,
+            "end_compute": 6015.0,
+            "start_downlink": 6019.0,
+            "end_downlink": 6020.0
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "task_14",
+      "source_sat_id": 1,
+      "release_seconds": 5910.0,
+      "deadline_seconds": null,
+      "results_ready_seconds": 6102.0,
+      "completion_seconds": 6103.0,
+      "latency_seconds": 193.0,
+      "status": "completed",
+      "stage": null,
+      "failure_reason": null,
+      "observed_age_seconds": 14760.0,
+      "result_relay_hops": 1382,
+      "raw_relay_hops": 0,
+      "sla_snapshot": {
+        "states": {
+          "DONE": 315
+        },
+        "computed_waiting_locations": {},
+        "max_hops_waiting": 0
+      },
+      "compute_distribution": {
+        "21": 79,
+        "0": 76,
+        "22": 79,
+        "1": 81
+      },
+      "last_compute_seconds": 6096.0,
+      "first_delivery_seconds": 6021.0,
+      "p50_delivery_seconds": 6063.0,
+      "p95_delivery_seconds": 6101.0,
+      "last_compute_tiles": [
+        {
+          "tile_id": "task_14_tile_310",
+          "compute_location": 22,
+          "result_path": [
+            22,
+            21,
+            20,
+            11,
+            19,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5910.0,
+            "start_tx": 5915.0,
+            "end_tx": 5916.0,
+            "start_compute": 6094.0,
+            "end_compute": 6095.0,
+            "start_downlink": 6101.0,
+            "end_downlink": 6102.0
+          }
+        },
+        {
+          "tile_id": "task_14_tile_311",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            12,
+            11,
+            19,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5910.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 6094.0,
+            "end_compute": 6095.0,
+            "start_downlink": 6100.0,
+            "end_downlink": 6101.0
+          }
+        },
+        {
+          "tile_id": "task_14_tile_314",
+          "compute_location": 22,
+          "result_path": [
+            22,
+            21,
+            20,
+            11,
+            19,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5910.0,
+            "start_tx": 5915.0,
+            "end_tx": 5916.0,
+            "start_compute": 6094.0,
+            "end_compute": 6095.0,
+            "start_downlink": 6101.0,
+            "end_downlink": 6102.0
+          }
+        },
+        {
+          "tile_id": "task_14_tile_312",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            20,
+            11,
+            19,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5910.0,
+            "start_tx": 5915.0,
+            "end_tx": 5916.0,
+            "start_compute": 6094.0,
+            "end_compute": 6096.0,
+            "start_downlink": 6101.0,
+            "end_downlink": 6102.0
+          }
+        },
+        {
+          "tile_id": "task_14_tile_313",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            20,
+            11,
+            19,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5910.0,
+            "start_tx": 5915.0,
+            "end_tx": 5916.0,
+            "start_compute": 6094.0,
+            "end_compute": 6096.0,
+            "start_downlink": 6101.0,
+            "end_downlink": 6102.0
+          }
+        }
+      ],
+      "last_delivery_tiles": [
+        {
+          "tile_id": "task_14_tile_306",
+          "compute_location": 22,
+          "result_path": [
+            22,
+            21,
+            20,
+            11,
+            19,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5910.0,
+            "start_tx": 5915.0,
+            "end_tx": 5916.0,
+            "start_compute": 6094.0,
+            "end_compute": 6095.0,
+            "start_downlink": 6101.0,
+            "end_downlink": 6102.0
+          }
+        },
+        {
+          "tile_id": "task_14_tile_310",
+          "compute_location": 22,
+          "result_path": [
+            22,
+            21,
+            20,
+            11,
+            19,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5910.0,
+            "start_tx": 5915.0,
+            "end_tx": 5916.0,
+            "start_compute": 6094.0,
+            "end_compute": 6095.0,
+            "start_downlink": 6101.0,
+            "end_downlink": 6102.0
+          }
+        },
+        {
+          "tile_id": "task_14_tile_312",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            20,
+            11,
+            19,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5910.0,
+            "start_tx": 5915.0,
+            "end_tx": 5916.0,
+            "start_compute": 6094.0,
+            "end_compute": 6096.0,
+            "start_downlink": 6101.0,
+            "end_downlink": 6102.0
+          }
+        },
+        {
+          "tile_id": "task_14_tile_313",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            20,
+            11,
+            19,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5910.0,
+            "start_tx": 5915.0,
+            "end_tx": 5916.0,
+            "start_compute": 6094.0,
+            "end_compute": 6096.0,
+            "start_downlink": 6101.0,
+            "end_downlink": 6102.0
+          }
+        },
+        {
+          "tile_id": "task_14_tile_314",
+          "compute_location": 22,
+          "result_path": [
+            22,
+            21,
+            20,
+            11,
+            19,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5910.0,
+            "start_tx": 5915.0,
+            "end_tx": 5916.0,
+            "start_compute": 6094.0,
+            "end_compute": 6095.0,
+            "start_downlink": 6101.0,
+            "end_downlink": 6102.0
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "task_15",
+      "source_sat_id": 1,
+      "release_seconds": 5940.0,
+      "deadline_seconds": null,
+      "results_ready_seconds": 6184.0,
+      "completion_seconds": 6185.0,
+      "latency_seconds": 245.0,
+      "status": "completed",
+      "stage": null,
+      "failure_reason": null,
+      "observed_age_seconds": 14730.0,
+      "result_relay_hops": 1591,
+      "raw_relay_hops": 0,
+      "sla_snapshot": {
+        "states": {
+          "DONE": 315
+        },
+        "computed_waiting_locations": {},
+        "max_hops_waiting": 0
+      },
+      "compute_distribution": {
+        "1": 79,
+        "22": 76,
+        "21": 79,
+        "0": 81
+      },
+      "last_compute_seconds": 6177.0,
+      "first_delivery_seconds": 6103.0,
+      "p50_delivery_seconds": 6144.0,
+      "p95_delivery_seconds": 6181.0,
+      "last_compute_tiles": [
+        {
+          "tile_id": "task_15_tile_310",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            0,
+            11,
+            19,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5940.0,
+            "start_tx": 5945.0,
+            "end_tx": 5946.0,
+            "start_compute": 6175.0,
+            "end_compute": 6177.0,
+            "start_downlink": 6182.0,
+            "end_downlink": 6183.0
+          }
+        },
+        {
+          "tile_id": "task_15_tile_311",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            11,
+            19,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5940.0,
+            "start_tx": 5945.0,
+            "end_tx": 5946.0,
+            "start_compute": 6175.0,
+            "end_compute": 6177.0,
+            "start_downlink": 6181.0,
+            "end_downlink": 6182.0
+          }
+        },
+        {
+          "tile_id": "task_15_tile_312",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            19,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5940.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 6175.0,
+            "end_compute": 6177.0,
+            "start_downlink": 6182.0,
+            "end_downlink": 6183.0
+          }
+        },
+        {
+          "tile_id": "task_15_tile_313",
+          "compute_location": 22,
+          "result_path": [
+            22,
+            21,
+            0,
+            11,
+            19,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5940.0,
+            "start_tx": 5945.0,
+            "end_tx": 5946.0,
+            "start_compute": 6175.0,
+            "end_compute": 6177.0,
+            "start_downlink": 6183.0,
+            "end_downlink": 6184.0
+          }
+        },
+        {
+          "tile_id": "task_15_tile_314",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            0,
+            11,
+            19,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5940.0,
+            "start_tx": 5945.0,
+            "end_tx": 5946.0,
+            "start_compute": 6176.0,
+            "end_compute": 6177.0,
+            "start_downlink": 6182.0,
+            "end_downlink": 6183.0
+          }
+        }
+      ],
+      "last_delivery_tiles": [
+        {
+          "tile_id": "task_15_tile_309",
+          "compute_location": 22,
+          "result_path": [
+            22,
+            21,
+            0,
+            11,
+            19,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5940.0,
+            "start_tx": 5945.0,
+            "end_tx": 5946.0,
+            "start_compute": 6175.0,
+            "end_compute": 6176.0,
+            "start_downlink": 6182.0,
+            "end_downlink": 6183.0
+          }
+        },
+        {
+          "tile_id": "task_15_tile_310",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            0,
+            11,
+            19,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5940.0,
+            "start_tx": 5945.0,
+            "end_tx": 5946.0,
+            "start_compute": 6175.0,
+            "end_compute": 6177.0,
+            "start_downlink": 6182.0,
+            "end_downlink": 6183.0
+          }
+        },
+        {
+          "tile_id": "task_15_tile_312",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            19,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5940.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 6175.0,
+            "end_compute": 6177.0,
+            "start_downlink": 6182.0,
+            "end_downlink": 6183.0
+          }
+        },
+        {
+          "tile_id": "task_15_tile_314",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            0,
+            11,
+            19,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5940.0,
+            "start_tx": 5945.0,
+            "end_tx": 5946.0,
+            "start_compute": 6176.0,
+            "end_compute": 6177.0,
+            "start_downlink": 6182.0,
+            "end_downlink": 6183.0
+          }
+        },
+        {
+          "tile_id": "task_15_tile_313",
+          "compute_location": 22,
+          "result_path": [
+            22,
+            21,
+            0,
+            11,
+            19,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5940.0,
+            "start_tx": 5945.0,
+            "end_tx": 5946.0,
+            "start_compute": 6175.0,
+            "end_compute": 6177.0,
+            "start_downlink": 6183.0,
+            "end_downlink": 6184.0
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "task_16",
+      "source_sat_id": 1,
+      "release_seconds": 5970.0,
+      "deadline_seconds": null,
+      "results_ready_seconds": 6208.0,
+      "completion_seconds": 6209.0,
+      "latency_seconds": 239.0,
+      "status": "completed",
+      "stage": null,
+      "failure_reason": null,
+      "observed_age_seconds": 14700.0,
+      "result_relay_hops": 1251,
+      "raw_relay_hops": 0,
+      "sla_snapshot": {
+        "states": {
+          "DONE": 315
+        },
+        "computed_waiting_locations": {},
+        "max_hops_waiting": 0
+      },
+      "compute_distribution": {
+        "20": 215,
+        "0": 26,
+        "21": 23,
+        "1": 26,
+        "22": 25
+      },
+      "last_compute_seconds": 6201.0,
+      "first_delivery_seconds": 5978.0,
+      "p50_delivery_seconds": 6148.0,
+      "p95_delivery_seconds": 6205.0,
+      "last_compute_tiles": [
+        {
+          "tile_id": "task_16_tile_310",
+          "compute_location": 22,
+          "result_path": [
+            22,
+            21,
+            0,
+            11,
+            19,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5970.0,
+            "start_tx": 5975.0,
+            "end_tx": 5976.0,
+            "start_compute": 6199.0,
+            "end_compute": 6201.0,
+            "start_downlink": 6207.0,
+            "end_downlink": 6208.0
+          }
+        },
+        {
+          "tile_id": "task_16_tile_311",
+          "compute_location": 20,
+          "result_path": [
+            20,
+            11,
+            19,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5970.0,
+            "start_tx": 5975.0,
+            "end_tx": 5976.0,
+            "start_compute": 6199.0,
+            "end_compute": 6201.0,
+            "start_downlink": 6205.0,
+            "end_downlink": 6206.0
+          }
+        },
+        {
+          "tile_id": "task_16_tile_312",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            11,
+            19,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5970.0,
+            "start_tx": 5975.0,
+            "end_tx": 5976.0,
+            "start_compute": 6200.0,
+            "end_compute": 6201.0,
+            "start_downlink": 6205.0,
+            "end_downlink": 6206.0
+          }
+        },
+        {
+          "tile_id": "task_16_tile_313",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            0,
+            11,
+            19,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5970.0,
+            "start_tx": 5975.0,
+            "end_tx": 5976.0,
+            "start_compute": 6200.0,
+            "end_compute": 6201.0,
+            "start_downlink": 6206.0,
+            "end_downlink": 6207.0
+          }
+        },
+        {
+          "tile_id": "task_16_tile_314",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            19,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5970.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 6200.0,
+            "end_compute": 6201.0,
+            "start_downlink": 6206.0,
+            "end_downlink": 6207.0
+          }
+        }
+      ],
+      "last_delivery_tiles": [
+        {
+          "tile_id": "task_16_tile_306",
+          "compute_location": 22,
+          "result_path": [
+            22,
+            21,
+            0,
+            11,
+            19,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5970.0,
+            "start_tx": 5975.0,
+            "end_tx": 5976.0,
+            "start_compute": 6199.0,
+            "end_compute": 6200.0,
+            "start_downlink": 6206.0,
+            "end_downlink": 6207.0
+          }
+        },
+        {
+          "tile_id": "task_16_tile_309",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            19,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5970.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 6199.0,
+            "end_compute": 6201.0,
+            "start_downlink": 6206.0,
+            "end_downlink": 6207.0
+          }
+        },
+        {
+          "tile_id": "task_16_tile_313",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            0,
+            11,
+            19,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5970.0,
+            "start_tx": 5975.0,
+            "end_tx": 5976.0,
+            "start_compute": 6200.0,
+            "end_compute": 6201.0,
+            "start_downlink": 6206.0,
+            "end_downlink": 6207.0
+          }
+        },
+        {
+          "tile_id": "task_16_tile_314",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            19,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5970.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 6200.0,
+            "end_compute": 6201.0,
+            "start_downlink": 6206.0,
+            "end_downlink": 6207.0
+          }
+        },
+        {
+          "tile_id": "task_16_tile_310",
+          "compute_location": 22,
+          "result_path": [
+            22,
+            21,
+            0,
+            11,
+            19,
+            10,
+            9
+          ],
+          "timestamps_seconds": {
+            "created": 5970.0,
+            "start_tx": 5975.0,
+            "end_tx": 5976.0,
+            "start_compute": 6199.0,
+            "end_compute": 6201.0,
+            "start_downlink": 6207.0,
+            "end_downlink": 6208.0
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "task_17",
+      "source_sat_id": 1,
+      "release_seconds": 6000.0,
+      "deadline_seconds": null,
+      "results_ready_seconds": 6481.0,
+      "completion_seconds": 6482.0,
+      "latency_seconds": 482.0,
+      "status": "completed",
+      "stage": null,
+      "failure_reason": null,
+      "observed_age_seconds": 14670.0,
+      "result_relay_hops": 1535,
+      "raw_relay_hops": 0,
+      "sla_snapshot": {
+        "states": {
+          "DONE": 50,
+          "COMPUTED": 265
+        },
+        "computed_waiting_locations": {
+          "8": 265
+        },
+        "max_hops_waiting": 6
+      },
+      "compute_distribution": {
+        "1": 79,
+        "20": 76,
+        "0": 79,
+        "21": 81
+      },
+      "last_compute_seconds": 6282.0,
+      "first_delivery_seconds": 6207.0,
+      "p50_delivery_seconds": 6481.0,
+      "p95_delivery_seconds": 6481.0,
+      "last_compute_tiles": [
+        {
+          "tile_id": "task_17_tile_310",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6000.0,
+            "start_tx": 6005.0,
+            "end_tx": 6006.0,
+            "start_compute": 6280.0,
+            "end_compute": 6282.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_17_tile_311",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6000.0,
+            "start_tx": 6005.0,
+            "end_tx": 6006.0,
+            "start_compute": 6280.0,
+            "end_compute": 6282.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_17_tile_312",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6000.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 6281.0,
+            "end_compute": 6282.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_17_tile_313",
+          "compute_location": 20,
+          "result_path": [
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6000.0,
+            "start_tx": 6005.0,
+            "end_tx": 6006.0,
+            "start_compute": 6281.0,
+            "end_compute": 6282.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_17_tile_314",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6000.0,
+            "start_tx": 6005.0,
+            "end_tx": 6006.0,
+            "start_compute": 6281.0,
+            "end_compute": 6282.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        }
+      ],
+      "last_delivery_tiles": [
+        {
+          "tile_id": "task_17_tile_310",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6000.0,
+            "start_tx": 6005.0,
+            "end_tx": 6006.0,
+            "start_compute": 6280.0,
+            "end_compute": 6282.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_17_tile_311",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6000.0,
+            "start_tx": 6005.0,
+            "end_tx": 6006.0,
+            "start_compute": 6280.0,
+            "end_compute": 6282.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_17_tile_312",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6000.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 6281.0,
+            "end_compute": 6282.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_17_tile_313",
+          "compute_location": 20,
+          "result_path": [
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6000.0,
+            "start_tx": 6005.0,
+            "end_tx": 6006.0,
+            "start_compute": 6281.0,
+            "end_compute": 6282.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_17_tile_314",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6000.0,
+            "start_tx": 6005.0,
+            "end_tx": 6006.0,
+            "start_compute": 6281.0,
+            "end_compute": 6282.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "task_18",
+      "source_sat_id": 0,
+      "release_seconds": 6210.0,
+      "deadline_seconds": null,
+      "results_ready_seconds": 6481.0,
+      "completion_seconds": 6482.0,
+      "latency_seconds": 272.0,
+      "status": "completed",
+      "stage": null,
+      "failure_reason": null,
+      "observed_age_seconds": 14460.0,
+      "result_relay_hops": 1265,
+      "raw_relay_hops": 0,
+      "sla_snapshot": {
+        "states": {
+          "DONE": 315
+        },
+        "computed_waiting_locations": {},
+        "max_hops_waiting": 0
+      },
+      "compute_distribution": {
+        "11": 116,
+        "21": 50,
+        "0": 47,
+        "1": 50,
+        "20": 52
+      },
+      "last_compute_seconds": 6333.0,
+      "first_delivery_seconds": 6218.0,
+      "p50_delivery_seconds": 6481.0,
+      "p95_delivery_seconds": 6481.0,
+      "last_compute_tiles": [
+        {
+          "tile_id": "task_18_tile_310",
+          "compute_location": 11,
+          "result_path": [
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6210.0,
+            "start_tx": 6215.0,
+            "end_tx": 6216.0,
+            "start_compute": 6332.0,
+            "end_compute": 6333.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_18_tile_311",
+          "compute_location": 20,
+          "result_path": [
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6210.0,
+            "start_tx": 6215.0,
+            "end_tx": 6216.0,
+            "start_compute": 6332.0,
+            "end_compute": 6333.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_18_tile_312",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6210.0,
+            "start_tx": 6215.0,
+            "end_tx": 6216.0,
+            "start_compute": 6332.0,
+            "end_compute": 6333.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_18_tile_313",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6210.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 6332.0,
+            "end_compute": 6333.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_18_tile_314",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6210.0,
+            "start_tx": 6215.0,
+            "end_tx": 6216.0,
+            "start_compute": 6332.0,
+            "end_compute": 6333.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        }
+      ],
+      "last_delivery_tiles": [
+        {
+          "tile_id": "task_18_tile_310",
+          "compute_location": 11,
+          "result_path": [
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6210.0,
+            "start_tx": 6215.0,
+            "end_tx": 6216.0,
+            "start_compute": 6332.0,
+            "end_compute": 6333.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_18_tile_311",
+          "compute_location": 20,
+          "result_path": [
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6210.0,
+            "start_tx": 6215.0,
+            "end_tx": 6216.0,
+            "start_compute": 6332.0,
+            "end_compute": 6333.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_18_tile_312",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6210.0,
+            "start_tx": 6215.0,
+            "end_tx": 6216.0,
+            "start_compute": 6332.0,
+            "end_compute": 6333.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_18_tile_313",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6210.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 6332.0,
+            "end_compute": 6333.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_18_tile_314",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6210.0,
+            "start_tx": 6215.0,
+            "end_tx": 6216.0,
+            "start_compute": 6332.0,
+            "end_compute": 6333.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "task_19",
+      "source_sat_id": 0,
+      "release_seconds": 6240.0,
+      "deadline_seconds": null,
+      "results_ready_seconds": 6481.0,
+      "completion_seconds": 6482.0,
+      "latency_seconds": 242.0,
+      "status": "completed",
+      "stage": null,
+      "failure_reason": null,
+      "observed_age_seconds": 14430.0,
+      "result_relay_hops": 1320,
+      "raw_relay_hops": 0,
+      "sla_snapshot": {
+        "states": {
+          "DONE": 315
+        },
+        "computed_waiting_locations": {},
+        "max_hops_waiting": 0
+      },
+      "compute_distribution": {
+        "11": 63,
+        "20": 66,
+        "1": 63,
+        "21": 60,
+        "0": 63
+      },
+      "last_compute_seconds": 6398.0,
+      "first_delivery_seconds": 6481.0,
+      "p50_delivery_seconds": 6481.0,
+      "p95_delivery_seconds": 6481.0,
+      "last_compute_tiles": [
+        {
+          "tile_id": "task_19_tile_310",
+          "compute_location": 11,
+          "result_path": [
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6240.0,
+            "start_tx": 6245.0,
+            "end_tx": 6246.0,
+            "start_compute": 6396.0,
+            "end_compute": 6398.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_19_tile_311",
+          "compute_location": 20,
+          "result_path": [
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6240.0,
+            "start_tx": 6245.0,
+            "end_tx": 6246.0,
+            "start_compute": 6396.0,
+            "end_compute": 6398.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_19_tile_312",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6240.0,
+            "start_tx": 6245.0,
+            "end_tx": 6246.0,
+            "start_compute": 6396.0,
+            "end_compute": 6398.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_19_tile_313",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6240.0,
+            "start_tx": 6245.0,
+            "end_tx": 6246.0,
+            "start_compute": 6397.0,
+            "end_compute": 6398.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_19_tile_314",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6240.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 6397.0,
+            "end_compute": 6398.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        }
+      ],
+      "last_delivery_tiles": [
+        {
+          "tile_id": "task_19_tile_310",
+          "compute_location": 11,
+          "result_path": [
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6240.0,
+            "start_tx": 6245.0,
+            "end_tx": 6246.0,
+            "start_compute": 6396.0,
+            "end_compute": 6398.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_19_tile_311",
+          "compute_location": 20,
+          "result_path": [
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6240.0,
+            "start_tx": 6245.0,
+            "end_tx": 6246.0,
+            "start_compute": 6396.0,
+            "end_compute": 6398.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_19_tile_312",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6240.0,
+            "start_tx": 6245.0,
+            "end_tx": 6246.0,
+            "start_compute": 6396.0,
+            "end_compute": 6398.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_19_tile_313",
+          "compute_location": 21,
+          "result_path": [
+            21,
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6240.0,
+            "start_tx": 6245.0,
+            "end_tx": 6246.0,
+            "start_compute": 6397.0,
+            "end_compute": 6398.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_19_tile_314",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6240.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 6397.0,
+            "end_compute": 6398.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "task_20",
+      "source_sat_id": 0,
+      "release_seconds": 6270.0,
+      "deadline_seconds": null,
+      "results_ready_seconds": 6481.0,
+      "completion_seconds": 6482.0,
+      "latency_seconds": 212.0,
+      "status": "completed",
+      "stage": null,
+      "failure_reason": null,
+      "observed_age_seconds": 14400.0,
+      "result_relay_hops": 1260,
+      "raw_relay_hops": 0,
+      "sla_snapshot": {
+        "states": {
+          "DONE": 315
+        },
+        "computed_waiting_locations": {},
+        "max_hops_waiting": 0
+      },
+      "compute_distribution": {
+        "12": 155,
+        "0": 43,
+        "11": 40,
+        "20": 37,
+        "1": 40
+      },
+      "last_compute_seconds": 6438.0,
+      "first_delivery_seconds": 6481.0,
+      "p50_delivery_seconds": 6481.0,
+      "p95_delivery_seconds": 6481.0,
+      "last_compute_tiles": [
+        {
+          "tile_id": "task_20_tile_310",
+          "compute_location": 12,
+          "result_path": [
+            12,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6270.0,
+            "start_tx": 6275.0,
+            "end_tx": 6276.0,
+            "start_compute": 6436.0,
+            "end_compute": 6437.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_20_tile_314",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6270.0,
+            "start_tx": 6275.0,
+            "end_tx": 6276.0,
+            "start_compute": 6436.0,
+            "end_compute": 6437.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_20_tile_311",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6270.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 6436.0,
+            "end_compute": 6438.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_20_tile_312",
+          "compute_location": 11,
+          "result_path": [
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6270.0,
+            "start_tx": 6275.0,
+            "end_tx": 6276.0,
+            "start_compute": 6436.0,
+            "end_compute": 6438.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_20_tile_313",
+          "compute_location": 20,
+          "result_path": [
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6270.0,
+            "start_tx": 6275.0,
+            "end_tx": 6276.0,
+            "start_compute": 6436.0,
+            "end_compute": 6438.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        }
+      ],
+      "last_delivery_tiles": [
+        {
+          "tile_id": "task_20_tile_310",
+          "compute_location": 12,
+          "result_path": [
+            12,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6270.0,
+            "start_tx": 6275.0,
+            "end_tx": 6276.0,
+            "start_compute": 6436.0,
+            "end_compute": 6437.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_20_tile_311",
+          "compute_location": 0,
+          "result_path": [
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6270.0,
+            "start_tx": null,
+            "end_tx": null,
+            "start_compute": 6436.0,
+            "end_compute": 6438.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_20_tile_312",
+          "compute_location": 11,
+          "result_path": [
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6270.0,
+            "start_tx": 6275.0,
+            "end_tx": 6276.0,
+            "start_compute": 6436.0,
+            "end_compute": 6438.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_20_tile_313",
+          "compute_location": 20,
+          "result_path": [
+            20,
+            19,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6270.0,
+            "start_tx": 6275.0,
+            "end_tx": 6276.0,
+            "start_compute": 6436.0,
+            "end_compute": 6438.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        },
+        {
+          "tile_id": "task_20_tile_314",
+          "compute_location": 1,
+          "result_path": [
+            1,
+            0,
+            11,
+            10,
+            9,
+            8
+          ],
+          "timestamps_seconds": {
+            "created": 6270.0,
+            "start_tx": 6275.0,
+            "end_tx": 6276.0,
+            "start_compute": 6436.0,
+            "end_compute": 6437.0,
+            "start_downlink": 6480.0,
+            "end_downlink": 6481.0
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "status": "FROZEN",
+  "reason": "User requested early stop: mixed tradeoffs between 176 and 352; redirect compute to dynamic granularity",
+  "tests_sealed": true,
+  "selected": {
+    "1701": {
+      "episodes": 352,
+      "checkpoint": "results/redesign_20261021/main_scenario/mappo_20261022/checkpoints/1701/resume_ep0352_samples0352_1792932322334261000.pt",
+      "checkpoint_sha256": "72e351e29b19bdff92abb52599073f15d387068c69ff43a3c77b7b1f535915c1",
+      "metrics": {
+        "P": [
+          0.682168049640094,
+          0.799659550534111,
+          0.8342039092304443,
+          0.9032402532357748,
+          0.9426427659599782,
+          0.9544701117787611,
+          0.9623751174019498
+        ],
+        "mean_completed_s": 178.60867940632792,
+        "P50_completed_s": 49.55000000000001,
+        "P90_completed_s": 150.26333333333346,
+        "R600": 84.39713610213285,
+        "unfinished_total": 15,
+        "kl_initial": 3.225519367995686,
+        "entropy": 19.4820648509626
+      }
+    },
+    "1702": {
+      "episodes": 176,
+      "checkpoint": "results/redesign_20261021/main_scenario/mappo_20261022/checkpoints/1702/episode_0176.pt",
+      "checkpoint_sha256": "d0dd378995ec7185524c664cc515532850d6d2bf3d2e34aa7c5ec3187a463051",
+      "metrics": {
+        "P": [
+          0.6999993231003022,
+          0.7976799124713434,
+          0.8262802025263175,
+          0.8932948180858826,
+          0.9337570587299071,
+          0.9455844045486899,
+          0.9544696455468262
+        ],
+        "mean_completed_s": 198.8186605133254,
+        "P50_completed_s": 43.76666666666667,
+        "P90_completed_s": 155.58,
+        "R600": 85.97466837656366,
+        "unfinished_total": 21,
+        "kl_initial": 3.101302950563453,
+        "entropy": 18.480925716479806
+      }
+    },
+    "1703": {
+      "episodes": 176,
+      "checkpoint": "results/redesign_20261021/main_scenario/mappo_20261022/checkpoints/1703/episode_0176.pt",
+      "checkpoint_sha256": "79430705fdb30b1718d488a17c99ec23f9690c59c5d77975bbcc1f3cf763b4c1",
+      "metrics": {
+        "P": [
+          0.669403491293231,
+          0.7867280552528357,
+          0.8213084174152409,
+          0.8904060191164418,
+          0.9327328680442232,
+          0.9495062785123493,
+          0.9673291338959578
+        ],
+        "mean_completed_s": 162.92457275819297,
+        "P50_completed_s": 48.13333333333333,
+        "P90_completed_s": 183.10666666666688,
+        "R600": 85.81133314083134,
+        "unfinished_total": 15,
+        "kl_initial": 2.272338817977633,
+        "entropy": 19.42469834782396
+      }
+    }
+  },
+  "budget": {
+    "1701": {
+      "updated_episodes": 352,
+      "updated_fraction": 0.5007112375533428,
+      "selected_episodes": 352,
+      "selected_fraction": 0.5007112375533428,
+      "collected_pass": 353
+    },
+    "1702": {
+      "updated_episodes": 352,
+      "updated_fraction": 0.5007112375533428,
+      "selected_episodes": 176,
+      "selected_fraction": 0.2503556187766714,
+      "collected_pass": 353
+    },
+    "1703": {
+      "updated_episodes": 352,
+      "updated_fraction": 0.5007112375533428,
+      "selected_episodes": 176,
+      "selected_fraction": 0.2503556187766714,
+      "collected_pass": 355
+    }
+  },
+  "protocol": "results/redesign_20261021/main_scenario/DYNAMIC_REVISION_PROTOCOL_20261025.md",
+  "protocol_sha256": "6dc2eed60cb23d8517b9fa890ac0326d43ff8155483677677f67aa26fa5f73c6",
+  "entry_sha256": "f79a730bc9dd92cefc90fc04274499db786b80c0e12355c519352f0f1e990c8b",
+  "frozen_files": {
+    "results/redesign_20261021/main_scenario/fixed_mappo_frozen_20261025/mappo_1702.pt": "d0dd378995ec7185524c664cc515532850d6d2bf3d2e34aa7c5ec3187a463051",
+    "results/redesign_20261021/main_scenario/fixed_mappo_frozen_20261025/pure_imitation_1702.pt": "bea28b5fb500f1a98d711368e5203bc719c50a581afb26298ad8342a6ec63fb9",
+    "results/redesign_20261021/main_scenario/fixed_mappo_frozen_20261025/pure_imitation_1703.pt": "cdb4ffa57d81838b322b5e9bbbccd348cc7b979db34076d6a5ae5da5f065713a",
+    "results/redesign_20261021/main_scenario/fixed_mappo_frozen_20261025/mappo_1703.pt": "79430705fdb30b1718d488a17c99ec23f9690c59c5d77975bbcc1f3cf763b4c1",
+    "results/redesign_20261021/main_scenario/fixed_mappo_frozen_20261025/mappo_1701.pt": "72e351e29b19bdff92abb52599073f15d387068c69ff43a3c77b7b1f535915c1",
+    "results/redesign_20261021/main_scenario/fixed_mappo_frozen_20261025/pure_imitation_1701.pt": "7316b37df9ed5a4f424ad85359e8f975d976bef4ae703be782aae2328612d293"
+  }
+}

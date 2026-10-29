@@ -1,0 +1,9 @@
+{
+  "status": "invalid_execution_adapter_stopped",
+  "valid_algorithm_results": false,
+  "audit_failure_tasks": ["task_25", "task_30"],
+  "condition_of_first_error": null,
+  "cause": "Raw input arrival inherited READY state and could compute on a relay satellite while awaiting the next hop.",
+  "action": "Stopped the parent and its four workers; no scores accepted. Candidate and runner snapshots retained. Fixed in v2 with disconnected-next-hop regression coverage.",
+  "limitation": "The original runner raised before serializing the failing record and waited for other workers in executor shutdown. v2 persists audit failures and exceptions per condition."
+}

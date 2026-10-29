@@ -1,0 +1,49 @@
+{
+  "registered_at_utc": "2026-10-19T03:40:05.019534+00:00",
+  "dates": [
+    "2026-12-15",
+    "2026-12-16",
+    "2026-12-17"
+  ],
+  "conditions": [
+    "base",
+    "compute_4",
+    "compute_10",
+    "load_2",
+    "load_4"
+  ],
+  "status": "SEALED_NOT_GENERATED_NOT_RUN",
+  "selection_reason": "Three calendar days starting one week after the week containing the consumed Dec 1-6 tests; no geometry or outcomes inspected",
+  "exclude_from_training_validation_labels": true,
+  "forbidden_consumed_test_dates": [
+    "2026-12-01",
+    "2026-12-02",
+    "2026-12-03",
+    "2026-12-04",
+    "2026-12-05",
+    "2026-12-06"
+  ],
+  "forbidden_old_optical_test_dates": [
+    "2026-11-21",
+    "2026-11-22",
+    "2026-11-23",
+    "2026-11-24",
+    "2026-11-25",
+    "2026-11-26"
+  ],
+  "train_dates": [
+    "2026-10-15",
+    "2026-10-16",
+    "2026-10-17",
+    "2026-10-18",
+    "2026-10-19",
+    "2026-10-20",
+    "2026-10-21"
+  ],
+  "validation_dates": [
+    "2026-10-22",
+    "2026-10-23",
+    "2026-10-24"
+  ],
+  "future_test_requires_frozen_learned_selector_and_user_authorization": true
+}

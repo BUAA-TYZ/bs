@@ -1,0 +1,58 @@
+{
+  "scope": "numerical/timing prefix only; not a main-scenario result",
+  "frozen_config": "results/sar_loopfree_20261017/main_config.json",
+  "frozen_config_sha256": "83ef7d48495c8f6aa499f963eab45f99062c54a63c243ccb7e8447aea702dcb8",
+  "frozen_manifest_sha256": "15e518c3f33be61d61bf7a805d70b579de5cfaa1cec5754872491ab507e1dcfa",
+  "calibration_inputs": {
+    "network_contract": {
+      "path": "results/sar_parameter_contract_20261016/main_config.json",
+      "sha256": "27c45fe8b1c0d65410cf551c1a6f9f4a33ce76d96d8ce54162683db0b7bf4ed1"
+    },
+    "generator": {
+      "path": "analysis/prepare_sar_dispatch.py",
+      "sha256": "a7e978f2ea868e86a509e932ae4a96480bd5602a8049f1e3d5e5a4b0f66e2769"
+    },
+    "fixture_generator": {
+      "path": "analysis/build_sar_workload_fixture.py",
+      "sha256": "44d7f2679f866d130ffc7d90c4a904ca35c61f0bdd1593b392130bfc9f2255f2"
+    }
+  },
+  "derived_config_sha256": "cb62c7b877b8e379db280b4aa5710330c6b291c38f87aba7373bc7d5cf2d8899",
+  "dt": 0.01,
+  "stop_seconds": 21600.0,
+  "tasks": 42,
+  "tle_sha256": "53f2c4f6a3b5fe3b51ead0640afc262b0e56bcef1cb409aa520e9a8a6533e264",
+  "runner_sha256": "eb19d27790320d7e10146921b967fe4f737240c7d0ce704e24c0a53cc4d0d27f",
+  "source_sha256": "6682281f8b1591e3c6fe0e4aaff045c7013f9b85751cf2730efdc2ed94c1f516",
+  "python_version": "3.12.13",
+  "packages": {
+    "numpy": "2.4.4",
+    "torch": "2.12.0",
+    "skyfield": "1.54",
+    "PyYAML": "6.0.3"
+  },
+  "platform": "macOS-26.4.1-arm64-arm-64bit",
+  "cpu_count": 18,
+  "argv": [
+    "analysis/run_sar_frozen.py",
+    "--methods",
+    "local",
+    "ground_unique_relay",
+    "cgs_compute_adapted",
+    "heft_adapted",
+    "cgs_delivery_guard",
+    "cgs_task_choice",
+    "--reference",
+    "local",
+    "--stop-seconds",
+    "21600",
+    "--workers",
+    "2",
+    "--out-dir",
+    "results/sar_loopfree_20261017/prefix_21600"
+  ],
+  "metric": {
+    "P300": "tasks fully aggregated on the ground within 300 s of readiness / all arrived tasks",
+    "R300": "mean of min(latency, 300) with undelivered tasks counted as 300 s"
+  }
+}

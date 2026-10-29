@@ -1,0 +1,25 @@
+{
+  "recoveries": 0,
+  "events": [
+    {
+      "time_utc": "2026-10-25T08:02:47.528049+00:00",
+      "action": "PLANNED_LAUNCHAGENT_POLICY_RELOAD",
+      "reason": "User-approved ProcessType Interactive to remove default launchd resource throttling",
+      "charged_to_retry_budget": false,
+      "new_process_type": "Interactive"
+    },
+    {
+      "time_utc": "2026-10-25T14:36:44.048104+00:00",
+      "action": "USER_STOP_FIXED_MODEL",
+      "reason": "User approved early stop and dynamic granularity experiments",
+      "charged_to_retry_budget": false
+    }
+  ],
+  "active": false,
+  "child_pid": 50915,
+  "supervisor_pid": 50883,
+  "started_utc": "2026-10-25T08:02:53.575076+00:00",
+  "child_identity": "Sun Oct 25 16:02:53 2026     /opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python /Users/bytedance/Projects/bs/analysis/resume_main_mappo.py panel",
+  "caffeinate_pid": 50916,
+  "finished_utc": "2026-10-25T14:36:44.048016+00:00"
+}

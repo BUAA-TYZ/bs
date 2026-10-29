@@ -1,0 +1,42 @@
+{
+  "executed": false,
+  "dates": 6,
+  "conditions": 7,
+  "methods_with_old_candidate_and_two_ground_protocols": 7,
+  "runs": 294,
+  "simulation_worker_hours_linear": 103.10528257998666,
+  "four_workers_wall_hours_linear": 25.776320644996666,
+  "planning_worker_hours_range": [
+    155.65792386997998,
+    207.21056515997333
+  ],
+  "four_workers_planning_wall_hours_range": [
+    39.664480967494995,
+    52.55264128999333
+  ],
+  "acquisition_geometry_estimate": {
+    "development_record": "results/sar_coastal_coverage_20261015/coverage.json",
+    "development_elapsed_s": 0.45123962545767426,
+    "continuous_days": 53,
+    "frozen_sources": 24,
+    "linear_seconds": 11.957850074628368,
+    "one_time_preparation_allowance_hours": 1,
+    "caveat": "Linear source-days scaling only; one hour is an explicit planning allowance for generation, serialization and checks, not a measurement."
+  },
+  "if_new_replaces_old_candidate": {
+    "runs": 252,
+    "worker_hours": 87.82448305109331,
+    "four_workers_wall_hours": 21.956120762773327
+  },
+  "measured_old_seven_conditions_worker_seconds": 13164.414974748986,
+  "measured_new_seven_conditions_worker_seconds": 2301.377412249014,
+  "assumptions": [
+    "6-hour observed wall times scale by 4 to a day, then by 6 held-out dates.",
+    "Worker hours sum per-worker wall time, not measured aggregate CPU seconds.",
+    "1.5-2 planning multiplier is a declared allowance, not a statistical interval.",
+    "Four CPU workers on same host; no GPU training or device measurement.",
+    "Unknown held-out task counts and accumulated queues motivate 1.5-2 simulation allowance.",
+    "Acquisition geometry extrapolated from old development metadata; one-time preparation budget is serial.",
+    "No held-out configuration, geometry or arrivals generated/read; only preregistration text read."
+  ]
+}

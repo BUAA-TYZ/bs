@@ -1,0 +1,74 @@
+{"method": "heft_adapted", "P300": 0.8833333333333333, "on_time": 159, "tasks": 180, "R300": 47.752, "wall_s": 3796.5, "worker_peak_rss_gb": 0.94}
+{"method": "cgs_compute_adapted", "P300": 0.8833333333333333, "on_time": 159, "tasks": 180, "R300": 48.48766666666667, "wall_s": 3855.9, "worker_peak_rss_gb": 0.94}
+{"method": "greedy", "P300": 0.8388888888888889, "on_time": 151, "tasks": 180, "R300": 92.17416666666666, "wall_s": 2064.4, "worker_peak_rss_gb": 0.94}
+{"method": "dts_tmax_hybrid", "P300": 0.8833333333333333, "on_time": 159, "tasks": 180, "R300": 47.97544444444444, "wall_s": 3887.2, "worker_peak_rss_gb": 0.94}
+{"method": "window_aware", "P300": 0.8444444444444444, "on_time": 152, "tasks": 180, "R300": 93.42944444444444, "wall_s": 1910.5, "worker_peak_rss_gb": 0.94}
+{"method": "ground_unique_relay", "P300": 0.9111111111111111, "on_time": 164, "tasks": 180, "R300": 43.535333333333334, "wall_s": 1454.3, "worker_peak_rss_gb": 0.94}
+{"method": "local", "P300": 0.8444444444444444, "on_time": 152, "tasks": 180, "R300": 91.75605555555556, "wall_s": 1993.9, "worker_peak_rss_gb": 0.94}
+{"method": "ground_relay", "P300": 0.85, "on_time": 153, "tasks": 180, "R300": 69.34594444444444, "wall_s": 1565.3, "worker_peak_rss_gb": 0.94}
+{"method": "ground_compute", "P300": 0.0, "on_time": 0, "tasks": 180, "R300": 300.0, "wall_s": 1964.5, "worker_peak_rss_gb": 0.94}
+[
+ {
+  "method": "cgs_compute_adapted",
+  "P300": 0.8833333333333333,
+  "on_time_tasks": 159,
+  "R300_seconds": 48.48766666666667,
+  "wall_seconds": 3855.882514875
+ },
+ {
+  "method": "heft_adapted",
+  "P300": 0.8833333333333333,
+  "on_time_tasks": 159,
+  "R300_seconds": 47.752,
+  "wall_seconds": 3796.475223166999
+ },
+ {
+  "method": "dts_tmax_hybrid",
+  "P300": 0.8833333333333333,
+  "on_time_tasks": 159,
+  "R300_seconds": 47.97544444444444,
+  "wall_seconds": 3887.157617750001
+ },
+ {
+  "method": "greedy",
+  "P300": 0.8388888888888889,
+  "on_time_tasks": 151,
+  "R300_seconds": 92.17416666666666,
+  "wall_seconds": 2064.410880082998
+ },
+ {
+  "method": "window_aware",
+  "P300": 0.8444444444444444,
+  "on_time_tasks": 152,
+  "R300_seconds": 93.42944444444444,
+  "wall_seconds": 1910.4635901670008
+ },
+ {
+  "method": "local",
+  "P300": 0.8444444444444444,
+  "on_time_tasks": 152,
+  "R300_seconds": 91.75605555555556,
+  "wall_seconds": 1993.8883242499978
+ },
+ {
+  "method": "ground_unique_relay",
+  "P300": 0.9111111111111111,
+  "on_time_tasks": 164,
+  "R300_seconds": 43.535333333333334,
+  "wall_seconds": 1454.3394749580002
+ },
+ {
+  "method": "ground_relay",
+  "P300": 0.85,
+  "on_time_tasks": 153,
+  "R300_seconds": 69.34594444444444,
+  "wall_seconds": 1565.335988625
+ },
+ {
+  "method": "ground_compute",
+  "P300": 0.0,
+  "on_time_tasks": 0,
+  "R300_seconds": 300.0,
+  "wall_seconds": 1964.467437583
+ }
+]

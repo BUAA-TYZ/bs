@@ -1,0 +1,658 @@
+{
+  "prepared_at_utc": "2026-10-17T03:44:42.722062+00:00",
+  "timebox_hours": 48,
+  "scope": "one-factor development-prefix scan; no held-out dates, training or thesis changes",
+  "source": "results/sar_loopfree_20261017/main_config.json",
+  "source_config_sha256": "83ef7d48495c8f6aa499f963eab45f99062c54a63c243ccb7e8447aea702dcb8",
+  "source_sha256": "6682281f8b1591e3c6fe0e4aaff045c7013f9b85751cf2730efdc2ed94c1f516",
+  "python_version": "3.12.13",
+  "packages": {
+    "numpy": "2.4.4",
+    "torch": "2.12.0",
+    "skyfield": "1.54",
+    "PyYAML": "6.0.3"
+  },
+  "runner_sha256": "eb19d27790320d7e10146921b967fe4f737240c7d0ce704e24c0a53cc4d0d27f",
+  "scan_sha256": "e9819c300f6ffcdd9b20f735d5c4a4a259979ddc36a1b7f693a5b0326b996428",
+  "compute_scope": "all",
+  "stop_seconds": 21600,
+  "ground_selection": "whole-panel P300 descending then R300 ascending; exact ties select 8-hop",
+  "load_rule": "same imaging opportunities, source and timestamps; 1/2/4 independent images per event; cloned output fixture",
+  "bandwidth_rule": "net payload rate, not terminal nominal rate; ground rate and efficiency convention unchanged",
+  "hypothesis": "When isolated local image service approaches/exceeds 300s, local P300 falls and cooperative scheduling gains P300.",
+  "falsification": "At x10 local P300 drops by >=5 percentage points vs x1, but none of CGS/HEFT/choice exceeds local P300; latency-only gain does not support completion-rate claim. Gains solely from ground execution do not establish multi-satellite compute benefit.",
+  "conditions": {
+    "base": {
+      "compute_multiplier": 1,
+      "arrival_multiplier": 1,
+      "net_isl_gbps": 2,
+      "tasks": 42,
+      "tasks_per_hour": 7.0,
+      "isolated_local_image_service_s": 33.792,
+      "isolated_ground_image_service_s": 3.3792000000000004,
+      "changed_top_level_fields": [],
+      "configs": {
+        "loopfree": {
+          "path": "results/sar_condition_scan_20261017/configs/base_loopfree.json",
+          "sha256": "3342d4f0ebb20fbffa072c397cdc123156ef4dcae57fb7b6552290a9db77c07f"
+        },
+        "8hop": {
+          "path": "results/sar_condition_scan_20261017/configs/base_8hop.json",
+          "sha256": "9be63445256d7bda71cb38b14ef6d5982d7a045edad1996f790fa6c8fb773274"
+        }
+      }
+    },
+    "compute_4": {
+      "compute_multiplier": 4,
+      "arrival_multiplier": 1,
+      "net_isl_gbps": 2,
+      "tasks": 42,
+      "tasks_per_hour": 7.0,
+      "isolated_local_image_service_s": 135.168,
+      "isolated_ground_image_service_s": 13.516800000000002,
+      "changed_top_level_fields": [
+        "compute_rate",
+        "ground_stations",
+        "onboard_compute_profile"
+      ],
+      "configs": {
+        "loopfree": {
+          "path": "results/sar_condition_scan_20261017/configs/compute_4_loopfree.json",
+          "sha256": "8479b4d0f11655adc932fb5d48c7d90b795e3363746277129cb5caa797efed7a"
+        },
+        "8hop": {
+          "path": "results/sar_condition_scan_20261017/configs/compute_4_8hop.json",
+          "sha256": "4cb0ae9838fe9c7296e0ae249a4a6482ca744f0783e45f2cdec087e3c3d63595"
+        }
+      }
+    },
+    "compute_10": {
+      "compute_multiplier": 10,
+      "arrival_multiplier": 1,
+      "net_isl_gbps": 2,
+      "tasks": 42,
+      "tasks_per_hour": 7.0,
+      "isolated_local_image_service_s": 337.92,
+      "isolated_ground_image_service_s": 33.792,
+      "changed_top_level_fields": [
+        "compute_rate",
+        "ground_stations",
+        "onboard_compute_profile"
+      ],
+      "configs": {
+        "loopfree": {
+          "path": "results/sar_condition_scan_20261017/configs/compute_10_loopfree.json",
+          "sha256": "121da182093f0a3252a50184a49d467b338b620e870f9ab3816e338f22543cea"
+        },
+        "8hop": {
+          "path": "results/sar_condition_scan_20261017/configs/compute_10_8hop.json",
+          "sha256": "bce8140ab11aa74b09b673f31f8dcc8fa97daf2d556f3d5eb94445be0dd9ca74"
+        }
+      }
+    },
+    "load_2": {
+      "compute_multiplier": 1,
+      "arrival_multiplier": 2,
+      "net_isl_gbps": 2,
+      "tasks": 84,
+      "tasks_per_hour": 14.0,
+      "isolated_local_image_service_s": 33.792,
+      "isolated_ground_image_service_s": 3.3792000000000004,
+      "changed_top_level_fields": [
+        "scheduled_task_arrivals"
+      ],
+      "configs": {
+        "loopfree": {
+          "path": "results/sar_condition_scan_20261017/configs/load_2_loopfree.json",
+          "sha256": "50cc8691b401b364ad143fc70b509188263123118f2ec75a22cf463f97f3aaf9"
+        },
+        "8hop": {
+          "path": "results/sar_condition_scan_20261017/configs/load_2_8hop.json",
+          "sha256": "20ebc243f96b2cc8448c2ab602870d80d7c7acc659b017276c681addec4c9625"
+        }
+      }
+    },
+    "load_4": {
+      "compute_multiplier": 1,
+      "arrival_multiplier": 4,
+      "net_isl_gbps": 2,
+      "tasks": 168,
+      "tasks_per_hour": 28.0,
+      "isolated_local_image_service_s": 33.792,
+      "isolated_ground_image_service_s": 3.3792000000000004,
+      "changed_top_level_fields": [
+        "scheduled_task_arrivals"
+      ],
+      "configs": {
+        "loopfree": {
+          "path": "results/sar_condition_scan_20261017/configs/load_4_loopfree.json",
+          "sha256": "e8ab1ae605670d672d8a02dde9e04d2bdf17b4b5e35cf4be6539beb1d5347cb7"
+        },
+        "8hop": {
+          "path": "results/sar_condition_scan_20261017/configs/load_4_8hop.json",
+          "sha256": "a572f36d60a1e3b59e793a10ade589c224e9c01e3db04280e0467b199b0a8e7b"
+        }
+      }
+    },
+    "isl_1": {
+      "compute_multiplier": 1,
+      "arrival_multiplier": 1,
+      "net_isl_gbps": 1,
+      "tasks": 42,
+      "tasks_per_hour": 7.0,
+      "isolated_local_image_service_s": 33.792,
+      "isolated_ground_image_service_s": 3.3792000000000004,
+      "changed_top_level_fields": [
+        "topology"
+      ],
+      "configs": {
+        "loopfree": {
+          "path": "results/sar_condition_scan_20261017/configs/isl_1_loopfree.json",
+          "sha256": "a57c137f982c968ee106be4318b9c67ed972bec1eed30b50f9e086d00e3990f1"
+        },
+        "8hop": {
+          "path": "results/sar_condition_scan_20261017/configs/isl_1_8hop.json",
+          "sha256": "d96d95bfe4ab7d786458f3d6b20a560a5406c9a2c1cbcdd9044c3ed185848daf"
+        }
+      }
+    },
+    "isl_5": {
+      "compute_multiplier": 1,
+      "arrival_multiplier": 1,
+      "net_isl_gbps": 5,
+      "tasks": 42,
+      "tasks_per_hour": 7.0,
+      "isolated_local_image_service_s": 33.792,
+      "isolated_ground_image_service_s": 3.3792000000000004,
+      "changed_top_level_fields": [
+        "topology"
+      ],
+      "configs": {
+        "loopfree": {
+          "path": "results/sar_condition_scan_20261017/configs/isl_5_loopfree.json",
+          "sha256": "557ff0e282377dafb46c8c0e9f0ddba25cb820dad8ef4b908ef9f03f58f2efb6"
+        },
+        "8hop": {
+          "path": "results/sar_condition_scan_20261017/configs/isl_5_8hop.json",
+          "sha256": "38b4e2a57d6074384b6784249e83d21cc2b62f906aa65541ed58ec4263a65ad9"
+        }
+      }
+    }
+  },
+  "jobs": [
+    {
+      "condition": "base",
+      "variant": "local",
+      "method": "local",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/base_loopfree.json",
+        "sha256": "3342d4f0ebb20fbffa072c397cdc123156ef4dcae57fb7b6552290a9db77c07f"
+      },
+      "path": "results/sar_loopfree_20261017/prefix_21600/local.json",
+      "reused": true,
+      "record_sha256": "7b6ad1eac974548a47449bfab43ed3f391f53b9a9b4daefd554dc7935eb6b2ae"
+    },
+    {
+      "condition": "base",
+      "variant": "ground_8",
+      "method": "ground_unique_relay",
+      "protocol": "8hop",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/base_8hop.json",
+        "sha256": "9be63445256d7bda71cb38b14ef6d5982d7a045edad1996f790fa6c8fb773274"
+      },
+      "path": "results/sar_temporal_study_20261017/choice_prefix_21600/ground_unique_relay.json",
+      "reused": true,
+      "record_sha256": "0d81e2a92ec2d3c32d9de3862190ae3d4d7d30fef356e8d8fe3ee72bb502f14a"
+    },
+    {
+      "condition": "base",
+      "variant": "ground_loopfree",
+      "method": "ground_unique_relay",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/base_loopfree.json",
+        "sha256": "3342d4f0ebb20fbffa072c397cdc123156ef4dcae57fb7b6552290a9db77c07f"
+      },
+      "path": "results/sar_loopfree_20261017/prefix_21600/ground_unique_relay.json",
+      "reused": true,
+      "record_sha256": "5e52611428415a542e48e5e01ce2e0cf2ce928f47cf62eed037709ce5ec463ba"
+    },
+    {
+      "condition": "base",
+      "variant": "cgs",
+      "method": "cgs_compute_adapted",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/base_loopfree.json",
+        "sha256": "3342d4f0ebb20fbffa072c397cdc123156ef4dcae57fb7b6552290a9db77c07f"
+      },
+      "path": "results/sar_loopfree_20261017/prefix_21600/cgs_compute_adapted.json",
+      "reused": true,
+      "record_sha256": "56e5452551708067402665624c801924d2fa703a8eb572b3aa63f9dd50b0d841"
+    },
+    {
+      "condition": "base",
+      "variant": "heft",
+      "method": "heft_adapted",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/base_loopfree.json",
+        "sha256": "3342d4f0ebb20fbffa072c397cdc123156ef4dcae57fb7b6552290a9db77c07f"
+      },
+      "path": "results/sar_loopfree_20261017/prefix_21600/heft_adapted.json",
+      "reused": true,
+      "record_sha256": "be3a28d2f3f8ec5369bbe2441bf10b8aef1a3171f57bc0b1bcfee3613fc18e9c"
+    },
+    {
+      "condition": "base",
+      "variant": "choice",
+      "method": "cgs_task_choice",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/base_loopfree.json",
+        "sha256": "3342d4f0ebb20fbffa072c397cdc123156ef4dcae57fb7b6552290a9db77c07f"
+      },
+      "path": "results/sar_loopfree_20261017/prefix_21600/cgs_task_choice.json",
+      "reused": true,
+      "record_sha256": "07c14f49e0fcb608ebaeba0556350c75037258dfc1b58bdc913baa4c483a5f01"
+    },
+    {
+      "condition": "compute_4",
+      "variant": "local",
+      "method": "local",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/compute_4_loopfree.json",
+        "sha256": "8479b4d0f11655adc932fb5d48c7d90b795e3363746277129cb5caa797efed7a"
+      },
+      "path": "results/sar_condition_scan_20261017/records/compute_4_local.json"
+    },
+    {
+      "condition": "compute_4",
+      "variant": "ground_8",
+      "method": "ground_unique_relay",
+      "protocol": "8hop",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/compute_4_8hop.json",
+        "sha256": "4cb0ae9838fe9c7296e0ae249a4a6482ca744f0783e45f2cdec087e3c3d63595"
+      },
+      "path": "results/sar_condition_scan_20261017/records/compute_4_ground_8.json"
+    },
+    {
+      "condition": "compute_4",
+      "variant": "ground_loopfree",
+      "method": "ground_unique_relay",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/compute_4_loopfree.json",
+        "sha256": "8479b4d0f11655adc932fb5d48c7d90b795e3363746277129cb5caa797efed7a"
+      },
+      "path": "results/sar_condition_scan_20261017/records/compute_4_ground_loopfree.json"
+    },
+    {
+      "condition": "compute_4",
+      "variant": "cgs",
+      "method": "cgs_compute_adapted",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/compute_4_loopfree.json",
+        "sha256": "8479b4d0f11655adc932fb5d48c7d90b795e3363746277129cb5caa797efed7a"
+      },
+      "path": "results/sar_condition_scan_20261017/records/compute_4_cgs.json"
+    },
+    {
+      "condition": "compute_4",
+      "variant": "heft",
+      "method": "heft_adapted",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/compute_4_loopfree.json",
+        "sha256": "8479b4d0f11655adc932fb5d48c7d90b795e3363746277129cb5caa797efed7a"
+      },
+      "path": "results/sar_condition_scan_20261017/records/compute_4_heft.json"
+    },
+    {
+      "condition": "compute_4",
+      "variant": "choice",
+      "method": "cgs_task_choice",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/compute_4_loopfree.json",
+        "sha256": "8479b4d0f11655adc932fb5d48c7d90b795e3363746277129cb5caa797efed7a"
+      },
+      "path": "results/sar_condition_scan_20261017/records/compute_4_choice.json"
+    },
+    {
+      "condition": "compute_10",
+      "variant": "local",
+      "method": "local",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/compute_10_loopfree.json",
+        "sha256": "121da182093f0a3252a50184a49d467b338b620e870f9ab3816e338f22543cea"
+      },
+      "path": "results/sar_condition_scan_20261017/records/compute_10_local.json"
+    },
+    {
+      "condition": "compute_10",
+      "variant": "ground_8",
+      "method": "ground_unique_relay",
+      "protocol": "8hop",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/compute_10_8hop.json",
+        "sha256": "bce8140ab11aa74b09b673f31f8dcc8fa97daf2d556f3d5eb94445be0dd9ca74"
+      },
+      "path": "results/sar_condition_scan_20261017/records/compute_10_ground_8.json"
+    },
+    {
+      "condition": "compute_10",
+      "variant": "ground_loopfree",
+      "method": "ground_unique_relay",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/compute_10_loopfree.json",
+        "sha256": "121da182093f0a3252a50184a49d467b338b620e870f9ab3816e338f22543cea"
+      },
+      "path": "results/sar_condition_scan_20261017/records/compute_10_ground_loopfree.json"
+    },
+    {
+      "condition": "compute_10",
+      "variant": "cgs",
+      "method": "cgs_compute_adapted",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/compute_10_loopfree.json",
+        "sha256": "121da182093f0a3252a50184a49d467b338b620e870f9ab3816e338f22543cea"
+      },
+      "path": "results/sar_condition_scan_20261017/records/compute_10_cgs.json"
+    },
+    {
+      "condition": "compute_10",
+      "variant": "heft",
+      "method": "heft_adapted",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/compute_10_loopfree.json",
+        "sha256": "121da182093f0a3252a50184a49d467b338b620e870f9ab3816e338f22543cea"
+      },
+      "path": "results/sar_condition_scan_20261017/records/compute_10_heft.json"
+    },
+    {
+      "condition": "compute_10",
+      "variant": "choice",
+      "method": "cgs_task_choice",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/compute_10_loopfree.json",
+        "sha256": "121da182093f0a3252a50184a49d467b338b620e870f9ab3816e338f22543cea"
+      },
+      "path": "results/sar_condition_scan_20261017/records/compute_10_choice.json"
+    },
+    {
+      "condition": "load_2",
+      "variant": "local",
+      "method": "local",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/load_2_loopfree.json",
+        "sha256": "50cc8691b401b364ad143fc70b509188263123118f2ec75a22cf463f97f3aaf9"
+      },
+      "path": "results/sar_condition_scan_20261017/records/load_2_local.json"
+    },
+    {
+      "condition": "load_2",
+      "variant": "ground_8",
+      "method": "ground_unique_relay",
+      "protocol": "8hop",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/load_2_8hop.json",
+        "sha256": "20ebc243f96b2cc8448c2ab602870d80d7c7acc659b017276c681addec4c9625"
+      },
+      "path": "results/sar_condition_scan_20261017/records/load_2_ground_8.json"
+    },
+    {
+      "condition": "load_2",
+      "variant": "ground_loopfree",
+      "method": "ground_unique_relay",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/load_2_loopfree.json",
+        "sha256": "50cc8691b401b364ad143fc70b509188263123118f2ec75a22cf463f97f3aaf9"
+      },
+      "path": "results/sar_condition_scan_20261017/records/load_2_ground_loopfree.json"
+    },
+    {
+      "condition": "load_2",
+      "variant": "cgs",
+      "method": "cgs_compute_adapted",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/load_2_loopfree.json",
+        "sha256": "50cc8691b401b364ad143fc70b509188263123118f2ec75a22cf463f97f3aaf9"
+      },
+      "path": "results/sar_condition_scan_20261017/records/load_2_cgs.json"
+    },
+    {
+      "condition": "load_2",
+      "variant": "heft",
+      "method": "heft_adapted",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/load_2_loopfree.json",
+        "sha256": "50cc8691b401b364ad143fc70b509188263123118f2ec75a22cf463f97f3aaf9"
+      },
+      "path": "results/sar_condition_scan_20261017/records/load_2_heft.json"
+    },
+    {
+      "condition": "load_2",
+      "variant": "choice",
+      "method": "cgs_task_choice",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/load_2_loopfree.json",
+        "sha256": "50cc8691b401b364ad143fc70b509188263123118f2ec75a22cf463f97f3aaf9"
+      },
+      "path": "results/sar_condition_scan_20261017/records/load_2_choice.json"
+    },
+    {
+      "condition": "load_4",
+      "variant": "local",
+      "method": "local",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/load_4_loopfree.json",
+        "sha256": "e8ab1ae605670d672d8a02dde9e04d2bdf17b4b5e35cf4be6539beb1d5347cb7"
+      },
+      "path": "results/sar_condition_scan_20261017/records/load_4_local.json"
+    },
+    {
+      "condition": "load_4",
+      "variant": "ground_8",
+      "method": "ground_unique_relay",
+      "protocol": "8hop",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/load_4_8hop.json",
+        "sha256": "a572f36d60a1e3b59e793a10ade589c224e9c01e3db04280e0467b199b0a8e7b"
+      },
+      "path": "results/sar_condition_scan_20261017/records/load_4_ground_8.json"
+    },
+    {
+      "condition": "load_4",
+      "variant": "ground_loopfree",
+      "method": "ground_unique_relay",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/load_4_loopfree.json",
+        "sha256": "e8ab1ae605670d672d8a02dde9e04d2bdf17b4b5e35cf4be6539beb1d5347cb7"
+      },
+      "path": "results/sar_condition_scan_20261017/records/load_4_ground_loopfree.json"
+    },
+    {
+      "condition": "load_4",
+      "variant": "cgs",
+      "method": "cgs_compute_adapted",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/load_4_loopfree.json",
+        "sha256": "e8ab1ae605670d672d8a02dde9e04d2bdf17b4b5e35cf4be6539beb1d5347cb7"
+      },
+      "path": "results/sar_condition_scan_20261017/records/load_4_cgs.json"
+    },
+    {
+      "condition": "load_4",
+      "variant": "heft",
+      "method": "heft_adapted",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/load_4_loopfree.json",
+        "sha256": "e8ab1ae605670d672d8a02dde9e04d2bdf17b4b5e35cf4be6539beb1d5347cb7"
+      },
+      "path": "results/sar_condition_scan_20261017/records/load_4_heft.json"
+    },
+    {
+      "condition": "load_4",
+      "variant": "choice",
+      "method": "cgs_task_choice",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/load_4_loopfree.json",
+        "sha256": "e8ab1ae605670d672d8a02dde9e04d2bdf17b4b5e35cf4be6539beb1d5347cb7"
+      },
+      "path": "results/sar_condition_scan_20261017/records/load_4_choice.json"
+    },
+    {
+      "condition": "isl_1",
+      "variant": "local",
+      "method": "local",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/isl_1_loopfree.json",
+        "sha256": "a57c137f982c968ee106be4318b9c67ed972bec1eed30b50f9e086d00e3990f1"
+      },
+      "path": "results/sar_condition_scan_20261017/records/isl_1_local.json"
+    },
+    {
+      "condition": "isl_1",
+      "variant": "ground_8",
+      "method": "ground_unique_relay",
+      "protocol": "8hop",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/isl_1_8hop.json",
+        "sha256": "d96d95bfe4ab7d786458f3d6b20a560a5406c9a2c1cbcdd9044c3ed185848daf"
+      },
+      "path": "results/sar_condition_scan_20261017/records/isl_1_ground_8.json"
+    },
+    {
+      "condition": "isl_1",
+      "variant": "ground_loopfree",
+      "method": "ground_unique_relay",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/isl_1_loopfree.json",
+        "sha256": "a57c137f982c968ee106be4318b9c67ed972bec1eed30b50f9e086d00e3990f1"
+      },
+      "path": "results/sar_condition_scan_20261017/records/isl_1_ground_loopfree.json"
+    },
+    {
+      "condition": "isl_1",
+      "variant": "cgs",
+      "method": "cgs_compute_adapted",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/isl_1_loopfree.json",
+        "sha256": "a57c137f982c968ee106be4318b9c67ed972bec1eed30b50f9e086d00e3990f1"
+      },
+      "path": "results/sar_condition_scan_20261017/records/isl_1_cgs.json"
+    },
+    {
+      "condition": "isl_1",
+      "variant": "heft",
+      "method": "heft_adapted",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/isl_1_loopfree.json",
+        "sha256": "a57c137f982c968ee106be4318b9c67ed972bec1eed30b50f9e086d00e3990f1"
+      },
+      "path": "results/sar_condition_scan_20261017/records/isl_1_heft.json"
+    },
+    {
+      "condition": "isl_1",
+      "variant": "choice",
+      "method": "cgs_task_choice",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/isl_1_loopfree.json",
+        "sha256": "a57c137f982c968ee106be4318b9c67ed972bec1eed30b50f9e086d00e3990f1"
+      },
+      "path": "results/sar_condition_scan_20261017/records/isl_1_choice.json"
+    },
+    {
+      "condition": "isl_5",
+      "variant": "local",
+      "method": "local",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/isl_5_loopfree.json",
+        "sha256": "557ff0e282377dafb46c8c0e9f0ddba25cb820dad8ef4b908ef9f03f58f2efb6"
+      },
+      "path": "results/sar_condition_scan_20261017/records/isl_5_local.json"
+    },
+    {
+      "condition": "isl_5",
+      "variant": "ground_8",
+      "method": "ground_unique_relay",
+      "protocol": "8hop",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/isl_5_8hop.json",
+        "sha256": "38b4e2a57d6074384b6784249e83d21cc2b62f906aa65541ed58ec4263a65ad9"
+      },
+      "path": "results/sar_condition_scan_20261017/records/isl_5_ground_8.json"
+    },
+    {
+      "condition": "isl_5",
+      "variant": "ground_loopfree",
+      "method": "ground_unique_relay",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/isl_5_loopfree.json",
+        "sha256": "557ff0e282377dafb46c8c0e9f0ddba25cb820dad8ef4b908ef9f03f58f2efb6"
+      },
+      "path": "results/sar_condition_scan_20261017/records/isl_5_ground_loopfree.json"
+    },
+    {
+      "condition": "isl_5",
+      "variant": "cgs",
+      "method": "cgs_compute_adapted",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/isl_5_loopfree.json",
+        "sha256": "557ff0e282377dafb46c8c0e9f0ddba25cb820dad8ef4b908ef9f03f58f2efb6"
+      },
+      "path": "results/sar_condition_scan_20261017/records/isl_5_cgs.json"
+    },
+    {
+      "condition": "isl_5",
+      "variant": "heft",
+      "method": "heft_adapted",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/isl_5_loopfree.json",
+        "sha256": "557ff0e282377dafb46c8c0e9f0ddba25cb820dad8ef4b908ef9f03f58f2efb6"
+      },
+      "path": "results/sar_condition_scan_20261017/records/isl_5_heft.json"
+    },
+    {
+      "condition": "isl_5",
+      "variant": "choice",
+      "method": "cgs_task_choice",
+      "protocol": "loopfree",
+      "config": {
+        "path": "results/sar_condition_scan_20261017/configs/isl_5_loopfree.json",
+        "sha256": "557ff0e282377dafb46c8c0e9f0ddba25cb820dad8ef4b908ef9f03f58f2efb6"
+      },
+      "path": "results/sar_condition_scan_20261017/records/isl_5_choice.json"
+    }
+  ]
+}

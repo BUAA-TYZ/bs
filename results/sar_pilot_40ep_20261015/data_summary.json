@@ -1,0 +1,97 @@
+{
+  "source_repository": "https://github.com/gisbingxin/SDFSD-v1.0",
+  "archive_file_id": "16gKlS9-CLuTIEUJpel3fbslsTI8uCVhG",
+  "archive_bytes": 27935453810,
+  "central_directory_sha256": "21280176160cd716066a16fa229a6f2cd9254a0d9b9c313ec6638518c40f2481",
+  "source_scene_identity_verified": false,
+  "final_test_created": false,
+  "selection_path": "/Users/bytedance/Projects/bs/results/sar_pilot_20261015/selection.json",
+  "selection_sha256": "cae4f62187229f8d731051d3e72e087a7ee12145cfa5dc0bab4e6580fcdacee8",
+  "names": [
+    "Aircraft-Carrier",
+    "Blurred",
+    "Bulk-Carrier",
+    "Cargo-Ship",
+    "Container-Ship",
+    "Fishing-Vessel",
+    "LNG-LPG-Tanker",
+    "Oil-Tanker",
+    "Passenger-Cruise-Ship",
+    "Passenger-Ship",
+    "Tug",
+    "Vehicles-Carrier",
+    "Warship",
+    "others",
+    "unknow"
+  ],
+  "summary": {
+    "image_counts": {
+      "train": 128,
+      "val": 64
+    },
+    "group_counts": {
+      "train": 128,
+      "val": 64
+    },
+    "class_counts": {
+      "train": {
+        "Passenger-Ship": 4,
+        "Passenger-Cruise-Ship": 1,
+        "Warship": 68,
+        "LNG-LPG-Tanker": 1,
+        "Tug": 12,
+        "others": 5,
+        "Cargo-Ship": 34,
+        "unknow": 84,
+        "Aircraft-Carrier": 1,
+        "Blurred": 1,
+        "Bulk-Carrier": 22,
+        "Fishing-Vessel": 1,
+        "Vehicles-Carrier": 5,
+        "Container-Ship": 14,
+        "Oil-Tanker": 18
+      },
+      "val": {
+        "Passenger-Cruise-Ship": 1,
+        "unknow": 53,
+        "Warship": 26,
+        "Fishing-Vessel": 2,
+        "Oil-Tanker": 14,
+        "Passenger-Ship": 1,
+        "LNG-LPG-Tanker": 1,
+        "others": 9,
+        "Aircraft-Carrier": 1,
+        "Vehicles-Carrier": 3,
+        "Cargo-Ship": 13,
+        "Container-Ship": 9,
+        "Tug": 13,
+        "Bulk-Carrier": 10
+      }
+    },
+    "missing_classes": {
+      "train": [],
+      "val": [
+        "Blurred"
+      ]
+    },
+    "conversion_stats": {
+      "unmodified_objects": 427
+    },
+    "cross_split_similarity": {
+      "threshold": 0.995,
+      "flag_count": 0,
+      "top_flags": [],
+      "interpretation": "Pixel screening only; absence of flags does not prove scene independence."
+    }
+  },
+  "network_bytes_this_run": 160380744,
+  "elapsed_seconds": 113.7258517080918,
+  "decoded_pixel_geometry": [
+    800,
+    800,
+    3
+  ],
+  "decoded_pixel_encoding": "uint8 RGB row-major bytes",
+  "annotation_inventory_path": "/Users/bytedance/Projects/bs/results/sar_pilot_20261015/annotation_inventory.json",
+  "annotation_inventory_sha256": "3ab69e35cd4fc1dd6e8024fdb8de86e4cf2a7b124c3535f01a013a26cbe26b14"
+}

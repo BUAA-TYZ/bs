@@ -1,0 +1,24 @@
+{
+  "entry_hashes": {
+    "/Users/bytedance/Projects/bs/analysis/resume_main_mappo.py": "1892eefb303e6a92ad89bd9d4737d8de5a0e513c20f6092cc308d56ac2952360",
+    "tests/test_main_mappo_resume.py": "8410ba0528a3bdcb0004e65d3504a3d582e49b162309cce1a6a832b65b039163",
+    "results/redesign_20261021/main_scenario/MAPPO_RESUME_20261025.md": "d9532776ee1d3608d7a34a580208f0f8b8f6fdec03460f5b71dd8995de33a850"
+  },
+  "original_manifest_sha256": "dca80e240dee7e22aff89bee9c5a1494086cd9abc1db7020ba62329b3320580f",
+  "anchor": 296,
+  "workers": 9,
+  "backend": "CPU; torch intraop threads=1; multiprocessing spawn",
+  "save_every_collected_episodes": 25,
+  "keep_recent": 3,
+  "keep_validation": true,
+  "max_automatic_recoveries": 3,
+  "deadline": "2026-10-29T16:00:00+00:00",
+  "limits": [
+    176,
+    352,
+    528,
+    703
+  ],
+  "old_rng_saved": false,
+  "rng_policy": "existing per-episode sampling and per-batch shuffle seeds"
+}

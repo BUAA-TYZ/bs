@@ -1,0 +1,1408 @@
+{
+  "failed": [],
+  "v3_paired": {
+    "local": {
+      "P_D_difference": 0.0,
+      "R_D_difference_seconds": 0.0,
+      "gained": [],
+      "lost": []
+    },
+    "ground": {
+      "P_D_difference": 0.0,
+      "R_D_difference_seconds": 0.0,
+      "gained": [],
+      "lost": []
+    },
+    "cgs": {
+      "P_D_difference": 0.0,
+      "R_D_difference_seconds": 0.0,
+      "gained": [],
+      "lost": []
+    },
+    "heft": {
+      "P_D_difference": 0.0,
+      "R_D_difference_seconds": 0.0,
+      "gained": [],
+      "lost": []
+    },
+    "local_1": {
+      "P_D_difference": 0.0,
+      "R_D_difference_seconds": 0.0,
+      "gained": [],
+      "lost": []
+    },
+    "local_2": {
+      "P_D_difference": 0.0,
+      "R_D_difference_seconds": 0.0,
+      "gained": [],
+      "lost": []
+    }
+  },
+  "rows": {
+    "local": {
+      "status": "PASS",
+      "method": "local",
+      "config_sha256": "7e38263b424053e6ff367ff1f2cec7e2127c56fa09da89f355f0c34b2165eeea",
+      "D_seconds": 300,
+      "total_tasks": 5,
+      "on_time_tasks": 0,
+      "on_time_task_ids": [],
+      "P_D": 0.0,
+      "R_D_seconds": 300.0,
+      "wall_seconds": 45.23016450000068,
+      "decision_seconds": 0.002425552969725686,
+      "competition": {
+        "candidate_indegree_definition": "Current <=2-hop role-legal graph from distinct sources with queued work; topology candidates, before capacity/time-window admission",
+        "mean_candidate_indegree": 0.0,
+        "peak_candidate_indegree": 0,
+        "peak_structural_indegree": 6,
+        "top10_percent_nodes": 2,
+        "top10_percent_compute_share": null,
+        "helper_utilization": 0.0,
+        "peak_queue": {
+          "blocks": 0,
+          "windows": 0,
+          "images": 0
+        },
+        "per_compute_satellite": {
+          "24": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "25": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "26": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "27": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "28": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "29": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "30": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "31": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "32": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "33": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "34": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "35": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          }
+        }
+      },
+      "control": {
+        "expired_in_transit": 0,
+        "messages_sent": 15690,
+        "hop_bytes_sent": 88434350.0,
+        "messages_delivered": 15690,
+        "total_delivery_delay_s": 2615.000000000533
+      },
+      "audit": {
+        "satellite_work_seconds": {
+          "busy": 111.01800000000027,
+          "expected": 111.01799999999999
+        },
+        "ground_work_seconds": {
+          "busy": 0.0,
+          "expected": 0.0
+        },
+        "ground_bytes_mb": {
+          "sent": 0.0,
+          "landed_raw": 0.0,
+          "results": 0.0,
+          "inflight_sent": 0
+        },
+        "timestamp_order_errors": [],
+        "early_completion_tasks": [],
+        "compute_window_errors": [],
+        "relay_path_errors": [],
+        "relay_hops": {
+          "result": {
+            "max": 0,
+            "paths_over_eight": 0
+          },
+          "raw": {
+            "max": 0,
+            "paths_over_eight": 0
+          }
+        },
+        "passed": true,
+        "step_seconds": 0.1,
+        "compute_service_mode": "work_conserving",
+        "roles": {
+          "foreign_compute_windows": 0,
+          "sar_received_task_data_mb": 0.0,
+          "role_rejection_failures": 0
+        },
+        "unique_raw_errors": []
+      }
+    },
+    "ground": {
+      "status": "PASS",
+      "method": "ground",
+      "config_sha256": "7e38263b424053e6ff367ff1f2cec7e2127c56fa09da89f355f0c34b2165eeea",
+      "D_seconds": 300,
+      "total_tasks": 5,
+      "on_time_tasks": 0,
+      "on_time_task_ids": [],
+      "P_D": 0.0,
+      "R_D_seconds": 300.0,
+      "wall_seconds": 10.37598404199889,
+      "decision_seconds": 0.0009739080105646281,
+      "competition": {
+        "candidate_indegree_definition": "Current <=2-hop role-legal graph from distinct sources with queued work; topology candidates, before capacity/time-window admission",
+        "mean_candidate_indegree": 0.0,
+        "peak_candidate_indegree": 0,
+        "peak_structural_indegree": 6,
+        "top10_percent_nodes": 2,
+        "top10_percent_compute_share": null,
+        "helper_utilization": 0.0,
+        "peak_queue": {
+          "blocks": 0,
+          "windows": 0,
+          "images": 0
+        },
+        "per_compute_satellite": {
+          "24": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "25": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "26": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "27": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "28": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "29": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "30": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "31": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "32": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "33": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "34": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "35": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          }
+        }
+      },
+      "control": {
+        "expired_in_transit": 0,
+        "messages_sent": 15690,
+        "hop_bytes_sent": 88434350.0,
+        "messages_delivered": 15690,
+        "total_delivery_delay_s": 2615.000000000533
+      },
+      "audit": {
+        "satellite_work_seconds": {
+          "busy": 0.0,
+          "expected": 0.0
+        },
+        "ground_work_seconds": {
+          "busy": 0.0,
+          "expected": 0.0
+        },
+        "ground_bytes_mb": {
+          "sent": 0.0,
+          "landed_raw": 0.0,
+          "results": 0.0,
+          "inflight_sent": 0
+        },
+        "timestamp_order_errors": [],
+        "early_completion_tasks": [],
+        "compute_window_errors": [],
+        "relay_path_errors": [],
+        "relay_hops": {
+          "result": {
+            "max": 0,
+            "paths_over_eight": 0
+          },
+          "raw": {
+            "max": 0,
+            "paths_over_eight": 0
+          }
+        },
+        "passed": true,
+        "step_seconds": 0.1,
+        "compute_service_mode": "work_conserving",
+        "roles": {
+          "foreign_compute_windows": 0,
+          "sar_received_task_data_mb": 0.0,
+          "role_rejection_failures": 0
+        },
+        "unique_raw_errors": []
+      }
+    },
+    "cgs": {
+      "status": "PASS",
+      "method": "cgs",
+      "config_sha256": "7e38263b424053e6ff367ff1f2cec7e2127c56fa09da89f355f0c34b2165eeea",
+      "D_seconds": 300,
+      "total_tasks": 5,
+      "on_time_tasks": 0,
+      "on_time_task_ids": [],
+      "P_D": 0.0,
+      "R_D_seconds": 300.0,
+      "wall_seconds": 8.68450812500123,
+      "decision_seconds": 1.4687703430299734,
+      "competition": {
+        "candidate_indegree_definition": "Current <=2-hop role-legal graph from distinct sources with queued work; topology candidates, before capacity/time-window admission",
+        "mean_candidate_indegree": 0.0,
+        "peak_candidate_indegree": 0,
+        "peak_structural_indegree": 6,
+        "top10_percent_nodes": 2,
+        "top10_percent_compute_share": null,
+        "helper_utilization": 0.0,
+        "peak_queue": {
+          "blocks": 0,
+          "windows": 0,
+          "images": 0
+        },
+        "per_compute_satellite": {
+          "24": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "25": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "26": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "27": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "28": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "29": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "30": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "31": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "32": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "33": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "34": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "35": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          }
+        }
+      },
+      "control": {
+        "expired_in_transit": 0,
+        "messages_sent": 15690,
+        "hop_bytes_sent": 88434350.0,
+        "messages_delivered": 15690,
+        "total_delivery_delay_s": 2615.000000000533
+      },
+      "audit": {
+        "satellite_work_seconds": {
+          "busy": 0.0,
+          "expected": 0.0
+        },
+        "ground_work_seconds": {
+          "busy": 0.0,
+          "expected": 0.0
+        },
+        "ground_bytes_mb": {
+          "sent": 0.0,
+          "landed_raw": 0.0,
+          "results": 0.0,
+          "inflight_sent": 0
+        },
+        "timestamp_order_errors": [],
+        "early_completion_tasks": [],
+        "compute_window_errors": [],
+        "relay_path_errors": [],
+        "relay_hops": {
+          "result": {
+            "max": 0,
+            "paths_over_eight": 0
+          },
+          "raw": {
+            "max": 0,
+            "paths_over_eight": 0
+          }
+        },
+        "passed": true,
+        "step_seconds": 0.1,
+        "compute_service_mode": "work_conserving",
+        "roles": {
+          "foreign_compute_windows": 0,
+          "sar_received_task_data_mb": 0.0,
+          "role_rejection_failures": 0
+        },
+        "unique_raw_errors": []
+      }
+    },
+    "heft": {
+      "status": "PASS",
+      "method": "heft",
+      "config_sha256": "7e38263b424053e6ff367ff1f2cec7e2127c56fa09da89f355f0c34b2165eeea",
+      "D_seconds": 300,
+      "total_tasks": 5,
+      "on_time_tasks": 0,
+      "on_time_task_ids": [],
+      "P_D": 0.0,
+      "R_D_seconds": 300.0,
+      "wall_seconds": 45.26644929199938,
+      "decision_seconds": 0.0064547849833616056,
+      "competition": {
+        "candidate_indegree_definition": "Current <=2-hop role-legal graph from distinct sources with queued work; topology candidates, before capacity/time-window admission",
+        "mean_candidate_indegree": 0.0,
+        "peak_candidate_indegree": 0,
+        "peak_structural_indegree": 6,
+        "top10_percent_nodes": 2,
+        "top10_percent_compute_share": null,
+        "helper_utilization": 0.0,
+        "peak_queue": {
+          "blocks": 0,
+          "windows": 0,
+          "images": 0
+        },
+        "per_compute_satellite": {
+          "24": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "25": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "26": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "27": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "28": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "29": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "30": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "31": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "32": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "33": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "34": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "35": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          }
+        }
+      },
+      "control": {
+        "expired_in_transit": 0,
+        "messages_sent": 15690,
+        "hop_bytes_sent": 88434350.0,
+        "messages_delivered": 15690,
+        "total_delivery_delay_s": 2615.000000000533
+      },
+      "audit": {
+        "satellite_work_seconds": {
+          "busy": 111.01800000000027,
+          "expected": 111.01799999999999
+        },
+        "ground_work_seconds": {
+          "busy": 0.0,
+          "expected": 0.0
+        },
+        "ground_bytes_mb": {
+          "sent": 0.0,
+          "landed_raw": 0.0,
+          "results": 0.0,
+          "inflight_sent": 0
+        },
+        "timestamp_order_errors": [],
+        "early_completion_tasks": [],
+        "compute_window_errors": [],
+        "relay_path_errors": [],
+        "relay_hops": {
+          "result": {
+            "max": 0,
+            "paths_over_eight": 0
+          },
+          "raw": {
+            "max": 0,
+            "paths_over_eight": 0
+          }
+        },
+        "passed": true,
+        "step_seconds": 0.1,
+        "compute_service_mode": "work_conserving",
+        "roles": {
+          "foreign_compute_windows": 0,
+          "sar_received_task_data_mb": 0.0,
+          "role_rejection_failures": 0
+        },
+        "unique_raw_errors": []
+      }
+    },
+    "v3": {
+      "status": "PASS",
+      "method": "v3",
+      "config_sha256": "7e38263b424053e6ff367ff1f2cec7e2127c56fa09da89f355f0c34b2165eeea",
+      "D_seconds": 300,
+      "total_tasks": 5,
+      "on_time_tasks": 0,
+      "on_time_task_ids": [],
+      "P_D": 0.0,
+      "R_D_seconds": 300.0,
+      "wall_seconds": 16.890420125000674,
+      "decision_seconds": 9.234057519021007,
+      "competition": {
+        "candidate_indegree_definition": "Current <=2-hop role-legal graph from distinct sources with queued work; topology candidates, before capacity/time-window admission",
+        "mean_candidate_indegree": 0.0,
+        "peak_candidate_indegree": 0,
+        "peak_structural_indegree": 6,
+        "top10_percent_nodes": 2,
+        "top10_percent_compute_share": null,
+        "helper_utilization": 0.0,
+        "peak_queue": {
+          "blocks": 0,
+          "windows": 0,
+          "images": 0
+        },
+        "per_compute_satellite": {
+          "24": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "25": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "26": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "27": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "28": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "29": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "30": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "31": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "32": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "33": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "34": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "35": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          }
+        }
+      },
+      "control": {
+        "expired_in_transit": 0,
+        "messages_sent": 15690,
+        "hop_bytes_sent": 88434350.0,
+        "messages_delivered": 15690,
+        "total_delivery_delay_s": 2615.000000000533
+      },
+      "audit": {
+        "satellite_work_seconds": {
+          "busy": 0.0,
+          "expected": 0.0
+        },
+        "ground_work_seconds": {
+          "busy": 0.0,
+          "expected": 0.0
+        },
+        "ground_bytes_mb": {
+          "sent": 0.0,
+          "landed_raw": 0.0,
+          "results": 0.0,
+          "inflight_sent": 0
+        },
+        "timestamp_order_errors": [],
+        "early_completion_tasks": [],
+        "compute_window_errors": [],
+        "relay_path_errors": [],
+        "relay_hops": {
+          "result": {
+            "max": 0,
+            "paths_over_eight": 0
+          },
+          "raw": {
+            "max": 0,
+            "paths_over_eight": 0
+          }
+        },
+        "passed": true,
+        "step_seconds": 0.1,
+        "compute_service_mode": "work_conserving",
+        "roles": {
+          "foreign_compute_windows": 0,
+          "sar_received_task_data_mb": 0.0,
+          "role_rejection_failures": 0
+        },
+        "unique_raw_errors": []
+      }
+    },
+    "local_1": {
+      "status": "PASS",
+      "method": "local_1",
+      "config_sha256": "7e38263b424053e6ff367ff1f2cec7e2127c56fa09da89f355f0c34b2165eeea",
+      "D_seconds": 300,
+      "total_tasks": 5,
+      "on_time_tasks": 0,
+      "on_time_task_ids": [],
+      "P_D": 0.0,
+      "R_D_seconds": 300.0,
+      "wall_seconds": 44.79414250000082,
+      "decision_seconds": 0.004304615986256977,
+      "competition": {
+        "candidate_indegree_definition": "Current <=2-hop role-legal graph from distinct sources with queued work; topology candidates, before capacity/time-window admission",
+        "mean_candidate_indegree": 0.0,
+        "peak_candidate_indegree": 0,
+        "peak_structural_indegree": 6,
+        "top10_percent_nodes": 2,
+        "top10_percent_compute_share": null,
+        "helper_utilization": 0.0,
+        "peak_queue": {
+          "blocks": 0,
+          "windows": 0,
+          "images": 0
+        },
+        "per_compute_satellite": {
+          "24": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "25": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "26": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "27": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "28": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "29": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "30": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "31": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "32": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "33": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "34": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "35": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          }
+        }
+      },
+      "control": {
+        "expired_in_transit": 0,
+        "messages_sent": 15690,
+        "hop_bytes_sent": 88434350.0,
+        "messages_delivered": 15690,
+        "total_delivery_delay_s": 2615.000000000533
+      },
+      "audit": {
+        "satellite_work_seconds": {
+          "busy": 111.01800000000027,
+          "expected": 111.01799999999999
+        },
+        "ground_work_seconds": {
+          "busy": 0.0,
+          "expected": 0.0
+        },
+        "ground_bytes_mb": {
+          "sent": 0.0,
+          "landed_raw": 0.0,
+          "results": 0.0,
+          "inflight_sent": 0
+        },
+        "timestamp_order_errors": [],
+        "early_completion_tasks": [],
+        "compute_window_errors": [],
+        "relay_path_errors": [],
+        "relay_hops": {
+          "result": {
+            "max": 0,
+            "paths_over_eight": 0
+          },
+          "raw": {
+            "max": 0,
+            "paths_over_eight": 0
+          }
+        },
+        "passed": true,
+        "step_seconds": 0.1,
+        "compute_service_mode": "work_conserving",
+        "roles": {
+          "foreign_compute_windows": 0,
+          "sar_received_task_data_mb": 0.0,
+          "role_rejection_failures": 0
+        },
+        "unique_raw_errors": []
+      }
+    },
+    "local_2": {
+      "status": "PASS",
+      "method": "local_2",
+      "config_sha256": "7e38263b424053e6ff367ff1f2cec7e2127c56fa09da89f355f0c34b2165eeea",
+      "D_seconds": 300,
+      "total_tasks": 5,
+      "on_time_tasks": 0,
+      "on_time_task_ids": [],
+      "P_D": 0.0,
+      "R_D_seconds": 300.0,
+      "wall_seconds": 43.93801270900076,
+      "decision_seconds": 0.0044857440479972865,
+      "competition": {
+        "candidate_indegree_definition": "Current <=2-hop role-legal graph from distinct sources with queued work; topology candidates, before capacity/time-window admission",
+        "mean_candidate_indegree": 0.0,
+        "peak_candidate_indegree": 0,
+        "peak_structural_indegree": 6,
+        "top10_percent_nodes": 2,
+        "top10_percent_compute_share": null,
+        "helper_utilization": 0.0,
+        "peak_queue": {
+          "blocks": 0,
+          "windows": 0,
+          "images": 0
+        },
+        "per_compute_satellite": {
+          "24": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "25": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "26": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "27": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "28": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "29": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "30": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "31": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "32": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "33": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "34": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          },
+          "35": {
+            "busy_seconds": 0,
+            "peak_queue": {
+              "blocks": 0,
+              "windows": 0,
+              "images": 0
+            },
+            "mean_candidate_indegree": 0.0,
+            "peak_candidate_indegree": 0
+          }
+        }
+      },
+      "control": {
+        "expired_in_transit": 0,
+        "messages_sent": 15690,
+        "hop_bytes_sent": 88434350.0,
+        "messages_delivered": 15690,
+        "total_delivery_delay_s": 2615.000000000533
+      },
+      "audit": {
+        "satellite_work_seconds": {
+          "busy": 111.01800000000027,
+          "expected": 111.01799999999999
+        },
+        "ground_work_seconds": {
+          "busy": 0.0,
+          "expected": 0.0
+        },
+        "ground_bytes_mb": {
+          "sent": 0.0,
+          "landed_raw": 0.0,
+          "results": 0.0,
+          "inflight_sent": 0
+        },
+        "timestamp_order_errors": [],
+        "early_completion_tasks": [],
+        "compute_window_errors": [],
+        "relay_path_errors": [],
+        "relay_hops": {
+          "result": {
+            "max": 0,
+            "paths_over_eight": 0
+          },
+          "raw": {
+            "max": 0,
+            "paths_over_eight": 0
+          }
+        },
+        "passed": true,
+        "step_seconds": 0.1,
+        "compute_service_mode": "work_conserving",
+        "roles": {
+          "foreign_compute_windows": 0,
+          "sar_received_task_data_mb": 0.0,
+          "role_rejection_failures": 0
+        },
+        "unique_raw_errors": []
+      }
+    }
+  }
+}

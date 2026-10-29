@@ -1,0 +1,24 @@
+{
+  "milestone": 352,
+  "notification_date_local": "2026-10-25",
+  "timezone": "Asia/Shanghai",
+  "report": "MILESTONE_2.md",
+  "audit_status": "PASS",
+  "validation_records_verified": 9,
+  "protocols_verified": 15,
+  "original_frozen_hashes_verified": 170,
+  "resume_entry_hashes_verified": true,
+  "outcome_metrics_independently_recomputed": true,
+  "full_step_curves_verified": true,
+  "checkpoint_hashes_and_initialization_verified": true,
+  "selection_and_deterioration_verified": true,
+  "curve_image_inspected": true,
+  "kl_entropy_scope": "Day-equal aggregation of recorded per-image diagnostics; network inference was not rerun.",
+  "current_success": {
+    "1701": {"P60": true, "mean_latency": true, "P600": false, "R600": true},
+    "1702": {"P60": true, "mean_latency": false, "P600": true, "R600": true},
+    "1703": {"P60": true, "mean_latency": false, "P600": false, "R600": true}
+  },
+  "selected_episodes": {"1701": 352, "1702": 176, "1703": 176},
+  "continue_without_confirmation": true
+}

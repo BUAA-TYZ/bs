@@ -1,0 +1,62 @@
+{
+  "scope": "numerical/timing prefix only; not a main-scenario result",
+  "frozen_config": "results/sar_ground_capacity_frozen_20261015/main_config.json",
+  "frozen_config_sha256": "7e388de924d9efd4559b2c28f8e4cb524bb446a2b18dc5c2e1e327eb7df05c34",
+  "frozen_manifest_sha256": "6b199dbdf45bae8d9b15f4431693ce2f638b1b702cf34e3dc61b5cc9df15c449",
+  "calibration_inputs": {
+    "calibration": {
+      "path": "results/sar_spotfine_calibration_20261015/calibration_summary.json",
+      "sha256": "907ca3b435b16e309ad4044e7b8512357481181f15e75aa0e69d9e83a4a65d04"
+    },
+    "workload_fixture": {
+      "path": "results/sar_spotfine_calibration_20261015/workload_fixture.json",
+      "sha256": "8b40fbafc2d06e87586541bef9e1830fead025748abb9116fe183eb9de78d58e"
+    },
+    "coverage": {
+      "path": "results/sar_coastal_coverage_20261015/coverage.json",
+      "sha256": "60c4fd8b8ddb0b80ad3374c79895ffc3c077335664ab1cd8a41849fe871dd656"
+    },
+    "builder": {
+      "path": "analysis/build_sar_frozen_config.py",
+      "sha256": "6c51de50fd074263a0d39a8c1ed22a4ebfb637d0fb95437d8d246c08acef1d4f"
+    }
+  },
+  "derived_config_sha256": "ced9be3dfeaf3ba92317fa30a29e6ec54af0d6ea313197cbba0c1bfd52a4127a",
+  "dt": 0.1,
+  "stop_seconds": 7200.0,
+  "tasks": 13,
+  "tle_sha256": "53f2c4f6a3b5fe3b51ead0640afc262b0e56bcef1cb409aa520e9a8a6533e264",
+  "runner_sha256": "04860019b33f86cd27d08b1c171695f277017d263e327e7bb170af9cd9d29b2a",
+  "source_sha256": "9acd263bb33828039da9301cd66361905a14a7efa2cdf9fc1a001b8fa00af96c",
+  "python_version": "3.12.13",
+  "packages": {
+    "numpy": "2.4.4",
+    "torch": "2.12.0",
+    "skyfield": "1.54",
+    "PyYAML": "6.0.3"
+  },
+  "platform": "macOS-26.4.1-arm64-arm-64bit",
+  "cpu_count": 18,
+  "argv": [
+    "analysis/run_sar_frozen.py",
+    "--workers",
+    "2",
+    "--max-total-rss-gb",
+    "24",
+    "--methods",
+    "ground_compute",
+    "ground_unique_relay",
+    "local",
+    "cgs_compute_adapted",
+    "--stop-seconds",
+    "7200",
+    "--dt",
+    "0.1",
+    "--out-dir",
+    "results/sar_dt_check_20261015/b10_7200_dt0p1"
+  ],
+  "metric": {
+    "P300": "tasks fully aggregated on the ground within 300 s of readiness / all arrived tasks",
+    "R300": "mean of min(latency, 300) with undelivered tasks counted as 300 s"
+  }
+}

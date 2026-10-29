@@ -1,0 +1,44 @@
+{
+  "scope": "numerical timestep convergence diagnostic, not a performance panel",
+  "reference": "results/sla_twohop_development_v6_20261015/day03_cgs_compute_adapted.json",
+  "reference_sha256": "86c6ceff268126ea325f1baae2c9242c122a745e9d7950b318afde666249116b",
+  "original_case": {
+    "id": "day03",
+    "calendar_day": "2026-10-17",
+    "epoch_offset_seconds": 229480,
+    "all_qualifying_events_retained": true,
+    "num_acquisitions": 17,
+    "split": "development"
+  },
+  "args": {
+    "reference": "results/sla_twohop_development_v6_20261015/day03_cgs_compute_adapted.json",
+    "out_dir": "results/sla_twohop_window_timestep_20261015",
+    "stop_seconds": 6600,
+    "workers": 2
+  },
+  "source_before": {
+    "source_sha256": "fcc8aae45d136daa17d431af8e547960805d87dbf4f982df0938520339ec4711",
+    "python_version": "3.12.13",
+    "packages": {
+      "numpy": "2.4.4",
+      "torch": "2.12.0",
+      "skyfield": "1.54",
+      "PyYAML": "6.0.3"
+    }
+  },
+  "script_sha256": "33cf17ad8b344d9d1a476793f88ea65503a6ed462822a0ac98108264f1b245f7",
+  "dts": [
+    1.0,
+    0.25,
+    0.1
+  ],
+  "physical_periods_seconds": {
+    "decision": 1,
+    "geometry": 10,
+    "ground_visibility": 10,
+    "contact_scan": 30,
+    "contact_update": 60
+  },
+  "arrival_filter": "All original arrivals through stop_seconds retained; no arrivals inside the prefix are removed",
+  "denominator": "All tasks born inside this numerical prefix, including late or pending tasks"
+}

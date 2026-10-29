@@ -1,0 +1,44 @@
+def select_actions(self, state):
+    state = replace(state, tiles={tid: t for tid, t in state.tiles.items() if t['parent_task_id'] not in self.raw_tasks})
+    if not state.tiles:
+        return []
+    groups = {}
+    for tid, tile in sorted(state.tiles.items(), key=lambda row: (-row[1]['waiting_time'], row[0])):
+        groups.setdefault(tile['parent_task_id'], {})[tid] = tile
+    calendar = Calendar(state)
+    chosen = []
+    for task, tiles in groups.items():
+        subset = replace(state, tiles=tiles, satellites={sid: {**s, 'committed_compute_s': calendar.busy[sid], 'mem_remaining_gb': calendar.memory[sid]} for sid, s in state.satellites.items()}, ground_stations={gid: {**g, 'committed_compute_s': calendar.busy[ground_node(gid)]} for gid, g in state.ground_stations.items()})
+        complete = len(tiles) == len(state.pending_task_tiles.get(task, {})) and all((t['state'] == 'QUEUED' and (not t['in_transfer']) and (not t['task_progress']['failed']) and (t['task_progress'].get('total', len(tiles)) == len(tiles)) and (not any((t['task_progress'].get(k, 0) for k in ('done', 'running', 'awaiting_delivery')))) for t in tiles.values()))
+        cgs = self._select_actions_with_plan(subset, deepcopy(calendar.plan))
+        if not complete:
+            chosen.extend(cgs)
+            continue
+        options = {'local': [Action(tid, ActionType.LOCAL) for tid in tiles], 'cgs': cgs, 'ground': [RawImageAction(tid, ActionType.OFFLOAD, raw_hops=self.raw_hops) for tid in tiles]}
+        trials, quotes, details = ({}, {}, {})
+        for name, actions in options.items():
+            trial = deepcopy(calendar)
+            quotes[name] = trial.quote(subset, actions, raw=name == 'ground', raw_hops=self.raw_hops)
+            details[name] = {'pipeline': quotes[name], 'group': None}
+            if name != 'ground' and quotes[name] is not None:
+                checker = CGSTaskChoice()
+                checker._contact_plan = lambda _: deepcopy(calendar.plan)
+                group = checker.quote(subset, actions)
+                if group is not None:
+                    details[name]['group'] = group[task]
+                    quotes[name] = max(quotes[name], group[task])
+            trials[name] = trial
+        prior_calendar = calendar
+        winner = min(options, key=lambda name: quotes[name] if quotes[name] is not None else math.inf)
+        if quotes[winner] is None:
+            winner = 'cgs'
+            self.stats['no_finite_quote'] += 1
+        else:
+            calendar = trials[winner]
+        winner, calendar = self.intervene(task, state, subset, options, quotes, details, trials, winner, prior_calendar, calendar)
+        chosen.extend(options[winner])
+        if winner == 'ground':
+            self.raw_tasks.add(task)
+        self.stats['selected_' + winner] += 1
+        self.decisions.append({'task_id': task, 'time_seconds': state.time * state.config['dt'], 'quotes_seconds': quotes, 'quote_components': details, 'selected': winner})
+    return chosen

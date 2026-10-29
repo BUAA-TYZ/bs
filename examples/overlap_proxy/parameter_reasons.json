@@ -1,0 +1,487 @@
+{
+  "status": "frozen controlled-proxy development protocol; not flight hardware calibration",
+  "calibration": "results/image_workload_calibration_20261014",
+  "calibration_sha256": {
+    "summary.json": "124dd3059d2f181fbc7a7ae68b7c442ad0d04ec16dbae3beece5989bc35e60b9",
+    "protocol.json": "949d123ee692a382144b41e83f9eb0d45416a17f87289f84633ec1d48cbea567",
+    "windows.csv": "1caef46c6acf366c3e1239db3cfaaea2afd6a43ea6618b9fe37cbc0dc25c4897",
+    "images.json": "bfcf85a9700a5bc75555529dd953bea5376ca2060e18b7b21fef59e8da16a7a9"
+  },
+  "workloads": [
+    {
+      "id": "p0019",
+      "sample": "P0019",
+      "manifest": {
+        "model": "overlapping_window_packets_v1",
+        "parameters": {
+          "width_px": 6573,
+          "height_px": 3727,
+          "bands": 3,
+          "bits_per_sample": 8,
+          "window_px": 1024,
+          "stride_px": 824,
+          "windows_per_tile_axis": 2,
+          "compute_cost_per_window": 0.07026846144969265,
+          "result_size_mb_per_window": 0.000187
+        },
+        "coordinate_convention": "xyxy, upper bounds exclusive",
+        "edge_rule": "shift_last_window_to_edge_no_padding",
+        "packet_rule": "independent_full_windows_no_pixel_deduplication",
+        "result_rule": "per_window_outputs_before_global_merge",
+        "image_size_mb": 73.492713,
+        "num_windows": 40,
+        "num_tiles": 12,
+        "processed_pixels": 41943040,
+        "coverage_multiplier": 1.7121305618422333,
+        "packet_input_mb": 125.82912,
+        "total_compute_cost": 2.810738457987706,
+        "unmerged_result_mb": 0.00748,
+        "tiles": [
+          {
+            "windows_xyxy": [
+              [
+                0,
+                0,
+                1024,
+                1024
+              ],
+              [
+                824,
+                0,
+                1848,
+                1024
+              ],
+              [
+                0,
+                824,
+                1024,
+                1848
+              ],
+              [
+                824,
+                824,
+                1848,
+                1848
+              ]
+            ],
+            "data_size_mb": 12.582912,
+            "compute_cost": 0.2810738457987706,
+            "result_size_mb": 0.000748
+          },
+          {
+            "windows_xyxy": [
+              [
+                1648,
+                0,
+                2672,
+                1024
+              ],
+              [
+                2472,
+                0,
+                3496,
+                1024
+              ],
+              [
+                1648,
+                824,
+                2672,
+                1848
+              ],
+              [
+                2472,
+                824,
+                3496,
+                1848
+              ]
+            ],
+            "data_size_mb": 12.582912,
+            "compute_cost": 0.2810738457987706,
+            "result_size_mb": 0.000748
+          },
+          {
+            "windows_xyxy": [
+              [
+                3296,
+                0,
+                4320,
+                1024
+              ],
+              [
+                4120,
+                0,
+                5144,
+                1024
+              ],
+              [
+                3296,
+                824,
+                4320,
+                1848
+              ],
+              [
+                4120,
+                824,
+                5144,
+                1848
+              ]
+            ],
+            "data_size_mb": 12.582912,
+            "compute_cost": 0.2810738457987706,
+            "result_size_mb": 0.000748
+          },
+          {
+            "windows_xyxy": [
+              [
+                4944,
+                0,
+                5968,
+                1024
+              ],
+              [
+                5549,
+                0,
+                6573,
+                1024
+              ],
+              [
+                4944,
+                824,
+                5968,
+                1848
+              ],
+              [
+                5549,
+                824,
+                6573,
+                1848
+              ]
+            ],
+            "data_size_mb": 12.582912,
+            "compute_cost": 0.2810738457987706,
+            "result_size_mb": 0.000748
+          },
+          {
+            "windows_xyxy": [
+              [
+                0,
+                1648,
+                1024,
+                2672
+              ],
+              [
+                824,
+                1648,
+                1848,
+                2672
+              ],
+              [
+                0,
+                2472,
+                1024,
+                3496
+              ],
+              [
+                824,
+                2472,
+                1848,
+                3496
+              ]
+            ],
+            "data_size_mb": 12.582912,
+            "compute_cost": 0.2810738457987706,
+            "result_size_mb": 0.000748
+          },
+          {
+            "windows_xyxy": [
+              [
+                1648,
+                1648,
+                2672,
+                2672
+              ],
+              [
+                2472,
+                1648,
+                3496,
+                2672
+              ],
+              [
+                1648,
+                2472,
+                2672,
+                3496
+              ],
+              [
+                2472,
+                2472,
+                3496,
+                3496
+              ]
+            ],
+            "data_size_mb": 12.582912,
+            "compute_cost": 0.2810738457987706,
+            "result_size_mb": 0.000748
+          },
+          {
+            "windows_xyxy": [
+              [
+                3296,
+                1648,
+                4320,
+                2672
+              ],
+              [
+                4120,
+                1648,
+                5144,
+                2672
+              ],
+              [
+                3296,
+                2472,
+                4320,
+                3496
+              ],
+              [
+                4120,
+                2472,
+                5144,
+                3496
+              ]
+            ],
+            "data_size_mb": 12.582912,
+            "compute_cost": 0.2810738457987706,
+            "result_size_mb": 0.000748
+          },
+          {
+            "windows_xyxy": [
+              [
+                4944,
+                1648,
+                5968,
+                2672
+              ],
+              [
+                5549,
+                1648,
+                6573,
+                2672
+              ],
+              [
+                4944,
+                2472,
+                5968,
+                3496
+              ],
+              [
+                5549,
+                2472,
+                6573,
+                3496
+              ]
+            ],
+            "data_size_mb": 12.582912,
+            "compute_cost": 0.2810738457987706,
+            "result_size_mb": 0.000748
+          },
+          {
+            "windows_xyxy": [
+              [
+                0,
+                2703,
+                1024,
+                3727
+              ],
+              [
+                824,
+                2703,
+                1848,
+                3727
+              ]
+            ],
+            "data_size_mb": 6.291456,
+            "compute_cost": 0.1405369228993853,
+            "result_size_mb": 0.000374
+          },
+          {
+            "windows_xyxy": [
+              [
+                1648,
+                2703,
+                2672,
+                3727
+              ],
+              [
+                2472,
+                2703,
+                3496,
+                3727
+              ]
+            ],
+            "data_size_mb": 6.291456,
+            "compute_cost": 0.1405369228993853,
+            "result_size_mb": 0.000374
+          },
+          {
+            "windows_xyxy": [
+              [
+                3296,
+                2703,
+                4320,
+                3727
+              ],
+              [
+                4120,
+                2703,
+                5144,
+                3727
+              ]
+            ],
+            "data_size_mb": 6.291456,
+            "compute_cost": 0.1405369228993853,
+            "result_size_mb": 0.000374
+          },
+          {
+            "windows_xyxy": [
+              [
+                4944,
+                2703,
+                5968,
+                3727
+              ],
+              [
+                5549,
+                2703,
+                6573,
+                3727
+              ]
+            ],
+            "data_size_mb": 6.291456,
+            "compute_cost": 0.1405369228993853,
+            "result_size_mb": 0.000374
+          }
+        ]
+      },
+      "compute_unit": "one U is one second of measured local_cpu window service",
+      "CPU_window_mean_seconds": 0.07026846144969265,
+      "MPS_window_mean_seconds": 0.021689920845286297,
+      "MPS_shared_rate_predicted_window_seconds": 0.021689920845286297,
+      "MPS_shared_rate_relative_error": 0.0,
+      "output_model": "sample mean serialized bytes per window, includes 28-byte completion header; preserves per-image total, not the within-image spatial distribution"
+    },
+    {
+      "id": "p0007",
+      "sample": "P0007",
+      "manifest": {
+        "model": "overlapping_window_packets_v1",
+        "parameters": {
+          "width_px": 1490,
+          "height_px": 2137,
+          "bands": 3,
+          "bits_per_sample": 8,
+          "window_px": 1024,
+          "stride_px": 824,
+          "windows_per_tile_axis": 2,
+          "compute_cost_per_window": 0.0898910670592967,
+          "result_size_mb_per_window": 0.0025813333333333335
+        },
+        "coordinate_convention": "xyxy, upper bounds exclusive",
+        "edge_rule": "shift_last_window_to_edge_no_padding",
+        "packet_rule": "independent_full_windows_no_pixel_deduplication",
+        "result_rule": "per_window_outputs_before_global_merge",
+        "image_size_mb": 9.55239,
+        "num_windows": 6,
+        "num_tiles": 2,
+        "processed_pixels": 6291456,
+        "coverage_multiplier": 1.975879125538216,
+        "packet_input_mb": 18.874368,
+        "total_compute_cost": 0.5393464023557801,
+        "unmerged_result_mb": 0.015488000000000002,
+        "tiles": [
+          {
+            "windows_xyxy": [
+              [
+                0,
+                0,
+                1024,
+                1024
+              ],
+              [
+                466,
+                0,
+                1490,
+                1024
+              ],
+              [
+                0,
+                824,
+                1024,
+                1848
+              ],
+              [
+                466,
+                824,
+                1490,
+                1848
+              ]
+            ],
+            "data_size_mb": 12.582912,
+            "compute_cost": 0.3595642682371868,
+            "result_size_mb": 0.010325333333333334
+          },
+          {
+            "windows_xyxy": [
+              [
+                0,
+                1113,
+                1024,
+                2137
+              ],
+              [
+                466,
+                1113,
+                1490,
+                2137
+              ]
+            ],
+            "data_size_mb": 6.291456,
+            "compute_cost": 0.1797821341185934,
+            "result_size_mb": 0.005162666666666667
+          }
+        ]
+      },
+      "compute_unit": "one U is one second of measured local_cpu window service",
+      "CPU_window_mean_seconds": 0.0898910670592967,
+      "MPS_window_mean_seconds": 0.026380132004204724,
+      "MPS_shared_rate_predicted_window_seconds": 0.027746873760859835,
+      "MPS_shared_rate_relative_error": 0.05180951165965619,
+      "output_model": "sample mean serialized bytes per window, includes 28-byte completion header; preserves per-image total, not the within-image spatial distribution"
+    }
+  ],
+  "ground_rate": 3.2396827056638866,
+  "resource_assumptions": {
+    "node_profiles": "all satellites use measured local_cpu; both ground slots use local_mps-derived rate; same capabilities for all policies, not actual spacecraft/server hardware",
+    "memory": "8 GB per satellite is a controlled cache budget; source image plus materialized-patch peak excluded",
+    "vram": "0.8 GB constant per single-window service, 1 GB capacity; rounded CPU RSS-based budget proxy, not a measured discrete-GPU VRAM peak; no inference concurrency",
+    "merge": "max mean MPS merge among the two templates, shared fixed uncongested service, rounded to dt",
+    "ground_relay": "zero inter-ground network delay: an explicitly favorable ground baseline assumption"
+  },
+  "communication_assumptions": {
+    "ground": "20/384 Mbps effective per-channel rates, 1 channel at each of two city-reference sites; controlled contention factors, not a measured terminal",
+    "isl": "20-120 Mbps distance-dependent effective rate, common four-neighbor topology, full duplex; zero random noise for interpretable numerical controls; sinusoid period 600 s",
+    "unmodeled": "acquisition/control/propagation delay and source-image decode; stored latency_ms set to zero"
+  },
+  "scenario_design": "six fixed conditions x two environment seeds; sparse conditional comparisons, not full factorial",
+  "roles": "near/uniform preserve imager orbit and identical per-node compute; near companions displaced +/-2 degrees",
+  "arrival": "Poisson 1/300 or 1/75 tasks/s globally at eight sources, fourfold controlled load; not asserted saturated",
+  "duration": "2 h arrival + 4 h drain, shared complete follow-up",
+  "evaluation": "prespecified F(1800/3600/7200/14400), equal-weight age score; show F(3600) separately",
+  "training": "12/24 satellites, two layouts and two measured image templates; fixed overlap and packing; orbit/time separation, independent environmental and learner seeds",
+  "limitations": [
+    "two image templates, not general remote-sensing workload distribution",
+    "mean per-window service/output, not heterogeneous per-window trace replay",
+    "CPU/MPS on one laptop, not two target devices; three short repeats only",
+    "end-to-end timestep sensitivity and additional training seeds required"
+  ]
+}

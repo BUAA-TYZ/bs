@@ -1,0 +1,6 @@
+{
+  "status": "FAILED",
+  "method": "v3_4",
+  "date": "2026-10-23",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/bytedance/Projects/bs/analysis/run_dynamic_heuristics.py\", line 125, in job\n    cfg=config_from_dict(config);env=GranularityEnv(cfg);sources=set(cfg.task_source_sat_ids)\n        ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/bytedance/Projects/bs/sim/config.py\", line 213, in config_from_dict\n    raise ValueError(f\"{key} conflicts with derived image_tiling value {value}\")\nValueError: num_tiles conflicts with derived image_tiling value 4\n"
+}

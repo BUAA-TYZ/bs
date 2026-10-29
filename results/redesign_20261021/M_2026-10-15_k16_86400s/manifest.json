@@ -1,0 +1,3408 @@
+{
+  "tier": "M",
+  "date": "2026-10-15",
+  "epoch_anchor": "2026-10-15T00:00:00Z",
+  "source_count": 24,
+  "compute_count": 12,
+  "requested_tiles": 16,
+  "arrival_duration_s": 86400,
+  "D_seconds": 300,
+  "config_sha256": "4214963d58d883fda9bfab6ce30de4fec9a50548a93446fd625e3d6c5947704c",
+  "events_sha256": "ed2eb598dfb9ed785efe8c459977742d5e5d42d32e2475040319e20407b39e65",
+  "events": [
+    {
+      "image_id": 0,
+      "mode": "fine",
+      "source_sat_id": 16,
+      "capture_start_s": 260.0,
+      "capture_end_s": 275.0,
+      "ready_s": 335.0,
+      "target_id": "new_york_harbor",
+      "window_id": 91,
+      "truth_sha256": "d192004837ec031641e238ae85a14f2db4a90d3fe1ff77336266d034afa4a6cb",
+      "merge_reference": {
+        "median_seconds": 0.0028366669994284166,
+        "samples_seconds": [
+          0.002993625001181499,
+          0.0027348340008757077,
+          0.0028366669994284166
+        ],
+        "records_before": 107,
+        "records_after": 30,
+        "output_sha256": "9c307ce6c3f9872438d9fb2f16ee291ae6c50139014a4b96e1fcbe7ae5212c4f",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_0"
+    },
+    {
+      "image_id": 1,
+      "mode": "spot",
+      "source_sat_id": 16,
+      "capture_start_s": 390.0,
+      "capture_end_s": 400.0,
+      "ready_s": 460.0,
+      "target_id": "savannah_approach",
+      "window_id": 97,
+      "truth_sha256": "67c7e8a9210d906d358e8f510c6f81fddfaf0e9cc33bc52f168ed182217c820a",
+      "merge_reference": {
+        "median_seconds": 2.3749998945277184e-06,
+        "samples_seconds": [
+          2.8340000426396728e-06,
+          2.3749998945277184e-06,
+          2.1670002752216533e-06
+        ],
+        "records_before": 0,
+        "records_after": 0,
+        "output_sha256": "dacef10661333b97b88d207864b1e939543ee1f2e649aa2613edd48746d65d77",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_1"
+    },
+    {
+      "image_id": 2,
+      "mode": "fine",
+      "source_sat_id": 16,
+      "capture_start_s": 480.0,
+      "capture_end_s": 495.0,
+      "ready_s": 555.0,
+      "target_id": "savannah_approach",
+      "window_id": 98,
+      "truth_sha256": "6c26cc00c58345246f161a85b6a28f6b7a5f63a8c196b5cfaeaebe17342995b2",
+      "merge_reference": {
+        "median_seconds": 0.0029940000003989553,
+        "samples_seconds": [
+          0.0028357499995763646,
+          0.003259832999901846,
+          0.0029940000003989553
+        ],
+        "records_before": 111,
+        "records_after": 30,
+        "output_sha256": "8bbd4aa9b5fd56d06b5affa28c58031c72391a647a0f2f826acc4c013bab2e70",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_2"
+    },
+    {
+      "image_id": 3,
+      "mode": "spot",
+      "source_sat_id": 14,
+      "capture_start_s": 670.0,
+      "capture_end_s": 680.0,
+      "ready_s": 740.0,
+      "target_id": "houston_ship_channel",
+      "window_id": 77,
+      "truth_sha256": "0bb11837127c47622ef0bbfc6b21c93d8f91aacd5aed89f4bda42ce28be8b1f0",
+      "merge_reference": {
+        "median_seconds": 0.0017574159992364002,
+        "samples_seconds": [
+          0.0017616659988561878,
+          0.0017574159992364002,
+          0.0017021250005200272
+        ],
+        "records_before": 55,
+        "records_after": 30,
+        "output_sha256": "67aba9e7b7a169b5b471c9a6e4c0f12e72a9315cd163dafcb7b772a9b81e8f13",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_3"
+    },
+    {
+      "image_id": 4,
+      "mode": "fine",
+      "source_sat_id": 10,
+      "capture_start_s": 1040.0,
+      "capture_end_s": 1055.0,
+      "ready_s": 1115.0,
+      "target_id": "san_francisco_bay",
+      "window_id": 58,
+      "truth_sha256": "d13fb61d966c2604da8e3b2fa3441e08a75fb7d803c3dd93cbdcf9ae0ac6b796",
+      "merge_reference": {
+        "median_seconds": 0.0031670419994043186,
+        "samples_seconds": [
+          0.0031670419994043186,
+          0.0031985419991542585,
+          0.0030613750004704343
+        ],
+        "records_before": 124,
+        "records_after": 30,
+        "output_sha256": "3ecdf5be63c79ee36c64ad0aeca77e5e3d07fb7b55ac1a3e08dc49948ff492f7",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_4"
+    },
+    {
+      "image_id": 5,
+      "mode": "fine",
+      "source_sat_id": 19,
+      "capture_start_s": 2890.0,
+      "capture_end_s": 2905.0,
+      "ready_s": 2965.0,
+      "target_id": "new_york_harbor",
+      "window_id": 106,
+      "truth_sha256": "258ace02f937a0130d056a443641e259cf5b6b8debcc52b2265d7f712cc45f98",
+      "merge_reference": {
+        "median_seconds": 1.1333000657032244e-05,
+        "samples_seconds": [
+          1.1416999768698588e-05,
+          1.1333000657032244e-05,
+          1.1042000551242381e-05
+        ],
+        "records_before": 0,
+        "records_after": 0,
+        "output_sha256": "269eb09acaefdc89c67f310567e5df711e4e31e70874f355856a5cac2202955f",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_5"
+    },
+    {
+      "image_id": 6,
+      "mode": "slea",
+      "source_sat_id": 19,
+      "capture_start_s": 2980.0,
+      "capture_end_s": 2990.0,
+      "ready_s": 3050.0,
+      "target_id": "new_york_harbor",
+      "window_id": 107,
+      "truth_sha256": "5eb6c91b63d0e822a5566c29f360b5df2742ed2ad433f39b39594988568bd6bc",
+      "merge_reference": {
+        "median_seconds": 0.034990459000255214,
+        "samples_seconds": [
+          0.0319076670002687,
+          0.03636870900118083,
+          0.034990459000255214
+        ],
+        "records_before": 588,
+        "records_after": 270,
+        "output_sha256": "7bb598b3923918f966c30de937b4b1af3ebd79e79b6b6f309383d006b9ce5a94",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_6"
+    },
+    {
+      "image_id": 7,
+      "mode": "fine",
+      "source_sat_id": 19,
+      "capture_start_s": 3080.0,
+      "capture_end_s": 3095.0,
+      "ready_s": 3155.0,
+      "target_id": "savannah_approach",
+      "window_id": 111,
+      "truth_sha256": "ef81dda1e9332c308499cffcd31570ae1d86f2e2d90769f2638f321d484bd7a8",
+      "merge_reference": {
+        "median_seconds": 0.0031655000002501765,
+        "samples_seconds": [
+          0.0031655000002501765,
+          0.0031668749998061685,
+          0.0029629590007971274
+        ],
+        "records_before": 121,
+        "records_after": 29,
+        "output_sha256": "727237cf45983039e9b7a3155f01b671ad8974925fa8eed5483e9cf272e9b8f8",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_7"
+    },
+    {
+      "image_id": 8,
+      "mode": "fine",
+      "source_sat_id": 17,
+      "capture_start_s": 3320.0,
+      "capture_end_s": 3335.0,
+      "ready_s": 3395.0,
+      "target_id": "houston_ship_channel",
+      "window_id": 99,
+      "truth_sha256": "a004e410b72b6beeeae639f3e0f08d31566aa316535f86a2ae2d9b6eeec09273",
+      "merge_reference": {
+        "median_seconds": 0.0031009580015961546,
+        "samples_seconds": [
+          0.002946167000118294,
+          0.0031009580015961546,
+          0.0033866250014398247
+        ],
+        "records_before": 100,
+        "records_after": 30,
+        "output_sha256": "19f786f5344b490845e672ec3ff7eee4a9c79099388d0cff9c4064d020652715",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_8"
+    },
+    {
+      "image_id": 9,
+      "mode": "fine",
+      "source_sat_id": 17,
+      "capture_start_s": 3390.0,
+      "capture_end_s": 3405.0,
+      "ready_s": 3465.0,
+      "target_id": "houston_ship_channel",
+      "window_id": 100,
+      "truth_sha256": "5e4b1eb7026934cb755f352250ac365c3ca2996ab148a057431c78f16a3a2c94",
+      "merge_reference": {
+        "median_seconds": 0.0035662909995153314,
+        "samples_seconds": [
+          0.002817458000208717,
+          0.0035662909995153314,
+          0.0037045000008220086
+        ],
+        "records_before": 103,
+        "records_after": 30,
+        "output_sha256": "7485169c05c304627a1c2d0f2c6a1a18dbe6cde9888bfa9283b64438ef5c0fa6",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_9"
+    },
+    {
+      "image_id": 10,
+      "mode": "fine",
+      "source_sat_id": 13,
+      "capture_start_s": 3660.0,
+      "capture_end_s": 3675.0,
+      "ready_s": 3735.0,
+      "target_id": "san_francisco_bay",
+      "window_id": 74,
+      "truth_sha256": "4dc51b3b13c7f3c7a58612df7f181e377e969c8023a94f13f2e73f1c6d34e59a",
+      "merge_reference": {
+        "median_seconds": 0.00363587500032736,
+        "samples_seconds": [
+          0.0029814589997840812,
+          0.003643083000497427,
+          0.00363587500032736
+        ],
+        "records_before": 108,
+        "records_after": 30,
+        "output_sha256": "9014c1f87e2f6846b0148a6c370f7d8b83e9daf725855a0ac9e57f288fa8f753",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_10"
+    },
+    {
+      "image_id": 11,
+      "mode": "fine",
+      "source_sat_id": 13,
+      "capture_start_s": 3740.0,
+      "capture_end_s": 3755.0,
+      "ready_s": 3815.0,
+      "target_id": "san_francisco_bay",
+      "window_id": 75,
+      "truth_sha256": "c8594e04a05f96dfeac5a1afeb7e383de62d3e447d6a539939a5f9875a8063bc",
+      "merge_reference": {
+        "median_seconds": 0.003808125000432483,
+        "samples_seconds": [
+          0.0029087080001772847,
+          0.004227041999911307,
+          0.003808125000432483
+        ],
+        "records_before": 106,
+        "records_after": 30,
+        "output_sha256": "3ffccae140bb2bd8ae212951cfadb6087a7e1f03841032732880ab0145dbea39",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_11"
+    },
+    {
+      "image_id": 12,
+      "mode": "fine",
+      "source_sat_id": 20,
+      "capture_start_s": 5560.0,
+      "capture_end_s": 5575.0,
+      "ready_s": 5635.0,
+      "target_id": "new_york_harbor",
+      "window_id": 115,
+      "truth_sha256": "bd58c4dfcea536ceab56b47b354b40b21e744397d629d81943bd49d003899ccc",
+      "merge_reference": {
+        "median_seconds": 0.0037093339997227304,
+        "samples_seconds": [
+          0.0035699170002772007,
+          0.003821583000899409,
+          0.0037093339997227304
+        ],
+        "records_before": 112,
+        "records_after": 30,
+        "output_sha256": "451d89bfb7dc5b0d8889b660b9ebcf1250cf70d0fb42c4bdfd34f4cf4f7a6d12",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_12"
+    },
+    {
+      "image_id": 13,
+      "mode": "fine",
+      "source_sat_id": 14,
+      "capture_start_s": 6330.0,
+      "capture_end_s": 6345.0,
+      "ready_s": 6405.0,
+      "target_id": "san_francisco_bay",
+      "window_id": 81,
+      "truth_sha256": "32ef4dda8c77568462613b1844f2a950d8fe9fbc9b03d4b51e96d56445b0f979",
+      "merge_reference": {
+        "median_seconds": 0.00360687499960477,
+        "samples_seconds": [
+          0.00323062499955995,
+          0.00360687499960477,
+          0.0036533330003294395
+        ],
+        "records_before": 106,
+        "records_after": 30,
+        "output_sha256": "580af0e1499843e5b2f78d65317f9fb336a4ee44a641119219b0aa1b44f49e92",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_13"
+    },
+    {
+      "image_id": 14,
+      "mode": "spot",
+      "source_sat_id": 14,
+      "capture_start_s": 6390.0,
+      "capture_end_s": 6400.0,
+      "ready_s": 6460.0,
+      "target_id": "la_harbor",
+      "window_id": 78,
+      "truth_sha256": "bdbd59d4c8bb0d549f566d664c2e442c25f4923c05c872438aa45002ca75bbad",
+      "merge_reference": {
+        "median_seconds": 0.002539541999794892,
+        "samples_seconds": [
+          0.002212666000559693,
+          0.002539541999794892,
+          0.0026508329992793733
+        ],
+        "records_before": 56,
+        "records_after": 30,
+        "output_sha256": "8cbb0769f18e121ecae2474a5534b8aec330a610f356b7ba0837b2d9a19f92d2",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_14"
+    },
+    {
+      "image_id": 15,
+      "mode": "spot",
+      "source_sat_id": 14,
+      "capture_start_s": 6450.0,
+      "capture_end_s": 6460.0,
+      "ready_s": 6520.0,
+      "target_id": "la_harbor",
+      "window_id": 79,
+      "truth_sha256": "69415ef560119f664f91e12d85cb42d5e703708a2faeeaedbc626d9a77f5d865",
+      "merge_reference": {
+        "median_seconds": 0.0026094170007127104,
+        "samples_seconds": [
+          0.0020661249982367735,
+          0.0026910420001513558,
+          0.0026094170007127104
+        ],
+        "records_before": 51,
+        "records_after": 30,
+        "output_sha256": "b88f836a8b6a359eab2b6baf3153f5c58f003898d12b64f2b1813604c9887958",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_15"
+    },
+    {
+      "image_id": 16,
+      "mode": "slea",
+      "source_sat_id": 21,
+      "capture_start_s": 8570.0,
+      "capture_end_s": 8580.0,
+      "ready_s": 8640.0,
+      "target_id": "savannah_approach",
+      "window_id": 121,
+      "truth_sha256": "4d8435f171500ffb6173f60c3adfc29dcf29793b292ac7ae4f853fb2e61b1d07",
+      "merge_reference": {
+        "median_seconds": 0.03695287499976985,
+        "samples_seconds": [
+          0.03695287499976985,
+          0.038977292000708985,
+          0.03598433300066972
+        ],
+        "records_before": 581,
+        "records_after": 270,
+        "output_sha256": "e3a7b2763c1720c91f3c13979742d8860e4c3535f8c88b4140ddc270dc0ed019",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_16"
+    },
+    {
+      "image_id": 17,
+      "mode": "fine",
+      "source_sat_id": 17,
+      "capture_start_s": 9020.0,
+      "capture_end_s": 9035.0,
+      "ready_s": 9095.0,
+      "target_id": "la_harbor",
+      "window_id": 101,
+      "truth_sha256": "258ace02f937a0130d056a443641e259cf5b6b8debcc52b2265d7f712cc45f98",
+      "merge_reference": {
+        "median_seconds": 1.304199940932449e-05,
+        "samples_seconds": [
+          1.3333001334103756e-05,
+          1.304199940932449e-05,
+          1.304199940932449e-05
+        ],
+        "records_before": 0,
+        "records_after": 0,
+        "output_sha256": "269eb09acaefdc89c67f310567e5df711e4e31e70874f355856a5cac2202955f",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_17"
+    },
+    {
+      "image_id": 18,
+      "mode": "fine",
+      "source_sat_id": 1,
+      "capture_start_s": 9310.0,
+      "capture_end_s": 9325.0,
+      "ready_s": 9385.0,
+      "target_id": "new_york_harbor",
+      "window_id": 2,
+      "truth_sha256": "057c967ccd2a138aae13c5bb11f416e47d243507f0505678a9149805da8617c3",
+      "merge_reference": {
+        "median_seconds": 0.004365291999420151,
+        "samples_seconds": [
+          0.004365291999420151,
+          0.004725624999991851,
+          0.0043527500001800945
+        ],
+        "records_before": 114,
+        "records_after": 30,
+        "output_sha256": "bbbbfcf39ae71a72dc4a762c55837f635a6cf3427d8c79e4880bca0d99bac0eb",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_18"
+    },
+    {
+      "image_id": 19,
+      "mode": "spot",
+      "source_sat_id": 22,
+      "capture_start_s": 11070.0,
+      "capture_end_s": 11080.0,
+      "ready_s": 11140.0,
+      "target_id": "new_york_harbor",
+      "window_id": 126,
+      "truth_sha256": "67c7e8a9210d906d358e8f510c6f81fddfaf0e9cc33bc52f168ed182217c820a",
+      "merge_reference": {
+        "median_seconds": 2.333001248189248e-06,
+        "samples_seconds": [
+          2.5829995138337836e-06,
+          2.333001248189248e-06,
+          2.083001163555309e-06
+        ],
+        "records_before": 0,
+        "records_after": 0,
+        "output_sha256": "dacef10661333b97b88d207864b1e939543ee1f2e649aa2613edd48746d65d77",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_19"
+    },
+    {
+      "image_id": 20,
+      "mode": "slea",
+      "source_sat_id": 22,
+      "capture_start_s": 11200.0,
+      "capture_end_s": 11210.0,
+      "ready_s": 11270.0,
+      "target_id": "savannah_approach",
+      "window_id": 132,
+      "truth_sha256": "60148050d30b85f4f674793b8a180a780625cd81cb4495b7bff216916ae638ef",
+      "merge_reference": {
+        "median_seconds": 0.03915779199996905,
+        "samples_seconds": [
+          0.03915779199996905,
+          0.04843875000005937,
+          0.03543737499967392
+        ],
+        "records_before": 570,
+        "records_after": 270,
+        "output_sha256": "5d3119aa10f99d0ee6375d07cdb761d3d6bb2961ae0b023ba2393003daf89760",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_20"
+    },
+    {
+      "image_id": 21,
+      "mode": "spot",
+      "source_sat_id": 22,
+      "capture_start_s": 11290.0,
+      "capture_end_s": 11300.0,
+      "ready_s": 11360.0,
+      "target_id": "savannah_approach",
+      "window_id": 133,
+      "truth_sha256": "ad13a6be6826e5b813a9c310bab6237ab55841f520ec87d7887a70c6a9b1ac16",
+      "merge_reference": {
+        "median_seconds": 0.0026700420003180625,
+        "samples_seconds": [
+          0.002355290998821147,
+          0.0026980419988831272,
+          0.0026700420003180625
+        ],
+        "records_before": 43,
+        "records_after": 30,
+        "output_sha256": "98218f2275705157d9e691a2b58eea870747af5b39be59df89cdd85643bf217b",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_21"
+    },
+    {
+      "image_id": 22,
+      "mode": "slea",
+      "source_sat_id": 20,
+      "capture_start_s": 11480.0,
+      "capture_end_s": 11490.0,
+      "ready_s": 11550.0,
+      "target_id": "houston_ship_channel",
+      "window_id": 112,
+      "truth_sha256": "f511fa94444cc5ac49ab7603b71a8e93b452d0e9affeb25b2d2f53c276055dc2",
+      "merge_reference": {
+        "median_seconds": 0.03555904199856741,
+        "samples_seconds": [
+          0.03587254200101597,
+          0.03555904199856741,
+          0.035337833000085084
+        ],
+        "records_before": 536,
+        "records_after": 270,
+        "output_sha256": "75ebca6014e034d7afebdd8e7ecda63a7d4f528a7098bf3a773ccea7fe6e944d",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_22"
+    },
+    {
+      "image_id": 23,
+      "mode": "fine",
+      "source_sat_id": 16,
+      "capture_start_s": 11850.0,
+      "capture_end_s": 11865.0,
+      "ready_s": 11925.0,
+      "target_id": "san_francisco_bay",
+      "window_id": 94,
+      "truth_sha256": "b93b9bfe501e55678b8d2d9f7f9da74b9439e00f53146dd310cef6b2e6314c20",
+      "merge_reference": {
+        "median_seconds": 0.0037537499993050005,
+        "samples_seconds": [
+          0.0037537499993050005,
+          0.0046784169990132796,
+          0.0036227910004527075
+        ],
+        "records_before": 95,
+        "records_after": 30,
+        "output_sha256": "4a1dc50953162435a9e93ba64ebb71dc82c7782a7485bd6365936cbf4185ad9f",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_23"
+    },
+    {
+      "image_id": 24,
+      "mode": "slea",
+      "source_sat_id": 0,
+      "capture_start_s": 12010.0,
+      "capture_end_s": 12020.0,
+      "ready_s": 12080.0,
+      "target_id": "savannah_approach",
+      "window_id": 0,
+      "truth_sha256": "2ecb3b8b08d7d8fde97ec088ae603ddb3215085697c5eb4f1cbce01b33fb9890",
+      "merge_reference": {
+        "median_seconds": 0.03417183300007309,
+        "samples_seconds": [
+          0.03206983400013996,
+          0.03768975000093633,
+          0.03417183300007309
+        ],
+        "records_before": 581,
+        "records_after": 269,
+        "output_sha256": "58ddcfe5f2806a7b9f6e4b55ab8e2d98e4ba93b1ce4b77e4f7027b2d89d01d48",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_24"
+    },
+    {
+      "image_id": 25,
+      "mode": "spot",
+      "source_sat_id": 23,
+      "capture_start_s": 14130.0,
+      "capture_end_s": 14140.0,
+      "ready_s": 14200.0,
+      "target_id": "houston_ship_channel",
+      "window_id": 134,
+      "truth_sha256": "990e193435177f2b7124182b369bb7648589eea6953b040e04ee11a6263a5b4d",
+      "merge_reference": {
+        "median_seconds": 0.0024343330005649477,
+        "samples_seconds": [
+          0.0020478329988691257,
+          0.0024343330005649477,
+          0.002532208000047831
+        ],
+        "records_before": 42,
+        "records_after": 30,
+        "output_sha256": "2a52286560b20bd4f3d462068fe72db5516e57a352d852b57c5f6ce11e79503a",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_25"
+    },
+    {
+      "image_id": 26,
+      "mode": "spot",
+      "source_sat_id": 23,
+      "capture_start_s": 14200.0,
+      "capture_end_s": 14210.0,
+      "ready_s": 14270.0,
+      "target_id": "houston_ship_channel",
+      "window_id": 135,
+      "truth_sha256": "9d5c802826618ba7f39ac65d6da54ebd8e1a9f2ba028c655ee45f60d1e597277",
+      "merge_reference": {
+        "median_seconds": 0.002345333999983268,
+        "samples_seconds": [
+          0.0020859159994870424,
+          0.002345333999983268,
+          0.002683249998881365
+        ],
+        "records_before": 53,
+        "records_after": 30,
+        "output_sha256": "38e50c3c056bc01a409bc70e1ce8d8288a7c8045fe9a81261c10ded691f94b3e",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_26"
+    },
+    {
+      "image_id": 27,
+      "mode": "slea",
+      "source_sat_id": 19,
+      "capture_start_s": 14470.0,
+      "capture_end_s": 14480.0,
+      "ready_s": 14540.0,
+      "target_id": "san_francisco_bay",
+      "window_id": 109,
+      "truth_sha256": "c36f331f7958d02514b048aadd8f1d935d61def1042e2e0cc08b88329eca4e5c",
+      "merge_reference": {
+        "median_seconds": 0.034697375000178,
+        "samples_seconds": [
+          0.03345879100015736,
+          0.045961499999975786,
+          0.034697375000178
+        ],
+        "records_before": 603,
+        "records_after": 269,
+        "output_sha256": "ecb1907a8b3eb904adb4395a8fe1fe1e231d7061144f1a632a99d424ca88c0bf",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_27"
+    },
+    {
+      "image_id": 28,
+      "mode": "slea",
+      "source_sat_id": 19,
+      "capture_start_s": 14560.0,
+      "capture_end_s": 14570.0,
+      "ready_s": 14630.0,
+      "target_id": "san_francisco_bay",
+      "window_id": 110,
+      "truth_sha256": "4f6d0992f219325a6d3c8fa903579c9d0562ba9aeeae5d7ea0d48cf4a6e25af9",
+      "merge_reference": {
+        "median_seconds": 0.040326541999093024,
+        "samples_seconds": [
+          0.040326541999093024,
+          0.036355750000439,
+          0.04730554199886683
+        ],
+        "records_before": 606,
+        "records_after": 270,
+        "output_sha256": "09babb688a201e3e03bda706bdb5c6df168f7418b1c520cca46a7acd03a78c87",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_28"
+    },
+    {
+      "image_id": 29,
+      "mode": "fine",
+      "source_sat_id": 3,
+      "capture_start_s": 14780.0,
+      "capture_end_s": 14795.0,
+      "ready_s": 14855.0,
+      "target_id": "new_york_harbor",
+      "window_id": 13,
+      "truth_sha256": "5b3dfdfd6d79815b881885aea0bad3387c93e22b086a2705599875c059d65790",
+      "merge_reference": {
+        "median_seconds": 0.003393458000573446,
+        "samples_seconds": [
+          0.0033473749990662327,
+          0.003393458000573446,
+          0.003940291999242618
+        ],
+        "records_before": 109,
+        "records_after": 30,
+        "output_sha256": "aa98b9304b3935382bb90d68c87eaf5daf98ddf846e8ffd3c44c8fdc3dd4f5aa",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_29"
+    },
+    {
+      "image_id": 30,
+      "mode": "fine",
+      "source_sat_id": 20,
+      "capture_start_s": 17140.0,
+      "capture_end_s": 17155.0,
+      "ready_s": 17215.0,
+      "target_id": "san_francisco_bay",
+      "window_id": 116,
+      "truth_sha256": "a2cd8bab441b5e610dc0e7f19a5118cd24a4df876de90dc9782b258574b7603d",
+      "merge_reference": {
+        "median_seconds": 0.003516165999826626,
+        "samples_seconds": [
+          0.0032585829994786764,
+          0.003516165999826626,
+          0.00368329199955042
+        ],
+        "records_before": 99,
+        "records_after": 30,
+        "output_sha256": "6d9b844512cf2ee131ec04476edf5b9d41bf14446cd3c8e3c080459b7de37818",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_30"
+    },
+    {
+      "image_id": 31,
+      "mode": "spot",
+      "source_sat_id": 20,
+      "capture_start_s": 17200.0,
+      "capture_end_s": 17210.0,
+      "ready_s": 17270.0,
+      "target_id": "la_harbor",
+      "window_id": 113,
+      "truth_sha256": "77082be54ca2b226160f0ed2148e1d0cb1c8ad6263d31a81460daa4d1ba83f6a",
+      "merge_reference": {
+        "median_seconds": 0.002417083000182174,
+        "samples_seconds": [
+          0.002069332998871687,
+          0.002417083000182174,
+          0.002698416999919573
+        ],
+        "records_before": 46,
+        "records_after": 30,
+        "output_sha256": "6b379992162aaa2bfe4883b16583b501da3f10ad063cd0bbe30a6917385d3f3b",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_31"
+    },
+    {
+      "image_id": 32,
+      "mode": "spot",
+      "source_sat_id": 20,
+      "capture_start_s": 17260.0,
+      "capture_end_s": 17270.0,
+      "ready_s": 17330.0,
+      "target_id": "la_harbor",
+      "window_id": 114,
+      "truth_sha256": "77eb54b45ac6379bbeb6ae813716efa0b3bafa0a2f06e55e8a96fa66b71cfb43",
+      "merge_reference": {
+        "median_seconds": 0.0025369579998368863,
+        "samples_seconds": [
+          0.0021929159993305802,
+          0.0028466249987104675,
+          0.0025369579998368863
+        ],
+        "records_before": 49,
+        "records_after": 30,
+        "output_sha256": "fc75b5a621f86ff5f4b67781d5049d8944c0a4f2fb6a0e84fec656a51814f19f",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_32"
+    },
+    {
+      "image_id": 33,
+      "mode": "spot",
+      "source_sat_id": 4,
+      "capture_start_s": 17430.0,
+      "capture_end_s": 17440.0,
+      "ready_s": 17500.0,
+      "target_id": "new_york_harbor",
+      "window_id": 21,
+      "truth_sha256": "67c7e8a9210d906d358e8f510c6f81fddfaf0e9cc33bc52f168ed182217c820a",
+      "merge_reference": {
+        "median_seconds": 2.4170003598555923e-06,
+        "samples_seconds": [
+          2.5829995138337836e-06,
+          2.4170003598555923e-06,
+          2.1249998098937795e-06
+        ],
+        "records_before": 0,
+        "records_after": 0,
+        "output_sha256": "dacef10661333b97b88d207864b1e939543ee1f2e649aa2613edd48746d65d77",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_33"
+    },
+    {
+      "image_id": 34,
+      "mode": "fine",
+      "source_sat_id": 4,
+      "capture_start_s": 17510.0,
+      "capture_end_s": 17525.0,
+      "ready_s": 17585.0,
+      "target_id": "new_york_harbor",
+      "window_id": 22,
+      "truth_sha256": "7cb54d31070d5ddb2b310030e75791be1c79703e4e5f4fd2b52b1ba45428c184",
+      "merge_reference": {
+        "median_seconds": 0.004506958001002204,
+        "samples_seconds": [
+          0.0037586250000458676,
+          0.004506958001002204,
+          0.004729000000224914
+        ],
+        "records_before": 122,
+        "records_after": 30,
+        "output_sha256": "15770e0074c2249fd419a47f3177ac8c93587cce134a7d6296dd19453b6a437d",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_34"
+    },
+    {
+      "image_id": 35,
+      "mode": "slea",
+      "source_sat_id": 23,
+      "capture_start_s": 19840.0,
+      "capture_end_s": 19850.0,
+      "ready_s": 19910.0,
+      "target_id": "la_harbor",
+      "window_id": 136,
+      "truth_sha256": "c88403a97b745a935ebb15856a91aae9e742e040f83841a0fadbf84d52ad8b2b",
+      "merge_reference": {
+        "median_seconds": 0.04308766600115632,
+        "samples_seconds": [
+          0.040651582999998936,
+          0.04480983400026162,
+          0.04308766600115632
+        ],
+        "records_before": 580,
+        "records_after": 270,
+        "output_sha256": "511820e3f0546f24585ce7af1ddf86cdcbcee17ea46ac0b9e7a6373dec5eecec",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_35"
+    },
+    {
+      "image_id": 36,
+      "mode": "slea",
+      "source_sat_id": 23,
+      "capture_start_s": 19900.0,
+      "capture_end_s": 19910.0,
+      "ready_s": 19970.0,
+      "target_id": "la_harbor",
+      "window_id": 137,
+      "truth_sha256": "4908662448f22d303ee28077c50afc8904749ef738b8c71849da865390b8d38b",
+      "merge_reference": {
+        "median_seconds": 1.7624999600229785e-05,
+        "samples_seconds": [
+          1.7624999600229785e-05,
+          1.7833001038525254e-05,
+          1.7207999917445704e-05
+        ],
+        "records_before": 0,
+        "records_after": 0,
+        "output_sha256": "1534bf0d956d7ee5c57bb56dcbf20b8df2e53032dd1069b4c0b4f2e109977213",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_36"
+    },
+    {
+      "image_id": 37,
+      "mode": "slea",
+      "source_sat_id": 7,
+      "capture_start_s": 20120.0,
+      "capture_end_s": 20130.0,
+      "ready_s": 20190.0,
+      "target_id": "new_york_harbor",
+      "window_id": 36,
+      "truth_sha256": "d6179d0e34483721438482c43667bddde80f0e6c4ad728d3c62d4605b9878d64",
+      "merge_reference": {
+        "median_seconds": 0.04535116700026265,
+        "samples_seconds": [
+          0.040846833000614424,
+          0.04703341599997657,
+          0.04535116700026265
+        ],
+        "records_before": 592,
+        "records_after": 270,
+        "output_sha256": "1581d070e9a42c90e0c1570699cd506045597fe89e84be8b8d69781e78f3678e",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_37"
+    },
+    {
+      "image_id": 38,
+      "mode": "fine",
+      "source_sat_id": 5,
+      "capture_start_s": 20170.0,
+      "capture_end_s": 20185.0,
+      "ready_s": 20245.0,
+      "target_id": "savannah_approach",
+      "window_id": 32,
+      "truth_sha256": "f3c490541eb687e3fc6f496f8b51ce340f99341278363eb382fd70308e702bea",
+      "merge_reference": {
+        "median_seconds": 0.003485666000415222,
+        "samples_seconds": [
+          0.0034424580007907934,
+          0.0038708749998477288,
+          0.003485666000415222
+        ],
+        "records_before": 97,
+        "records_after": 30,
+        "output_sha256": "f48c4c8c2849a41b2a0f12439967111fbe2519832ca6f30aa0a27edff287dcc3",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_38"
+    },
+    {
+      "image_id": 39,
+      "mode": "fine",
+      "source_sat_id": 5,
+      "capture_start_s": 20240.0,
+      "capture_end_s": 20255.0,
+      "ready_s": 20315.0,
+      "target_id": "savannah_approach",
+      "window_id": 33,
+      "truth_sha256": "8abb265c9ab34dee1025e5a68a65485a317e50a1d2b33bce941fb70dc2348bbd",
+      "merge_reference": {
+        "median_seconds": 0.0035121250002703164,
+        "samples_seconds": [
+          0.003216958999473718,
+          0.0036637909997807583,
+          0.0035121250002703164
+        ],
+        "records_before": 102,
+        "records_after": 30,
+        "output_sha256": "ec8b60f25cd04a23a89e4ef33cc634e59c58ab92bc869c632767c4ac51396236",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_39"
+    },
+    {
+      "image_id": 40,
+      "mode": "slea",
+      "source_sat_id": 3,
+      "capture_start_s": 20380.0,
+      "capture_end_s": 20390.0,
+      "ready_s": 20450.0,
+      "target_id": "houston_ship_channel",
+      "window_id": 12,
+      "truth_sha256": "6aeb3907b7989c6302243f49b638775d51cf6bbe664e41af0e1c0ea63493ca8a",
+      "merge_reference": {
+        "median_seconds": 0.041861583000354585,
+        "samples_seconds": [
+          0.03763020899896219,
+          0.041861583000354585,
+          0.04227787499985425
+        ],
+        "records_before": 576,
+        "records_after": 267,
+        "output_sha256": "6a41be82d542304f9287d1fd065d593e854062a4b139eb2c00343d79175a231e",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_40"
+    },
+    {
+      "image_id": 41,
+      "mode": "fine",
+      "source_sat_id": 1,
+      "capture_start_s": 20700.0,
+      "capture_end_s": 20715.0,
+      "ready_s": 20775.0,
+      "target_id": "la_harbor",
+      "window_id": 1,
+      "truth_sha256": "37fa474bddedf5f94f64b8e872abb360e376e10f50cbfd30947e5e932d01a4ed",
+      "merge_reference": {
+        "median_seconds": 0.003554832999725477,
+        "samples_seconds": [
+          0.003364207999766222,
+          0.003910375000486965,
+          0.003554832999725477
+        ],
+        "records_before": 104,
+        "records_after": 30,
+        "output_sha256": "4208d3ae3fcee5a727bd09b4efd549e472ea4a1b13b74da21c8d4676d03ee0bc",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_41"
+    },
+    {
+      "image_id": 42,
+      "mode": "slea",
+      "source_sat_id": 22,
+      "capture_start_s": 22670.0,
+      "capture_end_s": 22680.0,
+      "ready_s": 22740.0,
+      "target_id": "san_francisco_bay",
+      "window_id": 129,
+      "truth_sha256": "3ac93477d7cbb69199f8078783825724562e3f973d531755bc432db5c600ffb7",
+      "merge_reference": {
+        "median_seconds": 0.046353957999599515,
+        "samples_seconds": [
+          0.0407574589989963,
+          0.04829687500023283,
+          0.046353957999599515
+        ],
+        "records_before": 564,
+        "records_after": 268,
+        "output_sha256": "169e9cc9cf7d1f6eccbc84e298854ce51a26116ed9a1425d8461f560f4b62e5a",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_42"
+    },
+    {
+      "image_id": 43,
+      "mode": "slea",
+      "source_sat_id": 6,
+      "capture_start_s": 22820.0,
+      "capture_end_s": 22830.0,
+      "ready_s": 22890.0,
+      "target_id": "savannah_approach",
+      "window_id": 34,
+      "truth_sha256": "5a95f8a33c3e605f480a9058d65fbc56cd93ab8210610d12c84606f2357a8321",
+      "merge_reference": {
+        "median_seconds": 0.04081070800020825,
+        "samples_seconds": [
+          0.03853770900059317,
+          0.04142400000091584,
+          0.04081070800020825
+        ],
+        "records_before": 556,
+        "records_after": 269,
+        "output_sha256": "2c0a4d5c85cddb3cfcec9396b3dbf1608919a3040b5c46489d825b855f1bd8e1",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_43"
+    },
+    {
+      "image_id": 44,
+      "mode": "slea",
+      "source_sat_id": 4,
+      "capture_start_s": 23020.0,
+      "capture_end_s": 23030.0,
+      "ready_s": 23090.0,
+      "target_id": "houston_ship_channel",
+      "window_id": 17,
+      "truth_sha256": "e3210fc93a4a94672683fa95617c0de1111eda816ec22f8c5d95f018282ce310",
+      "merge_reference": {
+        "median_seconds": 0.04477558300095552,
+        "samples_seconds": [
+          0.04275966599925596,
+          0.048018666999269044,
+          0.04477558300095552
+        ],
+        "records_before": 594,
+        "records_after": 269,
+        "output_sha256": "3a06eba806f7925bf20661eca1543b1052166e45fa9db0762611465275e16992",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_44"
+    },
+    {
+      "image_id": 45,
+      "mode": "fine",
+      "source_sat_id": 4,
+      "capture_start_s": 23100.0,
+      "capture_end_s": 23115.0,
+      "ready_s": 23175.0,
+      "target_id": "houston_ship_channel",
+      "window_id": 18,
+      "truth_sha256": "3754d6fbb67a4dfb74c95662d6ab817b337b7a9282dea667a4834b2e9ed08fd9",
+      "merge_reference": {
+        "median_seconds": 0.004214958999000373,
+        "samples_seconds": [
+          0.003974166998887085,
+          0.004445959000804578,
+          0.004214958999000373
+        ],
+        "records_before": 125,
+        "records_after": 30,
+        "output_sha256": "a27ba0b4b6218fea9fe4555a6a9131b07b13ec4b0db55854d20e91b25742a264",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_45"
+    },
+    {
+      "image_id": 46,
+      "mode": "fine",
+      "source_sat_id": 9,
+      "capture_start_s": 25600.0,
+      "capture_end_s": 25615.0,
+      "ready_s": 25675.0,
+      "target_id": "new_york_harbor",
+      "window_id": 47,
+      "truth_sha256": "62cf0484433402083223890710afe36205a54aa9f024b05d203d22967fa4bfaf",
+      "merge_reference": {
+        "median_seconds": 0.003440208000029088,
+        "samples_seconds": [
+          0.0031435830005648313,
+          0.003440208000029088,
+          0.0034973340007127263
+        ],
+        "records_before": 98,
+        "records_after": 30,
+        "output_sha256": "de3ae20af42897fb10770570160819545f8bcd0cdb2e688496f0ddfb0b718dbb",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_46"
+    },
+    {
+      "image_id": 47,
+      "mode": "fine",
+      "source_sat_id": 3,
+      "capture_start_s": 26270.0,
+      "capture_end_s": 26285.0,
+      "ready_s": 26345.0,
+      "target_id": "san_francisco_bay",
+      "window_id": 14,
+      "truth_sha256": "06288ba3c48d6955efae4735db4c0151fd658057c26d91a51c6f850b07e56bba",
+      "merge_reference": {
+        "median_seconds": 0.004260249999788357,
+        "samples_seconds": [
+          0.004205084000204806,
+          0.004731832999823382,
+          0.004260249999788357
+        ],
+        "records_before": 129,
+        "records_after": 30,
+        "output_sha256": "efc163aa81df623bb8478f32b96cb6c731aa3002ae133dff6f19bb04002ee9ee",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_47"
+    },
+    {
+      "image_id": 48,
+      "mode": "fine",
+      "source_sat_id": 3,
+      "capture_start_s": 26340.0,
+      "capture_end_s": 26355.0,
+      "ready_s": 26415.0,
+      "target_id": "san_francisco_bay",
+      "window_id": 15,
+      "truth_sha256": "799f83d6ce68b7034608aa22793f1eb022c621bc36000f8e091741d23a93b1f6",
+      "merge_reference": {
+        "median_seconds": 0.005823041999974521,
+        "samples_seconds": [
+          0.0037780829989060294,
+          0.006615250000322703,
+          0.005823041999974521
+        ],
+        "records_before": 114,
+        "records_after": 30,
+        "output_sha256": "69f37c9c1307edbdfe4bcd8b93afd59edcb5b76c1bc7caacdbb768195c705e51",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_48"
+    },
+    {
+      "image_id": 49,
+      "mode": "slea",
+      "source_sat_id": 10,
+      "capture_start_s": 28240.0,
+      "capture_end_s": 28250.0,
+      "ready_s": 28310.0,
+      "target_id": "new_york_harbor",
+      "window_id": 55,
+      "truth_sha256": "a9d83608a94f79e013de10de6a8d610410e6890a750a92cd3471156dc217f493",
+      "merge_reference": {
+        "median_seconds": 0.043061750000561005,
+        "samples_seconds": [
+          0.041466624999884516,
+          0.04524712500096939,
+          0.043061750000561005
+        ],
+        "records_before": 553,
+        "records_after": 270,
+        "output_sha256": "57c0d91330f39750c9bec6766a98bb2db73a80dbeeef1071043c9febbeb51dcf",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_49"
+    },
+    {
+      "image_id": 50,
+      "mode": "fine",
+      "source_sat_id": 10,
+      "capture_start_s": 28330.0,
+      "capture_end_s": 28345.0,
+      "ready_s": 28405.0,
+      "target_id": "new_york_harbor",
+      "window_id": 56,
+      "truth_sha256": "07a0adacbe7ec2e3fa4f68e75014900eec6c62622a6460674c5f7fb327db12c3",
+      "merge_reference": {
+        "median_seconds": 0.0036444999986997573,
+        "samples_seconds": [
+          0.0035590839997894363,
+          0.003845458000796498,
+          0.0036444999986997573
+        ],
+        "records_before": 105,
+        "records_after": 30,
+        "output_sha256": "89d8ef4ab101ae6300a025f64721360faacf49ade3982d7dff4687423caa2c74",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_50"
+    },
+    {
+      "image_id": 51,
+      "mode": "spot",
+      "source_sat_id": 4,
+      "capture_start_s": 28840.0,
+      "capture_end_s": 28850.0,
+      "ready_s": 28910.0,
+      "target_id": "la_harbor",
+      "window_id": 19,
+      "truth_sha256": "64ef7b450a75e69f95ddb00546813f0016baab090578f019c2950dd90721e982",
+      "merge_reference": {
+        "median_seconds": 0.0024397079996560933,
+        "samples_seconds": [
+          0.002095583000482293,
+          0.0024397079996560933,
+          0.002696540999750141
+        ],
+        "records_before": 49,
+        "records_after": 30,
+        "output_sha256": "bd90db671c05e54d23ba0518d106e6dbea5e215003c05a4693c2f008c6b32efb",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_51"
+    },
+    {
+      "image_id": 52,
+      "mode": "fine",
+      "source_sat_id": 4,
+      "capture_start_s": 28920.0,
+      "capture_end_s": 28935.0,
+      "ready_s": 28995.0,
+      "target_id": "san_francisco_bay",
+      "window_id": 24,
+      "truth_sha256": "5695bb4b9cfd40afc9d3828fc5d8eeb6cb7dff708cebb9090d9f7f2f80c6a8a8",
+      "merge_reference": {
+        "median_seconds": 0.0035000840016436996,
+        "samples_seconds": [
+          0.003190833000189741,
+          0.0035000840016436996,
+          0.0036604169999918668
+        ],
+        "records_before": 103,
+        "records_after": 30,
+        "output_sha256": "c63ecd5f1e3d3353116e323381191dcd63e7bfad5d7d4318b97b6c2c47827df7",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_52"
+    },
+    {
+      "image_id": 53,
+      "mode": "fine",
+      "source_sat_id": 13,
+      "capture_start_s": 30930.0,
+      "capture_end_s": 30945.0,
+      "ready_s": 31005.0,
+      "target_id": "new_york_harbor",
+      "window_id": 71,
+      "truth_sha256": "4ac04b11976747e9d6ccc986cbce63e2f92845e0fa9c2801e08ac7cb32304f23",
+      "merge_reference": {
+        "median_seconds": 0.0034645830000954447,
+        "samples_seconds": [
+          0.003109332999883918,
+          0.0034645830000954447,
+          0.0034657090000109747
+        ],
+        "records_before": 97,
+        "records_after": 30,
+        "output_sha256": "d8b3342b23c7bd0601aa3039bda8b4fc2725613d89b8c977b7b63210d9b8e293",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_53"
+    },
+    {
+      "image_id": 54,
+      "mode": "fine",
+      "source_sat_id": 11,
+      "capture_start_s": 30980.0,
+      "capture_end_s": 30995.0,
+      "ready_s": 31055.0,
+      "target_id": "savannah_approach",
+      "window_id": 67,
+      "truth_sha256": "4951cf2f9dbf4cd6acb03f3e8c4e526f0ec9ad474f15de860a3b656c2fbcc8a8",
+      "merge_reference": {
+        "median_seconds": 0.0036630409995268565,
+        "samples_seconds": [
+          0.0031478750006499467,
+          0.0036630409995268565,
+          0.0036672080004791496
+        ],
+        "records_before": 104,
+        "records_after": 30,
+        "output_sha256": "9803b10eea302d7adbc2839f4116c65bbe6ed1c02d1be71acf885d2fbc32d035",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_54"
+    },
+    {
+      "image_id": 55,
+      "mode": "slea",
+      "source_sat_id": 11,
+      "capture_start_s": 31050.0,
+      "capture_end_s": 31060.0,
+      "ready_s": 31120.0,
+      "target_id": "savannah_approach",
+      "window_id": 68,
+      "truth_sha256": "bc40e684356257528381b1e6efd71142261327fdd55ebe5674f38e8b102de260",
+      "merge_reference": {
+        "median_seconds": 0.041222583000489976,
+        "samples_seconds": [
+          0.03750454200053355,
+          0.04214245799994387,
+          0.041222583000489976
+        ],
+        "records_before": 551,
+        "records_after": 270,
+        "output_sha256": "e48ca74b127268c2b63dfff2d77fe90c51dfe4eac0e5ba89ddb33b7a51db734c",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_55"
+    },
+    {
+      "image_id": 56,
+      "mode": "fine",
+      "source_sat_id": 9,
+      "capture_start_s": 31190.0,
+      "capture_end_s": 31205.0,
+      "ready_s": 31265.0,
+      "target_id": "houston_ship_channel",
+      "window_id": 46,
+      "truth_sha256": "637784333346f20a32256a8d7ad18d8cd6a5bc93d82b5ba7c1ade45800a7cfd3",
+      "merge_reference": {
+        "median_seconds": 0.004154041000219877,
+        "samples_seconds": [
+          0.0037747919996036217,
+          0.004335542000262649,
+          0.004154041000219877
+        ],
+        "records_before": 115,
+        "records_after": 30,
+        "output_sha256": "82ca6b8b5f037f95295bab96b736ce33bdefe5411337db7054eaaedc717bfd78",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_56"
+    },
+    {
+      "image_id": 57,
+      "mode": "fine",
+      "source_sat_id": 7,
+      "capture_start_s": 31510.0,
+      "capture_end_s": 31525.0,
+      "ready_s": 31585.0,
+      "target_id": "la_harbor",
+      "window_id": 35,
+      "truth_sha256": "cc05e1337ee5fd73a4f463bc26683ddf82f244026f8422c7e82ed3538e2911df",
+      "merge_reference": {
+        "median_seconds": 0.0041103750008915085,
+        "samples_seconds": [
+          0.0035195000000385335,
+          0.00432912500036764,
+          0.0041103750008915085
+        ],
+        "records_before": 108,
+        "records_after": 30,
+        "output_sha256": "a30cca1a28ff1602609433b2266a4c5049687afbbb56cd9b6c13c39e804cf193",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_57"
+    },
+    {
+      "image_id": 58,
+      "mode": "fine",
+      "source_sat_id": 12,
+      "capture_start_s": 33640.0,
+      "capture_end_s": 33655.0,
+      "ready_s": 33715.0,
+      "target_id": "savannah_approach",
+      "window_id": 69,
+      "truth_sha256": "47d3d3cb47271829e1b1edeb996cda95033bf929f6ad71830e5ed0ef47a6f185",
+      "merge_reference": {
+        "median_seconds": 0.004135666998990928,
+        "samples_seconds": [
+          0.003667582999696606,
+          0.0044060000000172295,
+          0.004135666998990928
+        ],
+        "records_before": 107,
+        "records_after": 30,
+        "output_sha256": "7ff5dfe8f3fb79bc94f3c82ad57cafe79fa5c409537dc8e86945e20d5ef8a256",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_58"
+    },
+    {
+      "image_id": 59,
+      "mode": "spot",
+      "source_sat_id": 10,
+      "capture_start_s": 33830.0,
+      "capture_end_s": 33840.0,
+      "ready_s": 33900.0,
+      "target_id": "houston_ship_channel",
+      "window_id": 51,
+      "truth_sha256": "ba3e11dcf46f9cd6e02135f5b110ff8f412a7e7cc06d54d8195416e9c12a9e00",
+      "merge_reference": {
+        "median_seconds": 0.0025697500004753238,
+        "samples_seconds": [
+          0.0025697500004753238,
+          0.0028952920001756866,
+          0.0020997920000809245
+        ],
+        "records_before": 44,
+        "records_after": 29,
+        "output_sha256": "13d992b7e0a6b96aca2d089801feeee26b853004a9349c359acda9e280116dcb",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_59"
+    },
+    {
+      "image_id": 60,
+      "mode": "spot",
+      "source_sat_id": 10,
+      "capture_start_s": 33910.0,
+      "capture_end_s": 33920.0,
+      "ready_s": 33980.0,
+      "target_id": "houston_ship_channel",
+      "window_id": 52,
+      "truth_sha256": "addf29d0488db99dccd8240e939c947f221541ae6fe4cbf995cb464e3987835f",
+      "merge_reference": {
+        "median_seconds": 0.002970374998767511,
+        "samples_seconds": [
+          0.002810500000123284,
+          0.003192209000189905,
+          0.002970374998767511
+        ],
+        "records_before": 57,
+        "records_after": 30,
+        "output_sha256": "21e79ec0240761b676cca73caa1e1dcd049221e9b6564799efdb828ec537b904",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_60"
+    },
+    {
+      "image_id": 61,
+      "mode": "slea",
+      "source_sat_id": 15,
+      "capture_start_s": 36410.0,
+      "capture_end_s": 36420.0,
+      "ready_s": 36480.0,
+      "target_id": "new_york_harbor",
+      "window_id": 83,
+      "truth_sha256": "7fcae93886d4fda59829a75348a646c343161575e235c3cdefbac6248d1483cb",
+      "merge_reference": {
+        "median_seconds": 0.044205792000866495,
+        "samples_seconds": [
+          0.04101433300093049,
+          0.044787208000343526,
+          0.044205792000866495
+        ],
+        "records_before": 559,
+        "records_after": 270,
+        "output_sha256": "e3a28a30c607b96d47a43d451f8fe8a5c28932773bbd828959887f4190f21134",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_61"
+    },
+    {
+      "image_id": 62,
+      "mode": "fine",
+      "source_sat_id": 9,
+      "capture_start_s": 37080.0,
+      "capture_end_s": 37095.0,
+      "ready_s": 37155.0,
+      "target_id": "san_francisco_bay",
+      "window_id": 48,
+      "truth_sha256": "258ace02f937a0130d056a443641e259cf5b6b8debcc52b2265d7f712cc45f98",
+      "merge_reference": {
+        "median_seconds": 1.1250000170548446e-05,
+        "samples_seconds": [
+          1.1416001143516041e-05,
+          1.1250000170548446e-05,
+          1.095899824576918e-05
+        ],
+        "records_before": 0,
+        "records_after": 0,
+        "output_sha256": "269eb09acaefdc89c67f310567e5df711e4e31e70874f355856a5cac2202955f",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_62"
+    },
+    {
+      "image_id": 63,
+      "mode": "fine",
+      "source_sat_id": 9,
+      "capture_start_s": 37150.0,
+      "capture_end_s": 37165.0,
+      "ready_s": 37225.0,
+      "target_id": "san_francisco_bay",
+      "window_id": 49,
+      "truth_sha256": "2e5f4f528d8d84cdc30dd00cc021d54fcec296b92caaf30c99b03e273ccf0d35",
+      "merge_reference": {
+        "median_seconds": 0.0039496249992225785,
+        "samples_seconds": [
+          0.0037399159991764463,
+          0.00447662500118895,
+          0.0039496249992225785
+        ],
+        "records_before": 108,
+        "records_after": 30,
+        "output_sha256": "4033e33cbd3928f9c26c62c1241f9e5e2a6ad59b0a7cc3432d108b1b7d208acc",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_63"
+    },
+    {
+      "image_id": 64,
+      "mode": "fine",
+      "source_sat_id": 16,
+      "capture_start_s": 39050.0,
+      "capture_end_s": 39065.0,
+      "ready_s": 39125.0,
+      "target_id": "new_york_harbor",
+      "window_id": 92,
+      "truth_sha256": "e64e81a337b6be0100a33334166f2724a90df91d718ac90150141e3183610369",
+      "merge_reference": {
+        "median_seconds": 0.0049124589986604406,
+        "samples_seconds": [
+          0.00455349999901955,
+          0.0049124589986604406,
+          0.005087583000204177
+        ],
+        "records_before": 124,
+        "records_after": 30,
+        "output_sha256": "343e3bfb9124389bb77384e87cd415807240a9c80ac0cbf2db23c2880c142d7e",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_64"
+    },
+    {
+      "image_id": 65,
+      "mode": "slea",
+      "source_sat_id": 16,
+      "capture_start_s": 39140.0,
+      "capture_end_s": 39150.0,
+      "ready_s": 39210.0,
+      "target_id": "new_york_harbor",
+      "window_id": 93,
+      "truth_sha256": "3dfc8cdf75ed8a58ce8415e8fcda00fa2af1d54030c2ba7cbf466b49e88a4843",
+      "merge_reference": {
+        "median_seconds": 0.04443866700057697,
+        "samples_seconds": [
+          0.0389391250009794,
+          0.046755624998695566,
+          0.04443866700057697
+        ],
+        "records_before": 562,
+        "records_after": 270,
+        "output_sha256": "777ec1ed48861d0acebc0b34bc7e42a8f56e053ade5e8c49ce0ec17a0d5eeeba",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_65"
+    },
+    {
+      "image_id": 66,
+      "mode": "spot",
+      "source_sat_id": 10,
+      "capture_start_s": 39660.0,
+      "capture_end_s": 39670.0,
+      "ready_s": 39730.0,
+      "target_id": "la_harbor",
+      "window_id": 53,
+      "truth_sha256": "87d49463fa62ba4cdb109e9048c52b4aa0ed7f93322766facd2df6d0b2994989",
+      "merge_reference": {
+        "median_seconds": 0.002712083000005805,
+        "samples_seconds": [
+          0.002178541999455774,
+          0.003103832999840961,
+          0.002712083000005805
+        ],
+        "records_before": 49,
+        "records_after": 30,
+        "output_sha256": "30f7a755958c4a981b557ff5e21602c8bb0f80bf8fe2214ce3a34f0e567e9e03",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_66"
+    },
+    {
+      "image_id": 67,
+      "mode": "spot",
+      "source_sat_id": 10,
+      "capture_start_s": 39740.0,
+      "capture_end_s": 39750.0,
+      "ready_s": 39810.0,
+      "target_id": "la_harbor",
+      "window_id": 54,
+      "truth_sha256": "1d16d246b8e74535cca4ec3916257ccf0205357ec4356cdf0eccf6d873c0e011",
+      "merge_reference": {
+        "median_seconds": 0.0026413750001665903,
+        "samples_seconds": [
+          0.002149207999536884,
+          0.002807959001074778,
+          0.0026413750001665903
+        ],
+        "records_before": 49,
+        "records_after": 30,
+        "output_sha256": "fed63379a87308677ebf8ab17e03f48a1835b46c207501d2abc429d2eba8cc5a",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_67"
+    },
+    {
+      "image_id": 68,
+      "mode": "fine",
+      "source_sat_id": 10,
+      "capture_start_s": 39800.0,
+      "capture_end_s": 39815.0,
+      "ready_s": 39875.0,
+      "target_id": "san_francisco_bay",
+      "window_id": 60,
+      "truth_sha256": "258ace02f937a0130d056a443641e259cf5b6b8debcc52b2265d7f712cc45f98",
+      "merge_reference": {
+        "median_seconds": 1.1250000170548446e-05,
+        "samples_seconds": [
+          1.1625001206994057e-05,
+          1.1250000170548446e-05,
+          1.1124999218736775e-05
+        ],
+        "records_before": 0,
+        "records_after": 0,
+        "output_sha256": "269eb09acaefdc89c67f310567e5df711e4e31e70874f355856a5cac2202955f",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_68"
+    },
+    {
+      "image_id": 69,
+      "mode": "spot",
+      "source_sat_id": 19,
+      "capture_start_s": 41750.0,
+      "capture_end_s": 41760.0,
+      "ready_s": 41820.0,
+      "target_id": "new_york_harbor",
+      "window_id": 108,
+      "truth_sha256": "36f633ffed8c60256216c68af9005ea3e5a53fa0a9f35019c51ba6c459d09aeb",
+      "merge_reference": {
+        "median_seconds": 0.0026524159984546714,
+        "samples_seconds": [
+          0.002631541001392179,
+          0.0034323749987379415,
+          0.0026524159984546714
+        ],
+        "records_before": 48,
+        "records_after": 30,
+        "output_sha256": "4f9cc648eeb6fd0ed0087157749049f24cbf3dd4cc6f5dffc97a77feb5bcd662",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_69"
+    },
+    {
+      "image_id": 70,
+      "mode": "fine",
+      "source_sat_id": 17,
+      "capture_start_s": 41790.0,
+      "capture_end_s": 41805.0,
+      "ready_s": 41865.0,
+      "target_id": "savannah_approach",
+      "window_id": 102,
+      "truth_sha256": "ef06080db5b0898c25176c632edb031185e4d873725cfdea6e09a7485a5ae385",
+      "merge_reference": {
+        "median_seconds": 0.0038582920005865162,
+        "samples_seconds": [
+          0.0035227499993197853,
+          0.004235334001350566,
+          0.0038582920005865162
+        ],
+        "records_before": 110,
+        "records_after": 30,
+        "output_sha256": "fed998307746d97f8db9190651ca0a9137bad81af88f70c5e18da10830ba1cf9",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_70"
+    },
+    {
+      "image_id": 71,
+      "mode": "fine",
+      "source_sat_id": 17,
+      "capture_start_s": 41860.0,
+      "capture_end_s": 41875.0,
+      "ready_s": 41935.0,
+      "target_id": "savannah_approach",
+      "window_id": 103,
+      "truth_sha256": "678c883265b961bdfdad7d56168a03d71f612650d40af81c72f196c4db85e07c",
+      "merge_reference": {
+        "median_seconds": 0.003879165999023826,
+        "samples_seconds": [
+          0.003697415999340592,
+          0.003879165999023826,
+          0.004074374999618158
+        ],
+        "records_before": 110,
+        "records_after": 30,
+        "output_sha256": "4f2ae9456dd9abc8171c11715b3aac59d71755d12207781440e1646eda441042",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_71"
+    },
+    {
+      "image_id": 72,
+      "mode": "fine",
+      "source_sat_id": 15,
+      "capture_start_s": 42010.0,
+      "capture_end_s": 42025.0,
+      "ready_s": 42085.0,
+      "target_id": "houston_ship_channel",
+      "window_id": 82,
+      "truth_sha256": "258ace02f937a0130d056a443641e259cf5b6b8debcc52b2265d7f712cc45f98",
+      "merge_reference": {
+        "median_seconds": 1.3999999282532372e-05,
+        "samples_seconds": [
+          1.3999999282532372e-05,
+          1.412499841535464e-05,
+          1.2915999832330272e-05
+        ],
+        "records_before": 0,
+        "records_after": 0,
+        "output_sha256": "269eb09acaefdc89c67f310567e5df711e4e31e70874f355856a5cac2202955f",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_72"
+    },
+    {
+      "image_id": 73,
+      "mode": "fine",
+      "source_sat_id": 13,
+      "capture_start_s": 42330.0,
+      "capture_end_s": 42345.0,
+      "ready_s": 42405.0,
+      "target_id": "la_harbor",
+      "window_id": 70,
+      "truth_sha256": "0b4ef894ccbec15b4d9d8e3c446f8f96dd4e9a3161e5c2d865cd8f2d0bd4a02b",
+      "merge_reference": {
+        "median_seconds": 0.003960082998673897,
+        "samples_seconds": [
+          0.0035953329988842597,
+          0.0044960420000279555,
+          0.003960082998673897
+        ],
+        "records_before": 107,
+        "records_after": 30,
+        "output_sha256": "b3582566fc66061af2fdb2bfab8eca581c8ba194fdac2894e8b7b1bec2c79e70",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_73"
+    },
+    {
+      "image_id": 74,
+      "mode": "spot",
+      "source_sat_id": 18,
+      "capture_start_s": 44450.0,
+      "capture_end_s": 44460.0,
+      "ready_s": 44520.0,
+      "target_id": "savannah_approach",
+      "window_id": 104,
+      "truth_sha256": "67c7e8a9210d906d358e8f510c6f81fddfaf0e9cc33bc52f168ed182217c820a",
+      "merge_reference": {
+        "median_seconds": 2.3340016923611984e-06,
+        "samples_seconds": [
+          2.5000008463393897e-06,
+          2.3340016923611984e-06,
+          2.165999831049703e-06
+        ],
+        "records_before": 0,
+        "records_after": 0,
+        "output_sha256": "dacef10661333b97b88d207864b1e939543ee1f2e649aa2613edd48746d65d77",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_74"
+    },
+    {
+      "image_id": 75,
+      "mode": "fine",
+      "source_sat_id": 16,
+      "capture_start_s": 44640.0,
+      "capture_end_s": 44655.0,
+      "ready_s": 44715.0,
+      "target_id": "houston_ship_channel",
+      "window_id": 87,
+      "truth_sha256": "66b19dac449b179e314409e0a3c7a01af36d88ad4a421e23c982c7903e5b5be0",
+      "merge_reference": {
+        "median_seconds": 0.003579584001272451,
+        "samples_seconds": [
+          0.0032028330006141914,
+          0.003579584001272451,
+          0.0036302080006862525
+        ],
+        "records_before": 101,
+        "records_after": 30,
+        "output_sha256": "0b50f555c9cc44c4a1cb762d495b972345371b6f016498bf35b54bd6ecb8667a",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_75"
+    },
+    {
+      "image_id": 76,
+      "mode": "fine",
+      "source_sat_id": 16,
+      "capture_start_s": 44730.0,
+      "capture_end_s": 44745.0,
+      "ready_s": 44805.0,
+      "target_id": "houston_ship_channel",
+      "window_id": 88,
+      "truth_sha256": "8c613fbc60b1562f64754cb563a5413368b0cc77c02ad7c416668f2c25a64719",
+      "merge_reference": {
+        "median_seconds": 0.003847250000035274,
+        "samples_seconds": [
+          0.003620166000473546,
+          0.003847250000035274,
+          0.004194832999928622
+        ],
+        "records_before": 118,
+        "records_after": 30,
+        "output_sha256": "64eaea1fc6f4edc1e14248347050dd3f31a292e5e94c78628a8a0aa4aea536b3",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_76"
+    },
+    {
+      "image_id": 77,
+      "mode": "spot",
+      "source_sat_id": 21,
+      "capture_start_s": 47230.0,
+      "capture_end_s": 47240.0,
+      "ready_s": 47300.0,
+      "target_id": "new_york_harbor",
+      "window_id": 118,
+      "truth_sha256": "1f798bc5b60fbb2eb1ffeeaccfbd7f66fbf205b92b90049db55c10700d44b068",
+      "merge_reference": {
+        "median_seconds": 0.002418792000753456,
+        "samples_seconds": [
+          0.0021059160008007893,
+          0.002418792000753456,
+          0.002587959001175477
+        ],
+        "records_before": 45,
+        "records_after": 30,
+        "output_sha256": "a4405af99f212f363b309ead21999141be0c19092d3d539d169bec040ebeefcd",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_77"
+    },
+    {
+      "image_id": 78,
+      "mode": "spot",
+      "source_sat_id": 15,
+      "capture_start_s": 47900.0,
+      "capture_end_s": 47910.0,
+      "ready_s": 47970.0,
+      "target_id": "san_francisco_bay",
+      "window_id": 84,
+      "truth_sha256": "e29daccb73eaa41d649fdc4e5ed27cf80793c33e272d00c2af0412997b122a61",
+      "merge_reference": {
+        "median_seconds": 0.002408833001027233,
+        "samples_seconds": [
+          0.0021027920010965317,
+          0.002408833001027233,
+          0.0026751250006782357
+        ],
+        "records_before": 46,
+        "records_after": 30,
+        "output_sha256": "9fe85f37b7eb5e36c4810d5bd0d1ec19ca2678467690df9c44b48a684f2086e3",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_78"
+    },
+    {
+      "image_id": 79,
+      "mode": "slea",
+      "source_sat_id": 15,
+      "capture_start_s": 47970.0,
+      "capture_end_s": 47980.0,
+      "ready_s": 48040.0,
+      "target_id": "san_francisco_bay",
+      "window_id": 85,
+      "truth_sha256": "f154feca852180762a91e2b2da1dfe9c5b33dcc61877e32bc77edcb529371bff",
+      "merge_reference": {
+        "median_seconds": 0.044847417000710266,
+        "samples_seconds": [
+          0.04020733300058055,
+          0.04820462499992573,
+          0.044847417000710266
+        ],
+        "records_before": 605,
+        "records_after": 270,
+        "output_sha256": "013132c18b208211a456f8d51f0617d825837eb8f1865aeecfdd1de8ece9000e",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_79"
+    },
+    {
+      "image_id": 80,
+      "mode": "slea",
+      "source_sat_id": 22,
+      "capture_start_s": 49870.0,
+      "capture_end_s": 49880.0,
+      "ready_s": 49940.0,
+      "target_id": "new_york_harbor",
+      "window_id": 127,
+      "truth_sha256": "24ed025ba1b63b3b4a963683271f331c7a1ef7dc34f9e2de799b87511c94f913",
+      "merge_reference": {
+        "median_seconds": 0.04363129099874641,
+        "samples_seconds": [
+          0.042940459001329145,
+          0.04390012499970908,
+          0.04363129099874641
+        ],
+        "records_before": 588,
+        "records_after": 270,
+        "output_sha256": "6a80eb9339a978a04a01ac0b499276205caac4c72cf2cf281c672dde038d2704",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_80"
+    },
+    {
+      "image_id": 81,
+      "mode": "fine",
+      "source_sat_id": 22,
+      "capture_start_s": 49950.0,
+      "capture_end_s": 49965.0,
+      "ready_s": 50025.0,
+      "target_id": "new_york_harbor",
+      "window_id": 128,
+      "truth_sha256": "377caba6fcfe69f056443f3a6f08370a1e84e0a927824839b0f41a5b2a6eb21b",
+      "merge_reference": {
+        "median_seconds": 0.003708125001139706,
+        "samples_seconds": [
+          0.00357520800025668,
+          0.003927083000235143,
+          0.003708125001139706
+        ],
+        "records_before": 110,
+        "records_after": 30,
+        "output_sha256": "522a03b5d6993cbc430f10605a4b4418c85935664125cd58deb2b5b9efc2b1f3",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_81"
+    },
+    {
+      "image_id": 82,
+      "mode": "fine",
+      "source_sat_id": 16,
+      "capture_start_s": 50470.0,
+      "capture_end_s": 50485.0,
+      "ready_s": 50545.0,
+      "target_id": "la_harbor",
+      "window_id": 89,
+      "truth_sha256": "05f324c4467c9c6181e8ecfc998f90e202ca60533beb039521a7d696cd77f73d",
+      "merge_reference": {
+        "median_seconds": 0.0035936660005972954,
+        "samples_seconds": [
+          0.003412166999623878,
+          0.0035936660005972954,
+          0.0036249160002626013
+        ],
+        "records_before": 106,
+        "records_after": 30,
+        "output_sha256": "aa65cf8ba2efeb95089e723d559ff35f2af5d74de59c99ce3b208612ecc48e73",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_82"
+    },
+    {
+      "image_id": 83,
+      "mode": "spot",
+      "source_sat_id": 16,
+      "capture_start_s": 50550.0,
+      "capture_end_s": 50560.0,
+      "ready_s": 50620.0,
+      "target_id": "san_francisco_bay",
+      "window_id": 95,
+      "truth_sha256": "dd668f3337b40ffe8cc3787d89c4b5489e41abd2ee559a358aec976290c9e6f1",
+      "merge_reference": {
+        "median_seconds": 0.0020757080001203576,
+        "samples_seconds": [
+          0.0017764170006557833,
+          0.002165457999581122,
+          0.0020757080001203576
+        ],
+        "records_before": 51,
+        "records_after": 29,
+        "output_sha256": "7d8e8adb7ead128ad58fe376e98ecd25f3def37369ebe8a79b720f0b0467ea0e",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_83"
+    },
+    {
+      "image_id": 84,
+      "mode": "fine",
+      "source_sat_id": 16,
+      "capture_start_s": 50610.0,
+      "capture_end_s": 50625.0,
+      "ready_s": 50685.0,
+      "target_id": "san_francisco_bay",
+      "window_id": 96,
+      "truth_sha256": "b5a401780064de48aa478814255adcf549815f709ee9598cba3fa3f3b91cfca1",
+      "merge_reference": {
+        "median_seconds": 0.0037355000004026806,
+        "samples_seconds": [
+          0.0034032910007226747,
+          0.0038039999999455176,
+          0.0037355000004026806
+        ],
+        "records_before": 106,
+        "records_after": 30,
+        "output_sha256": "1e8ae6d53f1e8f4e2dc15376da47510db421bdafa68eaaf9b21974f68c79ea9c",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_84"
+    },
+    {
+      "image_id": 85,
+      "mode": "spot",
+      "source_sat_id": 23,
+      "capture_start_s": 52610.0,
+      "capture_end_s": 52620.0,
+      "ready_s": 52680.0,
+      "target_id": "savannah_approach",
+      "window_id": 138,
+      "truth_sha256": "49925d17f7ac9136aaea2ed3d3af801070d47738c4a13f349cf0026a5f7d2fea",
+      "merge_reference": {
+        "median_seconds": 0.0024117919983837055,
+        "samples_seconds": [
+          0.0021762919986940688,
+          0.0024117919983837055,
+          0.00263095899936161
+        ],
+        "records_before": 52,
+        "records_after": 30,
+        "output_sha256": "46e8480193912c5e89ffb993ebc0408213df58e2490af0427b9fb654c47f51dd",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_85"
+    },
+    {
+      "image_id": 86,
+      "mode": "fine",
+      "source_sat_id": 23,
+      "capture_start_s": 52670.0,
+      "capture_end_s": 52685.0,
+      "ready_s": 52745.0,
+      "target_id": "savannah_approach",
+      "window_id": 139,
+      "truth_sha256": "ffe605f32a1e9e64eaba53ca6763f4e8d41fd75e2c2d311a2837bfb43a6e98eb",
+      "merge_reference": {
+        "median_seconds": 0.003732334000233095,
+        "samples_seconds": [
+          0.0033553339999343734,
+          0.003940250000596279,
+          0.003732334000233095
+        ],
+        "records_before": 112,
+        "records_after": 30,
+        "output_sha256": "3fc598198df08212400747e62c931230d32255ddc526f147d113b8278559b262",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_86"
+    },
+    {
+      "image_id": 87,
+      "mode": "fine",
+      "source_sat_id": 21,
+      "capture_start_s": 52820.0,
+      "capture_end_s": 52835.0,
+      "ready_s": 52895.0,
+      "target_id": "houston_ship_channel",
+      "window_id": 117,
+      "truth_sha256": "c2dde3b08692190719aee1c401eb68febd78805f82b7205d8a893177dfe022de",
+      "merge_reference": {
+        "median_seconds": 0.0041816249995463295,
+        "samples_seconds": [
+          0.0037275840004440397,
+          0.00429541599987715,
+          0.0041816249995463295
+        ],
+        "records_before": 114,
+        "records_after": 30,
+        "output_sha256": "095bf32965b1bf6c01fff121403b8217d166e02e8b07c819bac013c84dcb5983",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_87"
+    },
+    {
+      "image_id": 88,
+      "mode": "slea",
+      "source_sat_id": 19,
+      "capture_start_s": 53140.0,
+      "capture_end_s": 53150.0,
+      "ready_s": 53210.0,
+      "target_id": "la_harbor",
+      "window_id": 105,
+      "truth_sha256": "88cebc02ac8c1d8ec5a4ff36599db14c406bc05de5ab4ac94b69e594164eb13f",
+      "merge_reference": {
+        "median_seconds": 0.04300337499989837,
+        "samples_seconds": [
+          0.04165224999997008,
+          0.04744958400078758,
+          0.04300337499989837
+        ],
+        "records_before": 561,
+        "records_after": 269,
+        "output_sha256": "302e07ebb3e7dd5de2533cd132604a09054719eddce532cff6104ce8273067db",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_88"
+    },
+    {
+      "image_id": 89,
+      "mode": "slea",
+      "source_sat_id": 22,
+      "capture_start_s": 55460.0,
+      "capture_end_s": 55470.0,
+      "ready_s": 55530.0,
+      "target_id": "houston_ship_channel",
+      "window_id": 122,
+      "truth_sha256": "58bd0454aede7ce0affa1d97dc6e9ae39f5c8c2988cfc7a1a610f092440f83b1",
+      "merge_reference": {
+        "median_seconds": 0.042487958999117836,
+        "samples_seconds": [
+          0.038418791998992674,
+          0.042487958999117836,
+          0.04478995799945551
+        ],
+        "records_before": 570,
+        "records_after": 269,
+        "output_sha256": "a3dc5dadfe0c74647594b6a41aa707f7c90ce5fc9140b06906a550933e571f9d",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_89"
+    },
+    {
+      "image_id": 90,
+      "mode": "fine",
+      "source_sat_id": 22,
+      "capture_start_s": 55540.0,
+      "capture_end_s": 55555.0,
+      "ready_s": 55615.0,
+      "target_id": "houston_ship_channel",
+      "window_id": 123,
+      "truth_sha256": "c75d5ef6ea4b4d20c4eb98997911658aa604cbb22699c748600f467001b94543",
+      "merge_reference": {
+        "median_seconds": 0.003946540999095305,
+        "samples_seconds": [
+          0.0037301249994925456,
+          0.004097458000615006,
+          0.003946540999095305
+        ],
+        "records_before": 118,
+        "records_after": 30,
+        "output_sha256": "d516773b935bb15a2abce1aa20fd6b74f255699a47dae542507e53b4cc4852fa",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_90"
+    },
+    {
+      "image_id": 91,
+      "mode": "fine",
+      "source_sat_id": 1,
+      "capture_start_s": 56960.0,
+      "capture_end_s": 56975.0,
+      "ready_s": 57035.0,
+      "target_id": "new_york_harbor",
+      "window_id": 3,
+      "truth_sha256": "e0d82b1a4cc61ca6af2a1be64665bf5170fe8cee881af5fbfc4f55d289638ed9",
+      "merge_reference": {
+        "median_seconds": 0.0037518330009334022,
+        "samples_seconds": [
+          0.0034764169995469274,
+          0.0037518330009334022,
+          0.0038040830004320014
+        ],
+        "records_before": 119,
+        "records_after": 30,
+        "output_sha256": "49a87924bea7e90436d4457b20c02b597f7b37ddb24b199ba8a2b7a24c7a2ef9",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_91"
+    },
+    {
+      "image_id": 92,
+      "mode": "spot",
+      "source_sat_id": 1,
+      "capture_start_s": 57050.0,
+      "capture_end_s": 57060.0,
+      "ready_s": 57120.0,
+      "target_id": "new_york_harbor",
+      "window_id": 4,
+      "truth_sha256": "fb6d6efc282d19ead57c15ac25ee4d66e53b1c824d9c104a8db96d0b22b378d5",
+      "merge_reference": {
+        "median_seconds": 0.002487624999048421,
+        "samples_seconds": [
+          0.002182334001190611,
+          0.002487624999048421,
+          0.0027193330006411998
+        ],
+        "records_before": 57,
+        "records_after": 30,
+        "output_sha256": "2ffa5c4e49f39315927e4e9378c1c3c6af5da87e7be053c5b62bad9466a01d2c",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_92"
+    },
+    {
+      "image_id": 93,
+      "mode": "fine",
+      "source_sat_id": 1,
+      "capture_start_s": 57140.0,
+      "capture_end_s": 57155.0,
+      "ready_s": 57215.0,
+      "target_id": "savannah_approach",
+      "window_id": 7,
+      "truth_sha256": "010265670cd8298b4b33c43132a0270b4a8b5c219edbae7735c1199d8a94b75d",
+      "merge_reference": {
+        "median_seconds": 0.003628250000474509,
+        "samples_seconds": [
+          0.0031720000006316695,
+          0.003936666000299738,
+          0.003628250000474509
+        ],
+        "records_before": 105,
+        "records_after": 30,
+        "output_sha256": "98e477d5dbfd41ad7ed15eb7786765bdf884064ff49781781ff0a472872ec5f0",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_93"
+    },
+    {
+      "image_id": 94,
+      "mode": "fine",
+      "source_sat_id": 21,
+      "capture_start_s": 58710.0,
+      "capture_end_s": 58725.0,
+      "ready_s": 58785.0,
+      "target_id": "san_francisco_bay",
+      "window_id": 119,
+      "truth_sha256": "eca71e9aa8e36fe773db59e3c2ede81156592baa1591e51649c26945f2359265",
+      "merge_reference": {
+        "median_seconds": 0.0037291659991751658,
+        "samples_seconds": [
+          0.0034616249995451653,
+          0.0037291659991751658,
+          0.0037911250001343433
+        ],
+        "records_before": 108,
+        "records_after": 30,
+        "output_sha256": "682a7c05d0ff7f589881cea79b3b19a1636cbed568e1ee84bf4f7ab3e674a0f0",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_94"
+    },
+    {
+      "image_id": 95,
+      "mode": "fine",
+      "source_sat_id": 21,
+      "capture_start_s": 58780.0,
+      "capture_end_s": 58795.0,
+      "ready_s": 58855.0,
+      "target_id": "san_francisco_bay",
+      "window_id": 120,
+      "truth_sha256": "c605cce1328d8b5324f2e4e87a8fe571f4e4bc42a5d021394974727620c4ac45",
+      "merge_reference": {
+        "median_seconds": 0.0033895840006152866,
+        "samples_seconds": [
+          0.0030247089998738375,
+          0.0033895840006152866,
+          0.003463875000306871
+        ],
+        "records_before": 98,
+        "records_after": 30,
+        "output_sha256": "3384bdb940218142f0030e6461290a2e58aad5b05d48cdc37b4ab5756b68e0e6",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_95"
+    },
+    {
+      "image_id": 96,
+      "mode": "fine",
+      "source_sat_id": 2,
+      "capture_start_s": 59630.0,
+      "capture_end_s": 59645.0,
+      "ready_s": 59705.0,
+      "target_id": "new_york_harbor",
+      "window_id": 10,
+      "truth_sha256": "41d1ff18b05913d7084923f352aeed06c157fdf8fcdf6df3ea480e9c6c0d7d3d",
+      "merge_reference": {
+        "median_seconds": 0.003976832998887403,
+        "samples_seconds": [
+          0.003604458001063904,
+          0.004347750000306405,
+          0.003976832998887403
+        ],
+        "records_before": 125,
+        "records_after": 30,
+        "output_sha256": "52b50f47040e57691f1a22f548ec6123a4b8848830cdc81ff414d9aae26d5960",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_96"
+    },
+    {
+      "image_id": 97,
+      "mode": "fine",
+      "source_sat_id": 22,
+      "capture_start_s": 61290.0,
+      "capture_end_s": 61305.0,
+      "ready_s": 61365.0,
+      "target_id": "la_harbor",
+      "window_id": 124,
+      "truth_sha256": "0f395a622d32bd4594b7e4954cb5ca521f39939024c8ea1d87cf57087dc300b0",
+      "merge_reference": {
+        "median_seconds": 0.003596500000639935,
+        "samples_seconds": [
+          0.0033789999997679843,
+          0.003596500000639935,
+          0.0037593750002997695
+        ],
+        "records_before": 110,
+        "records_after": 30,
+        "output_sha256": "26d26aeae73191a799c587a773ef5c4fc9b6ff413be5b2bfc7daef249ab57996",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_97"
+    },
+    {
+      "image_id": 98,
+      "mode": "spot",
+      "source_sat_id": 22,
+      "capture_start_s": 61360.0,
+      "capture_end_s": 61370.0,
+      "ready_s": 61430.0,
+      "target_id": "san_francisco_bay",
+      "window_id": 130,
+      "truth_sha256": "67c7e8a9210d906d358e8f510c6f81fddfaf0e9cc33bc52f168ed182217c820a",
+      "merge_reference": {
+        "median_seconds": 2.208000296377577e-06,
+        "samples_seconds": [
+          2.499999027349986e-06,
+          2.208000296377577e-06,
+          2.1249998098937795e-06
+        ],
+        "records_before": 0,
+        "records_after": 0,
+        "output_sha256": "dacef10661333b97b88d207864b1e939543ee1f2e649aa2613edd48746d65d77",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_98"
+    },
+    {
+      "image_id": 99,
+      "mode": "spot",
+      "source_sat_id": 22,
+      "capture_start_s": 61430.0,
+      "capture_end_s": 61440.0,
+      "ready_s": 61500.0,
+      "target_id": "san_francisco_bay",
+      "window_id": 131,
+      "truth_sha256": "a9de3f80ee903250aa94a107ed7852ba37358afcd80349e118b2f23082872f8f",
+      "merge_reference": {
+        "median_seconds": 0.0024500420004187617,
+        "samples_seconds": [
+          0.002179125000111526,
+          0.0024500420004187617,
+          0.0027444170009403024
+        ],
+        "records_before": 54,
+        "records_after": 30,
+        "output_sha256": "8b356fea73cab8116b099df95ac0c491147e265090485fdd466554f6439a9c73",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_99"
+    },
+    {
+      "image_id": 100,
+      "mode": "fine",
+      "source_sat_id": 3,
+      "capture_start_s": 62640.0,
+      "capture_end_s": 62655.0,
+      "ready_s": 62715.0,
+      "target_id": "savannah_approach",
+      "window_id": 16,
+      "truth_sha256": "196c72c354096454c1cf83361c89054723b0676b246a551f803e25f10466e75b",
+      "merge_reference": {
+        "median_seconds": 0.0036156670012132963,
+        "samples_seconds": [
+          0.0031959160005499143,
+          0.00393416699989757,
+          0.0036156670012132963
+        ],
+        "records_before": 104,
+        "records_after": 30,
+        "output_sha256": "d351c6e36abf921510a336c343cc603cc2472ec61915ff5bc436a9796001a00f",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_100"
+    },
+    {
+      "image_id": 101,
+      "mode": "slea",
+      "source_sat_id": 4,
+      "capture_start_s": 65150.0,
+      "capture_end_s": 65160.0,
+      "ready_s": 65220.0,
+      "target_id": "new_york_harbor",
+      "window_id": 23,
+      "truth_sha256": "db61dd54ff6a2efa22637c68ba913090a842c8cba2172cd081ee22ee523d40da",
+      "merge_reference": {
+        "median_seconds": 0.04259529100090731,
+        "samples_seconds": [
+          0.039331583999228314,
+          0.04259529100090731,
+          0.042646709000109695
+        ],
+        "records_before": 566,
+        "records_after": 270,
+        "output_sha256": "8a09eb697515e6af4f0df77b80f472672506e6fbfb7bb56ca17fb3c1d34cf748",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_101"
+    },
+    {
+      "image_id": 102,
+      "mode": "fine",
+      "source_sat_id": 4,
+      "capture_start_s": 65270.0,
+      "capture_end_s": 65285.0,
+      "ready_s": 65345.0,
+      "target_id": "savannah_approach",
+      "window_id": 26,
+      "truth_sha256": "eaa5ac78ca4013d4d64e37fdd26e387e53f370f4704b87c06ff860debff75f2d",
+      "merge_reference": {
+        "median_seconds": 0.004163499999776832,
+        "samples_seconds": [
+          0.003846458999760216,
+          0.004449250000106986,
+          0.004163499999776832
+        ],
+        "records_before": 119,
+        "records_after": 30,
+        "output_sha256": "a5ed526ab8bda6ee8067285908ec7d68245cdf378cdf8e0f990e988d8f13d27a",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_102"
+    },
+    {
+      "image_id": 103,
+      "mode": "fine",
+      "source_sat_id": 4,
+      "capture_start_s": 65360.0,
+      "capture_end_s": 65375.0,
+      "ready_s": 65435.0,
+      "target_id": "savannah_approach",
+      "window_id": 27,
+      "truth_sha256": "52b8e0514b2795a6dca16d19dea47b0e757f905b827aa2a635d67bba26ea3dae",
+      "merge_reference": {
+        "median_seconds": 0.0037087079999764683,
+        "samples_seconds": [
+          0.003231832999517792,
+          0.0037087079999764683,
+          0.0038120419994811527
+        ],
+        "records_before": 103,
+        "records_after": 30,
+        "output_sha256": "76c0f8007bc267dbad7fdc0f24185126abb6a045d5788ccbfa5d6534f5b9b1b8",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_103"
+    },
+    {
+      "image_id": 104,
+      "mode": "slea",
+      "source_sat_id": 2,
+      "capture_start_s": 65550.0,
+      "capture_end_s": 65560.0,
+      "ready_s": 65620.0,
+      "target_id": "houston_ship_channel",
+      "window_id": 8,
+      "truth_sha256": "1a55507b0c631ebc3d56deb583efc3d0abddefcd9c00cc3adae324ab817f561b",
+      "merge_reference": {
+        "median_seconds": 0.04307120800149278,
+        "samples_seconds": [
+          0.03977941700031806,
+          0.043301707999489736,
+          0.04307120800149278
+        ],
+        "records_before": 574,
+        "records_after": 270,
+        "output_sha256": "6ec9bbc9f7c3784d2a7df58333c49fdcb5f642d87ff4dfc2795b4a85b74032cd",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_104"
+    },
+    {
+      "image_id": 105,
+      "mode": "fine",
+      "source_sat_id": 7,
+      "capture_start_s": 67770.0,
+      "capture_end_s": 67785.0,
+      "ready_s": 67845.0,
+      "target_id": "new_york_harbor",
+      "window_id": 37,
+      "truth_sha256": "232358a9df0526227bd30fd1b06c9c3d87b32086835e05adc5f5db67b6cd4876",
+      "merge_reference": {
+        "median_seconds": 0.003992416000983212,
+        "samples_seconds": [
+          0.0036897500012855744,
+          0.004033541999888257,
+          0.003992416000983212
+        ],
+        "records_before": 101,
+        "records_after": 30,
+        "output_sha256": "627acedd5a9a6a4190eddb95206a4ebb9ce94bb0045afcad9fdd573af80cf1ef",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_105"
+    },
+    {
+      "image_id": 106,
+      "mode": "fine",
+      "source_sat_id": 7,
+      "capture_start_s": 67860.0,
+      "capture_end_s": 67875.0,
+      "ready_s": 67935.0,
+      "target_id": "new_york_harbor",
+      "window_id": 38,
+      "truth_sha256": "3619f6c99d2d31cdb964a237d6055ab6fde7841a12dc70ef1fbea3bbf305f30a",
+      "merge_reference": {
+        "median_seconds": 0.003876291999404202,
+        "samples_seconds": [
+          0.003468959001111216,
+          0.003876291999404202,
+          0.004006124998340965
+        ],
+        "records_before": 106,
+        "records_after": 30,
+        "output_sha256": "0178c4c9ceb6af289ca7ce1d6f1975edc846508aa11fc9e99e61961eead4acf0",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_106"
+    },
+    {
+      "image_id": 107,
+      "mode": "fine",
+      "source_sat_id": 7,
+      "capture_start_s": 67950.0,
+      "capture_end_s": 67965.0,
+      "ready_s": 68025.0,
+      "target_id": "savannah_approach",
+      "window_id": 41,
+      "truth_sha256": "258ace02f937a0130d056a443641e259cf5b6b8debcc52b2265d7f712cc45f98",
+      "merge_reference": {
+        "median_seconds": 1.1084001016570255e-05,
+        "samples_seconds": [
+          1.1375001122360118e-05,
+          1.1084001016570255e-05,
+          1.1042000551242381e-05
+        ],
+        "records_before": 0,
+        "records_after": 0,
+        "output_sha256": "269eb09acaefdc89c67f310567e5df711e4e31e70874f355856a5cac2202955f",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_107"
+    },
+    {
+      "image_id": 108,
+      "mode": "fine",
+      "source_sat_id": 5,
+      "capture_start_s": 68200.0,
+      "capture_end_s": 68215.0,
+      "ready_s": 68275.0,
+      "target_id": "houston_ship_channel",
+      "window_id": 28,
+      "truth_sha256": "5ce7aa4dbfa9b8f1c0da400e498b5cbb79b4a6f1733694bbddfc7232ecd5de0d",
+      "merge_reference": {
+        "median_seconds": 0.0038398750002670567,
+        "samples_seconds": [
+          0.0033549999989190837,
+          0.00387066600160324,
+          0.0038398750002670567
+        ],
+        "records_before": 111,
+        "records_after": 30,
+        "output_sha256": "ab2d3812c0691c79d1d8ddb3e12208ab9d968366df9945acf5372066dc6737e4",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_108"
+    },
+    {
+      "image_id": 109,
+      "mode": "slea",
+      "source_sat_id": 5,
+      "capture_start_s": 68280.0,
+      "capture_end_s": 68290.0,
+      "ready_s": 68350.0,
+      "target_id": "houston_ship_channel",
+      "window_id": 29,
+      "truth_sha256": "8d3d31828ca72d79b401e77b67c45a44fab9098310fde83f7bfdba1c9c44125b",
+      "merge_reference": {
+        "median_seconds": 0.04386075000002165,
+        "samples_seconds": [
+          0.03920266700151842,
+          0.04386075000002165,
+          0.044301708998318645
+        ],
+        "records_before": 564,
+        "records_after": 270,
+        "output_sha256": "4c86eb20e29e36d30acf8f40ee75ce343292fb53354a97ce91919e85b35ff902",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_109"
+    },
+    {
+      "image_id": 110,
+      "mode": "spot",
+      "source_sat_id": 1,
+      "capture_start_s": 68540.0,
+      "capture_end_s": 68550.0,
+      "ready_s": 68610.0,
+      "target_id": "san_francisco_bay",
+      "window_id": 5,
+      "truth_sha256": "492c850dc7e7ec2864ccddcf68b127f8079f5ede5f23ab57e6636e078ce0e13f",
+      "merge_reference": {
+        "median_seconds": 0.0026914580012089573,
+        "samples_seconds": [
+          0.0022342499996739207,
+          0.0030145420005283086,
+          0.0026914580012089573
+        ],
+        "records_before": 53,
+        "records_after": 30,
+        "output_sha256": "9d02a78272f23d4895f3683636a4c7e13bb74c693582a23c119f168128542628",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_110"
+    },
+    {
+      "image_id": 111,
+      "mode": "fine",
+      "source_sat_id": 1,
+      "capture_start_s": 68630.0,
+      "capture_end_s": 68645.0,
+      "ready_s": 68705.0,
+      "target_id": "san_francisco_bay",
+      "window_id": 6,
+      "truth_sha256": "373146735acef6e8d64f1ec90f9f78afba45a55415e7d939163210616272185e",
+      "merge_reference": {
+        "median_seconds": 0.0034846669987018686,
+        "samples_seconds": [
+          0.0032986249989335192,
+          0.0035364169998501893,
+          0.0034846669987018686
+        ],
+        "records_before": 118,
+        "records_after": 29,
+        "output_sha256": "525c823bb2ea2a839bd748c0437a4c90a21f2eedeeacf4fd7ad7df8c545349bb",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_111"
+    },
+    {
+      "image_id": 112,
+      "mode": "fine",
+      "source_sat_id": 8,
+      "capture_start_s": 70440.0,
+      "capture_end_s": 70455.0,
+      "ready_s": 70515.0,
+      "target_id": "new_york_harbor",
+      "window_id": 44,
+      "truth_sha256": "8c976f90d76485dce60d8470fba3c7484e302c3a58718df0b8cab6e8b7d99deb",
+      "merge_reference": {
+        "median_seconds": 0.0039477919999626465,
+        "samples_seconds": [
+          0.003640208999058814,
+          0.004374457999801962,
+          0.0039477919999626465
+        ],
+        "records_before": 119,
+        "records_after": 30,
+        "output_sha256": "29e8fcf685341f924fdd2cec2ec19eb708715386a6c7779f1c16fd2dfc82c67c",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_112"
+    },
+    {
+      "image_id": 113,
+      "mode": "slea",
+      "source_sat_id": 2,
+      "capture_start_s": 71210.0,
+      "capture_end_s": 71220.0,
+      "ready_s": 71280.0,
+      "target_id": "san_francisco_bay",
+      "window_id": 11,
+      "truth_sha256": "1c3c08b5c10f6706eab7e2cdb0e5b1f935999e4f45654becc8e756edcec3b4cd",
+      "merge_reference": {
+        "median_seconds": 0.043610000000626314,
+        "samples_seconds": [
+          0.0392359999987093,
+          0.04375858399907884,
+          0.043610000000626314
+        ],
+        "records_before": 581,
+        "records_after": 270,
+        "output_sha256": "6c82fcd722aa8b6122d358c9679046ab0bf621f70a791694dd082c83a031e86a",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_113"
+    },
+    {
+      "image_id": 114,
+      "mode": "fine",
+      "source_sat_id": 2,
+      "capture_start_s": 71270.0,
+      "capture_end_s": 71285.0,
+      "ready_s": 71345.0,
+      "target_id": "la_harbor",
+      "window_id": 9,
+      "truth_sha256": "509c8e69fe652fc6b7ae144c3c12627d3c964d66951afb20a791931dfaf36018",
+      "merge_reference": {
+        "median_seconds": 0.0039884999987407355,
+        "samples_seconds": [
+          0.0038911250012461096,
+          0.004272416999810957,
+          0.0039884999987407355
+        ],
+        "records_before": 114,
+        "records_after": 30,
+        "output_sha256": "f80f3fdffa6e34574d3fec72cfd1879eea092028cd97c9f1fa2b0fec22891253",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_114"
+    },
+    {
+      "image_id": 115,
+      "mode": "spot",
+      "source_sat_id": 9,
+      "capture_start_s": 73460.0,
+      "capture_end_s": 73470.0,
+      "ready_s": 73530.0,
+      "target_id": "savannah_approach",
+      "window_id": 50,
+      "truth_sha256": "170929bf27e8e0c499b487044407af2c9bbbee95007ebe9b85bdeff830611ca6",
+      "merge_reference": {
+        "median_seconds": 0.002285541999299312,
+        "samples_seconds": [
+          0.001939208999829134,
+          0.002285541999299312,
+          0.002478166999935638
+        ],
+        "records_before": 55,
+        "records_after": 29,
+        "output_sha256": "87cacd376c5425aef899f65f7e9a90291bf720a7e51a7c1372d69bce82a88f4a",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_115"
+    },
+    {
+      "image_id": 116,
+      "mode": "fine",
+      "source_sat_id": 5,
+      "capture_start_s": 73900.0,
+      "capture_end_s": 73915.0,
+      "ready_s": 73975.0,
+      "target_id": "la_harbor",
+      "window_id": 30,
+      "truth_sha256": "e07e95c964f5dd97322704a5187d862383b4b8f73eecbfa05f64867349f0fcb4",
+      "merge_reference": {
+        "median_seconds": 0.003724791000422556,
+        "samples_seconds": [
+          0.003469833000053768,
+          0.003937915998903918,
+          0.003724791000422556
+        ],
+        "records_before": 109,
+        "records_after": 30,
+        "output_sha256": "2b7aa9e73eeaccfead18104603d39ee3abf4f81aabf55d2a5804c3dcdee07e4c",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_116"
+    },
+    {
+      "image_id": 117,
+      "mode": "fine",
+      "source_sat_id": 5,
+      "capture_start_s": 73980.0,
+      "capture_end_s": 73995.0,
+      "ready_s": 74055.0,
+      "target_id": "la_harbor",
+      "window_id": 31,
+      "truth_sha256": "258ace02f937a0130d056a443641e259cf5b6b8debcc52b2265d7f712cc45f98",
+      "merge_reference": {
+        "median_seconds": 1.1084001016570255e-05,
+        "samples_seconds": [
+          1.1207999705220573e-05,
+          1.1084001016570255e-05,
+          1.0874999134102836e-05
+        ],
+        "records_before": 0,
+        "records_after": 0,
+        "output_sha256": "269eb09acaefdc89c67f310567e5df711e4e31e70874f355856a5cac2202955f",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_117"
+    },
+    {
+      "image_id": 118,
+      "mode": "fine",
+      "source_sat_id": 10,
+      "capture_start_s": 75960.0,
+      "capture_end_s": 75975.0,
+      "ready_s": 76035.0,
+      "target_id": "new_york_harbor",
+      "window_id": 57,
+      "truth_sha256": "569dc1fb256f82aee63421f2d3b63045bf3600616b75557569a69395a835318b",
+      "merge_reference": {
+        "median_seconds": 0.004107165999812423,
+        "samples_seconds": [
+          0.004164957999819308,
+          0.004107165999812423,
+          0.00391916599983233
+        ],
+        "records_before": 114,
+        "records_after": 30,
+        "output_sha256": "14ad73c028811919431a315be0b7e59d15df34fdbaaf618966678102e8fb3d16",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_118"
+    },
+    {
+      "image_id": 119,
+      "mode": "spot",
+      "source_sat_id": 10,
+      "capture_start_s": 76080.0,
+      "capture_end_s": 76090.0,
+      "ready_s": 76150.0,
+      "target_id": "savannah_approach",
+      "window_id": 61,
+      "truth_sha256": "4e1aa7839339bdadb5d8a2d9ac1d4f2d992acb89a76866f86da4bdfbf31643d2",
+      "merge_reference": {
+        "median_seconds": 0.002513500001441571,
+        "samples_seconds": [
+          0.0021777919992018724,
+          0.002513500001441571,
+          0.0027644579986372264
+        ],
+        "records_before": 54,
+        "records_after": 30,
+        "output_sha256": "0ddffabbda6b2a363bf195e8d4ca9c5c8c25922119ba7e3a0024f37877a705dc",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_119"
+    },
+    {
+      "image_id": 120,
+      "mode": "fine",
+      "source_sat_id": 10,
+      "capture_start_s": 76170.0,
+      "capture_end_s": 76185.0,
+      "ready_s": 76245.0,
+      "target_id": "savannah_approach",
+      "window_id": 62,
+      "truth_sha256": "b69ca44d20dd032ca533b5cffe6e99d62c175c974100f9f80e699b9415232f78",
+      "merge_reference": {
+        "median_seconds": 0.003785582999626058,
+        "samples_seconds": [
+          0.003207750000001397,
+          0.004036625001390348,
+          0.003785582999626058
+        ],
+        "records_before": 108,
+        "records_after": 30,
+        "output_sha256": "d08ee1c2396f2003441f4f3566dbe269e5cdd1e46e110aaeab5c4e97427b2180",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_120"
+    },
+    {
+      "image_id": 121,
+      "mode": "fine",
+      "source_sat_id": 8,
+      "capture_start_s": 76370.0,
+      "capture_end_s": 76385.0,
+      "ready_s": 76445.0,
+      "target_id": "houston_ship_channel",
+      "window_id": 42,
+      "truth_sha256": "d6c4a2b139ea2f50b48bc0fa1ef8f4e0dd1c3ddf20a4ffc690426267d37b55df",
+      "merge_reference": {
+        "median_seconds": 0.0035801670001092134,
+        "samples_seconds": [
+          0.0034237910003867,
+          0.0035848750012519304,
+          0.0035801670001092134
+        ],
+        "records_before": 107,
+        "records_after": 30,
+        "output_sha256": "3a1708766dfdcfea061e717170c995c1b6a18437e4c11b8b430a1d4e723e403a",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_121"
+    },
+    {
+      "image_id": 122,
+      "mode": "spot",
+      "source_sat_id": 4,
+      "capture_start_s": 76750.0,
+      "capture_end_s": 76760.0,
+      "ready_s": 76820.0,
+      "target_id": "san_francisco_bay",
+      "window_id": 25,
+      "truth_sha256": "1f1eadd07efb6a366fbb79d0de9a2227c3a5eacf24911a1d51a1423f88d2a696",
+      "merge_reference": {
+        "median_seconds": 0.002417292000245652,
+        "samples_seconds": [
+          0.002188082999055041,
+          0.002417292000245652,
+          0.002639749998706975
+        ],
+        "records_before": 54,
+        "records_after": 30,
+        "output_sha256": "c770ba753660060cf53e522aceda0915f141aaf7415bfb156ce15959b962c69e",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_122"
+    },
+    {
+      "image_id": 123,
+      "mode": "fine",
+      "source_sat_id": 13,
+      "capture_start_s": 78590.0,
+      "capture_end_s": 78605.0,
+      "ready_s": 78665.0,
+      "target_id": "new_york_harbor",
+      "window_id": 72,
+      "truth_sha256": "bf75915f354f5a7d47b9b9923267b68be62f65f36240b38600d98ade982515d1",
+      "merge_reference": {
+        "median_seconds": 0.003905999999915366,
+        "samples_seconds": [
+          0.00342441599968879,
+          0.004239709000103176,
+          0.003905999999915366
+        ],
+        "records_before": 113,
+        "records_after": 30,
+        "output_sha256": "81b67294d0af943f4a1158691a39a8ef929ab303ae5a843cbc59c923b10e278d",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_123"
+    },
+    {
+      "image_id": 124,
+      "mode": "spot",
+      "source_sat_id": 13,
+      "capture_start_s": 78670.0,
+      "capture_end_s": 78680.0,
+      "ready_s": 78740.0,
+      "target_id": "new_york_harbor",
+      "window_id": 73,
+      "truth_sha256": "fb0f02e18e4ee6cb74b62a439ac05983101491f3b1b64b5c5b88d67b2b593a28",
+      "merge_reference": {
+        "median_seconds": 0.0028040420002071187,
+        "samples_seconds": [
+          0.0030182500013324898,
+          0.0027807500009657815,
+          0.0028040420002071187
+        ],
+        "records_before": 51,
+        "records_after": 30,
+        "output_sha256": "b05cea734c17e8097ca893c9732de9ec7095efb8cba8de7619a8ff1ce4e4102a",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_124"
+    },
+    {
+      "image_id": 125,
+      "mode": "fine",
+      "source_sat_id": 13,
+      "capture_start_s": 78770.0,
+      "capture_end_s": 78785.0,
+      "ready_s": 78845.0,
+      "target_id": "savannah_approach",
+      "window_id": 76,
+      "truth_sha256": "b907b68c3eec2754cb83e41a8c0e651576db24e8bf301651d4636c6881bf8eb4",
+      "merge_reference": {
+        "median_seconds": 0.0035209580000810092,
+        "samples_seconds": [
+          0.0031057079995662207,
+          0.0037455839992617257,
+          0.0035209580000810092
+        ],
+        "records_before": 98,
+        "records_after": 30,
+        "output_sha256": "6146c81fa02e4aa71ec036b6835f2aa31b849464e751aa12ad994702e536824d",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_125"
+    },
+    {
+      "image_id": 126,
+      "mode": "slea",
+      "source_sat_id": 11,
+      "capture_start_s": 79010.0,
+      "capture_end_s": 79020.0,
+      "ready_s": 79080.0,
+      "target_id": "houston_ship_channel",
+      "window_id": 63,
+      "truth_sha256": "816ac2ba8d91e7cb2e8e7defd63accb8afdb0ef343bd0e44831607c328f4303b",
+      "merge_reference": {
+        "median_seconds": 0.047553999998854124,
+        "samples_seconds": [
+          0.040581000001111533,
+          0.047643791998780216,
+          0.047553999998854124
+        ],
+        "records_before": 629,
+        "records_after": 268,
+        "output_sha256": "87cc22259a4c4acf306a4bb5f206e1688fb189a1abc19da499b22b50667990a9",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_126"
+    },
+    {
+      "image_id": 127,
+      "mode": "spot",
+      "source_sat_id": 11,
+      "capture_start_s": 79090.0,
+      "capture_end_s": 79100.0,
+      "ready_s": 79160.0,
+      "target_id": "houston_ship_channel",
+      "window_id": 64,
+      "truth_sha256": "836893046433e2ff30a9cdebb3c0f29ff114385de57adbfc3e856624233507e8",
+      "merge_reference": {
+        "median_seconds": 0.00274912500026403,
+        "samples_seconds": [
+          0.0021963340004731435,
+          0.0029260419996717246,
+          0.00274912500026403
+        ],
+        "records_before": 54,
+        "records_after": 30,
+        "output_sha256": "b852ca124cdea534234c802e61c7a39c33b04edb35ecb650b5b6965f913db4e7",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_127"
+    },
+    {
+      "image_id": 128,
+      "mode": "slea",
+      "source_sat_id": 7,
+      "capture_start_s": 79350.0,
+      "capture_end_s": 79360.0,
+      "ready_s": 79420.0,
+      "target_id": "san_francisco_bay",
+      "window_id": 39,
+      "truth_sha256": "be062ebafcebd4a6ea7b3238eb9d92c30178aac86bc3bdabefe2ec7d41d7b315",
+      "merge_reference": {
+        "median_seconds": 0.04349495799942815,
+        "samples_seconds": [
+          0.04214820800007146,
+          0.04596441700050491,
+          0.04349495799942815
+        ],
+        "records_before": 569,
+        "records_after": 270,
+        "output_sha256": "9c544600c992ba77f16d0cbd38e2c036951a27636647b85ca29f85a44e6b790e",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_128"
+    },
+    {
+      "image_id": 129,
+      "mode": "fine",
+      "source_sat_id": 7,
+      "capture_start_s": 79440.0,
+      "capture_end_s": 79455.0,
+      "ready_s": 79515.0,
+      "target_id": "san_francisco_bay",
+      "window_id": 40,
+      "truth_sha256": "52a863ada9c07ba3dac4444395fd221f1a11bbc0a541e01246bd7f01c3e7f4a0",
+      "merge_reference": {
+        "median_seconds": 0.0039857499996287515,
+        "samples_seconds": [
+          0.003653374998975778,
+          0.004074624999702792,
+          0.0039857499996287515
+        ],
+        "records_before": 113,
+        "records_after": 30,
+        "output_sha256": "3070e02107a1edf4c15146db39e1c3da32613466ba2615cb9bfa0a324b3a2a73",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_129"
+    },
+    {
+      "image_id": 130,
+      "mode": "slea",
+      "source_sat_id": 14,
+      "capture_start_s": 81250.0,
+      "capture_end_s": 81260.0,
+      "ready_s": 81320.0,
+      "target_id": "new_york_harbor",
+      "window_id": 80,
+      "truth_sha256": "d4bddd30530334a3281c9df342955d68e89517d5f9d1936e2b7cbd31041dc990",
+      "merge_reference": {
+        "median_seconds": 0.043000333000236424,
+        "samples_seconds": [
+          0.03786654199939221,
+          0.043000333000236424,
+          0.043201167000006535
+        ],
+        "records_before": 574,
+        "records_after": 270,
+        "output_sha256": "eaf3ce9e8cc93f19f3b7bb2c9a520f36995540f6700aa85b69e4ccd155867b7e",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_130"
+    },
+    {
+      "image_id": 131,
+      "mode": "spot",
+      "source_sat_id": 8,
+      "capture_start_s": 82020.0,
+      "capture_end_s": 82030.0,
+      "ready_s": 82090.0,
+      "target_id": "san_francisco_bay",
+      "window_id": 45,
+      "truth_sha256": "2e1808d09f3ee16056c7f7b314c87e4fd2b97a23d90c28ef12871979bf515dfd",
+      "merge_reference": {
+        "median_seconds": 0.003079500000239932,
+        "samples_seconds": [
+          0.0024002079990168568,
+          0.0033965000002353918,
+          0.003079500000239932
+        ],
+        "records_before": 54,
+        "records_after": 30,
+        "output_sha256": "d291c2b2745a7009a21e5978f76ad68ce7f0854d0a91a754717f46314a06679a",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_131"
+    },
+    {
+      "image_id": 132,
+      "mode": "fine",
+      "source_sat_id": 8,
+      "capture_start_s": 82080.0,
+      "capture_end_s": 82095.0,
+      "ready_s": 82155.0,
+      "target_id": "la_harbor",
+      "window_id": 43,
+      "truth_sha256": "cb6031dd0dd846cb8481fc968508f2304a20604960c6166e6871fff302fdf0ec",
+      "merge_reference": {
+        "median_seconds": 0.004144458998780465,
+        "samples_seconds": [
+          0.003860124999846448,
+          0.004346125000665779,
+          0.004144458998780465
+        ],
+        "records_before": 103,
+        "records_after": 30,
+        "output_sha256": "6cb0c2f2f85d05b2610db22ec3608a7cff681693a127d426397f805be3b3cc3c",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_132"
+    },
+    {
+      "image_id": 133,
+      "mode": "fine",
+      "source_sat_id": 15,
+      "capture_start_s": 84270.0,
+      "capture_end_s": 84285.0,
+      "ready_s": 84345.0,
+      "target_id": "savannah_approach",
+      "window_id": 86,
+      "truth_sha256": "3e5abda9b2614ed3372f5a1c58b3f0a6c2d72c4b7e3ada3bcd12aac4b45b86f4",
+      "merge_reference": {
+        "median_seconds": 0.0039725419992464595,
+        "samples_seconds": [
+          0.003592707998905098,
+          0.0039725419992464595,
+          0.00429591700049059
+        ],
+        "records_before": 102,
+        "records_after": 30,
+        "output_sha256": "82d5050be59418c7d0b14622c5f7b8516455fa0cb49a5b9077a8dd6760f6186b",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_133"
+    },
+    {
+      "image_id": 134,
+      "mode": "fine",
+      "source_sat_id": 11,
+      "capture_start_s": 84720.0,
+      "capture_end_s": 84735.0,
+      "ready_s": 84795.0,
+      "target_id": "la_harbor",
+      "window_id": 65,
+      "truth_sha256": "258ace02f937a0130d056a443641e259cf5b6b8debcc52b2265d7f712cc45f98",
+      "merge_reference": {
+        "median_seconds": 1.129100019170437e-05,
+        "samples_seconds": [
+          1.1457999789854512e-05,
+          1.129100019170437e-05,
+          1.1083000572398305e-05
+        ],
+        "records_before": 0,
+        "records_after": 0,
+        "output_sha256": "269eb09acaefdc89c67f310567e5df711e4e31e70874f355856a5cac2202955f",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_134"
+    },
+    {
+      "image_id": 135,
+      "mode": "fine",
+      "source_sat_id": 11,
+      "capture_start_s": 84790.0,
+      "capture_end_s": 84805.0,
+      "ready_s": 84865.0,
+      "target_id": "la_harbor",
+      "window_id": 66,
+      "truth_sha256": "96d38096a0ff3f7b4989b07866767927e091578f3b59e14c8e6a941408b3db30",
+      "merge_reference": {
+        "median_seconds": 0.004333749999204883,
+        "samples_seconds": [
+          0.004693416000009165,
+          0.004185249999864027,
+          0.004333749999204883
+        ],
+        "records_before": 107,
+        "records_after": 30,
+        "output_sha256": "3ed77757ee6d9f974581a1ce5dc5ad45100f7aaa1a23fcdf1eb48d6f4fb42ee9",
+        "scope": "Host CPU reference, parse/copy/NMS/encode; not an onboard measurement"
+      },
+      "task_id": "task_135"
+    }
+  ],
+  "mode_counts": {
+    "fine": 75,
+    "spot": 32,
+    "slea": 29
+  },
+  "per_hour_counts": {
+    "0": 10,
+    "1": 6,
+    "2": 3,
+    "3": 8,
+    "4": 8,
+    "5": 7,
+    "6": 4,
+    "7": 5,
+    "8": 7,
+    "9": 3,
+    "10": 5,
+    "11": 8,
+    "12": 3,
+    "13": 5,
+    "14": 7,
+    "15": 5,
+    "16": 3,
+    "17": 4,
+    "18": 9,
+    "19": 5,
+    "20": 3,
+    "21": 10,
+    "22": 5,
+    "23": 3
+  },
+  "longest_no_arrival_s": 2505.0,
+  "runtime": {
+    "machine": "arm64",
+    "python": "3.12.13 (main, Mar  3 2026, 12:39:30) [Clang 21.0.0 (clang-2100.0.123.102)]",
+    "system": "Darwin"
+  },
+  "acquisition": {
+    "start_time_utc": "2026-10-15T00:00:00+00:00",
+    "duration_s": 86400,
+    "dt_s": 0.1,
+    "scan_step_s": 10,
+    "source_sat_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "targets": [
+      {
+        "target_id": "houston_ship_channel",
+        "lat_deg": 29.681667,
+        "lon_deg": -94.985,
+        "radius_km": 0
+      },
+      {
+        "target_id": "la_harbor",
+        "lat_deg": 33.72,
+        "lon_deg": -118.272,
+        "radius_km": 0
+      },
+      {
+        "target_id": "new_york_harbor",
+        "lat_deg": 40.700554,
+        "lon_deg": -74.01417,
+        "radius_km": 0
+      },
+      {
+        "target_id": "san_francisco_bay",
+        "lat_deg": 37.806305,
+        "lon_deg": -122.46589,
+        "radius_km": 0
+      },
+      {
+        "target_id": "savannah_approach",
+        "lat_deg": 32.034695,
+        "lon_deg": -80.90303,
+        "radius_km": 0
+      }
+    ],
+    "max_off_nadir_deg": 40,
+    "min_sun_elevation_deg": -90,
+    "sun_guard_deg": 0,
+    "strips_per_pass": 1,
+    "min_spacing_s": 60,
+    "pass_cooldown_s": 0,
+    "orbit_model": "SGP4/Skyfield/WGS84",
+    "incidence_range_deg": [
+      20,
+      40
+    ],
+    "solar_model": "NOAA fractional-year approximate geometric solar elevation",
+    "solar_source": "https://gml.noaa.gov/grad/solcalc/solareqns.PDF",
+    "solar_error_bound_deg": null,
+    "solar_guard_note": "Design margin, not a certified approximation-error bound",
+    "acquisition_model": "Instantaneous region-center strip proxy; no clouds or attitude slew",
+    "window_sampling_note": "Boundary error up to scan step for resolved crossings; shorter windows can be missed",
+    "capture_duration_s": {
+      "spot": 10,
+      "fine": 15,
+      "slea": 10
+    },
+    "formation_delay_s": 60,
+    "end_guard_s": 10,
+    "one_image_per_window": true
+  },
+  "hardware_pending": [
+    "Onboard preprocessing and streaming tile memory peak for mixed sizes"
+  ],
+  "sealed_test_dates_accessed": false
+}

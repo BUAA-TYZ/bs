@@ -1,0 +1,283 @@
+{
+  "audit_samples_are_development_only": true,
+  "final_test_split_defined": false,
+  "source_repository": "https://github.com/gisbingxin/SDFSD-v1.0",
+  "public_archive": "https://drive.google.com/file/d/16gKlS9-CLuTIEUJpel3fbslsTI8uCVhG/view",
+  "archive_bytes": 27935453810,
+  "central_directory_bytes": 8402452,
+  "central_directory_sha256": "21280176160cd716066a16fa229a6f2cd9254a0d9b9c313ec6638518c40f2481",
+  "central_directory_member_count_including_directories": 71184,
+  "split_counts": {
+    "train": {
+      "images": 24920,
+      "annotations": 24920,
+      "paired": 24920,
+      "images_without_annotations": 0,
+      "annotations_without_images": 0
+    },
+    "test": {
+      "images": 10670,
+      "annotations": 10670,
+      "paired": 10670,
+      "images_without_annotations": 0,
+      "annotations_without_images": 0
+    }
+  },
+  "paper_reported_slices": 35787,
+  "archive_image_pairs": 35590,
+  "paper_release_difference": 197,
+  "paper_release_difference_explanation": "Unresolved; do not silently substitute paper counts for the downloaded release.",
+  "annotation_format_observed": "DOTA-like text: 8 polygon coordinates, class token, integer difficulty flag; 10 fields in observed rows",
+  "coordinate_convention": "Pixel polygon coordinates; some vertices extend outside the 800-pixel crop. Parser must not assume all vertices are in bounds.",
+  "observed_class_tokens_only": {
+    "Oil-Tanker": 2,
+    "unknow": 2,
+    "Cargo-Ship": 4,
+    "Container-Ship": 1,
+    "Warship": 8,
+    "Aircraft-Carrier": 1,
+    "Tug": 3,
+    "Vehicles-Carrier": 1
+  },
+  "unknown_token_exact_spelling_observed": "unknow",
+  "full_15_class_mapping_verified": false,
+  "source_scene_mapping_available": false,
+  "source_scene_mapping_reason": "Archive contains only paired PNG/TXT files in four directories; sampled PNGs have no metadata keys and TXT rows have no scene identifier. Naming prefixes are only candidate groups.",
+  "filename_prefix_audit": {
+    "pattern": "basename before first double underscore",
+    "train_prefix_count": 736,
+    "test_prefix_count": 734,
+    "shared_prefix_count": 734,
+    "verified_original_scene_identity": false,
+    "interpretation": "Candidate scene grouping only. Filename convention has not been confirmed by the author; overlap alone does not prove leakage."
+  },
+  "cross_split_pixel_audit": {
+    "selection": "First lexicographic PNG in each official split; both matched annotations are Oil-Tanker",
+    "test_member": "test_png/ABS001__1067__.png",
+    "train_member": "train_png/ABS001__1029__.png",
+    "test_rectangle_xyxy": [
+      0,
+      0,
+      400,
+      400
+    ],
+    "train_rectangle_xyxy": [
+      400,
+      400,
+      800,
+      800
+    ],
+    "shape": [
+      400,
+      400,
+      3
+    ],
+    "exact_equal": false,
+    "same_pixel_channel_values_fraction": 0.02104375,
+    "same_pixel_channel_values_count": 10101,
+    "compared_pixel_channel_values_count": 480000,
+    "mean_absolute_channel_difference": 1.507925033569336,
+    "maximum_absolute_channel_difference": 2,
+    "pearson_pixel_intensity_correlation": 0.9998650966111275,
+    "test_crop_sha256": "a15026c7c2b6eb5f8e4a483a84e542beb3271a152df387ef75482d715fe55389",
+    "train_crop_sha256": "2ce0d2eb91abe2e8076029dbf87e8e08bbb72673ed93cccb545ef9f26ffe3c50",
+    "train_rgb_channels_identical": true,
+    "test_rgb_channels_identical": true,
+    "annotation_polygon_train_minus_test_xy": [
+      400.0,
+      400.0
+    ],
+    "annotation_polygon_translation_matches_all_four_vertices": true,
+    "interpretation": "One sampled cross-split pair has exactly translated matching object labels and closely matching image content. Exact pixel identity is false; this supports a leakage concern for this pair, without establishing all source-scene identities or whole-dataset leakage rate."
+  },
+  "samples": [
+    {
+      "member": "test_ann/ABS001__1067__.txt",
+      "bytes": 59,
+      "sha256": "17b5522285eb0ac84eaa1a990eb846e042310ecacb0adb8b7f41f15fa7d08f5d",
+      "crc32": 2270939469,
+      "row_field_counts": [
+        10
+      ],
+      "classes": {
+        "Oil-Tanker": 1
+      },
+      "difficulty_flags": [
+        0
+      ],
+      "coordinates_outside_800_window": false
+    },
+    {
+      "member": "test_ann/HEB012__815__.txt",
+      "bytes": 58,
+      "sha256": "41d7fe6b1d379746cf81f252c55cb04cd9c187cf4e7d7b8a93a88b5ad74567ac",
+      "crc32": 2927451676,
+      "row_field_counts": [
+        10
+      ],
+      "classes": {
+        "unknow": 1
+      },
+      "difficulty_flags": [
+        0
+      ],
+      "coordinates_outside_800_window": false
+    },
+    {
+      "member": "test_ann/MHD003__253__.txt",
+      "bytes": 124,
+      "sha256": "3aefac1b79414bd54b9d6403316be6e27b3b8706cfc11d2c6c70e1bfb8190642",
+      "crc32": 548895142,
+      "row_field_counts": [
+        10
+      ],
+      "classes": {
+        "Cargo-Ship": 2
+      },
+      "difficulty_flags": [
+        0
+      ],
+      "coordinates_outside_800_window": false
+    },
+    {
+      "member": "test_ann/UBA102__37__.txt",
+      "bytes": 66,
+      "sha256": "9129df7ca061fcbe86c04aca8952b08240c63e1a4422a83056eed807e4010449",
+      "crc32": 3687995462,
+      "row_field_counts": [
+        10
+      ],
+      "classes": {
+        "Container-Ship": 1
+      },
+      "difficulty_flags": [
+        0
+      ],
+      "coordinates_outside_800_window": true
+    },
+    {
+      "member": "test_png/ABS001__1067__.png",
+      "bytes": 895607,
+      "sha256": "9ad089a78447040156e93da1901617f4b62fc6ff5f0fa351049a3a338078c55d",
+      "crc32": 3805345845,
+      "image_size": [
+        800,
+        800
+      ],
+      "image_mode": "RGB",
+      "channel_extrema": [
+        [
+          54,
+          255
+        ],
+        [
+          54,
+          255
+        ],
+        [
+          54,
+          255
+        ]
+      ],
+      "metadata_keys": []
+    },
+    {
+      "member": "train_ann/ABS001__1029__.txt",
+      "bytes": 62,
+      "sha256": "59ea82e90402f52eb0be3e01d5a574f940b28160b78c3e9ee7c32d62ad374fb3",
+      "crc32": 1843554092,
+      "row_field_counts": [
+        10
+      ],
+      "classes": {
+        "Oil-Tanker": 1
+      },
+      "difficulty_flags": [
+        0
+      ],
+      "coordinates_outside_800_window": false
+    },
+    {
+      "member": "train_ann/HEB012__644__.txt",
+      "bytes": 595,
+      "sha256": "44d890aa2d61448ba08bf43cd8aff5e3439c02d932f0c5377d3d648cc03c2ba7",
+      "crc32": 179589957,
+      "row_field_counts": [
+        10
+      ],
+      "classes": {
+        "Warship": 8,
+        "unknow": 1,
+        "Aircraft-Carrier": 1
+      },
+      "difficulty_flags": [
+        0
+      ],
+      "coordinates_outside_800_window": true
+    },
+    {
+      "member": "train_ann/MHD003__254__.txt",
+      "bytes": 285,
+      "sha256": "472064c6d23bb56ea9a44145ea68a6fef59c74ec42f5843acf4db6fadfeb9ce6",
+      "crc32": 1832538228,
+      "row_field_counts": [
+        10
+      ],
+      "classes": {
+        "Cargo-Ship": 2,
+        "Tug": 3
+      },
+      "difficulty_flags": [
+        0
+      ],
+      "coordinates_outside_800_window": false
+    },
+    {
+      "member": "train_ann/UBA114__226__.txt",
+      "bytes": 68,
+      "sha256": "c096502bbfca96d072077d49241db287c0a91d636abf14faa151dc55875bda16",
+      "crc32": 257267298,
+      "row_field_counts": [
+        10
+      ],
+      "classes": {
+        "Vehicles-Carrier": 1
+      },
+      "difficulty_flags": [
+        0
+      ],
+      "coordinates_outside_800_window": false
+    },
+    {
+      "member": "train_png/ABS001__1029__.png",
+      "bytes": 891284,
+      "sha256": "74a819f76389c50450b0f317bcab07a02ea38c8afeff474baedcea8e52c726cf",
+      "crc32": 2360148822,
+      "image_size": [
+        800,
+        800
+      ],
+      "image_mode": "RGB",
+      "channel_extrema": [
+        [
+          54,
+          255
+        ],
+        [
+          54,
+          255
+        ],
+        [
+          54,
+          255
+        ]
+      ],
+      "metadata_keys": []
+    }
+  ],
+  "selection": "Four deterministic annotation quantiles per split and first lexicographic image per split; no class-targeted selection.",
+  "network_downloaded_this_task_bytes": 18553503,
+  "preexisting_reused_tail_bytes": 65536,
+  "total_network_including_preexisting_tail_bytes": 18619039,
+  "scope": "Offline public archive format and leakage audit only; no model training or geolocation analysis."
+}

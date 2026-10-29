@@ -1,14 +1,48 @@
 """共享规则路由：当前链路图和星地窗口估计，不读取未来拥塞或任务。"""
 
 import math
+from heapq import heappop, heappush
+from itertools import count
 
 import networkx as nx
 
 from sim.topology import link_key
+from sim.roles import can_receive
 
 
-def delivery_route(env, source, size_mb, links, visited, ready_delay=0.0):
+def _bounded_paths(graph, source, max_hops, ready_delay):
+    """按节点与跳数保留最早到达，扩展时检查累计接触时限。"""
+    if max_hops < 0:
+        return
+    labels = {(source, 0): (0.0, [source])}
+    sequence = count()
+    queue = [(0.0, next(sequence), source, 0)]
+    while queue:
+        distance, _, node, hops = heappop(queue)
+        current, path = labels[node, hops]
+        if distance != current:
+            continue
+        yield node, distance, path
+        if hops == max_hops:
+            continue
+        for target, edge in graph[node].items():
+            arrival = distance + edge["weight"]
+            if ready_delay + arrival > edge["contact_end"]:
+                continue
+            key = (target, hops + 1)
+            if key not in labels or arrival < labels[key][0]:
+                labels[key] = (arrival, path + [target])
+                heappush(queue, (arrival, next(sequence), target, hops + 1))
+
+
+def delivery_route(env, source, size_mb, links, visited, ready_delay=0.0, *, target_gs_id=None):
     """返回当前可执行的首跳；路径估计不代替逐步传输与资源检查。"""
+    if env.cfg.relay_routing == "temporal":
+        from sim.temporal_routing import temporal_delivery_route
+        return temporal_delivery_route(env, source, size_mb, links, visited, ready_delay,
+                                       target_gs_id=target_gs_id)
+    if target_gs_id is not None and target_gs_id not in env.ground_stations:
+        return None
     graph = nx.DiGraph()
     graph.add_nodes_from(env.satellites)
     blocked = set(visited) - {source}
@@ -25,7 +59,9 @@ def delivery_route(env, source, size_mb, links, visited, ready_delay=0.0):
         if not link.up or link.bandwidth_mbps <= 0:
             continue
         for src, dst in ((link.i, link.j), (link.j, link.i)):
-            if dst in blocked or env.satellites[dst].mem_capacity_gb - env.satellites[dst].mem_used_gb < size_mb / 1024:
+            if not can_receive(env.cfg, dst):
+                continue
+            if dst in blocked or env.satellites[dst].mem_capacity_gb - env.satellites[dst].mem_used_gb < env.memory_size_gb(size_mb):
                 continue
             backlog = sum(tr.remaining_mb for tr in env.transfers if tr.src == src and tr.dst == dst)
             bandwidth = link.bandwidth_mbps
@@ -41,22 +77,11 @@ def delivery_route(env, source, size_mb, links, visited, ready_delay=0.0):
                 if delay > contact_end:
                     continue
             graph.add_edge(src, dst, weight=delay, contact_end=contact_end)
-    distances, paths = nx.single_source_dijkstra(graph, source)
     best = None
-    for sid, distance in distances.items():
-        path = paths[sid]
-        if len(path) - 1 > remaining_hops:
-            continue
-        arrival = ready_delay
-        for src, dst in zip(path, path[1:]):
-            arrival += graph[src][dst]["weight"]
-            if arrival > graph[src][dst]["contact_end"]:
-                break
-        else:
-            arrival = None
-        if arrival is not None:
-            continue
+    for sid, distance, path in _bounded_paths(graph, source, remaining_hops, ready_delay):
         for gs_id, window in env.vis_cache.windows_at(sid, env.time).items():
+            if target_gs_id is not None and gs_id != target_gs_id:
+                continue
             if window is None:
                 continue
             start, duration = window

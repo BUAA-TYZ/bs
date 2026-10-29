@@ -16,6 +16,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from sim.config import load_config
 from sim.env import SimulationEnv
 from sim.marl.actor import SatActorCritic
+from sim.marl.checkpoint import validate_checkpoint_protocol
 from sim.marl.decision import build_batch, decode_batch
 from sim.marl.reward import delivered_task_reward
 from sim.marl.scenarios import ScenarioDistribution
@@ -44,6 +45,7 @@ def main():
     torch.manual_seed(args.seed)
     torch.set_num_threads(1)
     saved = torch.load(args.checkpoint, weights_only=True, map_location="cpu")
+    validate_checkpoint_protocol(saved)
     model = SatActorCritic(**saved["model_config"])
     model.load_state_dict(saved["model_state"])
     critic_source = None
@@ -51,6 +53,7 @@ def main():
         critic_path = Path(args.critic_checkpoint)
         critic_bytes = critic_path.read_bytes()
         critic_saved = torch.load(io.BytesIO(critic_bytes), weights_only=True, map_location="cpu")
+        validate_checkpoint_protocol(critic_saved)
         if critic_saved["model_config"] != saved["model_config"]:
             raise ValueError("Critic checkpoint must have the same model configuration")
         model.central_critic.load_state_dict({k.removeprefix("central_critic."): v

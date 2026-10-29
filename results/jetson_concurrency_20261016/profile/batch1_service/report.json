@@ -1,0 +1,1822 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "started_at_utc": "2026-10-16T05:19:39.280064+00:00",
+  "mode": "batch1",
+  "cohort_size": 1,
+  "rows": [
+    {
+      "index": 0,
+      "windows": 1,
+      "cohort_s": 0.6178715359419584,
+      "worker_service_s": [
+        0.6169442958198488
+      ],
+      "elapsed_wall_s": 0.6626145956106484,
+      "window_ids": [
+        0
+      ],
+      "worker_phases": [
+        {
+          "preprocess": {
+            "host_s": 0.019296202342957258
+          },
+          "upload_normalize": {
+            "host_s": 0.0074024321511387825,
+            "gpu_elapsed_s": 0.01417420768737793
+          },
+          "forward": {
+            "host_s": 0.048371188808232546,
+            "gpu_elapsed_s": 0.5090390625
+          },
+          "download": {
+            "host_s": 0.4736015936359763,
+            "gpu_elapsed_s": 0.006083168029785156
+          },
+          "postprocess_encode": {
+            "host_s": 0.06767132692039013
+          }
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "windows": 1,
+      "cohort_s": 0.5581885133869946,
+      "worker_service_s": [
+        0.5573224881663918
+      ],
+      "elapsed_wall_s": 1.2610760126262903,
+      "window_ids": [
+        1
+      ],
+      "worker_phases": [
+        {
+          "preprocess": {
+            "host_s": 0.017246623057872057
+          },
+          "upload_normalize": {
+            "host_s": 0.007220548111945391,
+            "gpu_elapsed_s": 0.011549887657165527
+          },
+          "forward": {
+            "host_s": 0.030644482001662254,
+            "gpu_elapsed_s": 0.4559772033691406
+          },
+          "download": {
+            "host_s": 0.4352442566305399,
+            "gpu_elapsed_s": 0.005504064083099365
+          },
+          "postprocess_encode": {
+            "host_s": 0.06645097397267818
+          }
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "windows": 1,
+      "cohort_s": 0.5523397698998451,
+      "worker_service_s": [
+        0.5511797042563558
+      ],
+      "elapsed_wall_s": 1.8581783939152956,
+      "window_ids": [
+        2
+      ],
+      "worker_phases": [
+        {
+          "preprocess": {
+            "host_s": 0.017373627051711082
+          },
+          "upload_normalize": {
+            "host_s": 0.006956363096833229,
+            "gpu_elapsed_s": 0.011288543701171876
+          },
+          "forward": {
+            "host_s": 0.030065649189054966,
+            "gpu_elapsed_s": 0.4453202514648438
+          },
+          "download": {
+            "host_s": 0.4244392579421401,
+            "gpu_elapsed_s": 0.0047779521942138675
+          },
+          "postprocess_encode": {
+            "host_s": 0.07183841895312071
+          }
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "windows": 1,
+      "cohort_s": 0.554543873295188,
+      "worker_service_s": [
+        0.5536911590024829
+      ],
+      "elapsed_wall_s": 2.4499738407321274,
+      "window_ids": [
+        3
+      ],
+      "worker_phases": [
+        {
+          "preprocess": {
+            "host_s": 0.017955276183784008
+          },
+          "upload_normalize": {
+            "host_s": 0.0072175730019807816,
+            "gpu_elapsed_s": 0.011590304374694825
+          },
+          "forward": {
+            "host_s": 0.03185843490064144,
+            "gpu_elapsed_s": 0.45776345825195314
+          },
+          "download": {
+            "host_s": 0.4359290082938969,
+            "gpu_elapsed_s": 0.005591616153717041
+          },
+          "postprocess_encode": {
+            "host_s": 0.06015997100621462
+          }
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "windows": 1,
+      "cohort_s": 0.5861973208375275,
+      "worker_service_s": [
+        0.5854303329251707
+      ],
+      "elapsed_wall_s": 3.0642726067453623,
+      "window_ids": [
+        4
+      ],
+      "worker_phases": [
+        {
+          "preprocess": {
+            "host_s": 0.016935687977820635
+          },
+          "upload_normalize": {
+            "host_s": 0.006874381098896265,
+            "gpu_elapsed_s": 0.01115503978729248
+          },
+          "forward": {
+            "host_s": 0.029315332882106304,
+            "gpu_elapsed_s": 0.46624600219726564
+          },
+          "download": {
+            "host_s": 0.44644428603351116,
+            "gpu_elapsed_s": 0.005180960178375244
+          },
+          "postprocess_encode": {
+            "host_s": 0.08531490014865994
+          }
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "windows": 1,
+      "cohort_s": 0.5553400437347591,
+      "worker_service_s": [
+        0.554485347121954
+      ],
+      "elapsed_wall_s": 3.6518019889481366,
+      "window_ids": [
+        5
+      ],
+      "worker_phases": [
+        {
+          "preprocess": {
+            "host_s": 0.01609631720930338
+          },
+          "upload_normalize": {
+            "host_s": 0.0066788350231945515,
+            "gpu_elapsed_s": 0.010979104042053222
+          },
+          "forward": {
+            "host_s": 0.02896145498380065,
+            "gpu_elapsed_s": 0.4540632019042969
+          },
+          "download": {
+            "host_s": 0.4350976380519569,
+            "gpu_elapsed_s": 0.0056250238418579105
+          },
+          "postprocess_encode": {
+            "host_s": 0.06711620604619384
+          }
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "windows": 1,
+      "cohort_s": 0.5258864108473063,
+      "worker_service_s": [
+        0.5251433262601495
+      ],
+      "elapsed_wall_s": 4.209699502680451,
+      "window_ids": [
+        6
+      ],
+      "worker_phases": [
+        {
+          "preprocess": {
+            "host_s": 0.01652350602671504
+          },
+          "upload_normalize": {
+            "host_s": 0.006777615752071142,
+            "gpu_elapsed_s": 0.011051136016845703
+          },
+          "forward": {
+            "host_s": 0.029016333166509867,
+            "gpu_elapsed_s": 0.4337641906738281
+          },
+          "download": {
+            "host_s": 0.41423894790932536,
+            "gpu_elapsed_s": 0.00515123176574707
+          },
+          "postprocess_encode": {
+            "host_s": 0.058066361118108034
+          }
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "windows": 1,
+      "cohort_s": 0.5569713623262942,
+      "worker_service_s": [
+        0.5562022943049669
+      ],
+      "elapsed_wall_s": 4.79954690579325,
+      "window_ids": [
+        7
+      ],
+      "worker_phases": [
+        {
+          "preprocess": {
+            "host_s": 0.01649416284635663
+          },
+          "upload_normalize": {
+            "host_s": 0.006759440992027521,
+            "gpu_elapsed_s": 0.011100704193115235
+          },
+          "forward": {
+            "host_s": 0.029166121035814285,
+            "gpu_elapsed_s": 0.4541312255859375
+          },
+          "download": {
+            "host_s": 0.43411100655794144,
+            "gpu_elapsed_s": 0.004749567985534668
+          },
+          "postprocess_encode": {
+            "host_s": 0.06916012009605765
+          }
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "windows": 1,
+      "cohort_s": 0.5562985800206661,
+      "worker_service_s": [
+        0.5554383457638323
+      ],
+      "elapsed_wall_s": 5.389094156678766,
+      "window_ids": [
+        8
+      ],
+      "worker_phases": [
+        {
+          "preprocess": {
+            "host_s": 0.016401460859924555
+          },
+          "upload_normalize": {
+            "host_s": 0.006722000893205404,
+            "gpu_elapsed_s": 0.011047840118408203
+          },
+          "forward": {
+            "host_s": 0.032475059386342764,
+            "gpu_elapsed_s": 0.4522615966796875
+          },
+          "download": {
+            "host_s": 0.4300089702010155,
+            "gpu_elapsed_s": 0.005827807903289795
+          },
+          "postprocess_encode": {
+            "host_s": 0.06927774893119931
+          }
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "windows": 1,
+      "cohort_s": 0.5834567532874644,
+      "worker_service_s": [
+        0.5827043890021741
+      ],
+      "elapsed_wall_s": 6.0010206969454885,
+      "window_ids": [
+        9
+      ],
+      "worker_phases": [
+        {
+          "preprocess": {
+            "host_s": 0.016609264072030783
+          },
+          "upload_normalize": {
+            "host_s": 0.006788206752389669,
+            "gpu_elapsed_s": 0.011092672348022461
+          },
+          "forward": {
+            "host_s": 0.03065728209912777,
+            "gpu_elapsed_s": 0.45956820678710936
+          },
+          "download": {
+            "host_s": 0.4384941249154508,
+            "gpu_elapsed_s": 0.005212448120117188
+          },
+          "postprocess_encode": {
+            "host_s": 0.0896110120229423
+          }
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "windows": 1,
+      "cohort_s": 0.5951342089101672,
+      "worker_service_s": [
+        0.5944080203771591
+      ],
+      "elapsed_wall_s": 6.623959878925234,
+      "window_ids": [
+        10
+      ],
+      "worker_phases": [
+        {
+          "preprocess": {
+            "host_s": 0.01617167517542839
+          },
+          "upload_normalize": {
+            "host_s": 0.006634994875639677,
+            "gpu_elapsed_s": 0.010952639579772949
+          },
+          "forward": {
+            "host_s": 0.03454866912215948,
+            "gpu_elapsed_s": 0.4683005676269531
+          },
+          "download": {
+            "host_s": 0.4437861479818821,
+            "gpu_elapsed_s": 0.005646048069000244
+          },
+          "postprocess_encode": {
+            "host_s": 0.09272642014548182
+          }
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "windows": 1,
+      "cohort_s": 0.5625120187178254,
+      "worker_service_s": [
+        0.5617618630640209
+      ],
+      "elapsed_wall_s": 7.222099706996232,
+      "window_ids": [
+        11
+      ],
+      "worker_phases": [
+        {
+          "preprocess": {
+            "host_s": 0.01608809409663081
+          },
+          "upload_normalize": {
+            "host_s": 0.0066522108390927315,
+            "gpu_elapsed_s": 0.010969663619995117
+          },
+          "forward": {
+            "host_s": 0.02895454177632928,
+            "gpu_elapsed_s": 0.47005853271484377
+          },
+          "download": {
+            "host_s": 0.4513033600524068,
+            "gpu_elapsed_s": 0.005835936069488525
+          },
+          "postprocess_encode": {
+            "host_s": 0.058221492916345596
+          }
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "windows": 1,
+      "cohort_s": 0.5682683810591698,
+      "worker_service_s": [
+        0.5675227679312229
+      ],
+      "elapsed_wall_s": 7.820251470897347,
+      "window_ids": [
+        12
+      ],
+      "worker_phases": [
+        {
+          "preprocess": {
+            "host_s": 0.01682401029393077
+          },
+          "upload_normalize": {
+            "host_s": 0.006801166571676731,
+            "gpu_elapsed_s": 0.011118751525878906
+          },
+          "forward": {
+            "host_s": 0.02925882302224636,
+            "gpu_elapsed_s": 0.4557557678222656
+          },
+          "download": {
+            "host_s": 0.436635903082788,
+            "gpu_elapsed_s": 0.00573526382446289
+          },
+          "postprocess_encode": {
+            "host_s": 0.07749686297029257
+          }
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "windows": 1,
+      "cohort_s": 0.5952312317676842,
+      "worker_service_s": [
+        0.5944523722864687
+      ],
+      "elapsed_wall_s": 8.443385176826268,
+      "window_ids": [
+        13
+      ],
+      "worker_phases": [
+        {
+          "preprocess": {
+            "host_s": 0.016192283015698195
+          },
+          "upload_normalize": {
+            "host_s": 0.006680530030280352,
+            "gpu_elapsed_s": 0.010961759567260742
+          },
+          "forward": {
+            "host_s": 0.0332612469792366,
+            "gpu_elapsed_s": 0.4677742919921875
+          },
+          "download": {
+            "host_s": 0.44453256111592054,
+            "gpu_elapsed_s": 0.005673408031463623
+          },
+          "postprocess_encode": {
+            "host_s": 0.09324074164032936
+          }
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "windows": 1,
+      "cohort_s": 0.5831887288950384,
+      "worker_service_s": [
+        0.5824454850517213
+      ],
+      "elapsed_wall_s": 9.054930159822106,
+      "window_ids": [
+        14
+      ],
+      "worker_phases": [
+        {
+          "preprocess": {
+            "host_s": 0.016005888115614653
+          },
+          "upload_normalize": {
+            "host_s": 0.006674610078334808,
+            "gpu_elapsed_s": 0.010979104042053222
+          },
+          "forward": {
+            "host_s": 0.029148906003683805,
+            "gpu_elapsed_s": 0.4640248413085937
+          },
+          "download": {
+            "host_s": 0.4448935119435191,
+            "gpu_elapsed_s": 0.00564086389541626
+          },
+          "postprocess_encode": {
+            "host_s": 0.08519711112603545
+          }
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "windows": 1,
+      "cohort_s": 0.5868771448731422,
+      "worker_service_s": [
+        0.5861621238291264
+      ],
+      "elapsed_wall_s": 9.669668244663626,
+      "window_ids": [
+        15
+      ],
+      "worker_phases": [
+        {
+          "preprocess": {
+            "host_s": 0.016117532271891832
+          },
+          "upload_normalize": {
+            "host_s": 0.006681873928755522,
+            "gpu_elapsed_s": 0.01097804832458496
+          },
+          "forward": {
+            "host_s": 0.028993006329983473,
+            "gpu_elapsed_s": 0.4645960693359375
+          },
+          "download": {
+            "host_s": 0.445498903747648,
+            "gpu_elapsed_s": 0.005505375862121582
+          },
+          "postprocess_encode": {
+            "host_s": 0.08836579695343971
+          }
+        }
+      ]
+    }
+  ],
+  "diagnostic": true,
+  "protocol": {
+    "window_px": 4096,
+    "precision": "float32",
+    "cpu_threads": 1,
+    "warmup_windows": 12,
+    "measured_windows": 16,
+    "duration_s": 0,
+    "model_copies": 1,
+    "stream_workers": 1,
+    "cohort_barrier": true,
+    "wait_to_fill_cohort": false,
+    "boundary": "uint16 host raster through SRP1 encoding; cohort wall time includes dispatch",
+    "excludes": [
+      "model loading",
+      "warmup",
+      "hashing",
+      "log IO",
+      "SAR focusing"
+    ],
+    "output_semantics": "fixed optical network plus controlled SAR postprocessing proxy"
+  },
+  "script_sha256": "91015a79b74d307ac96afdf49fb38ee9e181ba4b57b018f78d5a3c20531afc6f",
+  "baseline_script_sha256": "e507562fbdac572a72acc6cd64c71e74e623b2d46a9bf3e23216e7fac9cb2cef",
+  "memory_before_import": {
+    "MemTotal": 32188686336,
+    "MemFree": 20923506688,
+    "MemAvailable": 25509396480,
+    "SwapTotal": 16094330880,
+    "SwapFree": 16084893696,
+    "pswpin": 24,
+    "pswpout": 1986,
+    "monotonic_s": 2758638.61833139
+  },
+  "versions": {
+    "torch": "2.3.0",
+    "torchvision": "0.18.0a0+6043bc2",
+    "ultralytics": "8.3.13",
+    "numpy": "1.23.5",
+    "shapely": "2.0.6",
+    "Pillow": "11.0.0"
+  },
+  "backend_flags": {
+    "cudnn_allow_tf32": true,
+    "matmul_allow_tf32": false,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": false
+  },
+  "weights_sha256": "b62898ebf38940ca4df323863e45ee9d84a1a46d5d11ebdde529fb33aa9f3a32",
+  "fixture_sha256": "8b40fbafc2d06e87586541bef9e1830fead025748abb9116fe183eb9de78d58e",
+  "device": {
+    "name": "Orin",
+    "total_memory_bytes": 32188686336
+  },
+  "raster_sha256": "4307e8992cefc269ceb97a1b746074f225fce928a1d28caaa3308d9a0a1c03c1",
+  "memory_resident_model": {
+    "MemTotal": 32188686336,
+    "MemFree": 20405067776,
+    "MemAvailable": 24998387712,
+    "SwapTotal": 16094330880,
+    "SwapFree": 16084893696,
+    "pswpin": 24,
+    "pswpout": 1986,
+    "monotonic_s": 2758642.41428947
+  },
+  "memory_before_measurement": {
+    "MemTotal": 32188686336,
+    "MemFree": 18176311296,
+    "MemAvailable": 22769766400,
+    "SwapTotal": 16094330880,
+    "SwapFree": 16084893696,
+    "pswpin": 24,
+    "pswpout": 1986,
+    "monotonic_s": 2758651.08826143
+  },
+  "measurement_epoch_start_s": 1792127992.2616203,
+  "measurement_epoch_end_s": 1792128001.9321592,
+  "summary": {
+    "windows": 16,
+    "cohorts": 16,
+    "cohort_mean_s": 0.5711441173625644,
+    "cohort_p95_s": 0.6008913078112528,
+    "windows_per_s": 1.7508715744422108,
+    "full_64_window_service_s": 36.55322351120412,
+    "measured_wall_s": 11.613664991687983
+  },
+  "output_hashes": {
+    "0": {
+      "sha256": "86a527b99359936938b418da13f558c16b0fa8f62b45035173f7ab317bd62431",
+      "bytes": 786640
+    },
+    "1": {
+      "sha256": "23b3d8c3a3c593d8d274074c993d923c9e17d08d4d966a4bdb5dac69f47d46ff",
+      "bytes": 786640
+    },
+    "2": {
+      "sha256": "10d299a52a224c4f3a9c0dee5f13410e002ac2292ab9070f9ebeeb9f0924eccd",
+      "bytes": 1048844
+    },
+    "3": {
+      "sha256": "ac166efa1fabe12c20dfc1c4987d397016e1fd8b07cdc11c3e91d6071ed5d9c9",
+      "bytes": 524436
+    },
+    "4": {
+      "sha256": "8d0a25f9ad4eccc0e42090de1d008fdd649985c66525d54235f796826b3f5738",
+      "bytes": 1048844
+    },
+    "5": {
+      "sha256": "6ced79c91e889bcf406a4428acfb5d632dc1cfc48335c255302f1e8ecb45619d",
+      "bytes": 786640
+    },
+    "6": {
+      "sha256": "f15c63049a09e68823723952110df3e021a29b735db5dc57b81fb491920a49d3",
+      "bytes": 786640
+    },
+    "7": {
+      "sha256": "6079b9cf5a251343512d9b265fede827c6e90ee673b88f702fbf66cf666771a1",
+      "bytes": 786640
+    },
+    "8": {
+      "sha256": "01a408831b1c89c0be5567eaa84cbe76d0ed7a975b0f8eb313c11e90f2887d8e",
+      "bytes": 786640
+    },
+    "9": {
+      "sha256": "56d83acd5776e9b5f09464436f3039a7acc95f33cbae3da58670608544ac0a00",
+      "bytes": 1048844
+    },
+    "10": {
+      "sha256": "5b5d80e4008c1e316239b01f6601986e3b903ce0ddc046a15c5e58661939789c",
+      "bytes": 1048844
+    },
+    "11": {
+      "sha256": "ec3a8d3170da794c55627a1eb7a66a3e77c7529f1c9d8b4d97dae2c863e25392",
+      "bytes": 524436
+    },
+    "12": {
+      "sha256": "f990e14e5d8fb0d554f8ae6cf80228174b65998663985fb429572441ce1b7b27",
+      "bytes": 1048844
+    },
+    "13": {
+      "sha256": "4f36e99a545117fd733bfa88af4c0d5049daffc66cec70814925b7b7f6654171",
+      "bytes": 1048844
+    },
+    "14": {
+      "sha256": "1fd2104cdc791fe754d990ff2203f28184e42e812f52a433f167778e4d9949d1",
+      "bytes": 1048844
+    },
+    "15": {
+      "sha256": "5b774617e729f3b15c51124e9da482f351bc575dc26c396a1c5ece1fdfdac299",
+      "bytes": 1048844
+    }
+  },
+  "cuda_memory": {
+    "peak_allocated_bytes": 4798386176,
+    "peak_reserved_bytes": 5693767680,
+    "resident_allocated_bytes": 83267584,
+    "resident_reserved_bytes": 5693767680
+  },
+  "memory_samples": [
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 20923506688,
+      "MemAvailable": 25509396480,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758638.619571741
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 20767821824,
+      "MemAvailable": 25353768960,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758639.295272487
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 20751822848,
+      "MemAvailable": 25337769984,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758639.497180703
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 20740726784,
+      "MemAvailable": 25326673920,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758639.69994704
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 20729888768,
+      "MemAvailable": 25315835904,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758639.923067664
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 20724727808,
+      "MemAvailable": 25310683136,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758640.168647767
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 20712857600,
+      "MemAvailable": 25298812928,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758640.377398429
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 20698923008,
+      "MemAvailable": 25284878336,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758640.582334822
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 20691181568,
+      "MemAvailable": 25277136896,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758640.803510024
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 20688343040,
+      "MemAvailable": 25274298368,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758641.022133965
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 20676988928,
+      "MemAvailable": 25262944256,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758641.230754934
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 20660989952,
+      "MemAvailable": 25246953472,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758641.542763004
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 20603179008,
+      "MemAvailable": 25196457984,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758641.744057892
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 20552400896,
+      "MemAvailable": 25145720832,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758641.956636967
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 20477452288,
+      "MemAvailable": 25070772224,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758642.157852913
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 20405067776,
+      "MemAvailable": 24998387712,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758642.35939749
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 20298735616,
+      "MemAvailable": 24892170240,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758642.560612477
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 20145111040,
+      "MemAvailable": 24738545664,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758642.761842471
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 20073504768,
+      "MemAvailable": 24666939392,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758642.963036529
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18901721088,
+      "MemAvailable": 23494828032,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758643.164503893
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18239664128,
+      "MemAvailable": 22833098752,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758643.365698592
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18229276672,
+      "MemAvailable": 22822711296,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758643.566797613
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18218954752,
+      "MemAvailable": 22812389376,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758643.768072726
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18194219008,
+      "MemAvailable": 22787661824,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758643.969556506
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18194219008,
+      "MemAvailable": 22787661824,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758644.171046333
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18194219008,
+      "MemAvailable": 22787661824,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758644.372335141
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18127540224,
+      "MemAvailable": 22720983040,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758644.574020452
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18127540224,
+      "MemAvailable": 22720983040,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758644.775041267
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18127540224,
+      "MemAvailable": 22720987136,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758644.97625907
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18130817024,
+      "MemAvailable": 22724263936,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758645.177535462
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18130817024,
+      "MemAvailable": 22724263936,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758645.378723794
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18130817024,
+      "MemAvailable": 22724263936,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758645.579913757
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18131369984,
+      "MemAvailable": 22724816896,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758645.781148743
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18131369984,
+      "MemAvailable": 22724825088,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758645.982111064
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18131369984,
+      "MemAvailable": 22724825088,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758646.183272868
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18125463552,
+      "MemAvailable": 22718918656,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758646.384171223
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18125463552,
+      "MemAvailable": 22718918656,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758646.58539741
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18125463552,
+      "MemAvailable": 22718918656,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758646.786695306
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18125664256,
+      "MemAvailable": 22719119360,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758646.987903509
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18125664256,
+      "MemAvailable": 22719119360,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758647.189076385
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18125664256,
+      "MemAvailable": 22719119360,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758647.390049426
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18125709312,
+      "MemAvailable": 22719164416,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758647.59124515
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18125709312,
+      "MemAvailable": 22719164416,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758647.792310092
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18125709312,
+      "MemAvailable": 22719164416,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758647.993491096
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18125754368,
+      "MemAvailable": 22719209472,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758648.194697251
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18125754368,
+      "MemAvailable": 22719209472,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758648.395806065
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18125754368,
+      "MemAvailable": 22719209472,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758648.596947262
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18125799424,
+      "MemAvailable": 22719254528,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758648.79803054
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18125799424,
+      "MemAvailable": 22719254528,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758648.999023997
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18125799424,
+      "MemAvailable": 22719254528,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758649.201987259
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18125844480,
+      "MemAvailable": 22719299584,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758649.403222789
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18125844480,
+      "MemAvailable": 22719299584,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758649.604441008
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18125844480,
+      "MemAvailable": 22719299584,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758649.806870556
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18125889536,
+      "MemAvailable": 22719344640,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758650.008074407
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18125889536,
+      "MemAvailable": 22719344640,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758650.209274643
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18125889536,
+      "MemAvailable": 22719344640,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758650.411862394
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18125934592,
+      "MemAvailable": 22719389696,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758650.612938537
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18125934592,
+      "MemAvailable": 22719389696,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758650.814093334
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18125934592,
+      "MemAvailable": 22719389696,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758651.016065517
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18106499072,
+      "MemAvailable": 22719090688,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758651.600947639
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18052939776,
+      "MemAvailable": 22667743232,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758651.802234337
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18052165632,
+      "MemAvailable": 22667423744,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758652.003378094
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18052165632,
+      "MemAvailable": 22667423744,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758652.206553254
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18052210688,
+      "MemAvailable": 22667468800,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758652.407611958
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18052210688,
+      "MemAvailable": 22667468800,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758652.608599367
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18051956736,
+      "MemAvailable": 22667214848,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758652.809588217
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18052001792,
+      "MemAvailable": 22667259904,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758653.010665256
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18052001792,
+      "MemAvailable": 22667259904,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758653.211665017
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18049478656,
+      "MemAvailable": 22664744960,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758653.41360533
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18045665280,
+      "MemAvailable": 22660931584,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758653.614849372
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18045399040,
+      "MemAvailable": 22660665344,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758653.81607044
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18095230976,
+      "MemAvailable": 22710513664,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758654.017005115
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18044899328,
+      "MemAvailable": 22660182016,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758654.218175047
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18044899328,
+      "MemAvailable": 22660182016,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758654.419272726
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18044899328,
+      "MemAvailable": 22660182016,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758654.620139563
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18044944384,
+      "MemAvailable": 22660227072,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758654.820821029
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18044944384,
+      "MemAvailable": 22660227072,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758655.021881588
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18095321088,
+      "MemAvailable": 22711500800,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758655.222742345
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18044989440,
+      "MemAvailable": 22661169152,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758655.423874487
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18044989440,
+      "MemAvailable": 22661169152,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758655.625080963
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18053423104,
+      "MemAvailable": 22669602816,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758655.825869914
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18045034496,
+      "MemAvailable": 22661361664,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758656.027016424
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18045034496,
+      "MemAvailable": 22661361664,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758656.228132214
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18045079552,
+      "MemAvailable": 22661406720,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758656.428888174
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18045079552,
+      "MemAvailable": 22661406720,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758656.630002365
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18045079552,
+      "MemAvailable": 22661406720,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758656.831250664
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18045124608,
+      "MemAvailable": 22662348800,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758657.032215514
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18045124608,
+      "MemAvailable": 22662348800,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758657.23350794
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18045124608,
+      "MemAvailable": 22662348800,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758657.434526805
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18045169664,
+      "MemAvailable": 22662393856,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758657.635278926
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18045169664,
+      "MemAvailable": 22662545408,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758657.836646326
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18045169664,
+      "MemAvailable": 22662545408,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758658.037723333
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18057539584,
+      "MemAvailable": 22674915328,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758658.238670488
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18044956672,
+      "MemAvailable": 22662332416,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758658.439817702
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18044956672,
+      "MemAvailable": 22662332416,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758658.641031187
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18045001728,
+      "MemAvailable": 22662377472,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758658.841976998
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18045001728,
+      "MemAvailable": 22662377472,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758659.043122196
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18045001728,
+      "MemAvailable": 22662377472,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758659.244402398
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18045046784,
+      "MemAvailable": 22662422528,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758659.44531701
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18045046784,
+      "MemAvailable": 22662422528,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758659.646654363
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18045046784,
+      "MemAvailable": 22662422528,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758659.847976101
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18095165440,
+      "MemAvailable": 22712545280,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758660.0486136
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18044833792,
+      "MemAvailable": 22662213632,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758660.249757935
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18044833792,
+      "MemAvailable": 22662213632,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758660.450991642
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18095210496,
+      "MemAvailable": 22713487360,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758660.65187384
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18044878848,
+      "MemAvailable": 22663155712,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758660.852980159
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18044878848,
+      "MemAvailable": 22663323648,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758661.054089518
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 18095214592,
+      "MemAvailable": 22713659392,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758661.254881638
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 17987710976,
+      "MemAvailable": 22684651520,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758663.214907408
+    },
+    {
+      "MemTotal": 32188686336,
+      "MemFree": 17987710976,
+      "MemAvailable": 22684651520,
+      "SwapTotal": 16094330880,
+      "SwapFree": 16084893696,
+      "pswpin": 24,
+      "pswpout": 1986,
+      "monotonic_s": 2758663.215559455
+    }
+  ],
+  "memory": {
+    "min_available_bytes": 22660182016,
+    "max_unavailable_bytes": 9528504320,
+    "swap_in_pages": 0,
+    "swap_out_pages": 0,
+    "process_max_rss_bytes": 1124761600,
+    "scope": "System-wide MemAvailable observation, not exact per-process physical allocation"
+  },
+  "finished_at_utc": "2026-10-16T05:20:03.878216+00:00"
+}

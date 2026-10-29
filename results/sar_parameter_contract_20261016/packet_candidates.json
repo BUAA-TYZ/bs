@@ -1,0 +1,94 @@
+{
+  "overlap_px": 1792,
+  "inference_window_px": 4096,
+  "recut_geometry_only": [
+    {
+      "side_px": 4096,
+      "tiles": 64,
+      "tile_mb": 33.554432,
+      "all_tiles_mb": 2147.483648,
+      "serialization_s_by_effective_isl_mbps": {
+        "80": 3.3554432,
+        "480": 0.5592405333333333,
+        "2000": 0.13421772799999998,
+        "8000": 0.033554431999999995
+      },
+      "compute_calibrated": true
+    },
+    {
+      "side_px": 5120,
+      "tiles": 36,
+      "tile_mb": 52.4288,
+      "all_tiles_mb": 1887.4368000000002,
+      "serialization_s_by_effective_isl_mbps": {
+        "80": 5.24288,
+        "480": 0.8738133333333333,
+        "2000": 0.20971520000000002,
+        "8000": 0.052428800000000005
+      },
+      "compute_calibrated": false
+    },
+    {
+      "side_px": 6400,
+      "tiles": 16,
+      "tile_mb": 81.92,
+      "all_tiles_mb": 1310.72,
+      "serialization_s_by_effective_isl_mbps": {
+        "80": 8.192,
+        "480": 1.3653333333333333,
+        "2000": 0.32768,
+        "8000": 0.08192
+      },
+      "compute_calibrated": false
+    },
+    {
+      "side_px": 8192,
+      "tiles": 9,
+      "tile_mb": 134.217728,
+      "all_tiles_mb": 1207.959552,
+      "serialization_s_by_effective_isl_mbps": {
+        "80": 13.4217728,
+        "480": 2.2369621333333334,
+        "2000": 0.5368709119999999,
+        "8000": 0.13421772799999998
+      },
+      "compute_calibrated": false
+    }
+  ],
+  "fixed_inference_group_candidates": [
+    {
+      "windows_per_tile_axis": 1,
+      "dispatch_tiles": 64,
+      "inference_windows": 64,
+      "deduplicated_input_mb": 2147.483648,
+      "max_packet_mb": 33.554432,
+      "current_packer_input_mb": 2147.483648,
+      "runnable_with_measured_executor": true
+    },
+    {
+      "windows_per_tile_axis": 2,
+      "dispatch_tiles": 16,
+      "inference_windows": 64,
+      "deduplicated_input_mb": 1287.882752,
+      "max_packet_mb": 81.92,
+      "current_packer_input_mb": 2147.483648,
+      "runnable_with_measured_executor": false
+    },
+    {
+      "windows_per_tile_axis": 4,
+      "dispatch_tiles": 4,
+      "inference_windows": 64,
+      "deduplicated_input_mb": 949.782528,
+      "max_packet_mb": 242.352128,
+      "current_packer_input_mb": 2147.483648,
+      "runnable_with_measured_executor": false
+    }
+  ],
+  "selection_rule": "Select dispatch size on development data with the same 64 inference windows; never reuse 4096 service time for a larger network input",
+  "pending": [
+    "Pixel deduplication within each dispatch packet",
+    "Multi-window dispatch packet execution with measured cohorts and completion accounting",
+    "Per-image empty and positive outputs shared by all methods",
+    "Measure or report dispatch overhead; do not invent a per-packet link acquisition cost"
+  ]
+}

@@ -1,0 +1,1036 @@
+{
+  "reports": [
+    {
+      "input": "results/sla_twohop_development_v6_20261015/day01_cgs_compute_adapted.json",
+      "sha256": "7a7097c8d94d415c56b25530202e141b061a1c5f84f061549644d962b55e6584",
+      "method": "cgs_compute_adapted",
+      "case": {
+        "id": "day01",
+        "calendar_day": "2026-10-15",
+        "epoch_offset_seconds": 60180,
+        "all_qualifying_events_retained": true,
+        "num_acquisitions": 21,
+        "split": "development"
+      },
+      "sla_seconds": 300,
+      "assumptions": "Conditional on this simulator, fixed image work, committed input assignments and configured input hop limit. Global ground-window bounds optimistically give zero processing and arbitrary result placement. For disjoint groups sharing their last usable ground window, capacity bounds retain earliest current-path input arrival and latest delivery through an optimistic time-expanded result graph. They ignore bandwidth contention, memory, unrelated tasks, packet indivisibility, relay guard, visited nodes and result hop limits. Ground computation is zero only when no source has a direct input window; otherwise all ground servers are granted full capacity through the latest task deadline. The bound concerns maximum count, not which member of a group must fail. It does not apply to ground_relay, whose multi-hop raw-input-to-ground paths are a different action space, and is not universal scheduling optimality.",
+      "total_tasks": 21,
+      "potentially_on_time_tasks": 21,
+      "p_sla_upper_bound": 1.0,
+      "global_ground_windows": [
+        {
+          "start_s": 0.0,
+          "end_s": 280.0
+        },
+        {
+          "start_s": 420.0,
+          "end_s": 830.0
+        },
+        {
+          "start_s": 960.0,
+          "end_s": 1370.0
+        },
+        {
+          "start_s": 1510.0,
+          "end_s": 1910.0
+        },
+        {
+          "start_s": 2050.0,
+          "end_s": 2450.0
+        },
+        {
+          "start_s": 2600.0,
+          "end_s": 2990.0
+        },
+        {
+          "start_s": 3150.0,
+          "end_s": 3530.0
+        },
+        {
+          "start_s": 3700.0,
+          "end_s": 4070.0
+        },
+        {
+          "start_s": 4260.0,
+          "end_s": 4610.0
+        },
+        {
+          "start_s": 4810.0,
+          "end_s": 5150.0
+        },
+        {
+          "start_s": 5370.0,
+          "end_s": 5690.0
+        },
+        {
+          "start_s": 5920.0,
+          "end_s": 6220.0
+        },
+        {
+          "start_s": 6480.0,
+          "end_s": 6760.0
+        },
+        {
+          "start_s": 7050.0,
+          "end_s": 7290.0
+        },
+        {
+          "start_s": 7610.0,
+          "end_s": 7830.0
+        },
+        {
+          "start_s": 8170.0,
+          "end_s": 8360.0
+        },
+        {
+          "start_s": 8740.0,
+          "end_s": 8890.0
+        },
+        {
+          "start_s": 9310.0,
+          "end_s": 9420.0
+        },
+        {
+          "start_s": 9890.0,
+          "end_s": 9940.0
+        },
+        {
+          "start_s": 16490.0,
+          "end_s": 16570.0
+        },
+        {
+          "start_s": 17010.0,
+          "end_s": 17140.0
+        },
+        {
+          "start_s": 17330.0,
+          "end_s": 17500.0
+        },
+        {
+          "start_s": 17540.0,
+          "end_s": 17710.0
+        },
+        {
+          "start_s": 17830.0,
+          "end_s": 18070.0
+        },
+        {
+          "start_s": 18080.0,
+          "end_s": 18280.0
+        },
+        {
+          "start_s": 18340.0,
+          "end_s": 18840.0
+        },
+        {
+          "start_s": 18870.0,
+          "end_s": 20670.0
+        }
+      ],
+      "group_capacity_constraints": [],
+      "tasks": [
+        {
+          "task_id": "task_0",
+          "source_sat_id": 1,
+          "release_seconds": 120.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 120.0,
+          "delivery_latency_lower_bound_seconds": 2.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 63.0
+        },
+        {
+          "task_id": "task_1",
+          "source_sat_id": 1,
+          "release_seconds": 150.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 150.0,
+          "delivery_latency_lower_bound_seconds": 2.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 87.0
+        },
+        {
+          "task_id": "task_2",
+          "source_sat_id": 1,
+          "release_seconds": 180.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 180.0,
+          "delivery_latency_lower_bound_seconds": 2.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 77.0
+        },
+        {
+          "task_id": "task_3",
+          "source_sat_id": 0,
+          "release_seconds": 260.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 260.0,
+          "delivery_latency_lower_bound_seconds": 2.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 162.0
+        },
+        {
+          "task_id": "task_4",
+          "source_sat_id": 0,
+          "release_seconds": 290.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 420.0,
+          "delivery_latency_lower_bound_seconds": 132.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 132.0
+        },
+        {
+          "task_id": "task_5",
+          "source_sat_id": 0,
+          "release_seconds": 320.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 420.0,
+          "delivery_latency_lower_bound_seconds": 102.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 102.0
+        },
+        {
+          "task_id": "task_6",
+          "source_sat_id": 0,
+          "release_seconds": 370.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 420.0,
+          "delivery_latency_lower_bound_seconds": 52.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 52.0
+        },
+        {
+          "task_id": "task_7",
+          "source_sat_id": 0,
+          "release_seconds": 400.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 420.0,
+          "delivery_latency_lower_bound_seconds": 22.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 61.0
+        },
+        {
+          "task_id": "task_8",
+          "source_sat_id": 0,
+          "release_seconds": 430.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 430.0,
+          "delivery_latency_lower_bound_seconds": 2.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 71.0
+        },
+        {
+          "task_id": "task_9",
+          "source_sat_id": 0,
+          "release_seconds": 460.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 460.0,
+          "delivery_latency_lower_bound_seconds": 2.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 78.0
+        },
+        {
+          "task_id": "task_10",
+          "source_sat_id": 0,
+          "release_seconds": 490.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 490.0,
+          "delivery_latency_lower_bound_seconds": 2.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 88.0
+        },
+        {
+          "task_id": "task_11",
+          "source_sat_id": 0,
+          "release_seconds": 520.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 520.0,
+          "delivery_latency_lower_bound_seconds": 2.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 88.0
+        },
+        {
+          "task_id": "task_12",
+          "source_sat_id": 1,
+          "release_seconds": 5850.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 5920.0,
+          "delivery_latency_lower_bound_seconds": 72.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 72.0
+        },
+        {
+          "task_id": "task_13",
+          "source_sat_id": 1,
+          "release_seconds": 5880.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 5920.0,
+          "delivery_latency_lower_bound_seconds": 42.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 87.0
+        },
+        {
+          "task_id": "task_14",
+          "source_sat_id": 1,
+          "release_seconds": 5910.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 5920.0,
+          "delivery_latency_lower_bound_seconds": 12.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 111.0
+        },
+        {
+          "task_id": "task_15",
+          "source_sat_id": 1,
+          "release_seconds": 5940.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 5940.0,
+          "delivery_latency_lower_bound_seconds": 2.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 135.0
+        },
+        {
+          "task_id": "task_16",
+          "source_sat_id": 1,
+          "release_seconds": 5970.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 5970.0,
+          "delivery_latency_lower_bound_seconds": 2.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 139.0
+        },
+        {
+          "task_id": "task_17",
+          "source_sat_id": 1,
+          "release_seconds": 6000.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6000.0,
+          "delivery_latency_lower_bound_seconds": 2.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 163.0
+        },
+        {
+          "task_id": "task_18",
+          "source_sat_id": 0,
+          "release_seconds": 6210.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6210.0,
+          "delivery_latency_lower_bound_seconds": 2.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 272.0
+        },
+        {
+          "task_id": "task_19",
+          "source_sat_id": 0,
+          "release_seconds": 6240.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6480.0,
+          "delivery_latency_lower_bound_seconds": 242.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 242.0
+        },
+        {
+          "task_id": "task_20",
+          "source_sat_id": 0,
+          "release_seconds": 6270.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6480.0,
+          "delivery_latency_lower_bound_seconds": 212.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 212.0
+        }
+      ]
+    },
+    {
+      "input": "results/sla_twohop_development_v6_20261015/day02_cgs_compute_adapted.json",
+      "sha256": "26f4eb5b8f6dd250e67cf4221430bdab0abf37ab6a3881e71337cdb26f31f08e",
+      "method": "cgs_compute_adapted",
+      "case": {
+        "id": "day02",
+        "calendar_day": "2026-10-16",
+        "epoch_offset_seconds": 147590,
+        "all_qualifying_events_retained": true,
+        "num_acquisitions": 15,
+        "split": "development"
+      },
+      "sla_seconds": 300,
+      "assumptions": "Conditional on this simulator, fixed image work, committed input assignments and configured input hop limit. Global ground-window bounds optimistically give zero processing and arbitrary result placement. For disjoint groups sharing their last usable ground window, capacity bounds retain earliest current-path input arrival and latest delivery through an optimistic time-expanded result graph. They ignore bandwidth contention, memory, unrelated tasks, packet indivisibility, relay guard, visited nodes and result hop limits. Ground computation is zero only when no source has a direct input window; otherwise all ground servers are granted full capacity through the latest task deadline. The bound concerns maximum count, not which member of a group must fail. It does not apply to ground_relay, whose multi-hop raw-input-to-ground paths are a different action space, and is not universal scheduling optimality.",
+      "total_tasks": 15,
+      "potentially_on_time_tasks": 12,
+      "p_sla_upper_bound": 0.8,
+      "global_ground_windows": [
+        {
+          "start_s": 0.0,
+          "end_s": 30.0
+        },
+        {
+          "start_s": 180.0,
+          "end_s": 570.0
+        },
+        {
+          "start_s": 730.0,
+          "end_s": 1110.0
+        },
+        {
+          "start_s": 1280.0,
+          "end_s": 1650.0
+        },
+        {
+          "start_s": 1830.0,
+          "end_s": 2190.0
+        },
+        {
+          "start_s": 2390.0,
+          "end_s": 2730.0
+        },
+        {
+          "start_s": 2940.0,
+          "end_s": 3270.0
+        },
+        {
+          "start_s": 3500.0,
+          "end_s": 3800.0
+        },
+        {
+          "start_s": 4060.0,
+          "end_s": 4340.0
+        },
+        {
+          "start_s": 4620.0,
+          "end_s": 4880.0
+        },
+        {
+          "start_s": 5180.0,
+          "end_s": 5410.0
+        },
+        {
+          "start_s": 5750.0,
+          "end_s": 5940.0
+        },
+        {
+          "start_s": 6310.0,
+          "end_s": 6480.0
+        },
+        {
+          "start_s": 6880.0,
+          "end_s": 7010.0
+        },
+        {
+          "start_s": 7460.0,
+          "end_s": 7530.0
+        },
+        {
+          "start_s": 14070.0,
+          "end_s": 14140.0
+        },
+        {
+          "start_s": 14600.0,
+          "end_s": 14710.0
+        },
+        {
+          "start_s": 14920.0,
+          "end_s": 15060.0
+        },
+        {
+          "start_s": 15120.0,
+          "end_s": 15290.0
+        },
+        {
+          "start_s": 15420.0,
+          "end_s": 15650.0
+        },
+        {
+          "start_s": 15660.0,
+          "end_s": 15850.0
+        },
+        {
+          "start_s": 15930.0,
+          "end_s": 16420.0
+        },
+        {
+          "start_s": 16450.0,
+          "end_s": 20690.0
+        }
+      ],
+      "group_capacity_constraints": [
+        {
+          "task_ids": [
+            "task_9"
+          ],
+          "earliest_release_seconds": 5910.0,
+          "last_usable_ground_arrival_seconds": 5940.0,
+          "work_per_task": 324.429486513231,
+          "total_required_work": 324.429486513231,
+          "processors": [
+            {
+              "sat_id": 0,
+              "earliest_input_seconds": 5911.0,
+              "latest_result_ready_seconds": 5935.0,
+              "compute_capacity_upper_bound": 24.0
+            },
+            {
+              "sat_id": 1,
+              "earliest_input_seconds": 5910.0,
+              "latest_result_ready_seconds": 5935.0,
+              "compute_capacity_upper_bound": 25.0
+            },
+            {
+              "sat_id": 17,
+              "earliest_input_seconds": 5912.0,
+              "latest_result_ready_seconds": 5937.0,
+              "compute_capacity_upper_bound": 25.0
+            },
+            {
+              "sat_id": 18,
+              "earliest_input_seconds": 5911.0,
+              "latest_result_ready_seconds": 5936.0,
+              "compute_capacity_upper_bound": 25.0
+            },
+            {
+              "sat_id": 19,
+              "earliest_input_seconds": 5911.0,
+              "latest_result_ready_seconds": 5935.0,
+              "compute_capacity_upper_bound": 24.0
+            },
+            {
+              "sat_id": 20,
+              "earliest_input_seconds": 5912.0,
+              "latest_result_ready_seconds": 5934.0,
+              "compute_capacity_upper_bound": 22.0
+            }
+          ],
+          "direct_source_ground_input_possible": false,
+          "onboard_capacity_upper_bound": 145.0,
+          "ground_capacity_upper_bound": 0,
+          "total_capacity_upper_bound": 145.0,
+          "on_time_task_count_upper_bound": 0
+        }
+      ],
+      "tasks": [
+        {
+          "task_id": "task_0",
+          "source_sat_id": 1,
+          "release_seconds": 120.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 180.0,
+          "delivery_latency_lower_bound_seconds": 62.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 67.0
+        },
+        {
+          "task_id": "task_1",
+          "source_sat_id": 1,
+          "release_seconds": 150.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 180.0,
+          "delivery_latency_lower_bound_seconds": 32.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 88.0
+        },
+        {
+          "task_id": "task_2",
+          "source_sat_id": 1,
+          "release_seconds": 180.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 180.0,
+          "delivery_latency_lower_bound_seconds": 2.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 104.0
+        },
+        {
+          "task_id": "task_3",
+          "source_sat_id": 0,
+          "release_seconds": 290.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 290.0,
+          "delivery_latency_lower_bound_seconds": 2.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 63.0
+        },
+        {
+          "task_id": "task_4",
+          "source_sat_id": 0,
+          "release_seconds": 320.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 320.0,
+          "delivery_latency_lower_bound_seconds": 2.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 72.0
+        },
+        {
+          "task_id": "task_5",
+          "source_sat_id": 0,
+          "release_seconds": 350.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 350.0,
+          "delivery_latency_lower_bound_seconds": 2.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 79.0
+        },
+        {
+          "task_id": "task_6",
+          "source_sat_id": 0,
+          "release_seconds": 380.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 380.0,
+          "delivery_latency_lower_bound_seconds": 2.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 89.0
+        },
+        {
+          "task_id": "task_7",
+          "source_sat_id": 0,
+          "release_seconds": 410.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 410.0,
+          "delivery_latency_lower_bound_seconds": 2.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 90.0
+        },
+        {
+          "task_id": "task_8",
+          "source_sat_id": 0,
+          "release_seconds": 440.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 440.0,
+          "delivery_latency_lower_bound_seconds": 2.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 96.0
+        },
+        {
+          "task_id": "task_9",
+          "source_sat_id": 1,
+          "release_seconds": 5910.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 5910.0,
+          "delivery_latency_lower_bound_seconds": 2.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 402.0
+        },
+        {
+          "task_id": "task_10",
+          "source_sat_id": 1,
+          "release_seconds": 5940.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6310.0,
+          "delivery_latency_lower_bound_seconds": 372.0,
+          "potentially_on_time": false,
+          "observed_latency_seconds": 372.0
+        },
+        {
+          "task_id": "task_11",
+          "source_sat_id": 1,
+          "release_seconds": 5970.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6310.0,
+          "delivery_latency_lower_bound_seconds": 342.0,
+          "potentially_on_time": false,
+          "observed_latency_seconds": 342.0
+        },
+        {
+          "task_id": "task_12",
+          "source_sat_id": 0,
+          "release_seconds": 6230.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6310.0,
+          "delivery_latency_lower_bound_seconds": 82.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 82.0
+        },
+        {
+          "task_id": "task_13",
+          "source_sat_id": 0,
+          "release_seconds": 6260.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6310.0,
+          "delivery_latency_lower_bound_seconds": 52.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 52.0
+        },
+        {
+          "task_id": "task_14",
+          "source_sat_id": 0,
+          "release_seconds": 6290.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6310.0,
+          "delivery_latency_lower_bound_seconds": 22.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 57.0
+        }
+      ]
+    },
+    {
+      "input": "results/sla_twohop_development_v6_20261015/day03_cgs_compute_adapted.json",
+      "sha256": "86c6ceff268126ea325f1baae2c9242c122a745e9d7950b318afde666249116b",
+      "method": "cgs_compute_adapted",
+      "case": {
+        "id": "day03",
+        "calendar_day": "2026-10-17",
+        "epoch_offset_seconds": 229480,
+        "all_qualifying_events_retained": true,
+        "num_acquisitions": 17,
+        "split": "development"
+      },
+      "sla_seconds": 300,
+      "assumptions": "Conditional on this simulator, fixed image work, committed input assignments and configured input hop limit. Global ground-window bounds optimistically give zero processing and arbitrary result placement. For disjoint groups sharing their last usable ground window, capacity bounds retain earliest current-path input arrival and latest delivery through an optimistic time-expanded result graph. They ignore bandwidth contention, memory, unrelated tasks, packet indivisibility, relay guard, visited nodes and result hop limits. Ground computation is zero only when no source has a direct input window; otherwise all ground servers are granted full capacity through the latest task deadline. The bound concerns maximum count, not which member of a group must fail. It does not apply to ground_relay, whose multi-hop raw-input-to-ground paths are a different action space, and is not universal scheduling optimality.",
+      "total_tasks": 17,
+      "potentially_on_time_tasks": 14,
+      "p_sla_upper_bound": 0.8235294117647058,
+      "global_ground_windows": [
+        {
+          "start_s": 30.0,
+          "end_s": 410.0
+        },
+        {
+          "start_s": 560.0,
+          "end_s": 960.0
+        },
+        {
+          "start_s": 1100.0,
+          "end_s": 1500.0
+        },
+        {
+          "start_s": 1640.0,
+          "end_s": 2050.0
+        },
+        {
+          "start_s": 2180.0,
+          "end_s": 2590.0
+        },
+        {
+          "start_s": 2730.0,
+          "end_s": 3130.0
+        },
+        {
+          "start_s": 3280.0,
+          "end_s": 3670.0
+        },
+        {
+          "start_s": 3830.0,
+          "end_s": 4210.0
+        },
+        {
+          "start_s": 4380.0,
+          "end_s": 4750.0
+        },
+        {
+          "start_s": 4930.0,
+          "end_s": 5290.0
+        },
+        {
+          "start_s": 5480.0,
+          "end_s": 5830.0
+        },
+        {
+          "start_s": 6040.0,
+          "end_s": 6370.0
+        },
+        {
+          "start_s": 6600.0,
+          "end_s": 6900.0
+        },
+        {
+          "start_s": 7160.0,
+          "end_s": 7440.0
+        },
+        {
+          "start_s": 7720.0,
+          "end_s": 7980.0
+        },
+        {
+          "start_s": 8280.0,
+          "end_s": 8510.0
+        },
+        {
+          "start_s": 8840.0,
+          "end_s": 9050.0
+        },
+        {
+          "start_s": 9410.0,
+          "end_s": 9580.0
+        },
+        {
+          "start_s": 9980.0,
+          "end_s": 10110.0
+        },
+        {
+          "start_s": 10550.0,
+          "end_s": 10630.0
+        },
+        {
+          "start_s": 17180.0,
+          "end_s": 17220.0
+        },
+        {
+          "start_s": 17700.0,
+          "end_s": 17810.0
+        },
+        {
+          "start_s": 18040.0,
+          "end_s": 18150.0
+        },
+        {
+          "start_s": 18230.0,
+          "end_s": 18380.0
+        },
+        {
+          "start_s": 18520.0,
+          "end_s": 18740.0
+        },
+        {
+          "start_s": 18760.0,
+          "end_s": 18950.0
+        },
+        {
+          "start_s": 19030.0,
+          "end_s": 19510.0
+        },
+        {
+          "start_s": 19550.0,
+          "end_s": 20070.0
+        },
+        {
+          "start_s": 20080.0,
+          "end_s": 25960.0
+        }
+      ],
+      "group_capacity_constraints": [
+        {
+          "task_ids": [
+            "task_3",
+            "task_4",
+            "task_5"
+          ],
+          "earliest_release_seconds": 5680.0,
+          "last_usable_ground_arrival_seconds": 5830.0,
+          "work_per_task": 324.429486513231,
+          "total_required_work": 973.2884595396929,
+          "processors": [
+            {
+              "sat_id": 0,
+              "earliest_input_seconds": 5681.0,
+              "latest_result_ready_seconds": 5825.0,
+              "compute_capacity_upper_bound": 144.0
+            },
+            {
+              "sat_id": 1,
+              "earliest_input_seconds": 5680.0,
+              "latest_result_ready_seconds": 5825.0,
+              "compute_capacity_upper_bound": 145.0
+            },
+            {
+              "sat_id": 6,
+              "earliest_input_seconds": 5722.0,
+              "latest_result_ready_seconds": 5827.0,
+              "compute_capacity_upper_bound": 105.0
+            },
+            {
+              "sat_id": 15,
+              "earliest_input_seconds": 5682.0,
+              "latest_result_ready_seconds": 5826.0,
+              "compute_capacity_upper_bound": 144.0
+            },
+            {
+              "sat_id": 16,
+              "earliest_input_seconds": 5681.0,
+              "latest_result_ready_seconds": 5825.0,
+              "compute_capacity_upper_bound": 144.0
+            },
+            {
+              "sat_id": 17,
+              "earliest_input_seconds": 5681.0,
+              "latest_result_ready_seconds": 5824.0,
+              "compute_capacity_upper_bound": 143.0
+            },
+            {
+              "sat_id": 18,
+              "earliest_input_seconds": 5682.0,
+              "latest_result_ready_seconds": 5823.0,
+              "compute_capacity_upper_bound": 141.0
+            }
+          ],
+          "direct_source_ground_input_possible": false,
+          "onboard_capacity_upper_bound": 966.0,
+          "ground_capacity_upper_bound": 0,
+          "total_capacity_upper_bound": 966.0,
+          "on_time_task_count_upper_bound": 2
+        }
+      ],
+      "tasks": [
+        {
+          "task_id": "task_0",
+          "source_sat_id": 0,
+          "release_seconds": 120.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 120.0,
+          "delivery_latency_lower_bound_seconds": 2.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 56.0
+        },
+        {
+          "task_id": "task_1",
+          "source_sat_id": 0,
+          "release_seconds": 150.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 150.0,
+          "delivery_latency_lower_bound_seconds": 2.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 72.0
+        },
+        {
+          "task_id": "task_2",
+          "source_sat_id": 0,
+          "release_seconds": 180.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 180.0,
+          "delivery_latency_lower_bound_seconds": 2.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 71.0
+        },
+        {
+          "task_id": "task_3",
+          "source_sat_id": 1,
+          "release_seconds": 5680.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 5680.0,
+          "delivery_latency_lower_bound_seconds": 2.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 63.0
+        },
+        {
+          "task_id": "task_4",
+          "source_sat_id": 1,
+          "release_seconds": 5710.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 5710.0,
+          "delivery_latency_lower_bound_seconds": 2.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 87.0
+        },
+        {
+          "task_id": "task_5",
+          "source_sat_id": 1,
+          "release_seconds": 5740.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 5740.0,
+          "delivery_latency_lower_bound_seconds": 2.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 302.0
+        },
+        {
+          "task_id": "task_6",
+          "source_sat_id": 1,
+          "release_seconds": 5790.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 5790.0,
+          "delivery_latency_lower_bound_seconds": 2.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 252.0
+        },
+        {
+          "task_id": "task_7",
+          "source_sat_id": 1,
+          "release_seconds": 5820.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 5820.0,
+          "delivery_latency_lower_bound_seconds": 2.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 222.0
+        },
+        {
+          "task_id": "task_8",
+          "source_sat_id": 1,
+          "release_seconds": 5850.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6040.0,
+          "delivery_latency_lower_bound_seconds": 192.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 192.0
+        },
+        {
+          "task_id": "task_9",
+          "source_sat_id": 0,
+          "release_seconds": 5860.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6040.0,
+          "delivery_latency_lower_bound_seconds": 182.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 193.0
+        },
+        {
+          "task_id": "task_10",
+          "source_sat_id": 0,
+          "release_seconds": 5890.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6040.0,
+          "delivery_latency_lower_bound_seconds": 152.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 192.0
+        },
+        {
+          "task_id": "task_11",
+          "source_sat_id": 0,
+          "release_seconds": 5920.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6040.0,
+          "delivery_latency_lower_bound_seconds": 122.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 216.0
+        },
+        {
+          "task_id": "task_12",
+          "source_sat_id": 0,
+          "release_seconds": 5950.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6040.0,
+          "delivery_latency_lower_bound_seconds": 92.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 148.0
+        },
+        {
+          "task_id": "task_13",
+          "source_sat_id": 0,
+          "release_seconds": 5980.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6040.0,
+          "delivery_latency_lower_bound_seconds": 62.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 179.0
+        },
+        {
+          "task_id": "task_14",
+          "source_sat_id": 0,
+          "release_seconds": 6010.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6040.0,
+          "delivery_latency_lower_bound_seconds": 32.0,
+          "potentially_on_time": true,
+          "observed_latency_seconds": 185.0
+        },
+        {
+          "task_id": "task_15",
+          "source_sat_id": 1,
+          "release_seconds": 11530.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 17180.0,
+          "delivery_latency_lower_bound_seconds": 5652.0,
+          "potentially_on_time": false,
+          "observed_latency_seconds": 5652.0
+        },
+        {
+          "task_id": "task_16",
+          "source_sat_id": 1,
+          "release_seconds": 11560.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 17180.0,
+          "delivery_latency_lower_bound_seconds": 5622.0,
+          "potentially_on_time": false,
+          "observed_latency_seconds": 6482.0
+        }
+      ]
+    }
+  ],
+  "pooled_task_count_upper_bound": 47,
+  "pooled_total_tasks": 53,
+  "equal_case_p_sla_upper_bound": 0.8745098039215686
+}

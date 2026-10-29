@@ -1,0 +1,16 @@
+{
+  "status": "BLOCKED",
+  "completed_at_utc": "2026-10-19T04:52:20.484994+00:00",
+  "observed_states": 39,
+  "missing_states": [
+    {
+      "condition": "load_4",
+      "task_id": "task_535"
+    }
+  ],
+  "branch_records": 117,
+  "full_labels_started": false,
+  "training_started": false,
+  "next_action": "STOP; wait for user decision on correcting sampling and filling the missing pilot state",
+  "note": "progress/load_4.json is the last in-run snapshot; terminal status is in conditions/load_4.json and this file"
+}

@@ -5,22 +5,39 @@ import numpy as np
 from sim.marl.observation import MAX_NEIGHBORS, MAX_TILES_PER_SAT, build_obs, obs_dim
 
 TASK_EXTRA_DIM = 6 + 1 + MAX_NEIGHBORS
+FEATURE_SETS = ("base", "task_window", "contact_window", "role_contact", "overlap_contact")
+
+
+def observation_version_for(feature_set):
+    if feature_set not in FEATURE_SETS:
+        raise ValueError(f"Unknown feature set: {feature_set}")
+    return 3 if feature_set == "overlap_contact" else 2
+
+
+def validate_feature_workload(image_tiling, feature_set):
+    observation_version_for(feature_set)
+    if bool(image_tiling) != (feature_set == "overlap_contact"):
+        raise ValueError("image_tiling requires overlap_contact features; legacy workloads require legacy features")
+    if isinstance(image_tiling, dict) and (image_tiling.get("window_px"), image_tiling.get("stride_px")) != (1024, 824):
+        raise ValueError("overlap_contact requires window_px=1024 and stride_px=824")
 
 
 def feature_dim(num_gs, feature_set="base"):
     if feature_set == "base":
         return obs_dim(num_gs)
-    if feature_set not in ("task_window", "contact_window", "role_contact"):
+    if feature_set not in FEATURE_SETS:
         raise ValueError(f"Unknown feature set: {feature_set}")
     size = obs_dim(num_gs) + 2 * num_gs + 2 * MAX_NEIGHBORS + MAX_TILES_PER_SAT * TASK_EXTRA_DIM
     return size + (3 + 3 * num_gs + MAX_NEIGHBORS * (5 + 2 * num_gs) + MAX_TILES_PER_SAT
-                   if feature_set in ("contact_window", "role_contact") else 0)
+                   if feature_set in ("contact_window", "role_contact", "overlap_contact") else 0)
 
 
 def build_features(state, sat_id, feature_set="base", task_features=True, window_features=True):
     # 延迟导入避免 decision 与特征构建形成模块循环。
     from sim.marl.decision import candidate_neighbors, candidate_tiles
 
+    validate_feature_workload(state.config.get("image_tiling"), feature_set)
+    workload_aware = feature_set == "overlap_contact"
     obs = build_obs(state, sat_id)
     gs_count = len(state.ground_stations)
     nb_start = 5 + gs_count * 4
@@ -46,8 +63,9 @@ def build_features(state, sat_id, feature_set="base", task_features=True, window
         # 按可见卫星数估算长期轮转份额，不承诺当前时隙获准接入。
         share = min(1.0, gs["receive_channels"] / max(1, gs.get("visible_contenders", 1)))
         capacity = 0.0 if window is None else window[1] * gs["bandwidth_mbps"] / 8 * share
-        extras.extend((min(1.0, backlog / image_mb),
-                       min(1.0, capacity / image_mb) if window_features else 0.0))
+        extras.extend((backlog / (image_mb + backlog) if workload_aware else min(1.0, backlog / image_mb),
+                       (capacity / (image_mb + capacity) if workload_aware else min(1.0, capacity / image_mb))
+                       if window_features else 0.0))
     neighbors = candidate_neighbors(state, sat_id)
     for k in range(MAX_NEIGHBORS):
         if k >= len(neighbors):
@@ -55,10 +73,12 @@ def build_features(state, sat_id, feature_set="base", task_features=True, window
             continue
         nb = neighbors[k]
         nb_sat = state.satellites[nb]
-        extras.extend((min(1.0, sat.get("isl_backlog_mb", {}).get(nb, 0.0) / image_mb),
-                       min(1.0, sum(nb_sat.get("ground_backlog_mb", {}).values()) / image_mb)))
+        backlog = sat.get("isl_backlog_mb", {}).get(nb, 0.0)
+        ground_backlog = sum(nb_sat.get("ground_backlog_mb", {}).values())
+        extras.extend((backlog / (image_mb + backlog) if workload_aware else min(1.0, backlog / image_mb),
+                       ground_backlog / (image_mb + ground_backlog) if workload_aware else min(1.0, ground_backlog / image_mb)))
     ids = candidate_tiles(state, sat_id)
-    if feature_set == "role_contact":
+    if feature_set in ("role_contact", "overlap_contact"):
         # 有界单调变换保留高负载差异；旧 checkpoint 的输入定义不变。
         obs[1] = sat["queue_len"] / (16 + sat["queue_len"])
         for j, gs in enumerate(state.ground_stations.values()):
@@ -72,6 +92,12 @@ def build_features(state, sat_id, feature_set="base", task_features=True, window
         for j, tid in enumerate(ids):
             cost = state.tiles[tid]["compute_cost"]
             obs[tile_start + j * 7 + 2] = cost / (20 + cost)
+            if workload_aware:
+                tile = state.tiles[tid]
+                # 编码尺度为 16 MB / 20 U / 1 MB，不是硬件参数；无截断保留大包差异。
+                obs[tile_start + j * 7 + 1] = tile["data_size_mb"] / (16 + tile["data_size_mb"])
+                # 同源兄弟比例已在 task extras 中；复用该槽位，保持 actor 大小不变。
+                obs[tile_start + j * 7 + 6] = tile["result_size_mb"] / (1 + tile["result_size_mb"])
     for k in range(MAX_TILES_PER_SAT):
         values = np.zeros(TASK_EXTRA_DIM, dtype=np.float32)
         if k < len(ids):
@@ -88,7 +114,7 @@ def build_features(state, sat_id, feature_set="base", task_features=True, window
             values[4:6] = (float(remaining is not None),
                           min(1.0, remaining / horizon) if remaining is not None else 0.0)
         extras.extend(values)
-    if feature_set in ("contact_window", "role_contact"):
+    if feature_set in ("contact_window", "role_contact", "overlap_contact"):
         from sim.topology import link_key
         extras.append(state.config.get("remaining_sim_seconds", horizon) /
                       max(1, state.config.get("sim_duration_seconds", horizon)))

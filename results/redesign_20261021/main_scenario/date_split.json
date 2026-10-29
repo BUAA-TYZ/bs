@@ -1,0 +1,31 @@
+{
+  "registered_at_utc": "2026-10-22T02:19:07.090463+00:00",
+  "scenario": "M",
+  "calibration_dates": [
+    "2026-10-15"
+  ],
+  "training_dates": [
+    "2026-10-16",
+    "2026-10-17",
+    "2026-10-18",
+    "2026-10-19",
+    "2026-10-20",
+    "2026-10-21"
+  ],
+  "validation_dates": [
+    "2026-10-22",
+    "2026-10-23",
+    "2026-10-24"
+  ],
+  "test_dates": [
+    "2026-12-21",
+    "2026-12-22",
+    "2026-12-23"
+  ],
+  "test_status": "SEALED_NOT_GENERATED_NOT_RUN",
+  "selection": "First Monday-Wednesday of the calendar week following the latest prior sealed test (12-17); date collision metadata audit before registration",
+  "window_rule": "Same busiest-raw-byte six-hour rule on each date; do not discard low-load or empty dates; paired methods use identical arrivals",
+  "unseal_requires": "Frozen method/model/normalization/hyperparameters/reporting and explicit user authorization",
+  "old_dates": "All old consumed/registered tests remain excluded; prior learning validation dates may be reused only as new-scenario validation, never called unseen test",
+  "orbit_scope": "Synthetic orbit phase holdout, not a claim of real TLE prediction accuracy across months"
+}

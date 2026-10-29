@@ -1,0 +1,494 @@
+{
+  "task_id": "task_736",
+  "condition": "2026-10-20_load_4",
+  "decision_seconds": 54921.0,
+  "source_sat_id": 22,
+  "release_seconds": 54920.0,
+  "rule_choice": "cgs",
+  "quotes_seconds": {
+    "local": 280.46,
+    "cgs": 280.32,
+    "ground": 290.64920000000006
+  },
+  "quote_components": {
+    "local": {
+      "pipeline": 280.44,
+      "group": 280.46
+    },
+    "cgs": {
+      "pipeline": 280.28999999999996,
+      "group": 280.32
+    },
+    "ground": {
+      "pipeline": 290.64920000000006,
+      "group": null
+    }
+  },
+  "state_fingerprint": "babfccab4032451ab0a33818d52b62e950e7d5d817e2f5ec0e7de74c04e73f20",
+  "parent_pid": 59077,
+  "public_features": {
+    "image_age_s": 1.0,
+    "work_windows": 64.0,
+    "quotes": {
+      "local": 280.46,
+      "cgs": 280.32,
+      "ground": 290.64920000000006
+    },
+    "finite_mask": {
+      "local": true,
+      "cgs": true,
+      "ground": true
+    }
+  },
+  "actions": {
+    "local": [
+      {
+        "tile_id": "task_736_tile_0",
+        "action_type": "LOCAL",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false
+      },
+      {
+        "tile_id": "task_736_tile_1",
+        "action_type": "LOCAL",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false
+      },
+      {
+        "tile_id": "task_736_tile_10",
+        "action_type": "LOCAL",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false
+      },
+      {
+        "tile_id": "task_736_tile_11",
+        "action_type": "LOCAL",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false
+      },
+      {
+        "tile_id": "task_736_tile_12",
+        "action_type": "LOCAL",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false
+      },
+      {
+        "tile_id": "task_736_tile_13",
+        "action_type": "LOCAL",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false
+      },
+      {
+        "tile_id": "task_736_tile_14",
+        "action_type": "LOCAL",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false
+      },
+      {
+        "tile_id": "task_736_tile_15",
+        "action_type": "LOCAL",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false
+      },
+      {
+        "tile_id": "task_736_tile_2",
+        "action_type": "LOCAL",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false
+      },
+      {
+        "tile_id": "task_736_tile_3",
+        "action_type": "LOCAL",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false
+      },
+      {
+        "tile_id": "task_736_tile_4",
+        "action_type": "LOCAL",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false
+      },
+      {
+        "tile_id": "task_736_tile_5",
+        "action_type": "LOCAL",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false
+      },
+      {
+        "tile_id": "task_736_tile_6",
+        "action_type": "LOCAL",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false
+      },
+      {
+        "tile_id": "task_736_tile_7",
+        "action_type": "LOCAL",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false
+      },
+      {
+        "tile_id": "task_736_tile_8",
+        "action_type": "LOCAL",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false
+      },
+      {
+        "tile_id": "task_736_tile_9",
+        "action_type": "LOCAL",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false
+      }
+    ],
+    "cgs": [
+      {
+        "tile_id": "task_736_tile_0",
+        "action_type": "OFFLOAD",
+        "target_sat_id": 30,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false
+      },
+      {
+        "tile_id": "task_736_tile_1",
+        "action_type": "OFFLOAD",
+        "target_sat_id": 39,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false
+      },
+      {
+        "tile_id": "task_736_tile_10",
+        "action_type": "OFFLOAD",
+        "target_sat_id": 0,
+        "target_gs_id": null,
+        "input_path": [
+          22,
+          39,
+          0
+        ],
+        "relay_to_ground": false
+      },
+      {
+        "tile_id": "task_736_tile_11",
+        "action_type": "OFFLOAD",
+        "target_sat_id": 20,
+        "target_gs_id": null,
+        "input_path": [
+          22,
+          30,
+          20
+        ],
+        "relay_to_ground": false
+      },
+      {
+        "tile_id": "task_736_tile_12",
+        "action_type": "OFFLOAD",
+        "target_sat_id": 30,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false
+      },
+      {
+        "tile_id": "task_736_tile_13",
+        "action_type": "OFFLOAD",
+        "target_sat_id": 39,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false
+      },
+      {
+        "tile_id": "task_736_tile_14",
+        "action_type": "OFFLOAD",
+        "target_sat_id": 20,
+        "target_gs_id": null,
+        "input_path": [
+          22,
+          30,
+          20
+        ],
+        "relay_to_ground": false
+      },
+      {
+        "tile_id": "task_736_tile_15",
+        "action_type": "OFFLOAD",
+        "target_sat_id": 0,
+        "target_gs_id": null,
+        "input_path": [
+          22,
+          39,
+          0
+        ],
+        "relay_to_ground": false
+      },
+      {
+        "tile_id": "task_736_tile_2",
+        "action_type": "OFFLOAD",
+        "target_sat_id": 30,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false
+      },
+      {
+        "tile_id": "task_736_tile_3",
+        "action_type": "OFFLOAD",
+        "target_sat_id": 39,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false
+      },
+      {
+        "tile_id": "task_736_tile_4",
+        "action_type": "OFFLOAD",
+        "target_sat_id": 20,
+        "target_gs_id": null,
+        "input_path": [
+          22,
+          30,
+          20
+        ],
+        "relay_to_ground": false
+      },
+      {
+        "tile_id": "task_736_tile_5",
+        "action_type": "OFFLOAD",
+        "target_sat_id": 0,
+        "target_gs_id": null,
+        "input_path": [
+          22,
+          39,
+          0
+        ],
+        "relay_to_ground": false
+      },
+      {
+        "tile_id": "task_736_tile_6",
+        "action_type": "OFFLOAD",
+        "target_sat_id": 30,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false
+      },
+      {
+        "tile_id": "task_736_tile_7",
+        "action_type": "OFFLOAD",
+        "target_sat_id": 39,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false
+      },
+      {
+        "tile_id": "task_736_tile_8",
+        "action_type": "OFFLOAD",
+        "target_sat_id": 20,
+        "target_gs_id": null,
+        "input_path": [
+          22,
+          30,
+          20
+        ],
+        "relay_to_ground": false
+      },
+      {
+        "tile_id": "task_736_tile_9",
+        "action_type": "OFFLOAD",
+        "target_sat_id": 0,
+        "target_gs_id": null,
+        "input_path": [
+          22,
+          39,
+          0
+        ],
+        "relay_to_ground": false
+      }
+    ],
+    "ground": [
+      {
+        "tile_id": "task_736_tile_0",
+        "action_type": "OFFLOAD",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false,
+        "raw_hops": 8
+      },
+      {
+        "tile_id": "task_736_tile_1",
+        "action_type": "OFFLOAD",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false,
+        "raw_hops": 8
+      },
+      {
+        "tile_id": "task_736_tile_10",
+        "action_type": "OFFLOAD",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false,
+        "raw_hops": 8
+      },
+      {
+        "tile_id": "task_736_tile_11",
+        "action_type": "OFFLOAD",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false,
+        "raw_hops": 8
+      },
+      {
+        "tile_id": "task_736_tile_12",
+        "action_type": "OFFLOAD",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false,
+        "raw_hops": 8
+      },
+      {
+        "tile_id": "task_736_tile_13",
+        "action_type": "OFFLOAD",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false,
+        "raw_hops": 8
+      },
+      {
+        "tile_id": "task_736_tile_14",
+        "action_type": "OFFLOAD",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false,
+        "raw_hops": 8
+      },
+      {
+        "tile_id": "task_736_tile_15",
+        "action_type": "OFFLOAD",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false,
+        "raw_hops": 8
+      },
+      {
+        "tile_id": "task_736_tile_2",
+        "action_type": "OFFLOAD",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false,
+        "raw_hops": 8
+      },
+      {
+        "tile_id": "task_736_tile_3",
+        "action_type": "OFFLOAD",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false,
+        "raw_hops": 8
+      },
+      {
+        "tile_id": "task_736_tile_4",
+        "action_type": "OFFLOAD",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false,
+        "raw_hops": 8
+      },
+      {
+        "tile_id": "task_736_tile_5",
+        "action_type": "OFFLOAD",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false,
+        "raw_hops": 8
+      },
+      {
+        "tile_id": "task_736_tile_6",
+        "action_type": "OFFLOAD",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false,
+        "raw_hops": 8
+      },
+      {
+        "tile_id": "task_736_tile_7",
+        "action_type": "OFFLOAD",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false,
+        "raw_hops": 8
+      },
+      {
+        "tile_id": "task_736_tile_8",
+        "action_type": "OFFLOAD",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false,
+        "raw_hops": 8
+      },
+      {
+        "tile_id": "task_736_tile_9",
+        "action_type": "OFFLOAD",
+        "target_sat_id": null,
+        "target_gs_id": null,
+        "input_path": [],
+        "relay_to_ground": false,
+        "raw_hops": 8
+      }
+    ]
+  },
+  "plan": "cgs",
+  "censor_step": 6212100,
+  "child_pid": 77025,
+  "status": "PASS",
+  "completion_seconds": 55181.880000000005,
+  "latency_seconds": 261.88,
+  "censor_seconds": 62121.0,
+  "simulated_replay_seconds": 260.88000000000466,
+  "wall_seconds": 61.63543712499086,
+  "cpu_seconds": 61.62209,
+  "traceback": null
+}

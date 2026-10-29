@@ -1,0 +1,7 @@
+# 启发式验证配置修订登记
+
+首版面板的固定4块任务在config_from_dict加载时失败，尚未开始仿真：requested_num_tiles已变为4，但num_tiles及每块计算量/结果量仍为16块派生值。首版进程组已停止；首版源码、manifest、失败和部分进度原样保留，不据此选择方案或报告性能。
+
+v2仅同步ImageTiling派生的image_size_mb、num_tiles、compute_cost_per_tile、result_size_mb，并添加全部21个真实配置的加载测试。固定16配置必须与原协议字典完全一致。另纠正平局顺序，使其严格遵守已登记的local_4、local_16、cgs_4、cgs_16、ground；首版循环插入顺序误将cgs_4放在local_16之前。
+
+v2在独立目录dynamic_heuristics_v2_20261025从头运行同一21项面板；没有使用首版效果指标做方法选择。未改轨道、窗口、到达、物理参数、奖励或学习动作。源码与修订文档哈希在启动前写入v2 manifest。v2仍不自动重试，保留任意后续失败证据。测试日期继续SEALED。

@@ -1,0 +1,177 @@
+{
+  "scope": "case-specific intervention selected after inspecting outcomes; NOT an online policy or held-out result",
+  "case": {
+    "id": "train_2026101400_8",
+    "seed": 2026101408,
+    "orbit_offset_seconds": 135625.54742716954,
+    "arrival_rate_per_second": 0.011528986185717783,
+    "compute_cost_per_tile": 55.7865739689189,
+    "isl_bandwidth_scale": 0.9550008804639042,
+    "ground_bandwidth_scale": 13.060633611070703,
+    "walker": {
+      "planes": 6,
+      "satellites_per_plane": 6,
+      "phasing": 1,
+      "altitude_km": 555.3771525500274,
+      "inclination_deg": 60.46765225803778,
+      "raan_offset_deg": 180.71972869458523,
+      "phase_offset_deg": 192.8207925166484
+    },
+    "role_profile": "uniform",
+    "num_sats": 36,
+    "num_task_sources": 12,
+    "effective_arrival_rate_per_second": 0.017293479278576673,
+    "config_sha256": "703312fc9c931ec71fbf4ec1450d9d09b1e59011bbe577010e2100e3c982bff9"
+  },
+  "held_actions": [
+    {
+      "step": 220,
+      "tile": "task_29_tile_4"
+    },
+    {
+      "step": 220,
+      "tile": "task_29_tile_5"
+    },
+    {
+      "step": 220,
+      "tile": "task_29_tile_6"
+    },
+    {
+      "step": 220,
+      "tile": "task_29_tile_7"
+    },
+    {
+      "step": 221,
+      "tile": "task_29_tile_4"
+    },
+    {
+      "step": 221,
+      "tile": "task_29_tile_5"
+    },
+    {
+      "step": 221,
+      "tile": "task_29_tile_6"
+    },
+    {
+      "step": 221,
+      "tile": "task_29_tile_7"
+    }
+  ],
+  "paired": {
+    "total_tasks": 136,
+    "common_completed_tasks": 133,
+    "reference_only_completed_tasks": 0,
+    "candidate_only_completed_tasks": 3,
+    "neither_completed_tasks": 0,
+    "reference_failed_tasks": 0,
+    "candidate_failed_tasks": 0,
+    "reference_pending_tasks": 3,
+    "candidate_pending_tasks": 0,
+    "latency_population": "common_completed_only; selection_bias_remains",
+    "reference_latency_mean_seconds": 1397.7443609022557,
+    "candidate_latency_mean_seconds": 1397.7443609022557,
+    "reference_latency_p95_seconds": 4820.0,
+    "candidate_latency_p95_seconds": 4820.0,
+    "candidate_minus_reference_latency_mean_seconds": 0.0,
+    "ratio_of_mean_latencies_reference_over_candidate": 1.0,
+    "candidate_faster_tasks": 0,
+    "candidate_slower_tasks": 0,
+    "equal_latency_tasks": 133
+  },
+  "task_age": {
+    "delivery_curve": [
+      {
+        "horizon_seconds": 1800.0,
+        "total_tasks": 136,
+        "delivered_within_horizon": 105,
+        "not_delivered_within_horizon": 31,
+        "delivery_rate": 0.7720588235294118
+      },
+      {
+        "horizon_seconds": 3600.0,
+        "total_tasks": 136,
+        "delivered_within_horizon": 125,
+        "not_delivered_within_horizon": 11,
+        "delivery_rate": 0.9191176470588235
+      },
+      {
+        "horizon_seconds": 7200.0,
+        "total_tasks": 136,
+        "delivered_within_horizon": 136,
+        "not_delivered_within_horizon": 0,
+        "delivery_rate": 1.0
+      },
+      {
+        "horizon_seconds": 14400.0,
+        "total_tasks": 136,
+        "delivered_within_horizon": 136,
+        "not_delivered_within_horizon": 0,
+        "delivery_rate": 1.0
+      }
+    ],
+    "delivery_score": 0.9227941176470589,
+    "restricted_mean_latency_seconds": 1391.4705882352941
+  },
+  "affected_tasks": [
+    {
+      "task_id": "task_19",
+      "source_sat_id": 3,
+      "release_seconds": 1540.0,
+      "deadline_seconds": null,
+      "results_ready_seconds": 2820.0,
+      "completion_seconds": 2840.0,
+      "latency_seconds": 1300.0,
+      "status": "completed",
+      "stage": null,
+      "failure_reason": null,
+      "observed_age_seconds": 20060.0,
+      "result_relay_hops": 63,
+      "raw_relay_hops": 0
+    },
+    {
+      "task_id": "task_23",
+      "source_sat_id": 15,
+      "release_seconds": 1640.0,
+      "deadline_seconds": null,
+      "results_ready_seconds": 2820.0,
+      "completion_seconds": 2840.0,
+      "latency_seconds": 1200.0,
+      "status": "completed",
+      "stage": null,
+      "failure_reason": null,
+      "observed_age_seconds": 19960.0,
+      "result_relay_hops": 35,
+      "raw_relay_hops": 0
+    },
+    {
+      "task_id": "task_29",
+      "source_sat_id": 21,
+      "release_seconds": 1910.0,
+      "deadline_seconds": null,
+      "results_ready_seconds": 2280.0,
+      "completion_seconds": 2300.0,
+      "latency_seconds": 390.0,
+      "status": "completed",
+      "stage": null,
+      "failure_reason": null,
+      "observed_age_seconds": 19690.0,
+      "result_relay_hops": 0,
+      "raw_relay_hops": 0
+    },
+    {
+      "task_id": "task_31",
+      "source_sat_id": 0,
+      "release_seconds": 2000.0,
+      "deadline_seconds": null,
+      "results_ready_seconds": 2820.0,
+      "completion_seconds": 2840.0,
+      "latency_seconds": 840.0,
+      "status": "completed",
+      "stage": null,
+      "failure_reason": null,
+      "observed_age_seconds": 19600.0,
+      "result_relay_hops": 41,
+      "raw_relay_hops": 0
+    }
+  ]
+}

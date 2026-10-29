@@ -8,24 +8,28 @@ from sim.entities import Action, ActionType, EnvState
 from sim.marl.observation import MAX_NEIGHBORS, MAX_TILES_PER_SAT
 from sim.marl.features import build_features
 from sim.topology import link_key
+from sim.roles import can_receive, can_compute
 
-OBSERVATION_VERSION = 2
+OBSERVATION_VERSION = 2  # 旧协议；新 profile 的版本由 features.observation_version_for 决定。
 
 
-def candidate_tiles(state: EnvState, sat_id: int) -> list[str]:
+def candidate_tiles(state: EnvState, sat_id: int, limit: int = MAX_TILES_PER_SAT) -> list[str]:
+    if type(limit) is not int or limit < 1:
+        raise ValueError("Decision tile limit must be a positive integer")
     tiles = [tid for tid, tile in state.tiles.items()
              if tile["location"] == sat_id and not tile["in_transfer"]]
     tiles.sort(key=lambda tid: state.tiles[tid]["waiting_time"], reverse=True)
-    return tiles[:MAX_TILES_PER_SAT]
+    return tiles[:limit]
 
 
-def decision_state(state: EnvState) -> EnvState:
-    selected = {tid for sat_id in state.satellites for tid in candidate_tiles(state, sat_id)}
+def decision_state(state: EnvState, tile_limit_per_sat: int = MAX_TILES_PER_SAT) -> EnvState:
+    selected = {tid for sat_id in state.satellites
+                for tid in candidate_tiles(state, sat_id, tile_limit_per_sat)}
     return replace(state, tiles={tid: tile for tid, tile in state.tiles.items() if tid in selected})
 
 
 def candidate_neighbors(state: EnvState, sat_id: int) -> list[int]:
-    return sorted(state.neighbors.get(sat_id, []),
+    return sorted((nb for nb in state.neighbors.get(sat_id, []) if can_receive(state.config, nb)),
                   key=lambda nb: state.links[link_key(sat_id, nb)]["bandwidth_mbps"],
                   reverse=True)[:MAX_NEIGHBORS]
 
@@ -37,7 +41,8 @@ def action_mask(state: EnvState, sat_id: int, tile_ids: list[str]) -> np.ndarray
     for slot, tid in enumerate(tile_ids):
         tile = state.tiles[tid]
         # LOCAL 是进入计算队列，不要求当前空闲或当前显存足够。
-        mask[slot, 1] = tile["vram_req_gb"] <= state.config["vram_capacity_gb"]
+        mask[slot, 1] = (tile["vram_req_gb"] <= state.config["vram_capacity_gb"]
+                         and can_compute(state.config, sat_id, tile.get("source_sat_id", sat_id)))
         for k, nb in enumerate(candidate_neighbors(state, sat_id)):
             link = state.links[link_key(sat_id, nb)]
             mask[slot, 2 + k] = bool(link["up"] and link["bandwidth_mbps"] > 0
@@ -48,6 +53,8 @@ def action_mask(state: EnvState, sat_id: int, tile_ids: list[str]) -> np.ndarray
 
 
 def build_batch(state: EnvState, feature_set="base", task_features=True, window_features=True):
+    if state.config.get("decision_tile_limit_per_sat", MAX_TILES_PER_SAT) != MAX_TILES_PER_SAT:
+        raise ValueError(f"MARL requires decision_tile_limit_per_sat={MAX_TILES_PER_SAT}")
     sat_ids = sorted(state.satellites)
     tile_ids = {sid: candidate_tiles(state, sid) for sid in sat_ids}
     obs = np.stack([build_features(state, sid, feature_set, task_features, window_features) for sid in sat_ids])

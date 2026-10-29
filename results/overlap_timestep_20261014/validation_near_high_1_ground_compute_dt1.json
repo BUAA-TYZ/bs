@@ -1,0 +1,6131 @@
+{
+  "case": {
+    "id": "validation_near_high_1",
+    "seed": 181003,
+    "orbit_offset_seconds": 259200,
+    "arrival_rate_per_second": 0.013333333333333334,
+    "isl_bandwidth_scale": 1.0,
+    "ground_bandwidth_scale": 1,
+    "walker": {
+      "planes": 4,
+      "satellites_per_plane": 6,
+      "phasing": 1,
+      "altitude_km": 705,
+      "inclination_deg": 98.2,
+      "raan_offset_deg": 15,
+      "phase_offset_deg": 20
+    },
+    "role_profile": "near",
+    "workload_profile": "p0019"
+  },
+  "method": "ground_compute",
+  "dt": 1.0,
+  "wall_seconds": 10.061863124836236,
+  "physical_task_trace_sha256": "f30f87d6f6870b98c24bc03207374e22185e57bf3728df27b29bd13321ac1890",
+  "physical_link_context_sha256": "df17c52e5f02882a3ed8634bb331bd5aae1b8eabc9c62e7e3b7ccf2414204b2e",
+  "metrics": {
+    "model_version": "2.0",
+    "overall": {
+      "completed_tiles": 852,
+      "total_tiles": 1260,
+      "completed_tasks": 71,
+      "total_tasks": 105,
+      "failed_tiles": 0,
+      "pending_tiles": 408,
+      "task_completion_rate": 0.6761904761904762,
+      "tile_completion_rate": 0.6761904761904762,
+      "failed_tasks": 0,
+      "pending_tasks": 34,
+      "aggregating_tasks": 0
+    },
+    "latency": {
+      "unit": "seconds",
+      "population": "completed_only",
+      "tile_mean": 7110.732394366197,
+      "tile_p95": 19248.0,
+      "tile_p99": 21196.0,
+      "task_mean": 7111.732394366197,
+      "task_p95": 19249.0,
+      "task_p99": 21197.0
+    },
+    "resource": {
+      "avg_queue_len": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0,
+        "7": 0.0,
+        "8": 0.0,
+        "9": 0.0,
+        "10": 0.0,
+        "11": 0.0,
+        "12": 0.0,
+        "13": 0.0,
+        "14": 0.0,
+        "15": 0.0,
+        "16": 0.0,
+        "17": 0.0,
+        "18": 0.0,
+        "19": 0.0,
+        "20": 0.0,
+        "21": 0.0,
+        "22": 0.0,
+        "23": 0.0
+      },
+      "compute_busy_time": {},
+      "mem_peak_gb": {
+        "0": 0.514448991,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 1.1758834080000002,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.514448991,
+        "7": 0.0,
+        "8": 0.0,
+        "9": 0.8084198430000001,
+        "10": 0.0,
+        "11": 0.0,
+        "12": 0.293970852,
+        "13": 0.0,
+        "14": 0.0,
+        "15": 1.0288979820000002,
+        "16": 0.0,
+        "17": 0.0,
+        "18": 1.3228688340000003,
+        "19": 0.0,
+        "20": 0.0,
+        "21": 0.8084198430000001,
+        "22": 0.0,
+        "23": 0.0
+      },
+      "vram_peak_gb": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0,
+        "7": 0.0,
+        "8": 0.0,
+        "9": 0.0,
+        "10": 0.0,
+        "11": 0.0,
+        "12": 0.0,
+        "13": 0.0,
+        "14": 0.0,
+        "15": 0.0,
+        "16": 0.0,
+        "17": 0.0,
+        "18": 0.0,
+        "19": 0.0,
+        "20": 0.0,
+        "21": 0.0,
+        "22": 0.0,
+        "23": 0.0
+      },
+      "ground_compute_busy_time": {
+        "gs_beijing": 26.895501848155007,
+        "gs_urumqi": 34.703873352458075
+      }
+    },
+    "failures": {},
+    "network": {
+      "sent_mb": {
+        "ground:gs_beijing": 4028.2741030000007,
+        "ground:gs_urumqi": 2939.708520000001
+      },
+      "capacity_mb": {
+        "ground:gs_beijing": 54000.0,
+        "ground:gs_urumqi": 54000.0
+      },
+      "utilization": {
+        "ground:gs_beijing": 0.07459766857407409,
+        "ground:gs_urumqi": 0.054439046666666685
+      }
+    },
+    "task_outcomes": [
+      {
+        "task_id": "task_0",
+        "source_sat_id": 21,
+        "release_seconds": 65.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 16615.0,
+        "completion_seconds": 16616.0,
+        "latency_seconds": 16551.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 21535.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_1",
+        "source_sat_id": 18,
+        "release_seconds": 166.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 21434.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_2",
+        "source_sat_id": 6,
+        "release_seconds": 321.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 21517.0,
+        "completion_seconds": 21518.0,
+        "latency_seconds": 21197.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 21279.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_3",
+        "source_sat_id": 3,
+        "release_seconds": 331.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 908.0,
+        "completion_seconds": 909.0,
+        "latency_seconds": 578.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 21269.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_4",
+        "source_sat_id": 3,
+        "release_seconds": 349.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 909.0,
+        "completion_seconds": 910.0,
+        "latency_seconds": 561.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 21251.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_5",
+        "source_sat_id": 15,
+        "release_seconds": 380.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 5022.0,
+        "completion_seconds": 5023.0,
+        "latency_seconds": 4643.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 21220.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_6",
+        "source_sat_id": 3,
+        "release_seconds": 381.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 910.0,
+        "completion_seconds": 911.0,
+        "latency_seconds": 530.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 21219.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_7",
+        "source_sat_id": 15,
+        "release_seconds": 382.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 5023.0,
+        "completion_seconds": 5024.0,
+        "latency_seconds": 4642.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 21218.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_8",
+        "source_sat_id": 21,
+        "release_seconds": 642.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 16616.0,
+        "completion_seconds": 16617.0,
+        "latency_seconds": 15975.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 20958.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_9",
+        "source_sat_id": 3,
+        "release_seconds": 694.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 911.0,
+        "completion_seconds": 912.0,
+        "latency_seconds": 218.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 20906.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_10",
+        "source_sat_id": 3,
+        "release_seconds": 712.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 912.0,
+        "completion_seconds": 913.0,
+        "latency_seconds": 201.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 20888.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_11",
+        "source_sat_id": 6,
+        "release_seconds": 739.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 21518.0,
+        "completion_seconds": 21519.0,
+        "latency_seconds": 20780.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 20861.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_12",
+        "source_sat_id": 21,
+        "release_seconds": 883.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 16617.0,
+        "completion_seconds": 16618.0,
+        "latency_seconds": 15735.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 20717.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_13",
+        "source_sat_id": 0,
+        "release_seconds": 985.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 3937.0,
+        "completion_seconds": 3938.0,
+        "latency_seconds": 2953.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 20615.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_14",
+        "source_sat_id": 0,
+        "release_seconds": 1053.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 3938.0,
+        "completion_seconds": 3939.0,
+        "latency_seconds": 2886.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 20547.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_15",
+        "source_sat_id": 18,
+        "release_seconds": 1240.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 20360.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_16",
+        "source_sat_id": 12,
+        "release_seconds": 1301.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 1711.0,
+        "completion_seconds": 1712.0,
+        "latency_seconds": 411.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 20299.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_17",
+        "source_sat_id": 15,
+        "release_seconds": 1303.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 5024.0,
+        "completion_seconds": 5025.0,
+        "latency_seconds": 3722.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 20297.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_18",
+        "source_sat_id": 21,
+        "release_seconds": 1351.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 16618.0,
+        "completion_seconds": 16619.0,
+        "latency_seconds": 15268.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 20249.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_19",
+        "source_sat_id": 3,
+        "release_seconds": 1363.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 12622.0,
+        "completion_seconds": 12623.0,
+        "latency_seconds": 11260.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 20237.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_20",
+        "source_sat_id": 18,
+        "release_seconds": 1379.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 20221.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_21",
+        "source_sat_id": 3,
+        "release_seconds": 1473.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 12623.0,
+        "completion_seconds": 12624.0,
+        "latency_seconds": 11151.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 20127.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_22",
+        "source_sat_id": 9,
+        "release_seconds": 1526.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 20074.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_23",
+        "source_sat_id": 9,
+        "release_seconds": 1628.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 19972.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_24",
+        "source_sat_id": 3,
+        "release_seconds": 1706.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 12624.0,
+        "completion_seconds": 12625.0,
+        "latency_seconds": 10919.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 19894.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_25",
+        "source_sat_id": 9,
+        "release_seconds": 1730.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 19870.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_26",
+        "source_sat_id": 9,
+        "release_seconds": 1740.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 19860.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_27",
+        "source_sat_id": 9,
+        "release_seconds": 1813.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 19787.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_28",
+        "source_sat_id": 12,
+        "release_seconds": 1920.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 19680.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_29",
+        "source_sat_id": 3,
+        "release_seconds": 1930.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 12625.0,
+        "completion_seconds": 12626.0,
+        "latency_seconds": 10696.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 19670.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_30",
+        "source_sat_id": 21,
+        "release_seconds": 1941.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 16619.0,
+        "completion_seconds": 16620.0,
+        "latency_seconds": 14679.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 19659.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_31",
+        "source_sat_id": 18,
+        "release_seconds": 1958.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 19642.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_32",
+        "source_sat_id": 15,
+        "release_seconds": 1962.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 5025.0,
+        "completion_seconds": 5026.0,
+        "latency_seconds": 3064.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 19638.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_33",
+        "source_sat_id": 3,
+        "release_seconds": 1967.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 12626.0,
+        "completion_seconds": 12627.0,
+        "latency_seconds": 10660.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 19633.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_34",
+        "source_sat_id": 6,
+        "release_seconds": 2002.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 21519.0,
+        "completion_seconds": 21520.0,
+        "latency_seconds": 19518.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 19598.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_35",
+        "source_sat_id": 0,
+        "release_seconds": 2023.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 3939.0,
+        "completion_seconds": 3940.0,
+        "latency_seconds": 1917.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 19577.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_36",
+        "source_sat_id": 0,
+        "release_seconds": 2099.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 3940.0,
+        "completion_seconds": 3941.0,
+        "latency_seconds": 1842.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 19501.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_37",
+        "source_sat_id": 18,
+        "release_seconds": 2184.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 19416.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_38",
+        "source_sat_id": 3,
+        "release_seconds": 2218.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 12627.0,
+        "completion_seconds": 12628.0,
+        "latency_seconds": 10410.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 19382.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_39",
+        "source_sat_id": 18,
+        "release_seconds": 2257.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 19343.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_40",
+        "source_sat_id": 6,
+        "release_seconds": 2272.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 21520.0,
+        "completion_seconds": 21521.0,
+        "latency_seconds": 19249.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 19328.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_41",
+        "source_sat_id": 0,
+        "release_seconds": 2332.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 3941.0,
+        "completion_seconds": 3942.0,
+        "latency_seconds": 1610.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 19268.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_42",
+        "source_sat_id": 9,
+        "release_seconds": 2384.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 19216.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_43",
+        "source_sat_id": 15,
+        "release_seconds": 2444.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 5026.0,
+        "completion_seconds": 5027.0,
+        "latency_seconds": 2583.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 19156.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_44",
+        "source_sat_id": 12,
+        "release_seconds": 2480.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 7720.0,
+        "completion_seconds": 7721.0,
+        "latency_seconds": 5241.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 19120.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_45",
+        "source_sat_id": 0,
+        "release_seconds": 2553.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 3942.0,
+        "completion_seconds": 3943.0,
+        "latency_seconds": 1390.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 19047.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_46",
+        "source_sat_id": 18,
+        "release_seconds": 2638.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 18962.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_47",
+        "source_sat_id": 0,
+        "release_seconds": 2833.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 3943.0,
+        "completion_seconds": 3944.0,
+        "latency_seconds": 1111.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 18767.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_48",
+        "source_sat_id": 12,
+        "release_seconds": 2856.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 7721.0,
+        "completion_seconds": 7722.0,
+        "latency_seconds": 4866.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 18744.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_49",
+        "source_sat_id": 21,
+        "release_seconds": 2878.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 16620.0,
+        "completion_seconds": 16621.0,
+        "latency_seconds": 13743.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 18722.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_50",
+        "source_sat_id": 18,
+        "release_seconds": 2982.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 18618.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_51",
+        "source_sat_id": 18,
+        "release_seconds": 3057.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 18543.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_52",
+        "source_sat_id": 18,
+        "release_seconds": 3154.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 18446.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_53",
+        "source_sat_id": 9,
+        "release_seconds": 3188.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 18412.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_54",
+        "source_sat_id": 3,
+        "release_seconds": 3357.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 12628.0,
+        "completion_seconds": 12629.0,
+        "latency_seconds": 9272.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 18243.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_55",
+        "source_sat_id": 18,
+        "release_seconds": 3361.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 18239.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_56",
+        "source_sat_id": 15,
+        "release_seconds": 3374.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 5027.0,
+        "completion_seconds": 5028.0,
+        "latency_seconds": 1654.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 18226.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_57",
+        "source_sat_id": 15,
+        "release_seconds": 3414.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 5028.0,
+        "completion_seconds": 5029.0,
+        "latency_seconds": 1615.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 18186.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_58",
+        "source_sat_id": 15,
+        "release_seconds": 3475.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 5028.0,
+        "completion_seconds": 5029.0,
+        "latency_seconds": 1554.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 18125.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_59",
+        "source_sat_id": 18,
+        "release_seconds": 3618.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 17982.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_60",
+        "source_sat_id": 3,
+        "release_seconds": 3620.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 12628.0,
+        "completion_seconds": 12629.0,
+        "latency_seconds": 9009.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 17980.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_61",
+        "source_sat_id": 18,
+        "release_seconds": 3631.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 17969.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_62",
+        "source_sat_id": 15,
+        "release_seconds": 3676.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 5029.0,
+        "completion_seconds": 5030.0,
+        "latency_seconds": 1354.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 17924.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_63",
+        "source_sat_id": 3,
+        "release_seconds": 3750.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 12629.0,
+        "completion_seconds": 12630.0,
+        "latency_seconds": 8880.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 17850.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_64",
+        "source_sat_id": 9,
+        "release_seconds": 3793.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 17807.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_65",
+        "source_sat_id": 15,
+        "release_seconds": 3817.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 5030.0,
+        "completion_seconds": 5031.0,
+        "latency_seconds": 1214.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 17783.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_66",
+        "source_sat_id": 15,
+        "release_seconds": 3919.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 5031.0,
+        "completion_seconds": 5032.0,
+        "latency_seconds": 1113.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 17681.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_67",
+        "source_sat_id": 9,
+        "release_seconds": 3934.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 17666.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_68",
+        "source_sat_id": 3,
+        "release_seconds": 4118.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 12630.0,
+        "completion_seconds": 12631.0,
+        "latency_seconds": 8513.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 17482.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_69",
+        "source_sat_id": 21,
+        "release_seconds": 4289.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 16621.0,
+        "completion_seconds": 16622.0,
+        "latency_seconds": 12333.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 17311.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_70",
+        "source_sat_id": 15,
+        "release_seconds": 4300.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 5032.0,
+        "completion_seconds": 5033.0,
+        "latency_seconds": 733.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 17300.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_71",
+        "source_sat_id": 21,
+        "release_seconds": 4379.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 16621.0,
+        "completion_seconds": 16622.0,
+        "latency_seconds": 12243.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 17221.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_72",
+        "source_sat_id": 18,
+        "release_seconds": 4423.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 17177.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_73",
+        "source_sat_id": 3,
+        "release_seconds": 4491.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 12631.0,
+        "completion_seconds": 12632.0,
+        "latency_seconds": 8141.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 17109.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_74",
+        "source_sat_id": 3,
+        "release_seconds": 4617.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 12632.0,
+        "completion_seconds": 12633.0,
+        "latency_seconds": 8016.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 16983.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_75",
+        "source_sat_id": 3,
+        "release_seconds": 4642.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 12633.0,
+        "completion_seconds": 12634.0,
+        "latency_seconds": 7992.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 16958.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_76",
+        "source_sat_id": 6,
+        "release_seconds": 4672.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 21521.0,
+        "completion_seconds": 21522.0,
+        "latency_seconds": 16850.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 16928.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_77",
+        "source_sat_id": 15,
+        "release_seconds": 4713.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 5035.0,
+        "completion_seconds": 5036.0,
+        "latency_seconds": 323.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 16887.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_78",
+        "source_sat_id": 0,
+        "release_seconds": 4725.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 9797.0,
+        "completion_seconds": 9798.0,
+        "latency_seconds": 5073.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 16875.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_79",
+        "source_sat_id": 15,
+        "release_seconds": 4813.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 5043.0,
+        "completion_seconds": 5044.0,
+        "latency_seconds": 231.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 16787.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_80",
+        "source_sat_id": 0,
+        "release_seconds": 5035.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 9798.0,
+        "completion_seconds": 9799.0,
+        "latency_seconds": 4764.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 16565.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_81",
+        "source_sat_id": 21,
+        "release_seconds": 5119.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 16622.0,
+        "completion_seconds": 16623.0,
+        "latency_seconds": 11504.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 16481.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_82",
+        "source_sat_id": 6,
+        "release_seconds": 5246.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 21522.0,
+        "completion_seconds": 21523.0,
+        "latency_seconds": 16277.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 16354.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_83",
+        "source_sat_id": 15,
+        "release_seconds": 5405.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 16195.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_84",
+        "source_sat_id": 18,
+        "release_seconds": 5620.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 15980.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_85",
+        "source_sat_id": 0,
+        "release_seconds": 5775.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 9799.0,
+        "completion_seconds": 9800.0,
+        "latency_seconds": 4025.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 15825.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_86",
+        "source_sat_id": 9,
+        "release_seconds": 5904.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 15696.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_87",
+        "source_sat_id": 15,
+        "release_seconds": 6003.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 15597.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_88",
+        "source_sat_id": 21,
+        "release_seconds": 6061.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 16623.0,
+        "completion_seconds": 16624.0,
+        "latency_seconds": 10563.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 15539.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_89",
+        "source_sat_id": 3,
+        "release_seconds": 6065.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 12634.0,
+        "completion_seconds": 12635.0,
+        "latency_seconds": 6570.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 15535.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_90",
+        "source_sat_id": 0,
+        "release_seconds": 6098.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 9800.0,
+        "completion_seconds": 9801.0,
+        "latency_seconds": 3703.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 15502.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_91",
+        "source_sat_id": 3,
+        "release_seconds": 6135.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 12635.0,
+        "completion_seconds": 12636.0,
+        "latency_seconds": 6501.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 15465.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_92",
+        "source_sat_id": 18,
+        "release_seconds": 6193.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 15407.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_93",
+        "source_sat_id": 18,
+        "release_seconds": 6224.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 15376.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_94",
+        "source_sat_id": 21,
+        "release_seconds": 6341.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 16624.0,
+        "completion_seconds": 16625.0,
+        "latency_seconds": 10284.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 15259.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_95",
+        "source_sat_id": 0,
+        "release_seconds": 6360.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 9801.0,
+        "completion_seconds": 9802.0,
+        "latency_seconds": 3442.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 15240.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_96",
+        "source_sat_id": 15,
+        "release_seconds": 6478.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 15122.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_97",
+        "source_sat_id": 3,
+        "release_seconds": 6513.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 12635.0,
+        "completion_seconds": 12636.0,
+        "latency_seconds": 6123.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 15087.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_98",
+        "source_sat_id": 18,
+        "release_seconds": 6527.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 15073.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_99",
+        "source_sat_id": 0,
+        "release_seconds": 6596.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 9802.0,
+        "completion_seconds": 9803.0,
+        "latency_seconds": 3207.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 15004.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_100",
+        "source_sat_id": 0,
+        "release_seconds": 6616.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 9803.0,
+        "completion_seconds": 9804.0,
+        "latency_seconds": 3188.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 14984.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_101",
+        "source_sat_id": 15,
+        "release_seconds": 6655.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 14945.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_102",
+        "source_sat_id": 9,
+        "release_seconds": 6658.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 14942.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_103",
+        "source_sat_id": 6,
+        "release_seconds": 6661.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 21523.0,
+        "completion_seconds": 21524.0,
+        "latency_seconds": 14863.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 14939.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_104",
+        "source_sat_id": 12,
+        "release_seconds": 6677.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 7722.0,
+        "completion_seconds": 7723.0,
+        "latency_seconds": 1046.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 14923.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      }
+    ],
+    "experiment": {
+      "config": {
+        "seed": 181003,
+        "num_sats": 24,
+        "sim_steps": 21600,
+        "dt": 1.0,
+        "decision_interval_steps": 1,
+        "topology_update_steps": 10,
+        "ground_visibility_update_steps": 10,
+        "task_arrival_rate": 0.013333333333333334,
+        "image_size_mb": 73.492713,
+        "num_tiles": 12,
+        "compute_cost_per_tile": 0.23422820483230886,
+        "vram_base_gb": 0.8,
+        "vram_alpha_per_mb": 0.0,
+        "result_size_mb": 0.0006233333333333333,
+        "deadline_steps": 0,
+        "mem_capacity_gb": 8.0,
+        "vram_capacity_gb": 1.0,
+        "compute_rate": 1.0,
+        "transfer_fail_on_link_down": false,
+        "vram_policy": "wait",
+        "pipeline_mode": "ground_compute",
+        "tile_lifecycle_log": "",
+        "ground_stations": [
+          {
+            "id": "gs_beijing",
+            "lat_deg": 39.9042,
+            "lon_deg": 116.4074,
+            "alt_m": 50,
+            "min_elevation_deg": 15,
+            "bandwidth_mbps": 20.0,
+            "receive_channels": 1,
+            "compute_rate": 3.2396827056638866
+          },
+          {
+            "id": "gs_urumqi",
+            "lat_deg": 43.8256,
+            "lon_deg": 87.6168,
+            "alt_m": 800,
+            "min_elevation_deg": 15,
+            "bandwidth_mbps": 20.0,
+            "receive_channels": 1,
+            "compute_rate": 3.2396827056638866
+          }
+        ],
+        "topology": {
+          "start_time_utc": "2026-03-23T17:30:00+00:00",
+          "earth_radius_km": 6378.137,
+          "max_range_km": 4500,
+          "max_neighbors": 4,
+          "predict_contacts": true,
+          "precompute_visibility": true,
+          "contact_scan_s": 30,
+          "contact_update_s": 60,
+          "bandwidth_distance_scale_km": 2000,
+          "bandwidth_mbps_min": 20.0,
+          "bandwidth_mbps_max": 120.0,
+          "bandwidth_period": 600,
+          "bandwidth_noise": 0.0,
+          "latency_ms": 0,
+          "visibility_workers": 1,
+          "window_lookahead_s": 7200,
+          "tle_lines": [
+            [
+              "1 00001U          26079.72916667  .00000000  00000-0  00000+0 0    01",
+              "2 00001  98.2000  15.0000 0001000   0.0000  20.0000 14.56346372    02"
+            ],
+            [
+              "1 00002U          26079.72916667  .00000000  00000-0  00000+0 0    02",
+              "2 00002  98.2000  15.0000 0001000   0.0000  18.0000 14.56346372    00"
+            ],
+            [
+              "1 00003U          26079.72916667  .00000000  00000-0  00000+0 0    03",
+              "2 00003  98.2000  15.0000 0001000   0.0000  22.0000 14.56346372    06"
+            ],
+            [
+              "1 00004U          26079.72916667  .00000000  00000-0  00000+0 0    04",
+              "2 00004  98.2000  15.0000 0001000   0.0000 200.0000 14.56346372    05"
+            ],
+            [
+              "1 00005U          26079.72916667  .00000000  00000-0  00000+0 0    05",
+              "2 00005  98.2000  15.0000 0001000   0.0000 198.0000 14.56346372    02"
+            ],
+            [
+              "1 00006U          26079.72916667  .00000000  00000-0  00000+0 0    06",
+              "2 00006  98.2000  15.0000 0001000   0.0000 202.0000 14.56346372    09"
+            ],
+            [
+              "1 00007U          26079.72916667  .00000000  00000-0  00000+0 0    07",
+              "2 00007  98.2000 105.0000 0001000   0.0000  35.0000 14.56346372    04"
+            ],
+            [
+              "1 00008U          26079.72916667  .00000000  00000-0  00000+0 0    08",
+              "2 00008  98.2000 105.0000 0001000   0.0000  33.0000 14.56346372    03"
+            ],
+            [
+              "1 00009U          26079.72916667  .00000000  00000-0  00000+0 0    09",
+              "2 00009  98.2000 105.0000 0001000   0.0000  37.0000 14.56346372    08"
+            ],
+            [
+              "1 00010U          26079.72916667  .00000000  00000-0  00000+0 0    01",
+              "2 00010  98.2000 105.0000 0001000   0.0000 215.0000 14.56346372    08"
+            ],
+            [
+              "1 00011U          26079.72916667  .00000000  00000-0  00000+0 0    02",
+              "2 00011  98.2000 105.0000 0001000   0.0000 213.0000 14.56346372    07"
+            ],
+            [
+              "1 00012U          26079.72916667  .00000000  00000-0  00000+0 0    03",
+              "2 00012  98.2000 105.0000 0001000   0.0000 217.0000 14.56346372    02"
+            ],
+            [
+              "1 00013U          26079.72916667  .00000000  00000-0  00000+0 0    04",
+              "2 00013  98.2000 195.0000 0001000   0.0000  50.0000 14.56346372    07"
+            ],
+            [
+              "1 00014U          26079.72916667  .00000000  00000-0  00000+0 0    05",
+              "2 00014  98.2000 195.0000 0001000   0.0000  48.0000 14.56346372    05"
+            ],
+            [
+              "1 00015U          26079.72916667  .00000000  00000-0  00000+0 0    06",
+              "2 00015  98.2000 195.0000 0001000   0.0000  52.0000 14.56346372    01"
+            ],
+            [
+              "1 00016U          26079.72916667  .00000000  00000-0  00000+0 0    07",
+              "2 00016  98.2000 195.0000 0001000   0.0000 230.0000 14.56346372    00"
+            ],
+            [
+              "1 00017U          26079.72916667  .00000000  00000-0  00000+0 0    08",
+              "2 00017  98.2000 195.0000 0001000   0.0000 228.0000 14.56346372    08"
+            ],
+            [
+              "1 00018U          26079.72916667  .00000000  00000-0  00000+0 0    09",
+              "2 00018  98.2000 195.0000 0001000   0.0000 232.0000 14.56346372    04"
+            ],
+            [
+              "1 00019U          26079.72916667  .00000000  00000-0  00000+0 0    00",
+              "2 00019  98.2000 285.0000 0001000   0.0000  65.0000 14.56346372    09"
+            ],
+            [
+              "1 00020U          26079.72916667  .00000000  00000-0  00000+0 0    02",
+              "2 00020  98.2000 285.0000 0001000   0.0000  63.0000 14.56346372    09"
+            ],
+            [
+              "1 00021U          26079.72916667  .00000000  00000-0  00000+0 0    03",
+              "2 00021  98.2000 285.0000 0001000   0.0000  67.0000 14.56346372    04"
+            ],
+            [
+              "1 00022U          26079.72916667  .00000000  00000-0  00000+0 0    04",
+              "2 00022  98.2000 285.0000 0001000   0.0000 245.0000 14.56346372    03"
+            ],
+            [
+              "1 00023U          26079.72916667  .00000000  00000-0  00000+0 0    05",
+              "2 00023  98.2000 285.0000 0001000   0.0000 243.0000 14.56346372    02"
+            ],
+            [
+              "1 00024U          26079.72916667  .00000000  00000-0  00000+0 0    06",
+              "2 00024  98.2000 285.0000 0001000   0.0000 247.0000 14.56346372    07"
+            ]
+          ]
+        },
+        "ground_relay_delay_s": 0.0,
+        "aggregation_delay_s": 0.017278694392492373,
+        "task_arrival_end_step": 7200,
+        "execution_commitment": true,
+        "task_source_sat_ids": [
+          0,
+          3,
+          6,
+          9,
+          12,
+          15,
+          18,
+          21
+        ],
+        "satellite_compute_rates": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "result_buffering": true,
+        "result_relay": true,
+        "relay_max_hops": 8,
+        "relay_contact_guard": true,
+        "image_tiling": {
+          "width_px": 6573,
+          "height_px": 3727,
+          "bands": 3,
+          "bits_per_sample": 8,
+          "window_px": 1024,
+          "stride_px": 824,
+          "windows_per_tile_axis": 2,
+          "compute_cost_per_window": 0.07026846144969265,
+          "result_size_mb_per_window": 0.000187
+        },
+        "compute_service_mode": "work_conserving"
+      },
+      "elapsed_sim_seconds": 21600.0,
+      "task_trace_sha256": "8ec0fa158d9e2a67458bc2b58f58ae2c686366b9fd6d2c46bd5679d5d7d96529",
+      "tle_sha256": "756ffc043767a00c1886e6393e9db8cd519af785a9140fb1000747d770c0887c",
+      "decision_tile_limit_per_sat": 4,
+      "compute_service_mode": "work_conserving",
+      "compute_timestamp_resolution_seconds": 1.0,
+      "delivery_semantics": "all_results_at_ground_plus_fixed_relay_and_aggregation_v1",
+      "aggregation_model": "uncontended_fixed_delay_rounded_up_to_step",
+      "effective_postprocessing_delay_seconds": 1.0,
+      "splitting_delay_seconds": 0.0,
+      "result_buffering": true,
+      "result_relay": true,
+      "relay_contact_guard": true,
+      "routing_information": "current global link graph and predicted ground windows; instantaneous telemetry; no control-plane cost",
+      "source_sha256": "9c941294963730c6622444101441fe9c8b60977783e6bf30f65b3317f83fbf03",
+      "python_version": "3.12.13",
+      "packages": {
+        "numpy": "2.4.4",
+        "torch": "2.12.0",
+        "skyfield": "1.54",
+        "PyYAML": "6.0.3"
+      },
+      "workload": {
+        "model": "overlapping_window_packets_v1",
+        "parameters": {
+          "width_px": 6573,
+          "height_px": 3727,
+          "bands": 3,
+          "bits_per_sample": 8,
+          "window_px": 1024,
+          "stride_px": 824,
+          "windows_per_tile_axis": 2,
+          "compute_cost_per_window": 0.07026846144969265,
+          "result_size_mb_per_window": 0.000187
+        },
+        "coordinate_convention": "xyxy, upper bounds exclusive",
+        "edge_rule": "shift_last_window_to_edge_no_padding",
+        "packet_rule": "independent_full_windows_no_pixel_deduplication",
+        "result_rule": "per_window_outputs_before_global_merge",
+        "image_size_mb": 73.492713,
+        "num_windows": 40,
+        "num_tiles": 12,
+        "processed_pixels": 41943040,
+        "coverage_multiplier": 1.7121305618422333,
+        "packet_input_mb": 125.82912,
+        "total_compute_cost": 2.810738457987706,
+        "unmerged_result_mb": 0.00748,
+        "tiles": [
+          {
+            "windows_xyxy": [
+              [
+                0,
+                0,
+                1024,
+                1024
+              ],
+              [
+                824,
+                0,
+                1848,
+                1024
+              ],
+              [
+                0,
+                824,
+                1024,
+                1848
+              ],
+              [
+                824,
+                824,
+                1848,
+                1848
+              ]
+            ],
+            "data_size_mb": 12.582912,
+            "compute_cost": 0.2810738457987706,
+            "result_size_mb": 0.000748
+          },
+          {
+            "windows_xyxy": [
+              [
+                1648,
+                0,
+                2672,
+                1024
+              ],
+              [
+                2472,
+                0,
+                3496,
+                1024
+              ],
+              [
+                1648,
+                824,
+                2672,
+                1848
+              ],
+              [
+                2472,
+                824,
+                3496,
+                1848
+              ]
+            ],
+            "data_size_mb": 12.582912,
+            "compute_cost": 0.2810738457987706,
+            "result_size_mb": 0.000748
+          },
+          {
+            "windows_xyxy": [
+              [
+                3296,
+                0,
+                4320,
+                1024
+              ],
+              [
+                4120,
+                0,
+                5144,
+                1024
+              ],
+              [
+                3296,
+                824,
+                4320,
+                1848
+              ],
+              [
+                4120,
+                824,
+                5144,
+                1848
+              ]
+            ],
+            "data_size_mb": 12.582912,
+            "compute_cost": 0.2810738457987706,
+            "result_size_mb": 0.000748
+          },
+          {
+            "windows_xyxy": [
+              [
+                4944,
+                0,
+                5968,
+                1024
+              ],
+              [
+                5549,
+                0,
+                6573,
+                1024
+              ],
+              [
+                4944,
+                824,
+                5968,
+                1848
+              ],
+              [
+                5549,
+                824,
+                6573,
+                1848
+              ]
+            ],
+            "data_size_mb": 12.582912,
+            "compute_cost": 0.2810738457987706,
+            "result_size_mb": 0.000748
+          },
+          {
+            "windows_xyxy": [
+              [
+                0,
+                1648,
+                1024,
+                2672
+              ],
+              [
+                824,
+                1648,
+                1848,
+                2672
+              ],
+              [
+                0,
+                2472,
+                1024,
+                3496
+              ],
+              [
+                824,
+                2472,
+                1848,
+                3496
+              ]
+            ],
+            "data_size_mb": 12.582912,
+            "compute_cost": 0.2810738457987706,
+            "result_size_mb": 0.000748
+          },
+          {
+            "windows_xyxy": [
+              [
+                1648,
+                1648,
+                2672,
+                2672
+              ],
+              [
+                2472,
+                1648,
+                3496,
+                2672
+              ],
+              [
+                1648,
+                2472,
+                2672,
+                3496
+              ],
+              [
+                2472,
+                2472,
+                3496,
+                3496
+              ]
+            ],
+            "data_size_mb": 12.582912,
+            "compute_cost": 0.2810738457987706,
+            "result_size_mb": 0.000748
+          },
+          {
+            "windows_xyxy": [
+              [
+                3296,
+                1648,
+                4320,
+                2672
+              ],
+              [
+                4120,
+                1648,
+                5144,
+                2672
+              ],
+              [
+                3296,
+                2472,
+                4320,
+                3496
+              ],
+              [
+                4120,
+                2472,
+                5144,
+                3496
+              ]
+            ],
+            "data_size_mb": 12.582912,
+            "compute_cost": 0.2810738457987706,
+            "result_size_mb": 0.000748
+          },
+          {
+            "windows_xyxy": [
+              [
+                4944,
+                1648,
+                5968,
+                2672
+              ],
+              [
+                5549,
+                1648,
+                6573,
+                2672
+              ],
+              [
+                4944,
+                2472,
+                5968,
+                3496
+              ],
+              [
+                5549,
+                2472,
+                6573,
+                3496
+              ]
+            ],
+            "data_size_mb": 12.582912,
+            "compute_cost": 0.2810738457987706,
+            "result_size_mb": 0.000748
+          },
+          {
+            "windows_xyxy": [
+              [
+                0,
+                2703,
+                1024,
+                3727
+              ],
+              [
+                824,
+                2703,
+                1848,
+                3727
+              ]
+            ],
+            "data_size_mb": 6.291456,
+            "compute_cost": 0.1405369228993853,
+            "result_size_mb": 0.000374
+          },
+          {
+            "windows_xyxy": [
+              [
+                1648,
+                2703,
+                2672,
+                3727
+              ],
+              [
+                2472,
+                2703,
+                3496,
+                3727
+              ]
+            ],
+            "data_size_mb": 6.291456,
+            "compute_cost": 0.1405369228993853,
+            "result_size_mb": 0.000374
+          },
+          {
+            "windows_xyxy": [
+              [
+                3296,
+                2703,
+                4320,
+                3727
+              ],
+              [
+                4120,
+                2703,
+                5144,
+                3727
+              ]
+            ],
+            "data_size_mb": 6.291456,
+            "compute_cost": 0.1405369228993853,
+            "result_size_mb": 0.000374
+          },
+          {
+            "windows_xyxy": [
+              [
+                4944,
+                2703,
+                5968,
+                3727
+              ],
+              [
+                5549,
+                2703,
+                6573,
+                3727
+              ]
+            ],
+            "data_size_mb": 6.291456,
+            "compute_cost": 0.1405369228993853,
+            "result_size_mb": 0.000374
+          }
+        ]
+      },
+      "workload_sha256": "6f9962004fe8f0db3b1ef56d2f190a1aa394a987418835edb462536a90726b5a",
+      "result_merge_model": "all window outputs required; global merge charged by fixed aggregation_delay_s; no image inference or accuracy validation",
+      "policy": "ground_compute",
+      "checkpoint": null
+    }
+  },
+  "task_age": {
+    "delivery_curve": [
+      {
+        "horizon_seconds": 1800.0,
+        "total_tasks": 105,
+        "delivered_within_horizon": 19,
+        "not_delivered_within_horizon": 86,
+        "delivery_rate": 0.18095238095238095
+      },
+      {
+        "horizon_seconds": 3600.0,
+        "total_tasks": 105,
+        "delivered_within_horizon": 28,
+        "not_delivered_within_horizon": 77,
+        "delivery_rate": 0.26666666666666666
+      },
+      {
+        "horizon_seconds": 7200.0,
+        "total_tasks": 105,
+        "delivered_within_horizon": 40,
+        "not_delivered_within_horizon": 65,
+        "delivery_rate": 0.38095238095238093
+      },
+      {
+        "horizon_seconds": 14400.0,
+        "total_tasks": 105,
+        "delivered_within_horizon": 59,
+        "not_delivered_within_horizon": 46,
+        "delivery_rate": 0.5619047619047619
+      }
+    ],
+    "delivery_score": 0.3476190476190476,
+    "restricted_mean_latency_seconds": 9146.580952380953
+  },
+  "complete_age_curve": [
+    {
+      "horizon_seconds": 0.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 0,
+      "not_delivered_within_horizon": 105,
+      "delivery_rate": 0.0
+    },
+    {
+      "horizon_seconds": 30.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 0,
+      "not_delivered_within_horizon": 105,
+      "delivery_rate": 0.0
+    },
+    {
+      "horizon_seconds": 60.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 0,
+      "not_delivered_within_horizon": 105,
+      "delivery_rate": 0.0
+    },
+    {
+      "horizon_seconds": 90.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 0,
+      "not_delivered_within_horizon": 105,
+      "delivery_rate": 0.0
+    },
+    {
+      "horizon_seconds": 120.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 0,
+      "not_delivered_within_horizon": 105,
+      "delivery_rate": 0.0
+    },
+    {
+      "horizon_seconds": 150.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 0,
+      "not_delivered_within_horizon": 105,
+      "delivery_rate": 0.0
+    },
+    {
+      "horizon_seconds": 180.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 0,
+      "not_delivered_within_horizon": 105,
+      "delivery_rate": 0.0
+    },
+    {
+      "horizon_seconds": 201.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 1,
+      "not_delivered_within_horizon": 104,
+      "delivery_rate": 0.009523809523809525
+    },
+    {
+      "horizon_seconds": 210.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 1,
+      "not_delivered_within_horizon": 104,
+      "delivery_rate": 0.009523809523809525
+    },
+    {
+      "horizon_seconds": 218.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 2,
+      "not_delivered_within_horizon": 103,
+      "delivery_rate": 0.01904761904761905
+    },
+    {
+      "horizon_seconds": 231.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 3,
+      "not_delivered_within_horizon": 102,
+      "delivery_rate": 0.02857142857142857
+    },
+    {
+      "horizon_seconds": 240.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 3,
+      "not_delivered_within_horizon": 102,
+      "delivery_rate": 0.02857142857142857
+    },
+    {
+      "horizon_seconds": 270.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 3,
+      "not_delivered_within_horizon": 102,
+      "delivery_rate": 0.02857142857142857
+    },
+    {
+      "horizon_seconds": 300.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 3,
+      "not_delivered_within_horizon": 102,
+      "delivery_rate": 0.02857142857142857
+    },
+    {
+      "horizon_seconds": 323.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 4,
+      "not_delivered_within_horizon": 101,
+      "delivery_rate": 0.0380952380952381
+    },
+    {
+      "horizon_seconds": 330.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 4,
+      "not_delivered_within_horizon": 101,
+      "delivery_rate": 0.0380952380952381
+    },
+    {
+      "horizon_seconds": 360.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 4,
+      "not_delivered_within_horizon": 101,
+      "delivery_rate": 0.0380952380952381
+    },
+    {
+      "horizon_seconds": 390.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 4,
+      "not_delivered_within_horizon": 101,
+      "delivery_rate": 0.0380952380952381
+    },
+    {
+      "horizon_seconds": 411.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 5,
+      "not_delivered_within_horizon": 100,
+      "delivery_rate": 0.047619047619047616
+    },
+    {
+      "horizon_seconds": 420.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 5,
+      "not_delivered_within_horizon": 100,
+      "delivery_rate": 0.047619047619047616
+    },
+    {
+      "horizon_seconds": 450.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 5,
+      "not_delivered_within_horizon": 100,
+      "delivery_rate": 0.047619047619047616
+    },
+    {
+      "horizon_seconds": 480.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 5,
+      "not_delivered_within_horizon": 100,
+      "delivery_rate": 0.047619047619047616
+    },
+    {
+      "horizon_seconds": 510.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 5,
+      "not_delivered_within_horizon": 100,
+      "delivery_rate": 0.047619047619047616
+    },
+    {
+      "horizon_seconds": 530.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 6,
+      "not_delivered_within_horizon": 99,
+      "delivery_rate": 0.05714285714285714
+    },
+    {
+      "horizon_seconds": 540.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 6,
+      "not_delivered_within_horizon": 99,
+      "delivery_rate": 0.05714285714285714
+    },
+    {
+      "horizon_seconds": 561.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 7,
+      "not_delivered_within_horizon": 98,
+      "delivery_rate": 0.06666666666666667
+    },
+    {
+      "horizon_seconds": 570.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 7,
+      "not_delivered_within_horizon": 98,
+      "delivery_rate": 0.06666666666666667
+    },
+    {
+      "horizon_seconds": 578.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 8,
+      "not_delivered_within_horizon": 97,
+      "delivery_rate": 0.0761904761904762
+    },
+    {
+      "horizon_seconds": 600.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 8,
+      "not_delivered_within_horizon": 97,
+      "delivery_rate": 0.0761904761904762
+    },
+    {
+      "horizon_seconds": 630.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 8,
+      "not_delivered_within_horizon": 97,
+      "delivery_rate": 0.0761904761904762
+    },
+    {
+      "horizon_seconds": 660.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 8,
+      "not_delivered_within_horizon": 97,
+      "delivery_rate": 0.0761904761904762
+    },
+    {
+      "horizon_seconds": 690.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 8,
+      "not_delivered_within_horizon": 97,
+      "delivery_rate": 0.0761904761904762
+    },
+    {
+      "horizon_seconds": 720.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 8,
+      "not_delivered_within_horizon": 97,
+      "delivery_rate": 0.0761904761904762
+    },
+    {
+      "horizon_seconds": 733.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 9,
+      "not_delivered_within_horizon": 96,
+      "delivery_rate": 0.08571428571428572
+    },
+    {
+      "horizon_seconds": 750.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 9,
+      "not_delivered_within_horizon": 96,
+      "delivery_rate": 0.08571428571428572
+    },
+    {
+      "horizon_seconds": 780.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 9,
+      "not_delivered_within_horizon": 96,
+      "delivery_rate": 0.08571428571428572
+    },
+    {
+      "horizon_seconds": 810.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 9,
+      "not_delivered_within_horizon": 96,
+      "delivery_rate": 0.08571428571428572
+    },
+    {
+      "horizon_seconds": 840.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 9,
+      "not_delivered_within_horizon": 96,
+      "delivery_rate": 0.08571428571428572
+    },
+    {
+      "horizon_seconds": 870.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 9,
+      "not_delivered_within_horizon": 96,
+      "delivery_rate": 0.08571428571428572
+    },
+    {
+      "horizon_seconds": 900.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 9,
+      "not_delivered_within_horizon": 96,
+      "delivery_rate": 0.08571428571428572
+    },
+    {
+      "horizon_seconds": 930.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 9,
+      "not_delivered_within_horizon": 96,
+      "delivery_rate": 0.08571428571428572
+    },
+    {
+      "horizon_seconds": 960.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 9,
+      "not_delivered_within_horizon": 96,
+      "delivery_rate": 0.08571428571428572
+    },
+    {
+      "horizon_seconds": 990.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 9,
+      "not_delivered_within_horizon": 96,
+      "delivery_rate": 0.08571428571428572
+    },
+    {
+      "horizon_seconds": 1020.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 9,
+      "not_delivered_within_horizon": 96,
+      "delivery_rate": 0.08571428571428572
+    },
+    {
+      "horizon_seconds": 1046.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 10,
+      "not_delivered_within_horizon": 95,
+      "delivery_rate": 0.09523809523809523
+    },
+    {
+      "horizon_seconds": 1050.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 10,
+      "not_delivered_within_horizon": 95,
+      "delivery_rate": 0.09523809523809523
+    },
+    {
+      "horizon_seconds": 1080.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 10,
+      "not_delivered_within_horizon": 95,
+      "delivery_rate": 0.09523809523809523
+    },
+    {
+      "horizon_seconds": 1110.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 10,
+      "not_delivered_within_horizon": 95,
+      "delivery_rate": 0.09523809523809523
+    },
+    {
+      "horizon_seconds": 1111.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 11,
+      "not_delivered_within_horizon": 94,
+      "delivery_rate": 0.10476190476190476
+    },
+    {
+      "horizon_seconds": 1113.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 12,
+      "not_delivered_within_horizon": 93,
+      "delivery_rate": 0.11428571428571428
+    },
+    {
+      "horizon_seconds": 1140.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 12,
+      "not_delivered_within_horizon": 93,
+      "delivery_rate": 0.11428571428571428
+    },
+    {
+      "horizon_seconds": 1170.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 12,
+      "not_delivered_within_horizon": 93,
+      "delivery_rate": 0.11428571428571428
+    },
+    {
+      "horizon_seconds": 1200.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 12,
+      "not_delivered_within_horizon": 93,
+      "delivery_rate": 0.11428571428571428
+    },
+    {
+      "horizon_seconds": 1214.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 13,
+      "not_delivered_within_horizon": 92,
+      "delivery_rate": 0.12380952380952381
+    },
+    {
+      "horizon_seconds": 1230.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 13,
+      "not_delivered_within_horizon": 92,
+      "delivery_rate": 0.12380952380952381
+    },
+    {
+      "horizon_seconds": 1260.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 13,
+      "not_delivered_within_horizon": 92,
+      "delivery_rate": 0.12380952380952381
+    },
+    {
+      "horizon_seconds": 1290.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 13,
+      "not_delivered_within_horizon": 92,
+      "delivery_rate": 0.12380952380952381
+    },
+    {
+      "horizon_seconds": 1320.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 13,
+      "not_delivered_within_horizon": 92,
+      "delivery_rate": 0.12380952380952381
+    },
+    {
+      "horizon_seconds": 1350.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 13,
+      "not_delivered_within_horizon": 92,
+      "delivery_rate": 0.12380952380952381
+    },
+    {
+      "horizon_seconds": 1354.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 14,
+      "not_delivered_within_horizon": 91,
+      "delivery_rate": 0.13333333333333333
+    },
+    {
+      "horizon_seconds": 1380.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 14,
+      "not_delivered_within_horizon": 91,
+      "delivery_rate": 0.13333333333333333
+    },
+    {
+      "horizon_seconds": 1390.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 15,
+      "not_delivered_within_horizon": 90,
+      "delivery_rate": 0.14285714285714285
+    },
+    {
+      "horizon_seconds": 1410.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 15,
+      "not_delivered_within_horizon": 90,
+      "delivery_rate": 0.14285714285714285
+    },
+    {
+      "horizon_seconds": 1440.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 15,
+      "not_delivered_within_horizon": 90,
+      "delivery_rate": 0.14285714285714285
+    },
+    {
+      "horizon_seconds": 1470.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 15,
+      "not_delivered_within_horizon": 90,
+      "delivery_rate": 0.14285714285714285
+    },
+    {
+      "horizon_seconds": 1500.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 15,
+      "not_delivered_within_horizon": 90,
+      "delivery_rate": 0.14285714285714285
+    },
+    {
+      "horizon_seconds": 1530.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 15,
+      "not_delivered_within_horizon": 90,
+      "delivery_rate": 0.14285714285714285
+    },
+    {
+      "horizon_seconds": 1554.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 16,
+      "not_delivered_within_horizon": 89,
+      "delivery_rate": 0.1523809523809524
+    },
+    {
+      "horizon_seconds": 1560.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 16,
+      "not_delivered_within_horizon": 89,
+      "delivery_rate": 0.1523809523809524
+    },
+    {
+      "horizon_seconds": 1590.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 16,
+      "not_delivered_within_horizon": 89,
+      "delivery_rate": 0.1523809523809524
+    },
+    {
+      "horizon_seconds": 1610.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 17,
+      "not_delivered_within_horizon": 88,
+      "delivery_rate": 0.1619047619047619
+    },
+    {
+      "horizon_seconds": 1615.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 18,
+      "not_delivered_within_horizon": 87,
+      "delivery_rate": 0.17142857142857143
+    },
+    {
+      "horizon_seconds": 1620.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 18,
+      "not_delivered_within_horizon": 87,
+      "delivery_rate": 0.17142857142857143
+    },
+    {
+      "horizon_seconds": 1650.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 18,
+      "not_delivered_within_horizon": 87,
+      "delivery_rate": 0.17142857142857143
+    },
+    {
+      "horizon_seconds": 1654.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 19,
+      "not_delivered_within_horizon": 86,
+      "delivery_rate": 0.18095238095238095
+    },
+    {
+      "horizon_seconds": 1680.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 19,
+      "not_delivered_within_horizon": 86,
+      "delivery_rate": 0.18095238095238095
+    },
+    {
+      "horizon_seconds": 1710.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 19,
+      "not_delivered_within_horizon": 86,
+      "delivery_rate": 0.18095238095238095
+    },
+    {
+      "horizon_seconds": 1740.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 19,
+      "not_delivered_within_horizon": 86,
+      "delivery_rate": 0.18095238095238095
+    },
+    {
+      "horizon_seconds": 1770.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 19,
+      "not_delivered_within_horizon": 86,
+      "delivery_rate": 0.18095238095238095
+    },
+    {
+      "horizon_seconds": 1800.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 19,
+      "not_delivered_within_horizon": 86,
+      "delivery_rate": 0.18095238095238095
+    },
+    {
+      "horizon_seconds": 1830.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 19,
+      "not_delivered_within_horizon": 86,
+      "delivery_rate": 0.18095238095238095
+    },
+    {
+      "horizon_seconds": 1842.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 20,
+      "not_delivered_within_horizon": 85,
+      "delivery_rate": 0.19047619047619047
+    },
+    {
+      "horizon_seconds": 1860.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 20,
+      "not_delivered_within_horizon": 85,
+      "delivery_rate": 0.19047619047619047
+    },
+    {
+      "horizon_seconds": 1890.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 20,
+      "not_delivered_within_horizon": 85,
+      "delivery_rate": 0.19047619047619047
+    },
+    {
+      "horizon_seconds": 1917.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 21,
+      "not_delivered_within_horizon": 84,
+      "delivery_rate": 0.2
+    },
+    {
+      "horizon_seconds": 1920.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 21,
+      "not_delivered_within_horizon": 84,
+      "delivery_rate": 0.2
+    },
+    {
+      "horizon_seconds": 1950.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 21,
+      "not_delivered_within_horizon": 84,
+      "delivery_rate": 0.2
+    },
+    {
+      "horizon_seconds": 1980.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 21,
+      "not_delivered_within_horizon": 84,
+      "delivery_rate": 0.2
+    },
+    {
+      "horizon_seconds": 2010.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 21,
+      "not_delivered_within_horizon": 84,
+      "delivery_rate": 0.2
+    },
+    {
+      "horizon_seconds": 2040.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 21,
+      "not_delivered_within_horizon": 84,
+      "delivery_rate": 0.2
+    },
+    {
+      "horizon_seconds": 2070.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 21,
+      "not_delivered_within_horizon": 84,
+      "delivery_rate": 0.2
+    },
+    {
+      "horizon_seconds": 2100.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 21,
+      "not_delivered_within_horizon": 84,
+      "delivery_rate": 0.2
+    },
+    {
+      "horizon_seconds": 2130.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 21,
+      "not_delivered_within_horizon": 84,
+      "delivery_rate": 0.2
+    },
+    {
+      "horizon_seconds": 2160.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 21,
+      "not_delivered_within_horizon": 84,
+      "delivery_rate": 0.2
+    },
+    {
+      "horizon_seconds": 2190.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 21,
+      "not_delivered_within_horizon": 84,
+      "delivery_rate": 0.2
+    },
+    {
+      "horizon_seconds": 2220.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 21,
+      "not_delivered_within_horizon": 84,
+      "delivery_rate": 0.2
+    },
+    {
+      "horizon_seconds": 2250.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 21,
+      "not_delivered_within_horizon": 84,
+      "delivery_rate": 0.2
+    },
+    {
+      "horizon_seconds": 2280.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 21,
+      "not_delivered_within_horizon": 84,
+      "delivery_rate": 0.2
+    },
+    {
+      "horizon_seconds": 2310.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 21,
+      "not_delivered_within_horizon": 84,
+      "delivery_rate": 0.2
+    },
+    {
+      "horizon_seconds": 2340.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 21,
+      "not_delivered_within_horizon": 84,
+      "delivery_rate": 0.2
+    },
+    {
+      "horizon_seconds": 2370.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 21,
+      "not_delivered_within_horizon": 84,
+      "delivery_rate": 0.2
+    },
+    {
+      "horizon_seconds": 2400.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 21,
+      "not_delivered_within_horizon": 84,
+      "delivery_rate": 0.2
+    },
+    {
+      "horizon_seconds": 2430.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 21,
+      "not_delivered_within_horizon": 84,
+      "delivery_rate": 0.2
+    },
+    {
+      "horizon_seconds": 2460.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 21,
+      "not_delivered_within_horizon": 84,
+      "delivery_rate": 0.2
+    },
+    {
+      "horizon_seconds": 2490.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 21,
+      "not_delivered_within_horizon": 84,
+      "delivery_rate": 0.2
+    },
+    {
+      "horizon_seconds": 2520.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 21,
+      "not_delivered_within_horizon": 84,
+      "delivery_rate": 0.2
+    },
+    {
+      "horizon_seconds": 2550.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 21,
+      "not_delivered_within_horizon": 84,
+      "delivery_rate": 0.2
+    },
+    {
+      "horizon_seconds": 2580.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 21,
+      "not_delivered_within_horizon": 84,
+      "delivery_rate": 0.2
+    },
+    {
+      "horizon_seconds": 2583.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 22,
+      "not_delivered_within_horizon": 83,
+      "delivery_rate": 0.20952380952380953
+    },
+    {
+      "horizon_seconds": 2610.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 22,
+      "not_delivered_within_horizon": 83,
+      "delivery_rate": 0.20952380952380953
+    },
+    {
+      "horizon_seconds": 2640.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 22,
+      "not_delivered_within_horizon": 83,
+      "delivery_rate": 0.20952380952380953
+    },
+    {
+      "horizon_seconds": 2670.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 22,
+      "not_delivered_within_horizon": 83,
+      "delivery_rate": 0.20952380952380953
+    },
+    {
+      "horizon_seconds": 2700.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 22,
+      "not_delivered_within_horizon": 83,
+      "delivery_rate": 0.20952380952380953
+    },
+    {
+      "horizon_seconds": 2730.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 22,
+      "not_delivered_within_horizon": 83,
+      "delivery_rate": 0.20952380952380953
+    },
+    {
+      "horizon_seconds": 2760.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 22,
+      "not_delivered_within_horizon": 83,
+      "delivery_rate": 0.20952380952380953
+    },
+    {
+      "horizon_seconds": 2790.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 22,
+      "not_delivered_within_horizon": 83,
+      "delivery_rate": 0.20952380952380953
+    },
+    {
+      "horizon_seconds": 2820.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 22,
+      "not_delivered_within_horizon": 83,
+      "delivery_rate": 0.20952380952380953
+    },
+    {
+      "horizon_seconds": 2850.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 22,
+      "not_delivered_within_horizon": 83,
+      "delivery_rate": 0.20952380952380953
+    },
+    {
+      "horizon_seconds": 2880.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 22,
+      "not_delivered_within_horizon": 83,
+      "delivery_rate": 0.20952380952380953
+    },
+    {
+      "horizon_seconds": 2886.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 23,
+      "not_delivered_within_horizon": 82,
+      "delivery_rate": 0.21904761904761905
+    },
+    {
+      "horizon_seconds": 2910.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 23,
+      "not_delivered_within_horizon": 82,
+      "delivery_rate": 0.21904761904761905
+    },
+    {
+      "horizon_seconds": 2940.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 23,
+      "not_delivered_within_horizon": 82,
+      "delivery_rate": 0.21904761904761905
+    },
+    {
+      "horizon_seconds": 2953.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 24,
+      "not_delivered_within_horizon": 81,
+      "delivery_rate": 0.22857142857142856
+    },
+    {
+      "horizon_seconds": 2970.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 24,
+      "not_delivered_within_horizon": 81,
+      "delivery_rate": 0.22857142857142856
+    },
+    {
+      "horizon_seconds": 3000.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 24,
+      "not_delivered_within_horizon": 81,
+      "delivery_rate": 0.22857142857142856
+    },
+    {
+      "horizon_seconds": 3030.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 24,
+      "not_delivered_within_horizon": 81,
+      "delivery_rate": 0.22857142857142856
+    },
+    {
+      "horizon_seconds": 3060.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 24,
+      "not_delivered_within_horizon": 81,
+      "delivery_rate": 0.22857142857142856
+    },
+    {
+      "horizon_seconds": 3064.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 25,
+      "not_delivered_within_horizon": 80,
+      "delivery_rate": 0.23809523809523808
+    },
+    {
+      "horizon_seconds": 3090.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 25,
+      "not_delivered_within_horizon": 80,
+      "delivery_rate": 0.23809523809523808
+    },
+    {
+      "horizon_seconds": 3120.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 25,
+      "not_delivered_within_horizon": 80,
+      "delivery_rate": 0.23809523809523808
+    },
+    {
+      "horizon_seconds": 3150.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 25,
+      "not_delivered_within_horizon": 80,
+      "delivery_rate": 0.23809523809523808
+    },
+    {
+      "horizon_seconds": 3180.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 25,
+      "not_delivered_within_horizon": 80,
+      "delivery_rate": 0.23809523809523808
+    },
+    {
+      "horizon_seconds": 3188.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 26,
+      "not_delivered_within_horizon": 79,
+      "delivery_rate": 0.24761904761904763
+    },
+    {
+      "horizon_seconds": 3207.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 27,
+      "not_delivered_within_horizon": 78,
+      "delivery_rate": 0.2571428571428571
+    },
+    {
+      "horizon_seconds": 3210.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 27,
+      "not_delivered_within_horizon": 78,
+      "delivery_rate": 0.2571428571428571
+    },
+    {
+      "horizon_seconds": 3240.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 27,
+      "not_delivered_within_horizon": 78,
+      "delivery_rate": 0.2571428571428571
+    },
+    {
+      "horizon_seconds": 3270.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 27,
+      "not_delivered_within_horizon": 78,
+      "delivery_rate": 0.2571428571428571
+    },
+    {
+      "horizon_seconds": 3300.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 27,
+      "not_delivered_within_horizon": 78,
+      "delivery_rate": 0.2571428571428571
+    },
+    {
+      "horizon_seconds": 3330.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 27,
+      "not_delivered_within_horizon": 78,
+      "delivery_rate": 0.2571428571428571
+    },
+    {
+      "horizon_seconds": 3360.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 27,
+      "not_delivered_within_horizon": 78,
+      "delivery_rate": 0.2571428571428571
+    },
+    {
+      "horizon_seconds": 3390.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 27,
+      "not_delivered_within_horizon": 78,
+      "delivery_rate": 0.2571428571428571
+    },
+    {
+      "horizon_seconds": 3420.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 27,
+      "not_delivered_within_horizon": 78,
+      "delivery_rate": 0.2571428571428571
+    },
+    {
+      "horizon_seconds": 3442.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 28,
+      "not_delivered_within_horizon": 77,
+      "delivery_rate": 0.26666666666666666
+    },
+    {
+      "horizon_seconds": 3450.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 28,
+      "not_delivered_within_horizon": 77,
+      "delivery_rate": 0.26666666666666666
+    },
+    {
+      "horizon_seconds": 3480.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 28,
+      "not_delivered_within_horizon": 77,
+      "delivery_rate": 0.26666666666666666
+    },
+    {
+      "horizon_seconds": 3510.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 28,
+      "not_delivered_within_horizon": 77,
+      "delivery_rate": 0.26666666666666666
+    },
+    {
+      "horizon_seconds": 3540.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 28,
+      "not_delivered_within_horizon": 77,
+      "delivery_rate": 0.26666666666666666
+    },
+    {
+      "horizon_seconds": 3570.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 28,
+      "not_delivered_within_horizon": 77,
+      "delivery_rate": 0.26666666666666666
+    },
+    {
+      "horizon_seconds": 3600.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 28,
+      "not_delivered_within_horizon": 77,
+      "delivery_rate": 0.26666666666666666
+    },
+    {
+      "horizon_seconds": 3630.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 28,
+      "not_delivered_within_horizon": 77,
+      "delivery_rate": 0.26666666666666666
+    },
+    {
+      "horizon_seconds": 3660.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 28,
+      "not_delivered_within_horizon": 77,
+      "delivery_rate": 0.26666666666666666
+    },
+    {
+      "horizon_seconds": 3690.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 28,
+      "not_delivered_within_horizon": 77,
+      "delivery_rate": 0.26666666666666666
+    },
+    {
+      "horizon_seconds": 3703.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 29,
+      "not_delivered_within_horizon": 76,
+      "delivery_rate": 0.2761904761904762
+    },
+    {
+      "horizon_seconds": 3720.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 29,
+      "not_delivered_within_horizon": 76,
+      "delivery_rate": 0.2761904761904762
+    },
+    {
+      "horizon_seconds": 3722.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 30,
+      "not_delivered_within_horizon": 75,
+      "delivery_rate": 0.2857142857142857
+    },
+    {
+      "horizon_seconds": 3750.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 30,
+      "not_delivered_within_horizon": 75,
+      "delivery_rate": 0.2857142857142857
+    },
+    {
+      "horizon_seconds": 3780.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 30,
+      "not_delivered_within_horizon": 75,
+      "delivery_rate": 0.2857142857142857
+    },
+    {
+      "horizon_seconds": 3810.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 30,
+      "not_delivered_within_horizon": 75,
+      "delivery_rate": 0.2857142857142857
+    },
+    {
+      "horizon_seconds": 3840.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 30,
+      "not_delivered_within_horizon": 75,
+      "delivery_rate": 0.2857142857142857
+    },
+    {
+      "horizon_seconds": 3870.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 30,
+      "not_delivered_within_horizon": 75,
+      "delivery_rate": 0.2857142857142857
+    },
+    {
+      "horizon_seconds": 3900.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 30,
+      "not_delivered_within_horizon": 75,
+      "delivery_rate": 0.2857142857142857
+    },
+    {
+      "horizon_seconds": 3930.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 30,
+      "not_delivered_within_horizon": 75,
+      "delivery_rate": 0.2857142857142857
+    },
+    {
+      "horizon_seconds": 3960.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 30,
+      "not_delivered_within_horizon": 75,
+      "delivery_rate": 0.2857142857142857
+    },
+    {
+      "horizon_seconds": 3990.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 30,
+      "not_delivered_within_horizon": 75,
+      "delivery_rate": 0.2857142857142857
+    },
+    {
+      "horizon_seconds": 4020.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 30,
+      "not_delivered_within_horizon": 75,
+      "delivery_rate": 0.2857142857142857
+    },
+    {
+      "horizon_seconds": 4025.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 31,
+      "not_delivered_within_horizon": 74,
+      "delivery_rate": 0.29523809523809524
+    },
+    {
+      "horizon_seconds": 4050.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 31,
+      "not_delivered_within_horizon": 74,
+      "delivery_rate": 0.29523809523809524
+    },
+    {
+      "horizon_seconds": 4080.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 31,
+      "not_delivered_within_horizon": 74,
+      "delivery_rate": 0.29523809523809524
+    },
+    {
+      "horizon_seconds": 4110.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 31,
+      "not_delivered_within_horizon": 74,
+      "delivery_rate": 0.29523809523809524
+    },
+    {
+      "horizon_seconds": 4140.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 31,
+      "not_delivered_within_horizon": 74,
+      "delivery_rate": 0.29523809523809524
+    },
+    {
+      "horizon_seconds": 4170.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 31,
+      "not_delivered_within_horizon": 74,
+      "delivery_rate": 0.29523809523809524
+    },
+    {
+      "horizon_seconds": 4200.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 31,
+      "not_delivered_within_horizon": 74,
+      "delivery_rate": 0.29523809523809524
+    },
+    {
+      "horizon_seconds": 4230.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 31,
+      "not_delivered_within_horizon": 74,
+      "delivery_rate": 0.29523809523809524
+    },
+    {
+      "horizon_seconds": 4260.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 31,
+      "not_delivered_within_horizon": 74,
+      "delivery_rate": 0.29523809523809524
+    },
+    {
+      "horizon_seconds": 4290.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 31,
+      "not_delivered_within_horizon": 74,
+      "delivery_rate": 0.29523809523809524
+    },
+    {
+      "horizon_seconds": 4320.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 31,
+      "not_delivered_within_horizon": 74,
+      "delivery_rate": 0.29523809523809524
+    },
+    {
+      "horizon_seconds": 4350.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 31,
+      "not_delivered_within_horizon": 74,
+      "delivery_rate": 0.29523809523809524
+    },
+    {
+      "horizon_seconds": 4380.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 31,
+      "not_delivered_within_horizon": 74,
+      "delivery_rate": 0.29523809523809524
+    },
+    {
+      "horizon_seconds": 4410.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 31,
+      "not_delivered_within_horizon": 74,
+      "delivery_rate": 0.29523809523809524
+    },
+    {
+      "horizon_seconds": 4440.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 31,
+      "not_delivered_within_horizon": 74,
+      "delivery_rate": 0.29523809523809524
+    },
+    {
+      "horizon_seconds": 4470.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 31,
+      "not_delivered_within_horizon": 74,
+      "delivery_rate": 0.29523809523809524
+    },
+    {
+      "horizon_seconds": 4500.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 31,
+      "not_delivered_within_horizon": 74,
+      "delivery_rate": 0.29523809523809524
+    },
+    {
+      "horizon_seconds": 4530.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 31,
+      "not_delivered_within_horizon": 74,
+      "delivery_rate": 0.29523809523809524
+    },
+    {
+      "horizon_seconds": 4560.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 31,
+      "not_delivered_within_horizon": 74,
+      "delivery_rate": 0.29523809523809524
+    },
+    {
+      "horizon_seconds": 4590.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 31,
+      "not_delivered_within_horizon": 74,
+      "delivery_rate": 0.29523809523809524
+    },
+    {
+      "horizon_seconds": 4620.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 31,
+      "not_delivered_within_horizon": 74,
+      "delivery_rate": 0.29523809523809524
+    },
+    {
+      "horizon_seconds": 4642.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 32,
+      "not_delivered_within_horizon": 73,
+      "delivery_rate": 0.3047619047619048
+    },
+    {
+      "horizon_seconds": 4643.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 33,
+      "not_delivered_within_horizon": 72,
+      "delivery_rate": 0.3142857142857143
+    },
+    {
+      "horizon_seconds": 4650.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 33,
+      "not_delivered_within_horizon": 72,
+      "delivery_rate": 0.3142857142857143
+    },
+    {
+      "horizon_seconds": 4680.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 33,
+      "not_delivered_within_horizon": 72,
+      "delivery_rate": 0.3142857142857143
+    },
+    {
+      "horizon_seconds": 4710.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 33,
+      "not_delivered_within_horizon": 72,
+      "delivery_rate": 0.3142857142857143
+    },
+    {
+      "horizon_seconds": 4740.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 33,
+      "not_delivered_within_horizon": 72,
+      "delivery_rate": 0.3142857142857143
+    },
+    {
+      "horizon_seconds": 4764.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 34,
+      "not_delivered_within_horizon": 71,
+      "delivery_rate": 0.3238095238095238
+    },
+    {
+      "horizon_seconds": 4770.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 34,
+      "not_delivered_within_horizon": 71,
+      "delivery_rate": 0.3238095238095238
+    },
+    {
+      "horizon_seconds": 4800.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 34,
+      "not_delivered_within_horizon": 71,
+      "delivery_rate": 0.3238095238095238
+    },
+    {
+      "horizon_seconds": 4830.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 34,
+      "not_delivered_within_horizon": 71,
+      "delivery_rate": 0.3238095238095238
+    },
+    {
+      "horizon_seconds": 4860.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 34,
+      "not_delivered_within_horizon": 71,
+      "delivery_rate": 0.3238095238095238
+    },
+    {
+      "horizon_seconds": 4866.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 35,
+      "not_delivered_within_horizon": 70,
+      "delivery_rate": 0.3333333333333333
+    },
+    {
+      "horizon_seconds": 4890.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 35,
+      "not_delivered_within_horizon": 70,
+      "delivery_rate": 0.3333333333333333
+    },
+    {
+      "horizon_seconds": 4920.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 35,
+      "not_delivered_within_horizon": 70,
+      "delivery_rate": 0.3333333333333333
+    },
+    {
+      "horizon_seconds": 4950.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 35,
+      "not_delivered_within_horizon": 70,
+      "delivery_rate": 0.3333333333333333
+    },
+    {
+      "horizon_seconds": 4980.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 35,
+      "not_delivered_within_horizon": 70,
+      "delivery_rate": 0.3333333333333333
+    },
+    {
+      "horizon_seconds": 5010.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 35,
+      "not_delivered_within_horizon": 70,
+      "delivery_rate": 0.3333333333333333
+    },
+    {
+      "horizon_seconds": 5040.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 35,
+      "not_delivered_within_horizon": 70,
+      "delivery_rate": 0.3333333333333333
+    },
+    {
+      "horizon_seconds": 5070.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 35,
+      "not_delivered_within_horizon": 70,
+      "delivery_rate": 0.3333333333333333
+    },
+    {
+      "horizon_seconds": 5073.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 36,
+      "not_delivered_within_horizon": 69,
+      "delivery_rate": 0.34285714285714286
+    },
+    {
+      "horizon_seconds": 5100.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 36,
+      "not_delivered_within_horizon": 69,
+      "delivery_rate": 0.34285714285714286
+    },
+    {
+      "horizon_seconds": 5130.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 36,
+      "not_delivered_within_horizon": 69,
+      "delivery_rate": 0.34285714285714286
+    },
+    {
+      "horizon_seconds": 5160.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 36,
+      "not_delivered_within_horizon": 69,
+      "delivery_rate": 0.34285714285714286
+    },
+    {
+      "horizon_seconds": 5190.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 36,
+      "not_delivered_within_horizon": 69,
+      "delivery_rate": 0.34285714285714286
+    },
+    {
+      "horizon_seconds": 5220.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 36,
+      "not_delivered_within_horizon": 69,
+      "delivery_rate": 0.34285714285714286
+    },
+    {
+      "horizon_seconds": 5241.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 37,
+      "not_delivered_within_horizon": 68,
+      "delivery_rate": 0.3523809523809524
+    },
+    {
+      "horizon_seconds": 5250.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 37,
+      "not_delivered_within_horizon": 68,
+      "delivery_rate": 0.3523809523809524
+    },
+    {
+      "horizon_seconds": 5280.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 37,
+      "not_delivered_within_horizon": 68,
+      "delivery_rate": 0.3523809523809524
+    },
+    {
+      "horizon_seconds": 5310.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 37,
+      "not_delivered_within_horizon": 68,
+      "delivery_rate": 0.3523809523809524
+    },
+    {
+      "horizon_seconds": 5340.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 37,
+      "not_delivered_within_horizon": 68,
+      "delivery_rate": 0.3523809523809524
+    },
+    {
+      "horizon_seconds": 5370.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 37,
+      "not_delivered_within_horizon": 68,
+      "delivery_rate": 0.3523809523809524
+    },
+    {
+      "horizon_seconds": 5400.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 37,
+      "not_delivered_within_horizon": 68,
+      "delivery_rate": 0.3523809523809524
+    },
+    {
+      "horizon_seconds": 5430.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 37,
+      "not_delivered_within_horizon": 68,
+      "delivery_rate": 0.3523809523809524
+    },
+    {
+      "horizon_seconds": 5460.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 37,
+      "not_delivered_within_horizon": 68,
+      "delivery_rate": 0.3523809523809524
+    },
+    {
+      "horizon_seconds": 5490.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 37,
+      "not_delivered_within_horizon": 68,
+      "delivery_rate": 0.3523809523809524
+    },
+    {
+      "horizon_seconds": 5520.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 37,
+      "not_delivered_within_horizon": 68,
+      "delivery_rate": 0.3523809523809524
+    },
+    {
+      "horizon_seconds": 5550.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 37,
+      "not_delivered_within_horizon": 68,
+      "delivery_rate": 0.3523809523809524
+    },
+    {
+      "horizon_seconds": 5580.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 37,
+      "not_delivered_within_horizon": 68,
+      "delivery_rate": 0.3523809523809524
+    },
+    {
+      "horizon_seconds": 5610.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 37,
+      "not_delivered_within_horizon": 68,
+      "delivery_rate": 0.3523809523809524
+    },
+    {
+      "horizon_seconds": 5640.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 37,
+      "not_delivered_within_horizon": 68,
+      "delivery_rate": 0.3523809523809524
+    },
+    {
+      "horizon_seconds": 5670.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 37,
+      "not_delivered_within_horizon": 68,
+      "delivery_rate": 0.3523809523809524
+    },
+    {
+      "horizon_seconds": 5700.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 37,
+      "not_delivered_within_horizon": 68,
+      "delivery_rate": 0.3523809523809524
+    },
+    {
+      "horizon_seconds": 5730.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 37,
+      "not_delivered_within_horizon": 68,
+      "delivery_rate": 0.3523809523809524
+    },
+    {
+      "horizon_seconds": 5760.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 37,
+      "not_delivered_within_horizon": 68,
+      "delivery_rate": 0.3523809523809524
+    },
+    {
+      "horizon_seconds": 5790.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 37,
+      "not_delivered_within_horizon": 68,
+      "delivery_rate": 0.3523809523809524
+    },
+    {
+      "horizon_seconds": 5820.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 37,
+      "not_delivered_within_horizon": 68,
+      "delivery_rate": 0.3523809523809524
+    },
+    {
+      "horizon_seconds": 5850.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 37,
+      "not_delivered_within_horizon": 68,
+      "delivery_rate": 0.3523809523809524
+    },
+    {
+      "horizon_seconds": 5880.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 37,
+      "not_delivered_within_horizon": 68,
+      "delivery_rate": 0.3523809523809524
+    },
+    {
+      "horizon_seconds": 5910.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 37,
+      "not_delivered_within_horizon": 68,
+      "delivery_rate": 0.3523809523809524
+    },
+    {
+      "horizon_seconds": 5940.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 37,
+      "not_delivered_within_horizon": 68,
+      "delivery_rate": 0.3523809523809524
+    },
+    {
+      "horizon_seconds": 5970.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 37,
+      "not_delivered_within_horizon": 68,
+      "delivery_rate": 0.3523809523809524
+    },
+    {
+      "horizon_seconds": 6000.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 37,
+      "not_delivered_within_horizon": 68,
+      "delivery_rate": 0.3523809523809524
+    },
+    {
+      "horizon_seconds": 6030.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 37,
+      "not_delivered_within_horizon": 68,
+      "delivery_rate": 0.3523809523809524
+    },
+    {
+      "horizon_seconds": 6060.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 37,
+      "not_delivered_within_horizon": 68,
+      "delivery_rate": 0.3523809523809524
+    },
+    {
+      "horizon_seconds": 6090.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 37,
+      "not_delivered_within_horizon": 68,
+      "delivery_rate": 0.3523809523809524
+    },
+    {
+      "horizon_seconds": 6120.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 37,
+      "not_delivered_within_horizon": 68,
+      "delivery_rate": 0.3523809523809524
+    },
+    {
+      "horizon_seconds": 6123.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 38,
+      "not_delivered_within_horizon": 67,
+      "delivery_rate": 0.3619047619047619
+    },
+    {
+      "horizon_seconds": 6150.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 38,
+      "not_delivered_within_horizon": 67,
+      "delivery_rate": 0.3619047619047619
+    },
+    {
+      "horizon_seconds": 6180.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 38,
+      "not_delivered_within_horizon": 67,
+      "delivery_rate": 0.3619047619047619
+    },
+    {
+      "horizon_seconds": 6210.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 38,
+      "not_delivered_within_horizon": 67,
+      "delivery_rate": 0.3619047619047619
+    },
+    {
+      "horizon_seconds": 6240.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 38,
+      "not_delivered_within_horizon": 67,
+      "delivery_rate": 0.3619047619047619
+    },
+    {
+      "horizon_seconds": 6270.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 38,
+      "not_delivered_within_horizon": 67,
+      "delivery_rate": 0.3619047619047619
+    },
+    {
+      "horizon_seconds": 6300.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 38,
+      "not_delivered_within_horizon": 67,
+      "delivery_rate": 0.3619047619047619
+    },
+    {
+      "horizon_seconds": 6330.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 38,
+      "not_delivered_within_horizon": 67,
+      "delivery_rate": 0.3619047619047619
+    },
+    {
+      "horizon_seconds": 6360.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 38,
+      "not_delivered_within_horizon": 67,
+      "delivery_rate": 0.3619047619047619
+    },
+    {
+      "horizon_seconds": 6390.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 38,
+      "not_delivered_within_horizon": 67,
+      "delivery_rate": 0.3619047619047619
+    },
+    {
+      "horizon_seconds": 6420.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 38,
+      "not_delivered_within_horizon": 67,
+      "delivery_rate": 0.3619047619047619
+    },
+    {
+      "horizon_seconds": 6450.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 38,
+      "not_delivered_within_horizon": 67,
+      "delivery_rate": 0.3619047619047619
+    },
+    {
+      "horizon_seconds": 6480.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 38,
+      "not_delivered_within_horizon": 67,
+      "delivery_rate": 0.3619047619047619
+    },
+    {
+      "horizon_seconds": 6501.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 39,
+      "not_delivered_within_horizon": 66,
+      "delivery_rate": 0.37142857142857144
+    },
+    {
+      "horizon_seconds": 6510.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 39,
+      "not_delivered_within_horizon": 66,
+      "delivery_rate": 0.37142857142857144
+    },
+    {
+      "horizon_seconds": 6540.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 39,
+      "not_delivered_within_horizon": 66,
+      "delivery_rate": 0.37142857142857144
+    },
+    {
+      "horizon_seconds": 6570.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 6600.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 6630.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 6660.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 6690.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 6720.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 6750.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 6780.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 6810.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 6840.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 6870.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 6900.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 6930.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 6960.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 6990.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7020.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7050.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7080.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7110.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7140.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7170.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7200.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7230.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7260.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7290.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7320.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7350.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7380.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7410.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7440.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7470.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7500.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7530.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7560.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7590.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7620.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7650.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7680.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7710.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7740.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7770.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7800.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7830.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7860.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7890.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7920.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7950.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7980.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 40,
+      "not_delivered_within_horizon": 65,
+      "delivery_rate": 0.38095238095238093
+    },
+    {
+      "horizon_seconds": 7992.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 41,
+      "not_delivered_within_horizon": 64,
+      "delivery_rate": 0.3904761904761905
+    },
+    {
+      "horizon_seconds": 8010.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 41,
+      "not_delivered_within_horizon": 64,
+      "delivery_rate": 0.3904761904761905
+    },
+    {
+      "horizon_seconds": 8016.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 42,
+      "not_delivered_within_horizon": 63,
+      "delivery_rate": 0.4
+    },
+    {
+      "horizon_seconds": 8040.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 42,
+      "not_delivered_within_horizon": 63,
+      "delivery_rate": 0.4
+    },
+    {
+      "horizon_seconds": 8070.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 42,
+      "not_delivered_within_horizon": 63,
+      "delivery_rate": 0.4
+    },
+    {
+      "horizon_seconds": 8100.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 42,
+      "not_delivered_within_horizon": 63,
+      "delivery_rate": 0.4
+    },
+    {
+      "horizon_seconds": 8130.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 42,
+      "not_delivered_within_horizon": 63,
+      "delivery_rate": 0.4
+    },
+    {
+      "horizon_seconds": 8141.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 43,
+      "not_delivered_within_horizon": 62,
+      "delivery_rate": 0.4095238095238095
+    },
+    {
+      "horizon_seconds": 8160.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 43,
+      "not_delivered_within_horizon": 62,
+      "delivery_rate": 0.4095238095238095
+    },
+    {
+      "horizon_seconds": 8190.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 43,
+      "not_delivered_within_horizon": 62,
+      "delivery_rate": 0.4095238095238095
+    },
+    {
+      "horizon_seconds": 8220.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 43,
+      "not_delivered_within_horizon": 62,
+      "delivery_rate": 0.4095238095238095
+    },
+    {
+      "horizon_seconds": 8250.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 43,
+      "not_delivered_within_horizon": 62,
+      "delivery_rate": 0.4095238095238095
+    },
+    {
+      "horizon_seconds": 8280.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 43,
+      "not_delivered_within_horizon": 62,
+      "delivery_rate": 0.4095238095238095
+    },
+    {
+      "horizon_seconds": 8310.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 43,
+      "not_delivered_within_horizon": 62,
+      "delivery_rate": 0.4095238095238095
+    },
+    {
+      "horizon_seconds": 8340.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 43,
+      "not_delivered_within_horizon": 62,
+      "delivery_rate": 0.4095238095238095
+    },
+    {
+      "horizon_seconds": 8370.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 43,
+      "not_delivered_within_horizon": 62,
+      "delivery_rate": 0.4095238095238095
+    },
+    {
+      "horizon_seconds": 8400.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 43,
+      "not_delivered_within_horizon": 62,
+      "delivery_rate": 0.4095238095238095
+    },
+    {
+      "horizon_seconds": 8430.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 43,
+      "not_delivered_within_horizon": 62,
+      "delivery_rate": 0.4095238095238095
+    },
+    {
+      "horizon_seconds": 8460.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 43,
+      "not_delivered_within_horizon": 62,
+      "delivery_rate": 0.4095238095238095
+    },
+    {
+      "horizon_seconds": 8490.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 43,
+      "not_delivered_within_horizon": 62,
+      "delivery_rate": 0.4095238095238095
+    },
+    {
+      "horizon_seconds": 8513.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 44,
+      "not_delivered_within_horizon": 61,
+      "delivery_rate": 0.41904761904761906
+    },
+    {
+      "horizon_seconds": 8520.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 44,
+      "not_delivered_within_horizon": 61,
+      "delivery_rate": 0.41904761904761906
+    },
+    {
+      "horizon_seconds": 8550.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 44,
+      "not_delivered_within_horizon": 61,
+      "delivery_rate": 0.41904761904761906
+    },
+    {
+      "horizon_seconds": 8580.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 44,
+      "not_delivered_within_horizon": 61,
+      "delivery_rate": 0.41904761904761906
+    },
+    {
+      "horizon_seconds": 8610.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 44,
+      "not_delivered_within_horizon": 61,
+      "delivery_rate": 0.41904761904761906
+    },
+    {
+      "horizon_seconds": 8640.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 44,
+      "not_delivered_within_horizon": 61,
+      "delivery_rate": 0.41904761904761906
+    },
+    {
+      "horizon_seconds": 8670.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 44,
+      "not_delivered_within_horizon": 61,
+      "delivery_rate": 0.41904761904761906
+    },
+    {
+      "horizon_seconds": 8700.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 44,
+      "not_delivered_within_horizon": 61,
+      "delivery_rate": 0.41904761904761906
+    },
+    {
+      "horizon_seconds": 8730.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 44,
+      "not_delivered_within_horizon": 61,
+      "delivery_rate": 0.41904761904761906
+    },
+    {
+      "horizon_seconds": 8760.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 44,
+      "not_delivered_within_horizon": 61,
+      "delivery_rate": 0.41904761904761906
+    },
+    {
+      "horizon_seconds": 8790.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 44,
+      "not_delivered_within_horizon": 61,
+      "delivery_rate": 0.41904761904761906
+    },
+    {
+      "horizon_seconds": 8820.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 44,
+      "not_delivered_within_horizon": 61,
+      "delivery_rate": 0.41904761904761906
+    },
+    {
+      "horizon_seconds": 8850.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 44,
+      "not_delivered_within_horizon": 61,
+      "delivery_rate": 0.41904761904761906
+    },
+    {
+      "horizon_seconds": 8880.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 45,
+      "not_delivered_within_horizon": 60,
+      "delivery_rate": 0.42857142857142855
+    },
+    {
+      "horizon_seconds": 8910.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 45,
+      "not_delivered_within_horizon": 60,
+      "delivery_rate": 0.42857142857142855
+    },
+    {
+      "horizon_seconds": 8940.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 45,
+      "not_delivered_within_horizon": 60,
+      "delivery_rate": 0.42857142857142855
+    },
+    {
+      "horizon_seconds": 8970.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 45,
+      "not_delivered_within_horizon": 60,
+      "delivery_rate": 0.42857142857142855
+    },
+    {
+      "horizon_seconds": 9000.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 45,
+      "not_delivered_within_horizon": 60,
+      "delivery_rate": 0.42857142857142855
+    },
+    {
+      "horizon_seconds": 9009.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 46,
+      "not_delivered_within_horizon": 59,
+      "delivery_rate": 0.4380952380952381
+    },
+    {
+      "horizon_seconds": 9030.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 46,
+      "not_delivered_within_horizon": 59,
+      "delivery_rate": 0.4380952380952381
+    },
+    {
+      "horizon_seconds": 9060.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 46,
+      "not_delivered_within_horizon": 59,
+      "delivery_rate": 0.4380952380952381
+    },
+    {
+      "horizon_seconds": 9090.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 46,
+      "not_delivered_within_horizon": 59,
+      "delivery_rate": 0.4380952380952381
+    },
+    {
+      "horizon_seconds": 9120.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 46,
+      "not_delivered_within_horizon": 59,
+      "delivery_rate": 0.4380952380952381
+    },
+    {
+      "horizon_seconds": 9150.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 46,
+      "not_delivered_within_horizon": 59,
+      "delivery_rate": 0.4380952380952381
+    },
+    {
+      "horizon_seconds": 9180.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 46,
+      "not_delivered_within_horizon": 59,
+      "delivery_rate": 0.4380952380952381
+    },
+    {
+      "horizon_seconds": 9210.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 46,
+      "not_delivered_within_horizon": 59,
+      "delivery_rate": 0.4380952380952381
+    },
+    {
+      "horizon_seconds": 9240.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 46,
+      "not_delivered_within_horizon": 59,
+      "delivery_rate": 0.4380952380952381
+    },
+    {
+      "horizon_seconds": 9270.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 46,
+      "not_delivered_within_horizon": 59,
+      "delivery_rate": 0.4380952380952381
+    },
+    {
+      "horizon_seconds": 9272.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 9300.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 9330.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 9360.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 9390.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 9420.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 9450.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 9480.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 9510.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 9540.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 9570.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 9600.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 9630.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 9660.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 9690.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 9720.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 9750.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 9780.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 9810.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 9840.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 9870.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 9900.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 9930.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 9960.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 9990.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 10020.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 10050.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 10080.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 10110.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 10140.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 10170.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 10200.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 10230.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 10260.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 47,
+      "not_delivered_within_horizon": 58,
+      "delivery_rate": 0.44761904761904764
+    },
+    {
+      "horizon_seconds": 10284.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 48,
+      "not_delivered_within_horizon": 57,
+      "delivery_rate": 0.45714285714285713
+    },
+    {
+      "horizon_seconds": 10290.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 48,
+      "not_delivered_within_horizon": 57,
+      "delivery_rate": 0.45714285714285713
+    },
+    {
+      "horizon_seconds": 10320.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 48,
+      "not_delivered_within_horizon": 57,
+      "delivery_rate": 0.45714285714285713
+    },
+    {
+      "horizon_seconds": 10350.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 48,
+      "not_delivered_within_horizon": 57,
+      "delivery_rate": 0.45714285714285713
+    },
+    {
+      "horizon_seconds": 10380.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 48,
+      "not_delivered_within_horizon": 57,
+      "delivery_rate": 0.45714285714285713
+    },
+    {
+      "horizon_seconds": 10410.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 49,
+      "not_delivered_within_horizon": 56,
+      "delivery_rate": 0.4666666666666667
+    },
+    {
+      "horizon_seconds": 10440.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 49,
+      "not_delivered_within_horizon": 56,
+      "delivery_rate": 0.4666666666666667
+    },
+    {
+      "horizon_seconds": 10470.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 49,
+      "not_delivered_within_horizon": 56,
+      "delivery_rate": 0.4666666666666667
+    },
+    {
+      "horizon_seconds": 10500.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 49,
+      "not_delivered_within_horizon": 56,
+      "delivery_rate": 0.4666666666666667
+    },
+    {
+      "horizon_seconds": 10530.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 49,
+      "not_delivered_within_horizon": 56,
+      "delivery_rate": 0.4666666666666667
+    },
+    {
+      "horizon_seconds": 10560.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 49,
+      "not_delivered_within_horizon": 56,
+      "delivery_rate": 0.4666666666666667
+    },
+    {
+      "horizon_seconds": 10563.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 50,
+      "not_delivered_within_horizon": 55,
+      "delivery_rate": 0.47619047619047616
+    },
+    {
+      "horizon_seconds": 10590.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 50,
+      "not_delivered_within_horizon": 55,
+      "delivery_rate": 0.47619047619047616
+    },
+    {
+      "horizon_seconds": 10620.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 50,
+      "not_delivered_within_horizon": 55,
+      "delivery_rate": 0.47619047619047616
+    },
+    {
+      "horizon_seconds": 10650.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 50,
+      "not_delivered_within_horizon": 55,
+      "delivery_rate": 0.47619047619047616
+    },
+    {
+      "horizon_seconds": 10660.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 51,
+      "not_delivered_within_horizon": 54,
+      "delivery_rate": 0.4857142857142857
+    },
+    {
+      "horizon_seconds": 10680.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 51,
+      "not_delivered_within_horizon": 54,
+      "delivery_rate": 0.4857142857142857
+    },
+    {
+      "horizon_seconds": 10696.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 52,
+      "not_delivered_within_horizon": 53,
+      "delivery_rate": 0.49523809523809526
+    },
+    {
+      "horizon_seconds": 10710.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 52,
+      "not_delivered_within_horizon": 53,
+      "delivery_rate": 0.49523809523809526
+    },
+    {
+      "horizon_seconds": 10740.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 52,
+      "not_delivered_within_horizon": 53,
+      "delivery_rate": 0.49523809523809526
+    },
+    {
+      "horizon_seconds": 10770.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 52,
+      "not_delivered_within_horizon": 53,
+      "delivery_rate": 0.49523809523809526
+    },
+    {
+      "horizon_seconds": 10800.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 52,
+      "not_delivered_within_horizon": 53,
+      "delivery_rate": 0.49523809523809526
+    },
+    {
+      "horizon_seconds": 10830.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 52,
+      "not_delivered_within_horizon": 53,
+      "delivery_rate": 0.49523809523809526
+    },
+    {
+      "horizon_seconds": 10860.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 52,
+      "not_delivered_within_horizon": 53,
+      "delivery_rate": 0.49523809523809526
+    },
+    {
+      "horizon_seconds": 10890.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 52,
+      "not_delivered_within_horizon": 53,
+      "delivery_rate": 0.49523809523809526
+    },
+    {
+      "horizon_seconds": 10919.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 53,
+      "not_delivered_within_horizon": 52,
+      "delivery_rate": 0.5047619047619047
+    },
+    {
+      "horizon_seconds": 10920.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 53,
+      "not_delivered_within_horizon": 52,
+      "delivery_rate": 0.5047619047619047
+    },
+    {
+      "horizon_seconds": 10950.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 53,
+      "not_delivered_within_horizon": 52,
+      "delivery_rate": 0.5047619047619047
+    },
+    {
+      "horizon_seconds": 10980.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 53,
+      "not_delivered_within_horizon": 52,
+      "delivery_rate": 0.5047619047619047
+    },
+    {
+      "horizon_seconds": 11010.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 53,
+      "not_delivered_within_horizon": 52,
+      "delivery_rate": 0.5047619047619047
+    },
+    {
+      "horizon_seconds": 11040.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 53,
+      "not_delivered_within_horizon": 52,
+      "delivery_rate": 0.5047619047619047
+    },
+    {
+      "horizon_seconds": 11070.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 53,
+      "not_delivered_within_horizon": 52,
+      "delivery_rate": 0.5047619047619047
+    },
+    {
+      "horizon_seconds": 11100.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 53,
+      "not_delivered_within_horizon": 52,
+      "delivery_rate": 0.5047619047619047
+    },
+    {
+      "horizon_seconds": 11130.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 53,
+      "not_delivered_within_horizon": 52,
+      "delivery_rate": 0.5047619047619047
+    },
+    {
+      "horizon_seconds": 11151.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 54,
+      "not_delivered_within_horizon": 51,
+      "delivery_rate": 0.5142857142857142
+    },
+    {
+      "horizon_seconds": 11160.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 54,
+      "not_delivered_within_horizon": 51,
+      "delivery_rate": 0.5142857142857142
+    },
+    {
+      "horizon_seconds": 11190.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 54,
+      "not_delivered_within_horizon": 51,
+      "delivery_rate": 0.5142857142857142
+    },
+    {
+      "horizon_seconds": 11220.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 54,
+      "not_delivered_within_horizon": 51,
+      "delivery_rate": 0.5142857142857142
+    },
+    {
+      "horizon_seconds": 11250.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 54,
+      "not_delivered_within_horizon": 51,
+      "delivery_rate": 0.5142857142857142
+    },
+    {
+      "horizon_seconds": 11260.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 55,
+      "not_delivered_within_horizon": 50,
+      "delivery_rate": 0.5238095238095238
+    },
+    {
+      "horizon_seconds": 11280.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 55,
+      "not_delivered_within_horizon": 50,
+      "delivery_rate": 0.5238095238095238
+    },
+    {
+      "horizon_seconds": 11310.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 55,
+      "not_delivered_within_horizon": 50,
+      "delivery_rate": 0.5238095238095238
+    },
+    {
+      "horizon_seconds": 11340.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 55,
+      "not_delivered_within_horizon": 50,
+      "delivery_rate": 0.5238095238095238
+    },
+    {
+      "horizon_seconds": 11370.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 55,
+      "not_delivered_within_horizon": 50,
+      "delivery_rate": 0.5238095238095238
+    },
+    {
+      "horizon_seconds": 11400.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 55,
+      "not_delivered_within_horizon": 50,
+      "delivery_rate": 0.5238095238095238
+    },
+    {
+      "horizon_seconds": 11430.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 55,
+      "not_delivered_within_horizon": 50,
+      "delivery_rate": 0.5238095238095238
+    },
+    {
+      "horizon_seconds": 11460.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 55,
+      "not_delivered_within_horizon": 50,
+      "delivery_rate": 0.5238095238095238
+    },
+    {
+      "horizon_seconds": 11490.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 55,
+      "not_delivered_within_horizon": 50,
+      "delivery_rate": 0.5238095238095238
+    },
+    {
+      "horizon_seconds": 11504.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 56,
+      "not_delivered_within_horizon": 49,
+      "delivery_rate": 0.5333333333333333
+    },
+    {
+      "horizon_seconds": 11520.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 56,
+      "not_delivered_within_horizon": 49,
+      "delivery_rate": 0.5333333333333333
+    },
+    {
+      "horizon_seconds": 11550.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 56,
+      "not_delivered_within_horizon": 49,
+      "delivery_rate": 0.5333333333333333
+    },
+    {
+      "horizon_seconds": 11580.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 56,
+      "not_delivered_within_horizon": 49,
+      "delivery_rate": 0.5333333333333333
+    },
+    {
+      "horizon_seconds": 11610.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 56,
+      "not_delivered_within_horizon": 49,
+      "delivery_rate": 0.5333333333333333
+    },
+    {
+      "horizon_seconds": 11640.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 56,
+      "not_delivered_within_horizon": 49,
+      "delivery_rate": 0.5333333333333333
+    },
+    {
+      "horizon_seconds": 11670.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 56,
+      "not_delivered_within_horizon": 49,
+      "delivery_rate": 0.5333333333333333
+    },
+    {
+      "horizon_seconds": 11700.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 56,
+      "not_delivered_within_horizon": 49,
+      "delivery_rate": 0.5333333333333333
+    },
+    {
+      "horizon_seconds": 11730.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 56,
+      "not_delivered_within_horizon": 49,
+      "delivery_rate": 0.5333333333333333
+    },
+    {
+      "horizon_seconds": 11760.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 56,
+      "not_delivered_within_horizon": 49,
+      "delivery_rate": 0.5333333333333333
+    },
+    {
+      "horizon_seconds": 11790.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 56,
+      "not_delivered_within_horizon": 49,
+      "delivery_rate": 0.5333333333333333
+    },
+    {
+      "horizon_seconds": 11820.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 56,
+      "not_delivered_within_horizon": 49,
+      "delivery_rate": 0.5333333333333333
+    },
+    {
+      "horizon_seconds": 11850.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 56,
+      "not_delivered_within_horizon": 49,
+      "delivery_rate": 0.5333333333333333
+    },
+    {
+      "horizon_seconds": 11880.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 56,
+      "not_delivered_within_horizon": 49,
+      "delivery_rate": 0.5333333333333333
+    },
+    {
+      "horizon_seconds": 11910.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 56,
+      "not_delivered_within_horizon": 49,
+      "delivery_rate": 0.5333333333333333
+    },
+    {
+      "horizon_seconds": 11940.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 56,
+      "not_delivered_within_horizon": 49,
+      "delivery_rate": 0.5333333333333333
+    },
+    {
+      "horizon_seconds": 11970.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 56,
+      "not_delivered_within_horizon": 49,
+      "delivery_rate": 0.5333333333333333
+    },
+    {
+      "horizon_seconds": 12000.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 56,
+      "not_delivered_within_horizon": 49,
+      "delivery_rate": 0.5333333333333333
+    },
+    {
+      "horizon_seconds": 12030.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 56,
+      "not_delivered_within_horizon": 49,
+      "delivery_rate": 0.5333333333333333
+    },
+    {
+      "horizon_seconds": 12060.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 56,
+      "not_delivered_within_horizon": 49,
+      "delivery_rate": 0.5333333333333333
+    },
+    {
+      "horizon_seconds": 12090.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 56,
+      "not_delivered_within_horizon": 49,
+      "delivery_rate": 0.5333333333333333
+    },
+    {
+      "horizon_seconds": 12120.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 56,
+      "not_delivered_within_horizon": 49,
+      "delivery_rate": 0.5333333333333333
+    },
+    {
+      "horizon_seconds": 12150.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 56,
+      "not_delivered_within_horizon": 49,
+      "delivery_rate": 0.5333333333333333
+    },
+    {
+      "horizon_seconds": 12180.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 56,
+      "not_delivered_within_horizon": 49,
+      "delivery_rate": 0.5333333333333333
+    },
+    {
+      "horizon_seconds": 12210.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 56,
+      "not_delivered_within_horizon": 49,
+      "delivery_rate": 0.5333333333333333
+    },
+    {
+      "horizon_seconds": 12240.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 56,
+      "not_delivered_within_horizon": 49,
+      "delivery_rate": 0.5333333333333333
+    },
+    {
+      "horizon_seconds": 12243.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 57,
+      "not_delivered_within_horizon": 48,
+      "delivery_rate": 0.5428571428571428
+    },
+    {
+      "horizon_seconds": 12270.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 57,
+      "not_delivered_within_horizon": 48,
+      "delivery_rate": 0.5428571428571428
+    },
+    {
+      "horizon_seconds": 12300.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 57,
+      "not_delivered_within_horizon": 48,
+      "delivery_rate": 0.5428571428571428
+    },
+    {
+      "horizon_seconds": 12330.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 57,
+      "not_delivered_within_horizon": 48,
+      "delivery_rate": 0.5428571428571428
+    },
+    {
+      "horizon_seconds": 12333.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 12360.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 12390.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 12420.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 12450.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 12480.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 12510.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 12540.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 12570.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 12600.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 12630.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 12660.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 12690.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 12720.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 12750.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 12780.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 12810.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 12840.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 12870.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 12900.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 12930.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 12960.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 12990.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 13020.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 13050.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 13080.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 13110.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 13140.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 13170.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 13200.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 13230.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 13260.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 13290.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 13320.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 13350.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 13380.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 13410.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 13440.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 13470.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 13500.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 13530.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 13560.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 13590.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 13620.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 13650.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 13680.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 13710.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 13740.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 58,
+      "not_delivered_within_horizon": 47,
+      "delivery_rate": 0.5523809523809524
+    },
+    {
+      "horizon_seconds": 13743.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 59,
+      "not_delivered_within_horizon": 46,
+      "delivery_rate": 0.5619047619047619
+    },
+    {
+      "horizon_seconds": 13770.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 59,
+      "not_delivered_within_horizon": 46,
+      "delivery_rate": 0.5619047619047619
+    },
+    {
+      "horizon_seconds": 13800.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 59,
+      "not_delivered_within_horizon": 46,
+      "delivery_rate": 0.5619047619047619
+    },
+    {
+      "horizon_seconds": 13830.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 59,
+      "not_delivered_within_horizon": 46,
+      "delivery_rate": 0.5619047619047619
+    },
+    {
+      "horizon_seconds": 13860.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 59,
+      "not_delivered_within_horizon": 46,
+      "delivery_rate": 0.5619047619047619
+    },
+    {
+      "horizon_seconds": 13890.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 59,
+      "not_delivered_within_horizon": 46,
+      "delivery_rate": 0.5619047619047619
+    },
+    {
+      "horizon_seconds": 13920.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 59,
+      "not_delivered_within_horizon": 46,
+      "delivery_rate": 0.5619047619047619
+    },
+    {
+      "horizon_seconds": 13950.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 59,
+      "not_delivered_within_horizon": 46,
+      "delivery_rate": 0.5619047619047619
+    },
+    {
+      "horizon_seconds": 13980.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 59,
+      "not_delivered_within_horizon": 46,
+      "delivery_rate": 0.5619047619047619
+    },
+    {
+      "horizon_seconds": 14010.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 59,
+      "not_delivered_within_horizon": 46,
+      "delivery_rate": 0.5619047619047619
+    },
+    {
+      "horizon_seconds": 14040.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 59,
+      "not_delivered_within_horizon": 46,
+      "delivery_rate": 0.5619047619047619
+    },
+    {
+      "horizon_seconds": 14070.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 59,
+      "not_delivered_within_horizon": 46,
+      "delivery_rate": 0.5619047619047619
+    },
+    {
+      "horizon_seconds": 14100.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 59,
+      "not_delivered_within_horizon": 46,
+      "delivery_rate": 0.5619047619047619
+    },
+    {
+      "horizon_seconds": 14130.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 59,
+      "not_delivered_within_horizon": 46,
+      "delivery_rate": 0.5619047619047619
+    },
+    {
+      "horizon_seconds": 14160.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 59,
+      "not_delivered_within_horizon": 46,
+      "delivery_rate": 0.5619047619047619
+    },
+    {
+      "horizon_seconds": 14190.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 59,
+      "not_delivered_within_horizon": 46,
+      "delivery_rate": 0.5619047619047619
+    },
+    {
+      "horizon_seconds": 14220.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 59,
+      "not_delivered_within_horizon": 46,
+      "delivery_rate": 0.5619047619047619
+    },
+    {
+      "horizon_seconds": 14250.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 59,
+      "not_delivered_within_horizon": 46,
+      "delivery_rate": 0.5619047619047619
+    },
+    {
+      "horizon_seconds": 14280.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 59,
+      "not_delivered_within_horizon": 46,
+      "delivery_rate": 0.5619047619047619
+    },
+    {
+      "horizon_seconds": 14310.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 59,
+      "not_delivered_within_horizon": 46,
+      "delivery_rate": 0.5619047619047619
+    },
+    {
+      "horizon_seconds": 14340.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 59,
+      "not_delivered_within_horizon": 46,
+      "delivery_rate": 0.5619047619047619
+    },
+    {
+      "horizon_seconds": 14370.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 59,
+      "not_delivered_within_horizon": 46,
+      "delivery_rate": 0.5619047619047619
+    },
+    {
+      "horizon_seconds": 14400.0,
+      "total_tasks": 105,
+      "delivered_within_horizon": 59,
+      "not_delivered_within_horizon": 46,
+      "delivery_rate": 0.5619047619047619
+    }
+  ],
+  "throughput": {
+    "completed_tasks_per_hour": 11.833333333333334,
+    "completed_tiles_per_hour": 142.0,
+    "ground_sent_mb": 6967.982623000002,
+    "isl_sent_mb": 0,
+    "ground_actual_mbps": 2.5807343048148152,
+    "isl_actual_mbps": 0.0
+  },
+  "file": "validation_near_high_1_ground_compute_dt1.json"
+}

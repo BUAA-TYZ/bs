@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "status": "Prepared network baseline; grouping and empty-output execution still pending; no new performance results",
+  "config_sha256": {
+    "main_config.json": "27c45fe8b1c0d65410cf551c1a6f9f4a33ce76d96d8ce54162683db0b7bf4ed1",
+    "isl_nominal_100_config.json": "eb271527686b8122dce69065bbd3a77002f2284e2b1a253ceaf6f3a37c172a93",
+    "isl_nominal_600_config.json": "ac74d9672befe3944898670c2cd982d6670f27335a1fab0f06a57188d0f33c05",
+    "isl_nominal_10000_config.json": "0f051c3abb8a8d4db2722de1fbe72ba5a245931c6236e544ed0ab8bd74a50a79",
+    "isl_eta_0.6_config.json": "e284d1d9a63d796b11b2c85ab659a21f491299398ad07f9929f65fa93648e456",
+    "isl_eta_1_config.json": "415d5b97bcc0d7f435641fc61023749d36a82b1137c127c7a65b1981860ebbed",
+    "ground_eta_1_config.json": "610a0e68230281ccc30ec6dc0065b618009e5f1a7979bfe41b0293fd980988fa",
+    "neighbors_4_config.json": "7f74e941ab4ce8e683b0be3461cb5016ee0662321e30f763b6e22c15e3058b9e"
+  },
+  "inputs": {
+    "previous_config": {
+      "path": "results/sar_compute_profile_20261016/main_config.json",
+      "sha256": "857502d5c09e967bd66cada7c27cbb72ecc28e3677cbadd1995a203547874438"
+    },
+    "previous_manifest": {
+      "path": "results/sar_compute_profile_20261016/manifest.json",
+      "sha256": "8432495780e90340c5d86dcb4c74f31db8e26b1269ea75a6ea26af99ef11d679"
+    },
+    "compute_calibration": {
+      "path": "results/jetson_concurrency_20261016/summary.json",
+      "sha256": "dd8e9f45cfe764027828221a122205a2c5330d395a30d43c28ae0a0f2c0be0af"
+    },
+    "generator": {
+      "path": "analysis/prepare_sar_parameter_study.py",
+      "sha256": "e0659b29517c8ce1feb79eda60f07eb12b44e46671f7d15a653df1e619387ebe"
+    }
+  },
+  "link_contract": {
+    "nominal_isl_mbps": 2500,
+    "isl_payload_efficiency": 0.8,
+    "effective_isl_mbps": 2000,
+    "simultaneous_neighbors": 2,
+    "nominal_ground_mbps": 1200,
+    "ground_payload_efficiency": 0.8,
+    "effective_ground_mbps": 960,
+    "ground_receive_channels": 1,
+    "max_range_km": 4500,
+    "efficiency_basis": "Declared engineering sensitivity, not measured throughput",
+    "rate_model": "Constant payload capacity during admitted geometric contacts; zero while disconnected; per-directed-edge sharing; no arbitrary sine/noise law",
+    "duplex_assumption": "Independent equal-rate directional capacities; not a measured aggregate duplex throughput",
+    "terminal_selection": "Deterministic nearest-edge matching with both endpoint degree limits, not an optimized terminal scheduler",
+    "power_scope": "SCOT80-class two active channels imply approximately 120-160 W and 23.8 kg for terminals alone; platform power/thermal feasibility remains unverified"
+  },
+  "fixed_compute": {
+    "service_s": {
+      "1": 0.597,
+      "2": 1.056
+    },
+    "shared_memory_gb": 32.188686336,
+    "scope": "AGX Orin ground proxy, same hardware/service for source and helper satellites, fixed 4096 inference operator",
+    "ground_beta": 10
+  },
+  "pending_before_final_realism_claim": [
+    "Link acquisition/repointing time and propagation are not charged by current transfer execution",
+    "No battery, thermal, SAR peak-load or whole-platform power feasibility model",
+    "Source orbit schedule is a geometric workload, not an operator-validated task plan",
+    "Empty detections need acknowledgements; current executable output size is still a uniform positive-result proxy",
+    "Reduced dispatch tile count must preserve the measured inference workload"
+  ],
+  "experiment_rule": "Single-factor comparisons on the same development arrivals; main network revision versus historical configuration is not an algorithm gain; keep held-out data sealed",
+  "sources": [
+    {
+      "url": "https://www.tesat.de/images/tesat/products/250820_DataSheet_SCOT80_A4.pdf",
+      "supports": "2.5/10 Gbps nominal channels, 60-80 W, 11.9 kg per optical channel; not measured payload efficiency"
+    },
+    {
+      "url": "https://www.tesat.de/news/blog/942-kepler-validates-tesat-optical-communication-terminals-in-orbit-for-kepler-network",
+      "supports": "LEO-LEO SCOT80 in-orbit link validation; no sustained application throughput curve"
+    },
+    {
+      "url": "https://zenodo.org/records/7244968/files/Session%202B-Le_Lann-Image%20Compression%20on%20Pleiades%20Neo.pdf",
+      "supports": "1.2 Gbps aggregate X-band downlink on another imaging platform; cross-platform reference, not this SAR constellation"
+    },
+    {
+      "url": "https://sar.iceye.com/6.0.8/productspecification/imagingmodes/",
+      "supports": "Spot Fine image geometry; not hardware configuration or measured pipeline service"
+    }
+  ]
+}

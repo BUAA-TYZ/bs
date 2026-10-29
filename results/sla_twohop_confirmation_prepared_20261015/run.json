@@ -1,0 +1,231 @@
+{
+  "case_info": [
+    {
+      "id": "day08_load1",
+      "calendar_day": "2026-10-22",
+      "epoch_offset_seconds": 660930,
+      "all_qualifying_events_retained": true,
+      "num_acquisitions": 6,
+      "split": "confirmation",
+      "strips_per_pass": 1
+    },
+    {
+      "id": "day22_load1",
+      "calendar_day": "2026-11-05",
+      "epoch_offset_seconds": 1873450,
+      "all_qualifying_events_retained": true,
+      "num_acquisitions": 7,
+      "split": "confirmation",
+      "strips_per_pass": 1
+    },
+    {
+      "id": "day36_load1",
+      "calendar_day": "2026-11-19",
+      "epoch_offset_seconds": 3080260,
+      "all_qualifying_events_retained": true,
+      "num_acquisitions": 7,
+      "split": "confirmation",
+      "strips_per_pass": 1
+    },
+    {
+      "id": "day08_load3",
+      "calendar_day": "2026-10-22",
+      "epoch_offset_seconds": 660930,
+      "all_qualifying_events_retained": true,
+      "num_acquisitions": 17,
+      "split": "confirmation",
+      "strips_per_pass": 3
+    },
+    {
+      "id": "day22_load3",
+      "calendar_day": "2026-11-05",
+      "epoch_offset_seconds": 1873450,
+      "all_qualifying_events_retained": true,
+      "num_acquisitions": 18,
+      "split": "confirmation",
+      "strips_per_pass": 3
+    },
+    {
+      "id": "day36_load3",
+      "calendar_day": "2026-11-19",
+      "epoch_offset_seconds": 3080260,
+      "all_qualifying_events_retained": true,
+      "num_acquisitions": 20,
+      "split": "confirmation",
+      "strips_per_pass": 3
+    }
+  ],
+  "provenance": {
+    "scope": "specification-based network pilot with proxy compute; not flight measurements or final MARL evaluation",
+    "epoch": "2026-10-15T00:00:00Z",
+    "orbit": {
+      "architecture": "heterogeneous",
+      "source_ids": [
+        0,
+        1
+      ],
+      "imagers": {
+        "count": 2,
+        "altitude_km": 620,
+        "inclination_deg": 97.9,
+        "raan_deg": [
+          357.5,
+          12.5
+        ],
+        "phase_deg": [
+          0,
+          15
+        ]
+      },
+      "helpers": {
+        "count": 22,
+        "description": "two 550 km, 53 degree planes; 11 per plane; RAAN 0 and 90; Walker phase 1"
+      },
+      "synthetic_tle": true
+    },
+    "nominal_rates_mbps": {
+      "isl": 10000,
+      "downlink": 1200
+    },
+    "payload_efficiency_assumption": 1.0,
+    "parameter_evidence": "docs/thesis/highres_link_evidence.md",
+    "compute_proxy": "RGB detector CPU/MPS calibration on one Apple M5 Pro; native PAN/MS preprocessing, codec, flight hardware uncalibrated",
+    "result_proxy": "187 bytes per window transferred from old measured RGB workload; high-resolution detection density unvalidated",
+    "aggregation_proxy": "fixed old measured merge time; full-strip merge scaling uncalibrated",
+    "assumptions": [
+      "64 GB per-node data buffer is a design allocation, not a SCOT80 memory specification",
+      "four simultaneous ISL neighbors, 4500 km design range, instantaneous acquisition, zero terminal setup delay",
+      "one Beijing-coordinate receiver, one satellite at a time using aggregate 1200 Mbps nominal",
+      "full topology prediction and current queue information; no control-plane delay",
+      "day episodes start empty before first acquisition; no cross-day residual carry-over",
+      "fixed one-second decision cadence for every dt; packet batch shared by all star heuristics",
+      "source compression and image conversion are excluded timing terms; equal representation for both paths"
+    ],
+    "workload": {
+      "model": "overlapping_native_window_packets_v2",
+      "parameters": {
+        "width_px": 46668,
+        "height_px": 66668,
+        "bands": 3,
+        "bits_per_sample": 8,
+        "window_px": 1024,
+        "stride_px": 824,
+        "windows_per_tile_axis": 4,
+        "compute_cost_per_window": 0.07026846144969265,
+        "result_size_mb_per_window": 0.000187,
+        "transport_components": [
+          {
+            "name": "PAN",
+            "downsample": 1,
+            "bands": 1,
+            "bits_per_sample": 12
+          },
+          {
+            "name": "MS",
+            "downsample": 4,
+            "bands": 6,
+            "bits_per_sample": 12
+          }
+        ],
+        "transport_compression_ratio": 3.0
+      },
+      "coordinate_convention": "xyxy, upper bounds exclusive",
+      "edge_rule": "shift_last_window_to_edge_no_padding",
+      "packet_rule": "independent_full_windows_no_pixel_deduplication",
+      "result_rule": "per_window_outputs_before_global_merge",
+      "image_size_mb": 2138.9927789999997,
+      "num_windows": 4617,
+      "num_tiles": 315,
+      "processed_pixels": 4841275392,
+      "coverage_multiplier": 1.5560486527476958,
+      "packet_input_mb": 3328.3768320000004,
+      "total_compute_cost": 324.429486513231,
+      "unmerged_result_mb": 0.863379,
+      "transport": {
+        "format": "native_components_packed_bitstream",
+        "pixel_mapping": "floor(start/downsample), ceil(end/downsample)",
+        "packing": "per_component_contiguous_bits_ceil_to_byte; no row padding or headers",
+        "compression_ratio": 3.0,
+        "compression_assumption": "Uncompressed/compressed size ratio; fixed modeling assumption, not measured codec performance",
+        "unique_uncompressed_mb": 6416.978336999999,
+        "inference_window_mb": 3.145728,
+        "inference_rule": "bands/bits_per_sample define model input and VRAM proxy, independently of native transport",
+        "compute_rule": "Per-window processing proxy; not a measured native PAN/MS pipeline; decode/pansharpen cost not modeled",
+        "component_rasters": [
+          {
+            "name": "PAN",
+            "downsample": 1,
+            "bands": 1,
+            "bits_per_sample": 12,
+            "width_px": 46668,
+            "height_px": 66668,
+            "packed_bytes": 4666893336
+          },
+          {
+            "name": "MS",
+            "downsample": 4,
+            "bands": 6,
+            "bits_per_sample": 12,
+            "width_px": 11667,
+            "height_px": 16667,
+            "packed_bytes": 1750085001
+          }
+        ]
+      }
+    },
+    "maximum_packet_mb": 11.534336000000001,
+    "serialization_seconds": {
+      "whole_image_downlink": 14.259951859999997,
+      "largest_packet_isl": 0.009227468800000001,
+      "largest_packet_downlink": 0.07689557333333334
+    },
+    "confirmation_selection": {
+      "epoch": "2026-10-15T00:00:00Z",
+      "day_offsets": [
+        7,
+        21,
+        35
+      ],
+      "strips_per_pass": [
+        1,
+        3
+      ],
+      "primary_seconds": 300,
+      "selection": "fixed before confirmation outcomes; no replacement of poor geometry",
+      "scope": "temporal/load confirmation in the same synthetic 24-satellite architecture; not universal generalization"
+    },
+    "input_protocol_revision": {
+      "input_relay_max_hops": 2,
+      "base_manifest_sha256": "74be94cd16376be57db9516c262e6c6e73f9b2676c91f14beb8150c590aecb6c",
+      "base_prepared_dir": "results/sla_confirmation_prepared_20261015",
+      "scope": "common store-and-forward input capability for every method; not an algorithm-only gain",
+      "preparer_sha256": "062a5be4f7d4cb046ade5b58f44a74deed0ad6ea6bc7b8bbd9ec9450ad4127b3",
+      "base_config_sha256": {
+        "day08_load1_config.json": "89970f899ca66c4bf9b4065665ae1ac5aa57883a159054dc7043d77e5fe4ced8",
+        "day22_load1_config.json": "4dcc88c19ca885ccf136e38c04ae5ba21bcc9502ff60c16f41fa1b0bc7c7dc6a",
+        "day36_load1_config.json": "52dcd8e96b07d77f1d8805c54577d6f1552a4b6641bc7bd04428e4bc13512a04",
+        "day08_load3_config.json": "e75090487ef03b7372c9d8230b08fc3bd33fae20bb531e756eab6ed93d06266b",
+        "day22_load3_config.json": "267fd17662e5df8ea2eec0dc1728d682ec70171ddb9a409dd7f10818256a38bd",
+        "day36_load3_config.json": "49eacd12b8f967e7fb85cb5835f91070b81e153ff508227b2b7061e1eaaef2df"
+      }
+    }
+  },
+  "empty_imaging_cases": [],
+  "selection_sha256": "9d9c0ddae9abf8cd62ce7678e70871b55e748f0cb856d1bc7c8b65b087114d99",
+  "preparer_sha256": "16c67bbdae4f6e8f5867907bdf76dff0d5973287e13050250276d241a6c85253",
+  "input_protocol_revision": {
+    "input_relay_max_hops": 2,
+    "base_manifest_sha256": "74be94cd16376be57db9516c262e6c6e73f9b2676c91f14beb8150c590aecb6c",
+    "base_prepared_dir": "results/sla_confirmation_prepared_20261015",
+    "scope": "common store-and-forward input capability for every method; not an algorithm-only gain",
+    "preparer_sha256": "062a5be4f7d4cb046ade5b58f44a74deed0ad6ea6bc7b8bbd9ec9450ad4127b3",
+    "base_config_sha256": {
+      "day08_load1_config.json": "89970f899ca66c4bf9b4065665ae1ac5aa57883a159054dc7043d77e5fe4ced8",
+      "day22_load1_config.json": "4dcc88c19ca885ccf136e38c04ae5ba21bcc9502ff60c16f41fa1b0bc7c7dc6a",
+      "day36_load1_config.json": "52dcd8e96b07d77f1d8805c54577d6f1552a4b6641bc7bd04428e4bc13512a04",
+      "day08_load3_config.json": "e75090487ef03b7372c9d8230b08fc3bd33fae20bb531e756eab6ed93d06266b",
+      "day22_load3_config.json": "267fd17662e5df8ea2eec0dc1728d682ec70171ddb9a409dd7f10818256a38bd",
+      "day36_load3_config.json": "49eacd12b8f967e7fb85cb5835f91070b81e153ff508227b2b7061e1eaaef2df"
+    }
+  }
+}

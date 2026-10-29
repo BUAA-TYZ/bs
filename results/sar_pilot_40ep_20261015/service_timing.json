@@ -1,0 +1,277 @@
+{
+  "scope": "local CPU/MPS proxy only; neither flight hardware nor ground server calibration",
+  "input": "first 8 development images, decoded RGB, original patch size; network letterbox 832",
+  "boundary": "decoded RGB -> BGR -> preprocess/inference/OBB NMS -> CPU polygons -> OBB1 serialization",
+  "excluded": [
+    "image decoding",
+    "full-scene overlap extraction",
+    "cross-window merge",
+    "transport"
+  ],
+  "warmup_calls_per_device": 3,
+  "repeats_per_image": 2,
+  "cpu_threads": 4,
+  "confidence": 0.25,
+  "nms_iou": 0.7,
+  "max_det": 300,
+  "devices": {
+    "cpu": {
+      "seconds": {
+        "count": 16,
+        "mean": 0.048548562423093244,
+        "p50": 0.048116062534973025,
+        "p95": 0.0523578436113894
+      },
+      "serialized_bytes": {
+        "count": 16,
+        "mean": 28.0,
+        "p50": 28.0,
+        "p95": 28.0
+      },
+      "cpu_threads_observed": 4,
+      "records": [
+        {
+          "image": "test_BLT008__797__.png",
+          "repeat": 0,
+          "seconds": 0.04981125006452203,
+          "serialized_bytes": 28,
+          "detections": 0
+        },
+        {
+          "image": "test_CHQ005__579__.png",
+          "repeat": 0,
+          "seconds": 0.05083812493830919,
+          "serialized_bytes": 28,
+          "detections": 0
+        },
+        {
+          "image": "test_CPE005__1976__.png",
+          "repeat": 0,
+          "seconds": 0.04677079198881984,
+          "serialized_bytes": 28,
+          "detections": 0
+        },
+        {
+          "image": "test_CPE017__2193__.png",
+          "repeat": 0,
+          "seconds": 0.04685945808887482,
+          "serialized_bytes": 28,
+          "detections": 0
+        },
+        {
+          "image": "test_DWH008__563__.png",
+          "repeat": 0,
+          "seconds": 0.0492914579808712,
+          "serialized_bytes": 28,
+          "detections": 0
+        },
+        {
+          "image": "test_DWH009__616__.png",
+          "repeat": 0,
+          "seconds": 0.046464540995657444,
+          "serialized_bytes": 28,
+          "detections": 0
+        },
+        {
+          "image": "test_HEB007__342__.png",
+          "repeat": 0,
+          "seconds": 0.04768687533214688,
+          "serialized_bytes": 28,
+          "detections": 0
+        },
+        {
+          "image": "test_HEB016__613__.png",
+          "repeat": 0,
+          "seconds": 0.04556508315727115,
+          "serialized_bytes": 28,
+          "detections": 0
+        },
+        {
+          "image": "test_BLT008__797__.png",
+          "repeat": 1,
+          "seconds": 0.04808175005018711,
+          "serialized_bytes": 28,
+          "detections": 0
+        },
+        {
+          "image": "test_CHQ005__579__.png",
+          "repeat": 1,
+          "seconds": 0.04832687508314848,
+          "serialized_bytes": 28,
+          "detections": 0
+        },
+        {
+          "image": "test_CPE005__1976__.png",
+          "repeat": 1,
+          "seconds": 0.04815037501975894,
+          "serialized_bytes": 28,
+          "detections": 0
+        },
+        {
+          "image": "test_CPE017__2193__.png",
+          "repeat": 1,
+          "seconds": 0.04891258291900158,
+          "serialized_bytes": 28,
+          "detections": 0
+        },
+        {
+          "image": "test_DWH008__563__.png",
+          "repeat": 1,
+          "seconds": 0.04556387476623058,
+          "serialized_bytes": 28,
+          "detections": 0
+        },
+        {
+          "image": "test_DWH009__616__.png",
+          "repeat": 1,
+          "seconds": 0.0479635838419199,
+          "serialized_bytes": 28,
+          "detections": 0
+        },
+        {
+          "image": "test_HEB007__342__.png",
+          "repeat": 1,
+          "seconds": 0.056916999630630016,
+          "serialized_bytes": 28,
+          "detections": 0
+        },
+        {
+          "image": "test_HEB016__613__.png",
+          "repeat": 1,
+          "seconds": 0.049573374912142754,
+          "serialized_bytes": 28,
+          "detections": 0
+        }
+      ]
+    },
+    "mps": {
+      "seconds": {
+        "count": 16,
+        "mean": 0.011061570257879794,
+        "p50": 0.01100097899325192,
+        "p95": 0.012503384612500668
+      },
+      "serialized_bytes": {
+        "count": 16,
+        "mean": 28.0,
+        "p50": 28.0,
+        "p95": 28.0
+      },
+      "cpu_threads_observed": 4,
+      "records": [
+        {
+          "image": "test_BLT008__797__.png",
+          "repeat": 0,
+          "seconds": 0.01061920914798975,
+          "serialized_bytes": 28,
+          "detections": 0
+        },
+        {
+          "image": "test_CHQ005__579__.png",
+          "repeat": 0,
+          "seconds": 0.009189417120069265,
+          "serialized_bytes": 28,
+          "detections": 0
+        },
+        {
+          "image": "test_CPE005__1976__.png",
+          "repeat": 0,
+          "seconds": 0.009354624897241592,
+          "serialized_bytes": 28,
+          "detections": 0
+        },
+        {
+          "image": "test_CPE017__2193__.png",
+          "repeat": 0,
+          "seconds": 0.013113040942698717,
+          "serialized_bytes": 28,
+          "detections": 0
+        },
+        {
+          "image": "test_DWH008__563__.png",
+          "repeat": 0,
+          "seconds": 0.012300165835767984,
+          "serialized_bytes": 28,
+          "detections": 0
+        },
+        {
+          "image": "test_DWH009__616__.png",
+          "repeat": 0,
+          "seconds": 0.010539624840021133,
+          "serialized_bytes": 28,
+          "detections": 0
+        },
+        {
+          "image": "test_HEB007__342__.png",
+          "repeat": 0,
+          "seconds": 0.011545333079993725,
+          "serialized_bytes": 28,
+          "detections": 0
+        },
+        {
+          "image": "test_HEB016__613__.png",
+          "repeat": 0,
+          "seconds": 0.010476833209395409,
+          "serialized_bytes": 28,
+          "detections": 0
+        },
+        {
+          "image": "test_BLT008__797__.png",
+          "repeat": 1,
+          "seconds": 0.009939666837453842,
+          "serialized_bytes": 28,
+          "detections": 0
+        },
+        {
+          "image": "test_CHQ005__579__.png",
+          "repeat": 1,
+          "seconds": 0.012296957895159721,
+          "serialized_bytes": 28,
+          "detections": 0
+        },
+        {
+          "image": "test_CPE005__1976__.png",
+          "repeat": 1,
+          "seconds": 0.011004124768078327,
+          "serialized_bytes": 28,
+          "detections": 0
+        },
+        {
+          "image": "test_CPE017__2193__.png",
+          "repeat": 1,
+          "seconds": 0.011637750081717968,
+          "serialized_bytes": 28,
+          "detections": 0
+        },
+        {
+          "image": "test_DWH008__563__.png",
+          "repeat": 1,
+          "seconds": 0.011772125028073788,
+          "serialized_bytes": 28,
+          "detections": 0
+        },
+        {
+          "image": "test_DWH009__616__.png",
+          "repeat": 1,
+          "seconds": 0.011641167104244232,
+          "serialized_bytes": 28,
+          "detections": 0
+        },
+        {
+          "image": "test_HEB007__342__.png",
+          "repeat": 1,
+          "seconds": 0.010557250119745731,
+          "serialized_bytes": 28,
+          "detections": 0
+        },
+        {
+          "image": "test_HEB016__613__.png",
+          "repeat": 1,
+          "seconds": 0.010997833218425512,
+          "serialized_bytes": 28,
+          "detections": 0
+        }
+      ]
+    }
+  }
+}

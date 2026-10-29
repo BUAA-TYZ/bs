@@ -1,0 +1,26 @@
+{
+  "job": "2026-12-01_base_local",
+  "status": "PASS",
+  "finished_at_utc": "2026-10-17T16:42:57.789146+00:00",
+  "config_sha256": "ac0973f9470fb22a31f2297ba5ecb8f203d9dd585245707914f17a799196df01",
+  "counts_as_formal_run": true,
+  "audit": {
+    "status": "PASS",
+    "P300_count_exact": true,
+    "P300_ratio_consistent": true,
+    "expected": {
+      "on_time_tasks": 163,
+      "total_tasks": 207,
+      "P300": 0.7874396135265701,
+      "R300_seconds": 129.73927536231884
+    },
+    "recorded": {
+      "on_time_tasks": 163,
+      "total_tasks": 207,
+      "P300": 0.7874396135265701,
+      "R300_seconds": 129.73927536231884
+    },
+    "R300_absolute_error_seconds": 0.0,
+    "R300_absolute_tolerance_seconds": 1e-06
+  }
+}

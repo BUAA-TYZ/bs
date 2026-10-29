@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "original_source_files_verified": 62,
+  "changed_original_sources": [],
+  "protocol_sha256": "11c083cfa8d83dfa4aff41e49aa6f7196cd962fb95b390ce14657ceb3371f320",
+  "original_config_sha256": "12b7551fad7e30e3449ba81c265f2f13efc49228151ad1abba8c79e24b25d1cb",
+  "reused_record_hashes": {
+    "local": "aafc27bec5a3af82e843aace594c31ab2473a29c9bf5a1274a8172c3a69e5fe0",
+    "ground": "139de39d2eb2c0e30bd9b840417881619c8c9ca054449bce5d5513582ca66619"
+  },
+  "new_analysis_hashes": {
+    "analysis/calibrate_redesign_geometry.py": "642c7819ed2e1940e2069518a1134a4a49a8c48dda1622e722806819db34a10c",
+    "analysis/calibrate_redesign_runtime.py": "94cd860991f1d960b029fdc4b81450b7d70b47cc261300e718dc5d3dec7a2a9d",
+    "/Users/bytedance/Projects/bs/analysis/report_redesign_calibration.py": "c78de68b9f4c44e787c71d1bc10fae85c9024025efe456c5a86a88877fd0b35e",
+    "tests/test_calibration_geometry.py": "fae5f03cca97454b681d5051c5b64605bb73ffc43d5e8afdc644079ac1f6124c"
+  },
+  "bound_files_sha256": {
+    "12": "6000d14c4d5370a8522b2dce970b802d7c805b6f67f35085e8701ec5ea4e0f70",
+    "144": "ce44fcfd4106cb084c0877643ec4614117b83f3981cf8345cb4e0ca046db75bb",
+    "1056": "86e7f34e2fb687b039639d1b8678d9c14a18e57c7775321f2ab7554c20931898"
+  },
+  "tests": "6 focused tests passed; all actual timely deliveries dominated by protocol bound; geometric >= protocol; five stations >= single per task",
+  "all_deadlines_fully_observed": true,
+  "sealed_test_dates_accessed": false
+}

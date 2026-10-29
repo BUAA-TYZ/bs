@@ -1,0 +1,31 @@
+{
+  "scope": "Post hoc read-only diagnosis of validation_near_high_1; not an additional simulation",
+  "method": "cgs_compute_adapted",
+  "reference": "validation_near_high_1_cgs_compute_adapted_dt1.json",
+  "candidate": "validation_near_high_1_cgs_compute_adapted_dt0.5.json",
+  "total_isl_sent_mb": {
+    "dt1": 26.829376,
+    "dt05": 33.118214,
+    "dt05_minus_dt1": 6.288838,
+    "dt1_relative_to_dt05_minus_one": -0.18989061427044351
+  },
+  "dominant_edge": {
+    "key": "isl:21->22",
+    "dt1_mb": 25.173304,
+    "dt05_mb": 31.464760000000002,
+    "dt05_minus_dt1_mb": 6.291456,
+    "two_window_raw_packet_mb": 6.291456
+  },
+  "other_edges_combined_dt05_minus_dt1_mb": -0.002618,
+  "changed_result_path_counts": [
+    {"task_id": "task_24", "dt1_result_hops": 22, "dt05_result_hops": 18,
+     "dt1_latency_seconds": 9.0, "dt05_latency_seconds": 6.5},
+    {"task_id": "task_81", "dt1_result_hops": 22, "dt05_result_hops": 21,
+     "dt1_latency_seconds": 8.0, "dt05_latency_seconds": 5.5}
+  ],
+  "total_result_hops": {"dt1": 2672, "dt05": 2667},
+  "recorded_raw_relay_hops": {"dt1": 0, "dt05": 0},
+  "interpretation": "The dominant edge difference exactly matches the size of one two-window raw packet. This is consistent with one extra such packet transmission, but no tile-level transfer log was captured, so the task ID and decision trigger are not established.",
+  "counter_limitation": "raw_relay_hops counts raw_relay_path. In the distributed pipeline ordinary OFFLOAD does not initialize this path; the automatic raw-ground-relay path does. Zero raw_relay_hops is therefore not evidence of zero ordinary raw offloading.",
+  "metric_boundary": "Identical age scores and task completion sets do not imply stable routing actions or ISL traffic. The 6.288838 MB traffic difference is not floating-point accumulation error."
+}

@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "command": ".venv/bin/python -B -m unittest discover -s tests -p test_s_formal_20261029.py -v",
+  "tests": 5,
+  "real_toy_methods": 20,
+  "synthetic_report_records": 60,
+  "independently_verified_synthetic_metric_intervals": 336,
+  "checks": [
+    "Exact complete six-rule and twelve-rule sets, strict inequalities, P600 equality passes non-decrease",
+    "Formal dates require matching S opening and manifest; second opening rejected",
+    "Failed batch drains all nine without prefetch or retry",
+    "Six-hour scoring with full 600-second warmup and followup preserves template physics",
+    "All20 real toy worker records and60 synthetic report records pass independent metrics, curves, envelopes, bootstrap and cross-scale verification"
+  ],
+  "synthetic_results_are_not_experiment_results": true,
+  "no_active_experiment_pool_before_launch": true,
+  "available_disk_gib_approx": 509,
+  "paper_directory_modified": false
+}

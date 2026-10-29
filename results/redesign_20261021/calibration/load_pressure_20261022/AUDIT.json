@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "source_files_verified": 62,
+  "original_releases_sources_modes_reproduced": 136,
+  "verification": {
+    "maritime80": {
+      "images": 1128,
+      "per_source_min": 41,
+      "per_source_max": 53,
+      "spacing_and_capture_bounds_pass": true,
+      "independent_600s_and_6h_peaks_pass": true
+    },
+    "maritime160": {
+      "images": 1154,
+      "per_source_min": 41,
+      "per_source_max": 53,
+      "spacing_and_capture_bounds_pass": true,
+      "independent_600s_and_6h_peaks_pass": true
+    }
+  },
+  "files": {
+    "results/redesign_20261021/calibration/load_pressure_20261022/ANALYTIC_REPORT.md": "64fae447960c3ef6e7f5155408aec163fd5801f93bb7988ac74c435c75644526",
+    "results/redesign_20261021/calibration/load_pressure_20261022/MARITIME_EXTENSION.md": "a6bbe2c4e7874ff3206004b84eb6fd82224dbb0e9311a93bd87c1a2d7a600a44",
+    "results/redesign_20261021/calibration/load_pressure_20261022/PROTOCOL.md": "a315ae3f1367b0e0b220a4b185641913bd3341359fe7b344983bd5aca7c33775",
+    "results/redesign_20261021/calibration/load_pressure_20261022/REPORT.md": "7436c7084887f54df10e773c0cb38f128962ff656c2ce5e967ee9741baa3f439",
+    "results/redesign_20261021/calibration/load_pressure_20261022/analytic.json": "d68f5270a3a78fd66651322b1558ec4620e6c2d0d132b8bd56bd45b65b8c3524",
+    "results/redesign_20261021/calibration/load_pressure_20261022/coast40_arrivals.json": "8cdbfdf1bab829403a9be045ee9bdfbdbbb95721fc070a551622e4e735a79b5e",
+    "results/redesign_20261021/calibration/load_pressure_20261022/coast80_arrivals.json": "378244b1b56f56103e1602083138729c7b79da61b042a6537c1d0afef1883208",
+    "results/redesign_20261021/calibration/load_pressure_20261022/expanded_windows.json": "b395dba936e7d2b237537b8b4f7f1d8448955c9a5ba6b75d3ad2d4aea3673bb1",
+    "results/redesign_20261021/calibration/load_pressure_20261022/geometry_progress.json": "38374128f66fc59c7a6ac887aa1bce68d2aa7bc42b11ea8b6c5fcdba50554fa6",
+    "results/redesign_20261021/calibration/load_pressure_20261022/maritime_extension/estimate.json": "5078ffa08113b4f3cc6f0f288c20e4e7df868f3686b95fa31283a0a09b9c6f80",
+    "results/redesign_20261021/calibration/load_pressure_20261022/maritime_extension/maritime160_arrivals.json": "e6b7b3a9413a02c84b4f68c8c735be15d0563ce54cc0e158cb89e24c447a8d09",
+    "results/redesign_20261021/calibration/load_pressure_20261022/maritime_extension/maritime80_arrivals.json": "f195fcf38b38201dc69d7f364462aeaa321b6dac8d5102627ee074df203fcb5a",
+    "results/redesign_20261021/calibration/load_pressure_20261022/maritime_extension/registration.json": "045aebced6064913831dd59bc9be3ac5cd10896345d052e768c6ce5f0d53a7a8",
+    "results/redesign_20261021/calibration/load_pressure_20261022/maritime_extension/windows.json": "7a3375e7bb319b87c2e44ff1a993bbb020d6ceeea504d205f326c2811ac3df64",
+    "results/redesign_20261021/calibration/load_pressure_20261022/noaa_waterlevels.json": "675fee26a8cc5fa44efdaef4e913559fefb225e25cff9aff429ad03cddf89908",
+    "results/redesign_20261021/calibration/load_pressure_20261022/target_registration.json": "28da95079f4eab9c978886fdfeb47f178ffb2e84a09f525fa96259a082c20320",
+    "results/redesign_20261021/calibration/load_pressure_20261022/workload_estimate.json": "d0f2a48ce90889fe34a9580ba673297408e3396fe08fa2f08a64660509f9a743"
+  },
+  "auditor_sha256": "865da1a0c20ac0d8eee00f4468e8f59676c8aa14e3e08e1ae85231ee0513ce21",
+  "no_scheduler_run": true,
+  "sealed_test_dates_accessed": false,
+  "known_limits": [
+    "Geometry is sampled; no slew/thermal/energy duty-cycle validation",
+    "Demand utilization is not realized downlink utilization",
+    "Runtime is a scaling budget, not a high-load benchmark"
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "scope": "GPU activity is not SM/DRAM saturation. CPU download wait includes prior asynchronous forward.",
+  "modes": [
+    {
+      "mode": "batch1",
+      "profiled_windows": 8,
+      "complete_phase_range_counts": {
+        "preprocess": 8,
+        "upload_normalize": 8,
+        "forward": 8,
+        "download": 8,
+        "postprocess_encode": 8
+      },
+      "capture_wall_s": 4.730569664,
+      "kernel_union_s": 3.738689952,
+      "kernel_sum_s": 3.738689952,
+      "copy_union_s": 0.08381808,
+      "gpu_activity_union_s": 3.822508032,
+      "gpu_activity_wall_fraction": 0.8080439151101781,
+      "copy_only_wall_fraction": 0.017718390374390224,
+      "overlapping_kernel_excess_s": 0.0,
+      "stage_worker_mean_ms": {
+        "preprocess/host_s": 16.82648668065667,
+        "upload_normalize/host_s": 6.984422157984227,
+        "upload_normalize/gpu_elapsed_s": 11.462308049201965,
+        "forward/host_s": 33.07318256702274,
+        "forward/gpu_elapsed_s": 463.1687545776367,
+        "download/host_s": 439.9329122970812,
+        "download/gpu_elapsed_s": 5.277884006500244,
+        "postprocess_encode/host_s": 61.456180934328586
+      },
+      "top_kernels": [
+        {
+          "name": "ampere_sgemm_128x128_tn",
+          "total_s": 1.733601792,
+          "count": 8,
+          "fraction_of_summed_kernel_time": 0.4636923131517272
+        },
+        {
+          "name": "vectorized_elementwise_kernel",
+          "total_s": 0.44791728,
+          "count": 912,
+          "fraction_of_summed_kernel_time": 0.11980594426140849
+        },
+        {
+          "name": "cunn_SoftMaxForward",
+          "total_s": 0.262039424,
+          "count": 8,
+          "fraction_of_summed_kernel_time": 0.07008856775080342
+        },
+        {
+          "name": "elementwise_kernel",
+          "total_s": 0.261756992,
+          "count": 744,
+          "fraction_of_summed_kernel_time": 0.07001302471203154
+        },
+        {
+          "name": "ampere_sgemm_128x128_nt",
+          "total_s": 0.159640128,
+          "count": 8,
+          "fraction_of_summed_kernel_time": 0.04269948298724291
+        },
+        {
+          "name": "Kernel",
+          "total_s": 0.158211008,
+          "count": 352,
+          "fraction_of_summed_kernel_time": 0.04231723144503211
+        },
+        {
+          "name": "CatArrayBatchedCopy_aligned16_contig",
+          "total_s": 0.126207104,
+          "count": 208,
+          "fraction_of_summed_kernel_time": 0.03375703939624251
+        },
+        {
+          "name": "cudnn_infer_ampere_scudnn_winograd_128x128_ldg1_ldg4_relu_tile148t_nt_v1",
+          "total_s": 0.109384384,
+          "count": 208,
+          "fraction_of_summed_kernel_time": 0.029257409789085392
+        },
+        {
+          "name": "nchwToNhwcKernel",
+          "total_s": 0.071673024,
+          "count": 128,
+          "fraction_of_summed_kernel_time": 0.019170625251141445
+        },
+        {
+          "name": "cudnn_infer_ampere_scudnn_128x64_relu_medium_nn_v1",
+          "total_s": 0.068431232,
+          "count": 16,
+          "fraction_of_summed_kernel_time": 0.01830353222079647
+        },
+        {
+          "name": "conv_depthwise2d_forward_kernel",
+          "total_s": 0.065655168,
+          "count": 56,
+          "fraction_of_summed_kernel_time": 0.017561009028009392
+        },
+        {
+          "name": "implicit_convolve_sgemm",
+          "total_s": 0.054609632,
+          "count": 8,
+          "fraction_of_summed_kernel_time": 0.014606622293134192
+        }
+      ],
+      "attention_kernel_union_s": 2.34413568,
+      "attention_shapes": {
+        "attention/0/model.10.m.0.attn": {
+          "input": [
+            1,
+            128,
+            128,
+            128
+          ],
+          "heads": 2,
+          "key_dim": 32,
+          "head_dim": 64,
+          "one_attention_matrix_bytes": 2147483648
+        }
+      },
+      "telemetry": {
+        "gpu_busy_percent": {
+          "samples": 44,
+          "mean": 79.27272727272727,
+          "min": 0.0,
+          "max": 99.0
+        },
+        "emc_busy_percent": {
+          "samples": 0,
+          "status": "unavailable"
+        },
+        "system_ram_reported_MB": {
+          "samples": 44,
+          "mean": 8912.75,
+          "min": 8867.0,
+          "max": 8918.0
+        },
+        "gpu_temperature_C": {
+          "samples": 0,
+          "status": "unavailable"
+        },
+        "gpu_frequency_MHz": {
+          "samples": 44,
+          "mean": 1286.0113636363637,
+          "min": 816.0,
+          "max": 1300.5
+        }
+      },
+      "diagnostics": [
+        {
+          "timestamp": -12866069440,
+          "timestampType": 1,
+          "source": 2,
+          "severity": 1,
+          "text": "Process was launched by the profiler, see /tmp/nvidia/nsight_systems/quadd_session_10485971/streams/pid_485983_stdout.log and stderr.log for program output",
+          "globalPid": 289628418473984
+        },
+        {
+          "timestamp": -12855294816,
+          "timestampType": 1,
+          "source": 1,
+          "severity": 1,
+          "text": "Common injection library initialized successfully.",
+          "globalPid": 289628418473984
+        },
+        {
+          "timestamp": -9665030752,
+          "timestampType": 1,
+          "source": 1,
+          "severity": 1,
+          "text": "Buffers holding CUDA trace data will be flushed on CudaProfilerStop() call. See --flush-on-cudaprofilerstop to control this behavior.",
+          "globalPid": 289628418473984
+        },
+        {
+          "timestamp": -9661403584,
+          "timestampType": 1,
+          "source": 1,
+          "severity": 1,
+          "text": "Loaded CUPTI library: /opt/nvidia/nsight-systems/2024.2.2/target-linux-tegra-armv8/libcupti-tegra.so.12.4",
+          "globalPid": 289628418473984
+        },
+        {
+          "timestamp": -9657469408,
+          "timestampType": 1,
+          "source": 1,
+          "severity": 1,
+          "text": "CUDA injection initialized successfully.",
+          "globalPid": 289628418473984
+        },
+        {
+          "timestamp": -8962036608,
+          "timestampType": 1,
+          "source": 1,
+          "severity": 1,
+          "text": "NVTX injection initialized successfully.",
+          "globalPid": 289628418473984
+        },
+        {
+          "timestamp": 0,
+          "timestampType": 1,
+          "source": 3,
+          "severity": 1,
+          "text": "Profiling has started.",
+          "globalPid": -144115188075855872
+        },
+        {
+          "timestamp": 11278336,
+          "timestampType": 1,
+          "source": 1,
+          "severity": 1,
+          "text": "Profiling started due to cudaProfilerStart API invoked in the application.",
+          "globalPid": 289628418473984
+        },
+        {
+          "timestamp": 24089819,
+          "timestampType": 2,
+          "source": 3,
+          "severity": 2,
+          "text": "Not all NVTX events might have been collected.",
+          "globalPid": 289628418473984
+        },
+        {
+          "timestamp": 24095035,
+          "timestampType": 2,
+          "source": 3,
+          "severity": 1,
+          "text": "Number of NVTX events collected: \t49.",
+          "globalPid": 289628418473984
+        },
+        {
+          "timestamp": 24098683,
+          "timestampType": 2,
+          "source": 3,
+          "severity": 2,
+          "text": "Not all CUDA events might have been collected.",
+          "globalPid": 289628418473984
+        },
+        {
+          "timestamp": 24100251,
+          "timestampType": 2,
+          "source": 3,
+          "severity": 1,
+          "text": "Number of CUDA events collected: \t7938.",
+          "globalPid": 289628418473984
+        },
+        {
+          "timestamp": 4745373152,
+          "timestampType": 1,
+          "source": 3,
+          "severity": 1,
+          "text": "Profiling has stopped.",
+          "globalPid": -144115188075855872
+        },
+        {
+          "timestamp": 4746375488,
+          "timestampType": 1,
+          "source": 1,
+          "severity": 1,
+          "text": "Number of CUPTI events produced: \t8745, CUPTI buffers: 20.",
+          "globalPid": 289628418473984
+        }
+      ]
+    }
+  ]
+}

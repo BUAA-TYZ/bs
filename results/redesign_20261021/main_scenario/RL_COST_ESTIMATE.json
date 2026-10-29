@@ -1,0 +1,165 @@
+{
+  "scope": "Analytic budget only, no environment or training run",
+  "timings": [
+    {
+      "segment": "hour_3600s",
+      "method": "local",
+      "wall_seconds": 729.7448796660028,
+      "policy_seconds": 0.0045957747715874575,
+      "scored_images": 72,
+      "unique_scored_whole_image_decisions_upper_bound": 72,
+      "decision_quote_rows": 0,
+      "source": "results/redesign_20261021/calibration/load_pressure_20261022/hour_3600s/local.json",
+      "sha256": "0c17731fb9776435c6c23a922f8b66c4c833c80098369969abab652cf5b18323"
+    },
+    {
+      "segment": "hour_3600s",
+      "method": "ground",
+      "wall_seconds": 717.4058822079969,
+      "policy_seconds": 0.0016440219478681684,
+      "scored_images": 72,
+      "unique_scored_whole_image_decisions_upper_bound": 72,
+      "decision_quote_rows": 0,
+      "source": "results/redesign_20261021/calibration/load_pressure_20261022/hour_3600s/ground.json",
+      "sha256": "5b7db751a8df23a28119674d125b9871dd0b42fc24f972c38e99a1edac8b8021"
+    },
+    {
+      "segment": "hour_3600s",
+      "method": "fifo",
+      "wall_seconds": 564.6343120829988,
+      "policy_seconds": 3.4382496479302063,
+      "scored_images": 72,
+      "unique_scored_whole_image_decisions_upper_bound": 72,
+      "decision_quote_rows": 0,
+      "source": "results/redesign_20261021/calibration/load_pressure_20261022/hour_3600s/fifo.json",
+      "sha256": "c6b492cd0b06b1b5c8cdb0fb44fccd8da36b67c794a7ee1c4f4897c90e3668f2"
+    },
+    {
+      "segment": "six_21600s",
+      "method": "local",
+      "wall_seconds": 4814.9925588749975,
+      "policy_seconds": 0.0222480040465598,
+      "scored_images": 340,
+      "unique_scored_whole_image_decisions_upper_bound": 340,
+      "decision_quote_rows": 0,
+      "source": "results/redesign_20261021/calibration/load_pressure_20261022/six_21600s/neutral/local.json",
+      "sha256": "b0ae3522f8e02d5e0899aafe5a7a16d6e81f6a120f8b324221543e371d599067"
+    },
+    {
+      "segment": "six_21600s",
+      "method": "ground",
+      "wall_seconds": 3800.7878629999977,
+      "policy_seconds": 0.012413850898155943,
+      "scored_images": 340,
+      "unique_scored_whole_image_decisions_upper_bound": 340,
+      "decision_quote_rows": 0,
+      "source": "results/redesign_20261021/calibration/load_pressure_20261022/six_21600s/neutral/ground.json",
+      "sha256": "0a1ea17f6575fd4f985119554eb91c30e450a9849121b4373af4891839890277"
+    },
+    {
+      "segment": "six_21600s",
+      "method": "fifo",
+      "wall_seconds": 3060.8765220420028,
+      "policy_seconds": 20.257886052182585,
+      "scored_images": 340,
+      "unique_scored_whole_image_decisions_upper_bound": 340,
+      "decision_quote_rows": 0,
+      "source": "results/redesign_20261021/calibration/load_pressure_20261022/six_21600s/neutral/fifo.json",
+      "sha256": "bfe6b14bacaf2556fb2eec287b9ac712cd48954267275128973a25665e3740cd"
+    },
+    {
+      "segment": "six_21600s",
+      "method": "v3",
+      "wall_seconds": 4262.597782792,
+      "policy_seconds": 98.55830684874672,
+      "scored_images": 340,
+      "unique_scored_whole_image_decisions_upper_bound": 340,
+      "decision_quote_rows": 955,
+      "source": "results/redesign_20261021/calibration/load_pressure_20261022/six_21600s/information/v3.json",
+      "sha256": "0e7e54cc1a1329c75fb5a7f74fd1aca86a2d2dee2a5e11bc75c0900c70e6f43b"
+    },
+    {
+      "segment": "six_21600s",
+      "method": "local_1",
+      "wall_seconds": 5454.246173083004,
+      "policy_seconds": 0.31527927084243856,
+      "scored_images": 340,
+      "unique_scored_whole_image_decisions_upper_bound": 340,
+      "decision_quote_rows": 342,
+      "source": "results/redesign_20261021/calibration/load_pressure_20261022/six_21600s/information/local_1.json",
+      "sha256": "e560a1cd4a9fdf4d51e142a104bd8c14d49d533b06363c904e80e5580d8ad2fd"
+    },
+    {
+      "segment": "six_21600s",
+      "method": "local_2",
+      "wall_seconds": 5446.315686708003,
+      "policy_seconds": 1.2027314177976223,
+      "scored_images": 340,
+      "unique_scored_whole_image_decisions_upper_bound": 340,
+      "decision_quote_rows": 342,
+      "source": "results/redesign_20261021/calibration/load_pressure_20261022/six_21600s/information/local_2.json",
+      "sha256": "9c420f9e441171eb415a5b1ada11c14c1a791576fdb92acd74520c87dbc51786"
+    }
+  ],
+  "projections": [
+    {
+      "segment": "hour_3600s",
+      "observed_single_wall_s_range": [
+        564.6343120829988,
+        729.7448796660028
+      ],
+      "mac_workers": 9,
+      "planning_efficiency_range": [
+        0.6,
+        1.0
+      ],
+      "episodes_per_hour_range": [
+        26.63944693780859,
+        57.38227257297346
+      ],
+      "whole_image_decisions_per_hour_upper_range": [
+        1918.0401795222185,
+        4131.523625254089
+      ],
+      "seven_days_at_half_availability_hours": 84,
+      "seven_days_decisions_upper_range": [
+        161115.37507986635,
+        347047.9845213435
+      ]
+    },
+    {
+      "segment": "six_21600s",
+      "observed_single_wall_s_range": [
+        3060.8765220420028,
+        5454.246173083004
+      ],
+      "mac_workers": 9,
+      "planning_efficiency_range": [
+        0.6,
+        1.0
+      ],
+      "episodes_per_hour_range": [
+        3.5641955612376712,
+        10.585203214399836
+      ],
+      "whole_image_decisions_per_hour_upper_range": [
+        1211.8264908208082,
+        3598.9690928959444
+      ],
+      "seven_days_at_half_availability_hours": 84,
+      "seven_days_decisions_upper_range": [
+        101793.42522894789,
+        302313.4038032593
+      ]
+    }
+  ],
+  "calendar": "2026-10-27 through 2026-11-02 inclusive, 168h calendar / 84h assumed usable",
+  "orin_included": false,
+  "prior_nine_worker_probe": "results/redesign_20261021/calibration/capacity_20261021/host_probe/REPORT.md",
+  "limitations": [
+    "One-hour full v3/neural policy not timed; neutral runtime is optimistic for learner",
+    "Six-hour timings were 3/5-worker panels, not nine-worker high-load measurements",
+    "Repeated same trace/image decisions are correlated, not fresh independent examples",
+    "Warm start and update/GNN tensor costs not measured; budget deduction is hypothetical"
+  ]
+}

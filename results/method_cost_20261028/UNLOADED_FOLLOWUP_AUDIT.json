@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "groups": [
+    {
+      "group": "fixed_cpu_t1",
+      "sha256": "1b05144ad0829faa425c102f34f248e6063553a9d40c4939144761cbe379f0ef",
+      "max_probability_error": 1.1920928955078125e-07
+    },
+    {
+      "group": "dynamic_cpu_t1",
+      "sha256": "5d89fb55edf76b22246f17fd6bab82f8caaf3a18b3ad2543d29848f42280365c",
+      "max_probability_error": 2.980232238769531e-07
+    },
+    {
+      "group": "fixed_cpu_t2",
+      "sha256": "c6c2ba8203f19734b1a1c55ed2d387488ea575bf9386326f0608d35a6e2f6324",
+      "max_probability_error": 1.1920928955078125e-07
+    },
+    {
+      "group": "dynamic_cpu_t2",
+      "sha256": "7ffd839b388cee8706fd5e924d403f7e6a570e81fba683325001d27969067b38",
+      "max_probability_error": 2.980232238769531e-07
+    },
+    {
+      "group": "fixed_cuda_0_t1",
+      "sha256": "c2bc286ee8dc33373f289b8d6bae1fe3d81b01361caa03e3bcec23f9fc6586fa",
+      "max_probability_error": 1.7881393432617188e-07
+    },
+    {
+      "group": "dynamic_cuda_0_t1",
+      "sha256": "9a5f26dc4ae27b586cc3cfed21728ca525b6be92fdf84d711b2ad2ca9cbd3ce9",
+      "max_probability_error": 3.8743019104003906e-07
+    },
+    {
+      "group": "fixed_cuda_0_t2",
+      "sha256": "9427ac91fd670f28dbe33e3cd4d15330ddd28bebc65855f9b5905d4e94c5fcf7",
+      "max_probability_error": 1.7881393432617188e-07
+    },
+    {
+      "group": "dynamic_cuda_0_t2",
+      "sha256": "0209accb746f1efcac3783fa55fe43c35cbf61428e90bbd269a111d399a5ade0",
+      "max_probability_error": 3.8743019104003906e-07
+    }
+  ],
+  "input_hash_count": 166,
+  "raw_timing_samples": 32160,
+  "power": "NV Power Mode: MAXN\n0\n",
+  "stable_clock_setting_count": 57,
+  "limitation": "Stored inputs/results/counters checked; remote forward computations not rerun. Dynamic clocks retained.",
+  "verifier_sha256": "6e6014fa31fe22dc981b6640156ecb6874f0018e790350e2e974a4348b4661d9"
+}

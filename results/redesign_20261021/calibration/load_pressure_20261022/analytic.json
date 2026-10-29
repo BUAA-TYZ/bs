@@ -1,0 +1,132 @@
+{
+  "input_hashes": {
+    "results/redesign_20261021/calibration/capacity_20261021/load_1_distributed/protocol.json": "7a8194c8eb11eb6043ff7d5b5de972385a8b490f0416841de2b2390a7e052bd5",
+    "results/redesign_20261021/calibration/contacts_144.npz": "7ed7fdaf388cff64a4256d67c24d7600ffd6f1ded594a0e051e29158ddee8f8a",
+    "results/redesign_20261021/calibration/load_pressure_20261022/PROTOCOL.md": "a315ae3f1367b0e0b220a4b185641913bd3341359fe7b344983bd5aca7c33775",
+    "/Users/bytedance/Projects/bs/analysis/estimate_load_pressure.py": "4e19f97010202c01c5d4f60eb50c48043fc9952e99da7e5139b4d42959a16728"
+  },
+  "date": "2026-10-15",
+  "duration_s": 86400,
+  "images": 136,
+  "mode_size_counts": {
+    "20000": 75,
+    "10000": 32,
+    "30000": 29
+  },
+  "raw_bytes": 118600000000.0,
+  "dispatch_bytes_with_overlap": 166162776576.0,
+  "inference_windows": 7988,
+  "result_bytes": 6509962372,
+  "ground": {
+    "receive_channels": 1,
+    "rate_bytes_s": 50000000.0,
+    "helper_visibility_union_s": 86400.0,
+    "geometry_capacity_bytes": 4320000000000.0,
+    "continuous_capacity_bytes": 4320000000000.0,
+    "sampling_seconds": 10,
+    "peak_600s_geometry_capacity_bytes": 30000000000.0
+  },
+  "peak_600s": {
+    "start_s": 19910.0,
+    "end_s": 20510.0,
+    "raw_bytes": 8800000000.0,
+    "count": 6,
+    "event_indices": [
+      35,
+      36,
+      37,
+      38,
+      39,
+      40
+    ]
+  },
+  "peak_21600s": {
+    "start_s": 2965.0,
+    "end_s": 24565.0,
+    "raw_bytes": 41400000000.0,
+    "count": 41,
+    "event_indices": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45
+    ]
+  },
+  "scaled_loads": [
+    {
+      "factor": 1,
+      "images": 136,
+      "daily_raw_bytes": 118600000000.0,
+      "images_per_source_mean": 5.666666666666667,
+      "peak_600s_raw_bytes": 8800000000.0,
+      "peak_demand_utilization": 0.29333333333333333,
+      "daily_demand_utilization": 0.027453703703703702
+    },
+    {
+      "factor": 4,
+      "images": 544,
+      "daily_raw_bytes": 474400000000.0,
+      "images_per_source_mean": 22.666666666666668,
+      "peak_600s_raw_bytes": 35200000000.0,
+      "peak_demand_utilization": 1.1733333333333333,
+      "daily_demand_utilization": 0.10981481481481481
+    },
+    {
+      "factor": 8,
+      "images": 1088,
+      "daily_raw_bytes": 948800000000.0,
+      "images_per_source_mean": 45.333333333333336,
+      "peak_600s_raw_bytes": 70400000000.0,
+      "peak_demand_utilization": 2.3466666666666667,
+      "daily_demand_utilization": 0.21962962962962962
+    },
+    {
+      "factor": 16,
+      "images": 2176,
+      "daily_raw_bytes": 1897600000000.0,
+      "images_per_source_mean": 90.66666666666667,
+      "peak_600s_raw_bytes": 140800000000.0,
+      "peak_demand_utilization": 4.693333333333333,
+      "daily_demand_utilization": 0.43925925925925924
+    }
+  ],
+  "scope": "Arrival demand / geometric single-channel capacity; not realized receiving utilization or scheduling simulation",
+  "sealed_test_dates_accessed": false
+}

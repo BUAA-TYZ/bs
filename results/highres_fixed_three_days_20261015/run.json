@@ -1,0 +1,198 @@
+{
+  "requested_cli": {
+    "out_dir": "results/highres_fixed_three_days_20261015",
+    "days": 1,
+    "architecture": "heterogeneous",
+    "strips_per_pass": 3,
+    "dt": 1,
+    "isl_mbps": 10000,
+    "downlink_mbps": 1200,
+    "efficiency": 1,
+    "compression_ratio": 3,
+    "ground_compute_multiplier": 1,
+    "source_compute_rate": 1,
+    "decision_batch": 64,
+    "workers": 3,
+    "methods": [
+      "ground_relay",
+      "greedy",
+      "heft_adapted"
+    ],
+    "prepare_only": false,
+    "prepared_dir": "results/highres_three_days_prepared_20261015"
+  },
+  "source_sha256": "7531449b51d5ea36cc1876c280e3876db06790184b7160407b2014f3bd68c336",
+  "python_version": "3.12.13",
+  "packages": {
+    "numpy": "2.4.4",
+    "torch": "2.12.0",
+    "skyfield": "1.54",
+    "PyYAML": "6.0.3"
+  },
+  "scope": "specification-based network pilot with proxy compute; not flight measurements or final MARL evaluation",
+  "effective_config_source": "/Users/bytedance/Projects/bs/results/highres_three_days_prepared_20261015",
+  "prepared_cli_note": "When prepared-dir is set, days/architecture/dt/rates/efficiency/compression/compute/batch are read from saved configs; current CLI values for those fields are ignored",
+  "delivery_horizons_seconds": [
+    300,
+    600,
+    1800,
+    3600,
+    7200,
+    14400
+  ],
+  "provenance": {
+    "scope": "specification-based network pilot with proxy compute; not flight measurements or final MARL evaluation",
+    "epoch": "2026-10-15T00:00:00Z",
+    "orbit": {
+      "architecture": "heterogeneous",
+      "source_ids": [
+        0,
+        1
+      ],
+      "imagers": {
+        "count": 2,
+        "altitude_km": 620,
+        "inclination_deg": 97.9,
+        "raan_deg": [
+          357.5,
+          12.5
+        ],
+        "phase_deg": [
+          0,
+          15
+        ]
+      },
+      "helpers": {
+        "count": 22,
+        "description": "two 550 km, 53 degree planes; 11 per plane; RAAN 0 and 90; Walker phase 1"
+      },
+      "synthetic_tle": true
+    },
+    "nominal_rates_mbps": {
+      "isl": 10000,
+      "downlink": 1200
+    },
+    "payload_efficiency_assumption": 1,
+    "parameter_evidence": "docs/thesis/highres_link_evidence.md",
+    "compute_proxy": "RGB detector CPU/MPS calibration on one Apple M5 Pro; native PAN/MS preprocessing, codec, flight hardware uncalibrated",
+    "result_proxy": "187 bytes per window transferred from old measured RGB workload; high-resolution detection density unvalidated",
+    "aggregation_proxy": "fixed old measured merge time; full-strip merge scaling uncalibrated",
+    "assumptions": [
+      "64 GB per-node data buffer is a design allocation, not a SCOT80 memory specification",
+      "four simultaneous ISL neighbors, 4500 km design range, instantaneous acquisition, zero terminal setup delay",
+      "one Beijing-coordinate receiver, one satellite at a time using aggregate 1.2 Gbps",
+      "full topology prediction and current queue information; no control-plane delay",
+      "day episodes start empty before first acquisition; no cross-day residual carry-over",
+      "fixed one-second decision cadence for every dt; packet batch shared by all star heuristics",
+      "source compression and image conversion are excluded timing terms; equal representation for both paths"
+    ],
+    "workload": {
+      "model": "overlapping_native_window_packets_v2",
+      "parameters": {
+        "width_px": 46668,
+        "height_px": 66668,
+        "bands": 3,
+        "bits_per_sample": 8,
+        "window_px": 1024,
+        "stride_px": 824,
+        "windows_per_tile_axis": 4,
+        "compute_cost_per_window": 0.07026846144969265,
+        "result_size_mb_per_window": 0.000187,
+        "transport_components": [
+          {
+            "name": "PAN",
+            "downsample": 1,
+            "bands": 1,
+            "bits_per_sample": 12
+          },
+          {
+            "name": "MS",
+            "downsample": 4,
+            "bands": 6,
+            "bits_per_sample": 12
+          }
+        ],
+        "transport_compression_ratio": 3
+      },
+      "coordinate_convention": "xyxy, upper bounds exclusive",
+      "edge_rule": "shift_last_window_to_edge_no_padding",
+      "packet_rule": "independent_full_windows_no_pixel_deduplication",
+      "result_rule": "per_window_outputs_before_global_merge",
+      "image_size_mb": 2138.9927789999997,
+      "num_windows": 4617,
+      "num_tiles": 315,
+      "processed_pixels": 4841275392,
+      "coverage_multiplier": 1.5560486527476958,
+      "packet_input_mb": 3328.3768320000004,
+      "total_compute_cost": 324.429486513231,
+      "unmerged_result_mb": 0.863379,
+      "transport": {
+        "format": "native_components_packed_bitstream",
+        "pixel_mapping": "floor(start/downsample), ceil(end/downsample)",
+        "packing": "per_component_contiguous_bits_ceil_to_byte; no row padding or headers",
+        "compression_ratio": 3,
+        "compression_assumption": "Uncompressed/compressed size ratio; fixed modeling assumption, not measured codec performance",
+        "unique_uncompressed_mb": 6416.978336999999,
+        "inference_window_mb": 3.145728,
+        "inference_rule": "bands/bits_per_sample define model input and VRAM proxy, independently of native transport",
+        "compute_rule": "Per-window processing proxy; not a measured native PAN/MS pipeline; decode/pansharpen cost not modeled",
+        "component_rasters": [
+          {
+            "name": "PAN",
+            "downsample": 1,
+            "bands": 1,
+            "bits_per_sample": 12,
+            "width_px": 46668,
+            "height_px": 66668,
+            "packed_bytes": 4666893336
+          },
+          {
+            "name": "MS",
+            "downsample": 4,
+            "bands": 6,
+            "bits_per_sample": 12,
+            "width_px": 11667,
+            "height_px": 16667,
+            "packed_bytes": 1750085001
+          }
+        ]
+      }
+    },
+    "maximum_packet_mb": 11.534336000000001,
+    "serialization_seconds": {
+      "whole_image_downlink": 14.259951859999997,
+      "largest_packet_isl": 0.009227468800000001,
+      "largest_packet_downlink": 0.07689557333333334
+    }
+  },
+  "analysis_source_sha256": {
+    "/Users/bytedance/Projects/bs/analysis/evaluate_highres_scene.py": "da20feadf299c21e73404cdd21346d5e373528f97500cfa93a88211355afe502",
+    "/Users/bytedance/Projects/bs/analysis/evaluate_literature.py": "59c7eab9cb4ae342c480307e147cf7c0277689ad7274591754a28a6314acfcad"
+  },
+  "case_info": [
+    {
+      "id": "day01",
+      "calendar_day": "2026-10-15",
+      "epoch_offset_seconds": 60180,
+      "all_qualifying_events_retained": true,
+      "num_acquisitions": 21,
+      "split": "development"
+    },
+    {
+      "id": "day02",
+      "calendar_day": "2026-10-16",
+      "epoch_offset_seconds": 147590,
+      "all_qualifying_events_retained": true,
+      "num_acquisitions": 15,
+      "split": "development"
+    },
+    {
+      "id": "day03",
+      "calendar_day": "2026-10-17",
+      "epoch_offset_seconds": 229480,
+      "all_qualifying_events_retained": true,
+      "num_acquisitions": 17,
+      "split": "development"
+    }
+  ]
+}

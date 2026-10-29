@@ -1,0 +1,2012 @@
+{
+  "nominal": [
+    [
+      {
+        "method": "ground_compute",
+        "cases": 1,
+        "delivery_score": 0.0,
+        "restricted_mean_latency_seconds": 14400.0,
+        "completed_tasks": 0,
+        "total_tasks": 21,
+        "simulation_seconds_sum": 15.714933791197836,
+        "scheduler_seconds_sum": 0.0
+      },
+      {
+        "method": "ground_tiles",
+        "cases": 1,
+        "delivery_score": 0.0,
+        "restricted_mean_latency_seconds": 14400.0,
+        "completed_tasks": 0,
+        "total_tasks": 21,
+        "simulation_seconds_sum": 38.29220600007102,
+        "scheduler_seconds_sum": 0.0
+      },
+      {
+        "method": "ground_relay",
+        "cases": 1,
+        "delivery_score": 0.7936507936507936,
+        "restricted_mean_latency_seconds": 738.047619047619,
+        "completed_tasks": 21,
+        "total_tasks": 21,
+        "simulation_seconds_sum": 58.72688254201785,
+        "scheduler_seconds_sum": 0.0
+      },
+      {
+        "method": "local",
+        "cases": 1,
+        "delivery_score": 0.6507936507936508,
+        "restricted_mean_latency_seconds": 1345.8095238095239,
+        "completed_tasks": 21,
+        "total_tasks": 21,
+        "simulation_seconds_sum": 89.60464508319274,
+        "scheduler_seconds_sum": 0.009570083
+      },
+      {
+        "method": "greedy",
+        "cases": 1,
+        "delivery_score": 0.9603174603174603,
+        "restricted_mean_latency_seconds": 269.5238095238095,
+        "completed_tasks": 21,
+        "total_tasks": 21,
+        "simulation_seconds_sum": 87.02042333316058,
+        "scheduler_seconds_sum": 0.047555405999999995
+      },
+      {
+        "method": "window_aware",
+        "cases": 1,
+        "delivery_score": 0.8253968253968255,
+        "restricted_mean_latency_seconds": 775.7619047619048,
+        "completed_tasks": 21,
+        "total_tasks": 21,
+        "simulation_seconds_sum": 87.65021512517706,
+        "scheduler_seconds_sum": 0.054838948000000005
+      },
+      {
+        "method": "heft_adapted",
+        "cases": 1,
+        "delivery_score": 0.9841269841269842,
+        "restricted_mean_latency_seconds": 232.9047619047619,
+        "completed_tasks": 21,
+        "total_tasks": 21,
+        "simulation_seconds_sum": 87.6217491668649,
+        "scheduler_seconds_sum": 0.521447425
+      },
+      {
+        "method": "cgs_compute_adapted",
+        "cases": 1,
+        "delivery_score": 0.9841269841269842,
+        "restricted_mean_latency_seconds": 232.57142857142858,
+        "completed_tasks": 21,
+        "total_tasks": 21,
+        "simulation_seconds_sum": 92.45990291703492,
+        "scheduler_seconds_sum": 6.293835575
+      }
+    ],
+    [
+      {
+        "reference": "greedy",
+        "method": "ground_compute",
+        "mean_score_difference": -0.9603174603174603,
+        "wins": 0,
+        "ties": 0,
+        "losses": 1,
+        "common_completed_tasks": 0,
+        "reference_only_completed_tasks": 21,
+        "candidate_only_completed_tasks": 0,
+        "candidate_faster_tasks": 0,
+        "candidate_slower_tasks": 0,
+        "equal_latency_tasks": 0,
+        "cases": [
+          {
+            "case": "day01",
+            "score_difference": -0.9603174603174603,
+            "total_tasks": 21,
+            "common_completed_tasks": 0,
+            "reference_only_completed_tasks": 21,
+            "candidate_only_completed_tasks": 0,
+            "neither_completed_tasks": 0,
+            "reference_failed_tasks": 0,
+            "candidate_failed_tasks": 0,
+            "reference_pending_tasks": 0,
+            "candidate_pending_tasks": 21,
+            "latency_population": "common_completed_only; selection_bias_remains",
+            "reference_latency_mean_seconds": null,
+            "candidate_latency_mean_seconds": null,
+            "reference_latency_p95_seconds": null,
+            "candidate_latency_p95_seconds": null,
+            "candidate_minus_reference_latency_mean_seconds": null,
+            "ratio_of_mean_latencies_reference_over_candidate": null,
+            "candidate_faster_tasks": 0,
+            "candidate_slower_tasks": 0,
+            "equal_latency_tasks": 0
+          }
+        ]
+      },
+      {
+        "reference": "greedy",
+        "method": "ground_tiles",
+        "mean_score_difference": -0.9603174603174603,
+        "wins": 0,
+        "ties": 0,
+        "losses": 1,
+        "common_completed_tasks": 0,
+        "reference_only_completed_tasks": 21,
+        "candidate_only_completed_tasks": 0,
+        "candidate_faster_tasks": 0,
+        "candidate_slower_tasks": 0,
+        "equal_latency_tasks": 0,
+        "cases": [
+          {
+            "case": "day01",
+            "score_difference": -0.9603174603174603,
+            "total_tasks": 21,
+            "common_completed_tasks": 0,
+            "reference_only_completed_tasks": 21,
+            "candidate_only_completed_tasks": 0,
+            "neither_completed_tasks": 0,
+            "reference_failed_tasks": 0,
+            "candidate_failed_tasks": 0,
+            "reference_pending_tasks": 0,
+            "candidate_pending_tasks": 21,
+            "latency_population": "common_completed_only; selection_bias_remains",
+            "reference_latency_mean_seconds": null,
+            "candidate_latency_mean_seconds": null,
+            "reference_latency_p95_seconds": null,
+            "candidate_latency_p95_seconds": null,
+            "candidate_minus_reference_latency_mean_seconds": null,
+            "ratio_of_mean_latencies_reference_over_candidate": null,
+            "candidate_faster_tasks": 0,
+            "candidate_slower_tasks": 0,
+            "equal_latency_tasks": 0
+          }
+        ]
+      },
+      {
+        "reference": "greedy",
+        "method": "ground_relay",
+        "mean_score_difference": -0.16666666666666674,
+        "wins": 0,
+        "ties": 0,
+        "losses": 1,
+        "common_completed_tasks": 21,
+        "reference_only_completed_tasks": 0,
+        "candidate_only_completed_tasks": 0,
+        "candidate_faster_tasks": 2,
+        "candidate_slower_tasks": 19,
+        "equal_latency_tasks": 0,
+        "cases": [
+          {
+            "case": "day01",
+            "score_difference": -0.16666666666666674,
+            "total_tasks": 21,
+            "common_completed_tasks": 21,
+            "reference_only_completed_tasks": 0,
+            "candidate_only_completed_tasks": 0,
+            "neither_completed_tasks": 0,
+            "reference_failed_tasks": 0,
+            "candidate_failed_tasks": 0,
+            "reference_pending_tasks": 0,
+            "candidate_pending_tasks": 0,
+            "latency_population": "common_completed_only; selection_bias_remains",
+            "reference_latency_mean_seconds": 269.5238095238095,
+            "candidate_latency_mean_seconds": 738.047619047619,
+            "reference_latency_p95_seconds": 482.0,
+            "candidate_latency_p95_seconds": 812.0,
+            "candidate_minus_reference_latency_mean_seconds": 468.5238095238095,
+            "ratio_of_mean_latencies_reference_over_candidate": 0.36518485063552486,
+            "candidate_faster_tasks": 2,
+            "candidate_slower_tasks": 19,
+            "equal_latency_tasks": 0
+          }
+        ]
+      },
+      {
+        "reference": "greedy",
+        "method": "local",
+        "mean_score_difference": -0.30952380952380953,
+        "wins": 0,
+        "ties": 0,
+        "losses": 1,
+        "common_completed_tasks": 21,
+        "reference_only_completed_tasks": 0,
+        "candidate_only_completed_tasks": 0,
+        "candidate_faster_tasks": 0,
+        "candidate_slower_tasks": 21,
+        "equal_latency_tasks": 0,
+        "cases": [
+          {
+            "case": "day01",
+            "score_difference": -0.30952380952380953,
+            "total_tasks": 21,
+            "common_completed_tasks": 21,
+            "reference_only_completed_tasks": 0,
+            "candidate_only_completed_tasks": 0,
+            "neither_completed_tasks": 0,
+            "reference_failed_tasks": 0,
+            "candidate_failed_tasks": 0,
+            "reference_pending_tasks": 0,
+            "candidate_pending_tasks": 0,
+            "latency_population": "common_completed_only; selection_bias_remains",
+            "reference_latency_mean_seconds": 269.5238095238095,
+            "candidate_latency_mean_seconds": 1345.8095238095239,
+            "reference_latency_p95_seconds": 482.0,
+            "candidate_latency_p95_seconds": 2375.0,
+            "candidate_minus_reference_latency_mean_seconds": 1076.2857142857142,
+            "ratio_of_mean_latencies_reference_over_candidate": 0.20026891232043026,
+            "candidate_faster_tasks": 0,
+            "candidate_slower_tasks": 21,
+            "equal_latency_tasks": 0
+          }
+        ]
+      },
+      {
+        "reference": "greedy",
+        "method": "window_aware",
+        "mean_score_difference": -0.13492063492063489,
+        "wins": 0,
+        "ties": 0,
+        "losses": 1,
+        "common_completed_tasks": 21,
+        "reference_only_completed_tasks": 0,
+        "candidate_only_completed_tasks": 0,
+        "candidate_faster_tasks": 0,
+        "candidate_slower_tasks": 10,
+        "equal_latency_tasks": 11,
+        "cases": [
+          {
+            "case": "day01",
+            "score_difference": -0.13492063492063489,
+            "total_tasks": 21,
+            "common_completed_tasks": 21,
+            "reference_only_completed_tasks": 0,
+            "candidate_only_completed_tasks": 0,
+            "neither_completed_tasks": 0,
+            "reference_failed_tasks": 0,
+            "candidate_failed_tasks": 0,
+            "reference_pending_tasks": 0,
+            "candidate_pending_tasks": 0,
+            "latency_population": "common_completed_only; selection_bias_remains",
+            "reference_latency_mean_seconds": 269.5238095238095,
+            "candidate_latency_mean_seconds": 775.7619047619048,
+            "reference_latency_p95_seconds": 482.0,
+            "candidate_latency_p95_seconds": 1558.0,
+            "candidate_minus_reference_latency_mean_seconds": 506.23809523809524,
+            "ratio_of_mean_latencies_reference_over_candidate": 0.3474310969246823,
+            "candidate_faster_tasks": 0,
+            "candidate_slower_tasks": 10,
+            "equal_latency_tasks": 11
+          }
+        ]
+      },
+      {
+        "reference": "greedy",
+        "method": "heft_adapted",
+        "mean_score_difference": 0.023809523809523836,
+        "wins": 1,
+        "ties": 0,
+        "losses": 0,
+        "common_completed_tasks": 21,
+        "reference_only_completed_tasks": 0,
+        "candidate_only_completed_tasks": 0,
+        "candidate_faster_tasks": 14,
+        "candidate_slower_tasks": 0,
+        "equal_latency_tasks": 7,
+        "cases": [
+          {
+            "case": "day01",
+            "score_difference": 0.023809523809523836,
+            "total_tasks": 21,
+            "common_completed_tasks": 21,
+            "reference_only_completed_tasks": 0,
+            "candidate_only_completed_tasks": 0,
+            "neither_completed_tasks": 0,
+            "reference_failed_tasks": 0,
+            "candidate_failed_tasks": 0,
+            "reference_pending_tasks": 0,
+            "candidate_pending_tasks": 0,
+            "latency_population": "common_completed_only; selection_bias_remains",
+            "reference_latency_mean_seconds": 269.5238095238095,
+            "candidate_latency_mean_seconds": 232.9047619047619,
+            "reference_latency_p95_seconds": 482.0,
+            "candidate_latency_p95_seconds": 442.0,
+            "candidate_minus_reference_latency_mean_seconds": -36.61904761904762,
+            "ratio_of_mean_latencies_reference_over_candidate": 1.157227560826007,
+            "candidate_faster_tasks": 14,
+            "candidate_slower_tasks": 0,
+            "equal_latency_tasks": 7
+          }
+        ]
+      },
+      {
+        "reference": "greedy",
+        "method": "cgs_compute_adapted",
+        "mean_score_difference": 0.023809523809523836,
+        "wins": 1,
+        "ties": 0,
+        "losses": 0,
+        "common_completed_tasks": 21,
+        "reference_only_completed_tasks": 0,
+        "candidate_only_completed_tasks": 0,
+        "candidate_faster_tasks": 14,
+        "candidate_slower_tasks": 0,
+        "equal_latency_tasks": 7,
+        "cases": [
+          {
+            "case": "day01",
+            "score_difference": 0.023809523809523836,
+            "total_tasks": 21,
+            "common_completed_tasks": 21,
+            "reference_only_completed_tasks": 0,
+            "candidate_only_completed_tasks": 0,
+            "neither_completed_tasks": 0,
+            "reference_failed_tasks": 0,
+            "candidate_failed_tasks": 0,
+            "reference_pending_tasks": 0,
+            "candidate_pending_tasks": 0,
+            "latency_population": "common_completed_only; selection_bias_remains",
+            "reference_latency_mean_seconds": 269.5238095238095,
+            "candidate_latency_mean_seconds": 232.57142857142858,
+            "reference_latency_p95_seconds": 482.0,
+            "candidate_latency_p95_seconds": 442.0,
+            "candidate_minus_reference_latency_mean_seconds": -36.95238095238095,
+            "ratio_of_mean_latencies_reference_over_candidate": 1.158886158886159,
+            "candidate_faster_tasks": 14,
+            "candidate_slower_tasks": 0,
+            "equal_latency_tasks": 7
+          }
+        ]
+      },
+      {
+        "reference": "ground_compute",
+        "method": "ground_tiles",
+        "mean_score_difference": 0.0,
+        "wins": 0,
+        "ties": 1,
+        "losses": 0,
+        "common_completed_tasks": 0,
+        "reference_only_completed_tasks": 0,
+        "candidate_only_completed_tasks": 0,
+        "candidate_faster_tasks": 0,
+        "candidate_slower_tasks": 0,
+        "equal_latency_tasks": 0,
+        "cases": [
+          {
+            "case": "day01",
+            "score_difference": 0.0,
+            "total_tasks": 21,
+            "common_completed_tasks": 0,
+            "reference_only_completed_tasks": 0,
+            "candidate_only_completed_tasks": 0,
+            "neither_completed_tasks": 21,
+            "reference_failed_tasks": 0,
+            "candidate_failed_tasks": 0,
+            "reference_pending_tasks": 21,
+            "candidate_pending_tasks": 21,
+            "latency_population": "common_completed_only; selection_bias_remains",
+            "reference_latency_mean_seconds": null,
+            "candidate_latency_mean_seconds": null,
+            "reference_latency_p95_seconds": null,
+            "candidate_latency_p95_seconds": null,
+            "candidate_minus_reference_latency_mean_seconds": null,
+            "ratio_of_mean_latencies_reference_over_candidate": null,
+            "candidate_faster_tasks": 0,
+            "candidate_slower_tasks": 0,
+            "equal_latency_tasks": 0
+          }
+        ]
+      },
+      {
+        "reference": "ground_compute",
+        "method": "ground_relay",
+        "mean_score_difference": 0.7936507936507936,
+        "wins": 1,
+        "ties": 0,
+        "losses": 0,
+        "common_completed_tasks": 0,
+        "reference_only_completed_tasks": 0,
+        "candidate_only_completed_tasks": 21,
+        "candidate_faster_tasks": 0,
+        "candidate_slower_tasks": 0,
+        "equal_latency_tasks": 0,
+        "cases": [
+          {
+            "case": "day01",
+            "score_difference": 0.7936507936507936,
+            "total_tasks": 21,
+            "common_completed_tasks": 0,
+            "reference_only_completed_tasks": 0,
+            "candidate_only_completed_tasks": 21,
+            "neither_completed_tasks": 0,
+            "reference_failed_tasks": 0,
+            "candidate_failed_tasks": 0,
+            "reference_pending_tasks": 21,
+            "candidate_pending_tasks": 0,
+            "latency_population": "common_completed_only; selection_bias_remains",
+            "reference_latency_mean_seconds": null,
+            "candidate_latency_mean_seconds": null,
+            "reference_latency_p95_seconds": null,
+            "candidate_latency_p95_seconds": null,
+            "candidate_minus_reference_latency_mean_seconds": null,
+            "ratio_of_mean_latencies_reference_over_candidate": null,
+            "candidate_faster_tasks": 0,
+            "candidate_slower_tasks": 0,
+            "equal_latency_tasks": 0
+          }
+        ]
+      },
+      {
+        "reference": "ground_compute",
+        "method": "local",
+        "mean_score_difference": 0.6507936507936508,
+        "wins": 1,
+        "ties": 0,
+        "losses": 0,
+        "common_completed_tasks": 0,
+        "reference_only_completed_tasks": 0,
+        "candidate_only_completed_tasks": 21,
+        "candidate_faster_tasks": 0,
+        "candidate_slower_tasks": 0,
+        "equal_latency_tasks": 0,
+        "cases": [
+          {
+            "case": "day01",
+            "score_difference": 0.6507936507936508,
+            "total_tasks": 21,
+            "common_completed_tasks": 0,
+            "reference_only_completed_tasks": 0,
+            "candidate_only_completed_tasks": 21,
+            "neither_completed_tasks": 0,
+            "reference_failed_tasks": 0,
+            "candidate_failed_tasks": 0,
+            "reference_pending_tasks": 21,
+            "candidate_pending_tasks": 0,
+            "latency_population": "common_completed_only; selection_bias_remains",
+            "reference_latency_mean_seconds": null,
+            "candidate_latency_mean_seconds": null,
+            "reference_latency_p95_seconds": null,
+            "candidate_latency_p95_seconds": null,
+            "candidate_minus_reference_latency_mean_seconds": null,
+            "ratio_of_mean_latencies_reference_over_candidate": null,
+            "candidate_faster_tasks": 0,
+            "candidate_slower_tasks": 0,
+            "equal_latency_tasks": 0
+          }
+        ]
+      },
+      {
+        "reference": "ground_compute",
+        "method": "greedy",
+        "mean_score_difference": 0.9603174603174603,
+        "wins": 1,
+        "ties": 0,
+        "losses": 0,
+        "common_completed_tasks": 0,
+        "reference_only_completed_tasks": 0,
+        "candidate_only_completed_tasks": 21,
+        "candidate_faster_tasks": 0,
+        "candidate_slower_tasks": 0,
+        "equal_latency_tasks": 0,
+        "cases": [
+          {
+            "case": "day01",
+            "score_difference": 0.9603174603174603,
+            "total_tasks": 21,
+            "common_completed_tasks": 0,
+            "reference_only_completed_tasks": 0,
+            "candidate_only_completed_tasks": 21,
+            "neither_completed_tasks": 0,
+            "reference_failed_tasks": 0,
+            "candidate_failed_tasks": 0,
+            "reference_pending_tasks": 21,
+            "candidate_pending_tasks": 0,
+            "latency_population": "common_completed_only; selection_bias_remains",
+            "reference_latency_mean_seconds": null,
+            "candidate_latency_mean_seconds": null,
+            "reference_latency_p95_seconds": null,
+            "candidate_latency_p95_seconds": null,
+            "candidate_minus_reference_latency_mean_seconds": null,
+            "ratio_of_mean_latencies_reference_over_candidate": null,
+            "candidate_faster_tasks": 0,
+            "candidate_slower_tasks": 0,
+            "equal_latency_tasks": 0
+          }
+        ]
+      },
+      {
+        "reference": "ground_compute",
+        "method": "window_aware",
+        "mean_score_difference": 0.8253968253968255,
+        "wins": 1,
+        "ties": 0,
+        "losses": 0,
+        "common_completed_tasks": 0,
+        "reference_only_completed_tasks": 0,
+        "candidate_only_completed_tasks": 21,
+        "candidate_faster_tasks": 0,
+        "candidate_slower_tasks": 0,
+        "equal_latency_tasks": 0,
+        "cases": [
+          {
+            "case": "day01",
+            "score_difference": 0.8253968253968255,
+            "total_tasks": 21,
+            "common_completed_tasks": 0,
+            "reference_only_completed_tasks": 0,
+            "candidate_only_completed_tasks": 21,
+            "neither_completed_tasks": 0,
+            "reference_failed_tasks": 0,
+            "candidate_failed_tasks": 0,
+            "reference_pending_tasks": 21,
+            "candidate_pending_tasks": 0,
+            "latency_population": "common_completed_only; selection_bias_remains",
+            "reference_latency_mean_seconds": null,
+            "candidate_latency_mean_seconds": null,
+            "reference_latency_p95_seconds": null,
+            "candidate_latency_p95_seconds": null,
+            "candidate_minus_reference_latency_mean_seconds": null,
+            "ratio_of_mean_latencies_reference_over_candidate": null,
+            "candidate_faster_tasks": 0,
+            "candidate_slower_tasks": 0,
+            "equal_latency_tasks": 0
+          }
+        ]
+      },
+      {
+        "reference": "ground_compute",
+        "method": "heft_adapted",
+        "mean_score_difference": 0.9841269841269842,
+        "wins": 1,
+        "ties": 0,
+        "losses": 0,
+        "common_completed_tasks": 0,
+        "reference_only_completed_tasks": 0,
+        "candidate_only_completed_tasks": 21,
+        "candidate_faster_tasks": 0,
+        "candidate_slower_tasks": 0,
+        "equal_latency_tasks": 0,
+        "cases": [
+          {
+            "case": "day01",
+            "score_difference": 0.9841269841269842,
+            "total_tasks": 21,
+            "common_completed_tasks": 0,
+            "reference_only_completed_tasks": 0,
+            "candidate_only_completed_tasks": 21,
+            "neither_completed_tasks": 0,
+            "reference_failed_tasks": 0,
+            "candidate_failed_tasks": 0,
+            "reference_pending_tasks": 21,
+            "candidate_pending_tasks": 0,
+            "latency_population": "common_completed_only; selection_bias_remains",
+            "reference_latency_mean_seconds": null,
+            "candidate_latency_mean_seconds": null,
+            "reference_latency_p95_seconds": null,
+            "candidate_latency_p95_seconds": null,
+            "candidate_minus_reference_latency_mean_seconds": null,
+            "ratio_of_mean_latencies_reference_over_candidate": null,
+            "candidate_faster_tasks": 0,
+            "candidate_slower_tasks": 0,
+            "equal_latency_tasks": 0
+          }
+        ]
+      },
+      {
+        "reference": "ground_compute",
+        "method": "cgs_compute_adapted",
+        "mean_score_difference": 0.9841269841269842,
+        "wins": 1,
+        "ties": 0,
+        "losses": 0,
+        "common_completed_tasks": 0,
+        "reference_only_completed_tasks": 0,
+        "candidate_only_completed_tasks": 21,
+        "candidate_faster_tasks": 0,
+        "candidate_slower_tasks": 0,
+        "equal_latency_tasks": 0,
+        "cases": [
+          {
+            "case": "day01",
+            "score_difference": 0.9841269841269842,
+            "total_tasks": 21,
+            "common_completed_tasks": 0,
+            "reference_only_completed_tasks": 0,
+            "candidate_only_completed_tasks": 21,
+            "neither_completed_tasks": 0,
+            "reference_failed_tasks": 0,
+            "candidate_failed_tasks": 0,
+            "reference_pending_tasks": 21,
+            "candidate_pending_tasks": 0,
+            "latency_population": "common_completed_only; selection_bias_remains",
+            "reference_latency_mean_seconds": null,
+            "candidate_latency_mean_seconds": null,
+            "reference_latency_p95_seconds": null,
+            "candidate_latency_p95_seconds": null,
+            "candidate_minus_reference_latency_mean_seconds": null,
+            "ratio_of_mean_latencies_reference_over_candidate": null,
+            "candidate_faster_tasks": 0,
+            "candidate_slower_tasks": 0,
+            "equal_latency_tasks": 0
+          }
+        ]
+      },
+      {
+        "reference": "ground_tiles",
+        "method": "ground_compute",
+        "mean_score_difference": 0.0,
+        "wins": 0,
+        "ties": 1,
+        "losses": 0,
+        "common_completed_tasks": 0,
+        "reference_only_completed_tasks": 0,
+        "candidate_only_completed_tasks": 0,
+        "candidate_faster_tasks": 0,
+        "candidate_slower_tasks": 0,
+        "equal_latency_tasks": 0,
+        "cases": [
+          {
+            "case": "day01",
+            "score_difference": 0.0,
+            "total_tasks": 21,
+            "common_completed_tasks": 0,
+            "reference_only_completed_tasks": 0,
+            "candidate_only_completed_tasks": 0,
+            "neither_completed_tasks": 21,
+            "reference_failed_tasks": 0,
+            "candidate_failed_tasks": 0,
+            "reference_pending_tasks": 21,
+            "candidate_pending_tasks": 21,
+            "latency_population": "common_completed_only; selection_bias_remains",
+            "reference_latency_mean_seconds": null,
+            "candidate_latency_mean_seconds": null,
+            "reference_latency_p95_seconds": null,
+            "candidate_latency_p95_seconds": null,
+            "candidate_minus_reference_latency_mean_seconds": null,
+            "ratio_of_mean_latencies_reference_over_candidate": null,
+            "candidate_faster_tasks": 0,
+            "candidate_slower_tasks": 0,
+            "equal_latency_tasks": 0
+          }
+        ]
+      },
+      {
+        "reference": "ground_tiles",
+        "method": "ground_relay",
+        "mean_score_difference": 0.7936507936507936,
+        "wins": 1,
+        "ties": 0,
+        "losses": 0,
+        "common_completed_tasks": 0,
+        "reference_only_completed_tasks": 0,
+        "candidate_only_completed_tasks": 21,
+        "candidate_faster_tasks": 0,
+        "candidate_slower_tasks": 0,
+        "equal_latency_tasks": 0,
+        "cases": [
+          {
+            "case": "day01",
+            "score_difference": 0.7936507936507936,
+            "total_tasks": 21,
+            "common_completed_tasks": 0,
+            "reference_only_completed_tasks": 0,
+            "candidate_only_completed_tasks": 21,
+            "neither_completed_tasks": 0,
+            "reference_failed_tasks": 0,
+            "candidate_failed_tasks": 0,
+            "reference_pending_tasks": 21,
+            "candidate_pending_tasks": 0,
+            "latency_population": "common_completed_only; selection_bias_remains",
+            "reference_latency_mean_seconds": null,
+            "candidate_latency_mean_seconds": null,
+            "reference_latency_p95_seconds": null,
+            "candidate_latency_p95_seconds": null,
+            "candidate_minus_reference_latency_mean_seconds": null,
+            "ratio_of_mean_latencies_reference_over_candidate": null,
+            "candidate_faster_tasks": 0,
+            "candidate_slower_tasks": 0,
+            "equal_latency_tasks": 0
+          }
+        ]
+      },
+      {
+        "reference": "ground_tiles",
+        "method": "local",
+        "mean_score_difference": 0.6507936507936508,
+        "wins": 1,
+        "ties": 0,
+        "losses": 0,
+        "common_completed_tasks": 0,
+        "reference_only_completed_tasks": 0,
+        "candidate_only_completed_tasks": 21,
+        "candidate_faster_tasks": 0,
+        "candidate_slower_tasks": 0,
+        "equal_latency_tasks": 0,
+        "cases": [
+          {
+            "case": "day01",
+            "score_difference": 0.6507936507936508,
+            "total_tasks": 21,
+            "common_completed_tasks": 0,
+            "reference_only_completed_tasks": 0,
+            "candidate_only_completed_tasks": 21,
+            "neither_completed_tasks": 0,
+            "reference_failed_tasks": 0,
+            "candidate_failed_tasks": 0,
+            "reference_pending_tasks": 21,
+            "candidate_pending_tasks": 0,
+            "latency_population": "common_completed_only; selection_bias_remains",
+            "reference_latency_mean_seconds": null,
+            "candidate_latency_mean_seconds": null,
+            "reference_latency_p95_seconds": null,
+            "candidate_latency_p95_seconds": null,
+            "candidate_minus_reference_latency_mean_seconds": null,
+            "ratio_of_mean_latencies_reference_over_candidate": null,
+            "candidate_faster_tasks": 0,
+            "candidate_slower_tasks": 0,
+            "equal_latency_tasks": 0
+          }
+        ]
+      },
+      {
+        "reference": "ground_tiles",
+        "method": "greedy",
+        "mean_score_difference": 0.9603174603174603,
+        "wins": 1,
+        "ties": 0,
+        "losses": 0,
+        "common_completed_tasks": 0,
+        "reference_only_completed_tasks": 0,
+        "candidate_only_completed_tasks": 21,
+        "candidate_faster_tasks": 0,
+        "candidate_slower_tasks": 0,
+        "equal_latency_tasks": 0,
+        "cases": [
+          {
+            "case": "day01",
+            "score_difference": 0.9603174603174603,
+            "total_tasks": 21,
+            "common_completed_tasks": 0,
+            "reference_only_completed_tasks": 0,
+            "candidate_only_completed_tasks": 21,
+            "neither_completed_tasks": 0,
+            "reference_failed_tasks": 0,
+            "candidate_failed_tasks": 0,
+            "reference_pending_tasks": 21,
+            "candidate_pending_tasks": 0,
+            "latency_population": "common_completed_only; selection_bias_remains",
+            "reference_latency_mean_seconds": null,
+            "candidate_latency_mean_seconds": null,
+            "reference_latency_p95_seconds": null,
+            "candidate_latency_p95_seconds": null,
+            "candidate_minus_reference_latency_mean_seconds": null,
+            "ratio_of_mean_latencies_reference_over_candidate": null,
+            "candidate_faster_tasks": 0,
+            "candidate_slower_tasks": 0,
+            "equal_latency_tasks": 0
+          }
+        ]
+      },
+      {
+        "reference": "ground_tiles",
+        "method": "window_aware",
+        "mean_score_difference": 0.8253968253968255,
+        "wins": 1,
+        "ties": 0,
+        "losses": 0,
+        "common_completed_tasks": 0,
+        "reference_only_completed_tasks": 0,
+        "candidate_only_completed_tasks": 21,
+        "candidate_faster_tasks": 0,
+        "candidate_slower_tasks": 0,
+        "equal_latency_tasks": 0,
+        "cases": [
+          {
+            "case": "day01",
+            "score_difference": 0.8253968253968255,
+            "total_tasks": 21,
+            "common_completed_tasks": 0,
+            "reference_only_completed_tasks": 0,
+            "candidate_only_completed_tasks": 21,
+            "neither_completed_tasks": 0,
+            "reference_failed_tasks": 0,
+            "candidate_failed_tasks": 0,
+            "reference_pending_tasks": 21,
+            "candidate_pending_tasks": 0,
+            "latency_population": "common_completed_only; selection_bias_remains",
+            "reference_latency_mean_seconds": null,
+            "candidate_latency_mean_seconds": null,
+            "reference_latency_p95_seconds": null,
+            "candidate_latency_p95_seconds": null,
+            "candidate_minus_reference_latency_mean_seconds": null,
+            "ratio_of_mean_latencies_reference_over_candidate": null,
+            "candidate_faster_tasks": 0,
+            "candidate_slower_tasks": 0,
+            "equal_latency_tasks": 0
+          }
+        ]
+      },
+      {
+        "reference": "ground_tiles",
+        "method": "heft_adapted",
+        "mean_score_difference": 0.9841269841269842,
+        "wins": 1,
+        "ties": 0,
+        "losses": 0,
+        "common_completed_tasks": 0,
+        "reference_only_completed_tasks": 0,
+        "candidate_only_completed_tasks": 21,
+        "candidate_faster_tasks": 0,
+        "candidate_slower_tasks": 0,
+        "equal_latency_tasks": 0,
+        "cases": [
+          {
+            "case": "day01",
+            "score_difference": 0.9841269841269842,
+            "total_tasks": 21,
+            "common_completed_tasks": 0,
+            "reference_only_completed_tasks": 0,
+            "candidate_only_completed_tasks": 21,
+            "neither_completed_tasks": 0,
+            "reference_failed_tasks": 0,
+            "candidate_failed_tasks": 0,
+            "reference_pending_tasks": 21,
+            "candidate_pending_tasks": 0,
+            "latency_population": "common_completed_only; selection_bias_remains",
+            "reference_latency_mean_seconds": null,
+            "candidate_latency_mean_seconds": null,
+            "reference_latency_p95_seconds": null,
+            "candidate_latency_p95_seconds": null,
+            "candidate_minus_reference_latency_mean_seconds": null,
+            "ratio_of_mean_latencies_reference_over_candidate": null,
+            "candidate_faster_tasks": 0,
+            "candidate_slower_tasks": 0,
+            "equal_latency_tasks": 0
+          }
+        ]
+      },
+      {
+        "reference": "ground_tiles",
+        "method": "cgs_compute_adapted",
+        "mean_score_difference": 0.9841269841269842,
+        "wins": 1,
+        "ties": 0,
+        "losses": 0,
+        "common_completed_tasks": 0,
+        "reference_only_completed_tasks": 0,
+        "candidate_only_completed_tasks": 21,
+        "candidate_faster_tasks": 0,
+        "candidate_slower_tasks": 0,
+        "equal_latency_tasks": 0,
+        "cases": [
+          {
+            "case": "day01",
+            "score_difference": 0.9841269841269842,
+            "total_tasks": 21,
+            "common_completed_tasks": 0,
+            "reference_only_completed_tasks": 0,
+            "candidate_only_completed_tasks": 21,
+            "neither_completed_tasks": 0,
+            "reference_failed_tasks": 0,
+            "candidate_failed_tasks": 0,
+            "reference_pending_tasks": 21,
+            "candidate_pending_tasks": 0,
+            "latency_population": "common_completed_only; selection_bias_remains",
+            "reference_latency_mean_seconds": null,
+            "candidate_latency_mean_seconds": null,
+            "reference_latency_p95_seconds": null,
+            "candidate_latency_p95_seconds": null,
+            "candidate_minus_reference_latency_mean_seconds": null,
+            "ratio_of_mean_latencies_reference_over_candidate": null,
+            "candidate_faster_tasks": 0,
+            "candidate_slower_tasks": 0,
+            "equal_latency_tasks": 0
+          }
+        ]
+      },
+      {
+        "reference": "ground_relay",
+        "method": "ground_compute",
+        "mean_score_difference": -0.7936507936507936,
+        "wins": 0,
+        "ties": 0,
+        "losses": 1,
+        "common_completed_tasks": 0,
+        "reference_only_completed_tasks": 21,
+        "candidate_only_completed_tasks": 0,
+        "candidate_faster_tasks": 0,
+        "candidate_slower_tasks": 0,
+        "equal_latency_tasks": 0,
+        "cases": [
+          {
+            "case": "day01",
+            "score_difference": -0.7936507936507936,
+            "total_tasks": 21,
+            "common_completed_tasks": 0,
+            "reference_only_completed_tasks": 21,
+            "candidate_only_completed_tasks": 0,
+            "neither_completed_tasks": 0,
+            "reference_failed_tasks": 0,
+            "candidate_failed_tasks": 0,
+            "reference_pending_tasks": 0,
+            "candidate_pending_tasks": 21,
+            "latency_population": "common_completed_only; selection_bias_remains",
+            "reference_latency_mean_seconds": null,
+            "candidate_latency_mean_seconds": null,
+            "reference_latency_p95_seconds": null,
+            "candidate_latency_p95_seconds": null,
+            "candidate_minus_reference_latency_mean_seconds": null,
+            "ratio_of_mean_latencies_reference_over_candidate": null,
+            "candidate_faster_tasks": 0,
+            "candidate_slower_tasks": 0,
+            "equal_latency_tasks": 0
+          }
+        ]
+      },
+      {
+        "reference": "ground_relay",
+        "method": "ground_tiles",
+        "mean_score_difference": -0.7936507936507936,
+        "wins": 0,
+        "ties": 0,
+        "losses": 1,
+        "common_completed_tasks": 0,
+        "reference_only_completed_tasks": 21,
+        "candidate_only_completed_tasks": 0,
+        "candidate_faster_tasks": 0,
+        "candidate_slower_tasks": 0,
+        "equal_latency_tasks": 0,
+        "cases": [
+          {
+            "case": "day01",
+            "score_difference": -0.7936507936507936,
+            "total_tasks": 21,
+            "common_completed_tasks": 0,
+            "reference_only_completed_tasks": 21,
+            "candidate_only_completed_tasks": 0,
+            "neither_completed_tasks": 0,
+            "reference_failed_tasks": 0,
+            "candidate_failed_tasks": 0,
+            "reference_pending_tasks": 0,
+            "candidate_pending_tasks": 21,
+            "latency_population": "common_completed_only; selection_bias_remains",
+            "reference_latency_mean_seconds": null,
+            "candidate_latency_mean_seconds": null,
+            "reference_latency_p95_seconds": null,
+            "candidate_latency_p95_seconds": null,
+            "candidate_minus_reference_latency_mean_seconds": null,
+            "ratio_of_mean_latencies_reference_over_candidate": null,
+            "candidate_faster_tasks": 0,
+            "candidate_slower_tasks": 0,
+            "equal_latency_tasks": 0
+          }
+        ]
+      },
+      {
+        "reference": "ground_relay",
+        "method": "local",
+        "mean_score_difference": -0.1428571428571428,
+        "wins": 0,
+        "ties": 0,
+        "losses": 1,
+        "common_completed_tasks": 21,
+        "reference_only_completed_tasks": 0,
+        "candidate_only_completed_tasks": 0,
+        "candidate_faster_tasks": 2,
+        "candidate_slower_tasks": 19,
+        "equal_latency_tasks": 0,
+        "cases": [
+          {
+            "case": "day01",
+            "score_difference": -0.1428571428571428,
+            "total_tasks": 21,
+            "common_completed_tasks": 21,
+            "reference_only_completed_tasks": 0,
+            "candidate_only_completed_tasks": 0,
+            "neither_completed_tasks": 0,
+            "reference_failed_tasks": 0,
+            "candidate_failed_tasks": 0,
+            "reference_pending_tasks": 0,
+            "candidate_pending_tasks": 0,
+            "latency_population": "common_completed_only; selection_bias_remains",
+            "reference_latency_mean_seconds": 738.047619047619,
+            "candidate_latency_mean_seconds": 1345.8095238095239,
+            "reference_latency_p95_seconds": 812.0,
+            "candidate_latency_p95_seconds": 2375.0,
+            "candidate_minus_reference_latency_mean_seconds": 607.7619047619048,
+            "ratio_of_mean_latencies_reference_over_candidate": 0.5484042176774467,
+            "candidate_faster_tasks": 2,
+            "candidate_slower_tasks": 19,
+            "equal_latency_tasks": 0
+          }
+        ]
+      },
+      {
+        "reference": "ground_relay",
+        "method": "greedy",
+        "mean_score_difference": 0.16666666666666674,
+        "wins": 1,
+        "ties": 0,
+        "losses": 0,
+        "common_completed_tasks": 21,
+        "reference_only_completed_tasks": 0,
+        "candidate_only_completed_tasks": 0,
+        "candidate_faster_tasks": 19,
+        "candidate_slower_tasks": 2,
+        "equal_latency_tasks": 0,
+        "cases": [
+          {
+            "case": "day01",
+            "score_difference": 0.16666666666666674,
+            "total_tasks": 21,
+            "common_completed_tasks": 21,
+            "reference_only_completed_tasks": 0,
+            "candidate_only_completed_tasks": 0,
+            "neither_completed_tasks": 0,
+            "reference_failed_tasks": 0,
+            "candidate_failed_tasks": 0,
+            "reference_pending_tasks": 0,
+            "candidate_pending_tasks": 0,
+            "latency_population": "common_completed_only; selection_bias_remains",
+            "reference_latency_mean_seconds": 738.047619047619,
+            "candidate_latency_mean_seconds": 269.5238095238095,
+            "reference_latency_p95_seconds": 812.0,
+            "candidate_latency_p95_seconds": 482.0,
+            "candidate_minus_reference_latency_mean_seconds": -468.5238095238095,
+            "ratio_of_mean_latencies_reference_over_candidate": 2.738339222614841,
+            "candidate_faster_tasks": 19,
+            "candidate_slower_tasks": 2,
+            "equal_latency_tasks": 0
+          }
+        ]
+      },
+      {
+        "reference": "ground_relay",
+        "method": "window_aware",
+        "mean_score_difference": 0.031746031746031855,
+        "wins": 1,
+        "ties": 0,
+        "losses": 0,
+        "common_completed_tasks": 21,
+        "reference_only_completed_tasks": 0,
+        "candidate_only_completed_tasks": 0,
+        "candidate_faster_tasks": 11,
+        "candidate_slower_tasks": 10,
+        "equal_latency_tasks": 0,
+        "cases": [
+          {
+            "case": "day01",
+            "score_difference": 0.031746031746031855,
+            "total_tasks": 21,
+            "common_completed_tasks": 21,
+            "reference_only_completed_tasks": 0,
+            "candidate_only_completed_tasks": 0,
+            "neither_completed_tasks": 0,
+            "reference_failed_tasks": 0,
+            "candidate_failed_tasks": 0,
+            "reference_pending_tasks": 0,
+            "candidate_pending_tasks": 0,
+            "latency_population": "common_completed_only; selection_bias_remains",
+            "reference_latency_mean_seconds": 738.047619047619,
+            "candidate_latency_mean_seconds": 775.7619047619048,
+            "reference_latency_p95_seconds": 812.0,
+            "candidate_latency_p95_seconds": 1558.0,
+            "candidate_minus_reference_latency_mean_seconds": 37.714285714285715,
+            "ratio_of_mean_latencies_reference_over_candidate": 0.9513841998649561,
+            "candidate_faster_tasks": 11,
+            "candidate_slower_tasks": 10,
+            "equal_latency_tasks": 0
+          }
+        ]
+      },
+      {
+        "reference": "ground_relay",
+        "method": "heft_adapted",
+        "mean_score_difference": 0.19047619047619058,
+        "wins": 1,
+        "ties": 0,
+        "losses": 0,
+        "common_completed_tasks": 21,
+        "reference_only_completed_tasks": 0,
+        "candidate_only_completed_tasks": 0,
+        "candidate_faster_tasks": 20,
+        "candidate_slower_tasks": 1,
+        "equal_latency_tasks": 0,
+        "cases": [
+          {
+            "case": "day01",
+            "score_difference": 0.19047619047619058,
+            "total_tasks": 21,
+            "common_completed_tasks": 21,
+            "reference_only_completed_tasks": 0,
+            "candidate_only_completed_tasks": 0,
+            "neither_completed_tasks": 0,
+            "reference_failed_tasks": 0,
+            "candidate_failed_tasks": 0,
+            "reference_pending_tasks": 0,
+            "candidate_pending_tasks": 0,
+            "latency_population": "common_completed_only; selection_bias_remains",
+            "reference_latency_mean_seconds": 738.047619047619,
+            "candidate_latency_mean_seconds": 232.9047619047619,
+            "reference_latency_p95_seconds": 812.0,
+            "candidate_latency_p95_seconds": 442.0,
+            "candidate_minus_reference_latency_mean_seconds": -505.14285714285717,
+            "ratio_of_mean_latencies_reference_over_candidate": 3.1688816193007563,
+            "candidate_faster_tasks": 20,
+            "candidate_slower_tasks": 1,
+            "equal_latency_tasks": 0
+          }
+        ]
+      },
+      {
+        "reference": "ground_relay",
+        "method": "cgs_compute_adapted",
+        "mean_score_difference": 0.19047619047619058,
+        "wins": 1,
+        "ties": 0,
+        "losses": 0,
+        "common_completed_tasks": 21,
+        "reference_only_completed_tasks": 0,
+        "candidate_only_completed_tasks": 0,
+        "candidate_faster_tasks": 20,
+        "candidate_slower_tasks": 1,
+        "equal_latency_tasks": 0,
+        "cases": [
+          {
+            "case": "day01",
+            "score_difference": 0.19047619047619058,
+            "total_tasks": 21,
+            "common_completed_tasks": 21,
+            "reference_only_completed_tasks": 0,
+            "candidate_only_completed_tasks": 0,
+            "neither_completed_tasks": 0,
+            "reference_failed_tasks": 0,
+            "candidate_failed_tasks": 0,
+            "reference_pending_tasks": 0,
+            "candidate_pending_tasks": 0,
+            "latency_population": "common_completed_only; selection_bias_remains",
+            "reference_latency_mean_seconds": 738.047619047619,
+            "candidate_latency_mean_seconds": 232.57142857142858,
+            "reference_latency_p95_seconds": 812.0,
+            "candidate_latency_p95_seconds": 442.0,
+            "candidate_minus_reference_latency_mean_seconds": -505.4761904761905,
+            "ratio_of_mean_latencies_reference_over_candidate": 3.1734234234234235,
+            "candidate_faster_tasks": 20,
+            "candidate_slower_tasks": 1,
+            "equal_latency_tasks": 0
+          }
+        ]
+      }
+    ]
+  ],
+  "three_day": [
+    {
+      "method": "ground_relay",
+      "cases": 3,
+      "delivery_score": 0.7717398070339246,
+      "restricted_mean_latency_seconds": 1267.9609710550887,
+      "completed_tasks": 53,
+      "total_tasks": 53,
+      "simulation_seconds_sum": 143.23476583277807,
+      "scheduler_seconds_sum": 0.0
+    },
+    {
+      "method": "greedy",
+      "cases": 3,
+      "delivery_score": 0.898755057578587,
+      "restricted_mean_latency_seconds": 531.8321195144724,
+      "completed_tasks": 53,
+      "total_tasks": 53,
+      "simulation_seconds_sum": 223.49301925022155,
+      "scheduler_seconds_sum": 0.109174341
+    },
+    {
+      "method": "heft_adapted",
+      "cases": 3,
+      "delivery_score": 0.9173669467787116,
+      "restricted_mean_latency_seconds": 503.37086834733896,
+      "completed_tasks": 53,
+      "total_tasks": 53,
+      "simulation_seconds_sum": 226.67547800019383,
+      "scheduler_seconds_sum": 1.193643955
+    }
+  ],
+  "sensitivity": {
+    "eta08": [
+      {
+        "method": "ground_relay",
+        "task_age": {
+          "delivery_curve": [
+            {
+              "horizon_seconds": 300.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 18,
+              "delivery_rate": 0.14285714285714285
+            },
+            {
+              "horizon_seconds": 600.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 14,
+              "not_delivered_within_horizon": 7,
+              "delivery_rate": 0.6666666666666666
+            },
+            {
+              "horizon_seconds": 1800.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 20,
+              "not_delivered_within_horizon": 1,
+              "delivery_rate": 0.9523809523809523
+            },
+            {
+              "horizon_seconds": 3600.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 20,
+              "not_delivered_within_horizon": 1,
+              "delivery_rate": 0.9523809523809523
+            },
+            {
+              "horizon_seconds": 7200.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 21,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 14400.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 21,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            }
+          ],
+          "delivery_score": 0.7857142857142857,
+          "restricted_mean_latency_seconds": 765.5238095238095
+        }
+      },
+      {
+        "method": "greedy",
+        "task_age": {
+          "delivery_curve": [
+            {
+              "horizon_seconds": 300.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 16,
+              "not_delivered_within_horizon": 5,
+              "delivery_rate": 0.7619047619047619
+            },
+            {
+              "horizon_seconds": 600.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 21,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 1800.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 21,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 3600.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 21,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 7200.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 21,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 14400.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 21,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            }
+          ],
+          "delivery_score": 0.9603174603174603,
+          "restricted_mean_latency_seconds": 269.5238095238095
+        }
+      },
+      {
+        "method": "local",
+        "task_age": {
+          "delivery_curve": [
+            {
+              "horizon_seconds": 300.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 0,
+              "not_delivered_within_horizon": 21,
+              "delivery_rate": 0.0
+            },
+            {
+              "horizon_seconds": 600.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 4,
+              "not_delivered_within_horizon": 17,
+              "delivery_rate": 0.19047619047619047
+            },
+            {
+              "horizon_seconds": 1800.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 16,
+              "not_delivered_within_horizon": 5,
+              "delivery_rate": 0.7619047619047619
+            },
+            {
+              "horizon_seconds": 3600.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 20,
+              "not_delivered_within_horizon": 1,
+              "delivery_rate": 0.9523809523809523
+            },
+            {
+              "horizon_seconds": 7200.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 21,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 14400.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 21,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            }
+          ],
+          "delivery_score": 0.6507936507936508,
+          "restricted_mean_latency_seconds": 1345.8095238095239
+        }
+      }
+    ],
+    "ground10x": [
+      {
+        "method": "ground_relay",
+        "task_age": {
+          "delivery_curve": [
+            {
+              "horizon_seconds": 300.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 17,
+              "not_delivered_within_horizon": 4,
+              "delivery_rate": 0.8095238095238095
+            },
+            {
+              "horizon_seconds": 600.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 20,
+              "not_delivered_within_horizon": 1,
+              "delivery_rate": 0.9523809523809523
+            },
+            {
+              "horizon_seconds": 1800.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 20,
+              "not_delivered_within_horizon": 1,
+              "delivery_rate": 0.9523809523809523
+            },
+            {
+              "horizon_seconds": 3600.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 20,
+              "not_delivered_within_horizon": 1,
+              "delivery_rate": 0.9523809523809523
+            },
+            {
+              "horizon_seconds": 7200.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 21,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 14400.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 21,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            }
+          ],
+          "delivery_score": 0.9444444444444443,
+          "restricted_mean_latency_seconds": 431.04761904761904
+        }
+      },
+      {
+        "method": "greedy",
+        "task_age": {
+          "delivery_curve": [
+            {
+              "horizon_seconds": 300.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 16,
+              "not_delivered_within_horizon": 5,
+              "delivery_rate": 0.7619047619047619
+            },
+            {
+              "horizon_seconds": 600.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 21,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 1800.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 21,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 3600.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 21,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 7200.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 21,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 14400.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 21,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            }
+          ],
+          "delivery_score": 0.9603174603174603,
+          "restricted_mean_latency_seconds": 269.5238095238095
+        }
+      }
+    ],
+    "isl2500": [
+      {
+        "method": "ground_relay",
+        "task_age": {
+          "delivery_curve": [
+            {
+              "horizon_seconds": 300.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 4,
+              "not_delivered_within_horizon": 17,
+              "delivery_rate": 0.19047619047619047
+            },
+            {
+              "horizon_seconds": 600.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 15,
+              "not_delivered_within_horizon": 6,
+              "delivery_rate": 0.7142857142857143
+            },
+            {
+              "horizon_seconds": 1800.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 20,
+              "not_delivered_within_horizon": 1,
+              "delivery_rate": 0.9523809523809523
+            },
+            {
+              "horizon_seconds": 3600.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 20,
+              "not_delivered_within_horizon": 1,
+              "delivery_rate": 0.9523809523809523
+            },
+            {
+              "horizon_seconds": 7200.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 21,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 14400.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 21,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            }
+          ],
+          "delivery_score": 0.8015873015873015,
+          "restricted_mean_latency_seconds": 729.6190476190476
+        }
+      },
+      {
+        "method": "greedy",
+        "task_age": {
+          "delivery_curve": [
+            {
+              "horizon_seconds": 300.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 7,
+              "not_delivered_within_horizon": 14,
+              "delivery_rate": 0.3333333333333333
+            },
+            {
+              "horizon_seconds": 600.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 20,
+              "not_delivered_within_horizon": 1,
+              "delivery_rate": 0.9523809523809523
+            },
+            {
+              "horizon_seconds": 1800.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 21,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 3600.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 21,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 7200.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 21,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 14400.0,
+              "total_tasks": 21,
+              "delivered_within_horizon": 21,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            }
+          ],
+          "delivery_score": 0.8809523809523809,
+          "restricted_mean_latency_seconds": 367.7142857142857
+        }
+      }
+    ],
+    "dt1": [
+      {
+        "method": "ground_relay",
+        "task_age": {
+          "delivery_curve": [
+            {
+              "horizon_seconds": 300.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 600.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 1800.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 3600.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 7200.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 14400.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            }
+          ],
+          "delivery_score": 1.0,
+          "restricted_mean_latency_seconds": 190.0
+        }
+      },
+      {
+        "method": "greedy",
+        "task_age": {
+          "delivery_curve": [
+            {
+              "horizon_seconds": 300.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 600.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 1800.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 3600.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 7200.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 14400.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            }
+          ],
+          "delivery_score": 1.0,
+          "restricted_mean_latency_seconds": 219.66666666666666
+        }
+      }
+    ],
+    "dt05": [
+      {
+        "method": "ground_relay",
+        "task_age": {
+          "delivery_curve": [
+            {
+              "horizon_seconds": 300.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 600.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 1800.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 3600.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 7200.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 14400.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            }
+          ],
+          "delivery_score": 1.0,
+          "restricted_mean_latency_seconds": 194.0
+        }
+      }
+    ],
+    "dt025": [
+      {
+        "method": "ground_relay",
+        "task_age": {
+          "delivery_curve": [
+            {
+              "horizon_seconds": 300.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 600.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 1800.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 3600.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 7200.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 14400.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            }
+          ],
+          "delivery_score": 1.0,
+          "restricted_mean_latency_seconds": 195.41666666666666
+        }
+      }
+    ],
+    "dt01": [
+      {
+        "method": "greedy",
+        "task_age": {
+          "delivery_curve": [
+            {
+              "horizon_seconds": 300.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 600.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 1800.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 3600.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 7200.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 14400.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            }
+          ],
+          "delivery_score": 1.0,
+          "restricted_mean_latency_seconds": 216.20000000000002
+        }
+      },
+      {
+        "method": "ground_relay",
+        "task_age": {
+          "delivery_curve": [
+            {
+              "horizon_seconds": 300.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 600.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 1800.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 3600.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 7200.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 14400.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            }
+          ],
+          "delivery_score": 1.0,
+          "restricted_mean_latency_seconds": 177.10000000000002
+        }
+      }
+    ],
+    "dt005": [
+      {
+        "method": "ground_relay",
+        "task_age": {
+          "delivery_curve": [
+            {
+              "horizon_seconds": 300.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 600.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 1800.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 3600.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 7200.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            },
+            {
+              "horizon_seconds": 14400.0,
+              "total_tasks": 3,
+              "delivered_within_horizon": 3,
+              "not_delivered_within_horizon": 0,
+              "delivery_rate": 1.0
+            }
+          ],
+          "delivery_score": 1.0,
+          "restricted_mean_latency_seconds": 186.5
+        }
+      }
+    ]
+  },
+  "timestep": [
+    {
+      "method": "ground_relay",
+      "total_tasks": 3,
+      "common_completed_tasks": 3,
+      "reference_only_completed_tasks": 0,
+      "candidate_only_completed_tasks": 0,
+      "neither_completed_tasks": 0,
+      "reference_failed_tasks": 0,
+      "candidate_failed_tasks": 0,
+      "reference_pending_tasks": 0,
+      "candidate_pending_tasks": 0,
+      "latency_population": "common_completed_only; selection_bias_remains",
+      "reference_latency_mean_seconds": 190.0,
+      "candidate_latency_mean_seconds": 177.10000000000002,
+      "reference_latency_p95_seconds": 260.0,
+      "candidate_latency_p95_seconds": 247.20000000000002,
+      "candidate_minus_reference_latency_mean_seconds": -12.899999999999986,
+      "ratio_of_mean_latencies_reference_over_candidate": 1.0728402032749857,
+      "candidate_faster_tasks": 3,
+      "candidate_slower_tasks": 0,
+      "equal_latency_tasks": 0,
+      "coarse_latency_seconds": 190.0,
+      "fine_latency_seconds": 177.10000000000002,
+      "coarse_delivery_score": 1.0,
+      "fine_delivery_score": 1.0
+    },
+    {
+      "method": "greedy",
+      "total_tasks": 3,
+      "common_completed_tasks": 3,
+      "reference_only_completed_tasks": 0,
+      "candidate_only_completed_tasks": 0,
+      "neither_completed_tasks": 0,
+      "reference_failed_tasks": 0,
+      "candidate_failed_tasks": 0,
+      "reference_pending_tasks": 0,
+      "candidate_pending_tasks": 0,
+      "latency_population": "common_completed_only; selection_bias_remains",
+      "reference_latency_mean_seconds": 219.66666666666666,
+      "candidate_latency_mean_seconds": 216.20000000000002,
+      "reference_latency_p95_seconds": 272.0,
+      "candidate_latency_p95_seconds": 270.2,
+      "candidate_minus_reference_latency_mean_seconds": -3.4666666666666592,
+      "ratio_of_mean_latencies_reference_over_candidate": 1.0160345359235277,
+      "candidate_faster_tasks": 3,
+      "candidate_slower_tasks": 0,
+      "equal_latency_tasks": 0,
+      "coarse_latency_seconds": 219.66666666666666,
+      "fine_latency_seconds": 216.20000000000002,
+      "coarse_delivery_score": 1.0,
+      "fine_delivery_score": 1.0
+    }
+  ],
+  "sources": [
+    "highres_fixed_nominal_ground_20261015",
+    "highres_fixed_nominal_star_20261015",
+    "highres_fixed_nominal_literature_20261015",
+    "highres_fixed_three_days_20261015",
+    "highres_fixed_eta08_20261015",
+    "highres_fixed_ground10x_20261015",
+    "highres_fixed_isl2500_20261015",
+    "highres_fixed_dt1_20261015",
+    "highres_fixed_dt05_20261015",
+    "highres_fixed_dt025_20261015",
+    "highres_fixed_dt01_20261015",
+    "highres_fixed_dt005_20261015"
+  ]
+}

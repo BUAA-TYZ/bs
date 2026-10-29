@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "trace_equal": {
+    "action_trace_sha256": true,
+    "dynamics_sha256": true,
+    "outcomes": true
+  },
+  "coverage": {
+    "images": 72,
+    "captured_images": 72,
+    "fully_representable_images": 72,
+    "total_windows": 4579.0,
+    "represented_windows": 4579.0,
+    "outside_topk_windows": 0.0,
+    "masked_windows": 0.0,
+    "uncommitted_windows": 0.0,
+    "unsupported_windows": 0.0,
+    "ground_block_windows": 313.0,
+    "uncaptured_windows": 0.0,
+    "window_coverage": 1.0,
+    "helper_windows": 1703,
+    "helper_topk_windows": 1703,
+    "helper_topk_coverage": 1.0
+  }
+}

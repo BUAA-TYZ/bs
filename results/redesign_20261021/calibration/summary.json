@@ -1,0 +1,827 @@
+{
+  "status": "BOUNDS_AND_EXISTING_NEUTRALS_COMPLETE_SCENE_NOT_SELECTED",
+  "actual_new_combinations_run": false,
+  "failure_decomposition": [
+    {
+      "method": "local",
+      "D_s": 300,
+      "on_time": 27,
+      "P_D": 0.19852941176470587,
+      "R_D_s": 247.61617647058824,
+      "no_geometric_path": 101,
+      "resource_queue_confirmed": 0,
+      "other_unresolved": 8,
+      "of_other_protocol_blocked": 6,
+      "queue_evidence": "not_identifiable_from_existing_outcomes; zero means zero confirmed cases, not zero true queue failures"
+    },
+    {
+      "method": "local",
+      "D_s": 600,
+      "on_time": 34,
+      "P_D": 0.25,
+      "R_D_s": 482.6735294117648,
+      "no_geometric_path": 92,
+      "resource_queue_confirmed": 0,
+      "other_unresolved": 10,
+      "of_other_protocol_blocked": 8,
+      "queue_evidence": "not_identifiable_from_existing_outcomes; zero means zero confirmed cases, not zero true queue failures"
+    },
+    {
+      "method": "local",
+      "D_s": 900,
+      "on_time": 38,
+      "P_D": 0.27941176470588236,
+      "R_D_s": 699.9794117647059,
+      "no_geometric_path": 92,
+      "resource_queue_confirmed": 0,
+      "other_unresolved": 6,
+      "of_other_protocol_blocked": 5,
+      "queue_evidence": "not_identifiable_from_existing_outcomes; zero means zero confirmed cases, not zero true queue failures"
+    },
+    {
+      "method": "local",
+      "D_s": 1800,
+      "on_time": 64,
+      "P_D": 0.47058823529411764,
+      "R_D_s": 1291.0926470588233,
+      "no_geometric_path": 72,
+      "resource_queue_confirmed": 0,
+      "other_unresolved": 0,
+      "of_other_protocol_blocked": 0,
+      "queue_evidence": "not_identifiable_from_existing_outcomes; zero means zero confirmed cases, not zero true queue failures"
+    },
+    {
+      "method": "ground",
+      "D_s": 300,
+      "on_time": 29,
+      "P_D": 0.21323529411764705,
+      "R_D_s": 243.54632352941178,
+      "no_geometric_path": 101,
+      "resource_queue_confirmed": 0,
+      "other_unresolved": 6,
+      "of_other_protocol_blocked": 6,
+      "queue_evidence": "not_identifiable_from_existing_outcomes; zero means zero confirmed cases, not zero true queue failures"
+    },
+    {
+      "method": "ground",
+      "D_s": 600,
+      "on_time": 32,
+      "P_D": 0.23529411764705882,
+      "R_D_s": 477.75073529411765,
+      "no_geometric_path": 92,
+      "resource_queue_confirmed": 0,
+      "other_unresolved": 12,
+      "of_other_protocol_blocked": 8,
+      "queue_evidence": "not_identifiable_from_existing_outcomes; zero means zero confirmed cases, not zero true queue failures"
+    },
+    {
+      "method": "ground",
+      "D_s": 900,
+      "on_time": 36,
+      "P_D": 0.2647058823529412,
+      "R_D_s": 700.3580882352942,
+      "no_geometric_path": 92,
+      "resource_queue_confirmed": 0,
+      "other_unresolved": 8,
+      "of_other_protocol_blocked": 5,
+      "queue_evidence": "not_identifiable_from_existing_outcomes; zero means zero confirmed cases, not zero true queue failures"
+    },
+    {
+      "method": "ground",
+      "D_s": 1800,
+      "on_time": 55,
+      "P_D": 0.40441176470588236,
+      "R_D_s": 1313.875,
+      "no_geometric_path": 72,
+      "resource_queue_confirmed": 0,
+      "other_unresolved": 9,
+      "of_other_protocol_blocked": 0,
+      "queue_evidence": "not_identifiable_from_existing_outcomes; zero means zero confirmed cases, not zero true queue failures"
+    }
+  ],
+  "ofat": [
+    {
+      "change": "baseline",
+      "D_s": 300,
+      "geometric_count": 35,
+      "protocol_count": 29,
+      "geom_delta_pp": 0.0,
+      "protocol_delta_pp": 0.0,
+      "calculation": "time_expanded_reachability"
+    },
+    {
+      "change": "baseline",
+      "D_s": 600,
+      "geometric_count": 44,
+      "protocol_count": 36,
+      "geom_delta_pp": 0.0,
+      "protocol_delta_pp": 0.0,
+      "calculation": "time_expanded_reachability"
+    },
+    {
+      "change": "sar_forward",
+      "D_s": 300,
+      "geometric_count": 81,
+      "protocol_count": 30,
+      "geom_delta_pp": 33.8235294117647,
+      "protocol_delta_pp": 0.7352941176470589,
+      "calculation": "time_expanded_reachability"
+    },
+    {
+      "change": "sar_forward",
+      "D_s": 600,
+      "geometric_count": 109,
+      "protocol_count": 53,
+      "geom_delta_pp": 47.794117647058826,
+      "protocol_delta_pp": 12.5,
+      "calculation": "time_expanded_reachability"
+    },
+    {
+      "change": "compute_144",
+      "D_s": 300,
+      "geometric_count": 136,
+      "protocol_count": 136,
+      "geom_delta_pp": 74.26470588235294,
+      "protocol_delta_pp": 78.67647058823529,
+      "calculation": "time_expanded_reachability"
+    },
+    {
+      "change": "compute_144",
+      "D_s": 600,
+      "geometric_count": 136,
+      "protocol_count": 136,
+      "geom_delta_pp": 67.6470588235294,
+      "protocol_delta_pp": 73.52941176470588,
+      "calculation": "time_expanded_reachability"
+    },
+    {
+      "change": "sar_two_terminals",
+      "D_s": 300,
+      "geometric_count": 35,
+      "protocol_count": 29,
+      "geom_delta_pp": 0.0,
+      "protocol_delta_pp": 0.0,
+      "calculation": "time_expanded_reachability"
+    },
+    {
+      "change": "sar_two_terminals",
+      "D_s": 600,
+      "geometric_count": 44,
+      "protocol_count": 34,
+      "geom_delta_pp": 0.0,
+      "protocol_delta_pp": -1.4705882352941178,
+      "calculation": "time_expanded_reachability"
+    },
+    {
+      "change": "downlink_960",
+      "D_s": 300,
+      "geometric_count": 35,
+      "protocol_count": 29,
+      "geom_delta_pp": 0.0,
+      "protocol_delta_pp": 0.0,
+      "calculation": "exact_zero_cost_invariance"
+    },
+    {
+      "change": "downlink_960",
+      "D_s": 600,
+      "geometric_count": 44,
+      "protocol_count": 36,
+      "geom_delta_pp": 0.0,
+      "protocol_delta_pp": 0.0,
+      "calculation": "exact_zero_cost_invariance"
+    },
+    {
+      "change": "fixed_800MB",
+      "D_s": 300,
+      "geometric_count": 35,
+      "protocol_count": 29,
+      "geom_delta_pp": 0.0,
+      "protocol_delta_pp": 0.0,
+      "calculation": "exact_zero_cost_invariance"
+    },
+    {
+      "change": "fixed_800MB",
+      "D_s": 600,
+      "geometric_count": 44,
+      "protocol_count": 36,
+      "geom_delta_pp": 0.0,
+      "protocol_delta_pp": 0.0,
+      "calculation": "exact_zero_cost_invariance"
+    },
+    {
+      "change": "no_capture",
+      "D_s": 300,
+      "geometric_count": 35,
+      "protocol_count": 29,
+      "geom_delta_pp": 0.0,
+      "protocol_delta_pp": 0.0,
+      "calculation": "time_expanded_reachability"
+    },
+    {
+      "change": "no_capture",
+      "D_s": 600,
+      "geometric_count": 44,
+      "protocol_count": 36,
+      "geom_delta_pp": 0.0,
+      "protocol_delta_pp": 0.0,
+      "calculation": "time_expanded_reachability"
+    },
+    {
+      "change": "five_stations",
+      "D_s": 300,
+      "geometric_count": 86,
+      "protocol_count": 64,
+      "geom_delta_pp": 37.5,
+      "protocol_delta_pp": 25.735294117647058,
+      "calculation": "time_expanded_reachability"
+    },
+    {
+      "change": "five_stations",
+      "D_s": 600,
+      "geometric_count": 107,
+      "protocol_count": 89,
+      "geom_delta_pp": 46.3235294117647,
+      "protocol_delta_pp": 38.970588235294116,
+      "calculation": "time_expanded_reachability"
+    }
+  ],
+  "combinations": [
+    {
+      "compute_count": 12,
+      "stations": 1,
+      "D_s": 300,
+      "geometric_count": 35,
+      "protocol_count": 29,
+      "geometric_fraction": 0.25735294117647056,
+      "protocol_fraction": 0.21323529411764705,
+      "local_P_D": 0.19852941176470587,
+      "local_R_D_s": 247.61617647058824,
+      "ground_P_D": 0.21323529411764705,
+      "ground_R_D_s": 243.54632352941178,
+      "actual_status": "REUSED_MEASURED"
+    },
+    {
+      "compute_count": 12,
+      "stations": 1,
+      "D_s": 600,
+      "geometric_count": 44,
+      "protocol_count": 36,
+      "geometric_fraction": 0.3235294117647059,
+      "protocol_fraction": 0.2647058823529412,
+      "local_P_D": 0.25,
+      "local_R_D_s": 482.6735294117648,
+      "ground_P_D": 0.23529411764705882,
+      "ground_R_D_s": 477.75073529411765,
+      "actual_status": "REUSED_MEASURED"
+    },
+    {
+      "compute_count": 12,
+      "stations": 1,
+      "D_s": 900,
+      "geometric_count": 44,
+      "protocol_count": 39,
+      "geometric_fraction": 0.3235294117647059,
+      "protocol_fraction": 0.2867647058823529,
+      "local_P_D": 0.27941176470588236,
+      "local_R_D_s": 699.9794117647059,
+      "ground_P_D": 0.2647058823529412,
+      "ground_R_D_s": 700.3580882352942,
+      "actual_status": "REUSED_MEASURED"
+    },
+    {
+      "compute_count": 12,
+      "stations": 1,
+      "D_s": 1800,
+      "geometric_count": 64,
+      "protocol_count": 64,
+      "geometric_fraction": 0.47058823529411764,
+      "protocol_fraction": 0.47058823529411764,
+      "local_P_D": 0.47058823529411764,
+      "local_R_D_s": 1291.0926470588233,
+      "ground_P_D": 0.40441176470588236,
+      "ground_R_D_s": 1313.875,
+      "actual_status": "REUSED_MEASURED"
+    },
+    {
+      "compute_count": 12,
+      "stations": 5,
+      "D_s": 300,
+      "geometric_count": 86,
+      "protocol_count": 64,
+      "geometric_fraction": 0.6323529411764706,
+      "protocol_fraction": 0.47058823529411764,
+      "local_P_D": null,
+      "local_R_D_s": null,
+      "ground_P_D": null,
+      "ground_R_D_s": null,
+      "actual_status": "NOT_RUN"
+    },
+    {
+      "compute_count": 12,
+      "stations": 5,
+      "D_s": 600,
+      "geometric_count": 107,
+      "protocol_count": 89,
+      "geometric_fraction": 0.7867647058823529,
+      "protocol_fraction": 0.6544117647058824,
+      "local_P_D": null,
+      "local_R_D_s": null,
+      "ground_P_D": null,
+      "ground_R_D_s": null,
+      "actual_status": "NOT_RUN"
+    },
+    {
+      "compute_count": 12,
+      "stations": 5,
+      "D_s": 900,
+      "geometric_count": 107,
+      "protocol_count": 99,
+      "geometric_fraction": 0.7867647058823529,
+      "protocol_fraction": 0.7279411764705882,
+      "local_P_D": null,
+      "local_R_D_s": null,
+      "ground_P_D": null,
+      "ground_R_D_s": null,
+      "actual_status": "NOT_RUN"
+    },
+    {
+      "compute_count": 12,
+      "stations": 5,
+      "D_s": 1800,
+      "geometric_count": 136,
+      "protocol_count": 132,
+      "geometric_fraction": 1.0,
+      "protocol_fraction": 0.9705882352941176,
+      "local_P_D": null,
+      "local_R_D_s": null,
+      "ground_P_D": null,
+      "ground_R_D_s": null,
+      "actual_status": "NOT_RUN"
+    },
+    {
+      "compute_count": 144,
+      "stations": 1,
+      "D_s": 300,
+      "geometric_count": 136,
+      "protocol_count": 136,
+      "geometric_fraction": 1.0,
+      "protocol_fraction": 1.0,
+      "local_P_D": null,
+      "local_R_D_s": null,
+      "ground_P_D": null,
+      "ground_R_D_s": null,
+      "actual_status": "NOT_RUN"
+    },
+    {
+      "compute_count": 144,
+      "stations": 1,
+      "D_s": 600,
+      "geometric_count": 136,
+      "protocol_count": 136,
+      "geometric_fraction": 1.0,
+      "protocol_fraction": 1.0,
+      "local_P_D": null,
+      "local_R_D_s": null,
+      "ground_P_D": null,
+      "ground_R_D_s": null,
+      "actual_status": "NOT_RUN"
+    },
+    {
+      "compute_count": 144,
+      "stations": 1,
+      "D_s": 900,
+      "geometric_count": 136,
+      "protocol_count": 136,
+      "geometric_fraction": 1.0,
+      "protocol_fraction": 1.0,
+      "local_P_D": null,
+      "local_R_D_s": null,
+      "ground_P_D": null,
+      "ground_R_D_s": null,
+      "actual_status": "NOT_RUN"
+    },
+    {
+      "compute_count": 144,
+      "stations": 1,
+      "D_s": 1800,
+      "geometric_count": 136,
+      "protocol_count": 136,
+      "geometric_fraction": 1.0,
+      "protocol_fraction": 1.0,
+      "local_P_D": null,
+      "local_R_D_s": null,
+      "ground_P_D": null,
+      "ground_R_D_s": null,
+      "actual_status": "NOT_RUN"
+    },
+    {
+      "compute_count": 144,
+      "stations": 5,
+      "D_s": 300,
+      "geometric_count": 136,
+      "protocol_count": 136,
+      "geometric_fraction": 1.0,
+      "protocol_fraction": 1.0,
+      "local_P_D": null,
+      "local_R_D_s": null,
+      "ground_P_D": null,
+      "ground_R_D_s": null,
+      "actual_status": "NOT_RUN"
+    },
+    {
+      "compute_count": 144,
+      "stations": 5,
+      "D_s": 600,
+      "geometric_count": 136,
+      "protocol_count": 136,
+      "geometric_fraction": 1.0,
+      "protocol_fraction": 1.0,
+      "local_P_D": null,
+      "local_R_D_s": null,
+      "ground_P_D": null,
+      "ground_R_D_s": null,
+      "actual_status": "NOT_RUN"
+    },
+    {
+      "compute_count": 144,
+      "stations": 5,
+      "D_s": 900,
+      "geometric_count": 136,
+      "protocol_count": 136,
+      "geometric_fraction": 1.0,
+      "protocol_fraction": 1.0,
+      "local_P_D": null,
+      "local_R_D_s": null,
+      "ground_P_D": null,
+      "ground_R_D_s": null,
+      "actual_status": "NOT_RUN"
+    },
+    {
+      "compute_count": 144,
+      "stations": 5,
+      "D_s": 1800,
+      "geometric_count": 136,
+      "protocol_count": 136,
+      "geometric_fraction": 1.0,
+      "protocol_fraction": 1.0,
+      "local_P_D": null,
+      "local_R_D_s": null,
+      "ground_P_D": null,
+      "ground_R_D_s": null,
+      "actual_status": "NOT_RUN"
+    },
+    {
+      "compute_count": 1056,
+      "stations": 1,
+      "D_s": 300,
+      "geometric_count": 136,
+      "protocol_count": 107,
+      "geometric_fraction": 1.0,
+      "protocol_fraction": 0.7867647058823529,
+      "local_P_D": null,
+      "local_R_D_s": null,
+      "ground_P_D": null,
+      "ground_R_D_s": null,
+      "actual_status": "NOT_RUN"
+    },
+    {
+      "compute_count": 1056,
+      "stations": 1,
+      "D_s": 600,
+      "geometric_count": 136,
+      "protocol_count": 123,
+      "geometric_fraction": 1.0,
+      "protocol_fraction": 0.9044117647058824,
+      "local_P_D": null,
+      "local_R_D_s": null,
+      "ground_P_D": null,
+      "ground_R_D_s": null,
+      "actual_status": "NOT_RUN"
+    },
+    {
+      "compute_count": 1056,
+      "stations": 1,
+      "D_s": 900,
+      "geometric_count": 136,
+      "protocol_count": 130,
+      "geometric_fraction": 1.0,
+      "protocol_fraction": 0.9558823529411765,
+      "local_P_D": null,
+      "local_R_D_s": null,
+      "ground_P_D": null,
+      "ground_R_D_s": null,
+      "actual_status": "NOT_RUN"
+    },
+    {
+      "compute_count": 1056,
+      "stations": 1,
+      "D_s": 1800,
+      "geometric_count": 136,
+      "protocol_count": 136,
+      "geometric_fraction": 1.0,
+      "protocol_fraction": 1.0,
+      "local_P_D": null,
+      "local_R_D_s": null,
+      "ground_P_D": null,
+      "ground_R_D_s": null,
+      "actual_status": "NOT_RUN"
+    },
+    {
+      "compute_count": 1056,
+      "stations": 5,
+      "D_s": 300,
+      "geometric_count": 136,
+      "protocol_count": 107,
+      "geometric_fraction": 1.0,
+      "protocol_fraction": 0.7867647058823529,
+      "local_P_D": null,
+      "local_R_D_s": null,
+      "ground_P_D": null,
+      "ground_R_D_s": null,
+      "actual_status": "NOT_RUN"
+    },
+    {
+      "compute_count": 1056,
+      "stations": 5,
+      "D_s": 600,
+      "geometric_count": 136,
+      "protocol_count": 123,
+      "geometric_fraction": 1.0,
+      "protocol_fraction": 0.9044117647058824,
+      "local_P_D": null,
+      "local_R_D_s": null,
+      "ground_P_D": null,
+      "ground_R_D_s": null,
+      "actual_status": "NOT_RUN"
+    },
+    {
+      "compute_count": 1056,
+      "stations": 5,
+      "D_s": 900,
+      "geometric_count": 136,
+      "protocol_count": 130,
+      "geometric_fraction": 1.0,
+      "protocol_fraction": 0.9558823529411765,
+      "local_P_D": null,
+      "local_R_D_s": null,
+      "ground_P_D": null,
+      "ground_R_D_s": null,
+      "actual_status": "NOT_RUN"
+    },
+    {
+      "compute_count": 1056,
+      "stations": 5,
+      "D_s": 1800,
+      "geometric_count": 136,
+      "protocol_count": 136,
+      "geometric_fraction": 1.0,
+      "protocol_fraction": 1.0,
+      "local_P_D": null,
+      "local_R_D_s": null,
+      "ground_P_D": null,
+      "ground_R_D_s": null,
+      "actual_status": "NOT_RUN"
+    }
+  ],
+  "cpu": [
+    {
+      "compute_count": 12,
+      "multiplier": 1,
+      "all_work_assigned_busy_seconds_conservative": 4768.836,
+      "rho_cpu_24h_upper": 0.00459957175925926,
+      "rho_cpu_peak300_arrival_work_upper": 0.054393333333333335,
+      "actual_helper_peak_queue": null,
+      "status": "analytical_workload_envelope_not_measured_queue"
+    },
+    {
+      "compute_count": 12,
+      "multiplier": 4,
+      "all_work_assigned_busy_seconds_conservative": 19075.344,
+      "rho_cpu_24h_upper": 0.01839828703703704,
+      "rho_cpu_peak300_arrival_work_upper": 0.21757333333333334,
+      "actual_helper_peak_queue": null,
+      "status": "analytical_workload_envelope_not_measured_queue"
+    },
+    {
+      "compute_count": 12,
+      "multiplier": 10,
+      "all_work_assigned_busy_seconds_conservative": 47688.36,
+      "rho_cpu_24h_upper": 0.04599571759259259,
+      "rho_cpu_peak300_arrival_work_upper": 0.5439333333333334,
+      "actual_helper_peak_queue": null,
+      "status": "analytical_workload_envelope_not_measured_queue"
+    },
+    {
+      "compute_count": 144,
+      "multiplier": 1,
+      "all_work_assigned_busy_seconds_conservative": 4768.836,
+      "rho_cpu_24h_upper": 0.00038329764660493827,
+      "rho_cpu_peak300_arrival_work_upper": 0.004532777777777778,
+      "actual_helper_peak_queue": null,
+      "status": "analytical_workload_envelope_not_measured_queue"
+    },
+    {
+      "compute_count": 144,
+      "multiplier": 4,
+      "all_work_assigned_busy_seconds_conservative": 19075.344,
+      "rho_cpu_24h_upper": 0.001533190586419753,
+      "rho_cpu_peak300_arrival_work_upper": 0.01813111111111111,
+      "actual_helper_peak_queue": null,
+      "status": "analytical_workload_envelope_not_measured_queue"
+    },
+    {
+      "compute_count": 144,
+      "multiplier": 10,
+      "all_work_assigned_busy_seconds_conservative": 47688.36,
+      "rho_cpu_24h_upper": 0.0038329764660493828,
+      "rho_cpu_peak300_arrival_work_upper": 0.04532777777777778,
+      "actual_helper_peak_queue": null,
+      "status": "analytical_workload_envelope_not_measured_queue"
+    },
+    {
+      "compute_count": 1056,
+      "multiplier": 1,
+      "all_work_assigned_busy_seconds_conservative": 4768.836,
+      "rho_cpu_24h_upper": 5.22678609006734e-05,
+      "rho_cpu_peak300_arrival_work_upper": 0.0006181060606060606,
+      "actual_helper_peak_queue": null,
+      "status": "analytical_workload_envelope_not_measured_queue"
+    },
+    {
+      "compute_count": 1056,
+      "multiplier": 4,
+      "all_work_assigned_busy_seconds_conservative": 19075.344,
+      "rho_cpu_24h_upper": 0.0002090714436026936,
+      "rho_cpu_peak300_arrival_work_upper": 0.0024724242424242425,
+      "actual_helper_peak_queue": null,
+      "status": "analytical_workload_envelope_not_measured_queue"
+    },
+    {
+      "compute_count": 1056,
+      "multiplier": 10,
+      "all_work_assigned_busy_seconds_conservative": 47688.36,
+      "rho_cpu_24h_upper": 0.000522678609006734,
+      "rho_cpu_peak300_arrival_work_upper": 0.006181060606060607,
+      "actual_helper_peak_queue": null,
+      "status": "analytical_workload_envelope_not_measured_queue"
+    }
+  ],
+  "runtime": [
+    {
+      "compute_count": 12,
+      "geometry_day_hours": 0.006461500801378861,
+      "contact_day_hours": 0.0035514588829270604,
+      "empty_step_day_hours": 0.00893999997060746,
+      "fixed_day_estimate_hours": 0.019548677826024787,
+      "route_median_s": 0.0007300420002138708,
+      "day_estimate_at_one_route_per_second_hours": 0.03706968583115769,
+      "peak_probe_gib": 0.3761444091796875,
+      "upper_bound_actual_seconds": 6.711917666998488,
+      "upper_bound_peak_gib": 0.42431640625
+    },
+    {
+      "compute_count": 144,
+      "geometry_day_hours": 0.06292169999505859,
+      "contact_day_hours": 0.0385451311761517,
+      "empty_step_day_hours": 0.1113099601934664,
+      "fixed_day_estimate_hours": 0.21569717762606563,
+      "route_median_s": 0.020361791997856926,
+      "day_estimate_at_one_route_per_second_hours": 0.7043801855746319,
+      "peak_probe_gib": 0.4125823974609375,
+      "upper_bound_actual_seconds": 14.137071958000888,
+      "upper_bound_peak_gib": 0.4755096435546875
+    },
+    {
+      "compute_count": 1056,
+      "geometry_day_hours": 2.0644536000065274,
+      "contact_day_hours": 1.3988927418048782,
+      "empty_step_day_hours": 3.6511449598765466,
+      "fixed_day_estimate_hours": 7.1324431098593415,
+      "route_median_s": 0.9568473340004857,
+      "day_estimate_at_one_route_per_second_hours": 30.096779125871,
+      "peak_probe_gib": 1.11053466796875,
+      "upper_bound_actual_seconds": 571.174943500002,
+      "upper_bound_peak_gib": 1.515228271484375
+    }
+  ],
+  "window_count": 7988,
+  "peak300_arrival_windows": 328,
+  "windows_distribution": {
+    "64": 75,
+    "9": 32,
+    "100": 29
+  },
+  "first_compute_access": [
+    {
+      "compute_count": 12,
+      "first_access_over300": 72,
+      "all_delivery_equals_first_access_count": 45,
+      "median_wait_s": 432.5,
+      "p95_wait_s": 1785.0,
+      "max_wait_s": 1980.0
+    },
+    {
+      "compute_count": 144,
+      "first_access_over300": 0,
+      "all_delivery_equals_first_access_count": 136,
+      "median_wait_s": 0.0,
+      "p95_wait_s": 0.0,
+      "max_wait_s": 290.0
+    },
+    {
+      "compute_count": 1056,
+      "first_access_over300": 29,
+      "all_delivery_equals_first_access_count": 136,
+      "median_wait_s": 105.0,
+      "p95_wait_s": 841.25,
+      "max_wait_s": 1480.0
+    }
+  ],
+  "local_compute_only_ceilings": [
+    {
+      "multiplier": 1,
+      "D_s": 300,
+      "local_compute_only_upper_count": 136,
+      "fraction": 1.0
+    },
+    {
+      "multiplier": 1,
+      "D_s": 600,
+      "local_compute_only_upper_count": 136,
+      "fraction": 1.0
+    },
+    {
+      "multiplier": 1,
+      "D_s": 900,
+      "local_compute_only_upper_count": 136,
+      "fraction": 1.0
+    },
+    {
+      "multiplier": 1,
+      "D_s": 1800,
+      "local_compute_only_upper_count": 136,
+      "fraction": 1.0
+    },
+    {
+      "multiplier": 4,
+      "D_s": 300,
+      "local_compute_only_upper_count": 136,
+      "fraction": 1.0
+    },
+    {
+      "multiplier": 4,
+      "D_s": 600,
+      "local_compute_only_upper_count": 136,
+      "fraction": 1.0
+    },
+    {
+      "multiplier": 4,
+      "D_s": 900,
+      "local_compute_only_upper_count": 136,
+      "fraction": 1.0
+    },
+    {
+      "multiplier": 4,
+      "D_s": 1800,
+      "local_compute_only_upper_count": 136,
+      "fraction": 1.0
+    },
+    {
+      "multiplier": 10,
+      "D_s": 300,
+      "local_compute_only_upper_count": 32,
+      "fraction": 0.23529411764705882
+    },
+    {
+      "multiplier": 10,
+      "D_s": 600,
+      "local_compute_only_upper_count": 136,
+      "fraction": 1.0
+    },
+    {
+      "multiplier": 10,
+      "D_s": 900,
+      "local_compute_only_upper_count": 136,
+      "fraction": 1.0
+    },
+    {
+      "multiplier": 10,
+      "D_s": 1800,
+      "local_compute_only_upper_count": 136,
+      "fraction": 1.0
+    }
+  ],
+  "candidate": null,
+  "conditional_shortlist": {
+    "D_s": 300,
+    "compute_count": 144,
+    "stations": 1,
+    "compute_multiplier": 10,
+    "reason": "Protocol upper 100%; local compute-only ceiling 32/136, so >=76.47pp physical-to-local gap even before communication. Actual helper queue not demonstrated; not selected."
+  },
+  "unresolved": [
+    "User decision pending on neutral helper FIFO capacity diagnostic",
+    "New combination local/ground finite-resource executions not run",
+    "Thousand-node executor cost needs optimization/scope decision before actual full-day run"
+  ]
+}

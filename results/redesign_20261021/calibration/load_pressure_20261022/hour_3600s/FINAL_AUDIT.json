@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "source_file_count": 62,
+  "protocol_sha256": "6a8d1ab124cfa117f8852be756c3b8f431860ffba82c3707857204964ef78377",
+  "records": [
+    {
+      "method": "local",
+      "passed": true,
+      "checks": {
+        "execution_pass": true,
+        "config_hash": true,
+        "scored_set": true,
+        "full_followup": true,
+        "within_upper": true,
+        "ground_capacity": true
+      }
+    },
+    {
+      "method": "ground",
+      "passed": true,
+      "checks": {
+        "execution_pass": true,
+        "config_hash": true,
+        "scored_set": true,
+        "full_followup": true,
+        "within_upper": true,
+        "ground_capacity": true
+      }
+    },
+    {
+      "method": "fifo",
+      "passed": true,
+      "checks": {
+        "execution_pass": true,
+        "config_hash": true,
+        "scored_set": true,
+        "full_followup": true,
+        "within_upper": true,
+        "ground_capacity": true
+      }
+    }
+  ],
+  "failures": [],
+  "upper_forward_backward": "PASS"
+}

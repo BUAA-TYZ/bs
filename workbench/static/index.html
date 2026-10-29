@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>卫星任务调度仿真工作台</title>
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="/app.css" />
+</head>
+<body>
+<div id="app">
+  <header>
+    <button id="sidebarToggle" class="btn small" type="button">配置 ▾</button>
+    <h1>卫星任务调度仿真工作台</h1>
+    <nav class="tabs" id="tabs">
+      <button type="button" data-tab="replay" class="active">仿真回放</button>
+      <button type="button" data-tab="analysis">结果分析</button>
+      <button type="button" data-tab="history">历史与对比</button>
+    </nav>
+    <span id="serverState">连接服务…</span>
+  </header>
+
+  <div id="body">
+    <aside id="sidebar">
+      <section class="section" id="secConfig">
+        <h2>场景配置 <span class="right"><button id="btnReset" class="btn small" type="button" title="放弃表单修改，恢复所选配置文件的取值">恢复原配置</button></span></h2>
+        <div class="field wide"><label for="selConfig">配置文件</label><select id="selConfig"><option>加载中…</option></select></div>
+        <div class="note" id="configDesc"></div>
+        <div class="field wide" style="margin-top:4px"><label for="selPolicy">调度策略 / 执行模式</label><select id="selPolicy"></select></div>
+        <div class="policy-desc" id="policyDesc"></div>
+        <div id="ckptBox" class="hidden" style="margin-top:4px">
+          <div class="field wide" id="f-checkpoint"><label for="selCkpt">MARL checkpoint</label>
+            <select id="selCkpt"><option value="">加载中…</option></select>
+            <div class="ferr"></div>
+          </div>
+          <div class="note" id="ckptInfo"></div>
+        </div>
+        <div id="formGroups" style="margin-top:6px"></div>
+        <div id="validationBox"></div>
+        <div class="row" style="margin-top:6px">
+          <button id="btnValidate" class="btn" type="button">校验</button>
+          <button id="btnRun" class="btn primary" type="button">运行仿真</button>
+          <span id="formState" class="muted grow"></span>
+        </div>
+      </section>
+      <section class="section" id="secRun">
+        <h2>仿真执行进度 <span class="right" id="runBadge"></span></h2>
+        <div id="runBox"><div class="note">尚无运行。提交配置后，这里显示后台 Python 仿真的执行步数与状态（与下方回放时间无关）。</div></div>
+      </section>
+    </aside>
+
+    <div id="main" class="pane">
+      <!-- 仿真回放 -->
+      <section id="paneReplay" class="pane">
+        <div id="globeWrap">
+          <div id="globe"></div>
+          <div id="replayBar">
+            <div class="floating" id="loadedInfo">未加载运行</div>
+            <div class="floating" id="layerBox"></div>
+          </div>
+          <div id="globeOverlay"></div>
+        </div>
+        <aside id="details"></aside>
+        <div id="timeline">
+          <div class="row" style="margin-bottom:3px">
+            <span class="tl-title" title="对已结束运行的记录数据进行回放；不是仿真执行进度">结果回放时间</span>
+            <button id="tlPlay" class="btn small" type="button" disabled>▶ 播放</button>
+            <button id="tlPrev" class="btn small" type="button" disabled title="上一快照">◀</button>
+            <button id="tlNext" class="btn small" type="button" disabled title="下一快照">▶|</button>
+            <select id="tlSpeed" title="回放倍速（仿真秒 / 现实秒）" disabled>
+              <option value="1">1×</option><option value="5">5×</option><option value="10">10×</option>
+              <option value="30">30×</option><option value="60" selected>60×</option><option value="120">120×</option>
+              <option value="300">300×</option><option value="600">600×</option>
+            </select>
+            <span id="tlReadout" class="grow">—</span>
+          </div>
+          <canvas id="tlChart" title="点击定位到该时刻"></canvas>
+          <input id="tlSlider" type="range" min="0" max="1" step="1" value="0" disabled aria-label="回放时间定位" />
+        </div>
+      </section>
+
+      <!-- 结果分析 -->
+      <section id="paneAnalysis" class="pane hidden"></section>
+
+      <!-- 历史与对比 -->
+      <section id="paneHistory" class="pane hidden">
+        <div class="toolbar">
+          <h3 style="margin:0">历史运行</h3>
+          <button id="hRefresh" class="btn small" type="button">刷新</button>
+          <button id="hCompare" class="btn small primary" type="button" disabled>对比所选</button>
+          <button id="hSame" class="btn small" type="button" disabled title="只显示与第一个所选运行配置与种子完全相同的运行">只看同配置同种子</button>
+          <button id="hClear" class="btn small" type="button">清除选择</button>
+          <span id="hNote" class="muted"></span>
+        </div>
+        <div id="historyTable"></div>
+        <div id="compareBox"></div>
+      </section>
+    </div>
+  </div>
+</div>
+<div id="toast"></div>
+<script src="/app.js"></script>
+<script src="/replay.js"></script>
+<script src="/analysis.js"></script>
+<script src="/history.js"></script>
+</body>
+</html>

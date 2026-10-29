@@ -1,0 +1,6 @@
+Creating new Ultralytics Settings v0.0.6 file ✅ 
+View Ultralytics Settings with 'yolo settings' or at '/home/tianyz/bs_sar_calibration_20261015_IBZujO/series/round1/ultralytics_config/settings.json'
+Update Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.
+Warmup: 50 windows at 4096x4096, FP32
+Measured 52 windows; mean 575.928 ms; elapsed 30.1 s
+passed: /home/tianyz/bs_sar_calibration_20261015_IBZujO/series/round1/report.json; summary: {'count': 64, 'total_service_s': 36.87044747360051, 'mean_ms': 576.1007417750079, 'p50_ms': 576.0949170216918, 'p95_ms': 602.1349064772949, 'min_ms': 540.89066805318, 'max_ms': 609.8880851641297, 'service_rate_windows_per_s': 1.7358075202592655, 'phase_mean_ms': {'preprocess_ms': 22.73436963878339, 'host_to_device_ms': 11.445735442976002, 'forward_ms': 458.1144898911589, 'device_to_host_ms': 5.423693204647861, 'controlled_nms_ms': 49.80387350224191, 'preview_encode_ms': 28.578580095199868}, 'output_bytes_min': 262232, 'output_bytes_max': 1048844}

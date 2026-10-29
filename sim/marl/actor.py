@@ -62,8 +62,11 @@ class SatActorCritic(nn.Module):
         self.feature_options = dict(feature_set=feature_set, task_features=task_features,
                                     window_features=window_features)
         self.in_dim = feature_dim(num_gs, feature_set)
-        if encoder not in ("mlp", "task_attention") or (encoder == "task_attention" and feature_set not in ("task_window", "contact_window", "role_contact")):
+        if encoder not in ("mlp", "task_attention") or (encoder == "task_attention" and feature_set not in ("task_window", "contact_window", "role_contact", "overlap_contact")):
             raise ValueError("task_attention requires task_window features; supported encoders: mlp, task_attention")
+        if feature_set == "overlap_contact":
+            # 同维不同语义也不能直接互载 state_dict；旧模型的权重格式保持不变。
+            self.register_buffer("workload_protocol_version", torch.tensor(3, dtype=torch.int64))
         self.act_dim = act_dim(num_gs)
         self.num_tiles = MAX_TILES_PER_SAT
         self.critic_dim = critic_dim

@@ -1,0 +1,70 @@
+{
+  "status": "PASS",
+  "executor_trace_identical": true,
+  "coverage": {
+    "total_windows": 4579.0,
+    "represented_windows": 4266.0,
+    "outside_topk_windows": 0.0,
+    "masked_windows": 0.0,
+    "uncommitted_windows": 0.0,
+    "ground_block_windows": 313.0,
+    "window_coverage": 0.9316444638567373,
+    "captured_images": 72,
+    "scored_images": 72,
+    "fully_representable_images": 58,
+    "mode_counts": {
+      "0": 46,
+      "1": 26
+    }
+  },
+  "throughput": {
+    "single_episode_wall_seconds": 773.5912042499986,
+    "scored_images": 72,
+    "scored_decisions": 72,
+    "nine_worker_efficiency_assumption": [
+      0.6,
+      1.0
+    ],
+    "episodes_per_hour": [
+      25.129551490760804,
+      41.88258581793468
+    ],
+    "sample_hours_10_27_to_11_02": 84,
+    "seed_decision_budget": {
+      "1701": [
+        50661,
+        84435
+      ],
+      "1702": [
+        50661,
+        84435
+      ],
+      "1703": [
+        50661,
+        84435
+      ]
+    },
+    "limitation": "Untrained actor, three concurrent jobs; nine-worker efficiency and trained-policy congestion are unmeasured. No gradient update timing included."
+  },
+  "runs": [
+    {
+      "method": "reference",
+      "status": "PASS",
+      "wall_seconds": 777.1829754579958
+    },
+    {
+      "method": "teacher",
+      "status": "PASS",
+      "wall_seconds": 786.3935143749986
+    },
+    {
+      "method": "student",
+      "status": "PASS",
+      "wall_seconds": 773.5912042499986
+    }
+  ],
+  "test_dates_accessed": false,
+  "training_started": false,
+  "needs_confirmation": true,
+  "dynamic_granularity": "future work; existing fallback block counts retained"
+}

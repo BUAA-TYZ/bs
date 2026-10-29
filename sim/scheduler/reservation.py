@@ -43,6 +43,8 @@ class _Ledger:
     def __init__(self, state):
         self.state = state
         self.dt = state.config["dt"]
+        self.continuous_compute = state.config.get("compute_service_mode") == "work_conserving"
+        self.memory_mb_per_gb = state.config.get("memory_mb_per_gb", 1024)
         self.compute = {sid: sat["committed_compute_s"] for sid, sat in state.satellites.items()}
         self.memory = {sid: sat["mem_remaining_gb"] for sid, sat in state.satellites.items()}
         self.ground_compute = {gid: gs["committed_compute_s"] for gid, gs in state.ground_stations.items()}
@@ -79,6 +81,9 @@ class _Ledger:
 
     def rounded(self, seconds):
         return math.ceil(max(0, seconds) / self.dt - 1e-12) * self.dt
+
+    def compute_service(self, seconds):
+        return seconds if self.continuous_compute else self.rounded(seconds)
 
     def fork(self):
         other = copy.copy(self)
@@ -142,10 +147,11 @@ class _Ledger:
                 if incoming is None:
                     continue
             arrival = self.rounded(incoming[0]) if incoming else dispatch
-            ready = max(arrival, self.compute[sid]) + self.rounded(tile["compute_cost"] / state.satellites[sid]["compute_rate"])
+            ready = max(arrival, self.compute[sid]) + self.compute_service(tile["compute_cost"] / state.satellites[sid]["compute_rate"])
             if getattr(self, "prune", False) and choices and ready > min(q["finish"] for q in choices):
                 continue
-            for result in self.result_options(sid, ready, tile["result_size_mb"]):
+            visible_ready = self.rounded(ready) if self.continuous_compute else ready
+            for result in self.result_options(sid, visible_ready, tile["result_size_mb"]):
                 choices.append({**result, "sat": sid, "ready": ready,
                                 "incoming": incoming, "ground": False,
                                 "defer": incoming is not None and self.should_defer(src, sid, incoming)})
@@ -154,8 +160,9 @@ class _Ledger:
             upload = self.downlink(src, gid, dispatch, tile["data_size_mb"])
             if upload:
                 ready = max(self.rounded(upload[0]), self.ground_compute[gid])
-                finish = ready + self.rounded(tile["compute_cost"] / state.ground_stations[gid]["compute_rate"])
-                choices.append({"finish": finish, "sat": src, "exit": src, "gs": gid,
+                finish = ready + self.compute_service(tile["compute_cost"] / state.ground_stations[gid]["compute_rate"])
+                choices.append({"finish": self.rounded(finish) if self.continuous_compute else finish,
+                                "sat": src, "exit": src, "gs": gid,
                                 "ready": finish, "down": upload, "ground": True})
         deadline = tile.get("deadline_remaining_s")
         if deadline is not None:
@@ -176,7 +183,7 @@ class _Ledger:
         for exit_sat in [sid] + candidate_neighbors(self.state, sid):
             relay = None
             if exit_sat != sid:
-                if self.memory[exit_sat] < size / 1024:
+                if self.memory[exit_sat] < size / self.memory_mb_per_gb:
                     continue
                 relay = self.transfer(sid, exit_sat, ready, size)
                 if relay is None:
@@ -312,7 +319,7 @@ class _ForecastLedger(_Ledger):
             if hops >= limit:
                 continue
             for dst in self.adjacency[node]:
-                if self.memory[dst] < size / 1024:
+                if self.memory[dst] < size / self.memory_mb_per_gb:
                     continue
                 slot = self.contact_transfer(node, dst, arrival, size, future=True)
                 if slot is None:

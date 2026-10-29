@@ -1,0 +1,75 @@
+{
+  "status": "PASS",
+  "records": 9,
+  "per_image_rows": 1224,
+  "source_files_verified": 62,
+  "protocol_sha256": "7a8194c8eb11eb6043ff7d5b5de972385a8b490f0416841de2b2390a7e052bd5",
+  "auditor_sha256": "11d29e45082c43d30c0239e211a304965ce1dd3599f00ef167c55031b64392a7",
+  "record_hashes": {
+    "compute_1_local": {
+      "record": "3c186dafdbeee82c68b4a4456380ba308f803c35ea2837d4a3a112b484eb3b95",
+      "busy_series": "3c9461e245530e9a44231a063f818f6850f5866fc5aadd8125f0231c3fc943b1"
+    },
+    "compute_1_ground": {
+      "record": "5d1fdd3687f0e942542327c0a53ba911101fc33e9edfe50d7d54f18d3aa7c4b8",
+      "busy_series": "3c9461e245530e9a44231a063f818f6850f5866fc5aadd8125f0231c3fc943b1"
+    },
+    "compute_1_fifo": {
+      "record": "d2f028f0e7adc7dc131cffe4337bca670a6d644daa39f97eb1b282760585b302",
+      "busy_series": "1d69dfa57e2183a1a3d81314b6a7a29502a921fa117f09b857f26a765dedb573"
+    },
+    "compute_4_local": {
+      "record": "e322f2bd8130002bf60bb724c061f9178bf01f0181146f2d3d68da99ccebbda8",
+      "busy_series": "3c9461e245530e9a44231a063f818f6850f5866fc5aadd8125f0231c3fc943b1"
+    },
+    "compute_4_ground": {
+      "record": "9d658c18fca375deb8e6bf1609fe786ac1450e1456c99af5e88195e11f8c5886",
+      "busy_series": "3c9461e245530e9a44231a063f818f6850f5866fc5aadd8125f0231c3fc943b1"
+    },
+    "compute_4_fifo": {
+      "record": "764d3b6ded81cd09c173aff5ed88712b4626628001c275bbfa3e09d3423c2d80",
+      "busy_series": "9ccc7374bba6679ef77e1dcd3299542f89b294747f9fb7812c1f9d5fee3547f9"
+    },
+    "compute_10_local": {
+      "record": "838aff22c83e6084c107c361ed3b0c7c55952068d16e4874009b1131338702c2",
+      "busy_series": "3c9461e245530e9a44231a063f818f6850f5866fc5aadd8125f0231c3fc943b1"
+    },
+    "compute_10_ground": {
+      "record": "064838fab241a5c845d97de85869d7771e02867a5c9d42f90947a3e447a0cf4a",
+      "busy_series": "3c9461e245530e9a44231a063f818f6850f5866fc5aadd8125f0231c3fc943b1"
+    },
+    "compute_10_fifo": {
+      "record": "952d00d11b13106cf24bf7652d40f82ae9b60f1202fb4b6981fb780b7b8b8494",
+      "busy_series": "30bd4f238069a5711101e9b0adeefabd0725824e8dcd54a6310bdb3c172f6e1d"
+    }
+  },
+  "sealed_test_dates_accessed": false,
+  "queue_audit_scope": "Threshold/witness consistency and tested observation logic; no full independent queue-event replay",
+  "panel_status": "COMPLETE",
+  "criteria": {
+    "1": {
+      "upper_bound": 1.0,
+      "local_gap_pp": 1.4705882352941124,
+      "criterion_a": true,
+      "criterion_b": false,
+      "criterion_c": false,
+      "eligible": false
+    },
+    "4": {
+      "upper_bound": 1.0,
+      "local_gap_pp": 5.882352941176472,
+      "criterion_a": true,
+      "criterion_b": false,
+      "criterion_c": true,
+      "eligible": false
+    },
+    "10": {
+      "upper_bound": 1.0,
+      "local_gap_pp": 83.82352941176471,
+      "criterion_a": true,
+      "criterion_b": true,
+      "criterion_c": true,
+      "eligible": true
+    }
+  }
+}

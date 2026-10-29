@@ -20,8 +20,9 @@ from sim.env import SimulationEnv
 from sim.marl.actor import SatActorCritic
 from sim.marl.actor import act_dim
 from sim.marl.attention_q import joint_q_observations, counterfactual_baseline
-from sim.marl.decision import OBSERVATION_VERSION, build_batch, decode_batch
-from sim.marl.features import feature_dim
+from sim.marl.checkpoint import validate_checkpoint_protocol
+from sim.marl.decision import build_batch, decode_batch
+from sim.marl.features import FEATURE_SETS, feature_dim, observation_version_for, validate_feature_workload
 from sim.marl.imitation import (pretrain_episode, collect_demonstrations,
                                 merge_demonstrations, fit_demonstrations)
 from sim.marl.observation import MAX_TILES_PER_SAT
@@ -278,6 +279,7 @@ def validation_score(validation, delivery_horizons=None):
 
 def train(args):
     cfg = load_config(args.config)
+    validate_feature_workload(cfg.image_tiling, args.features)
     delivery_horizons = ([60 * float(value) for value in args.delivery_horizons_minutes.split(",")]
                          if args.delivery_horizons_minutes else None)
     if delivery_horizons:
@@ -349,6 +351,7 @@ def train(args):
     initialization = None
     if args.initialize_checkpoint:
         source = torch.load(args.initialize_checkpoint, map_location=device, weights_only=True)
+        validate_checkpoint_protocol(source)
         if source["model_config"] != model_config or source["config"] != asdict(cfg):
             raise ValueError("Checkpoint initialization requires identical model and base environment configuration")
         if source.get("delivery_horizons_seconds") != delivery_horizons:
@@ -361,7 +364,7 @@ def train(args):
     optimizer = torch.optim.Adam(model.parameters(), lr=args.lr, eps=1e-5)
     metadata = {"algorithm": args.algorithm, "model_version": "2.0",
                 **runtime_metadata(),
-                "observation_version": OBSERVATION_VERSION, "model_config": model_config,
+                "observation_version": observation_version_for(args.features), "model_config": model_config,
                 "ground_station_ids": [g["id"] for g in cfg.ground_stations],
                 "config": asdict(cfg), "training_args": vars(args), "seed": seed,
                 "parameter_count": sum(p.numel() for p in model.parameters()),
@@ -376,6 +379,14 @@ def train(args):
                 "initialization": initialization,
                 "selection": ("validation equal-weight task-age delivery score, then restricted mean latency"
                               if delivery_horizons else "validation task completion rate, then completed-task mean latency")}
+    if args.features == "overlap_contact":
+        metadata["feature_protocol"] = {
+            "version": 3, "name": "overlap_contact", "layout": "role_contact dimensions; packet result replaces tile cohesion",
+            "packet_input": "MB / (16 MB + MB)", "packet_compute": "U / (20 U + U)",
+            "packet_result": "MB / (1 MB + MB)",
+            "scales": "fixed observation transforms only, not hardware calibration or physical limits",
+            "workload": "fixed 1024 px windows and 824 px stride; profile-derived bytes/work/results",
+        }
     if distribution:
         metadata["scenario_distribution"] = {"sha256": distribution.sha256, "spec": distribution.spec,
                                              "max_training_agents": max_agents,
@@ -393,6 +404,7 @@ def train(args):
     first_episode = 1
     if args.resume:
         saved = torch.load(out / "last.pt", map_location=device, weights_only=True)
+        validate_checkpoint_protocol(saved)
         excluded = {"episodes", "resume"}
         if saved["config"] != asdict(cfg) or saved["model_config"] != model_config or any(
                 saved["training_args"].get(k) != v for k, v in vars(args).items() if k not in excluded):
@@ -589,12 +601,12 @@ def parser():
     p.add_argument("--out-dir", required=True)
     p.add_argument("--algorithm", choices=("ippo", "mappo", "comappo_adapted"), default="ippo")
     p.add_argument("--counterfactual-samples", type=int, default=16)
-    p.add_argument("--features", choices=("base", "task_window", "contact_window", "role_contact"), default="base")
+    p.add_argument("--features", choices=FEATURE_SETS, default="base")
     p.add_argument("--critic-pooling", action="store_true", help="MAPPO critic uses self plus mean agent observation")
     p.add_argument("--warmstart-episodes", type=int, default=0)
     p.add_argument("--warmstart-epochs", type=int, default=4)
     p.add_argument("--warmstart-lr", type=float, help="Separate BC learning rate; resets optimizer before PPO")
-    p.add_argument("--warmstart-teacher", choices=("predictive", "window_aware", "greedy"), default="predictive")
+    p.add_argument("--warmstart-teacher", choices=("predictive", "window_aware", "greedy", "cgs_compute_adapted"), default="predictive")
     p.add_argument("--warmstart-mode", choices=("sequential", "pooled"), default="sequential")
     p.add_argument("--dagger-episodes", type=int, default=0,
                    help="Additional learner rollouts labeled by teacher and fitted with the retained demonstration pool")

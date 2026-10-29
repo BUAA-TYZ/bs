@@ -1,0 +1,574 @@
+{
+  "schema_version": 1,
+  "started_at_utc": "2026-10-15T12:26:33.776102+00:00",
+  "status": "passed",
+  "purpose": "CUDA model compatibility and short timing smoke; not a calibration result",
+  "python": "3.10.15",
+  "profiles": [
+    {
+      "precision": "fp32",
+      "status": "passed",
+      "rows": [
+        {
+          "crop_bgr_ms": 8.934427984058857,
+          "predict_to_cpu_ms": 60.079912189394236,
+          "encode_ms": 1.0373499244451523,
+          "service_ms": 70.05169009789824,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 0
+        },
+        {
+          "crop_bgr_ms": 9.633386973291636,
+          "predict_to_cpu_ms": 57.64275835826993,
+          "encode_ms": 1.082852017134428,
+          "service_ms": 68.358997348696,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 1
+        },
+        {
+          "crop_bgr_ms": 10.165501851588488,
+          "predict_to_cpu_ms": 37.86428505554795,
+          "encode_ms": 0.9217681363224983,
+          "service_ms": 48.95155504345894,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 2
+        },
+        {
+          "crop_bgr_ms": 8.661828003823757,
+          "predict_to_cpu_ms": 46.228551771491766,
+          "encode_ms": 0.9294492192566395,
+          "service_ms": 55.81982899457216,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 3
+        },
+        {
+          "crop_bgr_ms": 8.625892922282219,
+          "predict_to_cpu_ms": 56.38938117772341,
+          "encode_ms": 0.892201904207468,
+          "service_ms": 65.9074760042131,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 4
+        },
+        {
+          "crop_bgr_ms": 8.693570736795664,
+          "predict_to_cpu_ms": 53.46833588555455,
+          "encode_ms": 1.0044220834970474,
+          "service_ms": 63.16632870584726,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 5
+        },
+        {
+          "crop_bgr_ms": 9.249269030988216,
+          "predict_to_cpu_ms": 34.70225306227803,
+          "encode_ms": 0.9237527847290039,
+          "service_ms": 44.87527487799525,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 6
+        },
+        {
+          "crop_bgr_ms": 8.603653870522976,
+          "predict_to_cpu_ms": 46.65186908096075,
+          "encode_ms": 0.9817988611757755,
+          "service_ms": 56.2373218126595,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 7
+        },
+        {
+          "crop_bgr_ms": 8.530054707080126,
+          "predict_to_cpu_ms": 46.39424430206418,
+          "encode_ms": 0.9064087644219398,
+          "service_ms": 55.830707773566246,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 8
+        },
+        {
+          "crop_bgr_ms": 8.706946857273579,
+          "predict_to_cpu_ms": 33.16197171807289,
+          "encode_ms": 0.9108250960707664,
+          "service_ms": 42.779743671417236,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 9
+        },
+        {
+          "crop_bgr_ms": 8.608965203166008,
+          "predict_to_cpu_ms": 35.69515608251095,
+          "encode_ms": 0.9019291028380394,
+          "service_ms": 45.206050388514996,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 10
+        },
+        {
+          "crop_bgr_ms": 8.6053810082376,
+          "predict_to_cpu_ms": 39.2554821446538,
+          "encode_ms": 0.895368866622448,
+          "service_ms": 48.756232019513845,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 11
+        },
+        {
+          "crop_bgr_ms": 8.612068835645914,
+          "predict_to_cpu_ms": 32.72796794772148,
+          "encode_ms": 0.935784075409174,
+          "service_ms": 42.27582085877657,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 12
+        },
+        {
+          "crop_bgr_ms": 8.618053048849106,
+          "predict_to_cpu_ms": 34.24802515655756,
+          "encode_ms": 0.8809692226350307,
+          "service_ms": 43.7470474280417,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 13
+        },
+        {
+          "crop_bgr_ms": 8.585702162235975,
+          "predict_to_cpu_ms": 34.603663720190525,
+          "encode_ms": 0.8842339739203453,
+          "service_ms": 44.073599856346846,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 14
+        },
+        {
+          "crop_bgr_ms": 8.598756976425648,
+          "predict_to_cpu_ms": 39.84749922528863,
+          "encode_ms": 0.9125210344791412,
+          "service_ms": 49.35877723619342,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 15
+        },
+        {
+          "crop_bgr_ms": 8.591493126004934,
+          "predict_to_cpu_ms": 39.778956677764654,
+          "encode_ms": 0.8770329877734184,
+          "service_ms": 49.24748279154301,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 16
+        },
+        {
+          "crop_bgr_ms": 8.681506849825382,
+          "predict_to_cpu_ms": 39.724813774228096,
+          "encode_ms": 0.8882014080882072,
+          "service_ms": 49.294522032141685,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 17
+        },
+        {
+          "crop_bgr_ms": 8.58253426849842,
+          "predict_to_cpu_ms": 39.75988458842039,
+          "encode_ms": 0.8819932118058205,
+          "service_ms": 49.22441206872463,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 18
+        },
+        {
+          "crop_bgr_ms": 8.628708310425282,
+          "predict_to_cpu_ms": 39.60308898240328,
+          "encode_ms": 0.8842977695167065,
+          "service_ms": 49.116095062345266,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 19
+        }
+      ],
+      "warmup_completed": 5,
+      "load_ms_excluded": 245.76795659959316,
+      "parameters_before_predict": 2664432,
+      "actual_parameter_dtype": "torch.float32",
+      "actual_parameter_device": "cuda:0",
+      "torch_cpu_threads_after_warmup": 1,
+      "peak_cuda_allocated_bytes": 242746368,
+      "peak_cuda_reserved_bytes": 379584512,
+      "summary": {
+        "count": 20,
+        "mean_ms": 52.113948203623295,
+        "p50_ms": 49.23594743013382,
+        "p95_ms": 68.4436319861561,
+        "min_ms": 42.27582085877657,
+        "max_ms": 70.05169009789824,
+        "detections_min": 105,
+        "detections_max": 105
+      }
+    },
+    {
+      "precision": "fp16",
+      "status": "passed",
+      "rows": [
+        {
+          "crop_bgr_ms": 10.377464815974236,
+          "predict_to_cpu_ms": 34.941031131893396,
+          "encode_ms": 0.9040087461471558,
+          "service_ms": 46.22250469401479,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "244ed5c30417a8cbc269641296e9d3a0fade25a7ab47154d9aa2e1080fdca369",
+          "iteration": 0
+        },
+        {
+          "crop_bgr_ms": 9.116407949477434,
+          "predict_to_cpu_ms": 38.87226013466716,
+          "encode_ms": 0.9259600192308426,
+          "service_ms": 48.914628103375435,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "244ed5c30417a8cbc269641296e9d3a0fade25a7ab47154d9aa2e1080fdca369",
+          "iteration": 1
+        },
+        {
+          "crop_bgr_ms": 10.528500191867352,
+          "predict_to_cpu_ms": 43.17042278125882,
+          "encode_ms": 0.9361682459712029,
+          "service_ms": 54.635091219097376,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "244ed5c30417a8cbc269641296e9d3a0fade25a7ab47154d9aa2e1080fdca369",
+          "iteration": 2
+        },
+        {
+          "crop_bgr_ms": 9.008378721773624,
+          "predict_to_cpu_ms": 47.73485008627176,
+          "encode_ms": 0.9625679813325405,
+          "service_ms": 57.70579678937793,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "244ed5c30417a8cbc269641296e9d3a0fade25a7ab47154d9aa2e1080fdca369",
+          "iteration": 3
+        },
+        {
+          "crop_bgr_ms": 10.439158882945776,
+          "predict_to_cpu_ms": 48.54430118575692,
+          "encode_ms": 0.9215129539370537,
+          "service_ms": 59.90497302263975,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "244ed5c30417a8cbc269641296e9d3a0fade25a7ab47154d9aa2e1080fdca369",
+          "iteration": 4
+        },
+        {
+          "crop_bgr_ms": 9.099673014134169,
+          "predict_to_cpu_ms": 45.18022667616606,
+          "encode_ms": 0.8930983021855354,
+          "service_ms": 55.17299799248576,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "244ed5c30417a8cbc269641296e9d3a0fade25a7ab47154d9aa2e1080fdca369",
+          "iteration": 5
+        },
+        {
+          "crop_bgr_ms": 10.5690429918468,
+          "predict_to_cpu_ms": 35.15475383028388,
+          "encode_ms": 0.9009051136672497,
+          "service_ms": 46.62470193579793,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "244ed5c30417a8cbc269641296e9d3a0fade25a7ab47154d9aa2e1080fdca369",
+          "iteration": 6
+        },
+        {
+          "crop_bgr_ms": 9.00770677253604,
+          "predict_to_cpu_ms": 38.47572533413768,
+          "encode_ms": 0.8914978243410587,
+          "service_ms": 48.374929931014776,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "244ed5c30417a8cbc269641296e9d3a0fade25a7ab47154d9aa2e1080fdca369",
+          "iteration": 7
+        },
+        {
+          "crop_bgr_ms": 10.416151024401188,
+          "predict_to_cpu_ms": 39.21855520457029,
+          "encode_ms": 0.8994010277092457,
+          "service_ms": 50.53410725668073,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "244ed5c30417a8cbc269641296e9d3a0fade25a7ab47154d9aa2e1080fdca369",
+          "iteration": 8
+        },
+        {
+          "crop_bgr_ms": 9.028923232108355,
+          "predict_to_cpu_ms": 38.697863928973675,
+          "encode_ms": 0.9073689579963684,
+          "service_ms": 48.6341561190784,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "244ed5c30417a8cbc269641296e9d3a0fade25a7ab47154d9aa2e1080fdca369",
+          "iteration": 9
+        },
+        {
+          "crop_bgr_ms": 10.555059183388948,
+          "predict_to_cpu_ms": 38.565387949347496,
+          "encode_ms": 0.9568389505147934,
+          "service_ms": 50.07728608325124,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "244ed5c30417a8cbc269641296e9d3a0fade25a7ab47154d9aa2e1080fdca369",
+          "iteration": 10
+        },
+        {
+          "crop_bgr_ms": 9.162615053355694,
+          "predict_to_cpu_ms": 39.216507226228714,
+          "encode_ms": 0.9347917512059212,
+          "service_ms": 49.31391403079033,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "244ed5c30417a8cbc269641296e9d3a0fade25a7ab47154d9aa2e1080fdca369",
+          "iteration": 11
+        },
+        {
+          "crop_bgr_ms": 10.492566041648388,
+          "predict_to_cpu_ms": 39.27423292770982,
+          "encode_ms": 0.9341840632259846,
+          "service_ms": 50.70098303258419,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "244ed5c30417a8cbc269641296e9d3a0fade25a7ab47154d9aa2e1080fdca369",
+          "iteration": 12
+        },
+        {
+          "crop_bgr_ms": 9.012538939714432,
+          "predict_to_cpu_ms": 38.35409693419933,
+          "encode_ms": 0.9096730500459671,
+          "service_ms": 48.27630892395973,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "244ed5c30417a8cbc269641296e9d3a0fade25a7ab47154d9aa2e1080fdca369",
+          "iteration": 13
+        },
+        {
+          "crop_bgr_ms": 10.537396185100079,
+          "predict_to_cpu_ms": 39.16725981980562,
+          "encode_ms": 0.8777379989624023,
+          "service_ms": 50.5823940038681,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "244ed5c30417a8cbc269641296e9d3a0fade25a7ab47154d9aa2e1080fdca369",
+          "iteration": 14
+        },
+        {
+          "crop_bgr_ms": 9.05602565035224,
+          "predict_to_cpu_ms": 39.157404098659754,
+          "encode_ms": 0.9455438703298569,
+          "service_ms": 49.15897361934185,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "244ed5c30417a8cbc269641296e9d3a0fade25a7ab47154d9aa2e1080fdca369",
+          "iteration": 15
+        },
+        {
+          "crop_bgr_ms": 10.508181061595678,
+          "predict_to_cpu_ms": 38.38798403739929,
+          "encode_ms": 0.8980249986052513,
+          "service_ms": 49.79419009760022,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "244ed5c30417a8cbc269641296e9d3a0fade25a7ab47154d9aa2e1080fdca369",
+          "iteration": 16
+        },
+        {
+          "crop_bgr_ms": 9.009914938360453,
+          "predict_to_cpu_ms": 38.84467575699091,
+          "encode_ms": 0.891881063580513,
+          "service_ms": 48.746471758931875,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "244ed5c30417a8cbc269641296e9d3a0fade25a7ab47154d9aa2e1080fdca369",
+          "iteration": 17
+        },
+        {
+          "crop_bgr_ms": 10.582834016531706,
+          "predict_to_cpu_ms": 39.18309975415468,
+          "encode_ms": 0.8818982169032097,
+          "service_ms": 50.6478319875896,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "244ed5c30417a8cbc269641296e9d3a0fade25a7ab47154d9aa2e1080fdca369",
+          "iteration": 18
+        },
+        {
+          "crop_bgr_ms": 9.013531263917685,
+          "predict_to_cpu_ms": 38.87062659487128,
+          "encode_ms": 0.8892584592103958,
+          "service_ms": 48.77341631799936,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "244ed5c30417a8cbc269641296e9d3a0fade25a7ab47154d9aa2e1080fdca369",
+          "iteration": 19
+        }
+      ],
+      "warmup_completed": 5,
+      "load_ms_excluded": 148.85435765609145,
+      "parameters_before_predict": 2664432,
+      "actual_parameter_dtype": "torch.float16",
+      "actual_parameter_device": "cuda:0",
+      "torch_cpu_threads_after_warmup": 1,
+      "peak_cuda_allocated_bytes": 194772480,
+      "peak_cuda_reserved_bytes": 337641472,
+      "summary": {
+        "count": 20,
+        "mean_ms": 50.63978284597397,
+        "p50_ms": 49.554052064195275,
+        "p95_ms": 57.81575560104102,
+        "min_ms": 46.22250469401479,
+        "max_ms": 59.90497302263975,
+        "detections_min": 105,
+        "detections_max": 105
+      }
+    }
+  ],
+  "protocol": {
+    "model": "official YOLO11n-OBB",
+    "image": "official optical boats.jpg",
+    "window_xyxy": [
+      0,
+      0,
+      1024,
+      1024
+    ],
+    "batch": 1,
+    "imgsz": 1024,
+    "conf": 0.25,
+    "iou": 0.7,
+    "max_det": 300,
+    "rect": false,
+    "precision_order": [
+      "fp32",
+      "fp16"
+    ],
+    "warmup": 5,
+    "repeats": 20,
+    "independent_model_per_precision": true,
+    "wire_format": "OBB1: little endian <4s6I header plus <9fI records; 28 + 40*K bytes",
+    "timing_boundary": "decoded RGB image -> crop/BGR -> predict including preprocessing, inference and window OBB NMS -> all OBB fields on CPU -> OBB1 encoding",
+    "excluded": [
+      "file decode",
+      "model load",
+      "warmup",
+      "report I/O",
+      "global polygon NMS"
+    ],
+    "limitations": [
+      "Optical sample is not SAR calibration or recognition validation",
+      "Short smoke does not establish steady thermal performance or energy",
+      "No Shapely polygon validity check; framing matches existing OBB1 format",
+      "No simulation parameters are updated",
+      "No download or package installation"
+    ]
+  },
+  "assets": {
+    "weights": {
+      "path": "/home/tianyz/bs_jetson_20261015_7TtC5t/yolo11n-obb.pt",
+      "bytes": 5795654,
+      "sha256": "b62898ebf38940ca4df323863e45ee9d84a1a46d5d11ebdde529fb33aa9f3a32"
+    },
+    "image": {
+      "path": "/home/tianyz/bs_jetson_20261015_7TtC5t/boats.jpg",
+      "bytes": 194872,
+      "sha256": "8c5ada657cf8110a9f8aaac954c1dd96cde0187315b581276c32b0d1863e756f"
+    }
+  },
+  "versions": {
+    "numpy": "1.23.5",
+    "Pillow": "11.0.0",
+    "torch": "2.3.0",
+    "torchvision": "0.18.0a0+6043bc2",
+    "ultralytics": "8.3.13",
+    "torch_cuda_build": "12.2",
+    "cudnn": 8904
+  },
+  "device": {
+    "index": 0,
+    "name": "Orin",
+    "compute_capability": [
+      8,
+      7
+    ],
+    "total_memory_bytes": 32188686336,
+    "torch_cpu_threads": 1
+  },
+  "decode_ms_excluded": 39.979878813028336,
+  "source_image": {
+    "width": 1920,
+    "height": 1080,
+    "mode": "RGB"
+  },
+  "finished_at_utc": "2026-10-15T12:26:43.433761+00:00"
+}

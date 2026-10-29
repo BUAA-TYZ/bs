@@ -34,7 +34,7 @@ class WindowAwareGreedy(SchedulerPolicy):
     def select_actions(self, env_state: EnvState) -> List[Action]:
         actions: List[Action] = []
         dt = env_state.config["dt"]
-        result_size_mb = env_state.config.get("result_size_mb", 1.0)
+        legacy_result_size_mb = env_state.config.get("result_size_mb", 1.0)
 
         for tile_id, tile in env_state.tiles.items():
             if tile["state"] not in ("QUEUED", "READY"):
@@ -45,6 +45,8 @@ class WindowAwareGreedy(SchedulerPolicy):
             src = tile["location"]
             tile_size_mb = tile["data_size_mb"]
             compute_cost = tile["compute_cost"]
+            result_size_mb = (tile["result_size_mb"] if env_state.config.get("image_tiling")
+                              else legacy_result_size_mb)
 
             best_action = Action(tile_id=tile_id, action_type=ActionType.WAIT)
             best_finish = float("inf")

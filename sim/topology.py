@@ -33,6 +33,10 @@ class TopologyConfig:
     bandwidth_distance_scale_km: float
     visibility_workers: int
     max_neighbors: int = 0
+    source_sat_ids: tuple[int, ...] = ()
+    neighbor_limits: tuple[int, ...] = ()
+    preferred_edges: tuple[tuple[int, int], ...] = ()
+    acquisition_delay_s: float = 0.0
 
 
 class TopologyModel:
@@ -40,6 +44,12 @@ class TopologyModel:
         self.cfg = cfg
         if cfg.max_neighbors < 0:
             raise ValueError("max_neighbors must be nonnegative; zero means unlimited")
+        if cfg.neighbor_limits and (len(cfg.neighbor_limits) != cfg.num_sats
+                                    or any(type(n) is not int or n < 1 for n in cfg.neighbor_limits)):
+            raise ValueError("neighbor_limits requires one positive terminal count per satellite")
+        if not math.isfinite(cfg.acquisition_delay_s) or cfg.acquisition_delay_s < 0:
+            raise ValueError("acquisition_delay_s must be finite and nonnegative")
+        self._selected_since = {}
         self.rng = random.Random(cfg.seed)
         # 为每条链路生成固定相位，保证带宽随时间的变化可复现
         self.phases = {
@@ -113,21 +123,36 @@ class TopologyModel:
             ]
             results = list(self._executor.map(_visible_task, tasks, chunksize=256))
 
-        allowed = bounded_edges(pairs, results, self.cfg.max_neighbors)
+        allowed = self.allowed_edges(pairs, results)
+        now = t * dt
+        previous = getattr(self, "_selected_since", {})
+        self._selected_since = {pair: previous.get(pair, now) for pair in allowed}
         for (i, j), (up, distance_km) in zip(pairs, results):
             bw = self._get_bandwidth(i, j, t, distance_km)
+            ready = self._selected_since.get((i, j), math.inf) + getattr(self.cfg, "acquisition_delay_s", 0)
             links[link_key(i, j)] = Link(
-                i=i, j=j, up=up and (i, j) in allowed, bandwidth_mbps=bw, latency_ms=self.cfg.latency_ms
+                i=i, j=j, up=up and (i, j) in allowed and now >= ready,
+                bandwidth_mbps=bw, latency_ms=self.cfg.latency_ms, acquisition_ready_s=ready,
             )
         return links
 
+    def allowed_edges(self, pairs, geometry):
+        return bounded_edges(pairs, geometry, self.cfg.max_neighbors,
+                             sources=getattr(self.cfg, "source_sat_ids", ()),
+                             limits=getattr(self.cfg, "neighbor_limits", ()),
+                             preferred=getattr(self.cfg, "preferred_edges", ()))
 
-def bounded_edges(pairs, geometry, max_neighbors):
+
+def bounded_edges(pairs, geometry, max_neighbors, *, sources=(), limits=(), preferred=()):
     """双方终端数同时受限；按距离确定性匹配，不依赖任务或未来负载。"""
-    candidates = sorted((distance, i, j) for (i, j), (up, distance) in zip(pairs, geometry) if up)
+    source_set, preferred_set = set(sources), {tuple(sorted(edge)) for edge in preferred}
+    candidates = sorted(((i, j) not in preferred_set, distance, i, j)
+                        for (i, j), (up, distance) in zip(pairs, geometry)
+                        if up and not (i in source_set and j in source_set))
     degree, allowed = {}, set()
-    for _, i, j in candidates:
-        if max_neighbors and (degree.get(i, 0) >= max_neighbors or degree.get(j, 0) >= max_neighbors):
+    for _, _, i, j in candidates:
+        cap_i, cap_j = (limits[i], limits[j]) if limits else (max_neighbors, max_neighbors)
+        if (cap_i and degree.get(i, 0) >= cap_i) or (cap_j and degree.get(j, 0) >= cap_j):
             continue
         allowed.add((i, j))
         degree[i] = degree.get(i, 0) + 1

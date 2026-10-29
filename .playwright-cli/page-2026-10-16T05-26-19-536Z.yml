@@ -1,0 +1,76 @@
+- generic [ref=f1e2]:
+  - banner [ref=f1e3]:
+    - heading "卫星任务调度仿真工作台" [level=1] [ref=f1e4]
+    - navigation [ref=f1e5]:
+      - button "仿真回放" [ref=f1e6] [cursor=pointer]
+      - button "结果分析" [ref=f1e7] [cursor=pointer]
+      - button "历史与对比" [ref=f1e8] [cursor=pointer]
+    - generic [ref=f1e9]: 连接服务…
+  - generic [ref=f1e10]:
+    - complementary [ref=f1e11]:
+      - generic [ref=f1e12]:
+        - heading [level=2] [ref=f1e13]:
+          - text: 场景配置
+          - button "恢复原配置" [ref=f1e15] [cursor=pointer]
+        - generic [ref=f1e16]:
+          - generic [ref=f1e17]: 配置文件
+          - combobox "配置文件" [ref=f1e18]:
+            - option "加载中…" [selected]
+        - generic [ref=f1e19]:
+          - generic [ref=f1e20]: 调度策略 / 执行模式
+          - combobox "调度策略 / 执行模式" [ref=f1e21]
+        - generic [ref=f1e22]:
+          - button "校验" [ref=f1e23] [cursor=pointer]
+          - button "运行仿真" [ref=f1e24] [cursor=pointer]
+      - generic [ref=f1e25]:
+        - heading "仿真执行进度" [level=2] [ref=f1e26]
+        - generic [ref=f1e27]: 尚无运行。提交配置后，这里显示后台 Python 仿真的执行步数与状态（与下方回放时间无关）。
+    - generic [ref=f1e30]:
+      - generic [ref=f1e31]:
+        - generic:
+          - generic [ref=f1e33]: 未加载运行
+          - generic [ref=f1e34]:
+            - generic [ref=f1e35] [cursor=pointer]:
+              - checkbox "卫星标签" [checked] [ref=f1e36]
+              - text: 卫星标签
+            - generic [ref=f1e37] [cursor=pointer]:
+              - checkbox "轨道线" [checked] [ref=f1e38]
+              - text: 轨道线
+            - generic [ref=f1e39] [cursor=pointer]:
+              - checkbox "地面站" [checked] [ref=f1e40]
+              - text: 地面站
+            - generic "拓扑中处于连通状态的星间链路（几何可见且满足距离/邻居约束），不代表有数据传输" [ref=f1e41] [cursor=pointer]:
+              - checkbox "可见星间链路" [checked] [ref=f1e42]
+              - text: 可见星间链路
+            - generic "快照区间内 network_sent_mb 的实际发送量，箭头指向接收星，线宽随 MB 增大" [ref=f1e44] [cursor=pointer]:
+              - checkbox "实际星间传输" [checked] [ref=f1e45]
+              - text: 实际星间传输
+            - generic "满足地面站最小仰角的星地几何可见关系，不代表正在传输" [ref=f1e47] [cursor=pointer]:
+              - checkbox "星地几何可见" [ref=f1e48]
+              - text: 星地几何可见
+            - generic "下传结果、原始分片或整图上传，快照区间内实际发送量 > 0" [ref=f1e50] [cursor=pointer]:
+              - checkbox "星地实际传输" [checked] [ref=f1e51]
+              - text: 星地实际传输
+            - generic "未选任务时按（类型, 源, 目的）汇总全部流；选中任务时仅显示该任务的分片流" [ref=f1e53] [cursor=pointer]:
+              - checkbox "任务流向" [ref=f1e54]
+              - text: 任务流向
+      - complementary [ref=f1e56]:
+        - generic [ref=f1e57]: 尚未载入运行。
+      - generic [ref=f1e59]:
+        - generic [ref=f1e60]:
+          - generic "对已结束运行的记录数据进行回放；不是仿真执行进度" [ref=f1e61]: 结果回放时间
+          - button "▶ 播放" [disabled] [ref=f1e62]
+          - button "◀" [disabled] [ref=f1e63]
+          - button "▶|" [disabled] [ref=f1e64]
+          - combobox "回放倍速（仿真秒 / 现实秒）" [disabled] [ref=f1e65]:
+            - option "1×"
+            - option "5×"
+            - option "10×"
+            - option "30×"
+            - option "60×" [selected]
+            - option "120×"
+            - option "300×"
+            - option "600×"
+          - generic [ref=f1e66]: —
+        - generic "点击定位到该时刻" [ref=f1e67] [cursor=pointer]
+        - slider "回放时间定位" [disabled] [ref=f1e68]: "0"

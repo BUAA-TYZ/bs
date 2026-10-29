@@ -1,0 +1,1113 @@
+{
+  "reports": [
+    {
+      "input": "results/sla_pressure_development_v9_20261015/day01_s3_gap30_cgs_compute_adapted.json",
+      "sha256": "5184a0bd85e927e77e251a37af14ef78fe9c2f4a3ded9879cdbad87d09056a5e",
+      "method": "cgs_compute_adapted",
+      "case": {
+        "id": "day01_s3_gap30",
+        "base_day_id": "day01",
+        "calendar_day": "2026-10-15",
+        "epoch_offset_seconds": 60180,
+        "level": "s3_gap30",
+        "max_strips_per_pass": 3,
+        "min_spacing_seconds": 30,
+        "split": "development",
+        "all_qualifying_events_retained": true,
+        "num_acquisitions": 21
+      },
+      "sla_seconds": 300,
+      "bound_kind": "offline_global_ground_window_relaxation",
+      "assumptions": "Conditional on the simulator's sampled-and-held ground visibility. Every task is available at all satellites at its release, with zero computation, zero transfer/postprocessing duration and unlimited memory/channel capacity. A ground contact at the exact SLA endpoint is granted feasibility. All tasks are retained, independently of observed outcomes. This is a necessary-condition upper bound for both onboard and mixed ground execution, not an achievable schedule.",
+      "relaxed_offline_problem": "max sum(x_i), 0 <= x_i <= a_i, a_i=1 iff a sampled ground window intersects [release_i, release_i+SLA]; closed-form optimum sum(a_i), no integer solver required",
+      "visibility_sample_seconds": 10.0,
+      "visibility_sha256": "53dac3088d0448ef1db8400d4c52af5d39c897adacd60d59ec4651945e9ab6d7",
+      "source_sha256": "e2eaf88c00e1d3ce4709f6ed94f768599a0506b8370be9fbfea4b94df2bb2e47",
+      "observation_end_seconds": 6571.0,
+      "total_tasks": 21,
+      "potentially_on_time_tasks": 21,
+      "p_sla_upper_bound": 1.0,
+      "observed_on_time_tasks": 21,
+      "observed_p_sla": 1.0,
+      "gap_upper_bound_percentage_points": 0.0,
+      "global_ground_windows": [
+        {
+          "start_s": 0.0,
+          "end_s": 280.0
+        },
+        {
+          "start_s": 420.0,
+          "end_s": 830.0
+        },
+        {
+          "start_s": 960.0,
+          "end_s": 1370.0
+        },
+        {
+          "start_s": 1510.0,
+          "end_s": 1910.0
+        },
+        {
+          "start_s": 2050.0,
+          "end_s": 2450.0
+        },
+        {
+          "start_s": 2600.0,
+          "end_s": 2990.0
+        },
+        {
+          "start_s": 3150.0,
+          "end_s": 3530.0
+        },
+        {
+          "start_s": 3700.0,
+          "end_s": 4070.0
+        },
+        {
+          "start_s": 4260.0,
+          "end_s": 4610.0
+        },
+        {
+          "start_s": 4810.0,
+          "end_s": 5150.0
+        },
+        {
+          "start_s": 5370.0,
+          "end_s": 5690.0
+        },
+        {
+          "start_s": 5920.0,
+          "end_s": 6220.0
+        },
+        {
+          "start_s": 6480.0,
+          "end_s": 6571.0
+        }
+      ],
+      "group_capacity_constraints": [],
+      "tasks": [
+        {
+          "task_id": "task_0",
+          "source_sat_id": 1,
+          "release_seconds": 120.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 120.0,
+          "delivery_latency_lower_bound_seconds": 0.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 37.4
+        },
+        {
+          "task_id": "task_1",
+          "source_sat_id": 1,
+          "release_seconds": 150.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 150.0,
+          "delivery_latency_lower_bound_seconds": 0.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 42.5
+        },
+        {
+          "task_id": "task_2",
+          "source_sat_id": 1,
+          "release_seconds": 180.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 180.0,
+          "delivery_latency_lower_bound_seconds": 0.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 36.4
+        },
+        {
+          "task_id": "task_3",
+          "source_sat_id": 0,
+          "release_seconds": 260.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 260.0,
+          "delivery_latency_lower_bound_seconds": 0.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 160.20000000000002
+        },
+        {
+          "task_id": "task_4",
+          "source_sat_id": 0,
+          "release_seconds": 290.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 420.0,
+          "delivery_latency_lower_bound_seconds": 130.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 130.20000000000002
+        },
+        {
+          "task_id": "task_5",
+          "source_sat_id": 0,
+          "release_seconds": 320.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 420.0,
+          "delivery_latency_lower_bound_seconds": 100.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 100.2
+        },
+        {
+          "task_id": "task_6",
+          "source_sat_id": 0,
+          "release_seconds": 370.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 420.0,
+          "delivery_latency_lower_bound_seconds": 50.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 50.2
+        },
+        {
+          "task_id": "task_7",
+          "source_sat_id": 0,
+          "release_seconds": 400.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 420.0,
+          "delivery_latency_lower_bound_seconds": 20.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 53.400000000000006
+        },
+        {
+          "task_id": "task_8",
+          "source_sat_id": 0,
+          "release_seconds": 430.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 430.0,
+          "delivery_latency_lower_bound_seconds": 0.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 44.1
+        },
+        {
+          "task_id": "task_9",
+          "source_sat_id": 0,
+          "release_seconds": 460.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 460.0,
+          "delivery_latency_lower_bound_seconds": 0.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 41.900000000000006
+        },
+        {
+          "task_id": "task_10",
+          "source_sat_id": 0,
+          "release_seconds": 490.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 490.0,
+          "delivery_latency_lower_bound_seconds": 0.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 40.7
+        },
+        {
+          "task_id": "task_11",
+          "source_sat_id": 0,
+          "release_seconds": 520.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 520.0,
+          "delivery_latency_lower_bound_seconds": 0.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 36.6
+        },
+        {
+          "task_id": "task_12",
+          "source_sat_id": 1,
+          "release_seconds": 5850.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 5920.0,
+          "delivery_latency_lower_bound_seconds": 70.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 70.2
+        },
+        {
+          "task_id": "task_13",
+          "source_sat_id": 1,
+          "release_seconds": 5880.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 5920.0,
+          "delivery_latency_lower_bound_seconds": 40.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 72.10000000000001
+        },
+        {
+          "task_id": "task_14",
+          "source_sat_id": 1,
+          "release_seconds": 5910.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 5920.0,
+          "delivery_latency_lower_bound_seconds": 10.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 87.60000000000001
+        },
+        {
+          "task_id": "task_15",
+          "source_sat_id": 1,
+          "release_seconds": 5940.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 5940.0,
+          "delivery_latency_lower_bound_seconds": 0.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 80.9
+        },
+        {
+          "task_id": "task_16",
+          "source_sat_id": 1,
+          "release_seconds": 5970.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 5970.0,
+          "delivery_latency_lower_bound_seconds": 0.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 77.80000000000001
+        },
+        {
+          "task_id": "task_17",
+          "source_sat_id": 1,
+          "release_seconds": 6000.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6000.0,
+          "delivery_latency_lower_bound_seconds": 0.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 83.0
+        },
+        {
+          "task_id": "task_18",
+          "source_sat_id": 0,
+          "release_seconds": 6210.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6210.0,
+          "delivery_latency_lower_bound_seconds": 0.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 270.2
+        },
+        {
+          "task_id": "task_19",
+          "source_sat_id": 0,
+          "release_seconds": 6240.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6480.0,
+          "delivery_latency_lower_bound_seconds": 240.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 240.20000000000002
+        },
+        {
+          "task_id": "task_20",
+          "source_sat_id": 0,
+          "release_seconds": 6270.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6480.0,
+          "delivery_latency_lower_bound_seconds": 210.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 210.20000000000002
+        }
+      ],
+      "complete_execution_witnesses": [
+        {
+          "input": "results/sla_pressure_development_v9_20261015/day01_s3_gap30_cgs_compute_adapted.json",
+          "sha256": "5184a0bd85e927e77e251a37af14ef78fe9c2f4a3ded9879cdbad87d09056a5e",
+          "method": "cgs_compute_adapted",
+          "on_time_tasks": 21,
+          "on_time_task_ids": [
+            "task_0",
+            "task_1",
+            "task_2",
+            "task_3",
+            "task_4",
+            "task_5",
+            "task_6",
+            "task_7",
+            "task_8",
+            "task_9",
+            "task_10",
+            "task_11",
+            "task_12",
+            "task_13",
+            "task_14",
+            "task_15",
+            "task_16",
+            "task_17",
+            "task_18",
+            "task_19",
+            "task_20"
+          ]
+        }
+      ],
+      "best_complete_execution_witness": {
+        "input": "results/sla_pressure_development_v9_20261015/day01_s3_gap30_cgs_compute_adapted.json",
+        "sha256": "5184a0bd85e927e77e251a37af14ef78fe9c2f4a3ded9879cdbad87d09056a5e",
+        "method": "cgs_compute_adapted",
+        "on_time_tasks": 21,
+        "on_time_task_ids": [
+          "task_0",
+          "task_1",
+          "task_2",
+          "task_3",
+          "task_4",
+          "task_5",
+          "task_6",
+          "task_7",
+          "task_8",
+          "task_9",
+          "task_10",
+          "task_11",
+          "task_12",
+          "task_13",
+          "task_14",
+          "task_15",
+          "task_16",
+          "task_17",
+          "task_18",
+          "task_19",
+          "task_20"
+        ]
+      },
+      "offline_optimal_count_certified": true
+    },
+    {
+      "input": "results/sla_pressure_development_v9_20261015/day02_s3_gap30_cgs_compute_adapted.json",
+      "sha256": "dc6c2a86bac34fb45bfb73fadaf033fd1a5a6d333edcfb5a267c5d9a2878a4eb",
+      "method": "cgs_compute_adapted",
+      "case": {
+        "id": "day02_s3_gap30",
+        "base_day_id": "day02",
+        "calendar_day": "2026-10-16",
+        "epoch_offset_seconds": 147590,
+        "level": "s3_gap30",
+        "max_strips_per_pass": 3,
+        "min_spacing_seconds": 30,
+        "split": "development",
+        "all_qualifying_events_retained": true,
+        "num_acquisitions": 15
+      },
+      "sla_seconds": 300,
+      "bound_kind": "offline_global_ground_window_relaxation",
+      "assumptions": "Conditional on the simulator's sampled-and-held ground visibility. Every task is available at all satellites at its release, with zero computation, zero transfer/postprocessing duration and unlimited memory/channel capacity. A ground contact at the exact SLA endpoint is granted feasibility. All tasks are retained, independently of observed outcomes. This is a necessary-condition upper bound for both onboard and mixed ground execution, not an achievable schedule.",
+      "relaxed_offline_problem": "max sum(x_i), 0 <= x_i <= a_i, a_i=1 iff a sampled ground window intersects [release_i, release_i+SLA]; closed-form optimum sum(a_i), no integer solver required",
+      "visibility_sample_seconds": 10.0,
+      "visibility_sha256": "39110b4a584df29b01f028eed2b689c12720a78d35e7be25f460e462ac061b9b",
+      "source_sha256": "e2eaf88c00e1d3ce4709f6ed94f768599a0506b8370be9fbfea4b94df2bb2e47",
+      "observation_end_seconds": 6591.0,
+      "total_tasks": 15,
+      "potentially_on_time_tasks": 13,
+      "p_sla_upper_bound": 0.8666666666666667,
+      "observed_on_time_tasks": 13,
+      "observed_p_sla": 0.8666666666666667,
+      "gap_upper_bound_percentage_points": 0.0,
+      "global_ground_windows": [
+        {
+          "start_s": 0.0,
+          "end_s": 30.0
+        },
+        {
+          "start_s": 180.0,
+          "end_s": 570.0
+        },
+        {
+          "start_s": 730.0,
+          "end_s": 1110.0
+        },
+        {
+          "start_s": 1280.0,
+          "end_s": 1650.0
+        },
+        {
+          "start_s": 1830.0,
+          "end_s": 2190.0
+        },
+        {
+          "start_s": 2390.0,
+          "end_s": 2730.0
+        },
+        {
+          "start_s": 2940.0,
+          "end_s": 3270.0
+        },
+        {
+          "start_s": 3500.0,
+          "end_s": 3800.0
+        },
+        {
+          "start_s": 4060.0,
+          "end_s": 4340.0
+        },
+        {
+          "start_s": 4620.0,
+          "end_s": 4880.0
+        },
+        {
+          "start_s": 5180.0,
+          "end_s": 5410.0
+        },
+        {
+          "start_s": 5750.0,
+          "end_s": 5940.0
+        },
+        {
+          "start_s": 6310.0,
+          "end_s": 6480.0
+        }
+      ],
+      "group_capacity_constraints": [],
+      "tasks": [
+        {
+          "task_id": "task_0",
+          "source_sat_id": 1,
+          "release_seconds": 120.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 180.0,
+          "delivery_latency_lower_bound_seconds": 60.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 60.2
+        },
+        {
+          "task_id": "task_1",
+          "source_sat_id": 1,
+          "release_seconds": 150.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 180.0,
+          "delivery_latency_lower_bound_seconds": 30.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 90.5
+        },
+        {
+          "task_id": "task_2",
+          "source_sat_id": 1,
+          "release_seconds": 180.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 180.0,
+          "delivery_latency_lower_bound_seconds": 0.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 74.10000000000001
+        },
+        {
+          "task_id": "task_3",
+          "source_sat_id": 0,
+          "release_seconds": 290.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 290.0,
+          "delivery_latency_lower_bound_seconds": 0.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 38.2
+        },
+        {
+          "task_id": "task_4",
+          "source_sat_id": 0,
+          "release_seconds": 320.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 320.0,
+          "delivery_latency_lower_bound_seconds": 0.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 38.7
+        },
+        {
+          "task_id": "task_5",
+          "source_sat_id": 0,
+          "release_seconds": 350.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 350.0,
+          "delivery_latency_lower_bound_seconds": 0.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 37.0
+        },
+        {
+          "task_id": "task_6",
+          "source_sat_id": 0,
+          "release_seconds": 380.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 380.0,
+          "delivery_latency_lower_bound_seconds": 0.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 35.9
+        },
+        {
+          "task_id": "task_7",
+          "source_sat_id": 0,
+          "release_seconds": 410.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 410.0,
+          "delivery_latency_lower_bound_seconds": 0.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 32.0
+        },
+        {
+          "task_id": "task_8",
+          "source_sat_id": 0,
+          "release_seconds": 440.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 440.0,
+          "delivery_latency_lower_bound_seconds": 0.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 28.700000000000003
+        },
+        {
+          "task_id": "task_9",
+          "source_sat_id": 1,
+          "release_seconds": 5910.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 5910.0,
+          "delivery_latency_lower_bound_seconds": 0.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 52.900000000000006
+        },
+        {
+          "task_id": "task_10",
+          "source_sat_id": 1,
+          "release_seconds": 5940.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6310.0,
+          "delivery_latency_lower_bound_seconds": 370.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": false,
+          "observed_on_time": false,
+          "observed_latency_seconds": 370.20000000000005
+        },
+        {
+          "task_id": "task_11",
+          "source_sat_id": 1,
+          "release_seconds": 5970.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6310.0,
+          "delivery_latency_lower_bound_seconds": 340.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": false,
+          "observed_on_time": false,
+          "observed_latency_seconds": 340.20000000000005
+        },
+        {
+          "task_id": "task_12",
+          "source_sat_id": 0,
+          "release_seconds": 6230.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6310.0,
+          "delivery_latency_lower_bound_seconds": 80.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 80.2
+        },
+        {
+          "task_id": "task_13",
+          "source_sat_id": 0,
+          "release_seconds": 6260.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6310.0,
+          "delivery_latency_lower_bound_seconds": 50.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 50.2
+        },
+        {
+          "task_id": "task_14",
+          "source_sat_id": 0,
+          "release_seconds": 6290.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6310.0,
+          "delivery_latency_lower_bound_seconds": 20.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 50.7
+        }
+      ],
+      "complete_execution_witnesses": [
+        {
+          "input": "results/sla_pressure_development_v9_20261015/day02_s3_gap30_cgs_compute_adapted.json",
+          "sha256": "dc6c2a86bac34fb45bfb73fadaf033fd1a5a6d333edcfb5a267c5d9a2878a4eb",
+          "method": "cgs_compute_adapted",
+          "on_time_tasks": 13,
+          "on_time_task_ids": [
+            "task_0",
+            "task_1",
+            "task_2",
+            "task_3",
+            "task_4",
+            "task_5",
+            "task_6",
+            "task_7",
+            "task_8",
+            "task_9",
+            "task_12",
+            "task_13",
+            "task_14"
+          ]
+        }
+      ],
+      "best_complete_execution_witness": {
+        "input": "results/sla_pressure_development_v9_20261015/day02_s3_gap30_cgs_compute_adapted.json",
+        "sha256": "dc6c2a86bac34fb45bfb73fadaf033fd1a5a6d333edcfb5a267c5d9a2878a4eb",
+        "method": "cgs_compute_adapted",
+        "on_time_tasks": 13,
+        "on_time_task_ids": [
+          "task_0",
+          "task_1",
+          "task_2",
+          "task_3",
+          "task_4",
+          "task_5",
+          "task_6",
+          "task_7",
+          "task_8",
+          "task_9",
+          "task_12",
+          "task_13",
+          "task_14"
+        ]
+      },
+      "offline_optimal_count_certified": true
+    },
+    {
+      "input": "results/sla_pressure_development_v9_20261015/day03_s3_gap30_cgs_compute_adapted.json",
+      "sha256": "5e82c5071a0d3713a9d6ae264995bce6fa10d78de6987b9b06de32733a0370b5",
+      "method": "cgs_compute_adapted",
+      "case": {
+        "id": "day03_s3_gap30",
+        "base_day_id": "day03",
+        "calendar_day": "2026-10-17",
+        "epoch_offset_seconds": 229480,
+        "level": "s3_gap30",
+        "max_strips_per_pass": 3,
+        "min_spacing_seconds": 30,
+        "split": "development",
+        "all_qualifying_events_retained": true,
+        "num_acquisitions": 17
+      },
+      "sla_seconds": 300,
+      "bound_kind": "offline_global_ground_window_relaxation",
+      "assumptions": "Conditional on the simulator's sampled-and-held ground visibility. Every task is available at all satellites at its release, with zero computation, zero transfer/postprocessing duration and unlimited memory/channel capacity. A ground contact at the exact SLA endpoint is granted feasibility. All tasks are retained, independently of observed outcomes. This is a necessary-condition upper bound for both onboard and mixed ground execution, not an achievable schedule.",
+      "relaxed_offline_problem": "max sum(x_i), 0 <= x_i <= a_i, a_i=1 iff a sampled ground window intersects [release_i, release_i+SLA]; closed-form optimum sum(a_i), no integer solver required",
+      "visibility_sample_seconds": 10.0,
+      "visibility_sha256": "6d364933a3328a4871cbb27a7926be31ac41ac74dcfb2605d5ce7f2deabe1ed6",
+      "source_sha256": "e2eaf88c00e1d3ce4709f6ed94f768599a0506b8370be9fbfea4b94df2bb2e47",
+      "observation_end_seconds": 11861.0,
+      "total_tasks": 17,
+      "potentially_on_time_tasks": 15,
+      "p_sla_upper_bound": 0.8823529411764706,
+      "observed_on_time_tasks": 14,
+      "observed_p_sla": 0.8235294117647058,
+      "gap_upper_bound_percentage_points": 5.882352941176471,
+      "global_ground_windows": [
+        {
+          "start_s": 30.0,
+          "end_s": 410.0
+        },
+        {
+          "start_s": 560.0,
+          "end_s": 960.0
+        },
+        {
+          "start_s": 1100.0,
+          "end_s": 1500.0
+        },
+        {
+          "start_s": 1640.0,
+          "end_s": 2050.0
+        },
+        {
+          "start_s": 2180.0,
+          "end_s": 2590.0
+        },
+        {
+          "start_s": 2730.0,
+          "end_s": 3130.0
+        },
+        {
+          "start_s": 3280.0,
+          "end_s": 3670.0
+        },
+        {
+          "start_s": 3830.0,
+          "end_s": 4210.0
+        },
+        {
+          "start_s": 4380.0,
+          "end_s": 4750.0
+        },
+        {
+          "start_s": 4930.0,
+          "end_s": 5290.0
+        },
+        {
+          "start_s": 5480.0,
+          "end_s": 5830.0
+        },
+        {
+          "start_s": 6040.0,
+          "end_s": 6370.0
+        },
+        {
+          "start_s": 6600.0,
+          "end_s": 6900.0
+        },
+        {
+          "start_s": 7160.0,
+          "end_s": 7440.0
+        },
+        {
+          "start_s": 7720.0,
+          "end_s": 7980.0
+        },
+        {
+          "start_s": 8280.0,
+          "end_s": 8510.0
+        },
+        {
+          "start_s": 8840.0,
+          "end_s": 9050.0
+        },
+        {
+          "start_s": 9410.0,
+          "end_s": 9580.0
+        },
+        {
+          "start_s": 9980.0,
+          "end_s": 10110.0
+        },
+        {
+          "start_s": 10550.0,
+          "end_s": 10630.0
+        }
+      ],
+      "group_capacity_constraints": [],
+      "tasks": [
+        {
+          "task_id": "task_0",
+          "source_sat_id": 0,
+          "release_seconds": 120.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 120.0,
+          "delivery_latency_lower_bound_seconds": 0.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 33.800000000000004
+        },
+        {
+          "task_id": "task_1",
+          "source_sat_id": 0,
+          "release_seconds": 150.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 150.0,
+          "delivery_latency_lower_bound_seconds": 0.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 35.5
+        },
+        {
+          "task_id": "task_2",
+          "source_sat_id": 0,
+          "release_seconds": 180.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 180.0,
+          "delivery_latency_lower_bound_seconds": 0.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 31.400000000000002
+        },
+        {
+          "task_id": "task_3",
+          "source_sat_id": 1,
+          "release_seconds": 5680.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 5680.0,
+          "delivery_latency_lower_bound_seconds": 0.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 37.5
+        },
+        {
+          "task_id": "task_4",
+          "source_sat_id": 1,
+          "release_seconds": 5710.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 5710.0,
+          "delivery_latency_lower_bound_seconds": 0.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 42.7
+        },
+        {
+          "task_id": "task_5",
+          "source_sat_id": 1,
+          "release_seconds": 5740.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 5740.0,
+          "delivery_latency_lower_bound_seconds": 0.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 43.300000000000004
+        },
+        {
+          "task_id": "task_6",
+          "source_sat_id": 1,
+          "release_seconds": 5790.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 5790.0,
+          "delivery_latency_lower_bound_seconds": 0.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 38.1
+        },
+        {
+          "task_id": "task_7",
+          "source_sat_id": 1,
+          "release_seconds": 5820.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 5820.0,
+          "delivery_latency_lower_bound_seconds": 0.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": false,
+          "observed_latency_seconds": null
+        },
+        {
+          "task_id": "task_8",
+          "source_sat_id": 1,
+          "release_seconds": 5850.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6040.0,
+          "delivery_latency_lower_bound_seconds": 190.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 190.20000000000002
+        },
+        {
+          "task_id": "task_9",
+          "source_sat_id": 0,
+          "release_seconds": 5860.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6040.0,
+          "delivery_latency_lower_bound_seconds": 180.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 180.20000000000002
+        },
+        {
+          "task_id": "task_10",
+          "source_sat_id": 0,
+          "release_seconds": 5890.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6040.0,
+          "delivery_latency_lower_bound_seconds": 150.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 150.20000000000002
+        },
+        {
+          "task_id": "task_11",
+          "source_sat_id": 0,
+          "release_seconds": 5920.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6040.0,
+          "delivery_latency_lower_bound_seconds": 120.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 145.9
+        },
+        {
+          "task_id": "task_12",
+          "source_sat_id": 0,
+          "release_seconds": 5950.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6040.0,
+          "delivery_latency_lower_bound_seconds": 90.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 127.7
+        },
+        {
+          "task_id": "task_13",
+          "source_sat_id": 0,
+          "release_seconds": 5980.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6040.0,
+          "delivery_latency_lower_bound_seconds": 60.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 120.30000000000001
+        },
+        {
+          "task_id": "task_14",
+          "source_sat_id": 0,
+          "release_seconds": 6010.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": 6040.0,
+          "delivery_latency_lower_bound_seconds": 30.0,
+          "no_contact_through_seconds": null,
+          "potentially_on_time": true,
+          "observed_on_time": true,
+          "observed_latency_seconds": 101.80000000000001
+        },
+        {
+          "task_id": "task_15",
+          "source_sat_id": 1,
+          "release_seconds": 11530.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": null,
+          "delivery_latency_lower_bound_seconds": null,
+          "no_contact_through_seconds": 11861.0,
+          "potentially_on_time": false,
+          "observed_on_time": false,
+          "observed_latency_seconds": null
+        },
+        {
+          "task_id": "task_16",
+          "source_sat_id": 1,
+          "release_seconds": 11560.0,
+          "sla_seconds": 300,
+          "next_global_ground_open_seconds": null,
+          "delivery_latency_lower_bound_seconds": null,
+          "no_contact_through_seconds": 11861.0,
+          "potentially_on_time": false,
+          "observed_on_time": false,
+          "observed_latency_seconds": null
+        }
+      ],
+      "complete_execution_witnesses": [
+        {
+          "input": "results/sla_pressure_development_v9_20261015/day03_s3_gap30_cgs_compute_adapted.json",
+          "sha256": "5e82c5071a0d3713a9d6ae264995bce6fa10d78de6987b9b06de32733a0370b5",
+          "method": "cgs_compute_adapted",
+          "on_time_tasks": 14,
+          "on_time_task_ids": [
+            "task_0",
+            "task_1",
+            "task_2",
+            "task_3",
+            "task_4",
+            "task_5",
+            "task_6",
+            "task_8",
+            "task_9",
+            "task_10",
+            "task_11",
+            "task_12",
+            "task_13",
+            "task_14"
+          ]
+        },
+        {
+          "input": "results/sla_pressure_development_v9_20261015/day03_s3_gap30_heft_adapted.json",
+          "sha256": "f8d7b38729a0b721ab6c85fc662ede2d2e85330195098da6f112855b33250b93",
+          "method": "heft_adapted",
+          "on_time_tasks": 15,
+          "on_time_task_ids": [
+            "task_0",
+            "task_1",
+            "task_2",
+            "task_3",
+            "task_4",
+            "task_5",
+            "task_6",
+            "task_7",
+            "task_8",
+            "task_9",
+            "task_10",
+            "task_11",
+            "task_12",
+            "task_13",
+            "task_14"
+          ]
+        }
+      ],
+      "best_complete_execution_witness": {
+        "input": "results/sla_pressure_development_v9_20261015/day03_s3_gap30_heft_adapted.json",
+        "sha256": "f8d7b38729a0b721ab6c85fc662ede2d2e85330195098da6f112855b33250b93",
+        "method": "heft_adapted",
+        "on_time_tasks": 15,
+        "on_time_task_ids": [
+          "task_0",
+          "task_1",
+          "task_2",
+          "task_3",
+          "task_4",
+          "task_5",
+          "task_6",
+          "task_7",
+          "task_8",
+          "task_9",
+          "task_10",
+          "task_11",
+          "task_12",
+          "task_13",
+          "task_14"
+        ]
+      },
+      "offline_optimal_count_certified": true
+    }
+  ],
+  "auditor_sha256": "02eece8d651b0e46fbecda4705738e4b279a5533cb5e1f276d24d56f8d06a5e2",
+  "pooled_task_count_upper_bound": 49,
+  "pooled_total_tasks": 53,
+  "equal_case_p_sla_upper_bound": 0.9163398692810457
+}

@@ -1,0 +1,200 @@
+from __future__ import annotations
+
+from dataclasses import dataclass, field
+from enum import Enum
+from typing import Dict, List, Optional
+
+
+class TileState(str, Enum):
+    CREATED = "CREATED"
+    QUEUED = "QUEUED"
+    TRANSFERRING = "TRANSFERRING"
+    INPUT_RELAY = "INPUT_RELAY"
+    GROUND_RELAY_PENDING = "GROUND_RELAY_PENDING"
+    RESULT_TRANSFERRING = "RESULT_TRANSFERRING"
+    READY = "READY"
+    RUNNING = "RUNNING"
+    COMPUTED = "COMPUTED"
+    DOWNLINKING = "DOWNLINKING"
+    GROUND_QUEUED = "GROUND_QUEUED"
+    GROUND_RUNNING = "GROUND_RUNNING"
+    DONE = "DONE"
+    FAILED = "FAILED"
+
+
+class ActionType(str, Enum):
+    LOCAL = "LOCAL"
+    OFFLOAD = "OFFLOAD"
+    WAIT = "WAIT"
+
+
+class FailureReason(str, Enum):
+    MEM_FULL = "mem_full"
+    VRAM_OOM = "vram_oom"
+    LINK_DOWN = "link_down"
+    DEADLINE_MISS = "deadline_miss"
+    NO_ROUTE = "no_route"
+
+
+@dataclass
+class Action:
+    tile_id: str
+    action_type: ActionType
+    target_sat_id: Optional[int] = None
+    target_gs_id: Optional[str] = None
+    input_path: tuple[int, ...] = ()
+    relay_to_ground: bool = False
+
+
+@dataclass
+class TileTimestamps:
+    created: int
+    start_tx: Optional[int] = None
+    end_tx: Optional[int] = None
+    start_compute: Optional[int] = None
+    end_compute: Optional[int] = None
+    start_downlink: Optional[int] = None
+    end_downlink: Optional[int] = None
+
+
+@dataclass
+class Tile:
+    tile_id: str
+    parent_task_id: str
+    data_size_mb: float
+    compute_cost: float
+    vram_req_gb: float
+    state: TileState
+    location: int
+    timestamps: TileTimestamps
+    deadline: Optional[int] = None
+    remaining_compute: Optional[float] = None
+    failure_reason: Optional[FailureReason] = None
+    memory_holders: set[int] = field(default_factory=set)
+    result_memory_holders: set[int] = field(default_factory=set)
+    result_available_time: Optional[int] = None
+    result_path: List[int] = field(default_factory=list)
+    raw_relay_path: List[int] = field(default_factory=list)
+    result_size_mb: Optional[float] = None
+    windows_xyxy: tuple[tuple[int, int, int, int], ...] = ()
+    input_route: tuple[int, ...] = ()
+    input_target_sat_id: Optional[int] = None
+    ground_relay_target: Optional[str] = None
+    completed_compute_windows: int = 0
+    actual_result_size_mb: Optional[float] = None
+
+
+@dataclass
+class Task:
+    task_id: str
+    source_sat_id: int
+    release_time: int
+    image_size_mb: float
+    num_tiles: int
+    deadline: Optional[int]
+    tile_ids: List[str] = field(default_factory=list)
+    results_ready_time: Optional[int] = None
+    completion_time: Optional[int] = None
+    failure_reason: Optional[str] = None
+
+
+@dataclass
+class Satellite:
+    sat_id: int
+    compute_rate: float  # tiles per second (or cost units per second)
+    mem_capacity_gb: float
+    vram_capacity_gb: float
+    queue: List[str] = field(default_factory=list)
+    executing: Optional[str] = None
+    mem_used_gb: float = 0.0
+    vram_used_gb: float = 0.0
+    energy: Optional[float] = None
+    busy_time: float = 0.0
+    queue_time_acc: float = 0.0
+    mem_peak_gb: float = 0.0
+    vram_peak_gb: float = 0.0
+    executing_batch: List[str] = field(default_factory=list)
+    batch_remaining_s: float = 0.0
+    batch_service_s: float = 0.0
+    batch_id: Optional[str] = None
+
+
+@dataclass
+class Link:
+    i: int
+    j: int
+    up: bool
+    bandwidth_mbps: float
+    latency_ms: float
+
+
+@dataclass
+class Transfer:
+    tile_id: str
+    src: int
+    dst: int
+    remaining_mb: float
+    start_time: int
+    link_key: str
+    is_result: bool = False
+
+
+@dataclass
+class GroundStation:
+    gs_id: str
+    lat_deg: float
+    lon_deg: float
+    alt_m: float
+    min_elevation_deg: float
+    bandwidth_mbps: float
+    latency_ms: float
+    compute_rate: float
+    receive_channels: int = 1
+
+
+@dataclass
+class DownlinkTransfer:
+    tile_id: str
+    src_sat: int
+    gs_id: str
+    remaining_mb: float
+    start_time: int
+
+
+@dataclass
+class GroundTileTransfer:
+    tile_id: str
+    src_sat: int
+    gs_id: str
+    remaining_mb: float
+    start_time: int
+
+
+@dataclass
+class GroundTaskTransfer:
+    task_id: str
+    src_sat: int
+    gs_id: str
+    remaining_mb: float
+    start_time: int
+
+
+@dataclass
+class GroundTaskCompute:
+    task_id: str
+    gs_id: str
+    remaining_compute: float
+    start_time: int
+
+
+@dataclass
+class EnvState:
+    time: int
+    satellites: Dict[int, Dict]
+    ground_stations: Dict[str, Dict]
+    ground_options: Dict[int, List[Dict]]
+    neighbors: Dict[int, List[int]]
+    links: Dict[str, Dict]
+    tiles: Dict[str, Dict]
+    config: Dict
+    pending_task_tiles: Dict[str, Dict[str, Dict]] = field(default_factory=dict)

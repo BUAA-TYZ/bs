@@ -17,6 +17,7 @@ import torch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from sim.config import load_config
 from sim.marl.actor import SatActorCritic
+from sim.marl.checkpoint import validate_checkpoint_protocol
 from sim.marl.scenarios import ScenarioDistribution
 from sim.marl.value_calibration import (balanced_value_dataset, collect_value_case,
                                        evaluate_value_critic, fit_value_critic)
@@ -46,6 +47,7 @@ def main():
     torch.set_num_threads(1)
     checkpoint_bytes = Path(args.checkpoint).read_bytes()
     saved = torch.load(io.BytesIO(checkpoint_bytes), weights_only=True, map_location="cpu")
+    validate_checkpoint_protocol(saved)
     cfg = load_config(args.config)
     if saved["config"] != asdict(cfg) or not saved.get("delivery_horizons_seconds"):
         raise ValueError("Calibration requires identical base environment and a task-age checkpoint")

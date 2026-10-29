@@ -1,0 +1,26 @@
+{
+  "scope": "Post hoc read-only diagnosis of local policy in validation_near_high_1",
+  "reference": "validation_near_high_1_local_dt0.25.json",
+  "candidate": "validation_near_high_1_local_dt1.json",
+  "common_completed_tasks": 105,
+  "mean_latency_candidate_minus_reference_seconds": 1.9,
+  "largest_relative_differences": [
+    {"task_id": "task_24", "release_seconds": 1706.0,
+     "dt1_latency_seconds": 9.0, "dt025_latency_seconds": 5.25,
+     "dt1_relative_to_dt025_minus_one": 0.7142857142857142},
+    {"task_id": "task_81", "release_seconds": 5119.0,
+     "dt1_latency_seconds": 8.0, "dt025_latency_seconds": 5.0,
+     "dt1_relative_to_dt025_minus_one": 0.6000000000000001},
+    {"task_id": "task_28", "release_seconds": 1920.0,
+     "dt1_latency_seconds": 6.0, "dt025_latency_seconds": 4.5,
+     "dt1_relative_to_dt025_minus_one": 0.33333333333333326},
+    {"task_id": "task_77", "release_seconds": 4713.0,
+     "dt1_latency_seconds": 6.0, "dt025_latency_seconds": 4.5,
+     "dt1_relative_to_dt025_minus_one": 0.33333333333333326},
+    {"task_id": "task_79", "release_seconds": 4813.0,
+     "dt1_latency_seconds": 6.0, "dt025_latency_seconds": 4.5,
+     "dt1_relative_to_dt025_minus_one": 0.33333333333333326}
+  ],
+  "interpretation": "An unchanged hours-scale delivery score and a small mean absolute latency difference do not demonstrate accurate seconds-scale latency for short tasks. The 0.25 s run is only a finer numerical reference, not an exact continuous-time solution.",
+  "generalization_limit": "One development case and one local policy; these observations do not bound errors over all six protocol conditions."
+}

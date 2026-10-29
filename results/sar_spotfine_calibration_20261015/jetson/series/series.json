@@ -1,0 +1,89 @@
+{
+  "started_at_utc": "2026-10-15T13:08:56.686630+00:00",
+  "status": "passed",
+  "runs": [
+    {
+      "name": "round1",
+      "command": [
+        "/home/tianyz/anaconda3/envs/dota/bin/python",
+        "/home/tianyz/bs_sar_calibration_20261015_IBZujO/calibrate_jetson_sar.py",
+        "--weights",
+        "/home/tianyz/bs_jetson_20261015_7TtC5t/yolo11n-obb.pt",
+        "--workload-json",
+        "/home/tianyz/bs_sar_calibration_20261015_IBZujO/workload_fixture.json",
+        "--output",
+        "/home/tianyz/bs_sar_calibration_20261015_IBZujO/series/round1",
+        "--warmup",
+        "50",
+        "--repeats",
+        "64"
+      ],
+      "started_at_utc": "2026-10-15T13:08:56.689087+00:00",
+      "returncode": 0,
+      "finished_at_utc": "2026-10-15T13:10:09.410502+00:00"
+    },
+    {
+      "name": "round2",
+      "command": [
+        "/home/tianyz/anaconda3/envs/dota/bin/python",
+        "/home/tianyz/bs_sar_calibration_20261015_IBZujO/calibrate_jetson_sar.py",
+        "--weights",
+        "/home/tianyz/bs_jetson_20261015_7TtC5t/yolo11n-obb.pt",
+        "--workload-json",
+        "/home/tianyz/bs_sar_calibration_20261015_IBZujO/workload_fixture.json",
+        "--output",
+        "/home/tianyz/bs_sar_calibration_20261015_IBZujO/series/round2",
+        "--warmup",
+        "50",
+        "--repeats",
+        "64"
+      ],
+      "started_at_utc": "2026-10-15T13:10:09.410689+00:00",
+      "returncode": 0,
+      "finished_at_utc": "2026-10-15T13:11:19.592630+00:00"
+    },
+    {
+      "name": "round3",
+      "command": [
+        "/home/tianyz/anaconda3/envs/dota/bin/python",
+        "/home/tianyz/bs_sar_calibration_20261015_IBZujO/calibrate_jetson_sar.py",
+        "--weights",
+        "/home/tianyz/bs_jetson_20261015_7TtC5t/yolo11n-obb.pt",
+        "--workload-json",
+        "/home/tianyz/bs_sar_calibration_20261015_IBZujO/workload_fixture.json",
+        "--output",
+        "/home/tianyz/bs_sar_calibration_20261015_IBZujO/series/round3",
+        "--warmup",
+        "50",
+        "--repeats",
+        "64"
+      ],
+      "started_at_utc": "2026-10-15T13:11:19.592820+00:00",
+      "returncode": 0,
+      "finished_at_utc": "2026-10-15T13:12:30.920266+00:00"
+    },
+    {
+      "name": "sustained",
+      "command": [
+        "/home/tianyz/anaconda3/envs/dota/bin/python",
+        "/home/tianyz/bs_sar_calibration_20261015_IBZujO/calibrate_jetson_sar.py",
+        "--weights",
+        "/home/tianyz/bs_jetson_20261015_7TtC5t/yolo11n-obb.pt",
+        "--workload-json",
+        "/home/tianyz/bs_sar_calibration_20261015_IBZujO/workload_fixture.json",
+        "--output",
+        "/home/tianyz/bs_sar_calibration_20261015_IBZujO/series/sustained",
+        "--warmup",
+        "50",
+        "--duration-sec",
+        "900"
+      ],
+      "started_at_utc": "2026-10-15T13:12:30.920449+00:00",
+      "returncode": 0,
+      "finished_at_utc": "2026-10-15T13:28:05.912739+00:00"
+    }
+  ],
+  "tegrastats_available": true,
+  "tegrastats_returncode_after_stop": -15,
+  "finished_at_utc": "2026-10-15T13:28:05.914052+00:00"
+}

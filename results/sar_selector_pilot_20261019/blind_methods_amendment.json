@@ -1,0 +1,25 @@
+{
+  "approval_date": "2026-10-19",
+  "reason": "User explicitly confirmed dates and added the full revised proposal while the authorized development pilot was running",
+  "original_blind_dates_sha256": "f067265f9ffb3d6a7dcb6159d9ca2069e2b8a2752bce71dcb235b93c3299211f",
+  "dates": ["2026-12-15", "2026-12-16", "2026-12-17"],
+  "conditions": ["base", "compute_4", "compute_10", "load_2", "load_4"],
+  "methods": ["three_plan_v3", "frozen_learned_selector", "cgs_task_choice"],
+  "runs": 45,
+  "status": "SEALED_NOT_GENERATED_NOT_RUN",
+  "guard": "Do not generate, view or run new blind-test trajectories before model freeze and user authorization",
+  "learning_variants_limit": 2,
+  "learning_variants": ["fastest_plan_classifier", "three_plan_latency_regressor"],
+  "same_features_and_data_for_both_variants": true,
+  "model_selection": "validation P300 descending, then R300 ascending; freeze one selector",
+  "train_seeds": [1701, 1702, 1703],
+  "schedule": {
+    "2026-10-19/2026-10-22": "audit, pilot, and full labels only after a separate user confirmation",
+    "2026-10-23/2026-10-25": "training",
+    "2026-10-26": "select on Oct 22-24 validation data and freeze",
+    "2026-10-27/2026-10-28": "new blind test",
+    "2026-10-29": "report and stop; no extension"
+  },
+  "current_authorization": "preregistration and 40-state pilot only; report and stop before full labels or training",
+  "pilot_report_additions": ["label distribution", "latency regret when v3 chooses incorrectly"]
+}

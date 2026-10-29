@@ -1,0 +1,6 @@
+Command: env OMP_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 PYTHONPATH=tests .venv/bin/python -m unittest test_main_rl_interface test_local_information_baselines test_redesign_scene
+Final invocation: Ran 28 tests in 0.452s
+OK
+
+Earlier development invocations failed while the synthetic execution fixture lacked a raw-image workload and visibility windows. The test fixture was completed before preparation started. No frozen production method or physical configuration was changed for those test fixes.
+This unit-test result does not override the subsequent blocked date-adapter integration audit.

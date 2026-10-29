@@ -9,7 +9,8 @@ from sim.orbit import parse_start_time_utc
 
 
 def walker_tle(epoch_utc, planes, satellites_per_plane, altitude_km, inclination_deg,
-               raan_offset_deg=0.0, phase_offset_deg=0.0, phasing=1):
+               raan_offset_deg=0.0, phase_offset_deg=0.0, phasing=1,
+               plane_raan_offsets_deg=None, first_satellite_number=1):
     if type(planes) is not int or type(satellites_per_plane) is not int or min(planes, satellites_per_plane) < 1:
         raise ValueError("Walker plane and satellite counts must be positive integers")
     if not 300 <= altitude_km <= 1500 or not 0 < inclination_deg < 180:
@@ -18,6 +19,13 @@ def walker_tle(epoch_utc, planes, satellites_per_plane, altitude_km, inclination
         raise ValueError("Invalid Walker phasing or satellite count")
     if not all(math.isfinite(v) for v in (raan_offset_deg, phase_offset_deg)):
         raise ValueError("Offsets must be finite")
+    if plane_raan_offsets_deg is not None and (
+            len(plane_raan_offsets_deg) != planes or
+            any(not math.isfinite(v) for v in plane_raan_offsets_deg)):
+        raise ValueError("Explicit RAAN offsets must contain one finite value per plane")
+    if (type(first_satellite_number) is not int or first_satellite_number < 1 or
+            first_satellite_number + planes * satellites_per_plane - 1 > 99999):
+        raise ValueError("Synthetic satellite numbers must be in 1..99999")
     time = parse_start_time_utc(epoch_utc)
     jd, fraction = jday(time.year, time.month, time.day, time.hour, time.minute,
                         time.second + time.microsecond / 1e6)
@@ -27,12 +35,14 @@ def walker_tle(epoch_utc, planes, satellites_per_plane, altitude_km, inclination
     count = planes * satellites_per_plane
     lines = []
     for plane in range(planes):
-        raan = math.radians((raan_offset_deg + plane * 360 / planes) % 360)
+        # 近极轨双轨道面不能默认把 RAAN 相差 180 度当作正交平面。
+        offset = plane * 360 / planes if plane_raan_offsets_deg is None else plane_raan_offsets_deg[plane]
+        raan = math.radians((raan_offset_deg + offset) % 360)
         for slot in range(satellites_per_plane):
             anomaly = math.radians((phase_offset_deg + slot * 360 / satellites_per_plane
                                     + plane * phasing * 360 / count) % 360)
             sat = Satrec()
-            sat.sgp4init(WGS72, "i", len(lines) + 1, epoch, 0, 0, 0, 0.0001, 0,
+            sat.sgp4init(WGS72, "i", len(lines) + first_satellite_number, epoch, 0, 0, 0, 0.0001, 0,
                          math.radians(inclination_deg), anomaly, mean_motion, raan)
             lines.append(export_tle(sat))
     return lines

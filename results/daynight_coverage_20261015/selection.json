@@ -1,0 +1,260 @@
+{
+  "scope": "Geometry-only development diagnostic; no scheduler, delivery result, or formal simulation config",
+  "epoch": "2026-10-15T00:00:00Z",
+  "duration_s": 86400,
+  "scan_step_s": 5,
+  "selection_rule": "All three architecture groups fixed before propagation; all selected acquisitions retained; no ground-contact or policy-result filtering",
+  "minimum_requirement": "At least one acquisition release in every UTC hour; short gaps permitted",
+  "requirement_scope": "A necessary screening criterion for 24h task supply; not guaranteed continuous observation or operational imaging feasibility",
+  "targets": [
+    {
+      "target_id": "central_valley_agriculture",
+      "lat_deg": 36.5,
+      "lon_deg": -119.5,
+      "radius_km": 0
+    },
+    {
+      "target_id": "great_plains_agriculture",
+      "lat_deg": 39.0,
+      "lon_deg": -100.0,
+      "radius_km": 0
+    },
+    {
+      "target_id": "corn_belt_agriculture",
+      "lat_deg": 42.0,
+      "lon_deg": -93.5,
+      "radius_km": 0
+    },
+    {
+      "target_id": "mississippi_delta_agriculture",
+      "lat_deg": 33.0,
+      "lon_deg": -91.0,
+      "radius_km": 0
+    },
+    {
+      "target_id": "appalachian_vegetation",
+      "lat_deg": 38.0,
+      "lon_deg": -81.0,
+      "radius_km": 0
+    }
+  ],
+  "target_scope": "Five previously used US civil-region centers only; radius=0; not complete US area coverage",
+  "optical": {
+    "count": 2,
+    "source_ids": [
+      0,
+      1
+    ],
+    "altitude_km": 620,
+    "inclination_deg": 97.9,
+    "raan_deg": [
+      357.5,
+      12.5
+    ],
+    "phase_deg": [
+      0,
+      15
+    ],
+    "max_off_nadir_deg": 30,
+    "minimum_solar_elevation_deg": 21,
+    "capture_duration_s": null,
+    "release_rule": "sampled imaging instant; exposure and attitude uncalibrated"
+  },
+  "sar": {
+    "counts": [
+      12,
+      24,
+      48
+    ],
+    "planes": 12,
+    "satellites_per_plane": [
+      1,
+      2,
+      4
+    ],
+    "altitude_km": 570,
+    "inclination_deg": 97.7,
+    "raan_deg": [
+      0,
+      30,
+      60,
+      90,
+      120,
+      150,
+      180,
+      210,
+      240,
+      270,
+      300,
+      330
+    ],
+    "phasing": 0,
+    "phase_rule": "Uniform in each plane; 1/2/4 slots are nested subsets of 0/90/180/270 degrees",
+    "architecture_reason": "Twelve RAAN planes spread local crossing times; along-track density alone cannot fill all local-time gaps",
+    "source_ids_by_count": {
+      "12": [
+        24,
+        28,
+        32,
+        36,
+        40,
+        44,
+        48,
+        52,
+        56,
+        60,
+        64,
+        68
+      ],
+      "24": [
+        24,
+        26,
+        28,
+        30,
+        32,
+        34,
+        36,
+        38,
+        40,
+        42,
+        44,
+        46,
+        48,
+        50,
+        52,
+        54,
+        56,
+        58,
+        60,
+        62,
+        64,
+        66,
+        68,
+        70
+      ],
+      "48": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71
+      ]
+    },
+    "ground_incidence_deg": [
+      20,
+      40
+    ],
+    "capture_duration_s": 15,
+    "solar_filter": false,
+    "release_rule": "capture end strictly before 86400s; focused-product ready delay remains uncalibrated",
+    "squint_or_attitude_constraint": false,
+    "geometry_scope": "Optimistic both-side angular screen; no squint, slew, dwell tracking, beam, swath, cloud, energy, or imaging duty-cycle validation",
+    "vendor_product_size_gb_bound": [
+      2,
+      3.5
+    ],
+    "product_size_scope": "Vendor product bound only; not raw echo volume or actual per-event transport load",
+    "compute_cost": null,
+    "focused_product_ready_delay_s": null,
+    "sources": [
+      "https://sar.iceye.com/5.2.0/productguide/fleet/",
+      "https://sar.iceye.com/6.0.2/productspecification/imagingmodes/"
+    ]
+  },
+  "helpers": {
+    "count": 22,
+    "source_ids": [],
+    "retained_satellite_ids": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "altitude_km": 550,
+    "inclination_deg": 53,
+    "propagated": false,
+    "note": "Role metadata retained; connectivity and delivery are not audited here"
+  },
+  "acquisition_limits": {
+    "minimum_start_spacing_s_per_source_all_targets": 30,
+    "maximum_captures_per_contiguous_eligible_target_window": 3,
+    "candidate_order": "capture_start_s, source_sat_id, target_id"
+  },
+  "sampling": "SAR eligibility checked at start, +5s, +10s, and end +15s; between-sample feasibility is not proved; short windows may be missed",
+  "night_definition": "Approximate geometric solar elevation <0 degrees at target at capture start; 0..21 degrees is not night but is excluded for optical",
+  "task_ready_caveat": "Capture-end timestamps are geometric acquisition releases, not calibrated ready-for-inference task arrivals",
+  "simulation_protocol_after_calibration": {
+    "arrival_interval_s": [
+      0,
+      86400
+    ],
+    "arrival_end_exclusive": true,
+    "followup_s": 301,
+    "dt_s": 0.1,
+    "start_empty_once": true,
+    "daily_queue_reset": false,
+    "implemented_or_run": false
+  },
+  "evidence_boundary": "No guarantee that adding sources increases compute utilization; no SAR computation model is set"
+}

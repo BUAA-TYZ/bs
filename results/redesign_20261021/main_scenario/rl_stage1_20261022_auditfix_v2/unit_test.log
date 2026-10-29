@@ -1,0 +1,5 @@
+Command: env OMP_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 PYTHONPATH=tests .venv/bin/python -m unittest test_main_rl_interface test_local_information_baselines test_redesign_scene
+Ran 29 tests in 0.892s
+OK
+Includes strict window audit classification, 1e-12 geometric difference rejection,
+missing window rejection and unknown field rejection.

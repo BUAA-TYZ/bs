@@ -1,0 +1,867 @@
+{
+  "coverage": {
+    "scored_images": 72,
+    "captured_images": 72,
+    "fully_representable_images": 58,
+    "total_scored_windows": 4579,
+    "ground_block_images": 14,
+    "counts": {
+      "represented_windows": 4266.0,
+      "outside_topk_windows": 0.0,
+      "masked_windows": 0.0,
+      "uncommitted_windows": 0.0,
+      "ground_block_windows": 313.0
+    },
+    "fractions_all_scored_windows": {
+      "represented_windows": 0.9316444638567373,
+      "outside_topk_windows": 0.0,
+      "masked_windows": 0.0,
+      "uncommitted_windows": 0.0,
+      "ground_block_windows": 0.06835553614326272
+    },
+    "actual_helper_windows": 1703,
+    "actual_helper_topk_windows": 1703,
+    "helper_topk_coverage": 1.0,
+    "topk_denominator": "All windows actually assigned to non-source satellite helpers; raw-ground/local excluded",
+    "outside_topk_note": "Includes helpers outside the current two-hop candidate pool, not just rank>8",
+    "image_rows": [
+      {
+        "task_id": "task_0",
+        "total_windows": 100,
+        "mode": 1,
+        "image_mode_masked": false,
+        "represented_windows": 100,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_1",
+        "total_windows": 64,
+        "mode": 1,
+        "image_mode_masked": false,
+        "represented_windows": 64,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_10",
+        "total_windows": 9,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 9.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_11",
+        "total_windows": 64,
+        "mode": 1,
+        "image_mode_masked": false,
+        "represented_windows": 64,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_12",
+        "total_windows": 9,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 9.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_13",
+        "total_windows": 100,
+        "mode": 1,
+        "image_mode_masked": false,
+        "represented_windows": 100,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_14",
+        "total_windows": 64,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 40.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 24.0
+      },
+      {
+        "task_id": "task_15",
+        "total_windows": 100,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 58.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 42.0
+      },
+      {
+        "task_id": "task_16",
+        "total_windows": 100,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 67.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 33.0
+      },
+      {
+        "task_id": "task_17",
+        "total_windows": 9,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 9.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_18",
+        "total_windows": 64,
+        "mode": 1,
+        "image_mode_masked": false,
+        "represented_windows": 64,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_19",
+        "total_windows": 64,
+        "mode": 1,
+        "image_mode_masked": false,
+        "represented_windows": 64,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_2",
+        "total_windows": 64,
+        "mode": 1,
+        "image_mode_masked": false,
+        "represented_windows": 64,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_20",
+        "total_windows": 64,
+        "mode": 1,
+        "image_mode_masked": false,
+        "represented_windows": 64,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_21",
+        "total_windows": 9,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 9.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_22",
+        "total_windows": 64,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 40.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 24.0
+      },
+      {
+        "task_id": "task_23",
+        "total_windows": 64,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 40.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 24.0
+      },
+      {
+        "task_id": "task_24",
+        "total_windows": 64,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 40.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 24.0
+      },
+      {
+        "task_id": "task_25",
+        "total_windows": 100,
+        "mode": 1,
+        "image_mode_masked": false,
+        "represented_windows": 100,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_26",
+        "total_windows": 64,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 40.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 24.0
+      },
+      {
+        "task_id": "task_27",
+        "total_windows": 100,
+        "mode": 1,
+        "image_mode_masked": false,
+        "represented_windows": 100,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_28",
+        "total_windows": 64,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 64.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_29",
+        "total_windows": 64,
+        "mode": 1,
+        "image_mode_masked": false,
+        "represented_windows": 64,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_3",
+        "total_windows": 9,
+        "mode": 1,
+        "image_mode_masked": false,
+        "represented_windows": 9,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_30",
+        "total_windows": 100,
+        "mode": 1,
+        "image_mode_masked": false,
+        "represented_windows": 100,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_31",
+        "total_windows": 64,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 60.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 4.0
+      },
+      {
+        "task_id": "task_32",
+        "total_windows": 64,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 40.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 24.0
+      },
+      {
+        "task_id": "task_33",
+        "total_windows": 64,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 40.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 24.0
+      },
+      {
+        "task_id": "task_34",
+        "total_windows": 64,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 52.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 12.0
+      },
+      {
+        "task_id": "task_35",
+        "total_windows": 64,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 64.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_36",
+        "total_windows": 100,
+        "mode": 1,
+        "image_mode_masked": false,
+        "represented_windows": 100,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_37",
+        "total_windows": 100,
+        "mode": 1,
+        "image_mode_masked": false,
+        "represented_windows": 100,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_38",
+        "total_windows": 9,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 9.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_39",
+        "total_windows": 64,
+        "mode": 1,
+        "image_mode_masked": false,
+        "represented_windows": 64,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_4",
+        "total_windows": 64,
+        "mode": 1,
+        "image_mode_masked": false,
+        "represented_windows": 64,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_40",
+        "total_windows": 64,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 64.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_41",
+        "total_windows": 100,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 82.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 18.0
+      },
+      {
+        "task_id": "task_42",
+        "total_windows": 64,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 64.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_43",
+        "total_windows": 9,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 9.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_44",
+        "total_windows": 100,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 82.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 18.0
+      },
+      {
+        "task_id": "task_45",
+        "total_windows": 64,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 64.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_46",
+        "total_windows": 100,
+        "mode": 1,
+        "image_mode_masked": false,
+        "represented_windows": 100,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_47",
+        "total_windows": 64,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 64.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_48",
+        "total_windows": 64,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 64.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_49",
+        "total_windows": 64,
+        "mode": 1,
+        "image_mode_masked": false,
+        "represented_windows": 64,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_5",
+        "total_windows": 9,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 9.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_50",
+        "total_windows": 64,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 64.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_51",
+        "total_windows": 100,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 100.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_52",
+        "total_windows": 64,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 64.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_53",
+        "total_windows": 64,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 64.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_54",
+        "total_windows": 64,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 64.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_55",
+        "total_windows": 64,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 64.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_56",
+        "total_windows": 9,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 9.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_57",
+        "total_windows": 100,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 82.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 18.0
+      },
+      {
+        "task_id": "task_58",
+        "total_windows": 64,
+        "mode": 1,
+        "image_mode_masked": false,
+        "represented_windows": 64,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_59",
+        "total_windows": 64,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 64.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_6",
+        "total_windows": 64,
+        "mode": 1,
+        "image_mode_masked": false,
+        "represented_windows": 64,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_60",
+        "total_windows": 9,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 9.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_61",
+        "total_windows": 64,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 64.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_62",
+        "total_windows": 64,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 64.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_63",
+        "total_windows": 64,
+        "mode": 1,
+        "image_mode_masked": false,
+        "represented_windows": 64,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_64",
+        "total_windows": 64,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 64.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_65",
+        "total_windows": 64,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 64.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_66",
+        "total_windows": 100,
+        "mode": 1,
+        "image_mode_masked": false,
+        "represented_windows": 100,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_67",
+        "total_windows": 100,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 100.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_68",
+        "total_windows": 9,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 9.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_69",
+        "total_windows": 64,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 64.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_7",
+        "total_windows": 64,
+        "mode": 1,
+        "image_mode_masked": false,
+        "represented_windows": 64,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_70",
+        "total_windows": 64,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 64.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_71",
+        "total_windows": 64,
+        "mode": 0,
+        "image_mode_masked": false,
+        "represented_windows": 64.0,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_8",
+        "total_windows": 64,
+        "mode": 1,
+        "image_mode_masked": false,
+        "represented_windows": 64,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      },
+      {
+        "task_id": "task_9",
+        "total_windows": 64,
+        "mode": 1,
+        "image_mode_masked": false,
+        "represented_windows": 64,
+        "outside_topk_windows": 0.0,
+        "masked_windows": 0.0,
+        "uncommitted_windows": 0.0,
+        "ground_block_windows": 0.0
+      }
+    ]
+  },
+  "budget": {
+    "student_wall_seconds": 773.5912042499986,
+    "scored_decisions_per_episode": 72,
+    "student_all_decisions": 72,
+    "measured_concurrency": 3,
+    "projected_workers": 9,
+    "efficiency_assumption": [
+      0.6,
+      1.0
+    ],
+    "projected_episodes_per_hour": [
+      25.129551490760804,
+      41.88258581793468
+    ],
+    "projected_decisions_per_hour": [
+      1809.3277073347779,
+      3015.546178891297
+    ],
+    "sampling_wall_hours": 84,
+    "per_seed_sampling_wall_hours": 28,
+    "per_seed_episode_range": [
+      703,
+      1172
+    ],
+    "per_seed_decision_range": [
+      50616,
+      84384
+    ],
+    "allocated_budget": {
+      "1701": {
+        "episodes": 703,
+        "decisions": 50616
+      },
+      "1702": {
+        "episodes": 703,
+        "decisions": 50616
+      },
+      "1703": {
+        "episodes": 703,
+        "decisions": 50616
+      }
+    },
+    "allocation_status": "Provisional conservative cap; no training launched; confirm at stage1 milestone",
+    "limitations": "One date/window, untrained actor, no gradient timing; nine-worker scaling not measured. Repeated rollouts are not independent scenarios. Orin excluded."
+  }
+}

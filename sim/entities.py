@@ -9,6 +9,8 @@ class TileState(str, Enum):
     CREATED = "CREATED"
     QUEUED = "QUEUED"
     TRANSFERRING = "TRANSFERRING"
+    INPUT_RELAY = "INPUT_RELAY"
+    GROUND_RELAY_PENDING = "GROUND_RELAY_PENDING"
     RESULT_TRANSFERRING = "RESULT_TRANSFERRING"
     READY = "READY"
     RUNNING = "RUNNING"
@@ -32,6 +34,7 @@ class FailureReason(str, Enum):
     LINK_DOWN = "link_down"
     DEADLINE_MISS = "deadline_miss"
     NO_ROUTE = "no_route"
+    ROLE_FORBIDDEN = "role_forbidden"
 
 
 @dataclass
@@ -40,6 +43,8 @@ class Action:
     action_type: ActionType
     target_sat_id: Optional[int] = None
     target_gs_id: Optional[str] = None
+    input_path: tuple[int, ...] = ()
+    relay_to_ground: bool = False
 
 
 @dataclass
@@ -71,6 +76,13 @@ class Tile:
     result_available_time: Optional[int] = None
     result_path: List[int] = field(default_factory=list)
     raw_relay_path: List[int] = field(default_factory=list)
+    result_size_mb: Optional[float] = None
+    windows_xyxy: tuple[tuple[int, int, int, int], ...] = ()
+    input_route: tuple[int, ...] = ()
+    input_target_sat_id: Optional[int] = None
+    ground_relay_target: Optional[str] = None
+    completed_compute_windows: int = 0
+    actual_result_size_mb: Optional[float] = None
 
 
 @dataclass
@@ -85,6 +97,7 @@ class Task:
     results_ready_time: Optional[int] = None
     completion_time: Optional[int] = None
     failure_reason: Optional[str] = None
+    aggregation_delay_s: Optional[float] = None
 
 
 @dataclass
@@ -102,6 +115,10 @@ class Satellite:
     queue_time_acc: float = 0.0
     mem_peak_gb: float = 0.0
     vram_peak_gb: float = 0.0
+    executing_batch: List[str] = field(default_factory=list)
+    batch_remaining_s: float = 0.0
+    batch_service_s: float = 0.0
+    batch_id: Optional[str] = None
 
 
 @dataclass
@@ -111,6 +128,7 @@ class Link:
     up: bool
     bandwidth_mbps: float
     latency_ms: float
+    acquisition_ready_s: float = float("inf")
 
 
 @dataclass

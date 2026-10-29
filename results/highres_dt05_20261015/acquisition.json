@@ -1,0 +1,202 @@
+{
+  "events": [
+    {
+      "release_step": 60300,
+      "source_sat_id": 1,
+      "target_id": "appalachian_vegetation",
+      "window_id": 4,
+      "geometry": {
+        "target_lat_deg": 39.30048254524335,
+        "target_lon_deg": -78.65142028463387,
+        "off_nadir_deg": 27.595561194587457,
+        "sat_elevation_deg": 59.52693386104634,
+        "slant_range_km": 715.9647179585996,
+        "sun_elevation_deg": 42.27829578325537
+      }
+    },
+    {
+      "release_step": 60330,
+      "source_sat_id": 1,
+      "target_id": "appalachian_vegetation",
+      "window_id": 4,
+      "geometry": {
+        "target_lat_deg": 38.64080353024957,
+        "target_lon_deg": -78.25301989680786,
+        "off_nadir_deg": 18.069266274097306,
+        "sat_elevation_deg": 70.13521294138533,
+        "slant_range_km": 661.8826008183213,
+        "sun_elevation_deg": 42.96924505400034
+      }
+    },
+    {
+      "release_step": 60360,
+      "source_sat_id": 1,
+      "target_id": "appalachian_vegetation",
+      "window_id": 4,
+      "geometry": {
+        "target_lat_deg": 37.57829190836438,
+        "target_lon_deg": -78.20539747766153,
+        "off_nadir_deg": 13.71921918216908,
+        "sat_elevation_deg": 74.8660293748437,
+        "slant_range_km": 646.1224749406857,
+        "sun_elevation_deg": 44.0388591386311
+      }
+    }
+  ],
+  "windows": [
+    {
+      "window_id": 0,
+      "source_sat_id": 0,
+      "target_id": "central_valley_agriculture",
+      "start_s": 66390.0,
+      "end_s": 66520.0,
+      "sample_count": 13,
+      "left_censored": false,
+      "right_censored": false,
+      "min_off_nadir_deg": 8.258487308566828,
+      "max_sun_elevation_deg": 42.95437040438339,
+      "scheduled_strips": 3
+    },
+    {
+      "window_id": 1,
+      "source_sat_id": 0,
+      "target_id": "corn_belt_agriculture",
+      "start_s": 60440.0,
+      "end_s": 60630.0,
+      "sample_count": 19,
+      "left_censored": false,
+      "right_censored": false,
+      "min_off_nadir_deg": 0.1723285176701117,
+      "max_sun_elevation_deg": 39.916645392518745,
+      "scheduled_strips": 3
+    },
+    {
+      "window_id": 2,
+      "source_sat_id": 0,
+      "target_id": "great_plains_agriculture",
+      "start_s": 60550.0,
+      "end_s": 60650.0,
+      "sample_count": 10,
+      "left_censored": false,
+      "right_censored": false,
+      "min_off_nadir_deg": 23.757762445039816,
+      "max_sun_elevation_deg": 41.0482083314266,
+      "scheduled_strips": 3
+    },
+    {
+      "window_id": 3,
+      "source_sat_id": 0,
+      "target_id": "mississippi_delta_agriculture",
+      "start_s": 60590.0,
+      "end_s": 60750.0,
+      "sample_count": 16,
+      "left_censored": false,
+      "right_censored": false,
+      "min_off_nadir_deg": 0.16033910875508456,
+      "max_sun_elevation_deg": 47.60904865846581,
+      "scheduled_strips": 3
+    },
+    {
+      "window_id": 4,
+      "source_sat_id": 1,
+      "target_id": "appalachian_vegetation",
+      "start_s": 60300.0,
+      "end_s": 60430.0,
+      "sample_count": 13,
+      "left_censored": false,
+      "right_censored": false,
+      "min_off_nadir_deg": 13.71921918216908,
+      "max_sun_elevation_deg": 45.41994725680514,
+      "scheduled_strips": 3
+    },
+    {
+      "window_id": 5,
+      "source_sat_id": 1,
+      "target_id": "corn_belt_agriculture",
+      "start_s": 66030.0,
+      "end_s": 66170.0,
+      "sample_count": 14,
+      "left_censored": false,
+      "right_censored": false,
+      "min_off_nadir_deg": 15.080379967897034,
+      "max_sun_elevation_deg": 40.900656016341536,
+      "scheduled_strips": 3
+    },
+    {
+      "window_id": 6,
+      "source_sat_id": 1,
+      "target_id": "great_plains_agriculture",
+      "start_s": 66060.0,
+      "end_s": 66280.0,
+      "sample_count": 22,
+      "left_censored": false,
+      "right_censored": false,
+      "min_off_nadir_deg": 0.16656877172728923,
+      "max_sun_elevation_deg": 46.136510897263356,
+      "scheduled_strips": 3
+    }
+  ],
+  "event_count_by_source": {
+    "0": 12,
+    "1": 9
+  },
+  "window_count_by_source": {
+    "0": 4,
+    "1": 3
+  },
+  "metadata": {
+    "start_time_utc": "2026-10-15T00:00:00+00:00",
+    "duration_s": 86400,
+    "dt_s": 1,
+    "scan_step_s": 10,
+    "source_sat_ids": [
+      0,
+      1
+    ],
+    "targets": [
+      {
+        "target_id": "appalachian_vegetation",
+        "lat_deg": 38.0,
+        "lon_deg": -81.0,
+        "radius_km": 250
+      },
+      {
+        "target_id": "central_valley_agriculture",
+        "lat_deg": 36.5,
+        "lon_deg": -119.5,
+        "radius_km": 125
+      },
+      {
+        "target_id": "corn_belt_agriculture",
+        "lat_deg": 42.0,
+        "lon_deg": -93.5,
+        "radius_km": 300
+      },
+      {
+        "target_id": "great_plains_agriculture",
+        "lat_deg": 39.0,
+        "lon_deg": -100.0,
+        "radius_km": 400
+      },
+      {
+        "target_id": "mississippi_delta_agriculture",
+        "lat_deg": 33.0,
+        "lon_deg": -91.0,
+        "radius_km": 250
+      }
+    ],
+    "max_off_nadir_deg": 30,
+    "min_sun_elevation_deg": 20,
+    "sun_guard_deg": 1,
+    "strips_per_pass": 3,
+    "min_spacing_s": 30,
+    "pass_cooldown_s": 600,
+    "orbit_model": "SGP4/Skyfield/WGS84",
+    "solar_model": "NOAA fractional-year approximate geometric solar elevation",
+    "solar_source": "https://gml.noaa.gov/grad/solcalc/solareqns.PDF",
+    "solar_error_bound_deg": null,
+    "solar_guard_note": "Design margin, not a certified approximation-error bound",
+    "acquisition_model": "Instantaneous region-center strip proxy; no clouds or attitude slew",
+    "window_sampling_note": "Boundary error up to scan step for resolved crossings; shorter windows can be missed"
+  }
+}

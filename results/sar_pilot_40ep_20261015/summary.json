@@ -1,0 +1,833 @@
+{
+  "status": "interrupted",
+  "epochs_requested": 40,
+  "epochs_completed": 7,
+  "training_batches_completed": 114,
+  "training_seconds": 62.39355683280155,
+  "optimizer_updates": {
+    "total": 32,
+    "during_warmup": 31,
+    "after_warmup": 1,
+    "by_epoch": [
+      {
+        "epoch": 1,
+        "total": 12,
+        "during_warmup": 12,
+        "after_warmup": 0
+      },
+      {
+        "epoch": 2,
+        "total": 6,
+        "during_warmup": 6,
+        "after_warmup": 0
+      },
+      {
+        "epoch": 3,
+        "total": 4,
+        "during_warmup": 4,
+        "after_warmup": 0
+      },
+      {
+        "epoch": 4,
+        "total": 3,
+        "during_warmup": 3,
+        "after_warmup": 0
+      },
+      {
+        "epoch": 5,
+        "total": 3,
+        "during_warmup": 3,
+        "after_warmup": 0
+      },
+      {
+        "epoch": 6,
+        "total": 2,
+        "during_warmup": 2,
+        "after_warmup": 0
+      },
+      {
+        "epoch": 7,
+        "total": 2,
+        "during_warmup": 1,
+        "after_warmup": 1
+      }
+    ],
+    "warmup_last_batch_index": 100,
+    "nominal_batch_size_nbs": 64
+  },
+  "total_seconds": 96.65218249987811,
+  "training_budget_seconds": 1200,
+  "budget_exceeded": false,
+  "interruption_reason": "keyboard interrupt",
+  "trainer_class_hash_verified": "fc5a919252dd911ab7de47b4f71407232a48289c6c335f3a5846a5b055340769",
+  "before": {
+    "metric": "Ultralytics 8.3.221 OBB AP using batch_probiou, not polygon-IoU AP",
+    "scope": "development validation only; no independent final test",
+    "mAP50_supported_classes": 0.0038545573712003814,
+    "mAP50_95_supported_classes": 0.00133536073296754,
+    "supported_class_count": 14,
+    "total_class_count": 15,
+    "per_class": [
+      {
+        "id": 0,
+        "name": "Aircraft-Carrier",
+        "ground_truth_instances": 1,
+        "ap50": 0.0,
+        "ap50_95": 0.0
+      },
+      {
+        "id": 1,
+        "name": "Blurred",
+        "ground_truth_instances": 0,
+        "ap50": null,
+        "ap50_95": null
+      },
+      {
+        "id": 2,
+        "name": "Bulk-Carrier",
+        "ground_truth_instances": 10,
+        "ap50": 0.0,
+        "ap50_95": 0.0
+      },
+      {
+        "id": 3,
+        "name": "Cargo-Ship",
+        "ground_truth_instances": 13,
+        "ap50": 0.0,
+        "ap50_95": 0.0
+      },
+      {
+        "id": 4,
+        "name": "Container-Ship",
+        "ground_truth_instances": 9,
+        "ap50": 0.0,
+        "ap50_95": 0.0
+      },
+      {
+        "id": 5,
+        "name": "Fishing-Vessel",
+        "ground_truth_instances": 2,
+        "ap50": 0.0,
+        "ap50_95": 0.0
+      },
+      {
+        "id": 6,
+        "name": "LNG-LPG-Tanker",
+        "ground_truth_instances": 1,
+        "ap50": 0.0,
+        "ap50_95": 0.0
+      },
+      {
+        "id": 7,
+        "name": "Oil-Tanker",
+        "ground_truth_instances": 14,
+        "ap50": 0.021682648401826484,
+        "ap50_95": 0.009041496156945392
+      },
+      {
+        "id": 8,
+        "name": "Passenger-Cruise-Ship",
+        "ground_truth_instances": 1,
+        "ap50": 0.0,
+        "ap50_95": 0.0
+      },
+      {
+        "id": 9,
+        "name": "Passenger-Ship",
+        "ground_truth_instances": 1,
+        "ap50": 0.0,
+        "ap50_95": 0.0
+      },
+      {
+        "id": 10,
+        "name": "Tug",
+        "ground_truth_instances": 13,
+        "ap50": 0.0,
+        "ap50_95": 0.0
+      },
+      {
+        "id": 11,
+        "name": "Vehicles-Carrier",
+        "ground_truth_instances": 3,
+        "ap50": 0.0,
+        "ap50_95": 0.0
+      },
+      {
+        "id": 12,
+        "name": "Warship",
+        "ground_truth_instances": 26,
+        "ap50": 0.00030792333893490216,
+        "ap50_95": 6.158466778698043e-05
+      },
+      {
+        "id": 13,
+        "name": "others",
+        "ground_truth_instances": 9,
+        "ap50": 0.0,
+        "ap50_95": 0.0
+      },
+      {
+        "id": 14,
+        "name": "unknow",
+        "ground_truth_instances": 53,
+        "ap50": 0.03197323145604396,
+        "ap50_95": 0.009591969436813187
+      }
+    ]
+  },
+  "after": {
+    "metric": "Ultralytics 8.3.221 OBB AP using batch_probiou, not polygon-IoU AP",
+    "scope": "development validation only; no independent final test",
+    "mAP50_supported_classes": 0.021365872973361504,
+    "mAP50_95_supported_classes": 0.004966466150766379,
+    "supported_class_count": 14,
+    "total_class_count": 15,
+    "per_class": [
+      {
+        "id": 0,
+        "name": "Aircraft-Carrier",
+        "ground_truth_instances": 1,
+        "ap50": 0.0,
+        "ap50_95": 0.0
+      },
+      {
+        "id": 1,
+        "name": "Blurred",
+        "ground_truth_instances": 0,
+        "ap50": null,
+        "ap50_95": null
+      },
+      {
+        "id": 2,
+        "name": "Bulk-Carrier",
+        "ground_truth_instances": 10,
+        "ap50": 0.007674793844207288,
+        "ap50_95": 0.0024266688167653492
+      },
+      {
+        "id": 3,
+        "name": "Cargo-Ship",
+        "ground_truth_instances": 13,
+        "ap50": 0.007825199854460731,
+        "ap50_95": 0.0035753833645974773
+      },
+      {
+        "id": 4,
+        "name": "Container-Ship",
+        "ground_truth_instances": 9,
+        "ap50": 0.15779501763668433,
+        "ap50_95": 0.0231272982548965
+      },
+      {
+        "id": 5,
+        "name": "Fishing-Vessel",
+        "ground_truth_instances": 2,
+        "ap50": 0.0,
+        "ap50_95": 0.0
+      },
+      {
+        "id": 6,
+        "name": "LNG-LPG-Tanker",
+        "ground_truth_instances": 1,
+        "ap50": 0.0,
+        "ap50_95": 0.0
+      },
+      {
+        "id": 7,
+        "name": "Oil-Tanker",
+        "ground_truth_instances": 14,
+        "ap50": 0.003945818698020928,
+        "ap50_95": 0.0014686151449863042
+      },
+      {
+        "id": 8,
+        "name": "Passenger-Cruise-Ship",
+        "ground_truth_instances": 1,
+        "ap50": 0.0,
+        "ap50_95": 0.0
+      },
+      {
+        "id": 9,
+        "name": "Passenger-Ship",
+        "ground_truth_instances": 1,
+        "ap50": 0.0,
+        "ap50_95": 0.0
+      },
+      {
+        "id": 10,
+        "name": "Tug",
+        "ground_truth_instances": 13,
+        "ap50": 0.0,
+        "ap50_95": 0.0
+      },
+      {
+        "id": 11,
+        "name": "Vehicles-Carrier",
+        "ground_truth_instances": 3,
+        "ap50": 0.0021418386103579804,
+        "ap50_95": 0.0006425515831073941
+      },
+      {
+        "id": 12,
+        "name": "Warship",
+        "ground_truth_instances": 26,
+        "ap50": 0.02962850049343661,
+        "ap50_95": 0.009714525025478619
+      },
+      {
+        "id": 13,
+        "name": "others",
+        "ground_truth_instances": 9,
+        "ap50": 0.0,
+        "ap50_95": 0.0
+      },
+      {
+        "id": 14,
+        "name": "unknow",
+        "ground_truth_instances": 53,
+        "ap50": 0.09011105248989318,
+        "ap50_95": 0.028575483920897655
+      }
+    ]
+  },
+  "service_timing": {
+    "scope": "local CPU/MPS proxy only; neither flight hardware nor ground server calibration",
+    "input": "first 8 development images, decoded RGB, original patch size; network letterbox 832",
+    "boundary": "decoded RGB -> BGR -> preprocess/inference/OBB NMS -> CPU polygons -> OBB1 serialization",
+    "excluded": [
+      "image decoding",
+      "full-scene overlap extraction",
+      "cross-window merge",
+      "transport"
+    ],
+    "warmup_calls_per_device": 3,
+    "repeats_per_image": 2,
+    "cpu_threads": 4,
+    "confidence": 0.25,
+    "nms_iou": 0.7,
+    "max_det": 300,
+    "devices": {
+      "cpu": {
+        "seconds": {
+          "count": 16,
+          "mean": 0.048548562423093244,
+          "p50": 0.048116062534973025,
+          "p95": 0.0523578436113894
+        },
+        "serialized_bytes": {
+          "count": 16,
+          "mean": 28.0,
+          "p50": 28.0,
+          "p95": 28.0
+        },
+        "cpu_threads_observed": 4,
+        "records": [
+          {
+            "image": "test_BLT008__797__.png",
+            "repeat": 0,
+            "seconds": 0.04981125006452203,
+            "serialized_bytes": 28,
+            "detections": 0
+          },
+          {
+            "image": "test_CHQ005__579__.png",
+            "repeat": 0,
+            "seconds": 0.05083812493830919,
+            "serialized_bytes": 28,
+            "detections": 0
+          },
+          {
+            "image": "test_CPE005__1976__.png",
+            "repeat": 0,
+            "seconds": 0.04677079198881984,
+            "serialized_bytes": 28,
+            "detections": 0
+          },
+          {
+            "image": "test_CPE017__2193__.png",
+            "repeat": 0,
+            "seconds": 0.04685945808887482,
+            "serialized_bytes": 28,
+            "detections": 0
+          },
+          {
+            "image": "test_DWH008__563__.png",
+            "repeat": 0,
+            "seconds": 0.0492914579808712,
+            "serialized_bytes": 28,
+            "detections": 0
+          },
+          {
+            "image": "test_DWH009__616__.png",
+            "repeat": 0,
+            "seconds": 0.046464540995657444,
+            "serialized_bytes": 28,
+            "detections": 0
+          },
+          {
+            "image": "test_HEB007__342__.png",
+            "repeat": 0,
+            "seconds": 0.04768687533214688,
+            "serialized_bytes": 28,
+            "detections": 0
+          },
+          {
+            "image": "test_HEB016__613__.png",
+            "repeat": 0,
+            "seconds": 0.04556508315727115,
+            "serialized_bytes": 28,
+            "detections": 0
+          },
+          {
+            "image": "test_BLT008__797__.png",
+            "repeat": 1,
+            "seconds": 0.04808175005018711,
+            "serialized_bytes": 28,
+            "detections": 0
+          },
+          {
+            "image": "test_CHQ005__579__.png",
+            "repeat": 1,
+            "seconds": 0.04832687508314848,
+            "serialized_bytes": 28,
+            "detections": 0
+          },
+          {
+            "image": "test_CPE005__1976__.png",
+            "repeat": 1,
+            "seconds": 0.04815037501975894,
+            "serialized_bytes": 28,
+            "detections": 0
+          },
+          {
+            "image": "test_CPE017__2193__.png",
+            "repeat": 1,
+            "seconds": 0.04891258291900158,
+            "serialized_bytes": 28,
+            "detections": 0
+          },
+          {
+            "image": "test_DWH008__563__.png",
+            "repeat": 1,
+            "seconds": 0.04556387476623058,
+            "serialized_bytes": 28,
+            "detections": 0
+          },
+          {
+            "image": "test_DWH009__616__.png",
+            "repeat": 1,
+            "seconds": 0.0479635838419199,
+            "serialized_bytes": 28,
+            "detections": 0
+          },
+          {
+            "image": "test_HEB007__342__.png",
+            "repeat": 1,
+            "seconds": 0.056916999630630016,
+            "serialized_bytes": 28,
+            "detections": 0
+          },
+          {
+            "image": "test_HEB016__613__.png",
+            "repeat": 1,
+            "seconds": 0.049573374912142754,
+            "serialized_bytes": 28,
+            "detections": 0
+          }
+        ]
+      },
+      "mps": {
+        "seconds": {
+          "count": 16,
+          "mean": 0.011061570257879794,
+          "p50": 0.01100097899325192,
+          "p95": 0.012503384612500668
+        },
+        "serialized_bytes": {
+          "count": 16,
+          "mean": 28.0,
+          "p50": 28.0,
+          "p95": 28.0
+        },
+        "cpu_threads_observed": 4,
+        "records": [
+          {
+            "image": "test_BLT008__797__.png",
+            "repeat": 0,
+            "seconds": 0.01061920914798975,
+            "serialized_bytes": 28,
+            "detections": 0
+          },
+          {
+            "image": "test_CHQ005__579__.png",
+            "repeat": 0,
+            "seconds": 0.009189417120069265,
+            "serialized_bytes": 28,
+            "detections": 0
+          },
+          {
+            "image": "test_CPE005__1976__.png",
+            "repeat": 0,
+            "seconds": 0.009354624897241592,
+            "serialized_bytes": 28,
+            "detections": 0
+          },
+          {
+            "image": "test_CPE017__2193__.png",
+            "repeat": 0,
+            "seconds": 0.013113040942698717,
+            "serialized_bytes": 28,
+            "detections": 0
+          },
+          {
+            "image": "test_DWH008__563__.png",
+            "repeat": 0,
+            "seconds": 0.012300165835767984,
+            "serialized_bytes": 28,
+            "detections": 0
+          },
+          {
+            "image": "test_DWH009__616__.png",
+            "repeat": 0,
+            "seconds": 0.010539624840021133,
+            "serialized_bytes": 28,
+            "detections": 0
+          },
+          {
+            "image": "test_HEB007__342__.png",
+            "repeat": 0,
+            "seconds": 0.011545333079993725,
+            "serialized_bytes": 28,
+            "detections": 0
+          },
+          {
+            "image": "test_HEB016__613__.png",
+            "repeat": 0,
+            "seconds": 0.010476833209395409,
+            "serialized_bytes": 28,
+            "detections": 0
+          },
+          {
+            "image": "test_BLT008__797__.png",
+            "repeat": 1,
+            "seconds": 0.009939666837453842,
+            "serialized_bytes": 28,
+            "detections": 0
+          },
+          {
+            "image": "test_CHQ005__579__.png",
+            "repeat": 1,
+            "seconds": 0.012296957895159721,
+            "serialized_bytes": 28,
+            "detections": 0
+          },
+          {
+            "image": "test_CPE005__1976__.png",
+            "repeat": 1,
+            "seconds": 0.011004124768078327,
+            "serialized_bytes": 28,
+            "detections": 0
+          },
+          {
+            "image": "test_CPE017__2193__.png",
+            "repeat": 1,
+            "seconds": 0.011637750081717968,
+            "serialized_bytes": 28,
+            "detections": 0
+          },
+          {
+            "image": "test_DWH008__563__.png",
+            "repeat": 1,
+            "seconds": 0.011772125028073788,
+            "serialized_bytes": 28,
+            "detections": 0
+          },
+          {
+            "image": "test_DWH009__616__.png",
+            "repeat": 1,
+            "seconds": 0.011641167104244232,
+            "serialized_bytes": 28,
+            "detections": 0
+          },
+          {
+            "image": "test_HEB007__342__.png",
+            "repeat": 1,
+            "seconds": 0.010557250119745731,
+            "serialized_bytes": 28,
+            "detections": 0
+          },
+          {
+            "image": "test_HEB016__613__.png",
+            "repeat": 1,
+            "seconds": 0.010997833218425512,
+            "serialized_bytes": 28,
+            "detections": 0
+          }
+        ]
+      }
+    }
+  },
+  "training_set_diagnostic": {
+    "scope": "training-set fit diagnostic only; not validation, independent test, or checkpoint selection",
+    "image_count": 128,
+    "data_yaml_sha256": "f9c9d64908b88f996632e2472267485ed99612143a214310c3cb771032db7463",
+    "manifest_sha256": "d400839b1a8ce927fcb9c316f6ff632f34189581e0ad56e852323524c8191df0",
+    "reference": {
+      "path": "/Users/bytedance/Projects/bs/checkpoints/sar_pilot_20261015/train/weights/last.pt",
+      "sha256": "bb36d1c7d37ae7733b315d4af2bf0a856c8bff34afd32f7298ff52a07b355c36",
+      "metrics": {
+        "metric": "Ultralytics 8.3.221 OBB AP using batch_probiou, not polygon-IoU AP",
+        "scope": "training-set fit diagnostic only; not validation, independent test, or checkpoint selection",
+        "mAP50_supported_classes": 0.07586043144218278,
+        "mAP50_95_supported_classes": 0.032151634845184275,
+        "supported_class_count": 15,
+        "total_class_count": 15,
+        "per_class": [
+          {
+            "id": 0,
+            "name": "Aircraft-Carrier",
+            "ground_truth_instances": 1,
+            "ap50": 0.0,
+            "ap50_95": 0.0
+          },
+          {
+            "id": 1,
+            "name": "Blurred",
+            "ground_truth_instances": 1,
+            "ap50": 0.0,
+            "ap50_95": 0.0
+          },
+          {
+            "id": 2,
+            "name": "Bulk-Carrier",
+            "ground_truth_instances": 22,
+            "ap50": 0.09626646727164298,
+            "ap50_95": 0.04157078922652059
+          },
+          {
+            "id": 3,
+            "name": "Cargo-Ship",
+            "ground_truth_instances": 34,
+            "ap50": 0.16952927194872328,
+            "ap50_95": 0.08541717802932995
+          },
+          {
+            "id": 4,
+            "name": "Container-Ship",
+            "ground_truth_instances": 14,
+            "ap50": 0.33235942715170846,
+            "ap50_95": 0.13795152953892068
+          },
+          {
+            "id": 5,
+            "name": "Fishing-Vessel",
+            "ground_truth_instances": 1,
+            "ap50": 0.0,
+            "ap50_95": 0.0
+          },
+          {
+            "id": 6,
+            "name": "LNG-LPG-Tanker",
+            "ground_truth_instances": 1,
+            "ap50": 0.0,
+            "ap50_95": 0.0
+          },
+          {
+            "id": 7,
+            "name": "Oil-Tanker",
+            "ground_truth_instances": 18,
+            "ap50": 0.2911698849125333,
+            "ap50_95": 0.12812785130855117
+          },
+          {
+            "id": 8,
+            "name": "Passenger-Cruise-Ship",
+            "ground_truth_instances": 1,
+            "ap50": 0.0,
+            "ap50_95": 0.0
+          },
+          {
+            "id": 9,
+            "name": "Passenger-Ship",
+            "ground_truth_instances": 4,
+            "ap50": 0.0,
+            "ap50_95": 0.0
+          },
+          {
+            "id": 10,
+            "name": "Tug",
+            "ground_truth_instances": 12,
+            "ap50": 0.0,
+            "ap50_95": 0.0
+          },
+          {
+            "id": 11,
+            "name": "Vehicles-Carrier",
+            "ground_truth_instances": 5,
+            "ap50": 0.02178264768375887,
+            "ap50_95": 0.01083428063551891
+          },
+          {
+            "id": 12,
+            "name": "Warship",
+            "ground_truth_instances": 68,
+            "ap50": 0.06616601056955511,
+            "ap50_95": 0.02230403714209344
+          },
+          {
+            "id": 13,
+            "name": "others",
+            "ground_truth_instances": 5,
+            "ap50": 0.0,
+            "ap50_95": 0.0
+          },
+          {
+            "id": 14,
+            "name": "unknow",
+            "ground_truth_instances": 84,
+            "ap50": 0.16063276209481991,
+            "ap50_95": 0.056068856796829415
+          }
+        ]
+      }
+    },
+    "current": {
+      "path": "/Users/bytedance/Projects/bs/checkpoints/sar_pilot_40ep_20261015/train/weights/last.pt",
+      "sha256": "602553dab283490d6f4e3c58d184f7478c546e3ac7525b223ba968fda5cedaa0",
+      "metrics": {
+        "metric": "Ultralytics 8.3.221 OBB AP using batch_probiou, not polygon-IoU AP",
+        "scope": "training-set fit diagnostic only; not validation, independent test, or checkpoint selection",
+        "mAP50_supported_classes": 0.04979410833712025,
+        "mAP50_95_supported_classes": 0.020516109356066837,
+        "supported_class_count": 15,
+        "total_class_count": 15,
+        "per_class": [
+          {
+            "id": 0,
+            "name": "Aircraft-Carrier",
+            "ground_truth_instances": 1,
+            "ap50": 0.0,
+            "ap50_95": 0.0
+          },
+          {
+            "id": 1,
+            "name": "Blurred",
+            "ground_truth_instances": 1,
+            "ap50": 0.0,
+            "ap50_95": 0.0
+          },
+          {
+            "id": 2,
+            "name": "Bulk-Carrier",
+            "ground_truth_instances": 22,
+            "ap50": 0.06656595502928535,
+            "ap50_95": 0.028028943341412323
+          },
+          {
+            "id": 3,
+            "name": "Cargo-Ship",
+            "ground_truth_instances": 34,
+            "ap50": 0.0914142164191755,
+            "ap50_95": 0.05003143988686951
+          },
+          {
+            "id": 4,
+            "name": "Container-Ship",
+            "ground_truth_instances": 14,
+            "ap50": 0.3160146542734591,
+            "ap50_95": 0.12393056015189403
+          },
+          {
+            "id": 5,
+            "name": "Fishing-Vessel",
+            "ground_truth_instances": 1,
+            "ap50": 0.0,
+            "ap50_95": 0.0
+          },
+          {
+            "id": 6,
+            "name": "LNG-LPG-Tanker",
+            "ground_truth_instances": 1,
+            "ap50": 0.0,
+            "ap50_95": 0.0
+          },
+          {
+            "id": 7,
+            "name": "Oil-Tanker",
+            "ground_truth_instances": 18,
+            "ap50": 0.0911039925376644,
+            "ap50_95": 0.038615827969915514
+          },
+          {
+            "id": 8,
+            "name": "Passenger-Cruise-Ship",
+            "ground_truth_instances": 1,
+            "ap50": 0.0,
+            "ap50_95": 0.0
+          },
+          {
+            "id": 9,
+            "name": "Passenger-Ship",
+            "ground_truth_instances": 4,
+            "ap50": 0.0,
+            "ap50_95": 0.0
+          },
+          {
+            "id": 10,
+            "name": "Tug",
+            "ground_truth_instances": 12,
+            "ap50": 0.0,
+            "ap50_95": 0.0
+          },
+          {
+            "id": 11,
+            "name": "Vehicles-Carrier",
+            "ground_truth_instances": 5,
+            "ap50": 0.04609640762463343,
+            "ap50_95": 0.028332899560117298
+          },
+          {
+            "id": 12,
+            "name": "Warship",
+            "ground_truth_instances": 68,
+            "ap50": 0.028592239229302843,
+            "ap50_95": 0.007630192553496522
+          },
+          {
+            "id": 13,
+            "name": "others",
+            "ground_truth_instances": 5,
+            "ap50": 0.0,
+            "ap50_95": 0.0
+          },
+          {
+            "id": 14,
+            "name": "unknow",
+            "ground_truth_instances": 84,
+            "ap50": 0.10712415994328317,
+            "ap50_95": 0.03117177687729731
+          }
+        ]
+      }
+    }
+  },
+  "checkpoint": {
+    "path": "/Users/bytedance/Projects/bs/checkpoints/sar_pilot_40ep_20261015/train/weights/last.pt",
+    "sha256": "602553dab283490d6f4e3c58d184f7478c546e3ac7525b223ba968fda5cedaa0",
+    "selection": "last EMA"
+  },
+  "parameters": 2664432,
+  "host": {
+    "platform": "macOS-26.4.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "torch": "2.12.0",
+    "ultralytics": "8.3.221"
+  },
+  "limitations": [
+    "128 training and 64 development patches only; no independent final test",
+    "provisional source grouping does not establish scene/ship identity isolation",
+    "images with any invalid/out-of-bounds/difficult object excluded; no border-robustness claim",
+    "patch-level fine-grained detection AP is neither binary military/civilian accuracy nor operational reliability",
+    "local CPU/MPS timings are not a flight/ground-server calibration"
+  ]
+}

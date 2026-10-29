@@ -1,0 +1,302 @@
+{
+  "scope": "冻结SAR场景失败任务的事件归因：从时刻0重跑一个方法，导出逐分片时间线并分类。",
+  "method": "ground_unique_relay",
+  "panel_record": "results/sar_baseline_b10_dt0p01_20261016/ground_unique_relay.json",
+  "panel_record_sha256": "c94b92b2d25d22496958cb4720f8722cfd700dd94e18ecdd753b685bf0b9f81e",
+  "bound_sha256": "1f185cf7bd8e2b1183bdd5c7ca1cd4963f565f38c54d7fc36720f15591b5285c",
+  "script_sha256": "2fbb13a60f4cc2fe78f93bb65f824a4c373c98fbeb48f5c915a733b1f3e3803d",
+  "source_sha256": "5a08c85585a6fe8acff7f3c1eee97e3fd9cd016a056484f395c95eb767e4cffb",
+  "python_version": "3.12.13",
+  "packages": {
+    "numpy": "2.4.4",
+    "torch": "2.12.0",
+    "skyfield": "1.54",
+    "PyYAML": "6.0.3"
+  },
+  "replay_identical_to_panel": true,
+  "wall_seconds": 1428.3474333329941,
+  "receiver_busy_steps_share": 0.011085569947290113,
+  "late_or_failed_tasks": 16,
+  "cause_counts": {
+    "physical_no_window": 14,
+    "compute_queue": 1,
+    "ground_window_wait": 1
+  },
+  "timeline_file": "ground_unique_relay_tile_timelines.json.gz",
+  "timeline_sha256": "7fa792bed6a8a71e859030d1a1801fddf33a084f6b08827949b020a89b5f1f83",
+  "tasks": [
+    {
+      "task_id": "task_14",
+      "source_sat_id": 10,
+      "release_seconds": 8220.0,
+      "status": "completed",
+      "latency_seconds": 889.28,
+      "cause": "physical_no_window",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "bound_relay_open_s": null
+      }
+    },
+    {
+      "task_id": "task_21",
+      "source_sat_id": 11,
+      "release_seconds": 11160.0,
+      "status": "completed",
+      "latency_seconds": 954.61,
+      "cause": "physical_no_window",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "bound_relay_open_s": null
+      }
+    },
+    {
+      "task_id": "task_56",
+      "source_sat_id": 17,
+      "release_seconds": 28380.0,
+      "status": "completed",
+      "latency_seconds": 924.61,
+      "cause": "physical_no_window",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "bound_relay_open_s": null
+      }
+    },
+    {
+      "task_id": "task_57",
+      "source_sat_id": 17,
+      "release_seconds": 28410.0,
+      "status": "completed",
+      "latency_seconds": 898.28,
+      "cause": "physical_no_window",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "bound_relay_open_s": null
+      }
+    },
+    {
+      "task_id": "task_63",
+      "source_sat_id": 14,
+      "release_seconds": 31280.0,
+      "status": "completed",
+      "latency_seconds": 929.28,
+      "cause": "physical_no_window",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "bound_relay_open_s": null
+      }
+    },
+    {
+      "task_id": "task_72",
+      "source_sat_id": 18,
+      "release_seconds": 37055.0,
+      "status": "completed",
+      "latency_seconds": 894.28,
+      "cause": "physical_no_window",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "bound_relay_open_s": null
+      }
+    },
+    {
+      "task_id": "task_79",
+      "source_sat_id": 19,
+      "release_seconds": 39995.0,
+      "status": "completed",
+      "latency_seconds": 949.61,
+      "cause": "physical_no_window",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "bound_relay_open_s": null
+      }
+    },
+    {
+      "task_id": "task_85",
+      "source_sat_id": 20,
+      "release_seconds": 42800.0,
+      "status": "completed",
+      "latency_seconds": 924.61,
+      "cause": "physical_no_window",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "bound_relay_open_s": null
+      }
+    },
+    {
+      "task_id": "task_86",
+      "source_sat_id": 20,
+      "release_seconds": 42830.0,
+      "status": "completed",
+      "latency_seconds": 898.28,
+      "cause": "physical_no_window",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "bound_relay_open_s": null
+      }
+    },
+    {
+      "task_id": "task_92",
+      "source_sat_id": 19,
+      "release_seconds": 45700.0,
+      "status": "completed",
+      "latency_seconds": 929.28,
+      "cause": "physical_no_window",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "bound_relay_open_s": null
+      }
+    },
+    {
+      "task_id": "task_101",
+      "source_sat_id": 23,
+      "release_seconds": 51470.0,
+      "status": "completed",
+      "latency_seconds": 889.28,
+      "cause": "physical_no_window",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "bound_relay_open_s": null
+      }
+    },
+    {
+      "task_id": "task_109",
+      "source_sat_id": 22,
+      "release_seconds": 54415.0,
+      "status": "completed",
+      "latency_seconds": 949.61,
+      "cause": "physical_no_window",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "bound_relay_open_s": null
+      }
+    },
+    {
+      "task_id": "task_122",
+      "source_sat_id": 22,
+      "release_seconds": 60115.0,
+      "status": "completed",
+      "latency_seconds": 5479.8,
+      "cause": "compute_queue",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "tail_tile": {
+          "tile_id": "task_122_tile_63",
+          "state": "DONE",
+          "failure_reason": null,
+          "processor": "ground",
+          "result_hops": 0,
+          "raw_relay_hops": 8,
+          "input_route": [],
+          "ground_relay_target": null,
+          "created": 60115.0,
+          "start_tx": 60115.94,
+          "end_tx": 60119.61,
+          "start_compute": 65594.47,
+          "end_compute": 65594.54000000001,
+          "start_downlink": null,
+          "end_downlink": 65594.54000000001
+        },
+        "stage_seconds": {
+          "source_wait": 0.9400000000023283,
+          "input_transfer": 3.6699999999982538,
+          "compute_queue": 5474.860000000001,
+          "compute_service": 0.07000000000698492,
+          "result_delivery": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_148",
+      "source_sat_id": 4,
+      "release_seconds": 71630.0,
+      "status": "completed",
+      "latency_seconds": 934.61,
+      "cause": "physical_no_window",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "bound_relay_open_s": null
+      }
+    },
+    {
+      "task_id": "task_149",
+      "source_sat_id": 4,
+      "release_seconds": 71660.0,
+      "status": "completed",
+      "latency_seconds": 908.28,
+      "cause": "physical_no_window",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "bound_relay_open_s": null
+      }
+    },
+    {
+      "task_id": "task_155",
+      "source_sat_id": 3,
+      "release_seconds": 74535.0,
+      "status": "completed",
+      "latency_seconds": 5480.5,
+      "cause": "ground_window_wait",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "tail_tile": {
+          "tile_id": "task_155_tile_63",
+          "state": "DONE",
+          "failure_reason": null,
+          "processor": "ground",
+          "result_hops": 0,
+          "raw_relay_hops": 6,
+          "input_route": [],
+          "ground_relay_target": null,
+          "created": 74535.0,
+          "start_tx": 74536.34,
+          "end_tx": 80011.41,
+          "start_compute": 80015.17,
+          "end_compute": 80015.24,
+          "start_downlink": null,
+          "end_downlink": 80015.24
+        },
+        "stage_seconds": {
+          "source_wait": 1.3399999999965075,
+          "input_transfer": 5475.070000000007,
+          "compute_queue": 3.7599999999947613,
+          "compute_service": 0.07000000000698492,
+          "result_delivery": 0.0
+        },
+        "receiver_busy_share": 0.00775149906759183,
+        "ground_relay_tiles_late": 64,
+        "onboard_tiles_last_delivery_age_s": null
+      }
+    }
+  ]
+}

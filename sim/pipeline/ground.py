@@ -65,7 +65,7 @@ class GroundPipeline:
     def enqueue_ground_task(self, task: Task, tiles: List[Tile]) -> None:
         env = self.env
         src_sat = env.satellites[task.source_sat_id]
-        required_gb = task.image_size_mb / 1024.0
+        required_gb = env.memory_size_gb(task.image_size_mb)
         if src_sat.mem_used_gb + required_gb > src_sat.mem_capacity_gb:
             for tile in tiles:
                 env._fail_tile(tile, FailureReason.MEM_FULL)
@@ -143,6 +143,12 @@ class GroundPipeline:
                     for tid in env.ground_task_queued[tr.src_sat]
                     if tid != tr.task_id
                 ]
+                if getattr(env.cfg, "compute_service_mode", "step") == "work_conserving":
+                    for tid in env.tasks[tr.task_id].tile_ids:
+                        tile = env.tiles[tid]
+                        if tile.state not in (TileState.DONE, TileState.FAILED):
+                            tile.state = TileState.GROUND_QUEUED
+                            tile.timestamps.end_tx = env.time + 1
                 self._enqueue_ground_task_compute(tr.task_id, tr.gs_id)
                 env._log_task_event(
                     tr.task_id,
@@ -166,6 +172,9 @@ class GroundPipeline:
 
     def advance_ground_task_compute(self) -> None:
         env = self.env
+        if getattr(env.cfg, "compute_service_mode", "step") == "work_conserving":
+            self._advance_ground_task_compute_budget()
+            return
         # 调度空闲地面站
         for gs_id, gs in env.ground_stations.items():
             if gs_id in env.ground_task_running:
@@ -177,7 +186,9 @@ class GroundPipeline:
             if not self._task_has_pending_tiles(picked_task):
                 continue
             task = env.tasks[picked_task]
-            total_compute = env.cfg.compute_cost_per_tile * task.num_tiles
+            total_compute = (sum(env.tiles[tid].compute_cost for tid in task.tile_ids)
+                             if getattr(env.cfg, "image_tiling", None)
+                             else env.cfg.compute_cost_per_tile * task.num_tiles)
             remaining = total_compute / max(1e-9, gs.compute_rate)
             env.ground_task_running[gs_id] = GroundTaskCompute(
                 task_id=picked_task,
@@ -219,6 +230,57 @@ class GroundPipeline:
             done_gs.append(gs_id)
         for gs_id in done_gs:
             env.ground_task_running.pop(gs_id, None)
+
+    def _advance_ground_task_compute_budget(self) -> None:
+        env = self.env
+        for gs_id, gs in env.ground_stations.items():
+            budget = env.cfg.dt
+            queue = env.ground_compute_queue.setdefault(gs_id, [])
+            while budget > 1e-12:
+                if gs_id not in env.ground_task_running:
+                    while queue and not self._task_has_pending_tiles(queue[0]):
+                        queue.pop(0)
+                    if not queue:
+                        break
+                    task = env.tasks[queue[0]]
+                    if task.release_time > env.time or any(
+                            env.tiles[tid].timestamps.end_tx is not None and
+                            env.tiles[tid].timestamps.end_tx > env.time for tid in task.tile_ids):
+                        break
+                    queue.pop(0)
+                    total = sum(env.tiles[tid].compute_cost for tid in task.tile_ids
+                                if env.tiles[tid].state not in (TileState.DONE, TileState.FAILED))
+                    env.ground_task_running[gs_id] = GroundTaskCompute(
+                        task.task_id, gs_id, total / max(1e-9, gs.compute_rate), env.time)
+                    for tid in task.tile_ids:
+                        tile = env.tiles[tid]
+                        if tile.state not in (TileState.DONE, TileState.FAILED):
+                            tile.state = TileState.GROUND_RUNNING
+                            tile.timestamps.start_compute = env.time
+                    env._log_task_event(task.task_id, "ground_compute_start", sat_from=gs_id, sat_to=gs_id)
+                comp = env.ground_task_running[gs_id]
+                if not self._task_has_pending_tiles(comp.task_id):
+                    env.ground_task_running.pop(gs_id, None)
+                    continue
+                used = min(budget, max(0.0, comp.remaining_compute))
+                budget = max(0.0, budget - used)
+                comp.remaining_compute = max(0.0, comp.remaining_compute - used)
+                env.ground_compute_busy_time[gs_id] = env.ground_compute_busy_time.get(gs_id, 0.0) + used
+                if comp.remaining_compute > 1e-12:
+                    break
+                task = env.tasks[comp.task_id]
+                for tid in task.tile_ids:
+                    tile = env.tiles[tid]
+                    if tile.state in (TileState.DONE, TileState.FAILED):
+                        continue
+                    tile.state = TileState.DONE
+                    tile.timestamps.end_compute = env.time + 1
+                    tile.timestamps.end_downlink = env.time + 1
+                    env.metrics.record_tile_latency(tile.timestamps.end_compute - tile.timestamps.created)
+                    env._log_tile_event(tile, "done", sat_from=task.source_sat_id, sat_to=gs_id)
+                env._check_task_done(comp.task_id)
+                env._log_task_event(comp.task_id, "ground_compute_end", sat_from=gs_id, sat_to=gs_id)
+                env.ground_task_running.pop(gs_id, None)
 
     # ------------------------------------------------------------------ #
     # 辅助                                                                  #

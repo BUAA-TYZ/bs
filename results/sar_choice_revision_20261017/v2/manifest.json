@@ -1,0 +1,57 @@
+{
+  "variant": "v2",
+  "source_sha256": "6682281f8b1591e3c6fe0e4aaff045c7013f9b85751cf2730efdc2ed94c1f516",
+  "extension_sha256": "fc490bbb1f4906ce66ad66f0609a0a9ecab25e9b48fd8b3b607e8820631cbd37",
+  "runner_sha256": "84b6e68134161c89ca513bb3fba9e36dc1d7b03b01643e196a4f8c98a8f2f2e5",
+  "jobs": [
+    {
+      "condition": "base",
+      "raw_hops": 8,
+      "strong_ground": "ground_8",
+      "config": "results/sar_condition_scan_20261017/configs/base_loopfree.json",
+      "config_sha256": "3342d4f0ebb20fbffa072c397cdc123156ef4dcae57fb7b6552290a9db77c07f"
+    },
+    {
+      "condition": "compute_4",
+      "raw_hops": 8,
+      "strong_ground": "ground_8",
+      "config": "results/sar_condition_scan_20261017/configs/compute_4_loopfree.json",
+      "config_sha256": "8479b4d0f11655adc932fb5d48c7d90b795e3363746277129cb5caa797efed7a"
+    },
+    {
+      "condition": "compute_10",
+      "raw_hops": 8,
+      "strong_ground": "ground_8",
+      "config": "results/sar_condition_scan_20261017/configs/compute_10_loopfree.json",
+      "config_sha256": "121da182093f0a3252a50184a49d467b338b620e870f9ab3816e338f22543cea"
+    },
+    {
+      "condition": "load_2",
+      "raw_hops": 45,
+      "strong_ground": "ground_loopfree",
+      "config": "results/sar_condition_scan_20261017/configs/load_2_loopfree.json",
+      "config_sha256": "50cc8691b401b364ad143fc70b509188263123118f2ec75a22cf463f97f3aaf9"
+    },
+    {
+      "condition": "load_4",
+      "raw_hops": 8,
+      "strong_ground": "ground_8",
+      "config": "results/sar_condition_scan_20261017/configs/load_4_loopfree.json",
+      "config_sha256": "e8ab1ae605670d672d8a02dde9e04d2bdf17b4b5e35cf4be6539beb1d5347cb7"
+    },
+    {
+      "condition": "isl_1",
+      "raw_hops": 45,
+      "strong_ground": "ground_loopfree",
+      "config": "results/sar_condition_scan_20261017/configs/isl_1_loopfree.json",
+      "config_sha256": "a57c137f982c968ee106be4318b9c67ed972bec1eed30b50f9e086d00e3990f1"
+    },
+    {
+      "condition": "isl_5",
+      "raw_hops": 45,
+      "strong_ground": "ground_loopfree",
+      "config": "results/sar_condition_scan_20261017/configs/isl_5_loopfree.json",
+      "config_sha256": "557ff0e282377dafb46c8c0e9f0ddba25cb820dad8ef4b908ef9f03f58f2efb6"
+    }
+  ]
+}

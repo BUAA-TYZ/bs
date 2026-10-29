@@ -1,0 +1,1108 @@
+{
+  "case": {
+    "id": "validation_near_light_1",
+    "seed": 181001,
+    "orbit_offset_seconds": 259200,
+    "arrival_rate_per_second": 0.0033333333333333335,
+    "isl_bandwidth_scale": 1.0,
+    "ground_bandwidth_scale": 1,
+    "walker": {
+      "planes": 4,
+      "satellites_per_plane": 6,
+      "phasing": 1,
+      "altitude_km": 705,
+      "inclination_deg": 98.2,
+      "raan_offset_deg": 15,
+      "phase_offset_deg": 20
+    },
+    "role_profile": "near",
+    "workload_profile": "p0019"
+  },
+  "method": "ground_compute",
+  "metrics": {
+    "model_version": "2.0",
+    "overall": {
+      "completed_tiles": 240,
+      "total_tiles": 252,
+      "completed_tasks": 20,
+      "total_tasks": 21,
+      "failed_tiles": 0,
+      "pending_tiles": 12,
+      "task_completion_rate": 0.9523809523809523,
+      "tile_completion_rate": 0.9523809523809523,
+      "failed_tasks": 0,
+      "pending_tasks": 1,
+      "aggregating_tasks": 0
+    },
+    "latency": {
+      "unit": "seconds",
+      "population": "completed_only",
+      "tile_mean": 7006.95,
+      "tile_p95": 19427.0,
+      "tile_p99": 19505.0,
+      "task_mean": 7007.95,
+      "task_p95": 19428.0,
+      "task_p99": 19506.0
+    },
+    "resource": {
+      "avg_queue_len": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0,
+        "7": 0.0,
+        "8": 0.0,
+        "9": 0.0,
+        "10": 0.0,
+        "11": 0.0,
+        "12": 0.0,
+        "13": 0.0,
+        "14": 0.0,
+        "15": 0.0,
+        "16": 0.0,
+        "17": 0.0,
+        "18": 0.0,
+        "19": 0.0,
+        "20": 0.0,
+        "21": 0.0,
+        "22": 0.0,
+        "23": 0.0
+      },
+      "compute_busy_time": {},
+      "mem_peak_gb": {
+        "0": 0.146985426,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.146985426,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.22047813900000002,
+        "7": 0.0,
+        "8": 0.0,
+        "9": 0.073492713,
+        "10": 0.0,
+        "11": 0.0,
+        "12": 0.367463565,
+        "13": 0.0,
+        "14": 0.0,
+        "15": 0.146985426,
+        "16": 0.0,
+        "17": 0.0,
+        "18": 0.146985426,
+        "19": 0.0,
+        "20": 0.0,
+        "21": 0.073492713,
+        "22": 0.0,
+        "23": 0.0
+      },
+      "vram_peak_gb": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0,
+        "7": 0.0,
+        "8": 0.0,
+        "9": 0.0,
+        "10": 0.0,
+        "11": 0.0,
+        "12": 0.0,
+        "13": 0.0,
+        "14": 0.0,
+        "15": 0.0,
+        "16": 0.0,
+        "17": 0.0,
+        "18": 0.0,
+        "19": 0.0,
+        "20": 0.0,
+        "21": 0.0,
+        "22": 0.0,
+        "23": 0.0
+      },
+      "ground_compute_busy_time": {
+        "gs_beijing": 6.940774670491616,
+        "gs_urumqi": 10.411162005737422
+      }
+    },
+    "failures": {},
+    "network": {
+      "sent_mb": {
+        "ground:gs_beijing": 587.9417039999998,
+        "ground:gs_urumqi": 881.912556
+      },
+      "capacity_mb": {
+        "ground:gs_beijing": 54000.0,
+        "ground:gs_urumqi": 54000.0
+      },
+      "utilization": {
+        "ground:gs_beijing": 0.01088780933333333,
+        "ground:gs_urumqi": 0.016331714
+      }
+    },
+    "task_outcomes": [
+      {
+        "task_id": "task_0",
+        "source_sat_id": 3,
+        "release_seconds": 271.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 791.0,
+        "completion_seconds": 792.0,
+        "latency_seconds": 521.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 21329.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_1",
+        "source_sat_id": 15,
+        "release_seconds": 1329.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 4690.0,
+        "completion_seconds": 4691.0,
+        "latency_seconds": 3362.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 20271.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_2",
+        "source_sat_id": 3,
+        "release_seconds": 1593.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 6720.0,
+        "completion_seconds": 6721.0,
+        "latency_seconds": 5128.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 20007.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_3",
+        "source_sat_id": 6,
+        "release_seconds": 1895.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 21400.0,
+        "completion_seconds": 21401.0,
+        "latency_seconds": 19506.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 19705.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_4",
+        "source_sat_id": 6,
+        "release_seconds": 1974.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 21401.0,
+        "completion_seconds": 21402.0,
+        "latency_seconds": 19428.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 19626.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_5",
+        "source_sat_id": 12,
+        "release_seconds": 2777.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 7778.0,
+        "completion_seconds": 7779.0,
+        "latency_seconds": 5002.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 18823.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_6",
+        "source_sat_id": 18,
+        "release_seconds": 2952.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 19220.0,
+        "completion_seconds": 19221.0,
+        "latency_seconds": 16269.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 18648.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_7",
+        "source_sat_id": 18,
+        "release_seconds": 3279.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 19221.0,
+        "completion_seconds": 19222.0,
+        "latency_seconds": 15943.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 18321.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_8",
+        "source_sat_id": 12,
+        "release_seconds": 3577.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 7779.0,
+        "completion_seconds": 7780.0,
+        "latency_seconds": 4203.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 18023.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_9",
+        "source_sat_id": 15,
+        "release_seconds": 4251.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 4691.0,
+        "completion_seconds": 4692.0,
+        "latency_seconds": 441.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 17349.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_10",
+        "source_sat_id": 0,
+        "release_seconds": 4486.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 9650.0,
+        "completion_seconds": 9651.0,
+        "latency_seconds": 5165.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 17114.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_11",
+        "source_sat_id": 15,
+        "release_seconds": 4783.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 4814.0,
+        "completion_seconds": 4815.0,
+        "latency_seconds": 32.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 16817.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_12",
+        "source_sat_id": 15,
+        "release_seconds": 5470.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": null,
+        "completion_seconds": null,
+        "latency_seconds": null,
+        "status": "pending",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 16130.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_13",
+        "source_sat_id": 9,
+        "release_seconds": 5475.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 18521.0,
+        "completion_seconds": 18522.0,
+        "latency_seconds": 13047.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 16125.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_14",
+        "source_sat_id": 6,
+        "release_seconds": 5571.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 21402.0,
+        "completion_seconds": 21403.0,
+        "latency_seconds": 15832.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 16029.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_15",
+        "source_sat_id": 12,
+        "release_seconds": 6143.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 7780.0,
+        "completion_seconds": 7781.0,
+        "latency_seconds": 1638.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 15457.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_16",
+        "source_sat_id": 3,
+        "release_seconds": 6312.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 6721.0,
+        "completion_seconds": 6722.0,
+        "latency_seconds": 410.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 15288.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_17",
+        "source_sat_id": 0,
+        "release_seconds": 6609.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 9651.0,
+        "completion_seconds": 9652.0,
+        "latency_seconds": 3043.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 14991.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_18",
+        "source_sat_id": 12,
+        "release_seconds": 6793.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 7781.0,
+        "completion_seconds": 7782.0,
+        "latency_seconds": 989.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 14807.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_19",
+        "source_sat_id": 12,
+        "release_seconds": 6948.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 7782.0,
+        "completion_seconds": 7783.0,
+        "latency_seconds": 835.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 14652.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      },
+      {
+        "task_id": "task_20",
+        "source_sat_id": 21,
+        "release_seconds": 6957.0,
+        "deadline_seconds": null,
+        "results_ready_seconds": 16321.0,
+        "completion_seconds": 16322.0,
+        "latency_seconds": 9365.0,
+        "status": "completed",
+        "stage": null,
+        "failure_reason": null,
+        "observed_age_seconds": 14643.0,
+        "result_relay_hops": 0,
+        "raw_relay_hops": 0
+      }
+    ],
+    "experiment": {
+      "config": {
+        "seed": 181001,
+        "num_sats": 24,
+        "sim_steps": 21600,
+        "dt": 1.0,
+        "decision_interval_steps": 1,
+        "topology_update_steps": 10,
+        "ground_visibility_update_steps": 10,
+        "task_arrival_rate": 0.0033333333333333335,
+        "image_size_mb": 73.492713,
+        "num_tiles": 12,
+        "compute_cost_per_tile": 0.23422820483230886,
+        "vram_base_gb": 0.8,
+        "vram_alpha_per_mb": 0.0,
+        "result_size_mb": 0.0006233333333333333,
+        "deadline_steps": 0,
+        "mem_capacity_gb": 8.0,
+        "vram_capacity_gb": 1.0,
+        "compute_rate": 1.0,
+        "transfer_fail_on_link_down": false,
+        "vram_policy": "wait",
+        "pipeline_mode": "ground_compute",
+        "tile_lifecycle_log": "",
+        "ground_stations": [
+          {
+            "id": "gs_beijing",
+            "lat_deg": 39.9042,
+            "lon_deg": 116.4074,
+            "alt_m": 50,
+            "min_elevation_deg": 15,
+            "bandwidth_mbps": 20.0,
+            "receive_channels": 1,
+            "compute_rate": 3.2396827056638866
+          },
+          {
+            "id": "gs_urumqi",
+            "lat_deg": 43.8256,
+            "lon_deg": 87.6168,
+            "alt_m": 800,
+            "min_elevation_deg": 15,
+            "bandwidth_mbps": 20.0,
+            "receive_channels": 1,
+            "compute_rate": 3.2396827056638866
+          }
+        ],
+        "topology": {
+          "start_time_utc": "2026-03-23T17:30:00+00:00",
+          "earth_radius_km": 6378.137,
+          "max_range_km": 4500,
+          "max_neighbors": 4,
+          "predict_contacts": true,
+          "precompute_visibility": true,
+          "contact_scan_s": 30,
+          "contact_update_s": 60,
+          "bandwidth_distance_scale_km": 2000,
+          "bandwidth_mbps_min": 20.0,
+          "bandwidth_mbps_max": 120.0,
+          "bandwidth_period": 600,
+          "bandwidth_noise": 0.0,
+          "latency_ms": 0,
+          "visibility_workers": 1,
+          "window_lookahead_s": 7200,
+          "tle_lines": [
+            [
+              "1 00001U          26079.72916667  .00000000  00000-0  00000+0 0    01",
+              "2 00001  98.2000  15.0000 0001000   0.0000  20.0000 14.56346372    02"
+            ],
+            [
+              "1 00002U          26079.72916667  .00000000  00000-0  00000+0 0    02",
+              "2 00002  98.2000  15.0000 0001000   0.0000  18.0000 14.56346372    00"
+            ],
+            [
+              "1 00003U          26079.72916667  .00000000  00000-0  00000+0 0    03",
+              "2 00003  98.2000  15.0000 0001000   0.0000  22.0000 14.56346372    06"
+            ],
+            [
+              "1 00004U          26079.72916667  .00000000  00000-0  00000+0 0    04",
+              "2 00004  98.2000  15.0000 0001000   0.0000 200.0000 14.56346372    05"
+            ],
+            [
+              "1 00005U          26079.72916667  .00000000  00000-0  00000+0 0    05",
+              "2 00005  98.2000  15.0000 0001000   0.0000 198.0000 14.56346372    02"
+            ],
+            [
+              "1 00006U          26079.72916667  .00000000  00000-0  00000+0 0    06",
+              "2 00006  98.2000  15.0000 0001000   0.0000 202.0000 14.56346372    09"
+            ],
+            [
+              "1 00007U          26079.72916667  .00000000  00000-0  00000+0 0    07",
+              "2 00007  98.2000 105.0000 0001000   0.0000  35.0000 14.56346372    04"
+            ],
+            [
+              "1 00008U          26079.72916667  .00000000  00000-0  00000+0 0    08",
+              "2 00008  98.2000 105.0000 0001000   0.0000  33.0000 14.56346372    03"
+            ],
+            [
+              "1 00009U          26079.72916667  .00000000  00000-0  00000+0 0    09",
+              "2 00009  98.2000 105.0000 0001000   0.0000  37.0000 14.56346372    08"
+            ],
+            [
+              "1 00010U          26079.72916667  .00000000  00000-0  00000+0 0    01",
+              "2 00010  98.2000 105.0000 0001000   0.0000 215.0000 14.56346372    08"
+            ],
+            [
+              "1 00011U          26079.72916667  .00000000  00000-0  00000+0 0    02",
+              "2 00011  98.2000 105.0000 0001000   0.0000 213.0000 14.56346372    07"
+            ],
+            [
+              "1 00012U          26079.72916667  .00000000  00000-0  00000+0 0    03",
+              "2 00012  98.2000 105.0000 0001000   0.0000 217.0000 14.56346372    02"
+            ],
+            [
+              "1 00013U          26079.72916667  .00000000  00000-0  00000+0 0    04",
+              "2 00013  98.2000 195.0000 0001000   0.0000  50.0000 14.56346372    07"
+            ],
+            [
+              "1 00014U          26079.72916667  .00000000  00000-0  00000+0 0    05",
+              "2 00014  98.2000 195.0000 0001000   0.0000  48.0000 14.56346372    05"
+            ],
+            [
+              "1 00015U          26079.72916667  .00000000  00000-0  00000+0 0    06",
+              "2 00015  98.2000 195.0000 0001000   0.0000  52.0000 14.56346372    01"
+            ],
+            [
+              "1 00016U          26079.72916667  .00000000  00000-0  00000+0 0    07",
+              "2 00016  98.2000 195.0000 0001000   0.0000 230.0000 14.56346372    00"
+            ],
+            [
+              "1 00017U          26079.72916667  .00000000  00000-0  00000+0 0    08",
+              "2 00017  98.2000 195.0000 0001000   0.0000 228.0000 14.56346372    08"
+            ],
+            [
+              "1 00018U          26079.72916667  .00000000  00000-0  00000+0 0    09",
+              "2 00018  98.2000 195.0000 0001000   0.0000 232.0000 14.56346372    04"
+            ],
+            [
+              "1 00019U          26079.72916667  .00000000  00000-0  00000+0 0    00",
+              "2 00019  98.2000 285.0000 0001000   0.0000  65.0000 14.56346372    09"
+            ],
+            [
+              "1 00020U          26079.72916667  .00000000  00000-0  00000+0 0    02",
+              "2 00020  98.2000 285.0000 0001000   0.0000  63.0000 14.56346372    09"
+            ],
+            [
+              "1 00021U          26079.72916667  .00000000  00000-0  00000+0 0    03",
+              "2 00021  98.2000 285.0000 0001000   0.0000  67.0000 14.56346372    04"
+            ],
+            [
+              "1 00022U          26079.72916667  .00000000  00000-0  00000+0 0    04",
+              "2 00022  98.2000 285.0000 0001000   0.0000 245.0000 14.56346372    03"
+            ],
+            [
+              "1 00023U          26079.72916667  .00000000  00000-0  00000+0 0    05",
+              "2 00023  98.2000 285.0000 0001000   0.0000 243.0000 14.56346372    02"
+            ],
+            [
+              "1 00024U          26079.72916667  .00000000  00000-0  00000+0 0    06",
+              "2 00024  98.2000 285.0000 0001000   0.0000 247.0000 14.56346372    07"
+            ]
+          ]
+        },
+        "ground_relay_delay_s": 0.0,
+        "aggregation_delay_s": 0.017278694392492373,
+        "task_arrival_end_step": 7200,
+        "execution_commitment": true,
+        "task_source_sat_ids": [
+          0,
+          3,
+          6,
+          9,
+          12,
+          15,
+          18,
+          21
+        ],
+        "satellite_compute_rates": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "result_buffering": true,
+        "result_relay": true,
+        "relay_max_hops": 8,
+        "relay_contact_guard": true,
+        "image_tiling": {
+          "width_px": 6573,
+          "height_px": 3727,
+          "bands": 3,
+          "bits_per_sample": 8,
+          "window_px": 1024,
+          "stride_px": 824,
+          "windows_per_tile_axis": 2,
+          "compute_cost_per_window": 0.07026846144969265,
+          "result_size_mb_per_window": 0.000187
+        },
+        "compute_service_mode": "work_conserving"
+      },
+      "elapsed_sim_seconds": 21600.0,
+      "task_trace_sha256": "c033ea15792bf9978975bea13119e65fc51ad9920ebb1c9a0354feb78c0ad3e0",
+      "tle_sha256": "756ffc043767a00c1886e6393e9db8cd519af785a9140fb1000747d770c0887c",
+      "decision_tile_limit_per_sat": 4,
+      "compute_service_mode": "work_conserving",
+      "compute_timestamp_resolution_seconds": 1.0,
+      "delivery_semantics": "all_results_at_ground_plus_fixed_relay_and_aggregation_v1",
+      "aggregation_model": "uncontended_fixed_delay_rounded_up_to_step",
+      "effective_postprocessing_delay_seconds": 1.0,
+      "splitting_delay_seconds": 0.0,
+      "result_buffering": true,
+      "result_relay": true,
+      "relay_contact_guard": true,
+      "routing_information": "current global link graph and predicted ground windows; instantaneous telemetry; no control-plane cost",
+      "source_sha256": "9c941294963730c6622444101441fe9c8b60977783e6bf30f65b3317f83fbf03",
+      "python_version": "3.12.13",
+      "packages": {
+        "numpy": "2.4.4",
+        "torch": "2.12.0",
+        "skyfield": "1.54",
+        "PyYAML": "6.0.3"
+      },
+      "workload": {
+        "model": "overlapping_window_packets_v1",
+        "parameters": {
+          "width_px": 6573,
+          "height_px": 3727,
+          "bands": 3,
+          "bits_per_sample": 8,
+          "window_px": 1024,
+          "stride_px": 824,
+          "windows_per_tile_axis": 2,
+          "compute_cost_per_window": 0.07026846144969265,
+          "result_size_mb_per_window": 0.000187
+        },
+        "coordinate_convention": "xyxy, upper bounds exclusive",
+        "edge_rule": "shift_last_window_to_edge_no_padding",
+        "packet_rule": "independent_full_windows_no_pixel_deduplication",
+        "result_rule": "per_window_outputs_before_global_merge",
+        "image_size_mb": 73.492713,
+        "num_windows": 40,
+        "num_tiles": 12,
+        "processed_pixels": 41943040,
+        "coverage_multiplier": 1.7121305618422333,
+        "packet_input_mb": 125.82912,
+        "total_compute_cost": 2.810738457987706,
+        "unmerged_result_mb": 0.00748,
+        "tiles": [
+          {
+            "windows_xyxy": [
+              [
+                0,
+                0,
+                1024,
+                1024
+              ],
+              [
+                824,
+                0,
+                1848,
+                1024
+              ],
+              [
+                0,
+                824,
+                1024,
+                1848
+              ],
+              [
+                824,
+                824,
+                1848,
+                1848
+              ]
+            ],
+            "data_size_mb": 12.582912,
+            "compute_cost": 0.2810738457987706,
+            "result_size_mb": 0.000748
+          },
+          {
+            "windows_xyxy": [
+              [
+                1648,
+                0,
+                2672,
+                1024
+              ],
+              [
+                2472,
+                0,
+                3496,
+                1024
+              ],
+              [
+                1648,
+                824,
+                2672,
+                1848
+              ],
+              [
+                2472,
+                824,
+                3496,
+                1848
+              ]
+            ],
+            "data_size_mb": 12.582912,
+            "compute_cost": 0.2810738457987706,
+            "result_size_mb": 0.000748
+          },
+          {
+            "windows_xyxy": [
+              [
+                3296,
+                0,
+                4320,
+                1024
+              ],
+              [
+                4120,
+                0,
+                5144,
+                1024
+              ],
+              [
+                3296,
+                824,
+                4320,
+                1848
+              ],
+              [
+                4120,
+                824,
+                5144,
+                1848
+              ]
+            ],
+            "data_size_mb": 12.582912,
+            "compute_cost": 0.2810738457987706,
+            "result_size_mb": 0.000748
+          },
+          {
+            "windows_xyxy": [
+              [
+                4944,
+                0,
+                5968,
+                1024
+              ],
+              [
+                5549,
+                0,
+                6573,
+                1024
+              ],
+              [
+                4944,
+                824,
+                5968,
+                1848
+              ],
+              [
+                5549,
+                824,
+                6573,
+                1848
+              ]
+            ],
+            "data_size_mb": 12.582912,
+            "compute_cost": 0.2810738457987706,
+            "result_size_mb": 0.000748
+          },
+          {
+            "windows_xyxy": [
+              [
+                0,
+                1648,
+                1024,
+                2672
+              ],
+              [
+                824,
+                1648,
+                1848,
+                2672
+              ],
+              [
+                0,
+                2472,
+                1024,
+                3496
+              ],
+              [
+                824,
+                2472,
+                1848,
+                3496
+              ]
+            ],
+            "data_size_mb": 12.582912,
+            "compute_cost": 0.2810738457987706,
+            "result_size_mb": 0.000748
+          },
+          {
+            "windows_xyxy": [
+              [
+                1648,
+                1648,
+                2672,
+                2672
+              ],
+              [
+                2472,
+                1648,
+                3496,
+                2672
+              ],
+              [
+                1648,
+                2472,
+                2672,
+                3496
+              ],
+              [
+                2472,
+                2472,
+                3496,
+                3496
+              ]
+            ],
+            "data_size_mb": 12.582912,
+            "compute_cost": 0.2810738457987706,
+            "result_size_mb": 0.000748
+          },
+          {
+            "windows_xyxy": [
+              [
+                3296,
+                1648,
+                4320,
+                2672
+              ],
+              [
+                4120,
+                1648,
+                5144,
+                2672
+              ],
+              [
+                3296,
+                2472,
+                4320,
+                3496
+              ],
+              [
+                4120,
+                2472,
+                5144,
+                3496
+              ]
+            ],
+            "data_size_mb": 12.582912,
+            "compute_cost": 0.2810738457987706,
+            "result_size_mb": 0.000748
+          },
+          {
+            "windows_xyxy": [
+              [
+                4944,
+                1648,
+                5968,
+                2672
+              ],
+              [
+                5549,
+                1648,
+                6573,
+                2672
+              ],
+              [
+                4944,
+                2472,
+                5968,
+                3496
+              ],
+              [
+                5549,
+                2472,
+                6573,
+                3496
+              ]
+            ],
+            "data_size_mb": 12.582912,
+            "compute_cost": 0.2810738457987706,
+            "result_size_mb": 0.000748
+          },
+          {
+            "windows_xyxy": [
+              [
+                0,
+                2703,
+                1024,
+                3727
+              ],
+              [
+                824,
+                2703,
+                1848,
+                3727
+              ]
+            ],
+            "data_size_mb": 6.291456,
+            "compute_cost": 0.1405369228993853,
+            "result_size_mb": 0.000374
+          },
+          {
+            "windows_xyxy": [
+              [
+                1648,
+                2703,
+                2672,
+                3727
+              ],
+              [
+                2472,
+                2703,
+                3496,
+                3727
+              ]
+            ],
+            "data_size_mb": 6.291456,
+            "compute_cost": 0.1405369228993853,
+            "result_size_mb": 0.000374
+          },
+          {
+            "windows_xyxy": [
+              [
+                3296,
+                2703,
+                4320,
+                3727
+              ],
+              [
+                4120,
+                2703,
+                5144,
+                3727
+              ]
+            ],
+            "data_size_mb": 6.291456,
+            "compute_cost": 0.1405369228993853,
+            "result_size_mb": 0.000374
+          },
+          {
+            "windows_xyxy": [
+              [
+                4944,
+                2703,
+                5968,
+                3727
+              ],
+              [
+                5549,
+                2703,
+                6573,
+                3727
+              ]
+            ],
+            "data_size_mb": 6.291456,
+            "compute_cost": 0.1405369228993853,
+            "result_size_mb": 0.000374
+          }
+        ]
+      },
+      "workload_sha256": "6f9962004fe8f0db3b1ef56d2f190a1aa394a987418835edb462536a90726b5a",
+      "result_merge_model": "all window outputs required; global merge charged by fixed aggregation_delay_s; no image inference or accuracy validation",
+      "policy": "ground_compute",
+      "checkpoint": null
+    }
+  },
+  "checkpoint_sha256": null,
+  "task_age": {
+    "delivery_curve": [
+      {
+        "horizon_seconds": 1800.0,
+        "total_tasks": 21,
+        "delivered_within_horizon": 7,
+        "not_delivered_within_horizon": 14,
+        "delivery_rate": 0.3333333333333333
+      },
+      {
+        "horizon_seconds": 3600.0,
+        "total_tasks": 21,
+        "delivered_within_horizon": 9,
+        "not_delivered_within_horizon": 12,
+        "delivery_rate": 0.42857142857142855
+      },
+      {
+        "horizon_seconds": 7200.0,
+        "total_tasks": 21,
+        "delivered_within_horizon": 13,
+        "not_delivered_within_horizon": 8,
+        "delivery_rate": 0.6190476190476191
+      },
+      {
+        "horizon_seconds": 14400.0,
+        "total_tasks": 21,
+        "delivered_within_horizon": 15,
+        "not_delivered_within_horizon": 6,
+        "delivery_rate": 0.7142857142857143
+      }
+    ],
+    "delivery_score": 0.5238095238095238,
+    "restricted_mean_latency_seconds": 6646.714285714285
+  },
+  "elapsed_s": 5.69363358290866,
+  "decision_timing": {
+    "scope": "select_actions only; excludes export_state and geometry; host CPU",
+    "calls": 0,
+    "total_ms": 0,
+    "active_calls": 0,
+    "active_median_ms": null,
+    "active_p95_ms": null,
+    "active_max_ms": null
+  }
+}

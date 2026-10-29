@@ -53,23 +53,49 @@ class VisibilityCache:
         # {sat_id: {gs_id: (starts_in_s, duration_s) or None}}
         self.window_cache: Dict[int, Dict[str, Optional[tuple]]] = {}
         self._precomputed = None
+        self._precomputed_index = None
 
-    def precompute(self, sat_recs, t0, ground_station_objs, sim_steps):
+    def precompute(self, sat_recs, t0, ground_station_objs, sim_steps, chunk_size=20000):
+        """只预计算刷新与窗口扫描会读取的步，并分块传播，避免为每个 dt 步建整张轨道网格。"""
         stride = self.scan_step_s / self.dt
         if not stride.is_integer():
             return  # 非整步扫描继续使用原实现，避免改变采样时刻。
         self._scan_stride = int(stride)
+        samples = int(self.lookahead_s / self.scan_step_s) + 1
         count = sim_steps + math.ceil(self.lookahead_s / self.dt) + 1
-        times = time_grid(t0, np.arange(count) * self.dt)
+        # refresh 只在 update_steps 的整数倍读取；窗口扫描从这些刷新步按 scan 步长向后读。
+        refresh = np.arange(0, sim_steps, self.update_steps, dtype=np.int64)
+        offsets = np.arange(samples, dtype=np.int64) * self._scan_stride
+        if self._scan_stride % self.update_steps == 0:
+            # 刷新步与扫描步同余类有限，按余数枚举即可得到全部被读步。
+            residues = np.unique(refresh % self._scan_stride)
+            steps = np.unique(np.concatenate([np.arange(r, count, self._scan_stride, dtype=np.int64)
+                                              for r in residues]))
+        else:
+            steps = np.unique((refresh[:, None] + offsets[None, :]).ravel())
+        steps = steps[steps < count]
+        index = np.full(count, -1, dtype=np.int64)
+        index[steps] = np.arange(len(steps), dtype=np.int64)
         self._precomputed = {}
         for sid, sat in enumerate(sat_recs[:self.num_sats]):
             for gs_id, station in ground_station_objs.items():
-                altitude, _, distance = (sat - station).at(times).altaz()
-                self._precomputed[sid, gs_id] = (altitude.degrees, distance.km)
+                altitude = np.empty(len(steps))
+                distance = np.empty(len(steps))
+                for begin in range(0, len(steps), chunk_size):
+                    part = steps[begin:begin + chunk_size]
+                    times = time_grid(t0, part * self.dt)
+                    alt, _, dist = (sat - station).at(times).altaz()
+                    altitude[begin:begin + len(part)] = alt.degrees
+                    distance[begin:begin + len(part)] = dist.km
+                self._precomputed[sid, gs_id] = (altitude, distance)
+        self._precomputed_index = index
 
     def _sampled_window(self, sid, gs_id, t, min_elev):
         samples = int(self.lookahead_s / self.scan_step_s) + 1
-        altitude = self._precomputed[sid, gs_id][0][t:t + samples * self._scan_stride:self._scan_stride]
+        rows = self._precomputed_index[t:t + samples * self._scan_stride:self._scan_stride]
+        if (rows < 0).any():
+            raise RuntimeError("Visibility precompute is missing a scanned step")
+        altitude = self._precomputed[sid, gs_id][0][rows]
         visible = altitude >= min_elev
         starts = np.flatnonzero(visible)
         if not len(starts):
@@ -118,7 +144,10 @@ class VisibilityCache:
                 for gs_id, gs in ground_stations.items():
                     if self._precomputed is not None:
                         altitude, distance = self._precomputed[sat_id, gs_id]
-                        elev_deg, dist_km = float(altitude[sampled_t]), float(distance[sampled_t])
+                        row = int(self._precomputed_index[sampled_t])
+                        if row < 0:
+                            raise RuntimeError("Visibility precompute is missing a refresh step")
+                        elev_deg, dist_km = float(altitude[row]), float(distance[row])
                     else:
                         elev_deg, dist_km = sat_to_ground_geometry(
                             sat=sat,

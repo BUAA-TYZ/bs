@@ -1,0 +1,1305 @@
+{
+  "source_sha256": "3c186a3ce02dd93ce74563ba77a6b5e49b89eca52ad51e2e79c69e4dff2f5eb6",
+  "python_version": "3.12.13",
+  "packages": {
+    "numpy": "2.4.4",
+    "torch": "2.12.0",
+    "skyfield": "1.54",
+    "PyYAML": "6.0.3"
+  },
+  "args": {
+    "prepared_dir": "results/highres_three_days_prepared_20261015",
+    "out_dir": "results/sla_quota_development_v5_20261015",
+    "methods": [
+      "cgs_compute_adapted",
+      "heft_adapted",
+      "dts_tmax_onehop",
+      "ground_relay",
+      "rolling_future",
+      "task_quota_current",
+      "task_quota"
+    ],
+    "case_ids": null,
+    "workers": 4,
+    "split": "development"
+  },
+  "method_specs": {
+    "cgs_compute_adapted": {
+      "policy": "cgs_compute_adapted",
+      "kwargs": {}
+    },
+    "heft_adapted": {
+      "policy": "heft_adapted",
+      "kwargs": {}
+    },
+    "dts_tmax_onehop": {
+      "policy": "dts_tmax_onehop",
+      "kwargs": {}
+    },
+    "ground_relay": {
+      "policy": "ground_relay",
+      "kwargs": {}
+    },
+    "rolling_future": {
+      "policy": "rolling_admission",
+      "kwargs": {
+        "commit_horizon_s": 14400,
+        "guard_returns": false,
+        "input_lookahead_s": 300
+      }
+    },
+    "task_quota_current": {
+      "policy": "task_quota",
+      "kwargs": {
+        "input_lookahead_s": 0
+      }
+    },
+    "task_quota": {
+      "policy": "task_quota",
+      "kwargs": {}
+    }
+  },
+  "analysis_source_sha256": {
+    "/Users/bytedance/Projects/bs/analysis/evaluate_sla_research.py": "790a62a781703e38c78a4504a8c16b7a68d30faa72000b24bac48781a8a66908",
+    "analysis/evaluate_literature.py": "59c7eab9cb4ae342c480307e147cf7c0277689ad7274591754a28a6314acfcad",
+    "analysis/report_short_deadline.py": "719b7ec2955f2e8e630bc87b725c22965f44bbc1ced54679ae6f32200a7746ab"
+  },
+  "case_info": [
+    {
+      "id": "day01",
+      "calendar_day": "2026-10-15",
+      "epoch_offset_seconds": 60180,
+      "all_qualifying_events_retained": true,
+      "num_acquisitions": 21,
+      "split": "development"
+    },
+    {
+      "id": "day02",
+      "calendar_day": "2026-10-16",
+      "epoch_offset_seconds": 147590,
+      "all_qualifying_events_retained": true,
+      "num_acquisitions": 15,
+      "split": "development"
+    },
+    {
+      "id": "day03",
+      "calendar_day": "2026-10-17",
+      "epoch_offset_seconds": 229480,
+      "all_qualifying_events_retained": true,
+      "num_acquisitions": 17,
+      "split": "development"
+    }
+  ],
+  "prepared_manifest_sha256": "c9e7ff2c09156cd5d2f862e4dfce6289d1cb67b27d3e6fdcfe750391b4a067b0",
+  "selection_sha256": null,
+  "provenance": {
+    "scope": "specification-based network pilot with proxy compute; not flight measurements or final MARL evaluation",
+    "epoch": "2026-10-15T00:00:00Z",
+    "orbit": {
+      "architecture": "heterogeneous",
+      "source_ids": [
+        0,
+        1
+      ],
+      "imagers": {
+        "count": 2,
+        "altitude_km": 620,
+        "inclination_deg": 97.9,
+        "raan_deg": [
+          357.5,
+          12.5
+        ],
+        "phase_deg": [
+          0,
+          15
+        ]
+      },
+      "helpers": {
+        "count": 22,
+        "description": "two 550 km, 53 degree planes; 11 per plane; RAAN 0 and 90; Walker phase 1"
+      },
+      "synthetic_tle": true
+    },
+    "nominal_rates_mbps": {
+      "isl": 10000,
+      "downlink": 1200
+    },
+    "payload_efficiency_assumption": 1,
+    "parameter_evidence": "docs/thesis/highres_link_evidence.md",
+    "compute_proxy": "RGB detector CPU/MPS calibration on one Apple M5 Pro; native PAN/MS preprocessing, codec, flight hardware uncalibrated",
+    "result_proxy": "187 bytes per window transferred from old measured RGB workload; high-resolution detection density unvalidated",
+    "aggregation_proxy": "fixed old measured merge time; full-strip merge scaling uncalibrated",
+    "assumptions": [
+      "64 GB per-node data buffer is a design allocation, not a SCOT80 memory specification",
+      "four simultaneous ISL neighbors, 4500 km design range, instantaneous acquisition, zero terminal setup delay",
+      "one Beijing-coordinate receiver, one satellite at a time using aggregate 1.2 Gbps",
+      "full topology prediction and current queue information; no control-plane delay",
+      "day episodes start empty before first acquisition; no cross-day residual carry-over",
+      "fixed one-second decision cadence for every dt; packet batch shared by all star heuristics",
+      "source compression and image conversion are excluded timing terms; equal representation for both paths"
+    ],
+    "workload": {
+      "model": "overlapping_native_window_packets_v2",
+      "parameters": {
+        "width_px": 46668,
+        "height_px": 66668,
+        "bands": 3,
+        "bits_per_sample": 8,
+        "window_px": 1024,
+        "stride_px": 824,
+        "windows_per_tile_axis": 4,
+        "compute_cost_per_window": 0.07026846144969265,
+        "result_size_mb_per_window": 0.000187,
+        "transport_components": [
+          {
+            "name": "PAN",
+            "downsample": 1,
+            "bands": 1,
+            "bits_per_sample": 12
+          },
+          {
+            "name": "MS",
+            "downsample": 4,
+            "bands": 6,
+            "bits_per_sample": 12
+          }
+        ],
+        "transport_compression_ratio": 3
+      },
+      "coordinate_convention": "xyxy, upper bounds exclusive",
+      "edge_rule": "shift_last_window_to_edge_no_padding",
+      "packet_rule": "independent_full_windows_no_pixel_deduplication",
+      "result_rule": "per_window_outputs_before_global_merge",
+      "image_size_mb": 2138.9927789999997,
+      "num_windows": 4617,
+      "num_tiles": 315,
+      "processed_pixels": 4841275392,
+      "coverage_multiplier": 1.5560486527476958,
+      "packet_input_mb": 3328.3768320000004,
+      "total_compute_cost": 324.429486513231,
+      "unmerged_result_mb": 0.863379,
+      "transport": {
+        "format": "native_components_packed_bitstream",
+        "pixel_mapping": "floor(start/downsample), ceil(end/downsample)",
+        "packing": "per_component_contiguous_bits_ceil_to_byte; no row padding or headers",
+        "compression_ratio": 3,
+        "compression_assumption": "Uncompressed/compressed size ratio; fixed modeling assumption, not measured codec performance",
+        "unique_uncompressed_mb": 6416.978336999999,
+        "inference_window_mb": 3.145728,
+        "inference_rule": "bands/bits_per_sample define model input and VRAM proxy, independently of native transport",
+        "compute_rule": "Per-window processing proxy; not a measured native PAN/MS pipeline; decode/pansharpen cost not modeled",
+        "component_rasters": [
+          {
+            "name": "PAN",
+            "downsample": 1,
+            "bands": 1,
+            "bits_per_sample": 12,
+            "width_px": 46668,
+            "height_px": 66668,
+            "packed_bytes": 4666893336
+          },
+          {
+            "name": "MS",
+            "downsample": 4,
+            "bands": 6,
+            "bits_per_sample": 12,
+            "width_px": 11667,
+            "height_px": 16667,
+            "packed_bytes": 1750085001
+          }
+        ]
+      }
+    },
+    "maximum_packet_mb": 11.534336000000001,
+    "serialization_seconds": {
+      "whole_image_downlink": 14.259951859999997,
+      "largest_packet_isl": 0.009227468800000001,
+      "largest_packet_downlink": 0.07689557333333334
+    }
+  },
+  "primary_seconds": 300,
+  "scope": "paired short-SLA heuristic research; not MARL or original-paper full reproduction",
+  "prepared_configs_sha256": {
+    "results/highres_three_days_prepared_20261015/day01_config.json": "92dd8747108137cf3cdab877765a6d8d4d133f5316f36aaf58fdbbe8df89b679",
+    "results/highres_three_days_prepared_20261015/day02_config.json": "72558789125cdadc1765ff199ae575145e7686034c003e5c9ab3b52a07cc1495",
+    "results/highres_three_days_prepared_20261015/day03_config.json": "45c1706e3163ca060a296721dd83f58fe05eb9300cc4ee9d45cade2cdc86e086"
+  },
+  "elapsed_s": 530.4685908746906,
+  "aggregate": [
+    {
+      "method": "cgs_compute_adapted",
+      "cases": 3,
+      "on_time_tasks": 36,
+      "total_tasks": 53,
+      "on_time_rate": 0.6610644257703081,
+      "capped_mean_latency_300s": 224.39010270774975,
+      "delivery_rates": [
+        0.0,
+        0.13762838468720823,
+        0.2911297852474323,
+        0.6610644257703081,
+        0.9215686274509803
+      ]
+    },
+    {
+      "method": "heft_adapted",
+      "cases": 3,
+      "on_time_tasks": 36,
+      "total_tasks": 53,
+      "on_time_rate": 0.6610644257703081,
+      "capped_mean_latency_300s": 224.5874883286648,
+      "delivery_rates": [
+        0.0,
+        0.13762838468720823,
+        0.2911297852474323,
+        0.6610644257703081,
+        0.9215686274509803
+      ]
+    },
+    {
+      "method": "dts_tmax_onehop",
+      "cases": 3,
+      "on_time_tasks": 36,
+      "total_tasks": 53,
+      "on_time_rate": 0.6610644257703081,
+      "capped_mean_latency_300s": 223.05527544351074,
+      "delivery_rates": [
+        0.0,
+        0.13762838468720823,
+        0.3133520074696545,
+        0.6610644257703081,
+        0.9215686274509803
+      ]
+    },
+    {
+      "method": "ground_relay",
+      "cases": 3,
+      "on_time_tasks": 12,
+      "total_tasks": 53,
+      "on_time_rate": 0.22558356676003735,
+      "capped_mean_latency_300s": 279.97535014005604,
+      "delivery_rates": [
+        0.0,
+        0.015873015873015872,
+        0.055088702147525676,
+        0.22558356676003735,
+        0.6209150326797386
+      ]
+    },
+    {
+      "method": "rolling_future",
+      "cases": 3,
+      "on_time_tasks": 36,
+      "total_tasks": 53,
+      "on_time_rate": 0.6647992530345471,
+      "capped_mean_latency_300s": 214.10140056022408,
+      "delivery_rates": [
+        0.0,
+        0.2149393090569561,
+        0.38057889822595703,
+        0.6647992530345471,
+        0.9411764705882353
+      ]
+    },
+    {
+      "method": "task_quota_current",
+      "cases": 3,
+      "on_time_tasks": 36,
+      "total_tasks": 53,
+      "on_time_rate": 0.6610644257703081,
+      "capped_mean_latency_300s": 224.39010270774975,
+      "delivery_rates": [
+        0.0,
+        0.13762838468720823,
+        0.2911297852474323,
+        0.6610644257703081,
+        0.9215686274509803
+      ]
+    },
+    {
+      "method": "task_quota",
+      "cases": 3,
+      "on_time_tasks": 36,
+      "total_tasks": 53,
+      "on_time_rate": 0.6647992530345471,
+      "capped_mean_latency_300s": 217.22296918767506,
+      "delivery_rates": [
+        0.0,
+        0.13762838468720823,
+        0.376844070961718,
+        0.6647992530345471,
+        0.9411764705882353
+      ]
+    }
+  ],
+  "daily": [
+    {
+      "case": "day01",
+      "method": "ground_relay",
+      "total_tasks": 21,
+      "on_time_tasks": 4,
+      "on_time_rate": 0.19047619047619047,
+      "capped_mean_latency_300s": 283.7142857142857,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 21,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 1,
+          "not_delivered_within_horizon": 20,
+          "delivery_rate": 0.047619047619047616
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 1,
+          "not_delivered_within_horizon": 20,
+          "delivery_rate": 0.047619047619047616
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 4,
+          "not_delivered_within_horizon": 17,
+          "delivery_rate": 0.19047619047619047
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 14,
+          "not_delivered_within_horizon": 7,
+          "delivery_rate": 0.6666666666666666
+        }
+      ]
+    },
+    {
+      "case": "day01",
+      "method": "dts_tmax_onehop",
+      "total_tasks": 21,
+      "on_time_tasks": 19,
+      "on_time_rate": 0.9047619047619048,
+      "capped_mean_latency_300s": 217.42857142857142,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 21,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 19,
+          "delivery_rate": 0.09523809523809523
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 5,
+          "not_delivered_within_horizon": 16,
+          "delivery_rate": 0.23809523809523808
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 19,
+          "not_delivered_within_horizon": 2,
+          "delivery_rate": 0.9047619047619048
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 21,
+          "not_delivered_within_horizon": 0,
+          "delivery_rate": 1.0
+        }
+      ]
+    },
+    {
+      "case": "day01",
+      "method": "heft_adapted",
+      "total_tasks": 21,
+      "on_time_tasks": 19,
+      "on_time_rate": 0.9047619047619048,
+      "capped_mean_latency_300s": 217.47619047619048,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 21,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 19,
+          "delivery_rate": 0.09523809523809523
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 5,
+          "not_delivered_within_horizon": 16,
+          "delivery_rate": 0.23809523809523808
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 19,
+          "not_delivered_within_horizon": 2,
+          "delivery_rate": 0.9047619047619048
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 21,
+          "not_delivered_within_horizon": 0,
+          "delivery_rate": 1.0
+        }
+      ]
+    },
+    {
+      "case": "day01",
+      "method": "cgs_compute_adapted",
+      "total_tasks": 21,
+      "on_time_tasks": 19,
+      "on_time_rate": 0.9047619047619048,
+      "capped_mean_latency_300s": 217.14285714285714,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 21,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 19,
+          "delivery_rate": 0.09523809523809523
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 5,
+          "not_delivered_within_horizon": 16,
+          "delivery_rate": 0.23809523809523808
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 19,
+          "not_delivered_within_horizon": 2,
+          "delivery_rate": 0.9047619047619048
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 21,
+          "not_delivered_within_horizon": 0,
+          "delivery_rate": 1.0
+        }
+      ]
+    },
+    {
+      "case": "day02",
+      "method": "cgs_compute_adapted",
+      "total_tasks": 15,
+      "on_time_tasks": 10,
+      "on_time_rate": 0.6666666666666666,
+      "capped_mean_latency_300s": 205.73333333333332,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 15,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 3,
+          "not_delivered_within_horizon": 12,
+          "delivery_rate": 0.2
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 6,
+          "not_delivered_within_horizon": 9,
+          "delivery_rate": 0.4
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 10,
+          "not_delivered_within_horizon": 5,
+          "delivery_rate": 0.6666666666666666
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 15,
+          "not_delivered_within_horizon": 0,
+          "delivery_rate": 1.0
+        }
+      ]
+    },
+    {
+      "case": "day01",
+      "method": "rolling_future",
+      "total_tasks": 21,
+      "on_time_tasks": 18,
+      "on_time_rate": 0.8571428571428571,
+      "capped_mean_latency_300s": 204.52380952380952,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 21,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 3,
+          "not_delivered_within_horizon": 18,
+          "delivery_rate": 0.14285714285714285
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 8,
+          "not_delivered_within_horizon": 13,
+          "delivery_rate": 0.38095238095238093
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 18,
+          "not_delivered_within_horizon": 3,
+          "delivery_rate": 0.8571428571428571
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 21,
+          "not_delivered_within_horizon": 0,
+          "delivery_rate": 1.0
+        }
+      ]
+    },
+    {
+      "case": "day01",
+      "method": "task_quota_current",
+      "total_tasks": 21,
+      "on_time_tasks": 19,
+      "on_time_rate": 0.9047619047619048,
+      "capped_mean_latency_300s": 217.14285714285714,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 21,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 19,
+          "delivery_rate": 0.09523809523809523
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 5,
+          "not_delivered_within_horizon": 16,
+          "delivery_rate": 0.23809523809523808
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 19,
+          "not_delivered_within_horizon": 2,
+          "delivery_rate": 0.9047619047619048
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 21,
+          "not_delivered_within_horizon": 0,
+          "delivery_rate": 1.0
+        }
+      ]
+    },
+    {
+      "case": "day02",
+      "method": "ground_relay",
+      "total_tasks": 15,
+      "on_time_tasks": 2,
+      "on_time_rate": 0.13333333333333333,
+      "capped_mean_latency_300s": 293.8,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 15,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 15,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 15,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 13,
+          "delivery_rate": 0.13333333333333333
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 10,
+          "not_delivered_within_horizon": 5,
+          "delivery_rate": 0.6666666666666666
+        }
+      ]
+    },
+    {
+      "case": "day02",
+      "method": "heft_adapted",
+      "total_tasks": 15,
+      "on_time_tasks": 10,
+      "on_time_rate": 0.6666666666666666,
+      "capped_mean_latency_300s": 205.93333333333334,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 15,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 3,
+          "not_delivered_within_horizon": 12,
+          "delivery_rate": 0.2
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 6,
+          "not_delivered_within_horizon": 9,
+          "delivery_rate": 0.4
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 10,
+          "not_delivered_within_horizon": 5,
+          "delivery_rate": 0.6666666666666666
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 15,
+          "not_delivered_within_horizon": 0,
+          "delivery_rate": 1.0
+        }
+      ]
+    },
+    {
+      "case": "day02",
+      "method": "dts_tmax_onehop",
+      "total_tasks": 15,
+      "on_time_tasks": 10,
+      "on_time_rate": 0.6666666666666666,
+      "capped_mean_latency_300s": 201.26666666666668,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 15,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 3,
+          "not_delivered_within_horizon": 12,
+          "delivery_rate": 0.2
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 7,
+          "not_delivered_within_horizon": 8,
+          "delivery_rate": 0.4666666666666667
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 10,
+          "not_delivered_within_horizon": 5,
+          "delivery_rate": 0.6666666666666666
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 15,
+          "not_delivered_within_horizon": 0,
+          "delivery_rate": 1.0
+        }
+      ]
+    },
+    {
+      "case": "day01",
+      "method": "task_quota",
+      "total_tasks": 21,
+      "on_time_tasks": 18,
+      "on_time_rate": 0.8571428571428571,
+      "capped_mean_latency_300s": 202.85714285714286,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 21,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 19,
+          "delivery_rate": 0.09523809523809523
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 9,
+          "not_delivered_within_horizon": 12,
+          "delivery_rate": 0.42857142857142855
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 18,
+          "not_delivered_within_horizon": 3,
+          "delivery_rate": 0.8571428571428571
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 21,
+          "not_delivered_within_horizon": 0,
+          "delivery_rate": 1.0
+        }
+      ]
+    },
+    {
+      "case": "day02",
+      "method": "rolling_future",
+      "total_tasks": 15,
+      "on_time_tasks": 10,
+      "on_time_rate": 0.6666666666666666,
+      "capped_mean_latency_300s": 201.13333333333333,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 15,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 4,
+          "not_delivered_within_horizon": 11,
+          "delivery_rate": 0.26666666666666666
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 7,
+          "not_delivered_within_horizon": 8,
+          "delivery_rate": 0.4666666666666667
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 10,
+          "not_delivered_within_horizon": 5,
+          "delivery_rate": 0.6666666666666666
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 15,
+          "not_delivered_within_horizon": 0,
+          "delivery_rate": 1.0
+        }
+      ]
+    },
+    {
+      "case": "day02",
+      "method": "task_quota_current",
+      "total_tasks": 15,
+      "on_time_tasks": 10,
+      "on_time_rate": 0.6666666666666666,
+      "capped_mean_latency_300s": 205.73333333333332,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 15,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 3,
+          "not_delivered_within_horizon": 12,
+          "delivery_rate": 0.2
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 6,
+          "not_delivered_within_horizon": 9,
+          "delivery_rate": 0.4
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 10,
+          "not_delivered_within_horizon": 5,
+          "delivery_rate": 0.6666666666666666
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 15,
+          "not_delivered_within_horizon": 0,
+          "delivery_rate": 1.0
+        }
+      ]
+    },
+    {
+      "case": "day02",
+      "method": "task_quota",
+      "total_tasks": 15,
+      "on_time_tasks": 10,
+      "on_time_rate": 0.6666666666666666,
+      "capped_mean_latency_300s": 201.4,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 15,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 3,
+          "not_delivered_within_horizon": 12,
+          "delivery_rate": 0.2
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 7,
+          "not_delivered_within_horizon": 8,
+          "delivery_rate": 0.4666666666666667
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 10,
+          "not_delivered_within_horizon": 5,
+          "delivery_rate": 0.6666666666666666
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 15,
+          "not_delivered_within_horizon": 0,
+          "delivery_rate": 1.0
+        }
+      ]
+    },
+    {
+      "case": "day03",
+      "method": "cgs_compute_adapted",
+      "total_tasks": 17,
+      "on_time_tasks": 7,
+      "on_time_rate": 0.4117647058823529,
+      "capped_mean_latency_300s": 250.2941176470588,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 17,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 15,
+          "delivery_rate": 0.11764705882352941
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 4,
+          "not_delivered_within_horizon": 13,
+          "delivery_rate": 0.23529411764705882
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 7,
+          "not_delivered_within_horizon": 10,
+          "delivery_rate": 0.4117647058823529
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 13,
+          "not_delivered_within_horizon": 4,
+          "delivery_rate": 0.7647058823529411
+        }
+      ]
+    },
+    {
+      "case": "day03",
+      "method": "ground_relay",
+      "total_tasks": 17,
+      "on_time_tasks": 6,
+      "on_time_rate": 0.35294117647058826,
+      "capped_mean_latency_300s": 262.4117647058824,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 17,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 17,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 15,
+          "delivery_rate": 0.11764705882352941
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 6,
+          "not_delivered_within_horizon": 11,
+          "delivery_rate": 0.35294117647058826
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 9,
+          "not_delivered_within_horizon": 8,
+          "delivery_rate": 0.5294117647058824
+        }
+      ]
+    },
+    {
+      "case": "day03",
+      "method": "heft_adapted",
+      "total_tasks": 17,
+      "on_time_tasks": 7,
+      "on_time_rate": 0.4117647058823529,
+      "capped_mean_latency_300s": 250.35294117647058,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 17,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 15,
+          "delivery_rate": 0.11764705882352941
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 4,
+          "not_delivered_within_horizon": 13,
+          "delivery_rate": 0.23529411764705882
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 7,
+          "not_delivered_within_horizon": 10,
+          "delivery_rate": 0.4117647058823529
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 13,
+          "not_delivered_within_horizon": 4,
+          "delivery_rate": 0.7647058823529411
+        }
+      ]
+    },
+    {
+      "case": "day03",
+      "method": "dts_tmax_onehop",
+      "total_tasks": 17,
+      "on_time_tasks": 7,
+      "on_time_rate": 0.4117647058823529,
+      "capped_mean_latency_300s": 250.47058823529412,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 17,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 15,
+          "delivery_rate": 0.11764705882352941
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 4,
+          "not_delivered_within_horizon": 13,
+          "delivery_rate": 0.23529411764705882
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 7,
+          "not_delivered_within_horizon": 10,
+          "delivery_rate": 0.4117647058823529
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 13,
+          "not_delivered_within_horizon": 4,
+          "delivery_rate": 0.7647058823529411
+        }
+      ]
+    },
+    {
+      "case": "day03",
+      "method": "task_quota_current",
+      "total_tasks": 17,
+      "on_time_tasks": 7,
+      "on_time_rate": 0.4117647058823529,
+      "capped_mean_latency_300s": 250.2941176470588,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 17,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 15,
+          "delivery_rate": 0.11764705882352941
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 4,
+          "not_delivered_within_horizon": 13,
+          "delivery_rate": 0.23529411764705882
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 7,
+          "not_delivered_within_horizon": 10,
+          "delivery_rate": 0.4117647058823529
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 13,
+          "not_delivered_within_horizon": 4,
+          "delivery_rate": 0.7647058823529411
+        }
+      ]
+    },
+    {
+      "case": "day03",
+      "method": "rolling_future",
+      "total_tasks": 17,
+      "on_time_tasks": 8,
+      "on_time_rate": 0.47058823529411764,
+      "capped_mean_latency_300s": 236.64705882352942,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 17,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 4,
+          "not_delivered_within_horizon": 13,
+          "delivery_rate": 0.23529411764705882
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 5,
+          "not_delivered_within_horizon": 12,
+          "delivery_rate": 0.29411764705882354
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 8,
+          "not_delivered_within_horizon": 9,
+          "delivery_rate": 0.47058823529411764
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 14,
+          "not_delivered_within_horizon": 3,
+          "delivery_rate": 0.8235294117647058
+        }
+      ]
+    },
+    {
+      "case": "day03",
+      "method": "task_quota",
+      "total_tasks": 17,
+      "on_time_tasks": 8,
+      "on_time_rate": 0.47058823529411764,
+      "capped_mean_latency_300s": 247.41176470588235,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 17,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 15,
+          "delivery_rate": 0.11764705882352941
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 4,
+          "not_delivered_within_horizon": 13,
+          "delivery_rate": 0.23529411764705882
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 8,
+          "not_delivered_within_horizon": 9,
+          "delivery_rate": 0.47058823529411764
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 14,
+          "not_delivered_within_horizon": 3,
+          "delivery_rate": 0.8235294117647058
+        }
+      ]
+    }
+  ],
+  "records": [
+    "day01_ground_relay.json",
+    "day01_dts_tmax_onehop.json",
+    "day01_heft_adapted.json",
+    "day01_cgs_compute_adapted.json",
+    "day02_cgs_compute_adapted.json",
+    "day01_rolling_future.json",
+    "day01_task_quota_current.json",
+    "day02_ground_relay.json",
+    "day02_heft_adapted.json",
+    "day02_dts_tmax_onehop.json",
+    "day01_task_quota.json",
+    "day02_rolling_future.json",
+    "day02_task_quota_current.json",
+    "day02_task_quota.json",
+    "day03_cgs_compute_adapted.json",
+    "day03_ground_relay.json",
+    "day03_heft_adapted.json",
+    "day03_dts_tmax_onehop.json",
+    "day03_task_quota_current.json",
+    "day03_rolling_future.json",
+    "day03_task_quota.json"
+  ]
+}

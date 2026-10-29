@@ -1,0 +1,63 @@
+{
+  "status": "FROZEN_RESOURCE_DECISION",
+  "created_at": "2026-10-27T01:59:06.713912+00:00",
+  "scenario": "L_48_288",
+  "score_duration_s": 3600,
+  "validation_dates": [
+    "2026-10-22",
+    "2026-10-23",
+    "2026-10-24"
+  ],
+  "test_dates": [
+    "2026-12-21",
+    "2026-12-22",
+    "2026-12-23"
+  ],
+  "cancelled": [
+    "S",
+    "scale_finetuning",
+    "no_teacher_ablation"
+  ],
+  "reason": "Runtime budget only; six-hour validation plus test panel exceeds remaining deadline budget",
+  "measured_single_task_h": [
+    2.311606876388889,
+    2.5600356743636157
+  ],
+  "estimates": {
+    "6": {
+      "methods": 22,
+      "days": 3,
+      "tasks": 66,
+      "waves": 8,
+      "single_panel_nominal_h": 122.88171236945355,
+      "validation_plus_test_nominal_h": 245.7634247389071,
+      "uncertainty_multiplier": 2,
+      "main_test_reserve_h": 35,
+      "preparation_audit_reserve_h": 12,
+      "total_with_20pct_margin_h": 646.2322193733771
+    },
+    "1": {
+      "methods": 22,
+      "days": 3,
+      "tasks": 66,
+      "waves": 8,
+      "single_panel_nominal_h": 20.480285394908925,
+      "validation_plus_test_nominal_h": 40.96057078981785,
+      "uncertainty_multiplier": 2,
+      "main_test_reserve_h": 35,
+      "preparation_audit_reserve_h": 12,
+      "total_with_20pct_margin_h": 154.70536989556282
+    }
+  },
+  "remaining_h": 230.01480169111113,
+  "deadline": "2026-11-05T16:00:00+00:00",
+  "tests_sealed": true,
+  "model_selection_from_probe": false,
+  "limitations": [
+    "One peak hour is not a six-hour runtime guarantee",
+    "CGS and other rules were not individually probed; 2x planning multiplier is not an upper bound",
+    "Different dates/density/congestion can change cost",
+    "RSS includes previous acquisition tasks in reused workers; not Orin memory validation",
+    "Followup and action hashes verified against saved checks, no independent event replay"
+  ]
+}

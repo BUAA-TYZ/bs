@@ -1,0 +1,30 @@
+{
+  "epoch": "2026-10-15T00:00:00Z",
+  "day_offsets": [
+    7,
+    21,
+    35
+  ],
+  "strips_per_pass": [
+    1,
+    3
+  ],
+  "primary_seconds": 300,
+  "selection": "fixed before confirmation outcomes; no replacement of poor geometry",
+  "scope": "temporal/load confirmation in the same synthetic 24-satellite architecture; not universal generalization",
+  "common_input_protocol": {
+    "input_relay_max_hops": 2,
+    "base_manifest_sha256": "74be94cd16376be57db9516c262e6c6e73f9b2676c91f14beb8150c590aecb6c",
+    "base_prepared_dir": "results/sla_confirmation_prepared_20261015",
+    "scope": "common store-and-forward input capability for every method; not an algorithm-only gain",
+    "preparer_sha256": "062a5be4f7d4cb046ade5b58f44a74deed0ad6ea6bc7b8bbd9ec9450ad4127b3",
+    "base_config_sha256": {
+      "day08_load1_config.json": "89970f899ca66c4bf9b4065665ae1ac5aa57883a159054dc7043d77e5fe4ced8",
+      "day22_load1_config.json": "4dcc88c19ca885ccf136e38c04ae5ba21bcc9502ff60c16f41fa1b0bc7c7dc6a",
+      "day36_load1_config.json": "52dcd8e96b07d77f1d8805c54577d6f1552a4b6641bc7bd04428e4bc13512a04",
+      "day08_load3_config.json": "e75090487ef03b7372c9d8230b08fc3bd33fae20bb531e756eab6ed93d06266b",
+      "day22_load3_config.json": "267fd17662e5df8ea2eec0dc1728d682ec70171ddb9a409dd7f10818256a38bd",
+      "day36_load3_config.json": "49eacd12b8f967e7fb85cb5835f91070b81e153ff508227b2b7061e1eaaef2df"
+    }
+  }
+}

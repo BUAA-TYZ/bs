@@ -1,0 +1,101 @@
+{
+  "image": {
+    "width_px": 10000,
+    "height_px": 10000,
+    "mode": "spot",
+    "gsd_m": 0.5
+  },
+  "tiling": {
+    "width_px": 10000,
+    "height_px": 10000,
+    "bands": 3,
+    "bits_per_sample": 8,
+    "window_px": 4096,
+    "stride_px": 3200,
+    "windows_per_tile_axis": 1,
+    "compute_cost_per_window": 1,
+    "result_size_mb_per_window": 1.18777234889728,
+    "transport_components": [
+      {
+        "name": "sar_amplitude",
+        "downsample": 1,
+        "bands": 1,
+        "bits_per_sample": 16
+      }
+    ],
+    "transport_compression_ratio": 1.0,
+    "deduplicate_within_tile": true,
+    "requested_num_tiles": 16
+  },
+  "global_objects": [],
+  "windows": [
+    {
+      "window_id": 0,
+      "x0": 0,
+      "y0": 0,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 1,
+      "x0": 3200,
+      "y0": 0,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 2,
+      "x0": 5904,
+      "y0": 0,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 3,
+      "x0": 0,
+      "y0": 3200,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 4,
+      "x0": 3200,
+      "y0": 3200,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 5,
+      "x0": 5904,
+      "y0": 3200,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 6,
+      "x0": 0,
+      "y0": 5904,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 7,
+      "x0": 3200,
+      "y0": 5904,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 8,
+      "x0": 5904,
+      "y0": 5904,
+      "records": [],
+      "output_bytes": 28
+    }
+  ],
+  "summary": {
+    "total_output_bytes": 252,
+    "object_count": 0,
+    "sum_record_count": 0
+  }
+}

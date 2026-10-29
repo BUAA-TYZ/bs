@@ -1,0 +1,68 @@
+{
+  "date_parameter": "UTC calendar date; original synthetic TLE elements/epoch stay byte-identical; propagate to requested date, never re-epoch or reset phases",
+  "source_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+  ],
+  "duration_s": 86400,
+  "geometry_scan_s": 10,
+  "max_off_nadir_deg": 40,
+  "incidence_range_deg": [
+    20,
+    40
+  ],
+  "sun_required": false,
+  "min_capture_start_spacing_s_per_source": 60,
+  "pass_cooldown_s": 0,
+  "end_window_guard_s": 10,
+  "formation_delay_s": 60,
+  "deadline_origin": "formed image ready",
+  "D_seconds": 300,
+  "window_order": [
+    "start_s",
+    "source_sat_id",
+    "target_id"
+  ],
+  "mode_weights_in_MODES_order": [
+    0.2,
+    0.6,
+    0.2
+  ],
+  "mode_draw": "random.Random(1701+int(YYYYMMDD)); draw mode before window fit test; draw truth seed only after acceptance",
+  "accepted_start": "max(window.start_s, last_accepted_capture_start[source]+60)",
+  "acceptance": "capture_end <= window.end_s-10 and capture_end+60 < 86400",
+  "dispatch_blocks": 16,
+  "daily_boundary": "Independent daily acquisition schedule, no carry-in before 00:00; same rule for all splits",
+  "snippet_selection": "Largest raw-byte arrivals in [start,start+21600); earliest tie; no policy outcomes used",
+  "snippet_warmup": "origin=floor((start-600)/60)*60; retain all real arrivals from origin, only main interval scored; 301s followup, no post-main arrivals",
+  "limitations": "Earlier backlog not recovered; target locations are coastal monitoring proxies, not guaranteed ship counts or validated spacecraft duty cycle",
+  "generator_references": [
+    "analysis/prepare_maritime_extension.py",
+    "analysis/prepare_load_pressure.py",
+    "sim/acquisition.py",
+    "analysis/redesign_scenario.py"
+  ],
+  "date_adapter_status": "Rule registered; existing source_windows/arrivals hard-code 10-15. Before future data generation parameterize date and verify exact 10-15 reproduction. No future schedules generated this round."
+}

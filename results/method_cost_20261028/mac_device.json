@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "collected_at_utc": "2026-10-28T07:22:35.831608+00:00",
+  "purpose": "Read-only hardware/software inventory; no performance measurements",
+  "platform": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "release": "25.4.0",
+    "python_version": "3.12.13",
+    "logical_cpu_count": 18
+  },
+  "limitations": [
+    "Missing packages or commands do not prove that a component is absent.",
+    "Python package versions describe only the Python environment running this script.",
+    "No serial numbers, GPU UUIDs, network addresses, hostname, or environment dump collected.",
+    "Jetson nvidia-smi may be unavailable; board model and L4T are separate evidence.",
+    "The CUDA version shown by a driver is not the installed CUDA toolkit version."
+  ],
+  "macos": {
+    "cpu": {
+      "status": "ok",
+      "returncode": 0,
+      "stdout": "Apple M5 Pro",
+      "stderr": ""
+    },
+    "ram_bytes": {
+      "status": "ok",
+      "returncode": 0,
+      "stdout": "51539607552",
+      "stderr": ""
+    }
+  },
+  "nvidia_gpu": {
+    "status": "not_found"
+  },
+  "cuda_toolkit": {
+    "status": "not_found"
+  },
+  "cuda_version_file": {
+    "status": "not_found"
+  },
+  "python_packages": {
+    "torch": {
+      "status": "ok",
+      "version": "2.12.0"
+    },
+    "torchvision": {
+      "status": "ok",
+      "version": "0.27.0"
+    },
+    "tensorrt": {
+      "status": "not_found_in_current_python"
+    },
+    "tensorrt-cu12": {
+      "status": "not_found_in_current_python"
+    },
+    "tensorrt-cu13": {
+      "status": "not_found_in_current_python"
+    },
+    "onnx": {
+      "status": "not_found_in_current_python"
+    },
+    "onnxruntime": {
+      "status": "not_found_in_current_python"
+    },
+    "onnxruntime-gpu": {
+      "status": "not_found_in_current_python"
+    },
+    "numpy": {
+      "status": "ok",
+      "version": "2.4.4"
+    },
+    "ultralytics": {
+      "status": "ok",
+      "version": "8.3.221"
+    }
+  }
+}

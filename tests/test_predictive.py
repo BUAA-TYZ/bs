@@ -35,6 +35,26 @@ class PredictiveTests(unittest.TestCase):
             for key in env.vis_cache._geom_cache:
                 np.testing.assert_allclose(env.vis_cache._geom_cache[key], cached._geom_cache[key], rtol=1e-9, atol=1e-7)
 
+    def test_sparse_precompute_matches_full_grid_and_skips_unread_steps(self):
+        # 细步长下只传播 refresh 步与 30 s 扫描步，取值须与逐步全网格逐位相同。
+        cfg = replace(load_config("examples/config_predictive.yaml"), dt=0.5, sim_steps=400,
+                      ground_visibility_update_steps=20, task_arrival_end_step=None)
+        env = SimulationEnv(cfg)
+        self.addCleanup(env.close)
+        sparse = VisibilityCache(cfg.num_sats, 20, 1800, dt=0.5)
+        sparse.precompute(env.topology.sat_recs, env.topology.t0, env.ground_station_objs, 400, chunk_size=7)
+        read = np.flatnonzero(sparse._precomputed_index >= 0)
+        self.assertLess(len(read), len(sparse._precomputed_index) // 5)
+        from sim.orbit import time_grid
+        times = time_grid(env.topology.t0, np.arange(len(sparse._precomputed_index)) * 0.5)
+        sat, (gs_id, station) = env.topology.sat_recs[0], next(iter(env.ground_station_objs.items()))
+        altitude, _, distance = (sat - station).at(times).altaz()
+        rows = sparse._precomputed_index[read]
+        np.testing.assert_array_equal(sparse._precomputed[0, gs_id][0][rows], altitude.degrees[read])
+        np.testing.assert_array_equal(sparse._precomputed[0, gs_id][1][rows], distance.km[read])
+        for t in (0, 19, 20, 133, 399):
+            sparse.refresh(t, env.topology.sat_recs, env.topology.t0, env.ground_station_objs, env.ground_stations)
+
     def test_execution_commitment_blocks_return_hop_even_without_mask(self):
         for committed in (False, True):
             with self.subTest(committed=committed):

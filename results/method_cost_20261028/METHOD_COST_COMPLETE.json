@@ -1,0 +1,34 @@
+{
+  "status": "COMPLETE",
+  "completed_at_utc": "2026-10-29T03:22:43Z",
+  "measurement_groups": 12,
+  "provenance_hashes_verified": 406,
+  "raw_component_timing_samples_verified": 48240,
+  "table_quantiles_verified": 138,
+  "loaded_cpu_process_coverage_verified": true,
+  "maximum_absolute_probability_error": 3.8743019104003906e-7,
+  "probability_atol": 1e-5,
+  "probability_rtol": 1e-4,
+  "report_sha256": "f25e50c16823bb7477213d1060d27133d5287da38ebf354f6f93e031a5e4b0de",
+  "audit_sha256": "2dbc3ac9df9a033fbcd455f1cf7583b00dcf23e445808081749949470246748c",
+  "paper_files": {
+    "/Users/bytedance/Downloads/中期_content/content/chap04.tex": "0dd9522fa5831178fcdc6e32ee121f5c3da4a300341225d1ad39f88a2503c5d9",
+    "/Users/bytedance/Downloads/中期_content/content/chap05.tex": "216bdade4634cc050172f39cbf5bd1d2256c5f2b4c1c649e8d17bc54905972a6"
+  },
+  "method_cost_placeholder_removed": true,
+  "chapter_only_proof": {
+    "compiled": true,
+    "relevant_pages_visually_checked": true,
+    "overflow": false,
+    "full_thesis_build": false,
+    "limitation": "External chapter references and bibliography are absent from the temporary wrapper."
+  },
+  "limitations": [
+    "Orin reconstruction plus forward excludes sampling, commitment, admission and state export; it is not full onboard end-to-end latency.",
+    "Dynamic CPU1 reconstruction plus forward P95 is approximately 1197 ms, exceeding the 1-second interval.",
+    "GPU load and four-block memory use the registered recognition proxy and limited geometry/configuration; neither validates SAR accuracy nor flight feasibility.",
+    "RSS, CUDA and system shared RAM counters overlap and must not be added."
+  ],
+  "further_experiments_required": false,
+  "committed": false
+}

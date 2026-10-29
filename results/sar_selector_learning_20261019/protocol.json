@@ -1,0 +1,85 @@
+{
+  "created_at_utc": "2026-10-19T06:30:48.162072+00:00",
+  "authorization": "User accepts 39-state pilot; full labels, weighted training, validation and freeze; no blind test",
+  "train_dates": [
+    "2026-10-15",
+    "2026-10-16",
+    "2026-10-17",
+    "2026-10-18",
+    "2026-10-19",
+    "2026-10-20",
+    "2026-10-21"
+  ],
+  "validation_dates": [
+    "2026-10-22",
+    "2026-10-23",
+    "2026-10-24"
+  ],
+  "conditions": [
+    "base",
+    "compute_4",
+    "compute_10",
+    "load_2",
+    "load_4"
+  ],
+  "seeds": [
+    1701,
+    1702,
+    1703
+  ],
+  "sampling": "Census first actual whole-image decisions during [0,86400) of each unmodified v3 day; 8 equal-count temporal strata with one seeded draw; use all if fewer than 8; register each sampled set before branch replay",
+  "sampling_seed": 20261019,
+  "max_states_per_cell": 8,
+  "planned_cells": 50,
+  "gate": {
+    "maximum_indeterminate_fraction": 0.4,
+    "minimum_coverage": 0.9,
+    "execution_audit_failures_block": true
+  },
+  "deadline_miss": "fastest latency <=300 and v3 latency >300 (or censored beyond300); null if indeterminate",
+  "features": "Explicit public features() only, log1p nonnegative scalars, no date/source ID/condition label/future arrivals/output truth; training-only standardization",
+  "actions": "Three existing proposals; a None quote is prediction failure, not physical infeasibility. All selectors may select any proposal, including WAIT-containing CGS; execution resource checks unchanged. Random uniform over same three proposals.",
+  "model": {
+    "variants": [
+      "classifier",
+      "regressor"
+    ],
+    "hidden": [
+      32,
+      16
+    ],
+    "epochs": 200,
+    "optimizer": "Adam",
+    "learning_rate": 0.003,
+    "weight_decay": 0.001,
+    "batch": "full",
+    "class_weight": "N/(3*n_class), training only; missing class blocks training",
+    "classifier_loss": "class-weighted cross entropy",
+    "regressor_loss": "per-state class-weighted SmoothL1 on log1p latency; censored branches one-sided lower-bound loss; same determinate states as classifier",
+    "checkpoint": "fixed final epoch, no tuning or early stopping"
+  },
+  "selection": "Each of six trained candidates evaluated on all15 validation date/condition cells. Rank by five-condition mean of three-day equal-weight P300 descending then R300 ascending; exact tie classifier before regressor then seed1701/1702/1703. Report all seeds.",
+  "validation": "15 cells x (v3 + six learned checkpoints + random three seeds)=150 full-day records; v3 census reused for P300/R300 after >=300s follow-up. Separate same-state counterfactual oracle table, never presented as achievable full-day oracle.",
+  "censor_horizon_seconds": 7200,
+  "label_simulation_seconds": 93601,
+  "evaluation_seconds": 86701,
+  "workers": 4,
+  "deadline": "2026-10-26T23:59:59+08:00",
+  "source_audit": {
+    "frozen_files": 159,
+    "blind_registration": {
+      "blind_dates.json": "f067265f9ffb3d6a7dcb6159d9ca2069e2b8a2752bce71dcb235b93c3299211f",
+      "blind_methods_amendment.json": "d1f9610a5456bda97efcc2c1c49fc77bb923e503f02f18910daede6a1afd3ed4"
+    }
+  },
+  "pilot_deviation_accepted": {
+    "states": 39,
+    "planned": 40,
+    "agreement": 0.5897435897435898,
+    "indeterminate": 0,
+    "missing": "load_4/task_535",
+    "rerun_pilot": false
+  },
+  "old_pilot_usage": "diagnostic only; full cohort uses corrected census sampling and expanded shared features, not a repair/replacement of the missing pilot state",
+  "freeze_sha256": "854b600be0ccf95b75830c8d865796824db7200d0ad4cb96dfa1621111892fe4"
+}

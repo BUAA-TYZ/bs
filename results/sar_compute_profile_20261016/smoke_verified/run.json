@@ -1,0 +1,59 @@
+{
+  "scope": "numerical/timing prefix only; not a main-scenario result",
+  "frozen_config": "results/sar_compute_profile_20261016/main_config.json",
+  "frozen_config_sha256": "857502d5c09e967bd66cada7c27cbb72ecc28e3677cbadd1995a203547874438",
+  "frozen_manifest_sha256": "8432495780e90340c5d86dcb4c74f31db8e26b1269ea75a6ea26af99ef11d679",
+  "calibration_inputs": {
+    "previous_config": {
+      "path": "results/sar_baseline_b10_dt0p01_20261016/derived_config.json",
+      "sha256": "034469a9e31abc5ea905ed8663037160561ec684f8ae586fece0cb25230d16e7"
+    },
+    "calibration": {
+      "path": "results/jetson_concurrency_20261016/summary.json",
+      "sha256": "dd8e9f45cfe764027828221a122205a2c5330d395a30d43c28ae0a0f2c0be0af"
+    },
+    "series": {
+      "path": "results/jetson_concurrency_20261016/series/series.json",
+      "sha256": "a0e13c06aeff0dff0b8c17cfb54a3d05541134cea725b6e4704bdf501b873dbd"
+    },
+    "sustained": {
+      "path": "results/jetson_concurrency_20261016/sustained/report.json",
+      "sha256": "64c89d7b6e5c4f51ae4b727d2f6b6dc1d5c321637cae2498fb2254502200d7c4"
+    }
+  },
+  "derived_config_sha256": "b86f59a5549061c02a6cee137f62c2fa980b72f7f2d61ea8a97427d69c779666",
+  "dt": 0.01,
+  "stop_seconds": 1040.0,
+  "tasks": 4,
+  "tle_sha256": "53f2c4f6a3b5fe3b51ead0640afc262b0e56bcef1cb409aa520e9a8a6533e264",
+  "runner_sha256": "20d4f390998c7b6be2617c56a00dab0e8642271ae5c741fda23de03223085486",
+  "source_sha256": "8fa1063dd35edada03506457d2b42263722d1ec9f82b004f3d93e50a0d448721",
+  "python_version": "3.12.13",
+  "packages": {
+    "numpy": "2.4.4",
+    "torch": "2.12.0",
+    "skyfield": "1.54",
+    "PyYAML": "6.0.3"
+  },
+  "platform": "macOS-26.4.1-arm64-arm-64bit",
+  "cpu_count": 18,
+  "argv": [
+    "analysis/run_sar_frozen.py",
+    "--methods",
+    "local",
+    "ground_unique_relay",
+    "cgs_compute_adapted",
+    "--stop-seconds",
+    "1040",
+    "--workers",
+    "2",
+    "--reference",
+    "ground_unique_relay",
+    "--out-dir",
+    "results/sar_compute_profile_20261016/smoke_verified"
+  ],
+  "metric": {
+    "P300": "tasks fully aggregated on the ground within 300 s of readiness / all arrived tasks",
+    "R300": "mean of min(latency, 300) with undelivered tasks counted as 300 s"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "status": "FAILED",
+  "condition": "load_4",
+  "captured_states": 7,
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/bytedance/Projects/bs/analysis/sar_selector_pilot.py\", line 320, in worker\n    audits = ctl.audit_controls()\n             ^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/bytedance/Projects/bs/analysis/sar_selector_pilot.py\", line 278, in audit_controls\n    assert len(audits) == 8 and all(a[\"passed\"] for a in audits), audits\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: [{'task_id': 'task_49', 'rule_choice': 'ground', 'passed': True, 'parent_completion_seconds': 6555.29, 'branch_completion_seconds': 6555.29}, {'task_id': 'task_118', 'rule_choice': 'ground', 'passed': True, 'parent_completion_seconds': 15054.76, 'branch_completion_seconds': 15054.76}, {'task_id': 'task_218', 'rule_choice': 'local', 'passed': True, 'parent_completion_seconds': 28268.18, 'branch_completion_seconds': 28268.18}, {'task_id': 'task_323', 'rule_choice': 'cgs', 'passed': True, 'parent_completion_seconds': 40961.71, 'branch_completion_seconds': 40961.71}, {'task_id': 'task_438', 'rule_choice': 'local', 'passed': True, 'parent_completion_seconds': 55352.19, 'branch_completion_seconds': 55352.19}, {'task_id': 'task_613', 'rule_choice': 'cgs', 'passed': True, 'parent_completion_seconds': 72901.35, 'branch_completion_seconds': 72901.35}, {'task_id': 'task_658', 'rule_choice': 'cgs', 'passed': True, 'parent_completion_seconds': 80318.37, 'branch_completion_seconds': 80318.37}]\n",
+  "job": {
+    "condition": "load_4",
+    "config": "/Users/bytedance/Projects/bs/results/sar_selector_pilot_20261019/configs/load_4.json",
+    "config_sha256": "a51a67eca6554e59a1b45c24664870bf9add099ec8007b472073412b36ac9ed7",
+    "raw_hops": 8,
+    "sampling_seed": 20261023,
+    "samples": [
+      {
+        "task_id": "task_49",
+        "arrival_index": 49,
+        "release_seconds": 6415.0
+      },
+      {
+        "task_id": "task_118",
+        "arrival_index": 118,
+        "release_seconds": 14985.0
+      },
+      {
+        "task_id": "task_218",
+        "arrival_index": 218,
+        "release_seconds": 28195.0
+      },
+      {
+        "task_id": "task_323",
+        "arrival_index": 323,
+        "release_seconds": 40920.0
+      },
+      {
+        "task_id": "task_438",
+        "arrival_index": 438,
+        "release_seconds": 54415.0
+      },
+      {
+        "task_id": "task_535",
+        "arrival_index": 535,
+        "release_seconds": 65915.0
+      },
+      {
+        "task_id": "task_613",
+        "arrival_index": 613,
+        "release_seconds": 72810.0
+      },
+      {
+        "task_id": "task_658",
+        "arrival_index": 658,
+        "release_seconds": 80275.0
+      }
+    ]
+  }
+}

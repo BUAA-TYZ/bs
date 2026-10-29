@@ -1,0 +1,296 @@
+{
+  "completed_at_utc": "2026-10-17T04:38:22.286091+00:00",
+  "passed": true,
+  "raw_records_checked": 42,
+  "new_runs": 36,
+  "reused_records": 6,
+  "conditions": 7,
+  "summary_rows": 49,
+  "source_sha256": "6682281f8b1591e3c6fe0e4aaff045c7013f9b85751cf2730efdc2ed94c1f516",
+  "manifest_sha256": "5f108d65f892b97e325951ca6880b40c3913fcd6e29e0e684044814514661812",
+  "scan_wall_seconds": 3013.4748492910003,
+  "checks": [
+    "single_factor_configuration",
+    "frozen_source_runner_scan_configs",
+    "record_identity",
+    "independently_recomputed_P300_R300",
+    "all_tasks_300_second_followup",
+    "helper_utilization_denominator",
+    "64_windows_per_on_time_task",
+    "execution_conservation_invariants",
+    "report_record_hashes"
+  ],
+  "hypothesis": {
+    "local_P300_drop": 0.8095238095238095,
+    "threshold": 0.05,
+    "supported_vs_local": true,
+    "does_not_imply_beating_strong_ground": true
+  },
+  "choice_gains_compute_evidence": {
+    "base": {
+      "gained": 0,
+      "lost": 0,
+      "counts": {
+        "fully_onboard_with_nonlocal": 0,
+        "confirmed_multiple_onboard_categories": 0,
+        "only_one_nonlocal_category": 0,
+        "local_only": 0,
+        "with_ground": 0
+      },
+      "task_ids": {
+        "fully_onboard_with_nonlocal": [],
+        "confirmed_multiple_onboard_categories": [],
+        "only_one_nonlocal_category": [],
+        "local_only": [],
+        "with_ground": []
+      }
+    },
+    "compute_4": {
+      "gained": 16,
+      "lost": 0,
+      "counts": {
+        "fully_onboard_with_nonlocal": 9,
+        "confirmed_multiple_onboard_categories": 8,
+        "only_one_nonlocal_category": 1,
+        "local_only": 4,
+        "with_ground": 3
+      },
+      "task_ids": {
+        "fully_onboard_with_nonlocal": [
+          "task_11",
+          "task_17",
+          "task_18",
+          "task_25",
+          "task_3",
+          "task_32",
+          "task_36",
+          "task_6",
+          "task_7"
+        ],
+        "confirmed_multiple_onboard_categories": [
+          "task_11",
+          "task_17",
+          "task_18",
+          "task_25",
+          "task_32",
+          "task_36",
+          "task_6",
+          "task_7"
+        ],
+        "only_one_nonlocal_category": [
+          "task_3"
+        ],
+        "local_only": [
+          "task_1",
+          "task_23",
+          "task_41",
+          "task_9"
+        ],
+        "with_ground": [
+          "task_24",
+          "task_31",
+          "task_35"
+        ]
+      }
+    },
+    "compute_10": {
+      "gained": 19,
+      "lost": 0,
+      "counts": {
+        "fully_onboard_with_nonlocal": 11,
+        "confirmed_multiple_onboard_categories": 11,
+        "only_one_nonlocal_category": 0,
+        "local_only": 0,
+        "with_ground": 8
+      },
+      "task_ids": {
+        "fully_onboard_with_nonlocal": [
+          "task_0",
+          "task_15",
+          "task_22",
+          "task_30",
+          "task_32",
+          "task_34",
+          "task_37",
+          "task_5",
+          "task_6",
+          "task_7",
+          "task_8"
+        ],
+        "confirmed_multiple_onboard_categories": [
+          "task_0",
+          "task_15",
+          "task_22",
+          "task_30",
+          "task_32",
+          "task_34",
+          "task_37",
+          "task_5",
+          "task_6",
+          "task_7",
+          "task_8"
+        ],
+        "only_one_nonlocal_category": [],
+        "local_only": [],
+        "with_ground": [
+          "task_24",
+          "task_31",
+          "task_33",
+          "task_35",
+          "task_38",
+          "task_39",
+          "task_4",
+          "task_40"
+        ]
+      }
+    },
+    "load_2": {
+      "gained": 2,
+      "lost": 0,
+      "counts": {
+        "fully_onboard_with_nonlocal": 1,
+        "confirmed_multiple_onboard_categories": 1,
+        "only_one_nonlocal_category": 0,
+        "local_only": 0,
+        "with_ground": 1
+      },
+      "task_ids": {
+        "fully_onboard_with_nonlocal": [
+          "task_51"
+        ],
+        "confirmed_multiple_onboard_categories": [
+          "task_51"
+        ],
+        "only_one_nonlocal_category": [],
+        "local_only": [],
+        "with_ground": [
+          "task_71"
+        ]
+      }
+    },
+    "load_4": {
+      "gained": 40,
+      "lost": 0,
+      "counts": {
+        "fully_onboard_with_nonlocal": 23,
+        "confirmed_multiple_onboard_categories": 16,
+        "only_one_nonlocal_category": 7,
+        "local_only": 15,
+        "with_ground": 2
+      },
+      "task_ids": {
+        "fully_onboard_with_nonlocal": [
+          "task_10",
+          "task_101",
+          "task_102",
+          "task_103",
+          "task_12",
+          "task_128",
+          "task_129",
+          "task_13",
+          "task_130",
+          "task_131",
+          "task_14",
+          "task_146",
+          "task_147",
+          "task_15",
+          "task_27",
+          "task_30",
+          "task_31",
+          "task_46",
+          "task_47",
+          "task_70",
+          "task_71",
+          "task_74",
+          "task_75"
+        ],
+        "confirmed_multiple_onboard_categories": [
+          "task_10",
+          "task_101",
+          "task_102",
+          "task_103",
+          "task_128",
+          "task_129",
+          "task_146",
+          "task_147",
+          "task_27",
+          "task_30",
+          "task_31",
+          "task_47",
+          "task_70",
+          "task_71",
+          "task_74",
+          "task_75"
+        ],
+        "only_one_nonlocal_category": [
+          "task_12",
+          "task_13",
+          "task_130",
+          "task_131",
+          "task_14",
+          "task_15",
+          "task_46"
+        ],
+        "local_only": [
+          "task_124",
+          "task_125",
+          "task_126",
+          "task_127",
+          "task_164",
+          "task_165",
+          "task_166",
+          "task_39",
+          "task_48",
+          "task_49",
+          "task_5",
+          "task_6",
+          "task_7",
+          "task_8",
+          "task_9"
+        ],
+        "with_ground": [
+          "task_96",
+          "task_97"
+        ]
+      }
+    },
+    "isl_1": {
+      "gained": 0,
+      "lost": 0,
+      "counts": {
+        "fully_onboard_with_nonlocal": 0,
+        "confirmed_multiple_onboard_categories": 0,
+        "only_one_nonlocal_category": 0,
+        "local_only": 0,
+        "with_ground": 0
+      },
+      "task_ids": {
+        "fully_onboard_with_nonlocal": [],
+        "confirmed_multiple_onboard_categories": [],
+        "only_one_nonlocal_category": [],
+        "local_only": [],
+        "with_ground": []
+      }
+    },
+    "isl_5": {
+      "gained": 0,
+      "lost": 0,
+      "counts": {
+        "fully_onboard_with_nonlocal": 0,
+        "confirmed_multiple_onboard_categories": 0,
+        "only_one_nonlocal_category": 0,
+        "local_only": 0,
+        "with_ground": 0
+      },
+      "task_ids": {
+        "fully_onboard_with_nonlocal": [],
+        "confirmed_multiple_onboard_categories": [],
+        "only_one_nonlocal_category": [],
+        "local_only": [],
+        "with_ground": []
+      }
+    }
+  },
+  "placement_caveat": "Categories aggregate satellite IDs. Two nonzero onboard categories prove at least two compute nodes; one peer/helper category may contain one or multiple nodes. Placement is not an ablation.",
+  "max_helper_utilization": 0.0035111111111101123
+}

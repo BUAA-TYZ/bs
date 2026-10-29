@@ -1,0 +1,25 @@
+{
+  "scope": "shared temporal routing control; physics, workload and scoring unchanged",
+  "only_changed_field": "relay_routing",
+  "source": "results/sar_dispatch_20261016/main_config.json",
+  "source_sha256": "ae6bda4e7d7f4d035a4a9a925310a12df93dfcecbdfd1d0d50280bd432781d50",
+  "inputs": {
+    "network_contract": {
+      "path": "results/sar_parameter_contract_20261016/main_config.json",
+      "sha256": "27c45fe8b1c0d65410cf551c1a6f9f4a33ce76d96d8ce54162683db0b7bf4ed1"
+    },
+    "generator": {
+      "path": "analysis/prepare_sar_dispatch.py",
+      "sha256": "a7e978f2ea868e86a509e932ae4a96480bd5602a8049f1e3d5e5a4b0f66e2769"
+    },
+    "fixture_generator": {
+      "path": "analysis/build_sar_workload_fixture.py",
+      "sha256": "44d7f2679f866d130ffc7d90c4a904ca35c61f0bdd1593b392130bfc9f2255f2"
+    }
+  },
+  "source_manifest_sha256": "4127e7112c12d6ae25f3cba0ab10c53e169c3134bb4209d6b0689351b6689f65",
+  "config_sha256": {
+    "main_config.json": "77fd35ad19ca0e8618bcafeec11c4abd90d1448c4cc4817155128d81eaca7866"
+  },
+  "generator_sha256": "ee08646bdd9f3c848c6d6c115c6284b0113a6ba5cca5b442e11b8ea96d88bbff"
+}

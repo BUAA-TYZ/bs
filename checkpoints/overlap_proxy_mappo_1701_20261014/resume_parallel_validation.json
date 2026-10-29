@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "kind": "exact_cpu_resume_parallel_validation",
+  "status": "completed",
+  "source_sha256": "9c941294963730c6622444101441fe9c8b60977783e6bf30f65b3317f83fbf03",
+  "python_version": "3.12.13",
+  "packages": {
+    "numpy": "2.4.4",
+    "torch": "2.12.0",
+    "skyfield": "1.54",
+    "PyYAML": "6.0.3"
+  },
+  "training_dir": "/Users/bytedance/Projects/bs/checkpoints/overlap_proxy_mappo_1701_20261014",
+  "starting_episode": 2,
+  "next_episode": 3,
+  "episode_budget": 8,
+  "workers": 4,
+  "multiprocessing_start_method": "spawn",
+  "torch_threads": 1,
+  "command": [
+    "/Users/bytedance/Projects/bs/.venv/bin/python",
+    "analysis/resume_parallel_validation.py",
+    "--training-dir",
+    "checkpoints/overlap_proxy_mappo_1701_20261014",
+    "--workers",
+    "4"
+  ],
+  "wrapper": {
+    "path": "/Users/bytedance/Projects/bs/analysis/resume_parallel_validation.py",
+    "sha256": "585d6b315c55e4ab03674015c4174ef7b30194da4ce8a19f92a9c4731e7c5222",
+    "snapshot_path": "/Users/bytedance/Projects/bs/checkpoints/overlap_proxy_mappo_1701_20261014/resume_parallel_validation_source/wrapper_source.py"
+  },
+  "source_files": {
+    "run.json": {
+      "path": "/Users/bytedance/Projects/bs/checkpoints/overlap_proxy_mappo_1701_20261014/resume_parallel_validation_source/run.json",
+      "sha256": "282231394524afd3fb2f3e83c5bd9b623ae0ec665ee0ad76edefcda2d6e96c14",
+      "bytes": 23245
+    },
+    "last.pt": {
+      "path": "/Users/bytedance/Projects/bs/checkpoints/overlap_proxy_mappo_1701_20261014/resume_parallel_validation_source/last.pt",
+      "sha256": "cfe41a57a6868babed97c0bcb92af5467b981a168f31c1ed67016602a6886683",
+      "bytes": 935903
+    },
+    "train_log.jsonl": {
+      "path": "/Users/bytedance/Projects/bs/checkpoints/overlap_proxy_mappo_1701_20261014/resume_parallel_validation_source/train_log.jsonl",
+      "sha256": "4248677c441cefebec85fbd91620d2caa0a15bf9e1dff899c135a6fca1b8001e",
+      "bytes": 5845
+    }
+  },
+  "input_files": {
+    "config": {
+      "path": "/Users/bytedance/Projects/bs/examples/overlap_proxy/config.json",
+      "sha256": "c4fa22523470f508647d925e40df14212c3baa6798e7915aa4848097e38e262d"
+    },
+    "distribution": {
+      "path": "/Users/bytedance/Projects/bs/examples/overlap_proxy/distribution.json",
+      "sha256": "2eb45831d5d2906c76998d9d746d2a4724edb7eab7acc27094434b8f5a9ce28b"
+    }
+  },
+  "original_training_args": {
+    "config": "examples/overlap_proxy/config.json",
+    "out_dir": "checkpoints/overlap_proxy_mappo_1701_20261014",
+    "algorithm": "mappo",
+    "counterfactual_samples": 16,
+    "features": "overlap_contact",
+    "critic_pooling": true,
+    "warmstart_episodes": 8,
+    "warmstart_epochs": 30,
+    "warmstart_lr": 0.001,
+    "warmstart_teacher": "cgs_compute_adapted",
+    "warmstart_mode": "pooled",
+    "dagger_episodes": 0,
+    "latency_bonus": 0.0,
+    "delivery_horizons_minutes": "30,60,120,240",
+    "resume": false,
+    "initialize_checkpoint": null,
+    "encoder": "task_attention",
+    "no_task_features": false,
+    "no_window_features": false,
+    "reward_mode": "task",
+    "shaping_coef": 0.0,
+    "episodes": 8,
+    "rollout_steps": 21600,
+    "ppo_epochs": 2,
+    "actor_batching": "active",
+    "actor_epochs": 4,
+    "target_kl": 0.01,
+    "minibatch": 512,
+    "hidden": 64,
+    "lr": 0.0001,
+    "gamma": 1.0,
+    "lam": 1.0,
+    "clip_eps": 0.2,
+    "vf_coef": 0.5,
+    "ent_coef": 0.002,
+    "max_grad_norm": 0.5,
+    "device": "cpu",
+    "seed": 1701,
+    "torch_threads": 1,
+    "eval_every": 8,
+    "validation_seeds": "10001,10002,10003",
+    "scenario_distribution": "examples/overlap_proxy/distribution.json"
+  },
+  "resumed_training_args": {
+    "config": "examples/overlap_proxy/config.json",
+    "out_dir": "checkpoints/overlap_proxy_mappo_1701_20261014",
+    "algorithm": "mappo",
+    "counterfactual_samples": 16,
+    "features": "overlap_contact",
+    "critic_pooling": true,
+    "warmstart_episodes": 8,
+    "warmstart_epochs": 30,
+    "warmstart_lr": 0.001,
+    "warmstart_teacher": "cgs_compute_adapted",
+    "warmstart_mode": "pooled",
+    "dagger_episodes": 0,
+    "latency_bonus": 0.0,
+    "delivery_horizons_minutes": "30,60,120,240",
+    "resume": true,
+    "initialize_checkpoint": null,
+    "encoder": "task_attention",
+    "no_task_features": false,
+    "no_window_features": false,
+    "reward_mode": "task",
+    "shaping_coef": 0.0,
+    "episodes": 8,
+    "rollout_steps": 21600,
+    "ppo_epochs": 2,
+    "actor_batching": "active",
+    "actor_epochs": 4,
+    "target_kl": 0.01,
+    "minibatch": 512,
+    "hidden": 64,
+    "lr": 0.0001,
+    "gamma": 1.0,
+    "lam": 1.0,
+    "clip_eps": 0.2,
+    "vf_coef": 0.5,
+    "ent_coef": 0.002,
+    "max_grad_norm": 0.5,
+    "device": "cpu",
+    "seed": 1701,
+    "torch_threads": 1,
+    "eval_every": 8,
+    "validation_seeds": "10001,10002,10003",
+    "scenario_distribution": "examples/overlap_proxy/distribution.json"
+  },
+  "changes": {
+    "training_args": {
+      "resume": {
+        "before": false,
+        "after": true
+      }
+    },
+    "validation": "Identical original per-case evaluate, spawn workers, original case order"
+  },
+  "rng": "Original CPU optimizer/model/RNG restored by train; validation preserves parent Python/NumPy/Torch RNG",
+  "validation_calls": [
+    {
+      "case_ids": [
+        "validation_near_light_1",
+        "validation_near_light_2",
+        "validation_near_high_1",
+        "validation_near_high_2",
+        "validation_near_high_fast_ground_1",
+        "validation_near_high_fast_ground_2",
+        "validation_uniform_high_1",
+        "validation_uniform_high_2",
+        "validation_uniform_high_fast_ground_1",
+        "validation_uniform_high_fast_ground_2",
+        "validation_near_small_image_1",
+        "validation_near_small_image_2"
+      ],
+      "worker_pids": [
+        54487,
+        54488,
+        54491,
+        54492,
+        54487,
+        54488,
+        54491,
+        54492,
+        54492,
+        54491,
+        54488,
+        54492
+      ],
+      "validation_sha256": "e3961b99badcf7d193e71b02dddb705558315745fbdc26e3fff1b872a14e66a1"
+    }
+  ],
+  "final_files": {
+    "run.json": {
+      "path": "/Users/bytedance/Projects/bs/checkpoints/overlap_proxy_mappo_1701_20261014/run.json",
+      "sha256": "6c846c32262d66a5d545142d4b43288282dfec46d86d90ede8e2763bce55dff5"
+    },
+    "last.pt": {
+      "path": "/Users/bytedance/Projects/bs/checkpoints/overlap_proxy_mappo_1701_20261014/last.pt",
+      "sha256": "fe6afe8dc2194fd8defe9f3debd394ac439de31a8af98acf5fe89d3e579fdd23"
+    },
+    "train_log.jsonl": {
+      "path": "/Users/bytedance/Projects/bs/checkpoints/overlap_proxy_mappo_1701_20261014/train_log.jsonl",
+      "sha256": "0f27c0de1279713647dfc1d9ce87db070f76d317d1352b3f311e573c2e6f2b46"
+    }
+  }
+}

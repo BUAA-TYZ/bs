@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "scope": "Four resident uint16 block buffers, largest M geometry 30000x30000, 100 windows; single and two-stream FP32 YOLO11n-OBB execution; not full queue or flight qualification",
+  "groups": {
+    "batch1": {
+      "input_buffers_bytes": 1909125632,
+      "peak_rss_bytes": 3034996736,
+      "cuda_peak_allocated_bytes": 4831940608,
+      "cuda_peak_reserved_bytes": 5693767680,
+      "swap_in_pages": 0,
+      "swap_out_pages": 0,
+      "service_cohort_seconds": {
+        "n": 300,
+        "mean": 0.5805189090020334,
+        "P50": 0.5766138229519129,
+        "P95": 0.6241016610059887,
+        "P99": 0.6405658401595429
+      },
+      "tegrastats_system_peak_ram_MB": 14091,
+      "tegrastats_samples": 1765
+    },
+    "streams2": {
+      "input_buffers_bytes": 1909125632,
+      "peak_rss_bytes": 3159855104,
+      "cuda_peak_allocated_bytes": 9697435648,
+      "cuda_peak_reserved_bytes": 11328815104,
+      "swap_in_pages": 0,
+      "swap_out_pages": 0,
+      "service_cohort_seconds": {
+        "n": 150,
+        "mean": 1.1339208705971637,
+        "P50": 1.1396021449472755,
+        "P95": 1.2048834410030396,
+        "P99": 1.2201773869292811
+      },
+      "tegrastats_system_peak_ram_MB": 19489,
+      "tegrastats_samples": 1726
+    }
+  },
+  "memory_registration_sha256": "9709c64179ece0b9aa840d217add04b834792dff946800f0f0cf85f96261cd17",
+  "deployment_archive_sha256": "dbdf7c6071221945acc03b96cbfa250f3d65435767b0a86c5d9ec2b41f4d0781",
+  "hashes": {
+    "results/method_cost_20261028/orin_memory_batch1/report.json": "5aa4d4666a49e5ef49cbf53bc1403e07fc6a4065f6e5f05c06d5e9bfd0907eaa",
+    "results/method_cost_20261028/orin_memory_batch1/tegrastats.log": "8be4923655fcc478a3c4627f565fc4b177044a3d690119af5c46d6aa4a20bd9b",
+    "results/method_cost_20261028/orin_memory_streams2/report.json": "d12f11131a821bfdadff192d387bafeb5e6ed7b19d1b729828cdc7e5c22baec1",
+    "results/method_cost_20261028/orin_memory_streams2/tegrastats.log": "22786c957be36b106ebccec3d5151c0f74be927883086ab05104d0eeea69d95b",
+    "results/method_cost_20261028/orin_device.json": "b1dec865756468d04420398a1ca0d449165db2c167e6a821a98ef54017c9c06f",
+    "results/method_cost_20261028/clock_snapshot.json": "d35d249d051e147c52846c12fb64eb97c3f2db43454642d03af7556f747005fb",
+    "results/method_cost_20261028/four_block_geometry.json": "ec93274d7025f7c1c467fefaf17ac56237cca46223728c2938198d1b9390e7e8",
+    "results/method_cost_20261028/MEMORY_REGISTRATION.json": "9709c64179ece0b9aa840d217add04b834792dff946800f0f0cf85f96261cd17"
+  }
+}

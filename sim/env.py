@@ -18,6 +18,7 @@ SimulationEnv 负责：
 
 from __future__ import annotations
 
+from collections import Counter
 from dataclasses import asdict, dataclass
 import hashlib
 import json
@@ -29,7 +30,7 @@ import random
 import numpy as np
 
 from sim.cache.visibility import VisibilityCache
-from sim.cache.contacts import ContactCache
+from sim.cache.contacts import ContactCache, reconcile_windows
 from sim.config import SimConfig
 from sim.entities import (
     Action,
@@ -55,6 +56,7 @@ from sim.orbit import build_ground_station
 from sim.pipeline.distributed import DistributedPipeline
 from sim.pipeline.ground import GroundPipeline
 from sim.topology import TopologyConfig, TopologyModel
+from sim.workload import ImageTiling
 
 
 @dataclass
@@ -67,17 +69,33 @@ class StepResult:
 class SimulationEnv:
     def __init__(self, cfg: SimConfig) -> None:
         self.cfg = cfg
+        self.image_workload = ImageTiling.from_dict(cfg.image_tiling) if cfg.image_tiling is not None else None
+        self.image_tiles = self.image_workload.tiles() if self.image_workload else ()
+        self._task_workloads = {}
+        self._task_unique_blocks = {}
+        self._aggregation_busy_until = 0
         self.time = 0
         self.rng = np.random.default_rng(cfg.seed)
         self.py_rng = random.Random(cfg.seed)
+        self._scheduled_task_arrivals = {}
+        for event in cfg.scheduled_task_arrivals or []:
+            self._scheduled_task_arrivals.setdefault(event["release_step"], []).append(event)
         self.pipeline_mode = cfg.pipeline_mode
         self.topology_update_steps = max(1, cfg.topology_update_steps)
         self.ground_visibility_update_steps = max(1, cfg.ground_visibility_update_steps)
 
-        if self.pipeline_mode not in {"distributed", "ground_compute", "ground_relay", "ground_tiles"}:
+        if self.pipeline_mode not in {"distributed", "ground_compute", "ground_relay", "ground_tiles",
+                                      "ground_unique_relay"}:
             raise ValueError(
-                "pipeline_mode must be one of: distributed, ground_compute, ground_relay, ground_tiles"
+                "pipeline_mode must be one of: distributed, ground_compute, ground_relay, ground_tiles, "
+                "ground_unique_relay"
             )
+        # 唯一像素中继按不重叠块传输原图，块数与窗口分片数一一对应。
+        self.unique_transport_blocks = ()
+        if self.pipeline_mode == "ground_unique_relay":
+            if self.image_workload is None:
+                raise ValueError("ground_unique_relay requires image_tiling")
+            self.unique_transport_blocks = self.image_workload.unique_transport_blocks(len(self.image_tiles))
 
         # ── 拓扑 ──────────────────────────────────────────────────────────
         tle_lines = _resolve_tle_lines(cfg.topology)
@@ -101,6 +119,10 @@ class SimulationEnv:
             ),
             visibility_workers=int(cfg.topology.get("visibility_workers", 1)),
             max_neighbors=int(cfg.topology.get("max_neighbors", 0)),
+            source_sat_ids=tuple(cfg.task_source_sat_ids or ()) if cfg.sar_source_isolation else (),
+            neighbor_limits=tuple(cfg.topology.get("neighbor_limits", ())),
+            preferred_edges=tuple(tuple(edge) for edge in cfg.topology.get("preferred_edges", ())),
+            acquisition_delay_s=float(cfg.topology.get("acquisition_delay_s", 0)),
         )
         if not topo_cfg.tle_lines:
             raise ValueError(
@@ -139,6 +161,8 @@ class SimulationEnv:
         self.ground_task_transfering: set[str] = set()
         self.ground_task_queued: Dict[int, List[str]] = {}
         self.ground_task_running: Dict[str, GroundTaskCompute] = {}
+        self.ground_compute_busy_time: Dict[str, float] = {}
+        self.compute_cohort_records: Dict[str, dict] = {}
         self.task_source_mem_gb: Dict[str, float] = {}
 
         # ── 地面站 ────────────────────────────────────────────────────────
@@ -175,12 +199,18 @@ class SimulationEnv:
         # ── 链路缓存 ──────────────────────────────────────────────────────
         self._links_cache_time: Optional[int] = None
         self._links_cache: Dict[str, object] = {}
+        # 真实 TopologyModel 每次 snapshot 返回新字典与新 Link；替身拓扑可能原地改写，禁用派生缓存。
+        # 测试会 patch 本模块的 TopologyModel 名称，故按真实类判断而不是按当前名称。
+        import sim.topology as _topology_module
+        self._links_mutable = type(self.topology) is not _topology_module.TopologyModel
 
         # ── 内部辅助状态 ──────────────────────────────────────────────────
         self._computed_waiting_downlink: set[str] = set()
         self._reward_cfg = RewardConfig()
         # 任务级反向索引：task_id → tile_id 列表
         self._task_tile_index: Dict[str, List[str]] = {}
+        # 分片已全部终结的任务；终结分片不会再改变状态，跳过它们以免逐步遍历全部历史分片。
+        self._closed_task_ids: set[str] = set()
         self._completed_task_ids: set[str] = set()
         self._pending_aggregation: Dict[str, int] = {}
         self._ground_rr_last: Dict[str, int] = {}
@@ -196,6 +226,25 @@ class SimulationEnv:
     def reset(self) -> None:
         self.close()
         self.__init__(self.cfg)
+
+    def open_tiles(self):
+        """按插入顺序返回未终结分片，与遍历 self.tiles 后筛选未终结分片的顺序一致。
+
+        DONE/FAILED 不会再离开，故分片全部终结的任务记入缓存后不再扫描。
+        """
+        newly_closed = []
+        for task_id, task in self.tasks.items():
+            if task_id in self._closed_task_ids:
+                continue
+            live = False
+            for tid in task.tile_ids:
+                tile = self.tiles[tid]
+                if tile.state not in (TileState.DONE, TileState.FAILED):
+                    live = True
+                    yield tile
+            if not live:
+                newly_closed.append(task_id)
+        self._closed_task_ids.update(newly_closed)
 
     def close(self) -> None:
         self.lifecycle_logger.close()
@@ -240,7 +289,9 @@ class SimulationEnv:
             "config": asdict(self.cfg), "elapsed_sim_seconds": self.time * self.cfg.dt,
             "task_trace_sha256": hashlib.sha256(json.dumps(trace).encode()).hexdigest(),
             "tle_sha256": hashlib.sha256(json.dumps(self.topology.cfg.tle_lines).encode()).hexdigest(),
-            "decision_tile_limit_per_sat": 4,
+            "decision_tile_limit_per_sat": self.cfg.decision_tile_limit_per_sat,
+            "compute_service_mode": self.cfg.compute_service_mode,
+            "compute_timestamp_resolution_seconds": self.cfg.dt,
             "delivery_semantics": "all_results_at_ground_plus_fixed_relay_and_aggregation_v1",
             "aggregation_model": "uncontended_fixed_delay_rounded_up_to_step",
             "effective_postprocessing_delay_seconds": self._postprocessing_steps() * self.cfg.dt,
@@ -251,6 +302,24 @@ class SimulationEnv:
             "routing_information": "current global link graph and predicted ground windows; instantaneous telemetry; no control-plane cost",
             **runtime_metadata(),
         }
+        if self.image_workload is not None:
+            manifest = self.image_workload.manifest()
+            summary["experiment"]["workload"] = manifest
+            summary["experiment"]["workload_sha256"] = hashlib.sha256(
+                json.dumps(manifest, sort_keys=True).encode()).hexdigest()
+            summary["experiment"]["result_merge_model"] = (
+                "all window outputs required; global merge charged by fixed aggregation_delay_s; "
+                "no image inference or accuracy validation")
+        if self.unique_transport_blocks:
+            summary["experiment"]["unique_transport"] = {
+                "rule": "non_overlapping_blocks_relayed_then_all_windows_queued_at_last_receiving_station",
+                "blocks_xyxy": [box for box, _ in self.unique_transport_blocks],
+                "block_mb": [size for _, size in self.unique_transport_blocks],
+                "image_mb": math.fsum(size for _, size in self.unique_transport_blocks),
+                "ground_windowing_delay_seconds": 0.0,
+            }
+        if self.cfg.compute_service_mode == "work_conserving":
+            summary["resource"]["ground_compute_busy_time"] = dict(self.ground_compute_busy_time)
         return summary
 
     # ------------------------------------------------------------------ #
@@ -276,7 +345,7 @@ class SimulationEnv:
         self._task_arrivals(t)
         self._deadline_check()
 
-        if self.pipeline_mode in {"distributed", "ground_relay", "ground_tiles"}:
+        if self.pipeline_mode in {"distributed", "ground_relay", "ground_tiles", "ground_unique_relay"}:
             self._dist_pipeline.run(actions, links)
         else:
             self._ground_pipeline.run()
@@ -286,8 +355,11 @@ class SimulationEnv:
         self._update_stats(links)
 
         # reward 计算
+        waiting = (TileState.QUEUED, TileState.READY)
+        tiles = self.tiles
         num_waiting = sum(
-            1 for tile in self.tiles.values() if tile.state.value in ("QUEUED", "READY")
+            1 for task_id, task in self.tasks.items() if task_id not in self._closed_task_ids
+            for tid in task.tile_ids if tiles[tid].state in waiting
         )
         events = diff_events(
             tiles_done_before,
@@ -328,7 +400,8 @@ class SimulationEnv:
                 "up": lk.up,
                 "bandwidth_mbps": lk.bandwidth_mbps,
                 "latency_ms": lk.latency_ms,
-                "contact_windows": contacts.get(k, []),
+                "contact_windows": reconcile_windows(contacts.get(k, []), lk.up,
+                                                      float(self.cfg.topology.get("contact_scan_s", 30))),
             }
 
         sat_view: Dict[int, Dict] = {}
@@ -351,6 +424,11 @@ class SimulationEnv:
                 if sat.executing is not None and exec_tile is not None else 0.0,
                 "next_gs_windows": self.vis_cache.windows_at(sat_id, self.time),
             }
+            if self.cfg.onboard_compute_profile is not None:
+                sat_view[sat_id]["running_count"] = len(sat.executing_batch)
+                sat_view[sat_id]["executing_remaining_s"] = sat.batch_remaining_s
+                sat_view[sat_id]["executing_remaining"] = (
+                    sat.batch_remaining_s / sat.batch_service_s if sat.batch_service_s else 0.0)
 
         gs_view: Dict[str, Dict] = {}
         for gs_id, gs in self.ground_stations.items():
@@ -375,7 +453,11 @@ class SimulationEnv:
 
         tile_view: Dict[str, Dict] = {}
         task_progress = {}
+        task_pending_locations = {}
         for task_id, task in self.tasks.items():
+            # 只有可调度分片引用这两项，其父任务必未终结；已终结任务不再汇总。
+            if task_id in self._closed_task_ids:
+                continue
             states = [self.tiles[tid].state for tid in task.tile_ids]
             task_progress[task_id] = {
                 "total": len(states),
@@ -385,6 +467,10 @@ class SimulationEnv:
                 "awaiting_delivery": sum(s in (TileState.COMPUTED, TileState.RESULT_TRANSFERRING,
                                                 TileState.DOWNLINKING) for s in states),
             }
+            # 大图先按任务汇总位置，避免每片再次扫描所有兄弟分片。
+            task_pending_locations[task_id] = Counter(
+                self.tiles[tid].location for tid in self._task_tile_index.get(task_id, [])
+                if tid in self.tiles and self.tiles[tid].state not in (TileState.DONE, TileState.FAILED))
         for sat_id, view in sat_view.items():
             view["ground_backlog_mb"] = {
                 gs_id: sum(tr.remaining_mb for tr in self.downlink_transfers + self.ground_tile_transfers
@@ -407,54 +493,92 @@ class SimulationEnv:
             view["committed_compute_s"] = 0.0
             view["committed_result_mb"] = 0.0
             view["unrouted_result_mb"] = 0.0
-        for tile in self.tiles.values():
+        committed_windows = Counter()
+        for tile in self.open_tiles():
+            if (tile.ground_relay_target is not None and tile.state in
+                    (TileState.GROUND_RELAY_PENDING, TileState.TRANSFERRING)):
+                continue
             sid = incoming.get(tile.tile_id, tile.location)
-            if tile.tile_id in incoming or tile.state in (TileState.READY, TileState.RUNNING):
+            routed_input = (tile.input_target_sat_id is not None and
+                            tile.state in (TileState.TRANSFERRING, TileState.INPUT_RELAY))
+            if routed_input:
+                # 中转节点只存转数据，计算承诺从派发起始终属于最终接收方。
+                sid = tile.input_target_sat_id
+            if routed_input or tile.tile_id in incoming or tile.state in (TileState.READY, TileState.RUNNING):
                 seconds = (float(tile.remaining_compute or 0) if tile.state == TileState.RUNNING
                            else tile.compute_cost / self.satellites[sid].compute_rate)
-                sat_view[sid]["committed_compute_s"] += math.ceil(seconds / self.cfg.dt) * self.cfg.dt
-                sat_view[sid]["committed_result_mb"] += self.cfg.result_size_mb
+                sat_view[sid]["committed_compute_s"] += self.compute_service_seconds(seconds)
+                sat_view[sid]["committed_result_mb"] += self.tile_result_size_mb(tile)
+                committed_windows[sid] += tile.compute_cost - tile.completed_compute_windows
             elif tile.state == TileState.COMPUTED and tile.tile_id not in downlink_ids:
-                sat_view[sid]["unrouted_result_mb"] += self.cfg.result_size_mb
+                sat_view[sid]["unrouted_result_mb"] += self.tile_result_size_mb(tile)
+        if self.cfg.onboard_compute_profile is not None:
+            # 同一并发组的剩余墙钟只计一次；在途工作仍按已到齐估计，和原承诺口径一致。
+            service = self.cfg.onboard_compute_profile["service_s"]
+            sizes = sorted((int(key) for key in service), reverse=True)
+            for sid, view in sat_view.items():
+                sat = self.satellites[sid]
+                pending = max(0, round(committed_windows[sid]) - len(sat.executing_batch))
+                seconds = sat.batch_remaining_s
+                for size in sizes:
+                    count, pending = divmod(pending, size)
+                    seconds += count * service[str(size)]
+                view["committed_compute_s"] = seconds
         for gid, view in gs_view.items():
-            tids = list(self.ground_tile_queues.get(gid, []))
+            tids = set(self.ground_tile_queues.get(gid, []))
             running = self.ground_tile_running.get(gid)
             if running is not None:
-                tids.append(running)
-            tids.extend(tr.tile_id for tr in self.ground_tile_transfers if tr.gs_id == gid)
+                tids.add(running)
+            tids.update(tr.tile_id for tr in self.ground_tile_transfers if tr.gs_id == gid)
+            # 原始数据尚在轨道网络时，最终地面计算方也必须广播这份接单负载。
+            tids.update(tile.tile_id for tile in self.open_tiles()
+                        if tile.ground_relay_target == gid and tile.state in
+                        (TileState.GROUND_RELAY_PENDING, TileState.TRANSFERRING,
+                         TileState.GROUND_QUEUED, TileState.GROUND_RUNNING))
             view["committed_compute_s"] = sum(
-                math.ceil((float(self.tiles[tid].remaining_compute or 0) if tid == running else
-                           self.tiles[tid].compute_cost / self.ground_stations[gid].compute_rate)
-                          / self.cfg.dt) * self.cfg.dt for tid in tids)
+                self.compute_service_seconds(float(self.tiles[tid].remaining_compute or 0) if tid == running else
+                                             self.tiles[tid].compute_cost / self.ground_stations[gid].compute_rate)
+                    for tid in sorted(tids))
+            if self.cfg.compute_service_mode == "work_conserving" and self.pipeline_mode == "ground_compute":
+                comp = self.ground_task_running.get(gid)
+                view["running"] = int(comp is not None)
+                view["queue_len"] = len(self.ground_compute_queue.get(gid, []))
+                committed_tasks = list(self.ground_compute_queue.get(gid, []))
+                committed_tasks.extend(tr.task_id for tr in self.ground_task_transfers if tr.gs_id == gid)
+                view["committed_compute_s"] = (comp.remaining_compute if comp else 0.0) + sum(
+                    sum(self.tiles[tid].compute_cost for tid in self.tasks[task_id].tile_ids
+                        if self.tiles[tid].state not in (TileState.DONE, TileState.FAILED)) /
+                    self.ground_stations[gid].compute_rate
+                    for task_id in committed_tasks)
         in_transfer = {tr.tile_id for tr in self.transfers}
-        for tile_id, tile in self.tiles.items():
+        for tile in self.open_tiles():
+            tile_id = tile.tile_id
             if tile.state not in (TileState.QUEUED, TileState.READY):
+                continue
+            if tile.completed_compute_windows:
+                # 部分执行的大块已承诺在当前节点完成，不把它再次当作全新任务迁移。
                 continue
             if self.cfg.execution_commitment and tile.state == TileState.READY:
                 continue
-            sibling_locations: Dict[int, int] = {}
-            for sibling_id in self._task_tile_index.get(tile.parent_task_id, []):
-                if sibling_id == tile_id:
-                    continue
-                sibling = self.tiles.get(sibling_id)
-                if sibling is not None and sibling.state not in (
-                    TileState.DONE,
-                    TileState.FAILED,
-                ):
-                    loc = sibling.location
-                    sibling_locations[loc] = sibling_locations.get(loc, 0) + 1
+            sibling_locations = dict(task_pending_locations[tile.parent_task_id])
+            sibling_locations[tile.location] -= 1
+            if not sibling_locations[tile.location]:
+                del sibling_locations[tile.location]
             tile_view[tile_id] = {
+                "source_sat_id": self.tasks[tile.parent_task_id].source_sat_id,
+                "task_image_size_mb": self.tasks[tile.parent_task_id].image_size_mb,
+                "unique_input_size_mb": self._task_unique_blocks.get(tile.parent_task_id, {}).get(tile_id),
                 "state": tile.state.value,
                 "location": tile.location,
                 "data_size_mb": tile.data_size_mb,
-                "data_size_gb": tile.data_size_mb / 1024.0,
+                "data_size_gb": self.memory_size_gb(tile.data_size_mb),
                 "compute_cost": tile.compute_cost,
                 "vram_req_gb": tile.vram_req_gb,
                 "in_transfer": tile_id in in_transfer,
                 "parent_task_id": tile.parent_task_id,
                 "task_progress": task_progress[tile.parent_task_id],
                 "waiting_time": (self.time - tile.timestamps.created) * self.cfg.dt,
-                "result_size_mb": self.cfg.result_size_mb,
+                "result_size_mb": self.tile_result_size_mb(tile),
                 "sibling_locations": sibling_locations,
                 "task_pending_count": sum(sibling_locations.values()) + 1,
                 "deadline_remaining_s": None if tile.deadline is None else
@@ -475,9 +599,16 @@ class SimulationEnv:
             tiles=tile_view,
             pending_task_tiles=pending_task_tiles,
             config={
+                "sar_source_isolation": self.cfg.sar_source_isolation,
+                "task_source_sat_ids": self.cfg.task_source_sat_ids,
                 "dt": self.cfg.dt,
+                "compute_service_mode": self.cfg.compute_service_mode,
+                "onboard_compute_profile": self.cfg.onboard_compute_profile,
                 "num_sats": self.cfg.num_sats,
                 "num_tiles": self.cfg.num_tiles,
+                "decision_tile_limit_per_sat": self.cfg.decision_tile_limit_per_sat,
+                "image_tiling": self.image_workload is not None,
+                "memory_mb_per_gb": 1000 if self.image_workload else 1024,
                 "result_size_mb": self.cfg.result_size_mb,
                 "mem_capacity_gb": self.cfg.mem_capacity_gb,
                 "vram_capacity_gb": self.cfg.vram_capacity_gb,
@@ -493,6 +624,11 @@ class SimulationEnv:
                 else (self.topology.cfg.bandwidth_mbps_min if self.topology.cfg.bandwidth_distance_scale_km <= 0 else 0),
                 "result_relay": self.cfg.result_relay,
                 "relay_max_hops": self.cfg.relay_max_hops,
+                "relay_contact_guard": self.cfg.relay_contact_guard,
+                "relay_bandwidth_floor_mbps": self.topology.cfg.bandwidth_mbps_min,
+                "input_relay_max_hops": self.cfg.input_relay_max_hops,
+                "ground_input_relay": self.cfg.ground_input_relay,
+                "decision_interval_seconds": self.cfg.decision_interval_steps * self.cfg.dt,
             },
         )
 
@@ -503,41 +639,76 @@ class SimulationEnv:
     def _task_arrivals(self, t: int) -> None:
         if self.cfg.task_arrival_end_step is not None and t >= self.cfg.task_arrival_end_step:
             return
-        lam = self.cfg.task_arrival_rate
-        num_tasks = int(self.rng.poisson(lam)) if lam > 0 else 0
-        for _ in range(num_tasks):
+        scheduled = self._scheduled_task_arrivals.get(t, [])
+        if self.cfg.scheduled_task_arrivals is None:
+            lam = self.cfg.task_arrival_rate
+            num_tasks = int(self.rng.poisson(lam)) if lam > 0 else 0
+        else:
+            num_tasks = len(scheduled)
+        for index in range(num_tasks):
             task_id = f"task_{len(self.tasks)}"
-            src = self.task_sources[self.py_rng.randrange(len(self.task_sources))]
+            src = (self.task_sources[self.py_rng.randrange(len(self.task_sources))]
+                   if self.cfg.scheduled_task_arrivals is None else scheduled[index]["source_sat_id"])
             deadline = (
                 t + self.cfg.deadline_steps if self.cfg.deadline_steps > 0 else None
             )
+            event = scheduled[index] if scheduled else {}
+            workload = ImageTiling.from_dict(event["image_tiling"]) if "image_tiling" in event else self.image_workload
+            descriptors = workload.tiles() if workload else ()
+            tile_count = len(descriptors) if workload else self.cfg.num_tiles
+            unique_blocks = (workload.unique_transport_blocks(tile_count)
+                             if workload and math.isqrt(tile_count) ** 2 == tile_count else ())
+            self._task_workloads[task_id] = workload
             task = Task(
                 task_id=task_id,
                 source_sat_id=src,
                 release_time=t,
-                image_size_mb=self.cfg.image_size_mb,
-                num_tiles=self.cfg.num_tiles,
+                image_size_mb=workload.image_size_mb if workload else self.cfg.image_size_mb,
+                num_tiles=tile_count,
                 deadline=deadline,
+                aggregation_delay_s=event.get("aggregation_delay_s"),
             )
             self.tasks[task_id] = task
             self.metrics.total_tasks += 1
-            sizes = np.maximum(0.01, 1.0 + self.rng.normal(0.0, 0.02, self.cfg.num_tiles))
-            sizes *= self.cfg.image_size_mb / sizes.sum()
+            if workload is None:
+                sizes = np.maximum(0.01, 1.0 + self.rng.normal(0.0, 0.02, self.cfg.num_tiles))
+                sizes *= self.cfg.image_size_mb / sizes.sum()
+            elif self.pipeline_mode == "ground_unique_relay":
+                sizes = [size for _, size in unique_blocks]
+            else:
+                # 几何分片不消耗到达 RNG，overlap/打包消融可共享同一任务到达轨迹。
+                sizes = [tile.data_size_mb for tile in descriptors]
             created_tiles: List[Tile] = []
-            for k in range(self.cfg.num_tiles):
+            actual_outputs = scheduled[index].get("window_result_bytes") if scheduled else None
+            output_by_box = {}
+            if actual_outputs is not None:
+                boxes = sorted({box for descriptor in descriptors for box in descriptor.windows_xyxy},
+                               key=lambda box: (box[1], box[0]))
+                output_by_box = dict(zip(boxes, actual_outputs, strict=True))
+            self._task_unique_blocks[task_id] = {}
+            for k in range(tile_count):
                 tile_id = f"{task_id}_tile_{k}"
                 size_mb = float(sizes[k])
-                vram_req = self.cfg.vram_base_gb + self.cfg.vram_alpha_per_mb * size_mb
+                descriptor = descriptors[k] if workload is not None else None
+                # 一个包内窗口顺序推理；显存代理按单窗而非整个传输包计算。
+                inference_mb = workload.window_size_mb if workload else size_mb
+                if unique_blocks:
+                    self._task_unique_blocks[task_id][tile_id] = unique_blocks[k][1]
+                vram_req = self.cfg.vram_base_gb + self.cfg.vram_alpha_per_mb * inference_mb
                 tile = Tile(
                     tile_id=tile_id,
                     parent_task_id=task_id,
                     data_size_mb=size_mb,
-                    compute_cost=self.cfg.compute_cost_per_tile,
+                    compute_cost=descriptor.compute_cost if descriptor else self.cfg.compute_cost_per_tile,
                     vram_req_gb=vram_req,
                     state=TileState.CREATED,
                     location=src,
                     timestamps=TileTimestamps(created=t),
                     deadline=deadline,
+                    result_size_mb=descriptor.result_size_mb if descriptor else None,
+                    windows_xyxy=descriptor.windows_xyxy if descriptor else (),
+                    actual_result_size_mb=(sum(output_by_box[box] for box in descriptor.windows_xyxy) / 1e6
+                                           if actual_outputs is not None else None),
                 )
                 self.tiles[tile_id] = tile
                 task.tile_ids.append(tile_id)
@@ -546,7 +717,7 @@ class SimulationEnv:
                 self._log_tile_event(tile, "created", sat_from=None, sat_to=src)
                 created_tiles.append(tile)
 
-            if self.pipeline_mode in {"distributed", "ground_relay", "ground_tiles"}:
+            if self.pipeline_mode in {"distributed", "ground_relay", "ground_tiles", "ground_unique_relay"}:
                 for tile in created_tiles:
                     self._enqueue_tile(src, tile)
             else:
@@ -565,7 +736,7 @@ class SimulationEnv:
         sat = self.satellites[sat_id]
         if sat_id in tile.memory_holders:
             return True
-        size_gb = tile.data_size_mb / 1024.0
+        size_gb = self.memory_size_gb(tile.data_size_mb)
         if sat.mem_used_gb + size_gb > sat.mem_capacity_gb:
             return False
         sat.mem_used_gb += size_gb
@@ -576,14 +747,14 @@ class SimulationEnv:
     def _release_tile_memory(self, tile: Tile, sat_id: int) -> None:
         if sat_id in tile.memory_holders:
             sat = self.satellites[sat_id]
-            sat.mem_used_gb = max(0.0, sat.mem_used_gb - tile.data_size_mb / 1024.0)
+            sat.mem_used_gb = max(0.0, sat.mem_used_gb - self.memory_size_gb(tile.data_size_mb))
             tile.memory_holders.remove(sat_id)
 
     def _reserve_result_memory(self, tile: Tile, sat_id: int) -> bool:
         if sat_id in tile.result_memory_holders:
             return True
         sat = self.satellites[sat_id]
-        size = self.cfg.result_size_mb / 1024
+        size = self.memory_size_gb(self.tile_result_size_mb(tile))
         if sat.mem_used_gb + size > sat.mem_capacity_gb:
             return False
         sat.mem_used_gb += size
@@ -594,7 +765,7 @@ class SimulationEnv:
     def _release_result_memory(self, tile: Tile, sat_id: int) -> None:
         if sat_id in tile.result_memory_holders:
             sat = self.satellites[sat_id]
-            sat.mem_used_gb = max(0.0, sat.mem_used_gb - self.cfg.result_size_mb / 1024)
+            sat.mem_used_gb = max(0.0, sat.mem_used_gb - self.memory_size_gb(self.tile_result_size_mb(tile)))
             tile.result_memory_holders.remove(sat_id)
 
     # ------------------------------------------------------------------ #
@@ -629,7 +800,13 @@ class SimulationEnv:
         if sat is not None:
             if tile.tile_id in sat.queue:
                 sat.queue.remove(tile.tile_id)
-            if sat.executing == tile.tile_id:
+            if tile.tile_id in sat.executing_batch:
+                sat.executing_batch[:] = [tid for tid in sat.executing_batch if tid != tile.tile_id]
+                sat.executing = sat.executing_batch[0] if sat.executing_batch else None
+                if not sat.executing_batch:
+                    sat.batch_remaining_s = 0.0
+                    sat.vram_used_gb = 0.0
+            elif sat.executing == tile.tile_id:
                 sat.executing = None
                 sat.vram_used_gb = max(0.0, sat.vram_used_gb - tile.vram_req_gb)
         tile.state = TileState.FAILED
@@ -651,7 +828,7 @@ class SimulationEnv:
         if self.cfg.deadline_steps <= 0:
             return
         now = self.time if now is None else now
-        for tile in self.tiles.values():
+        for tile in list(self.open_tiles()):
             if tile.state in (TileState.DONE, TileState.FAILED):
                 continue
             if tile.deadline is not None and now >= tile.deadline:
@@ -660,10 +837,13 @@ class SimulationEnv:
             self._ground_pipeline.cancel_failed_tasks()
 
     def _update_stats(self, links: Dict[str, object]) -> None:
+        # 与逐星调用 update_queue_stats/update_mem_peak/update_vram_peak 等价，内联以省去每步数百次方法调用。
+        queue_sum, mem_peak, vram_peak = (self.metrics.queue_len_sum, self.metrics.mem_peak,
+                                          self.metrics.vram_peak)
         for sat_id, sat in self.satellites.items():
-            self.metrics.update_queue_stats(sat_id, len(sat.queue))
-            self.metrics.update_mem_peak(sat_id, sat.mem_used_gb)
-            self.metrics.update_vram_peak(sat_id, sat.vram_used_gb)
+            queue_sum[sat_id] = queue_sum.get(sat_id, 0.0) + len(sat.queue)
+            mem_peak[sat_id] = max(mem_peak.get(sat_id, 0.0), sat.mem_used_gb)
+            vram_peak[sat_id] = max(vram_peak.get(sat_id, 0.0), sat.vram_used_gb)
         self.metrics.finalize_step()
 
     def _check_task_done(self, task_id: str) -> None:
@@ -684,7 +864,16 @@ class SimulationEnv:
                 self.tiles[tid].timestamps.end_compute or 0 for tid in task.tile_ids
             )
         task.results_ready_time = end_time
-        self._pending_aggregation[task_id] = end_time + self._postprocessing_steps()
+        delay_s = self.cfg.aggregation_delay_s if task.aggregation_delay_s is None else task.aggregation_delay_s
+        ready = end_time + math.ceil(self.cfg.ground_relay_delay_s / self.cfg.dt)
+        if self.cfg.serialized_aggregation:
+            ready = max(ready, self._aggregation_busy_until)
+        due = ready + math.ceil(delay_s / self.cfg.dt)
+        if not self.cfg.serialized_aggregation and task.aggregation_delay_s is None:
+            due = end_time + self._postprocessing_steps()
+        self._pending_aggregation[task_id] = due
+        if self.cfg.serialized_aggregation:
+            self._aggregation_busy_until = due
 
     def _postprocessing_steps(self) -> int:
         return math.ceil((self.cfg.ground_relay_delay_s + self.cfg.aggregation_delay_s) / self.cfg.dt)
@@ -711,11 +900,29 @@ class SimulationEnv:
     # 辅助                                                                  #
     # ------------------------------------------------------------------ #
 
+    def tile_result_size_mb(self, tile: Tile) -> float:
+        if tile.actual_result_size_mb is not None and tile.timestamps.end_compute is not None:
+            return tile.actual_result_size_mb
+        return self.cfg.result_size_mb if tile.result_size_mb is None else tile.result_size_mb
+
+    def compute_service_seconds(self, seconds: float) -> float:
+        if self.cfg.compute_service_mode == "work_conserving":
+            return max(0.0, seconds)
+        return math.ceil(seconds / self.cfg.dt) * self.cfg.dt
+
+    def memory_size_gb(self, size_mb: float) -> float:
+        return size_mb / (1000 if self.image_workload else 1024)
+
     def _get_links(self, t: int) -> Dict[str, object]:
         sampled_t = (t // self.topology_update_steps) * self.topology_update_steps
         if self._links_cache_time != sampled_t:
             self._links_cache = self.topology.snapshot(sampled_t, dt=self.cfg.dt)
             self._links_cache_time = sampled_t
+        if self.cfg.topology.get("acquisition_delay_s", 0):
+            for link in self._links_cache.values():
+                if not link.up and t * self.cfg.dt >= link.acquisition_ready_s:
+                    link.up = True
+                    self._dist_pipeline._up_cache = None
         return self._links_cache
 
     def _select_ground_station(self, sat_id: int) -> Optional[GroundStation]:
@@ -747,6 +954,9 @@ class SimulationEnv:
         }
         if extra:
             record.update(extra)
+        if event == "created" and self.image_workload is not None:
+            record.update(windows_xyxy=tile.windows_xyxy, data_size_mb=tile.data_size_mb,
+                          compute_cost=tile.compute_cost, result_size_mb=self.tile_result_size_mb(tile))
         self.lifecycle_logger.log(record)
 
     def _log_task_event(

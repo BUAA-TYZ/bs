@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "reference": "results/redesign_20261021/calibration/capacity_20261021/host_probe/mac_6",
+  "candidate": "results/redesign_20261021/calibration/capacity_20261021/host_probe/mac_9",
+  "scope": "900 simulation seconds, 3 released images, all three diagnostic rules",
+  "absolute_tolerance": 1e-06,
+  "timings": [
+    {
+      "method": "local",
+      "reference_wall_s": 114.24279779099743,
+      "candidate_wall_s": 109.94703241599927
+    },
+    {
+      "method": "ground",
+      "reference_wall_s": 114.83360720799828,
+      "candidate_wall_s": 109.93486545799533
+    },
+    {
+      "method": "fifo",
+      "reference_wall_s": 110.81107654099833,
+      "candidate_wall_s": 107.12130541599618
+    }
+  ],
+  "limitation": "Short-prefix equivalence is not proof of all-day equivalence."
+}

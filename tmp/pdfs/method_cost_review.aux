@@ -1,0 +1,147 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand*\HyPL@Entry[1]{}
+\HyPL@Entry{0<</S/D>>}
+\@writefile{toc}{\contentsline {section}{\numberline {4}整图交付导向的协同调度方法}{1}{section.4}\protected@file@percent }
+\newlabel{sec:methods}{{4}{1}{整图交付导向的协同调度方法}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}整图交付导向的调度框架}{1}{subsection.4.1}\protected@file@percent }
+\newlabel{method:framework}{{4.1}{1}{整图交付导向的调度框架}{subsection.4.1}{}}
+\newlabel{eq:method-action}{{1}{1}{整图交付导向的调度框架}{equation.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces 开发条件扫描揭示的方案适用条件与设计动机}}{1}{table.1}\protected@file@percent }
+\newlabel{tab:choice-motivation}{{1}{1}{开发条件扫描揭示的方案适用条件与设计动机}{table.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}全局信息下的三方案整图复核方法}{1}{subsection.4.2}\protected@file@percent }
+\newlabel{method:global-reference}{{4.2}{1}{全局信息下的三方案整图复核方法}{subsection.4.2}{}}
+\citation{cgs2023}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces 同一图像在三种处理方案下的交付时间线示意（块数、阶段长度及按时状态均为示意）。}}{2}{figure.1}\protected@file@percent }
+\newlabel{fig:plan-timelines}{{1}{2}{同一图像在三种处理方案下的交付时间线示意（块数、阶段长度及按时状态均为示意）。}{figure.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}候选方案与参考定位}{2}{subsubsection.4.2.1}\protected@file@percent }
+\newlabel{eq:three-plan-set}{{2}{2}{候选方案与参考定位}{equation.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}资源日历与完整交付报价}{2}{subsubsection.4.2.2}\protected@file@percent }
+\newlabel{eq:whole-delivery-quote}{{3}{2}{资源日历与完整交付报价}{equation.3}{}}
+\newlabel{eq:contact-arrival}{{4}{3}{资源日历与完整交付报价}{equation.4}{}}
+\newlabel{eq:ready-quote}{{5}{3}{资源日历与完整交付报价}{equation.5}{}}
+\newlabel{eq:ground-whole-quote}{{6}{3}{资源日历与完整交付报价}{equation.6}{}}
+\newlabel{eq:quote-envelope}{{7}{3}{资源日历与完整交付报价}{equation.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3}选择、承诺与顺序更新}{3}{subsubsection.4.2.3}\protected@file@percent }
+\newlabel{eq:plan-selection}{{8}{3}{选择、承诺与顺序更新}{equation.8}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces 全局三方案整图复核}}{4}{algorithm.1}\protected@file@percent }
+\newlabel{alg:three-plan-choice}{{1}{4}{选择、承诺与顺序更新}{algorithm.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}全局教师蒸馏的分布式图注意力调度方法}{4}{subsection.4.3}\protected@file@percent }
+\newlabel{method:local-mappo}{{4.3}{4}{全局教师蒸馏的分布式图注意力调度方法}{subsection.4.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1}合法观测与候选构造}{4}{subsubsection.4.3.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces GTD-GAT的执行与集中训练框架。实线表示执行流程，虚线表示训练流程；全局教师与集中式critic仅在训练时使用。}}{5}{figure.2}\protected@file@percent }
+\newlabel{fig:local-mappo-framework}{{2}{5}{GTD-GAT的执行与集中训练框架。实线表示执行流程，虚线表示训练流程；全局教师与集中式critic仅在训练时使用。}{figure.2}{}}
+\newlabel{eq:actor-observation}{{9}{5}{合法观测与候选构造}{equation.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces 局部actor的观测组成}}{5}{table.2}\protected@file@percent }
+\newlabel{tab:actor-features}{{2}{5}{局部actor的观测组成}{table.2}{}}
+\citation{attention2017}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2}两层动作与确定性等待}{6}{subsubsection.4.3.2}\protected@file@percent }
+\newlabel{eq:hierarchical-policy}{{10}{6}{两层动作与确定性等待}{equation.10}{}}
+\newlabel{eq:joint-log-probability}{{11}{6}{两层动作与确定性等待}{equation.11}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.3}图注意力actor与集中式critic}{6}{subsubsection.4.3.3}\protected@file@percent }
+\newlabel{eq:graph-attention}{{12}{6}{图注意力actor与集中式critic}{equation.12}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.4}整图终结回报与异步关联}{7}{subsubsection.4.3.4}\protected@file@percent }
+\newlabel{eq:whole-terminal-reward}{{13}{7}{整图终结回报与异步关联}{equation.13}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.5}全局教师的窗口比例软标签}{7}{subsubsection.4.3.5}\protected@file@percent }
+\newlabel{eq:teacher-window-label}{{14}{7}{全局教师的窗口比例软标签}{equation.14}{}}
+\citation{mappo2022}
+\citation{ppo2017}
+\newlabel{eq:teacher-bc}{{15}{8}{全局教师的窗口比例软标签}{equation.15}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.6}MAPPO微调方案}{8}{subsubsection.4.3.6}\protected@file@percent }
+\newlabel{eq:mappo-ratio}{{16}{8}{MAPPO微调方案}{equation.16}{}}
+\newlabel{eq:mappo-clip}{{17}{8}{MAPPO微调方案}{equation.17}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}链路与资源感知的分片}{8}{subsection.4.4}\protected@file@percent }
+\newlabel{method:tiling}{{4.4}{8}{链路与资源感知的分片}{subsection.4.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.1}静态粒度与冗余代价}{9}{subsubsection.4.4.1}\protected@file@percent }
+\newlabel{eq:granularity-partition}{{18}{9}{静态粒度与冗余代价}{equation.18}{}}
+\newlabel{eq:granularity-cost}{{19}{9}{静态粒度与冗余代价}{equation.19}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.2}启发式动态粒度}{9}{subsubsection.4.4.2}\protected@file@percent }
+\newlabel{eq:dynamic-granularity}{{20}{9}{启发式动态粒度}{equation.20}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.3}学习型动态粒度}{9}{subsubsection.4.4.3}\protected@file@percent }
+\newlabel{eq:dynamic-policy}{{21}{9}{学习型动态粒度}{equation.21}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}复杂度与决策开销}{10}{subsection.4.5}\protected@file@percent }
+\newlabel{method:cost}{{4.5}{10}{复杂度与决策开销}{subsection.4.5}{}}
+\newlabel{eq:calendar-complexity}{{22}{10}{复杂度与决策开销}{equation.22}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces 全局参考方法与局部学习方法的决策范围}}{10}{table.3}\protected@file@percent }
+\newlabel{tab:method-scope}{{3}{10}{全局参考方法与局部学习方法的决策范围}{table.3}{}}
+\@writefile{toc}{\contentsline {paragraph}{测量协议与边界。}{10}{paragraph*.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Orin决策分项实测。耗时为P50/P95/P99（ms），RSS为进程峰值（MiB）；F/D分别表示固定/动态方法。}}{11}{table.4}\protected@file@percent }
+\newlabel{tab:method-orin-cost}{{4}{11}{Orin决策分项实测。耗时为P50/P95/P99（ms），RSS为进程峰值（MiB）；F/D分别表示固定/动态方法。}{table.4}{}}
+\@writefile{toc}{\contentsline {paragraph}{识别负载下的CPU决策。}{11}{paragraph*.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{完整流程参照与部署限制。}{12}{paragraph*.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Mac单进程、单线程计算流程参照，P50/P95/P99（ms）。}}{12}{table.5}\protected@file@percent }
+\newlabel{tab:method-mac-cost}{{5}{12}{Mac单进程、单线程计算流程参照，P50/P95/P99（ms）。}{table.5}{}}
+\citation{iceye_imaging_modes_608}
+\citation{nasa_smallsat_avionics_2026}
+\citation{jetson_agx_orin}
+\@writefile{toc}{\contentsline {section}{\numberline {5}仿真实验与结果分析}{14}{section.5}\protected@file@percent }
+\newlabel{exp:chapter}{{5}{14}{仿真实验与结果分析}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}实验问题}{14}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}场景、参数与校准}{14}{subsection.5.2}\protected@file@percent }
+\newlabel{exp:protocol}{{5.2}{14}{场景、参数与校准}{subsection.5.2}{}}
+\newlabel{exp:setup}{{5.2}{14}{场景、参数与校准}{subsection.5.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces M档主场景的主要参数与依据。容量单位采用十进制MB、GB。}}{15}{table.6}\protected@file@percent }
+\newlabel{tab:m-parameters}{{6}{15}{M档主场景的主要参数与依据。容量单位采用十进制MB、GB。}{table.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces 三种SAR图像任务模式。重叠按窗口步长计算，块数不改变推理窗口总数。}}{15}{table.7}\protected@file@percent }
+\newlabel{tab:m-images}{{7}{15}{三种SAR图像任务模式。重叠按窗口步长计算，块数不改变推理窗口总数。}{table.7}{}}
+\citation{cgs2023}
+\citation{heft2002}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}对比方法与信息权限}{16}{subsection.5.3}\protected@file@percent }
+\newlabel{exp:baselines}{{5.3}{16}{对比方法与信息权限}{subsection.5.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces 方法及执行阶段的信息权限。公共接触计划对所有方法开放。}}{16}{table.8}\protected@file@percent }
+\newlabel{tab:m-permissions}{{8}{16}{方法及执行阶段的信息权限。公共接触计划对所有方法开放。}{table.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}评价协议}{16}{subsection.5.4}\protected@file@percent }
+\newlabel{exp:evaluation-protocol}{{5.4}{16}{评价协议}{subsection.5.4}{}}
+\newlabel{eq:restricted-area}{{23}{17}{评价协议}{equation.23}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}M档正式测试主结果}{17}{subsection.5.5}\protected@file@percent }
+\newlabel{exp:comparison}{{5.5}{17}{M档正式测试主结果}{subsection.5.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.5.1}同等信息条件下的交付表现}{17}{subsubsection.5.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.5.2}与局部文献方法的逐日比较}{17}{subsubsection.5.5.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces M档正式测试：局部信息组。完成比例单位为\%，$R_{600}$单位为秒；学习方法为三种子均值，未完成为各运行三日总数再作种子平均。}}{18}{table.9}\protected@file@percent }
+\newlabel{tab:m-local}{{9}{18}{M档正式测试：局部信息组。完成比例单位为\%，$R_{600}$单位为秒；学习方法为三种子均值，未完成为各运行三日总数再作种子平均。}{table.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces M档正式测试的完整交付时限曲线。左图为局部信息方法，右图为全局参考；GTD-GAT为日等权后三种子均值，未完成图像保留在分母中。}}{18}{figure.3}\protected@file@percent }
+\newlabel{fig:m-deadline-curves}{{3}{18}{M档正式测试的完整交付时限曲线。左图为局部信息方法，右图为全局参考；GTD-GAT为日等权后三种子均值，未完成图像保留在分母中。}{figure.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces GTD-GAT三种子均值减局部文献基线的日期配对差。比例差为百分点，时延差为秒；区间为描述性95\%日期bootstrap区间。}}{19}{table.10}\protected@file@percent }
+\newlabel{tab:m-paired}{{10}{19}{GTD-GAT三种子均值减局部文献基线的日期配对差。比例差为百分点，时延差为秒；区间为描述性95\%日期bootstrap区间。}{table.10}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.5.3}与全局参考方法的差距}{19}{subsubsection.5.5.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces M档正式测试：全局信息参考组（完成比例\%，时延s，未完成为三日合计）。}}{19}{table.11}\protected@file@percent }
+\newlabel{tab:m-global}{{11}{19}{M档正式测试：全局信息参考组（完成比例\%，时延s，未完成为三日合计）。}{table.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}学习过程与长尾分析}{20}{subsection.5.6}\protected@file@percent }
+\newlabel{exp:learning}{{5.6}{20}{学习过程与长尾分析}{subsection.5.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.6.1}训练配置与验证选模}{20}{subsubsection.5.6.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces 训练配置与实际预算。动态阶段为固定模型初始化后的新增预算。}}{20}{table.12}\protected@file@percent }
+\newlabel{tab:m-training}{{12}{20}{训练配置与实际预算。动态阶段为固定模型初始化后的新增预算。}{table.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces 固定粒度模仿学习训练记录，直接采用归档曲线。损失检查优化过程，正式效果由独立日期的完整交付指标评价。}}{20}{figure.4}\protected@file@percent }
+\newlabel{fig:m-bc-training}{{4}{20}{固定粒度模仿学习训练记录，直接采用归档曲线。损失检查优化过程，正式效果由独立日期的完整交付指标评价。}{figure.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces GTD-GAT-F、GTD-GAT-D已有验证检查点的$P_{60}$与$R_{600}$。横轴为该阶段训练片段数，连线只连接实际评估点。}}{21}{figure.5}\protected@file@percent }
+\newlabel{fig:m-mappo-validation}{{5}{21}{GTD-GAT-F、GTD-GAT-D已有验证检查点的$P_{60}$与$R_{600}$。横轴为该阶段训练片段数，连线只连接实际评估点。}{figure.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.6.2}从模仿到强化学习的增益}{21}{subsubsection.5.6.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces 同种子GTD-GAT相对纯模仿的测试改进。差值为GTD-GAT减BC，括号为三个日期中改善的天数。}}{21}{table.13}\protected@file@percent }
+\newlabel{tab:m-bc-gain}{{13}{21}{同种子GTD-GAT相对纯模仿的测试改进。差值为GTD-GAT减BC，括号为三个日期中改善的天数。}{table.13}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {14}{\ignorespaces 代表方法的已交付图像时延（秒）。均值、P50与P90先逐日计算再等权；学习方法再取三种子均值，未完成另见主表。}}{22}{table.14}\protected@file@percent }
+\newlabel{tab:m-completed}{{14}{22}{代表方法的已交付图像时延（秒）。均值、P50与P90先逐日计算再等权；学习方法再取三种子均值，未完成另见主表。}{table.14}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.6.3}尾部行为与资源争用}{22}{subsubsection.5.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.7}分片粒度与动态选择}{22}{subsection.5.7}\protected@file@percent }
+\newlabel{exp:ablation}{{5.7}{22}{分片粒度与动态选择}{subsection.5.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.7.1}验证日的启发式粒度对照}{22}{subsubsection.5.7.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {15}{\ignorespaces 验证日的静态与启发式动态粒度对照。完成比例为\%，传输量为每日主评分窗口的平均GB。}}{22}{table.15}\protected@file@percent }
+\newlabel{tab:m-grain-validation}{{15}{22}{验证日的静态与启发式动态粒度对照。完成比例为\%，传输量为每日主评分窗口的平均GB。}{table.15}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.7.2}测试日的学习型动态粒度}{23}{subsubsection.5.7.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {16}{\ignorespaces 学习方法实际传输量：三日主窗累计发送GB，再对三个种子平均；包含逐跳重复发送，非唯一输入体积。}}{23}{table.16}\protected@file@percent }
+\newlabel{tab:m-traffic}{{16}{23}{学习方法实际传输量：三日主窗累计发送GB，再对三个种子平均；包含逐跳重复发送，非唯一输入体积。}{table.16}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.8}规模泛化}{23}{subsection.5.8}\protected@file@percent }
+\newlabel{exp:scale}{{5.8}{23}{规模泛化}{subsection.5.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.9}事先登记标准与多指标权衡}{23}{subsection.5.9}\protected@file@percent }
+\newlabel{exp:preregistered}{{5.9}{23}{事先登记标准与多指标权衡}{subsection.5.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {17}{\ignorespaces 事先登记的逐种子判定。两套标准均未实现四项全部通过。}}{24}{table.17}\protected@file@percent }
+\newlabel{tab:m-preregistered}{{17}{24}{事先登记的逐种子判定。两套标准均未实现四项全部通过。}{table.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces 局部方法的$P_{60}$--$P_{600}$权衡，依据正式测试归档数据绘制。GTD-GAT-F/D表示固定/动态粒度；前沿由实际方法与种子实例构成，均值点不参与判定。}}{24}{figure.6}\protected@file@percent }
+\newlabel{fig:m-tradeoff-p}{{6}{24}{局部方法的$P_{60}$--$P_{600}$权衡，依据正式测试归档数据绘制。GTD-GAT-F/D表示固定/动态粒度；前沿由实际方法与种子实例构成，均值点不参与判定。}{figure.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.10}前期探索与方法演进}{24}{subsection.5.10}\protected@file@percent }
+\newlabel{exp:early-exploration}{{5.10}{24}{前期探索与方法演进}{subsection.5.10}{}}
+\newlabel{exp:condition-scan}{{5.10}{24}{前期探索与方法演进}{subsection.5.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces 局部方法的$P_{60}$--$R_{600}$权衡。较高$P_{60}$与较低$R_{600}$分别对应快速交付及全时限综合优势。}}{25}{figure.7}\protected@file@percent }
+\newlabel{fig:m-tradeoff-r}{{7}{25}{局部方法的$P_{60}$--$R_{600}$权衡。较高$P_{60}$与较低$R_{600}$分别对应快速交付及全时限综合优势。}{figure.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.11}局限与讨论}{25}{subsection.5.11}\protected@file@percent }
+\newlabel{exp:validity}{{5.11}{25}{局限与讨论}{subsection.5.11}{}}
+\gdef \@abspage@last{26}

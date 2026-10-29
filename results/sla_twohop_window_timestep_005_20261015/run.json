@@ -1,0 +1,24 @@
+{
+  "scope": "additional numerical convergence diagnostic; no new performance panel",
+  "args": {
+    "reference": "results/sla_twohop_development_v6_20261015/day03_cgs_compute_adapted.json",
+    "compare": "results/sla_twohop_window_timestep_20261015/dt_0p1.json",
+    "out_dir": "results/sla_twohop_window_timestep_005_20261015",
+    "dt": 0.05
+  },
+  "observation_end_seconds": 6600.0,
+  "source_before": {
+    "source_sha256": "fcc8aae45d136daa17d431af8e547960805d87dbf4f982df0938520339ec4711",
+    "python_version": "3.12.13",
+    "packages": {
+      "numpy": "2.4.4",
+      "torch": "2.12.0",
+      "skyfield": "1.54",
+      "PyYAML": "6.0.3"
+    }
+  },
+  "wrapper_sha256": "10ba120d37587047d8ecc7c344d5bdf2746bd9663313b62cd030fa24996389fc",
+  "helper_sha256": "33cf17ad8b344d9d1a476793f88ea65503a6ed462822a0ac98108264f1b245f7",
+  "reference_sha256": "86c6ceff268126ea325f1baae2c9242c122a745e9d7950b318afde666249116b",
+  "comparison_sha256": "876d075edb1455b7d240393965b6a78b85fd971db920b6863c1a0f46cd3fce65"
+}

@@ -1,0 +1,298 @@
+{
+  "scope": "Analytic extrapolation only; no L simulation or test data generated",
+  "base_n": 168,
+  "large_n": 336,
+  "base_pairs": 14028,
+  "large_pairs": 56280,
+  "pair_ratio": 4.0119760479041915,
+  "concurrency": 9,
+  "timings": [
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-22/bc_1701.json",
+      "sha256": "93adb6e3fa7f5968ced637ded2b3725b37dde2101706d02d2190000b90969f0d",
+      "date": "2026-10-22",
+      "method": "bc_1701",
+      "wall_seconds": 6220.885800749995,
+      "peak_rss_gb": 0.401047552
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-22/bc_1702.json",
+      "sha256": "c2af4b9afe9936b67a15366e03764678babd191d9f71375194e6460cf4f4a6a5",
+      "date": "2026-10-22",
+      "method": "bc_1702",
+      "wall_seconds": 6234.740788750001,
+      "peak_rss_gb": 0.446447616
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-22/bc_1703.json",
+      "sha256": "94a9e1882df6d29f59533c768f42e3d43b80d47dfaabfe1e3668c7624812dbd7",
+      "date": "2026-10-22",
+      "method": "bc_1703",
+      "wall_seconds": 6069.145225458997,
+      "peak_rss_gb": 0.451100672
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-22/fifo.json",
+      "sha256": "c76f9a47223c171a6764b0264117040d1fb228c2a70172a8b6f7f50abd0d4391",
+      "date": "2026-10-22",
+      "method": "fifo",
+      "wall_seconds": 4919.094381624993,
+      "peak_rss_gb": 0.399671296
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-22/history_1.json",
+      "sha256": "642d5f0cbd706dd8061cc52d52ae64e97a66018423400edb2375dd5725b9cb72",
+      "date": "2026-10-22",
+      "method": "history_1",
+      "wall_seconds": 6827.929340834002,
+      "peak_rss_gb": 0.399245312
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-22/history_2.json",
+      "sha256": "2093133a8f4a9767b80e8e453be921e31fe17ea6b70664b25f0f73a63cee5dd1",
+      "date": "2026-10-22",
+      "method": "history_2",
+      "wall_seconds": 6947.211020500006,
+      "peak_rss_gb": 0.400850944
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-22/minload_1.json",
+      "sha256": "bcd57a8e84690743fafcedc8e6aa6ff57342729dc2fc221c861faf4a2ca08ed8",
+      "date": "2026-10-22",
+      "method": "minload_1",
+      "wall_seconds": 6553.1329737500055,
+      "peak_rss_gb": 0.399065088
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-22/minload_2.json",
+      "sha256": "cfd43c865a3536527aefb9c03622dc8da291607288522c9f03e60516a35231e5",
+      "date": "2026-10-22",
+      "method": "minload_2",
+      "wall_seconds": 6025.177001499993,
+      "peak_rss_gb": 0.399507456
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-22/v3.json",
+      "sha256": "dd3b79456d4457c0c101876d2c6e8ea250582e04054177f770e686deb68b9b57",
+      "date": "2026-10-22",
+      "method": "v3",
+      "wall_seconds": 5932.614589166988,
+      "peak_rss_gb": 0.400621568
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-22/zero_1.json",
+      "sha256": "d2b8443965902efd2f0bdd8e3558c4774506f019d82fc66a44daa0af41adf458",
+      "date": "2026-10-22",
+      "method": "zero_1",
+      "wall_seconds": 6762.215143541005,
+      "peak_rss_gb": 0.400392192
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-22/zero_2.json",
+      "sha256": "6806ec4f4393c4bde57f4d5b657cff19a697b30fd46f0a64a44d26163485361b",
+      "date": "2026-10-22",
+      "method": "zero_2",
+      "wall_seconds": 6776.470069999996,
+      "peak_rss_gb": 0.399867904
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-23/bc_1701.json",
+      "sha256": "b2904b7457e724274e9f47c59d8bb94aaf600488febcf1034cb3384e3e828b6f",
+      "date": "2026-10-23",
+      "method": "bc_1701",
+      "wall_seconds": 5879.382135624997,
+      "peak_rss_gb": 0.45981696
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-23/bc_1702.json",
+      "sha256": "6aefd168fd8f79f68120e921691fc7155fc0ab5e522ca0947d4beef37367cfe6",
+      "date": "2026-10-23",
+      "method": "bc_1702",
+      "wall_seconds": 5815.731245584,
+      "peak_rss_gb": 0.451100672
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-23/bc_1703.json",
+      "sha256": "a3133e442340176e2bf130da5b83b0bc171c6c9796eccc2ec2c90d4344f38065",
+      "date": "2026-10-23",
+      "method": "bc_1703",
+      "wall_seconds": 6055.758162833998,
+      "peak_rss_gb": 0.420347904
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-23/fifo.json",
+      "sha256": "cd102ef19ca2d18c04dbbbcd01436aac67dae89e2c37bd27db15f9f0e95c321f",
+      "date": "2026-10-23",
+      "method": "fifo",
+      "wall_seconds": 4421.050114666999,
+      "peak_rss_gb": 0.446447616
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-23/history_1.json",
+      "sha256": "e2c1c29dc05600541c6cea5878a6a61da2e0505aa4be20589d22077cf07042b2",
+      "date": "2026-10-23",
+      "method": "history_1",
+      "wall_seconds": 6374.195461915995,
+      "peak_rss_gb": 0.412532736
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-23/history_2.json",
+      "sha256": "d11c9bb1a90a51743ee82f743e1a2e943a450f3f7b33e1394e4557a080e1e438",
+      "date": "2026-10-23",
+      "method": "history_2",
+      "wall_seconds": 6482.570098249998,
+      "peak_rss_gb": 0.415809536
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-23/minload_1.json",
+      "sha256": "1382d71ae09d98ae8a584ece17562775e84bbe604e9dae56eb26dbd0e73674a2",
+      "date": "2026-10-23",
+      "method": "minload_1",
+      "wall_seconds": 7280.580453834002,
+      "peak_rss_gb": 0.424738816
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-23/minload_2.json",
+      "sha256": "b6277eaa74059ec6a328f196fe1f4951668f376c072f005acdd29018391430a3",
+      "date": "2026-10-23",
+      "method": "minload_2",
+      "wall_seconds": 6046.830750749999,
+      "peak_rss_gb": 0.452378624
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-23/v3.json",
+      "sha256": "77cbc49bbc8bf1c36f72da0c542ee36da19e23c84cbc55adb0eab783e4a4cdde",
+      "date": "2026-10-23",
+      "method": "v3",
+      "wall_seconds": 5637.5759809589945,
+      "peak_rss_gb": 0.45981696
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-23/zero_1.json",
+      "sha256": "62891d1ead44bf04aec2bafbada1a095eac5111f27268ee538e1d4dde5e34afc",
+      "date": "2026-10-23",
+      "method": "zero_1",
+      "wall_seconds": 6388.377324750007,
+      "peak_rss_gb": 0.420347904
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-23/zero_2.json",
+      "sha256": "fb69d05af1b2bea180c174f542dfa1142635a480e5a30d569b5a2f8d8098ae41",
+      "date": "2026-10-23",
+      "method": "zero_2",
+      "wall_seconds": 6348.987845958007,
+      "peak_rss_gb": 0.418512896
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-24/bc_1701.json",
+      "sha256": "fd94a5d6acaca0da9ae882a236a5e92eeb2204b3a947c32047a85561829294a3",
+      "date": "2026-10-24",
+      "method": "bc_1701",
+      "wall_seconds": 5230.5002359160135,
+      "peak_rss_gb": 0.420347904
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-24/bc_1702.json",
+      "sha256": "38b09475b7c0f1bed73293eba4c1637cbfc41efd71fd06f24b755231b23361bc",
+      "date": "2026-10-24",
+      "method": "bc_1702",
+      "wall_seconds": 4904.599164707994,
+      "peak_rss_gb": 0.418512896
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-24/bc_1703.json",
+      "sha256": "f456449b41f3818eb8b4b61a8f47362f8027b74f0e091376eb1862f6706cff97",
+      "date": "2026-10-24",
+      "method": "bc_1703",
+      "wall_seconds": 4627.793198125,
+      "peak_rss_gb": 0.452378624
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-24/fifo.json",
+      "sha256": "7ec9fa3c512afaa1eab108943d42aa0fcfd971eb02d72b914c22076baa9d9da1",
+      "date": "2026-10-24",
+      "method": "fifo",
+      "wall_seconds": 4548.151864957996,
+      "peak_rss_gb": 0.451100672
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-24/history_1.json",
+      "sha256": "7423d2790756c546e7705893fce73b256c7253e3249de7a110baaa8b67144498",
+      "date": "2026-10-24",
+      "method": "history_1",
+      "wall_seconds": 6875.299958000003,
+      "peak_rss_gb": 0.453050368
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-24/history_2.json",
+      "sha256": "5e78e4229d3bd684f4f5331a1dc5f96ebf5dd11afe98ccfcf010dd70aba630b3",
+      "date": "2026-10-24",
+      "method": "history_2",
+      "wall_seconds": 6834.987986459004,
+      "peak_rss_gb": 0.424738816
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-24/minload_1.json",
+      "sha256": "ad838a1c01398da000f4f250c85462682eb596e43877b1024f3932fb729f9b21",
+      "date": "2026-10-24",
+      "method": "minload_1",
+      "wall_seconds": 6840.669860166003,
+      "peak_rss_gb": 0.446447616
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-24/minload_2.json",
+      "sha256": "5d6699f695044af9b0c8465e58576f6f230cee6722f55024071e38d98db9afc4",
+      "date": "2026-10-24",
+      "method": "minload_2",
+      "wall_seconds": 4836.975626042011,
+      "peak_rss_gb": 0.45981696
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-24/v3.json",
+      "sha256": "4ebc5eef46fe1fdd5ad1a22069d1d9c6c92775ae56dd66ba39498cc069466426",
+      "date": "2026-10-24",
+      "method": "v3",
+      "wall_seconds": 5969.521216582987,
+      "peak_rss_gb": 0.418512896
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-24/zero_1.json",
+      "sha256": "cb9f4be16144d6a3d5dc07814b0c2a76ac27cfb4fa7533d58344713e3888a423",
+      "date": "2026-10-24",
+      "method": "zero_1",
+      "wall_seconds": 6824.243885040996,
+      "peak_rss_gb": 0.452378624
+    },
+    {
+      "path": "results/redesign_20261021/main_scenario/bc_stage2_20261022/validation/2026-10-24/zero_2.json",
+      "sha256": "1f50c0b3f02da4fe1ab3fe5ec2c009c5747f7c1adfe6bcc42c40c5b25ec4e54b",
+      "date": "2026-10-24",
+      "method": "zero_2",
+      "wall_seconds": 6822.52763079101,
+      "peak_rss_gb": 0.418381824
+    }
+  ],
+  "M_six_hour_wall_s_range": [
+    4421.050114666999,
+    7280.580453834002
+  ],
+  "L_six_hour_planning_wall_h_range": [
+    2.4561389525927773,
+    8.089533837593335
+  ],
+  "L_six_hour_stress_wall_h": 16.17906767518667,
+  "assumed_warmup_s": 650,
+  "followup_s": 600,
+  "L_one_hour_planning_wall_h_range": [
+    0.5213248980339155,
+    1.7170345344563533
+  ],
+  "L_one_hour_stress_wall_h": 3.4340690689127067,
+  "caveats": [
+    "Not measured L runtime or a bound",
+    "Peak-hour arrival density may differ",
+    "Data generation, contact cache and audit time not included",
+    "Single ground station congestion may change costs",
+    "Do not divide per-job wall time by 9"
+  ]
+}

@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/home/tianyz/anaconda3/envs/dota/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/tianyz/anaconda3/envs/dota/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/tianyz/bs_method_cost_20261028/analysis/method_cost_20261028.py", line 436, in <module>
+    main()
+  File "/home/tianyz/bs_method_cost_20261028/analysis/method_cost_20261028.py", line 432, in main
+    replay(args.family, args.device, args.threads, args.output)
+  File "/home/tianyz/bs_method_cost_20261028/analysis/method_cost_20261028.py", line 377, in replay
+    assert rebuilt == row['observation'], 'Snapshot reconstruction differs'
+AssertionError: Snapshot reconstruction differs

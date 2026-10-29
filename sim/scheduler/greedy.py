@@ -44,6 +44,8 @@ class GreedyEarliestFinish(SchedulerPolicy):
 
             tile_size_mb = tile["data_size_mb"]
             compute_cost = tile["compute_cost"]
+            pixel_workload = bool(env_state.config.get("image_tiling"))
+            result_size_mb_est = tile["result_size_mb"] if pixel_workload else 1.0
 
             # ------------------------------------------------------------------
             # 工具函数：估算在某卫星本地计算后下传 result 的完成时间
@@ -68,14 +70,16 @@ class GreedyEarliestFinish(SchedulerPolicy):
                 if gs_opts:
                     # 取带宽最好的地面站做下传估算（result 很小，影响不大）
                     best_dl_bw = max(o["bandwidth_mbps"] for o in gs_opts)
-                    # result_size 未暴露在 env_state，这里用一个极保守的 1 MB 估算
-                    # 实际 result_size_mb 通常 <= 0.1 MB，这里的误差可忽略
-                    result_size_mb_est = 1.0
+                    # 旧模式保留历史的 1 MB 估计，像素模式读取逐片结果量。
                     downlink_time = (result_size_mb_est * 8.0) / max(1e-6, best_dl_bw)
                 else:
                     # 暂时不可见地面站：给一个惩罚，让调度器倾向能直接看到地面的方案
                     # 不使用 inf，避免因为瞬间不可见就完全放弃 LOCAL
                     downlink_time = 60.0  # 保守估计需等约 60s 才能下传
+                    if pixel_workload:
+                        best_dl_bw = max((gs["bandwidth_mbps"] for gs in env_state.ground_stations.values()),
+                                         default=100.0)
+                        downlink_time += result_size_mb_est * 8.0 / max(1e-6, best_dl_bw)
 
                 return extra_tx + queue_wait + compute_time + downlink_time
 

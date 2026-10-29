@@ -1,0 +1,12 @@
+/Users/bytedance/Projects/bs/analysis/sar_selector_pilot.py:222: DeprecationWarning: This process (pid=47026) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+Traceback (most recent call last):
+  File "/Users/bytedance/Projects/bs/analysis/sar_selector_pilot.py", line 417, in <module>
+    worker(args.condition)
+  File "/Users/bytedance/Projects/bs/analysis/sar_selector_pilot.py", line 320, in worker
+    audits = ctl.audit_controls()
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bytedance/Projects/bs/analysis/sar_selector_pilot.py", line 278, in audit_controls
+    assert len(audits) == 8 and all(a["passed"] for a in audits), audits
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [{'task_id': 'task_49', 'rule_choice': 'ground', 'passed': True, 'parent_completion_seconds': 6555.29, 'branch_completion_seconds': 6555.29}, {'task_id': 'task_118', 'rule_choice': 'ground', 'passed': True, 'parent_completion_seconds': 15054.76, 'branch_completion_seconds': 15054.76}, {'task_id': 'task_218', 'rule_choice': 'local', 'passed': True, 'parent_completion_seconds': 28268.18, 'branch_completion_seconds': 28268.18}, {'task_id': 'task_323', 'rule_choice': 'cgs', 'passed': True, 'parent_completion_seconds': 40961.71, 'branch_completion_seconds': 40961.71}, {'task_id': 'task_438', 'rule_choice': 'local', 'passed': True, 'parent_completion_seconds': 55352.19, 'branch_completion_seconds': 55352.19}, {'task_id': 'task_613', 'rule_choice': 'cgs', 'passed': True, 'parent_completion_seconds': 72901.35, 'branch_completion_seconds': 72901.35}, {'task_id': 'task_658', 'rule_choice': 'cgs', 'passed': True, 'parent_completion_seconds': 80318.37, 'branch_completion_seconds': 80318.37}]

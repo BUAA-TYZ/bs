@@ -1,0 +1,34 @@
+Creating new Ultralytics Settings v0.0.6 file ✅ 
+View Ultralytics Settings with 'yolo settings' or at '/home/tianyz/bs_sar_calibration_20261015_IBZujO/series/sustained/ultralytics_config/settings.json'
+Update Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.
+Warmup: 50 windows at 4096x4096, FP32
+Measured 53 windows; mean 573.178 ms; elapsed 30.5 s
+Measured 106 windows; mean 573.015 ms; elapsed 61.0 s
+Measured 158 windows; mean 573.625 ms; elapsed 91.0 s
+Measured 210 windows; mean 574.193 ms; elapsed 121.0 s
+Measured 262 windows; mean 574.377 ms; elapsed 151.1 s
+Measured 314 windows; mean 574.697 ms; elapsed 181.2 s
+Measured 367 windows; mean 574.551 ms; elapsed 211.7 s
+Measured 420 windows; mean 574.453 ms; elapsed 242.2 s
+Measured 473 windows; mean 574.368 ms; elapsed 272.7 s
+Measured 526 windows; mean 574.085 ms; elapsed 303.1 s
+Measured 578 windows; mean 574.153 ms; elapsed 333.2 s
+Measured 631 windows; mean 573.937 ms; elapsed 363.6 s
+Measured 684 windows; mean 573.872 ms; elapsed 394.1 s
+Measured 737 windows; mean 573.883 ms; elapsed 424.6 s
+Measured 789 windows; mean 574.120 ms; elapsed 454.8 s
+Measured 842 windows; mean 574.097 ms; elapsed 485.3 s
+Measured 895 windows; mean 574.115 ms; elapsed 515.9 s
+Measured 947 windows; mean 574.183 ms; elapsed 545.9 s
+Measured 1000 windows; mean 574.054 ms; elapsed 576.3 s
+Measured 1053 windows; mean 574.007 ms; elapsed 606.8 s
+Measured 1106 windows; mean 574.022 ms; elapsed 637.4 s
+Measured 1159 windows; mean 573.858 ms; elapsed 667.8 s
+Measured 1211 windows; mean 573.918 ms; elapsed 697.8 s
+Measured 1264 windows; mean 573.921 ms; elapsed 728.4 s
+Measured 1317 windows; mean 573.888 ms; elapsed 758.9 s
+Measured 1369 windows; mean 573.925 ms; elapsed 788.9 s
+Measured 1422 windows; mean 573.916 ms; elapsed 819.4 s
+Measured 1475 windows; mean 573.941 ms; elapsed 850.0 s
+Measured 1528 windows; mean 573.955 ms; elapsed 880.6 s
+passed: /home/tianyz/bs_sar_calibration_20261015_IBZujO/series/sustained/report.json; summary: {'count': 1562, 'total_service_s': 896.5373893245123, 'mean_ms': 573.9675987993037, 'p50_ms': 573.6960857175291, 'p95_ms': 604.3655573390424, 'min_ms': 517.5840607844293, 'max_ms': 623.8074731081724, 'service_rate_windows_per_s': 1.7422586259083674, 'phase_mean_ms': {'preprocess_ms': 22.99092262482483, 'host_to_device_ms': 11.36826429570931, 'forward_ms': 456.49729897721255, 'device_to_host_ms': 5.399644249637591, 'controlled_nms_ms': 49.37763229011297, 'preview_encode_ms': 28.333836361806405}, 'output_bytes_min': 262232, 'output_bytes_max': 1048844}

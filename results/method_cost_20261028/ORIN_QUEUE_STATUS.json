@@ -1,0 +1,71 @@
+{
+  "status": "UNLOADED_COMPLETE",
+  "completed": [
+    {
+      "group": "fixed_cpu_t1",
+      "started_at": "2026-10-28T11:57:00.504114+00:00",
+      "load_pid": null,
+      "finished_at": "2026-10-28T12:13:15.035068+00:00",
+      "sha256": "1b05144ad0829faa425c102f34f248e6063553a9d40c4939144761cbe379f0ef",
+      "adopted": true
+    },
+    {
+      "group": "dynamic_cpu_t1",
+      "started_at": "2026-10-28T12:13:15.035728+00:00",
+      "finished_at": "2026-10-28T12:40:21.575232+00:00",
+      "wall_seconds": 1626.5379385869019,
+      "returncode": 0,
+      "sha256": "5d89fb55edf76b22246f17fd6bab82f8caaf3a18b3ad2543d29848f42280365c"
+    },
+    {
+      "group": "fixed_cpu_t2",
+      "started_at": "2026-10-28T12:40:21.581849+00:00",
+      "finished_at": "2026-10-28T12:56:14.391551+00:00",
+      "wall_seconds": 952.8076667212881,
+      "returncode": 0,
+      "sha256": "c6c2ba8203f19734b1a1c55ed2d387488ea575bf9386326f0608d35a6e2f6324"
+    },
+    {
+      "group": "dynamic_cpu_t2",
+      "started_at": "2026-10-28T12:56:14.398712+00:00",
+      "finished_at": "2026-10-28T13:23:39.673293+00:00",
+      "wall_seconds": 1645.272351579275,
+      "returncode": 0,
+      "sha256": "7ffd839b388cee8706fd5e924d403f7e6a570e81fba683325001d27969067b38"
+    },
+    {
+      "group": "fixed_cuda_0_t1",
+      "started_at": "2026-10-28T13:23:39.679937+00:00",
+      "finished_at": "2026-10-28T13:39:43.923212+00:00",
+      "wall_seconds": 964.2411581021734,
+      "returncode": 0,
+      "sha256": "c2bc286ee8dc33373f289b8d6bae1fe3d81b01361caa03e3bcec23f9fc6586fa"
+    },
+    {
+      "group": "dynamic_cuda_0_t1",
+      "started_at": "2026-10-28T13:39:43.929744+00:00",
+      "finished_at": "2026-10-28T14:06:58.992244+00:00",
+      "wall_seconds": 1635.060353944078,
+      "returncode": 0,
+      "sha256": "9a5f26dc4ae27b586cc3cfed21728ca525b6be92fdf84d711b2ad2ca9cbd3ce9"
+    },
+    {
+      "group": "fixed_cuda_0_t2",
+      "started_at": "2026-10-28T14:06:58.998831+00:00",
+      "finished_at": "2026-10-28T14:23:07.362516+00:00",
+      "wall_seconds": 968.3614957081154,
+      "returncode": 0,
+      "sha256": "9427ac91fd670f28dbe33e3cd4d15330ddd28bebc65855f9b5905d4e94c5fcf7"
+    },
+    {
+      "group": "dynamic_cuda_0_t2",
+      "started_at": "2026-10-28T14:23:07.369089+00:00",
+      "finished_at": "2026-10-28T14:50:39.289042+00:00",
+      "wall_seconds": 1651.917736242991,
+      "returncode": 0,
+      "sha256": "0209accb746f1efcac3783fa55fe43c35cbf61428e90bbd269a111d399a5ade0"
+    }
+  ],
+  "pid": 768227,
+  "at": "2026-10-28T14:50:39.522264+00:00"
+}

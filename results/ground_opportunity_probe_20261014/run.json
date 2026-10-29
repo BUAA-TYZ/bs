@@ -1,0 +1,72 @@
+{
+  "args": {
+    "panel": "probe",
+    "workers": 3,
+    "out_dir": "results/ground_opportunity_probe_20261014"
+  },
+  "source_sha256": "cbc1a4b877b8e226dc210a349deb0a7e8f9fad2333a658d09d60debc5f5bc129",
+  "python_version": "3.12.13",
+  "packages": {
+    "numpy": "2.4.4",
+    "torch": "2.12.0",
+    "skyfield": "1.54",
+    "PyYAML": "6.0.3"
+  },
+  "cases": [
+    {
+      "id": "train_2026101400_3",
+      "seed": 2026101403,
+      "orbit_offset_seconds": 128029.2274685285,
+      "arrival_rate_per_second": 0.0072872683524968646,
+      "compute_cost_per_tile": 80.31318315011413,
+      "isl_bandwidth_scale": 1.0436508548492514,
+      "ground_bandwidth_scale": 6.0880255904996865,
+      "walker": {
+        "planes": 4,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 559.5912015061222,
+        "inclination_deg": 76.02779321445338,
+        "raan_offset_deg": 81.67738566811775,
+        "phase_offset_deg": 165.9668369522258
+      },
+      "role_profile": "near",
+      "num_sats": 24,
+      "num_task_sources": 8,
+      "effective_arrival_rate_per_second": 0.0072872683524968646,
+      "config_sha256": "b66b5435ce6fe67e02ce23ae98f2b6d91b30d0ed75179dc822cfcd76cdf63b9c"
+    },
+    {
+      "id": "train_2026101400_8",
+      "seed": 2026101408,
+      "orbit_offset_seconds": 135625.54742716954,
+      "arrival_rate_per_second": 0.011528986185717783,
+      "compute_cost_per_tile": 55.7865739689189,
+      "isl_bandwidth_scale": 0.9550008804639042,
+      "ground_bandwidth_scale": 13.060633611070703,
+      "walker": {
+        "planes": 6,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 555.3771525500274,
+        "inclination_deg": 60.46765225803778,
+        "raan_offset_deg": 180.71972869458523,
+        "phase_offset_deg": 192.8207925166484
+      },
+      "role_profile": "uniform",
+      "num_sats": 36,
+      "num_task_sources": 12,
+      "effective_arrival_rate_per_second": 0.017293479278576673,
+      "config_sha256": "703312fc9c931ec71fbf4ec1450d9d09b1e59011bbe577010e2100e3c982bff9"
+    }
+  ],
+  "methods": [
+    "reservation_calendar",
+    "cgs_compute_adapted",
+    "cgs_ground_wait"
+  ],
+  "runner_sha256": "41a3bf0a3c1f778cbd4ae04c027eba6f35286e9ecbe5b64ac6b2730ee6d01d0d",
+  "shared_runner_sha256": "44566d4d931150a2455eb5930e9c8eff0daa93dc28220b250da8576c6df6053d",
+  "distribution_sha256": "9e946fbb00dcba477f43413ba7cba814952c932d6fc608d2d218918c76a59d26",
+  "protocol": "docs/thesis/ground_opportunity.md"
+}

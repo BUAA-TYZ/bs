@@ -1,0 +1,4761 @@
+{
+  "config_path": "results/highres_prepared_20261015/day01_config.json",
+  "config_sha256": "4fb3af203db2b84c001c79893c20d68dd509c8803ef856f266259b5c6ba475b2",
+  "start_time_utc": "2026-10-15T16:43:00+00:00",
+  "end_time_utc": "2026-10-15T22:27:30+00:00",
+  "timeline_s": 20670.0,
+  "sample_s": 10.0,
+  "num_samples": 2067,
+  "snapshot_equivalence_validation": {
+    "scalar_checks": 9,
+    "all_passed": true
+  },
+  "sampling_and_scope": [
+    "Same 10-second sample-and-hold visibility and distance-ranked bilateral terminal matching as frozen simulation",
+    "Boundary times are sampled; each resolved crossing can shift by up to one sample and sub-sample contacts can be missed",
+    "Full-window fit assumes bytes ready at contact start, no competing traffic and constant nominal bandwidth",
+    "Two-sample subtraction is a conservative sampling margin, not a terminal acquisition-time model",
+    "No acquisition/tracking/pointing setup delay, packet framing, retransmission or weather model",
+    "Instantaneous graph reach is an opportunity bound, not proof a packet can traverse before topology changes",
+    "Snapshot reach does not use store-carry-forward temporal paths; lack of snapshot path is not proof delivery is impossible",
+    "Station union capacity honors receive-channel count; individual visibility capacities must not be summed as delivered service",
+    "No contact observed within the episode does not imply the satellite never passes the station; a separate source-only +24h audit is included"
+  ],
+  "workload": {
+    "unique_image_mb": 2138.9927789999997,
+    "num_packets": 315,
+    "all_packet_input_mb": 3328.3768320000004,
+    "maximum_packet_mb": 11.534336000000001,
+    "compression_ratio_assumption": 3
+  },
+  "isl": {
+    "nominal_mbps": 10000,
+    "max_range_km": 4500,
+    "max_neighbors": 4,
+    "observed_max_degree": 4,
+    "summary": {
+      "all_observed_duration_s": {
+        "count": 384,
+        "min": 10.0,
+        "p10": 60.0,
+        "median": 980.0,
+        "p90": 2644.0,
+        "p95": 6252.499999999978,
+        "max": 20670.0
+      },
+      "complete_duration_s": {
+        "count": 331,
+        "min": 10.0,
+        "p10": 60.0,
+        "median": 980.0,
+        "p90": 1540.0,
+        "p95": 2580.0,
+        "max": 5700.0
+      },
+      "left_censored_count": 34,
+      "right_censored_count": 35,
+      "fit_if_entire_window_uncontended": {
+        "one_max_packet": {
+          "serialization_s": 0.009227468800000001,
+          "complete_window_fraction": 1.0,
+          "fraction_after_two_sample_margin": 0.9879154078549849
+        },
+        "all_image_packets": {
+          "serialization_s": 2.6627014656,
+          "complete_window_fraction": 1.0,
+          "fraction_after_two_sample_margin": 0.9879154078549849
+        },
+        "num_tiles_times_max_packet_upper_bound": {
+          "serialization_s": 2.9066526720000003,
+          "complete_window_fraction": 1.0,
+          "fraction_after_two_sample_margin": 0.9879154078549849
+        }
+      }
+    },
+    "windows": [
+      {
+        "start_s": 0.0,
+        "end_s": 20670.0,
+        "duration_s": 20670.0,
+        "left_censored": true,
+        "right_censored": true,
+        "source_sat_id": 0,
+        "peer_sat_id": 1
+      },
+      {
+        "start_s": 1080.0,
+        "end_s": 1730.0,
+        "duration_s": 650.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 10
+      },
+      {
+        "start_s": 3930.0,
+        "end_s": 4730.0,
+        "duration_s": 800.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 10
+      },
+      {
+        "start_s": 6770.0,
+        "end_s": 7700.0,
+        "duration_s": 930.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 10
+      },
+      {
+        "start_s": 9620.0,
+        "end_s": 10670.0,
+        "duration_s": 1050.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 10
+      },
+      {
+        "start_s": 12450.0,
+        "end_s": 13620.0,
+        "duration_s": 1170.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 10
+      },
+      {
+        "start_s": 15280.0,
+        "end_s": 16570.0,
+        "duration_s": 1290.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 10
+      },
+      {
+        "start_s": 18130.0,
+        "end_s": 19510.0,
+        "duration_s": 1380.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 10
+      },
+      {
+        "start_s": 340.0,
+        "end_s": 2020.0,
+        "duration_s": 1680.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 11
+      },
+      {
+        "start_s": 3230.0,
+        "end_s": 4920.0,
+        "duration_s": 1690.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 11
+      },
+      {
+        "start_s": 6120.0,
+        "end_s": 7810.0,
+        "duration_s": 1690.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 11
+      },
+      {
+        "start_s": 9030.0,
+        "end_s": 10690.0,
+        "duration_s": 1660.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 11
+      },
+      {
+        "start_s": 11930.0,
+        "end_s": 13570.0,
+        "duration_s": 1640.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 11
+      },
+      {
+        "start_s": 14840.0,
+        "end_s": 16440.0,
+        "duration_s": 1600.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 11
+      },
+      {
+        "start_s": 17710.0,
+        "end_s": 19300.0,
+        "duration_s": 1590.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 11
+      },
+      {
+        "start_s": 20570.0,
+        "end_s": 20650.0,
+        "duration_s": 80.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 11
+      },
+      {
+        "start_s": 20660.0,
+        "end_s": 20670.0,
+        "duration_s": 10.0,
+        "left_censored": false,
+        "right_censored": true,
+        "source_sat_id": 0,
+        "peer_sat_id": 11
+      },
+      {
+        "start_s": 220.0,
+        "end_s": 340.0,
+        "duration_s": 120.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 12
+      },
+      {
+        "start_s": 450.0,
+        "end_s": 1410.0,
+        "duration_s": 960.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 12
+      },
+      {
+        "start_s": 3200.0,
+        "end_s": 3230.0,
+        "duration_s": 30.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 12
+      },
+      {
+        "start_s": 3360.0,
+        "end_s": 4230.0,
+        "duration_s": 870.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 12
+      },
+      {
+        "start_s": 6270.0,
+        "end_s": 7040.0,
+        "duration_s": 770.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 12
+      },
+      {
+        "start_s": 9180.0,
+        "end_s": 9250.0,
+        "duration_s": 70.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 12
+      },
+      {
+        "start_s": 9420.0,
+        "end_s": 9820.0,
+        "duration_s": 400.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 12
+      },
+      {
+        "start_s": 12340.0,
+        "end_s": 12550.0,
+        "duration_s": 210.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 12
+      },
+      {
+        "start_s": 6520.0,
+        "end_s": 6580.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 9250.0,
+        "end_s": 9520.0,
+        "duration_s": 270.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 12070.0,
+        "end_s": 12440.0,
+        "duration_s": 370.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 14920.0,
+        "end_s": 15370.0,
+        "duration_s": 450.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 17690.0,
+        "end_s": 17710.0,
+        "duration_s": 20.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 17780.0,
+        "end_s": 18280.0,
+        "duration_s": 500.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 20650.0,
+        "end_s": 20670.0,
+        "duration_s": 20.0,
+        "left_censored": false,
+        "right_censored": true,
+        "source_sat_id": 0,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 60.0,
+        "end_s": 750.0,
+        "duration_s": 690.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 2940.0,
+        "end_s": 3650.0,
+        "duration_s": 710.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 5820.0,
+        "end_s": 6520.0,
+        "duration_s": 700.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 8700.0,
+        "end_s": 9420.0,
+        "duration_s": 720.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 11590.0,
+        "end_s": 12340.0,
+        "duration_s": 750.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 14470.0,
+        "end_s": 15250.0,
+        "duration_s": 780.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 17360.0,
+        "end_s": 18130.0,
+        "duration_s": 770.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 20250.0,
+        "end_s": 20670.0,
+        "duration_s": 420.0,
+        "left_censored": false,
+        "right_censored": true,
+        "source_sat_id": 0,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 450.0,
+        "duration_s": 450.0,
+        "left_censored": true,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 2650.0,
+        "end_s": 3360.0,
+        "duration_s": 710.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 5540.0,
+        "end_s": 6270.0,
+        "duration_s": 730.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 8440.0,
+        "end_s": 9180.0,
+        "duration_s": 740.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 11340.0,
+        "end_s": 12060.0,
+        "duration_s": 720.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 14250.0,
+        "end_s": 14920.0,
+        "duration_s": 670.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 17150.0,
+        "end_s": 17780.0,
+        "duration_s": 630.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 20060.0,
+        "end_s": 20660.0,
+        "duration_s": 600.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 110.0,
+        "duration_s": 110.0,
+        "left_censored": true,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 2480.0,
+        "end_s": 2980.0,
+        "duration_s": 500.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 5400.0,
+        "end_s": 5840.0,
+        "duration_s": 440.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 8330.0,
+        "end_s": 8700.0,
+        "duration_s": 370.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 11270.0,
+        "end_s": 11540.0,
+        "duration_s": 270.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 14250.0,
+        "end_s": 14350.0,
+        "duration_s": 100.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 0,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 15900.0,
+        "end_s": 16130.0,
+        "duration_s": 230.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 10
+      },
+      {
+        "start_s": 18620.0,
+        "end_s": 19200.0,
+        "duration_s": 580.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 10
+      },
+      {
+        "start_s": 730.0,
+        "end_s": 1950.0,
+        "duration_s": 1220.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 11
+      },
+      {
+        "start_s": 3600.0,
+        "end_s": 4890.0,
+        "duration_s": 1290.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 11
+      },
+      {
+        "start_s": 6460.0,
+        "end_s": 7810.0,
+        "duration_s": 1350.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 11
+      },
+      {
+        "start_s": 9320.0,
+        "end_s": 10740.0,
+        "duration_s": 1420.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 11
+      },
+      {
+        "start_s": 12190.0,
+        "end_s": 13660.0,
+        "duration_s": 1470.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 11
+      },
+      {
+        "start_s": 15060.0,
+        "end_s": 16570.0,
+        "duration_s": 1510.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 11
+      },
+      {
+        "start_s": 17930.0,
+        "end_s": 19470.0,
+        "duration_s": 1540.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 11
+      },
+      {
+        "start_s": 170.0,
+        "end_s": 1820.0,
+        "duration_s": 1650.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 12
+      },
+      {
+        "start_s": 3090.0,
+        "end_s": 4690.0,
+        "duration_s": 1600.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 12
+      },
+      {
+        "start_s": 6010.0,
+        "end_s": 7550.0,
+        "duration_s": 1540.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 12
+      },
+      {
+        "start_s": 8950.0,
+        "end_s": 10410.0,
+        "duration_s": 1460.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 12
+      },
+      {
+        "start_s": 11880.0,
+        "end_s": 13260.0,
+        "duration_s": 1380.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 12
+      },
+      {
+        "start_s": 14820.0,
+        "end_s": 16110.0,
+        "duration_s": 1290.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 12
+      },
+      {
+        "start_s": 17770.0,
+        "end_s": 18950.0,
+        "duration_s": 1180.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 12
+      },
+      {
+        "start_s": 500.0,
+        "end_s": 540.0,
+        "duration_s": 40.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 3150.0,
+        "end_s": 3320.0,
+        "duration_s": 170.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 3370.0,
+        "end_s": 3480.0,
+        "duration_s": 110.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 5970.0,
+        "end_s": 6410.0,
+        "duration_s": 440.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 8810.0,
+        "end_s": 9340.0,
+        "duration_s": 530.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 11670.0,
+        "end_s": 12250.0,
+        "duration_s": 580.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 14530.0,
+        "end_s": 15170.0,
+        "duration_s": 640.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 17390.0,
+        "end_s": 18080.0,
+        "duration_s": 690.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 20260.0,
+        "end_s": 20670.0,
+        "duration_s": 410.0,
+        "left_censored": false,
+        "right_censored": true,
+        "source_sat_id": 1,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 530.0,
+        "duration_s": 530.0,
+        "left_censored": true,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 2560.0,
+        "end_s": 3440.0,
+        "duration_s": 880.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 5440.0,
+        "end_s": 6330.0,
+        "duration_s": 890.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 8320.0,
+        "end_s": 9230.0,
+        "duration_s": 910.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 11200.0,
+        "end_s": 12120.0,
+        "duration_s": 920.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 14080.0,
+        "end_s": 15020.0,
+        "duration_s": 940.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 16960.0,
+        "end_s": 17910.0,
+        "duration_s": 950.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 19860.0,
+        "end_s": 20670.0,
+        "duration_s": 810.0,
+        "left_censored": false,
+        "right_censored": true,
+        "source_sat_id": 1,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 240.0,
+        "duration_s": 240.0,
+        "left_censored": true,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 2290.0,
+        "end_s": 3120.0,
+        "duration_s": 830.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 5190.0,
+        "end_s": 6000.0,
+        "duration_s": 810.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 8100.0,
+        "end_s": 8880.0,
+        "duration_s": 780.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 11020.0,
+        "end_s": 11740.0,
+        "duration_s": 720.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 13930.0,
+        "end_s": 14620.0,
+        "duration_s": 690.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 16850.0,
+        "end_s": 17480.0,
+        "duration_s": 630.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 19780.0,
+        "end_s": 20340.0,
+        "duration_s": 560.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 1,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 20670.0,
+        "duration_s": 20670.0,
+        "left_censored": true,
+        "right_censored": true,
+        "source_sat_id": 2,
+        "peer_sat_id": 3
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 20670.0,
+        "duration_s": 20670.0,
+        "left_censored": true,
+        "right_censored": true,
+        "source_sat_id": 2,
+        "peer_sat_id": 12
+      },
+      {
+        "start_s": 1650.0,
+        "end_s": 2560.0,
+        "duration_s": 910.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 2,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 4520.0,
+        "end_s": 5440.0,
+        "duration_s": 920.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 2,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 7380.0,
+        "end_s": 8320.0,
+        "duration_s": 940.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 2,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 10250.0,
+        "end_s": 11200.0,
+        "duration_s": 950.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 2,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 13120.0,
+        "end_s": 14080.0,
+        "duration_s": 960.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 2,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 15990.0,
+        "end_s": 16960.0,
+        "duration_s": 970.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 2,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 18850.0,
+        "end_s": 19840.0,
+        "duration_s": 990.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 2,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 1340.0,
+        "end_s": 2410.0,
+        "duration_s": 1070.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 2,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 4210.0,
+        "end_s": 5280.0,
+        "duration_s": 1070.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 2,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 7080.0,
+        "end_s": 8140.0,
+        "duration_s": 1060.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 2,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 9950.0,
+        "end_s": 11010.0,
+        "duration_s": 1060.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 2,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 12810.0,
+        "end_s": 13880.0,
+        "duration_s": 1070.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 2,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 15680.0,
+        "end_s": 16750.0,
+        "duration_s": 1070.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 2,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 18550.0,
+        "end_s": 19620.0,
+        "duration_s": 1070.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 2,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 1590.0,
+        "end_s": 1650.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 2,
+        "peer_sat_id": 23
+      },
+      {
+        "start_s": 4450.0,
+        "end_s": 4520.0,
+        "duration_s": 70.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 2,
+        "peer_sat_id": 23
+      },
+      {
+        "start_s": 7320.0,
+        "end_s": 7380.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 2,
+        "peer_sat_id": 23
+      },
+      {
+        "start_s": 10190.0,
+        "end_s": 10250.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 2,
+        "peer_sat_id": 23
+      },
+      {
+        "start_s": 13060.0,
+        "end_s": 13120.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 2,
+        "peer_sat_id": 23
+      },
+      {
+        "start_s": 15920.0,
+        "end_s": 15990.0,
+        "duration_s": 70.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 2,
+        "peer_sat_id": 23
+      },
+      {
+        "start_s": 18790.0,
+        "end_s": 18850.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 2,
+        "peer_sat_id": 23
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 20670.0,
+        "duration_s": 20670.0,
+        "left_censored": true,
+        "right_censored": true,
+        "source_sat_id": 3,
+        "peer_sat_id": 4
+      },
+      {
+        "start_s": 1060.0,
+        "end_s": 1120.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 3,
+        "peer_sat_id": 13
+      },
+      {
+        "start_s": 3930.0,
+        "end_s": 3990.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 3,
+        "peer_sat_id": 13
+      },
+      {
+        "start_s": 6800.0,
+        "end_s": 6860.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 3,
+        "peer_sat_id": 13
+      },
+      {
+        "start_s": 9660.0,
+        "end_s": 9730.0,
+        "duration_s": 70.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 3,
+        "peer_sat_id": 13
+      },
+      {
+        "start_s": 12540.0,
+        "end_s": 12600.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 3,
+        "peer_sat_id": 13
+      },
+      {
+        "start_s": 15400.0,
+        "end_s": 15470.0,
+        "duration_s": 70.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 3,
+        "peer_sat_id": 13
+      },
+      {
+        "start_s": 18270.0,
+        "end_s": 18330.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 3,
+        "peer_sat_id": 13
+      },
+      {
+        "start_s": 1120.0,
+        "end_s": 2110.0,
+        "duration_s": 990.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 3,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 3990.0,
+        "end_s": 4970.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 3,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 6860.0,
+        "end_s": 7840.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 3,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 9730.0,
+        "end_s": 10710.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 3,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 12600.0,
+        "end_s": 13580.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 3,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 15470.0,
+        "end_s": 16440.0,
+        "duration_s": 970.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 3,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 18330.0,
+        "end_s": 19310.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 3,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 820.0,
+        "end_s": 1890.0,
+        "duration_s": 1070.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 3,
+        "peer_sat_id": 23
+      },
+      {
+        "start_s": 3690.0,
+        "end_s": 4750.0,
+        "duration_s": 1060.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 3,
+        "peer_sat_id": 23
+      },
+      {
+        "start_s": 6560.0,
+        "end_s": 7620.0,
+        "duration_s": 1060.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 3,
+        "peer_sat_id": 23
+      },
+      {
+        "start_s": 9430.0,
+        "end_s": 10490.0,
+        "duration_s": 1060.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 3,
+        "peer_sat_id": 23
+      },
+      {
+        "start_s": 12290.0,
+        "end_s": 13360.0,
+        "duration_s": 1070.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 3,
+        "peer_sat_id": 23
+      },
+      {
+        "start_s": 15160.0,
+        "end_s": 16230.0,
+        "duration_s": 1070.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 3,
+        "peer_sat_id": 23
+      },
+      {
+        "start_s": 18030.0,
+        "end_s": 19090.0,
+        "duration_s": 1060.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 3,
+        "peer_sat_id": 23
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 20670.0,
+        "duration_s": 20670.0,
+        "left_censored": true,
+        "right_censored": true,
+        "source_sat_id": 4,
+        "peer_sat_id": 5
+      },
+      {
+        "start_s": 300.0,
+        "end_s": 1370.0,
+        "duration_s": 1070.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 4,
+        "peer_sat_id": 13
+      },
+      {
+        "start_s": 3170.0,
+        "end_s": 4230.0,
+        "duration_s": 1060.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 4,
+        "peer_sat_id": 13
+      },
+      {
+        "start_s": 6040.0,
+        "end_s": 7100.0,
+        "duration_s": 1060.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 4,
+        "peer_sat_id": 13
+      },
+      {
+        "start_s": 8900.0,
+        "end_s": 9970.0,
+        "duration_s": 1070.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 4,
+        "peer_sat_id": 13
+      },
+      {
+        "start_s": 11770.0,
+        "end_s": 12840.0,
+        "duration_s": 1070.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 4,
+        "peer_sat_id": 13
+      },
+      {
+        "start_s": 14640.0,
+        "end_s": 15700.0,
+        "duration_s": 1060.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 4,
+        "peer_sat_id": 13
+      },
+      {
+        "start_s": 17510.0,
+        "end_s": 18570.0,
+        "duration_s": 1060.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 4,
+        "peer_sat_id": 13
+      },
+      {
+        "start_s": 20380.0,
+        "end_s": 20670.0,
+        "duration_s": 290.0,
+        "left_censored": false,
+        "right_censored": true,
+        "source_sat_id": 4,
+        "peer_sat_id": 13
+      },
+      {
+        "start_s": 540.0,
+        "end_s": 600.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 4,
+        "peer_sat_id": 14
+      },
+      {
+        "start_s": 3410.0,
+        "end_s": 3470.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 4,
+        "peer_sat_id": 14
+      },
+      {
+        "start_s": 6280.0,
+        "end_s": 6340.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 4,
+        "peer_sat_id": 14
+      },
+      {
+        "start_s": 9140.0,
+        "end_s": 9210.0,
+        "duration_s": 70.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 4,
+        "peer_sat_id": 14
+      },
+      {
+        "start_s": 12010.0,
+        "end_s": 12070.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 4,
+        "peer_sat_id": 14
+      },
+      {
+        "start_s": 14880.0,
+        "end_s": 14950.0,
+        "duration_s": 70.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 4,
+        "peer_sat_id": 14
+      },
+      {
+        "start_s": 17750.0,
+        "end_s": 17810.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 4,
+        "peer_sat_id": 14
+      },
+      {
+        "start_s": 20610.0,
+        "end_s": 20670.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": true,
+        "source_sat_id": 4,
+        "peer_sat_id": 14
+      },
+      {
+        "start_s": 600.0,
+        "end_s": 1590.0,
+        "duration_s": 990.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 4,
+        "peer_sat_id": 23
+      },
+      {
+        "start_s": 3470.0,
+        "end_s": 4450.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 4,
+        "peer_sat_id": 23
+      },
+      {
+        "start_s": 6340.0,
+        "end_s": 7320.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 4,
+        "peer_sat_id": 23
+      },
+      {
+        "start_s": 9210.0,
+        "end_s": 10190.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 4,
+        "peer_sat_id": 23
+      },
+      {
+        "start_s": 12070.0,
+        "end_s": 13060.0,
+        "duration_s": 990.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 4,
+        "peer_sat_id": 23
+      },
+      {
+        "start_s": 14950.0,
+        "end_s": 15920.0,
+        "duration_s": 970.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 4,
+        "peer_sat_id": 23
+      },
+      {
+        "start_s": 17810.0,
+        "end_s": 18790.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 4,
+        "peer_sat_id": 23
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 20670.0,
+        "duration_s": 20670.0,
+        "left_censored": true,
+        "right_censored": true,
+        "source_sat_id": 5,
+        "peer_sat_id": 6
+      },
+      {
+        "start_s": 80.0,
+        "end_s": 1060.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 5,
+        "peer_sat_id": 13
+      },
+      {
+        "start_s": 2950.0,
+        "end_s": 3930.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 5,
+        "peer_sat_id": 13
+      },
+      {
+        "start_s": 5820.0,
+        "end_s": 6800.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 5,
+        "peer_sat_id": 13
+      },
+      {
+        "start_s": 8690.0,
+        "end_s": 9660.0,
+        "duration_s": 970.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 5,
+        "peer_sat_id": 13
+      },
+      {
+        "start_s": 11550.0,
+        "end_s": 12540.0,
+        "duration_s": 990.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 5,
+        "peer_sat_id": 13
+      },
+      {
+        "start_s": 14420.0,
+        "end_s": 15400.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 5,
+        "peer_sat_id": 13
+      },
+      {
+        "start_s": 17290.0,
+        "end_s": 18270.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 5,
+        "peer_sat_id": 13
+      },
+      {
+        "start_s": 20160.0,
+        "end_s": 20670.0,
+        "duration_s": 510.0,
+        "left_censored": false,
+        "right_censored": true,
+        "source_sat_id": 5,
+        "peer_sat_id": 13
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 840.0,
+        "duration_s": 840.0,
+        "left_censored": true,
+        "right_censored": false,
+        "source_sat_id": 5,
+        "peer_sat_id": 14
+      },
+      {
+        "start_s": 2650.0,
+        "end_s": 3710.0,
+        "duration_s": 1060.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 5,
+        "peer_sat_id": 14
+      },
+      {
+        "start_s": 5510.0,
+        "end_s": 6580.0,
+        "duration_s": 1070.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 5,
+        "peer_sat_id": 14
+      },
+      {
+        "start_s": 8380.0,
+        "end_s": 9450.0,
+        "duration_s": 1070.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 5,
+        "peer_sat_id": 14
+      },
+      {
+        "start_s": 11250.0,
+        "end_s": 12320.0,
+        "duration_s": 1070.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 5,
+        "peer_sat_id": 14
+      },
+      {
+        "start_s": 14120.0,
+        "end_s": 15180.0,
+        "duration_s": 1060.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 5,
+        "peer_sat_id": 14
+      },
+      {
+        "start_s": 16990.0,
+        "end_s": 18050.0,
+        "duration_s": 1060.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 5,
+        "peer_sat_id": 14
+      },
+      {
+        "start_s": 19850.0,
+        "end_s": 20670.0,
+        "duration_s": 820.0,
+        "left_censored": false,
+        "right_censored": true,
+        "source_sat_id": 5,
+        "peer_sat_id": 14
+      },
+      {
+        "start_s": 20.0,
+        "end_s": 80.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 5,
+        "peer_sat_id": 15
+      },
+      {
+        "start_s": 2890.0,
+        "end_s": 2950.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 5,
+        "peer_sat_id": 15
+      },
+      {
+        "start_s": 5760.0,
+        "end_s": 5820.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 5,
+        "peer_sat_id": 15
+      },
+      {
+        "start_s": 8620.0,
+        "end_s": 8690.0,
+        "duration_s": 70.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 5,
+        "peer_sat_id": 15
+      },
+      {
+        "start_s": 11490.0,
+        "end_s": 11550.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 5,
+        "peer_sat_id": 15
+      },
+      {
+        "start_s": 14360.0,
+        "end_s": 14420.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 5,
+        "peer_sat_id": 15
+      },
+      {
+        "start_s": 17230.0,
+        "end_s": 17290.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 5,
+        "peer_sat_id": 15
+      },
+      {
+        "start_s": 20090.0,
+        "end_s": 20160.0,
+        "duration_s": 70.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 5,
+        "peer_sat_id": 15
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 20670.0,
+        "duration_s": 20670.0,
+        "left_censored": true,
+        "right_censored": true,
+        "source_sat_id": 6,
+        "peer_sat_id": 7
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 540.0,
+        "duration_s": 540.0,
+        "left_censored": true,
+        "right_censored": false,
+        "source_sat_id": 6,
+        "peer_sat_id": 14
+      },
+      {
+        "start_s": 2430.0,
+        "end_s": 3410.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 6,
+        "peer_sat_id": 14
+      },
+      {
+        "start_s": 5300.0,
+        "end_s": 6280.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 6,
+        "peer_sat_id": 14
+      },
+      {
+        "start_s": 8170.0,
+        "end_s": 9140.0,
+        "duration_s": 970.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 6,
+        "peer_sat_id": 14
+      },
+      {
+        "start_s": 11030.0,
+        "end_s": 12010.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 6,
+        "peer_sat_id": 14
+      },
+      {
+        "start_s": 13900.0,
+        "end_s": 14880.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 6,
+        "peer_sat_id": 14
+      },
+      {
+        "start_s": 16770.0,
+        "end_s": 17750.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 6,
+        "peer_sat_id": 14
+      },
+      {
+        "start_s": 19640.0,
+        "end_s": 20610.0,
+        "duration_s": 970.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 6,
+        "peer_sat_id": 14
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 320.0,
+        "duration_s": 320.0,
+        "left_censored": true,
+        "right_censored": false,
+        "source_sat_id": 6,
+        "peer_sat_id": 15
+      },
+      {
+        "start_s": 2130.0,
+        "end_s": 3190.0,
+        "duration_s": 1060.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 6,
+        "peer_sat_id": 15
+      },
+      {
+        "start_s": 4990.0,
+        "end_s": 6060.0,
+        "duration_s": 1070.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 6,
+        "peer_sat_id": 15
+      },
+      {
+        "start_s": 7860.0,
+        "end_s": 8930.0,
+        "duration_s": 1070.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 6,
+        "peer_sat_id": 15
+      },
+      {
+        "start_s": 10730.0,
+        "end_s": 11790.0,
+        "duration_s": 1060.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 6,
+        "peer_sat_id": 15
+      },
+      {
+        "start_s": 13600.0,
+        "end_s": 14660.0,
+        "duration_s": 1060.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 6,
+        "peer_sat_id": 15
+      },
+      {
+        "start_s": 16460.0,
+        "end_s": 17530.0,
+        "duration_s": 1070.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 6,
+        "peer_sat_id": 15
+      },
+      {
+        "start_s": 19330.0,
+        "end_s": 20400.0,
+        "duration_s": 1070.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 6,
+        "peer_sat_id": 15
+      },
+      {
+        "start_s": 2360.0,
+        "end_s": 2430.0,
+        "duration_s": 70.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 6,
+        "peer_sat_id": 16
+      },
+      {
+        "start_s": 5240.0,
+        "end_s": 5300.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 6,
+        "peer_sat_id": 16
+      },
+      {
+        "start_s": 8100.0,
+        "end_s": 8170.0,
+        "duration_s": 70.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 6,
+        "peer_sat_id": 16
+      },
+      {
+        "start_s": 10970.0,
+        "end_s": 11030.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 6,
+        "peer_sat_id": 16
+      },
+      {
+        "start_s": 13840.0,
+        "end_s": 13900.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 6,
+        "peer_sat_id": 16
+      },
+      {
+        "start_s": 16710.0,
+        "end_s": 16770.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 6,
+        "peer_sat_id": 16
+      },
+      {
+        "start_s": 19570.0,
+        "end_s": 19640.0,
+        "duration_s": 70.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 6,
+        "peer_sat_id": 16
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 20670.0,
+        "duration_s": 20670.0,
+        "left_censored": true,
+        "right_censored": true,
+        "source_sat_id": 7,
+        "peer_sat_id": 8
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 20.0,
+        "duration_s": 20.0,
+        "left_censored": true,
+        "right_censored": false,
+        "source_sat_id": 7,
+        "peer_sat_id": 15
+      },
+      {
+        "start_s": 1910.0,
+        "end_s": 2890.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 7,
+        "peer_sat_id": 15
+      },
+      {
+        "start_s": 4770.0,
+        "end_s": 5760.0,
+        "duration_s": 990.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 7,
+        "peer_sat_id": 15
+      },
+      {
+        "start_s": 7640.0,
+        "end_s": 8620.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 7,
+        "peer_sat_id": 15
+      },
+      {
+        "start_s": 10510.0,
+        "end_s": 11490.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 7,
+        "peer_sat_id": 15
+      },
+      {
+        "start_s": 13380.0,
+        "end_s": 14360.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 7,
+        "peer_sat_id": 15
+      },
+      {
+        "start_s": 16250.0,
+        "end_s": 17230.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 7,
+        "peer_sat_id": 15
+      },
+      {
+        "start_s": 19120.0,
+        "end_s": 20090.0,
+        "duration_s": 970.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 7,
+        "peer_sat_id": 15
+      },
+      {
+        "start_s": 1600.0,
+        "end_s": 2670.0,
+        "duration_s": 1070.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 7,
+        "peer_sat_id": 16
+      },
+      {
+        "start_s": 4470.0,
+        "end_s": 5540.0,
+        "duration_s": 1070.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 7,
+        "peer_sat_id": 16
+      },
+      {
+        "start_s": 7340.0,
+        "end_s": 8400.0,
+        "duration_s": 1060.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 7,
+        "peer_sat_id": 16
+      },
+      {
+        "start_s": 10210.0,
+        "end_s": 11270.0,
+        "duration_s": 1060.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 7,
+        "peer_sat_id": 16
+      },
+      {
+        "start_s": 13080.0,
+        "end_s": 14140.0,
+        "duration_s": 1060.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 7,
+        "peer_sat_id": 16
+      },
+      {
+        "start_s": 15940.0,
+        "end_s": 17010.0,
+        "duration_s": 1070.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 7,
+        "peer_sat_id": 16
+      },
+      {
+        "start_s": 18810.0,
+        "end_s": 19880.0,
+        "duration_s": 1070.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 7,
+        "peer_sat_id": 16
+      },
+      {
+        "start_s": 1840.0,
+        "end_s": 1910.0,
+        "duration_s": 70.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 7,
+        "peer_sat_id": 17
+      },
+      {
+        "start_s": 4710.0,
+        "end_s": 4770.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 7,
+        "peer_sat_id": 17
+      },
+      {
+        "start_s": 7580.0,
+        "end_s": 7640.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 7,
+        "peer_sat_id": 17
+      },
+      {
+        "start_s": 10450.0,
+        "end_s": 10510.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 7,
+        "peer_sat_id": 17
+      },
+      {
+        "start_s": 13310.0,
+        "end_s": 13380.0,
+        "duration_s": 70.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 7,
+        "peer_sat_id": 17
+      },
+      {
+        "start_s": 16190.0,
+        "end_s": 16250.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 7,
+        "peer_sat_id": 17
+      },
+      {
+        "start_s": 19050.0,
+        "end_s": 19120.0,
+        "duration_s": 70.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 7,
+        "peer_sat_id": 17
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 20670.0,
+        "duration_s": 20670.0,
+        "left_censored": true,
+        "right_censored": true,
+        "source_sat_id": 8,
+        "peer_sat_id": 9
+      },
+      {
+        "start_s": 1390.0,
+        "end_s": 2360.0,
+        "duration_s": 970.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 8,
+        "peer_sat_id": 16
+      },
+      {
+        "start_s": 4250.0,
+        "end_s": 5240.0,
+        "duration_s": 990.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 8,
+        "peer_sat_id": 16
+      },
+      {
+        "start_s": 7120.0,
+        "end_s": 8100.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 8,
+        "peer_sat_id": 16
+      },
+      {
+        "start_s": 9990.0,
+        "end_s": 10970.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 8,
+        "peer_sat_id": 16
+      },
+      {
+        "start_s": 12860.0,
+        "end_s": 13840.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 8,
+        "peer_sat_id": 16
+      },
+      {
+        "start_s": 15720.0,
+        "end_s": 16710.0,
+        "duration_s": 990.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 8,
+        "peer_sat_id": 16
+      },
+      {
+        "start_s": 18600.0,
+        "end_s": 19570.0,
+        "duration_s": 970.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 8,
+        "peer_sat_id": 16
+      },
+      {
+        "start_s": 1080.0,
+        "end_s": 2150.0,
+        "duration_s": 1070.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 8,
+        "peer_sat_id": 17
+      },
+      {
+        "start_s": 3950.0,
+        "end_s": 5020.0,
+        "duration_s": 1070.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 8,
+        "peer_sat_id": 17
+      },
+      {
+        "start_s": 6820.0,
+        "end_s": 7880.0,
+        "duration_s": 1060.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 8,
+        "peer_sat_id": 17
+      },
+      {
+        "start_s": 9690.0,
+        "end_s": 10750.0,
+        "duration_s": 1060.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 8,
+        "peer_sat_id": 17
+      },
+      {
+        "start_s": 12550.0,
+        "end_s": 13620.0,
+        "duration_s": 1070.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 8,
+        "peer_sat_id": 17
+      },
+      {
+        "start_s": 15420.0,
+        "end_s": 16490.0,
+        "duration_s": 1070.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 8,
+        "peer_sat_id": 17
+      },
+      {
+        "start_s": 18290.0,
+        "end_s": 19350.0,
+        "duration_s": 1060.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 8,
+        "peer_sat_id": 17
+      },
+      {
+        "start_s": 1320.0,
+        "end_s": 1390.0,
+        "duration_s": 70.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 8,
+        "peer_sat_id": 18
+      },
+      {
+        "start_s": 4190.0,
+        "end_s": 4250.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 8,
+        "peer_sat_id": 18
+      },
+      {
+        "start_s": 7060.0,
+        "end_s": 7120.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 8,
+        "peer_sat_id": 18
+      },
+      {
+        "start_s": 9930.0,
+        "end_s": 9990.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 8,
+        "peer_sat_id": 18
+      },
+      {
+        "start_s": 12790.0,
+        "end_s": 12860.0,
+        "duration_s": 70.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 8,
+        "peer_sat_id": 18
+      },
+      {
+        "start_s": 15660.0,
+        "end_s": 15720.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 8,
+        "peer_sat_id": 18
+      },
+      {
+        "start_s": 18530.0,
+        "end_s": 18600.0,
+        "duration_s": 70.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 8,
+        "peer_sat_id": 18
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 12450.0,
+        "duration_s": 12450.0,
+        "left_censored": true,
+        "right_censored": false,
+        "source_sat_id": 9,
+        "peer_sat_id": 10
+      },
+      {
+        "start_s": 12490.0,
+        "end_s": 18130.0,
+        "duration_s": 5640.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 9,
+        "peer_sat_id": 10
+      },
+      {
+        "start_s": 18230.0,
+        "end_s": 20670.0,
+        "duration_s": 2440.0,
+        "left_censored": false,
+        "right_censored": true,
+        "source_sat_id": 9,
+        "peer_sat_id": 10
+      },
+      {
+        "start_s": 870.0,
+        "end_s": 1840.0,
+        "duration_s": 970.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 9,
+        "peer_sat_id": 17
+      },
+      {
+        "start_s": 3730.0,
+        "end_s": 4710.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 9,
+        "peer_sat_id": 17
+      },
+      {
+        "start_s": 6600.0,
+        "end_s": 7580.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 9,
+        "peer_sat_id": 17
+      },
+      {
+        "start_s": 9460.0,
+        "end_s": 10450.0,
+        "duration_s": 990.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 9,
+        "peer_sat_id": 17
+      },
+      {
+        "start_s": 12330.0,
+        "end_s": 13310.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 9,
+        "peer_sat_id": 17
+      },
+      {
+        "start_s": 15200.0,
+        "end_s": 16190.0,
+        "duration_s": 990.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 9,
+        "peer_sat_id": 17
+      },
+      {
+        "start_s": 18070.0,
+        "end_s": 19050.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 9,
+        "peer_sat_id": 17
+      },
+      {
+        "start_s": 560.0,
+        "end_s": 1630.0,
+        "duration_s": 1070.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 9,
+        "peer_sat_id": 18
+      },
+      {
+        "start_s": 3430.0,
+        "end_s": 4490.0,
+        "duration_s": 1060.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 9,
+        "peer_sat_id": 18
+      },
+      {
+        "start_s": 6300.0,
+        "end_s": 7360.0,
+        "duration_s": 1060.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 9,
+        "peer_sat_id": 18
+      },
+      {
+        "start_s": 9160.0,
+        "end_s": 10230.0,
+        "duration_s": 1070.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 9,
+        "peer_sat_id": 18
+      },
+      {
+        "start_s": 12030.0,
+        "end_s": 13100.0,
+        "duration_s": 1070.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 9,
+        "peer_sat_id": 18
+      },
+      {
+        "start_s": 14900.0,
+        "end_s": 15970.0,
+        "duration_s": 1070.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 9,
+        "peer_sat_id": 18
+      },
+      {
+        "start_s": 17770.0,
+        "end_s": 18830.0,
+        "duration_s": 1060.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 9,
+        "peer_sat_id": 18
+      },
+      {
+        "start_s": 20640.0,
+        "end_s": 20670.0,
+        "duration_s": 30.0,
+        "left_censored": false,
+        "right_censored": true,
+        "source_sat_id": 9,
+        "peer_sat_id": 18
+      },
+      {
+        "start_s": 750.0,
+        "end_s": 870.0,
+        "duration_s": 120.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 9,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 3620.0,
+        "end_s": 3730.0,
+        "duration_s": 110.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 9,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 6480.0,
+        "end_s": 6520.0,
+        "duration_s": 40.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 9,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 6580.0,
+        "end_s": 6600.0,
+        "duration_s": 20.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 9,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 340.0,
+        "duration_s": 340.0,
+        "left_censored": true,
+        "right_censored": false,
+        "source_sat_id": 10,
+        "peer_sat_id": 11
+      },
+      {
+        "start_s": 500.0,
+        "end_s": 6120.0,
+        "duration_s": 5620.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 10,
+        "peer_sat_id": 11
+      },
+      {
+        "start_s": 6230.0,
+        "end_s": 11930.0,
+        "duration_s": 5700.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 10,
+        "peer_sat_id": 11
+      },
+      {
+        "start_s": 11970.0,
+        "end_s": 15280.0,
+        "duration_s": 3310.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 10,
+        "peer_sat_id": 11
+      },
+      {
+        "start_s": 15360.0,
+        "end_s": 20670.0,
+        "duration_s": 5310.0,
+        "left_censored": false,
+        "right_censored": true,
+        "source_sat_id": 10,
+        "peer_sat_id": 11
+      },
+      {
+        "start_s": 340.0,
+        "end_s": 1320.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 10,
+        "peer_sat_id": 18
+      },
+      {
+        "start_s": 3200.0,
+        "end_s": 4190.0,
+        "duration_s": 990.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 10,
+        "peer_sat_id": 18
+      },
+      {
+        "start_s": 6070.0,
+        "end_s": 7060.0,
+        "duration_s": 990.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 10,
+        "peer_sat_id": 18
+      },
+      {
+        "start_s": 8940.0,
+        "end_s": 9930.0,
+        "duration_s": 990.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 10,
+        "peer_sat_id": 18
+      },
+      {
+        "start_s": 11810.0,
+        "end_s": 12790.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 10,
+        "peer_sat_id": 18
+      },
+      {
+        "start_s": 14670.0,
+        "end_s": 15660.0,
+        "duration_s": 990.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 10,
+        "peer_sat_id": 18
+      },
+      {
+        "start_s": 17540.0,
+        "end_s": 18530.0,
+        "duration_s": 990.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 10,
+        "peer_sat_id": 18
+      },
+      {
+        "start_s": 20410.0,
+        "end_s": 20670.0,
+        "duration_s": 260.0,
+        "left_censored": false,
+        "right_censored": true,
+        "source_sat_id": 10,
+        "peer_sat_id": 18
+      },
+      {
+        "start_s": 40.0,
+        "end_s": 1080.0,
+        "duration_s": 1040.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 10,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 2910.0,
+        "end_s": 3930.0,
+        "duration_s": 1020.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 10,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 5780.0,
+        "end_s": 6770.0,
+        "duration_s": 990.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 10,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 8640.0,
+        "end_s": 9620.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 10,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 11510.0,
+        "end_s": 12490.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 10,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 14380.0,
+        "end_s": 15360.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 10,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 17250.0,
+        "end_s": 18230.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 10,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 20120.0,
+        "end_s": 20670.0,
+        "duration_s": 550.0,
+        "left_censored": false,
+        "right_censored": true,
+        "source_sat_id": 10,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 3230.0,
+        "duration_s": 3230.0,
+        "left_censored": true,
+        "right_censored": false,
+        "source_sat_id": 11,
+        "peer_sat_id": 12
+      },
+      {
+        "start_s": 3370.0,
+        "end_s": 9030.0,
+        "duration_s": 5660.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 11,
+        "peer_sat_id": 12
+      },
+      {
+        "start_s": 9100.0,
+        "end_s": 20670.0,
+        "duration_s": 11570.0,
+        "left_censored": false,
+        "right_censored": true,
+        "source_sat_id": 11,
+        "peer_sat_id": 12
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 730.0,
+        "duration_s": 730.0,
+        "left_censored": true,
+        "right_censored": false,
+        "source_sat_id": 11,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 2680.0,
+        "end_s": 3600.0,
+        "duration_s": 920.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 11,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 5550.0,
+        "end_s": 6460.0,
+        "duration_s": 910.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 11,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 8420.0,
+        "end_s": 9320.0,
+        "duration_s": 900.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 11,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 11290.0,
+        "end_s": 12190.0,
+        "duration_s": 900.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 11,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 14150.0,
+        "end_s": 15060.0,
+        "duration_s": 910.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 11,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 17020.0,
+        "end_s": 17930.0,
+        "duration_s": 910.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 11,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 19890.0,
+        "end_s": 20670.0,
+        "duration_s": 780.0,
+        "left_censored": false,
+        "right_censored": true,
+        "source_sat_id": 11,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 500.0,
+        "duration_s": 500.0,
+        "left_censored": true,
+        "right_censored": false,
+        "source_sat_id": 11,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 2390.0,
+        "end_s": 3370.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 11,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 5250.0,
+        "end_s": 6230.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 11,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 8120.0,
+        "end_s": 9100.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 11,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 10990.0,
+        "end_s": 11970.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 11,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 13860.0,
+        "end_s": 14840.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 11,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 16730.0,
+        "end_s": 17710.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 11,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 19590.0,
+        "end_s": 20570.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 11,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 19840.0,
+        "end_s": 19860.0,
+        "duration_s": 20.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 11,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 200.0,
+        "duration_s": 200.0,
+        "left_censored": true,
+        "right_censored": false,
+        "source_sat_id": 12,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 2170.0,
+        "end_s": 3070.0,
+        "duration_s": 900.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 12,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 5040.0,
+        "end_s": 5930.0,
+        "duration_s": 890.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 12,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 7900.0,
+        "end_s": 8800.0,
+        "duration_s": 900.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 12,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 10770.0,
+        "end_s": 11670.0,
+        "duration_s": 900.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 12,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 13640.0,
+        "end_s": 14540.0,
+        "duration_s": 900.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 12,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 16510.0,
+        "end_s": 17400.0,
+        "duration_s": 890.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 12,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 19370.0,
+        "end_s": 20270.0,
+        "duration_s": 900.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 12,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 1860.0,
+        "end_s": 2840.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 12,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 4730.0,
+        "end_s": 5710.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 12,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 7600.0,
+        "end_s": 8580.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 12,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 10470.0,
+        "end_s": 11450.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 12,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 13340.0,
+        "end_s": 14320.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 12,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 16200.0,
+        "end_s": 17180.0,
+        "duration_s": 980.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 12,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 19070.0,
+        "end_s": 20060.0,
+        "duration_s": 990.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 12,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 2110.0,
+        "end_s": 2170.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 12,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 4970.0,
+        "end_s": 5040.0,
+        "duration_s": 70.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 12,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 7840.0,
+        "end_s": 7900.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 12,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 10710.0,
+        "end_s": 10770.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 12,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 13580.0,
+        "end_s": 13640.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 12,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 16440.0,
+        "end_s": 16510.0,
+        "duration_s": 70.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 12,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 19310.0,
+        "end_s": 19370.0,
+        "duration_s": 60.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 12,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 20670.0,
+        "duration_s": 20670.0,
+        "left_censored": true,
+        "right_censored": true,
+        "source_sat_id": 13,
+        "peer_sat_id": 14
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 20670.0,
+        "duration_s": 20670.0,
+        "left_censored": true,
+        "right_censored": true,
+        "source_sat_id": 13,
+        "peer_sat_id": 23
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 20670.0,
+        "duration_s": 20670.0,
+        "left_censored": true,
+        "right_censored": true,
+        "source_sat_id": 14,
+        "peer_sat_id": 15
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 20670.0,
+        "duration_s": 20670.0,
+        "left_censored": true,
+        "right_censored": true,
+        "source_sat_id": 15,
+        "peer_sat_id": 16
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 20670.0,
+        "duration_s": 20670.0,
+        "left_censored": true,
+        "right_censored": true,
+        "source_sat_id": 16,
+        "peer_sat_id": 17
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 20670.0,
+        "duration_s": 20670.0,
+        "left_censored": true,
+        "right_censored": true,
+        "source_sat_id": 17,
+        "peer_sat_id": 18
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 9250.0,
+        "duration_s": 9250.0,
+        "left_censored": true,
+        "right_censored": false,
+        "source_sat_id": 18,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 9320.0,
+        "end_s": 12070.0,
+        "duration_s": 2750.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 18,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 12190.0,
+        "end_s": 14920.0,
+        "duration_s": 2730.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 18,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 15060.0,
+        "end_s": 17780.0,
+        "duration_s": 2720.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 18,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 17930.0,
+        "end_s": 20650.0,
+        "duration_s": 2720.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 18,
+        "peer_sat_id": 19
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 60.0,
+        "duration_s": 60.0,
+        "left_censored": true,
+        "right_censored": false,
+        "source_sat_id": 19,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 200.0,
+        "end_s": 2940.0,
+        "duration_s": 2740.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 19,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 3070.0,
+        "end_s": 3150.0,
+        "duration_s": 80.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 19,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 3260.0,
+        "end_s": 5820.0,
+        "duration_s": 2560.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 19,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 5930.0,
+        "end_s": 5970.0,
+        "duration_s": 40.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 19,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 6230.0,
+        "end_s": 8700.0,
+        "duration_s": 2470.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 19,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 8800.0,
+        "end_s": 8810.0,
+        "duration_s": 10.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 19,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 8990.0,
+        "end_s": 11590.0,
+        "duration_s": 2600.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 19,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 11970.0,
+        "end_s": 14470.0,
+        "duration_s": 2500.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 19,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 14730.0,
+        "end_s": 17360.0,
+        "duration_s": 2630.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 19,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 17710.0,
+        "end_s": 20250.0,
+        "duration_s": 2540.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 19,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 20470.0,
+        "end_s": 20670.0,
+        "duration_s": 200.0,
+        "left_censored": false,
+        "right_censored": true,
+        "source_sat_id": 19,
+        "peer_sat_id": 20
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 2650.0,
+        "duration_s": 2650.0,
+        "left_censored": true,
+        "right_censored": false,
+        "source_sat_id": 20,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 2740.0,
+        "end_s": 3260.0,
+        "duration_s": 520.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 20,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 3320.0,
+        "end_s": 5540.0,
+        "duration_s": 2220.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 20,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 5710.0,
+        "end_s": 8440.0,
+        "duration_s": 2730.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 20,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 8480.0,
+        "end_s": 8990.0,
+        "duration_s": 510.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 20,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 9100.0,
+        "end_s": 11340.0,
+        "duration_s": 2240.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 20,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 11450.0,
+        "end_s": 14530.0,
+        "duration_s": 3080.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 20,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 14540.0,
+        "end_s": 14730.0,
+        "duration_s": 190.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 20,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 14840.0,
+        "end_s": 17150.0,
+        "duration_s": 2310.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 20,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 17180.0,
+        "end_s": 17390.0,
+        "duration_s": 210.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 20,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 17400.0,
+        "end_s": 20260.0,
+        "duration_s": 2860.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 20,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 20270.0,
+        "end_s": 20470.0,
+        "duration_s": 200.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 20,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 20570.0,
+        "end_s": 20670.0,
+        "duration_s": 100.0,
+        "left_censored": false,
+        "right_censored": true,
+        "source_sat_id": 20,
+        "peer_sat_id": 21
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 2740.0,
+        "duration_s": 2740.0,
+        "left_censored": true,
+        "right_censored": false,
+        "source_sat_id": 21,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 2840.0,
+        "end_s": 8480.0,
+        "duration_s": 5640.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 21,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 8580.0,
+        "end_s": 14250.0,
+        "duration_s": 5670.0,
+        "left_censored": false,
+        "right_censored": false,
+        "source_sat_id": 21,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 14320.0,
+        "end_s": 20670.0,
+        "duration_s": 6350.0,
+        "left_censored": false,
+        "right_censored": true,
+        "source_sat_id": 21,
+        "peer_sat_id": 22
+      },
+      {
+        "start_s": 0.0,
+        "end_s": 20670.0,
+        "duration_s": 20670.0,
+        "left_censored": true,
+        "right_censored": true,
+        "source_sat_id": 22,
+        "peer_sat_id": 23
+      }
+    ]
+  },
+  "ground_stations": [
+    {
+      "station": {
+        "id": "gs_beijing",
+        "lat_deg": 39.9042,
+        "lon_deg": 116.4074,
+        "alt_m": 50,
+        "min_elevation_deg": 15,
+        "bandwidth_mbps": 1200,
+        "receive_channels": 1,
+        "compute_rate": 3.2396827056638866
+      },
+      "summary": {
+        "all_observed_duration_s": {
+          "count": 34,
+          "min": 50.0,
+          "p10": 136.0,
+          "median": 280.0,
+          "p90": 397.0,
+          "p95": 403.5,
+          "max": 410.0
+        },
+        "complete_duration_s": {
+          "count": 32,
+          "min": 50.0,
+          "p10": 132.0,
+          "median": 290.0,
+          "p90": 399.0,
+          "p95": 404.5,
+          "max": 410.0
+        },
+        "left_censored_count": 1,
+        "right_censored_count": 1,
+        "fit_if_entire_window_uncontended": {
+          "one_max_packet": {
+            "serialization_s": 0.07689557333333334,
+            "complete_window_fraction": 1.0,
+            "fraction_after_two_sample_margin": 1.0
+          },
+          "all_image_packets": {
+            "serialization_s": 22.189178880000004,
+            "complete_window_fraction": 1.0,
+            "fraction_after_two_sample_margin": 1.0
+          },
+          "whole_unique_image": {
+            "serialization_s": 14.259951859999997,
+            "complete_window_fraction": 1.0,
+            "fraction_after_two_sample_margin": 1.0
+          }
+        }
+      },
+      "windows": [
+        {
+          "start_s": 3700.0,
+          "end_s": 4070.0,
+          "duration_s": 370.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 2,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 55500.0
+        },
+        {
+          "start_s": 9890.0,
+          "end_s": 9940.0,
+          "duration_s": 50.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 2,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 7500.0
+        },
+        {
+          "start_s": 3150.0,
+          "end_s": 3530.0,
+          "duration_s": 380.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 3,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 57000.0
+        },
+        {
+          "start_s": 9310.0,
+          "end_s": 9420.0,
+          "duration_s": 110.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 3,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 16500.0
+        },
+        {
+          "start_s": 2600.0,
+          "end_s": 2990.0,
+          "duration_s": 390.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 4,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 58500.0
+        },
+        {
+          "start_s": 8740.0,
+          "end_s": 8890.0,
+          "duration_s": 150.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 4,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 22500.0
+        },
+        {
+          "start_s": 2050.0,
+          "end_s": 2450.0,
+          "duration_s": 400.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 5,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 60000.0
+        },
+        {
+          "start_s": 8170.0,
+          "end_s": 8360.0,
+          "duration_s": 190.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 5,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 28500.0
+        },
+        {
+          "start_s": 20220.0,
+          "end_s": 20520.0,
+          "duration_s": 300.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 5,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 45000.0
+        },
+        {
+          "start_s": 1510.0,
+          "end_s": 1910.0,
+          "duration_s": 400.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 6,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 60000.0
+        },
+        {
+          "start_s": 7610.0,
+          "end_s": 7830.0,
+          "duration_s": 220.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 6,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 33000.0
+        },
+        {
+          "start_s": 19680.0,
+          "end_s": 19960.0,
+          "duration_s": 280.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 6,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 42000.0
+        },
+        {
+          "start_s": 960.0,
+          "end_s": 1370.0,
+          "duration_s": 410.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 7,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 61500.0
+        },
+        {
+          "start_s": 7050.0,
+          "end_s": 7290.0,
+          "duration_s": 240.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 7,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 36000.0
+        },
+        {
+          "start_s": 19140.0,
+          "end_s": 19400.0,
+          "duration_s": 260.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 7,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 39000.0
+        },
+        {
+          "start_s": 420.0,
+          "end_s": 830.0,
+          "duration_s": 410.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 8,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 61500.0
+        },
+        {
+          "start_s": 6480.0,
+          "end_s": 6760.0,
+          "duration_s": 280.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 8,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 42000.0
+        },
+        {
+          "start_s": 18610.0,
+          "end_s": 18840.0,
+          "duration_s": 230.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 8,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 34500.0
+        },
+        {
+          "start_s": 0.0,
+          "end_s": 280.0,
+          "duration_s": 280.0,
+          "left_censored": true,
+          "right_censored": false,
+          "sat_id": 9,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 42000.0
+        },
+        {
+          "start_s": 5920.0,
+          "end_s": 6220.0,
+          "duration_s": 300.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 9,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 45000.0
+        },
+        {
+          "start_s": 18080.0,
+          "end_s": 18280.0,
+          "duration_s": 200.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 9,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 30000.0
+        },
+        {
+          "start_s": 5370.0,
+          "end_s": 5690.0,
+          "duration_s": 320.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 10,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 48000.0
+        },
+        {
+          "start_s": 17540.0,
+          "end_s": 17710.0,
+          "duration_s": 170.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 10,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 25500.0
+        },
+        {
+          "start_s": 4810.0,
+          "end_s": 5150.0,
+          "duration_s": 340.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 11,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 51000.0
+        },
+        {
+          "start_s": 17010.0,
+          "end_s": 17140.0,
+          "duration_s": 130.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 11,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 19500.0
+        },
+        {
+          "start_s": 4260.0,
+          "end_s": 4610.0,
+          "duration_s": 350.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 12,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 52500.0
+        },
+        {
+          "start_s": 16490.0,
+          "end_s": 16570.0,
+          "duration_s": 80.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 12,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 12000.0
+        },
+        {
+          "start_s": 20460.0,
+          "end_s": 20670.0,
+          "duration_s": 210.0,
+          "left_censored": false,
+          "right_censored": true,
+          "sat_id": 13,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 31500.0
+        },
+        {
+          "start_s": 19920.0,
+          "end_s": 20300.0,
+          "duration_s": 380.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 14,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 57000.0
+        },
+        {
+          "start_s": 19390.0,
+          "end_s": 19750.0,
+          "duration_s": 360.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 15,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 54000.0
+        },
+        {
+          "start_s": 18870.0,
+          "end_s": 19190.0,
+          "duration_s": 320.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 16,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 48000.0
+        },
+        {
+          "start_s": 18340.0,
+          "end_s": 18640.0,
+          "duration_s": 300.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 17,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 45000.0
+        },
+        {
+          "start_s": 17830.0,
+          "end_s": 18070.0,
+          "duration_s": 240.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 18,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 36000.0
+        },
+        {
+          "start_s": 17330.0,
+          "end_s": 17500.0,
+          "duration_s": 170.0,
+          "left_censored": false,
+          "right_censored": false,
+          "sat_id": 19,
+          "gs_id": "gs_beijing",
+          "uncontended_capacity_mb": 25500.0
+        }
+      ],
+      "visibility_union_windows": [
+        {
+          "start_s": 0.0,
+          "end_s": 280.0,
+          "duration_s": 280.0,
+          "left_censored": true,
+          "right_censored": false
+        },
+        {
+          "start_s": 420.0,
+          "end_s": 830.0,
+          "duration_s": 410.0,
+          "left_censored": false,
+          "right_censored": false
+        },
+        {
+          "start_s": 960.0,
+          "end_s": 1370.0,
+          "duration_s": 410.0,
+          "left_censored": false,
+          "right_censored": false
+        },
+        {
+          "start_s": 1510.0,
+          "end_s": 1910.0,
+          "duration_s": 400.0,
+          "left_censored": false,
+          "right_censored": false
+        },
+        {
+          "start_s": 2050.0,
+          "end_s": 2450.0,
+          "duration_s": 400.0,
+          "left_censored": false,
+          "right_censored": false
+        },
+        {
+          "start_s": 2600.0,
+          "end_s": 2990.0,
+          "duration_s": 390.0,
+          "left_censored": false,
+          "right_censored": false
+        },
+        {
+          "start_s": 3150.0,
+          "end_s": 3530.0,
+          "duration_s": 380.0,
+          "left_censored": false,
+          "right_censored": false
+        },
+        {
+          "start_s": 3700.0,
+          "end_s": 4070.0,
+          "duration_s": 370.0,
+          "left_censored": false,
+          "right_censored": false
+        },
+        {
+          "start_s": 4260.0,
+          "end_s": 4610.0,
+          "duration_s": 350.0,
+          "left_censored": false,
+          "right_censored": false
+        },
+        {
+          "start_s": 4810.0,
+          "end_s": 5150.0,
+          "duration_s": 340.0,
+          "left_censored": false,
+          "right_censored": false
+        },
+        {
+          "start_s": 5370.0,
+          "end_s": 5690.0,
+          "duration_s": 320.0,
+          "left_censored": false,
+          "right_censored": false
+        },
+        {
+          "start_s": 5920.0,
+          "end_s": 6220.0,
+          "duration_s": 300.0,
+          "left_censored": false,
+          "right_censored": false
+        },
+        {
+          "start_s": 6480.0,
+          "end_s": 6760.0,
+          "duration_s": 280.0,
+          "left_censored": false,
+          "right_censored": false
+        },
+        {
+          "start_s": 7050.0,
+          "end_s": 7290.0,
+          "duration_s": 240.0,
+          "left_censored": false,
+          "right_censored": false
+        },
+        {
+          "start_s": 7610.0,
+          "end_s": 7830.0,
+          "duration_s": 220.0,
+          "left_censored": false,
+          "right_censored": false
+        },
+        {
+          "start_s": 8170.0,
+          "end_s": 8360.0,
+          "duration_s": 190.0,
+          "left_censored": false,
+          "right_censored": false
+        },
+        {
+          "start_s": 8740.0,
+          "end_s": 8890.0,
+          "duration_s": 150.0,
+          "left_censored": false,
+          "right_censored": false
+        },
+        {
+          "start_s": 9310.0,
+          "end_s": 9420.0,
+          "duration_s": 110.0,
+          "left_censored": false,
+          "right_censored": false
+        },
+        {
+          "start_s": 9890.0,
+          "end_s": 9940.0,
+          "duration_s": 50.0,
+          "left_censored": false,
+          "right_censored": false
+        },
+        {
+          "start_s": 16490.0,
+          "end_s": 16570.0,
+          "duration_s": 80.0,
+          "left_censored": false,
+          "right_censored": false
+        },
+        {
+          "start_s": 17010.0,
+          "end_s": 17140.0,
+          "duration_s": 130.0,
+          "left_censored": false,
+          "right_censored": false
+        },
+        {
+          "start_s": 17330.0,
+          "end_s": 17500.0,
+          "duration_s": 170.0,
+          "left_censored": false,
+          "right_censored": false
+        },
+        {
+          "start_s": 17540.0,
+          "end_s": 17710.0,
+          "duration_s": 170.0,
+          "left_censored": false,
+          "right_censored": false
+        },
+        {
+          "start_s": 17830.0,
+          "end_s": 18070.0,
+          "duration_s": 240.0,
+          "left_censored": false,
+          "right_censored": false
+        },
+        {
+          "start_s": 18080.0,
+          "end_s": 18280.0,
+          "duration_s": 200.0,
+          "left_censored": false,
+          "right_censored": false
+        },
+        {
+          "start_s": 18340.0,
+          "end_s": 18840.0,
+          "duration_s": 500.0,
+          "left_censored": false,
+          "right_censored": false
+        },
+        {
+          "start_s": 18870.0,
+          "end_s": 20670.0,
+          "duration_s": 1800.0,
+          "left_censored": false,
+          "right_censored": true
+        }
+      ],
+      "visibility_union_s": 8880.0,
+      "receive_channel_capacity_upper_bound_mb": 1332000.0,
+      "sum_individual_link_window_capacity_mb": 1383000.0,
+      "simultaneously_visible_satellites_max": 2,
+      "first_direct_contact_s_by_satellite": {
+        "0": null,
+        "1": null,
+        "2": 3700.0,
+        "3": 3150.0,
+        "4": 2600.0,
+        "5": 2050.0,
+        "6": 1510.0,
+        "7": 960.0,
+        "8": 420.0,
+        "9": 0,
+        "10": 5370.0,
+        "11": 4810.0,
+        "12": 4260.0,
+        "13": 20460.0,
+        "14": 19920.0,
+        "15": 19390.0,
+        "16": 18870.0,
+        "17": 18340.0,
+        "18": 17830.0,
+        "19": 17330.0,
+        "20": null,
+        "21": null,
+        "22": null,
+        "23": null
+      }
+    }
+  ],
+  "relay_max_hops": 8,
+  "satellites": [
+    {
+      "sat_id": 0,
+      "first_any_isl_contact_s": 0,
+      "first_direct_ground_contact_s": null,
+      "first_current_network_ground_reach_s": 0,
+      "first_current_network_ground_reach_with_hop_limit_s": 0,
+      "zero_neighbor_fraction": 0.0,
+      "direct_ground_visible_fraction": 0.0,
+      "current_network_ground_reach_fraction": 0.39283986453797776
+    },
+    {
+      "sat_id": 1,
+      "first_any_isl_contact_s": 0,
+      "first_direct_ground_contact_s": null,
+      "first_current_network_ground_reach_s": 0,
+      "first_current_network_ground_reach_with_hop_limit_s": 0,
+      "zero_neighbor_fraction": 0.0,
+      "direct_ground_visible_fraction": 0.0,
+      "current_network_ground_reach_fraction": 0.39283986453797776
+    },
+    {
+      "sat_id": 2,
+      "first_any_isl_contact_s": 0,
+      "first_direct_ground_contact_s": 3700.0,
+      "first_current_network_ground_reach_s": 0,
+      "first_current_network_ground_reach_with_hop_limit_s": 0,
+      "zero_neighbor_fraction": 0.0,
+      "direct_ground_visible_fraction": 0.020319303338171262,
+      "current_network_ground_reach_fraction": 0.4296081277213353
+    },
+    {
+      "sat_id": 3,
+      "first_any_isl_contact_s": 0,
+      "first_direct_ground_contact_s": 3150.0,
+      "first_current_network_ground_reach_s": 0,
+      "first_current_network_ground_reach_with_hop_limit_s": 0,
+      "zero_neighbor_fraction": 0.0,
+      "direct_ground_visible_fraction": 0.02370585389453314,
+      "current_network_ground_reach_fraction": 0.4296081277213353
+    },
+    {
+      "sat_id": 4,
+      "first_any_isl_contact_s": 0,
+      "first_direct_ground_contact_s": 2600.0,
+      "first_current_network_ground_reach_s": 0,
+      "first_current_network_ground_reach_with_hop_limit_s": 0,
+      "zero_neighbor_fraction": 0.0,
+      "direct_ground_visible_fraction": 0.026124818577648767,
+      "current_network_ground_reach_fraction": 0.4296081277213353
+    },
+    {
+      "sat_id": 5,
+      "first_any_isl_contact_s": 0,
+      "first_direct_ground_contact_s": 2050.0,
+      "first_current_network_ground_reach_s": 0,
+      "first_current_network_ground_reach_with_hop_limit_s": 0,
+      "zero_neighbor_fraction": 0.0,
+      "direct_ground_visible_fraction": 0.043057571359458154,
+      "current_network_ground_reach_fraction": 0.4296081277213353
+    },
+    {
+      "sat_id": 6,
+      "first_any_isl_contact_s": 0,
+      "first_direct_ground_contact_s": 1510.0,
+      "first_current_network_ground_reach_s": 0,
+      "first_current_network_ground_reach_with_hop_limit_s": 0,
+      "zero_neighbor_fraction": 0.0,
+      "direct_ground_visible_fraction": 0.04354136429608128,
+      "current_network_ground_reach_fraction": 0.4296081277213353
+    },
+    {
+      "sat_id": 7,
+      "first_any_isl_contact_s": 0,
+      "first_direct_ground_contact_s": 960.0,
+      "first_current_network_ground_reach_s": 0,
+      "first_current_network_ground_reach_with_hop_limit_s": 0,
+      "zero_neighbor_fraction": 0.0,
+      "direct_ground_visible_fraction": 0.0440251572327044,
+      "current_network_ground_reach_fraction": 0.4296081277213353
+    },
+    {
+      "sat_id": 8,
+      "first_any_isl_contact_s": 0,
+      "first_direct_ground_contact_s": 420.0,
+      "first_current_network_ground_reach_s": 0,
+      "first_current_network_ground_reach_with_hop_limit_s": 0,
+      "zero_neighbor_fraction": 0.0,
+      "direct_ground_visible_fraction": 0.04450895016932753,
+      "current_network_ground_reach_fraction": 0.4296081277213353
+    },
+    {
+      "sat_id": 9,
+      "first_any_isl_contact_s": 0,
+      "first_direct_ground_contact_s": 0,
+      "first_current_network_ground_reach_s": 0,
+      "first_current_network_ground_reach_with_hop_limit_s": 0,
+      "zero_neighbor_fraction": 0.0,
+      "direct_ground_visible_fraction": 0.03773584905660377,
+      "current_network_ground_reach_fraction": 0.4296081277213353
+    },
+    {
+      "sat_id": 10,
+      "first_any_isl_contact_s": 0,
+      "first_direct_ground_contact_s": 5370.0,
+      "first_current_network_ground_reach_s": 0,
+      "first_current_network_ground_reach_with_hop_limit_s": 0,
+      "zero_neighbor_fraction": 0.0,
+      "direct_ground_visible_fraction": 0.02370585389453314,
+      "current_network_ground_reach_fraction": 0.4296081277213353
+    },
+    {
+      "sat_id": 11,
+      "first_any_isl_contact_s": 0,
+      "first_direct_ground_contact_s": 4810.0,
+      "first_current_network_ground_reach_s": 0,
+      "first_current_network_ground_reach_with_hop_limit_s": 0,
+      "zero_neighbor_fraction": 0.0,
+      "direct_ground_visible_fraction": 0.022738268021286888,
+      "current_network_ground_reach_fraction": 0.4296081277213353
+    },
+    {
+      "sat_id": 12,
+      "first_any_isl_contact_s": 0,
+      "first_direct_ground_contact_s": 4260.0,
+      "first_current_network_ground_reach_s": 0,
+      "first_current_network_ground_reach_with_hop_limit_s": 0,
+      "zero_neighbor_fraction": 0.0,
+      "direct_ground_visible_fraction": 0.02080309627479439,
+      "current_network_ground_reach_fraction": 0.4296081277213353
+    },
+    {
+      "sat_id": 13,
+      "first_any_isl_contact_s": 0,
+      "first_direct_ground_contact_s": 20460.0,
+      "first_current_network_ground_reach_s": 0,
+      "first_current_network_ground_reach_with_hop_limit_s": 0,
+      "zero_neighbor_fraction": 0.0,
+      "direct_ground_visible_fraction": 0.010159651669085631,
+      "current_network_ground_reach_fraction": 0.4296081277213353
+    },
+    {
+      "sat_id": 14,
+      "first_any_isl_contact_s": 0,
+      "first_direct_ground_contact_s": 19920.0,
+      "first_current_network_ground_reach_s": 0,
+      "first_current_network_ground_reach_with_hop_limit_s": 0,
+      "zero_neighbor_fraction": 0.0,
+      "direct_ground_visible_fraction": 0.018384131591678763,
+      "current_network_ground_reach_fraction": 0.4296081277213353
+    },
+    {
+      "sat_id": 15,
+      "first_any_isl_contact_s": 0,
+      "first_direct_ground_contact_s": 19390.0,
+      "first_current_network_ground_reach_s": 0,
+      "first_current_network_ground_reach_with_hop_limit_s": 0,
+      "zero_neighbor_fraction": 0.0,
+      "direct_ground_visible_fraction": 0.01741654571843251,
+      "current_network_ground_reach_fraction": 0.4296081277213353
+    },
+    {
+      "sat_id": 16,
+      "first_any_isl_contact_s": 0,
+      "first_direct_ground_contact_s": 18870.0,
+      "first_current_network_ground_reach_s": 0,
+      "first_current_network_ground_reach_with_hop_limit_s": 0,
+      "zero_neighbor_fraction": 0.0,
+      "direct_ground_visible_fraction": 0.015481373971940009,
+      "current_network_ground_reach_fraction": 0.4296081277213353
+    },
+    {
+      "sat_id": 17,
+      "first_any_isl_contact_s": 0,
+      "first_direct_ground_contact_s": 18340.0,
+      "first_current_network_ground_reach_s": 0,
+      "first_current_network_ground_reach_with_hop_limit_s": 0,
+      "zero_neighbor_fraction": 0.0,
+      "direct_ground_visible_fraction": 0.01451378809869376,
+      "current_network_ground_reach_fraction": 0.4296081277213353
+    },
+    {
+      "sat_id": 18,
+      "first_any_isl_contact_s": 0,
+      "first_direct_ground_contact_s": 17830.0,
+      "first_current_network_ground_reach_s": 0,
+      "first_current_network_ground_reach_with_hop_limit_s": 0,
+      "zero_neighbor_fraction": 0.0,
+      "direct_ground_visible_fraction": 0.011611030478955007,
+      "current_network_ground_reach_fraction": 0.4296081277213353
+    },
+    {
+      "sat_id": 19,
+      "first_any_isl_contact_s": 0,
+      "first_direct_ground_contact_s": 17330.0,
+      "first_current_network_ground_reach_s": 0,
+      "first_current_network_ground_reach_with_hop_limit_s": 0,
+      "zero_neighbor_fraction": 0.0,
+      "direct_ground_visible_fraction": 0.00822447992259313,
+      "current_network_ground_reach_fraction": 0.4296081277213353
+    },
+    {
+      "sat_id": 20,
+      "first_any_isl_contact_s": 0,
+      "first_direct_ground_contact_s": null,
+      "first_current_network_ground_reach_s": 0,
+      "first_current_network_ground_reach_with_hop_limit_s": 0,
+      "zero_neighbor_fraction": 0.0,
+      "direct_ground_visible_fraction": 0.0,
+      "current_network_ground_reach_fraction": 0.4296081277213353
+    },
+    {
+      "sat_id": 21,
+      "first_any_isl_contact_s": 0,
+      "first_direct_ground_contact_s": null,
+      "first_current_network_ground_reach_s": 0,
+      "first_current_network_ground_reach_with_hop_limit_s": 0,
+      "zero_neighbor_fraction": 0.0,
+      "direct_ground_visible_fraction": 0.0,
+      "current_network_ground_reach_fraction": 0.4296081277213353
+    },
+    {
+      "sat_id": 22,
+      "first_any_isl_contact_s": 0,
+      "first_direct_ground_contact_s": null,
+      "first_current_network_ground_reach_s": 0,
+      "first_current_network_ground_reach_with_hop_limit_s": 0,
+      "zero_neighbor_fraction": 0.0,
+      "direct_ground_visible_fraction": 0.0,
+      "current_network_ground_reach_fraction": 0.4296081277213353
+    },
+    {
+      "sat_id": 23,
+      "first_any_isl_contact_s": 0,
+      "first_direct_ground_contact_s": null,
+      "first_current_network_ground_reach_s": 0,
+      "first_current_network_ground_reach_with_hop_limit_s": 0,
+      "zero_neighbor_fraction": 0.0,
+      "direct_ground_visible_fraction": 0.0,
+      "current_network_ground_reach_fraction": 0.4296081277213353
+    }
+  ],
+  "acquisitions": [
+    {
+      "release_step": 120,
+      "release_s": 120.0,
+      "source_sat_id": 1,
+      "target_id": "appalachian_vegetation",
+      "next_direct_ground_contact_s": null,
+      "direct_wait_s": null,
+      "first_current_network_ground_reach_s": 120.0,
+      "current_network_wait_s": 0.0,
+      "first_current_network_ground_reach_with_hop_limit_s": 120.0,
+      "hop_limited_network_wait_s": 0.0,
+      "extended_geometry_next_direct_contact_s": 40730.0,
+      "extended_geometry_direct_wait_s": 40610.0,
+      "hops_at_first_bounded_opportunity": 5
+    },
+    {
+      "release_step": 150,
+      "release_s": 150.0,
+      "source_sat_id": 1,
+      "target_id": "appalachian_vegetation",
+      "next_direct_ground_contact_s": null,
+      "direct_wait_s": null,
+      "first_current_network_ground_reach_s": 150.0,
+      "current_network_wait_s": 0.0,
+      "first_current_network_ground_reach_with_hop_limit_s": 150.0,
+      "hop_limited_network_wait_s": 0.0,
+      "extended_geometry_next_direct_contact_s": 40730.0,
+      "extended_geometry_direct_wait_s": 40580.0,
+      "hops_at_first_bounded_opportunity": 5
+    },
+    {
+      "release_step": 180,
+      "release_s": 180.0,
+      "source_sat_id": 1,
+      "target_id": "appalachian_vegetation",
+      "next_direct_ground_contact_s": null,
+      "direct_wait_s": null,
+      "first_current_network_ground_reach_s": 180.0,
+      "current_network_wait_s": 0.0,
+      "first_current_network_ground_reach_with_hop_limit_s": 180.0,
+      "hop_limited_network_wait_s": 0.0,
+      "extended_geometry_next_direct_contact_s": 40730.0,
+      "extended_geometry_direct_wait_s": 40550.0,
+      "hops_at_first_bounded_opportunity": 4
+    },
+    {
+      "release_step": 260,
+      "release_s": 260.0,
+      "source_sat_id": 0,
+      "target_id": "corn_belt_agriculture",
+      "next_direct_ground_contact_s": null,
+      "direct_wait_s": null,
+      "first_current_network_ground_reach_s": 260.0,
+      "current_network_wait_s": 0.0,
+      "first_current_network_ground_reach_with_hop_limit_s": 260.0,
+      "hop_limited_network_wait_s": 0.0,
+      "extended_geometry_next_direct_contact_s": 35170.0,
+      "extended_geometry_direct_wait_s": 34910.0,
+      "hops_at_first_bounded_opportunity": 4
+    },
+    {
+      "release_step": 290,
+      "release_s": 290.0,
+      "source_sat_id": 0,
+      "target_id": "corn_belt_agriculture",
+      "next_direct_ground_contact_s": null,
+      "direct_wait_s": null,
+      "first_current_network_ground_reach_s": 420.0,
+      "current_network_wait_s": 130.0,
+      "first_current_network_ground_reach_with_hop_limit_s": 420.0,
+      "hop_limited_network_wait_s": 130.0,
+      "extended_geometry_next_direct_contact_s": 35170.0,
+      "extended_geometry_direct_wait_s": 34880.0,
+      "hops_at_first_bounded_opportunity": 5
+    },
+    {
+      "release_step": 320,
+      "release_s": 320.0,
+      "source_sat_id": 0,
+      "target_id": "corn_belt_agriculture",
+      "next_direct_ground_contact_s": null,
+      "direct_wait_s": null,
+      "first_current_network_ground_reach_s": 420.0,
+      "current_network_wait_s": 100.0,
+      "first_current_network_ground_reach_with_hop_limit_s": 420.0,
+      "hop_limited_network_wait_s": 100.0,
+      "extended_geometry_next_direct_contact_s": 35170.0,
+      "extended_geometry_direct_wait_s": 34850.0,
+      "hops_at_first_bounded_opportunity": 5
+    },
+    {
+      "release_step": 370,
+      "release_s": 370.0,
+      "source_sat_id": 0,
+      "target_id": "great_plains_agriculture",
+      "next_direct_ground_contact_s": null,
+      "direct_wait_s": null,
+      "first_current_network_ground_reach_s": 420.0,
+      "current_network_wait_s": 50.0,
+      "first_current_network_ground_reach_with_hop_limit_s": 420.0,
+      "hop_limited_network_wait_s": 50.0,
+      "extended_geometry_next_direct_contact_s": 35170.0,
+      "extended_geometry_direct_wait_s": 34800.0,
+      "hops_at_first_bounded_opportunity": 5
+    },
+    {
+      "release_step": 400,
+      "release_s": 400.0,
+      "source_sat_id": 0,
+      "target_id": "great_plains_agriculture",
+      "next_direct_ground_contact_s": null,
+      "direct_wait_s": null,
+      "first_current_network_ground_reach_s": 420.0,
+      "current_network_wait_s": 20.0,
+      "first_current_network_ground_reach_with_hop_limit_s": 420.0,
+      "hop_limited_network_wait_s": 20.0,
+      "extended_geometry_next_direct_contact_s": 35170.0,
+      "extended_geometry_direct_wait_s": 34770.0,
+      "hops_at_first_bounded_opportunity": 5
+    },
+    {
+      "release_step": 430,
+      "release_s": 430.0,
+      "source_sat_id": 0,
+      "target_id": "great_plains_agriculture",
+      "next_direct_ground_contact_s": null,
+      "direct_wait_s": null,
+      "first_current_network_ground_reach_s": 430.0,
+      "current_network_wait_s": 0.0,
+      "first_current_network_ground_reach_with_hop_limit_s": 430.0,
+      "hop_limited_network_wait_s": 0.0,
+      "extended_geometry_next_direct_contact_s": 35170.0,
+      "extended_geometry_direct_wait_s": 34740.0,
+      "hops_at_first_bounded_opportunity": 5
+    },
+    {
+      "release_step": 460,
+      "release_s": 460.0,
+      "source_sat_id": 0,
+      "target_id": "mississippi_delta_agriculture",
+      "next_direct_ground_contact_s": null,
+      "direct_wait_s": null,
+      "first_current_network_ground_reach_s": 460.0,
+      "current_network_wait_s": 0.0,
+      "first_current_network_ground_reach_with_hop_limit_s": 460.0,
+      "hop_limited_network_wait_s": 0.0,
+      "extended_geometry_next_direct_contact_s": 35170.0,
+      "extended_geometry_direct_wait_s": 34710.0,
+      "hops_at_first_bounded_opportunity": 5
+    },
+    {
+      "release_step": 490,
+      "release_s": 490.0,
+      "source_sat_id": 0,
+      "target_id": "mississippi_delta_agriculture",
+      "next_direct_ground_contact_s": null,
+      "direct_wait_s": null,
+      "first_current_network_ground_reach_s": 490.0,
+      "current_network_wait_s": 0.0,
+      "first_current_network_ground_reach_with_hop_limit_s": 490.0,
+      "hop_limited_network_wait_s": 0.0,
+      "extended_geometry_next_direct_contact_s": 35170.0,
+      "extended_geometry_direct_wait_s": 34680.0,
+      "hops_at_first_bounded_opportunity": 5
+    },
+    {
+      "release_step": 520,
+      "release_s": 520.0,
+      "source_sat_id": 0,
+      "target_id": "mississippi_delta_agriculture",
+      "next_direct_ground_contact_s": null,
+      "direct_wait_s": null,
+      "first_current_network_ground_reach_s": 520.0,
+      "current_network_wait_s": 0.0,
+      "first_current_network_ground_reach_with_hop_limit_s": 520.0,
+      "hop_limited_network_wait_s": 0.0,
+      "extended_geometry_next_direct_contact_s": 35170.0,
+      "extended_geometry_direct_wait_s": 34650.0,
+      "hops_at_first_bounded_opportunity": 4
+    },
+    {
+      "release_step": 5850,
+      "release_s": 5850.0,
+      "source_sat_id": 1,
+      "target_id": "corn_belt_agriculture",
+      "next_direct_ground_contact_s": null,
+      "direct_wait_s": null,
+      "first_current_network_ground_reach_s": 5920.0,
+      "current_network_wait_s": 70.0,
+      "first_current_network_ground_reach_with_hop_limit_s": 5920.0,
+      "hop_limited_network_wait_s": 70.0,
+      "extended_geometry_next_direct_contact_s": 40730.0,
+      "extended_geometry_direct_wait_s": 34880.0,
+      "hops_at_first_bounded_opportunity": 5
+    },
+    {
+      "release_step": 5880,
+      "release_s": 5880.0,
+      "source_sat_id": 1,
+      "target_id": "corn_belt_agriculture",
+      "next_direct_ground_contact_s": null,
+      "direct_wait_s": null,
+      "first_current_network_ground_reach_s": 5920.0,
+      "current_network_wait_s": 40.0,
+      "first_current_network_ground_reach_with_hop_limit_s": 5920.0,
+      "hop_limited_network_wait_s": 40.0,
+      "extended_geometry_next_direct_contact_s": 40730.0,
+      "extended_geometry_direct_wait_s": 34850.0,
+      "hops_at_first_bounded_opportunity": 5
+    },
+    {
+      "release_step": 5910,
+      "release_s": 5910.0,
+      "source_sat_id": 1,
+      "target_id": "corn_belt_agriculture",
+      "next_direct_ground_contact_s": null,
+      "direct_wait_s": null,
+      "first_current_network_ground_reach_s": 5920.0,
+      "current_network_wait_s": 10.0,
+      "first_current_network_ground_reach_with_hop_limit_s": 5920.0,
+      "hop_limited_network_wait_s": 10.0,
+      "extended_geometry_next_direct_contact_s": 40730.0,
+      "extended_geometry_direct_wait_s": 34820.0,
+      "hops_at_first_bounded_opportunity": 5
+    },
+    {
+      "release_step": 5940,
+      "release_s": 5940.0,
+      "source_sat_id": 1,
+      "target_id": "great_plains_agriculture",
+      "next_direct_ground_contact_s": null,
+      "direct_wait_s": null,
+      "first_current_network_ground_reach_s": 5940.0,
+      "current_network_wait_s": 0.0,
+      "first_current_network_ground_reach_with_hop_limit_s": 5940.0,
+      "hop_limited_network_wait_s": 0.0,
+      "extended_geometry_next_direct_contact_s": 40730.0,
+      "extended_geometry_direct_wait_s": 34790.0,
+      "hops_at_first_bounded_opportunity": 5
+    },
+    {
+      "release_step": 5970,
+      "release_s": 5970.0,
+      "source_sat_id": 1,
+      "target_id": "great_plains_agriculture",
+      "next_direct_ground_contact_s": null,
+      "direct_wait_s": null,
+      "first_current_network_ground_reach_s": 5970.0,
+      "current_network_wait_s": 0.0,
+      "first_current_network_ground_reach_with_hop_limit_s": 5970.0,
+      "hop_limited_network_wait_s": 0.0,
+      "extended_geometry_next_direct_contact_s": 40730.0,
+      "extended_geometry_direct_wait_s": 34760.0,
+      "hops_at_first_bounded_opportunity": 4
+    },
+    {
+      "release_step": 6000,
+      "release_s": 6000.0,
+      "source_sat_id": 1,
+      "target_id": "great_plains_agriculture",
+      "next_direct_ground_contact_s": null,
+      "direct_wait_s": null,
+      "first_current_network_ground_reach_s": 6000.0,
+      "current_network_wait_s": 0.0,
+      "first_current_network_ground_reach_with_hop_limit_s": 6000.0,
+      "hop_limited_network_wait_s": 0.0,
+      "extended_geometry_next_direct_contact_s": 40730.0,
+      "extended_geometry_direct_wait_s": 34730.0,
+      "hops_at_first_bounded_opportunity": 4
+    },
+    {
+      "release_step": 6210,
+      "release_s": 6210.0,
+      "source_sat_id": 0,
+      "target_id": "central_valley_agriculture",
+      "next_direct_ground_contact_s": null,
+      "direct_wait_s": null,
+      "first_current_network_ground_reach_s": 6210.0,
+      "current_network_wait_s": 0.0,
+      "first_current_network_ground_reach_with_hop_limit_s": 6210.0,
+      "hop_limited_network_wait_s": 0.0,
+      "extended_geometry_next_direct_contact_s": 35170.0,
+      "extended_geometry_direct_wait_s": 28960.0,
+      "hops_at_first_bounded_opportunity": 4
+    },
+    {
+      "release_step": 6240,
+      "release_s": 6240.0,
+      "source_sat_id": 0,
+      "target_id": "central_valley_agriculture",
+      "next_direct_ground_contact_s": null,
+      "direct_wait_s": null,
+      "first_current_network_ground_reach_s": 6480.0,
+      "current_network_wait_s": 240.0,
+      "first_current_network_ground_reach_with_hop_limit_s": 6480.0,
+      "hop_limited_network_wait_s": 240.0,
+      "extended_geometry_next_direct_contact_s": 35170.0,
+      "extended_geometry_direct_wait_s": 28930.0,
+      "hops_at_first_bounded_opportunity": 4
+    },
+    {
+      "release_step": 6270,
+      "release_s": 6270.0,
+      "source_sat_id": 0,
+      "target_id": "central_valley_agriculture",
+      "next_direct_ground_contact_s": null,
+      "direct_wait_s": null,
+      "first_current_network_ground_reach_s": 6480.0,
+      "current_network_wait_s": 210.0,
+      "first_current_network_ground_reach_with_hop_limit_s": 6480.0,
+      "hop_limited_network_wait_s": 210.0,
+      "extended_geometry_next_direct_contact_s": 35170.0,
+      "extended_geometry_direct_wait_s": 28900.0,
+      "hops_at_first_bounded_opportunity": 4
+    }
+  ],
+  "extended_source_direct_geometry": {
+    "end_s": 107070.0,
+    "extension_after_episode_s": 86400,
+    "included_in_episode_statistics": false,
+    "first_direct_contact_s_by_source": {
+      "0": 35170.0,
+      "1": 40730.0
+    }
+  },
+  "acquisition_wait_summary_s": {
+    "direct_wait_s": {
+      "count": 0,
+      "min": null,
+      "p10": null,
+      "median": null,
+      "p90": null,
+      "p95": null,
+      "max": null,
+      "no_opportunity_within_audit_horizon_count": 21
+    },
+    "current_network_wait_s": {
+      "count": 21,
+      "min": 0.0,
+      "p10": 0.0,
+      "median": 0.0,
+      "p90": 130.0,
+      "p95": 210.0,
+      "max": 240.0,
+      "no_opportunity_within_audit_horizon_count": 0
+    },
+    "hop_limited_network_wait_s": {
+      "count": 21,
+      "min": 0.0,
+      "p10": 0.0,
+      "median": 0.0,
+      "p90": 130.0,
+      "p95": 210.0,
+      "max": 240.0,
+      "no_opportunity_within_audit_horizon_count": 0
+    },
+    "extended_geometry_direct_wait_s": {
+      "count": 21,
+      "min": 28900.0,
+      "p10": 28960.0,
+      "median": 34790.0,
+      "p90": 40550.0,
+      "p95": 40580.0,
+      "max": 40610.0,
+      "no_opportunity_within_audit_horizon_count": 0
+    }
+  }
+}

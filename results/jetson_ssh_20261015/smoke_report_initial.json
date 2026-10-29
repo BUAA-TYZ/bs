@@ -1,0 +1,346 @@
+{
+  "schema_version": 1,
+  "started_at_utc": "2026-10-15T12:25:04.562008+00:00",
+  "status": "failed",
+  "purpose": "CUDA model compatibility and short timing smoke; not a calibration result",
+  "python": "3.10.15",
+  "profiles": [
+    {
+      "precision": "fp32",
+      "status": "passed",
+      "rows": [
+        {
+          "crop_bgr_ms": 8.76713590696454,
+          "predict_to_cpu_ms": 48.669729847460985,
+          "encode_ms": 0.8912091143429279,
+          "service_ms": 58.328074868768454,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 0
+        },
+        {
+          "crop_bgr_ms": 8.724480867385864,
+          "predict_to_cpu_ms": 54.05234498903155,
+          "encode_ms": 0.9225998073816299,
+          "service_ms": 63.69942566379905,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 1
+        },
+        {
+          "crop_bgr_ms": 8.757215924561024,
+          "predict_to_cpu_ms": 33.63373130559921,
+          "encode_ms": 0.9237206541001797,
+          "service_ms": 43.314667884260416,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 2
+        },
+        {
+          "crop_bgr_ms": 8.733537048101425,
+          "predict_to_cpu_ms": 45.74394878000021,
+          "encode_ms": 0.91572105884552,
+          "service_ms": 55.393206886947155,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 3
+        },
+        {
+          "crop_bgr_ms": 8.712384849786758,
+          "predict_to_cpu_ms": 55.77140487730503,
+          "encode_ms": 0.9545362554490566,
+          "service_ms": 65.43832598254085,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 4
+        },
+        {
+          "crop_bgr_ms": 8.755455724895,
+          "predict_to_cpu_ms": 54.22286922112107,
+          "encode_ms": 1.0352050885558128,
+          "service_ms": 64.01353003457189,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 5
+        },
+        {
+          "crop_bgr_ms": 9.343025274574757,
+          "predict_to_cpu_ms": 34.6199139021337,
+          "encode_ms": 0.921896193176508,
+          "service_ms": 44.88483536988497,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 6
+        },
+        {
+          "crop_bgr_ms": 8.72252881526947,
+          "predict_to_cpu_ms": 46.25257709994912,
+          "encode_ms": 0.881928950548172,
+          "service_ms": 55.857034865766764,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 7
+        },
+        {
+          "crop_bgr_ms": 8.702784776687622,
+          "predict_to_cpu_ms": 45.25288986042142,
+          "encode_ms": 0.9088413789868355,
+          "service_ms": 54.86451601609588,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 8
+        },
+        {
+          "crop_bgr_ms": 8.74905614182353,
+          "predict_to_cpu_ms": 33.0386427231133,
+          "encode_ms": 0.9101200848817825,
+          "service_ms": 42.69781894981861,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 9
+        },
+        {
+          "crop_bgr_ms": 8.776511065661907,
+          "predict_to_cpu_ms": 35.82404414191842,
+          "encode_ms": 0.8778967894613743,
+          "service_ms": 45.4784519970417,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 10
+        },
+        {
+          "crop_bgr_ms": 8.740575984120369,
+          "predict_to_cpu_ms": 39.17861403897405,
+          "encode_ms": 0.8970648050308228,
+          "service_ms": 48.81625482812524,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 11
+        },
+        {
+          "crop_bgr_ms": 8.718080818653107,
+          "predict_to_cpu_ms": 39.61073141545057,
+          "encode_ms": 0.9288396686315536,
+          "service_ms": 49.25765190273523,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 12
+        },
+        {
+          "crop_bgr_ms": 8.79174331203103,
+          "predict_to_cpu_ms": 39.47482956573367,
+          "encode_ms": 0.8687782101333141,
+          "service_ms": 49.135351087898016,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 13
+        },
+        {
+          "crop_bgr_ms": 8.692482020705938,
+          "predict_to_cpu_ms": 39.153910242021084,
+          "encode_ms": 0.8633695542812347,
+          "service_ms": 48.70976181700826,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 14
+        },
+        {
+          "crop_bgr_ms": 8.75795166939497,
+          "predict_to_cpu_ms": 39.3520169891417,
+          "encode_ms": 0.8682971820235252,
+          "service_ms": 48.9782658405602,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 15
+        },
+        {
+          "crop_bgr_ms": 8.70025809854269,
+          "predict_to_cpu_ms": 39.60410691797733,
+          "encode_ms": 0.8596261031925678,
+          "service_ms": 49.16399111971259,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 16
+        },
+        {
+          "crop_bgr_ms": 8.803261909633875,
+          "predict_to_cpu_ms": 39.50839815661311,
+          "encode_ms": 0.8491300977766514,
+          "service_ms": 49.16079016402364,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 17
+        },
+        {
+          "crop_bgr_ms": 8.70579294860363,
+          "predict_to_cpu_ms": 39.149974938482046,
+          "encode_ms": 0.8601383306086063,
+          "service_ms": 48.71590621769428,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 18
+        },
+        {
+          "crop_bgr_ms": 8.842045906931162,
+          "predict_to_cpu_ms": 39.26536301150918,
+          "encode_ms": 0.8692904375493526,
+          "service_ms": 48.976699355989695,
+          "detections": 105,
+          "input_rgb_bytes": 3145728,
+          "output_bytes": 4228,
+          "output_sha256": "ee220e89b4ac1910d887e542959b39f54490ba0487d7b12494692a8d6d84a93e",
+          "iteration": 19
+        }
+      ],
+      "warmup_completed": 5,
+      "load_ms_excluded": 239.77914405986667,
+      "parameters_before_predict": 2664432,
+      "actual_parameter_dtype": "torch.float32",
+      "actual_parameter_device": "cuda:0",
+      "torch_cpu_threads_after_warmup": 1,
+      "peak_cuda_allocated_bytes": 242746368,
+      "peak_cuda_reserved_bytes": 379584512,
+      "summary": {
+        "count": 20,
+        "mean_ms": 51.744228042662144,
+        "p50_ms": 49.14807062596083,
+        "p95_ms": 64.08476983197033,
+        "min_ms": 42.69781894981861,
+        "max_ms": 65.43832598254085,
+        "detections_min": 105,
+        "detections_max": 105
+      }
+    },
+    {
+      "precision": "fp16",
+      "status": "failed",
+      "rows": [],
+      "warmup_completed": 0,
+      "load_ms_excluded": 172.54790617153049,
+      "parameters_before_predict": 2664432,
+      "error": {
+        "type": "RuntimeError",
+        "message": "expected mat1 and mat2 to have the same dtype, but got: c10::Half != float",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/tianyz/bs_jetson_20261015_7TtC5t/smoke_jetson_model.py\", line 228, in main\n    one_window()\n  File \"/home/tianyz/bs_jetson_20261015_7TtC5t/smoke_jetson_model.py\", line 202, in one_window\n    result = model.predict(\n  File \"/home/tianyz/anaconda3/envs/dota/lib/python3.10/site-packages/ultralytics/engine/model.py\", line 547, in predict\n    self.predictor.setup_model(model=self.model, verbose=is_cli)\n  File \"/home/tianyz/anaconda3/envs/dota/lib/python3.10/site-packages/ultralytics/engine/predictor.py\", line 303, in setup_model\n    self.model = AutoBackend(\n  File \"/home/tianyz/anaconda3/envs/dota/lib/python3.10/site-packages/torch/utils/_contextlib.py\", line 115, in decorate_context\n    return func(*args, **kwargs)\n  File \"/home/tianyz/anaconda3/envs/dota/lib/python3.10/site-packages/ultralytics/nn/autobackend.py\", line 145, in __init__\n    model = model.fuse(verbose=verbose)\n  File \"/home/tianyz/anaconda3/envs/dota/lib/python3.10/site-packages/ultralytics/nn/tasks.py\", line 207, in fuse\n    m.conv = fuse_conv_and_bn(m.conv, m.bn)  # update conv\n  File \"/home/tianyz/anaconda3/envs/dota/lib/python3.10/site-packages/ultralytics/utils/torch_utils.py\", line 267, in fuse_conv_and_bn\n    fusedconv.bias.copy_(torch.mm(w_bn, b_conv.reshape(-1, 1)).reshape(-1) + b_bn)\nRuntimeError: expected mat1 and mat2 to have the same dtype, but got: c10::Half != float\n"
+      },
+      "summary": {
+        "count": 0
+      }
+    }
+  ],
+  "protocol": {
+    "model": "official YOLO11n-OBB",
+    "image": "official optical boats.jpg",
+    "window_xyxy": [
+      0,
+      0,
+      1024,
+      1024
+    ],
+    "batch": 1,
+    "imgsz": 1024,
+    "conf": 0.25,
+    "iou": 0.7,
+    "max_det": 300,
+    "rect": false,
+    "precision_order": [
+      "fp32",
+      "fp16"
+    ],
+    "warmup": 5,
+    "repeats": 20,
+    "independent_model_per_precision": true,
+    "wire_format": "OBB1: little endian <4s6I header plus <9fI records; 28 + 40*K bytes",
+    "timing_boundary": "decoded RGB image -> crop/BGR -> predict including preprocessing, inference and window OBB NMS -> all OBB fields on CPU -> OBB1 encoding",
+    "excluded": [
+      "file decode",
+      "model load",
+      "warmup",
+      "report I/O",
+      "global polygon NMS"
+    ],
+    "limitations": [
+      "Optical sample is not SAR calibration or recognition validation",
+      "Short smoke does not establish steady thermal performance or energy",
+      "No Shapely polygon validity check; framing matches existing OBB1 format",
+      "No simulation parameters are updated",
+      "No download or package installation"
+    ]
+  },
+  "assets": {
+    "weights": {
+      "path": "/home/tianyz/bs_jetson_20261015_7TtC5t/yolo11n-obb.pt",
+      "bytes": 5795654,
+      "sha256": "b62898ebf38940ca4df323863e45ee9d84a1a46d5d11ebdde529fb33aa9f3a32"
+    },
+    "image": {
+      "path": "/home/tianyz/bs_jetson_20261015_7TtC5t/boats.jpg",
+      "bytes": 194872,
+      "sha256": "8c5ada657cf8110a9f8aaac954c1dd96cde0187315b581276c32b0d1863e756f"
+    }
+  },
+  "versions": {
+    "numpy": "1.23.5",
+    "Pillow": "11.0.0",
+    "torch": "2.3.0",
+    "torchvision": "0.18.0a0+6043bc2",
+    "ultralytics": "8.3.13",
+    "torch_cuda_build": "12.2",
+    "cudnn": 8904
+  },
+  "device": {
+    "index": 0,
+    "name": "Orin",
+    "compute_capability": [
+      8,
+      7
+    ],
+    "total_memory_bytes": 32188686336,
+    "torch_cpu_threads": 1
+  },
+  "decode_ms_excluded": 38.748991675674915,
+  "source_image": {
+    "width": 1920,
+    "height": 1080,
+    "mode": "RGB"
+  },
+  "finished_at_utc": "2026-10-15T12:25:12.522437+00:00"
+}

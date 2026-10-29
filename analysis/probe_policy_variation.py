@@ -16,6 +16,7 @@ from sim.config import SimConfig
 from sim.env import SimulationEnv
 from sim.evaluation import task_age_score
 from sim.marl.actor import SatActorCritic
+from sim.marl.checkpoint import validate_checkpoint_protocol
 from sim.marl.decision import build_batch, decode_batch
 from sim.reproducibility import runtime_metadata
 
@@ -56,6 +57,7 @@ def main():
         raise ValueError("Require at least two trajectories and one worker")
     data = torch.load(args.data, weights_only=True, map_location="cpu")
     saved = torch.load(args.checkpoint, weights_only=True, map_location="cpu")
+    validate_checkpoint_protocol(saved)
     cases = {c["seed"]: c for c in data["training"] + data["probes"]}
     out = Path(args.out_dir)
     out.mkdir(parents=True, exist_ok=False)

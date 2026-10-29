@@ -1,0 +1,515 @@
+{
+  "seed": 1701,
+  "num_sats": 24,
+  "sim_steps": 20670,
+  "dt": 1.0,
+  "decision_interval_steps": 1,
+  "topology_update_steps": 10,
+  "ground_visibility_update_steps": 10,
+  "task_arrival_rate": 0.0,
+  "image_size_mb": 2138.9927789999997,
+  "num_tiles": 315,
+  "compute_cost_per_tile": 1.029934877819781,
+  "vram_base_gb": 0.8,
+  "vram_alpha_per_mb": 0.0,
+  "result_size_mb": 0.002740885714285714,
+  "deadline_steps": 0,
+  "mem_capacity_gb": 64.0,
+  "vram_capacity_gb": 1.0,
+  "compute_rate": 1.0,
+  "transfer_fail_on_link_down": false,
+  "vram_policy": "wait",
+  "pipeline_mode": "distributed",
+  "tile_lifecycle_log": "",
+  "ground_stations": [
+    {
+      "id": "gs_beijing",
+      "lat_deg": 39.9042,
+      "lon_deg": 116.4074,
+      "alt_m": 50,
+      "min_elevation_deg": 15,
+      "bandwidth_mbps": 1200,
+      "receive_channels": 1,
+      "compute_rate": 3.2396827056638866
+    }
+  ],
+  "topology": {
+    "start_time_utc": "2026-10-15T16:43:00Z",
+    "earth_radius_km": 6378.137,
+    "max_range_km": 4500,
+    "max_neighbors": 4,
+    "predict_contacts": true,
+    "precompute_visibility": true,
+    "contact_scan_s": 30,
+    "contact_update_s": 60,
+    "bandwidth_distance_scale_km": 0,
+    "bandwidth_mbps_min": 10000,
+    "bandwidth_mbps_max": 10000,
+    "bandwidth_period": 0,
+    "bandwidth_noise": 0,
+    "latency_ms": 0,
+    "visibility_workers": 1,
+    "window_lookahead_s": 7200,
+    "tle_lines": [
+      [
+        "1 00001U          26288.00000000  .00000000  00000-0  00000+0 0    09",
+        "2 00001  97.9000 357.5000 0001000   0.0000   0.0000 14.82960157    02"
+      ],
+      [
+        "1 00013U          26288.00000000  .00000000  00000-0  00000+0 0    02",
+        "2 00013  97.9000  12.5000 0001000   0.0000  15.0000 14.82960157    09"
+      ],
+      [
+        "1 00025U          26288.00000000  .00000000  00000-0  00000+0 0    05",
+        "2 00025  53.0000   0.0000 0001000   0.0000   0.0000 15.05491974    03"
+      ],
+      [
+        "1 00026U          26288.00000000  .00000000  00000-0  00000+0 0    06",
+        "2 00026  53.0000   0.0000 0001000   0.0000  32.7273 15.05491974    08"
+      ],
+      [
+        "1 00027U          26288.00000000  .00000000  00000-0  00000+0 0    07",
+        "2 00027  53.0000   0.0000 0001000   0.0000  65.4545 15.05491974    04"
+      ],
+      [
+        "1 00028U          26288.00000000  .00000000  00000-0  00000+0 0    08",
+        "2 00028  53.0000   0.0000 0001000   0.0000  98.1818 15.05491974    01"
+      ],
+      [
+        "1 00029U          26288.00000000  .00000000  00000-0  00000+0 0    09",
+        "2 00029  53.0000   0.0000 0001000   0.0000 130.9091 15.05491974    00"
+      ],
+      [
+        "1 00030U          26288.00000000  .00000000  00000-0  00000+0 0    01",
+        "2 00030  53.0000   0.0000 0001000   0.0000 163.6364 15.05491974    08"
+      ],
+      [
+        "1 00031U          26288.00000000  .00000000  00000-0  00000+0 0    02",
+        "2 00031  53.0000   0.0000 0001000   0.0000 196.3636 15.05491974    04"
+      ],
+      [
+        "1 00032U          26288.00000000  .00000000  00000-0  00000+0 0    03",
+        "2 00032  53.0000   0.0000 0001000   0.0000 229.0909 15.05491974    02"
+      ],
+      [
+        "1 00033U          26288.00000000  .00000000  00000-0  00000+0 0    04",
+        "2 00033  53.0000   0.0000 0001000   0.0000 261.8182 15.05491974    00"
+      ],
+      [
+        "1 00034U          26288.00000000  .00000000  00000-0  00000+0 0    05",
+        "2 00034  53.0000   0.0000 0001000   0.0000 294.5455 15.05491974    07"
+      ],
+      [
+        "1 00035U          26288.00000000  .00000000  00000-0  00000+0 0    06",
+        "2 00035  53.0000   0.0000 0001000   0.0000 327.2727 15.05491974    04"
+      ],
+      [
+        "1 00036U          26288.00000000  .00000000  00000-0  00000+0 0    07",
+        "2 00036  53.0000  90.0000 0001000   0.0000  16.3636 15.05491974    09"
+      ],
+      [
+        "1 00037U          26288.00000000  .00000000  00000-0  00000+0 0    08",
+        "2 00037  53.0000  90.0000 0001000   0.0000  49.0909 15.05491974    06"
+      ],
+      [
+        "1 00038U          26288.00000000  .00000000  00000-0  00000+0 0    09",
+        "2 00038  53.0000  90.0000 0001000   0.0000  81.8182 15.05491974    04"
+      ],
+      [
+        "1 00039U          26288.00000000  .00000000  00000-0  00000+0 0    00",
+        "2 00039  53.0000  90.0000 0001000   0.0000 114.5455 15.05491974    02"
+      ],
+      [
+        "1 00040U          26288.00000000  .00000000  00000-0  00000+0 0    02",
+        "2 00040  53.0000  90.0000 0001000   0.0000 147.2727 15.05491974    09"
+      ],
+      [
+        "1 00041U          26288.00000000  .00000000  00000-0  00000+0 0    03",
+        "2 00041  53.0000  90.0000 0001000   0.0000 180.0000 15.05491974    09"
+      ],
+      [
+        "1 00042U          26288.00000000  .00000000  00000-0  00000+0 0    04",
+        "2 00042  53.0000  90.0000 0001000   0.0000 212.7273 15.05491974    05"
+      ],
+      [
+        "1 00043U          26288.00000000  .00000000  00000-0  00000+0 0    05",
+        "2 00043  53.0000  90.0000 0001000   0.0000 245.4545 15.05491974    01"
+      ],
+      [
+        "1 00044U          26288.00000000  .00000000  00000-0  00000+0 0    06",
+        "2 00044  53.0000  90.0000 0001000   0.0000 278.1818 15.05491974    08"
+      ],
+      [
+        "1 00045U          26288.00000000  .00000000  00000-0  00000+0 0    07",
+        "2 00045  53.0000  90.0000 0001000   0.0000 310.9091 15.05491974    07"
+      ],
+      [
+        "1 00046U          26288.00000000  .00000000  00000-0  00000+0 0    08",
+        "2 00046  53.0000  90.0000 0001000   0.0000 343.6364 15.05491974    04"
+      ]
+    ]
+  },
+  "ground_relay_delay_s": 0.0,
+  "aggregation_delay_s": 0.017278694392492373,
+  "task_arrival_end_step": 6271,
+  "execution_commitment": true,
+  "task_source_sat_ids": [
+    0,
+    1
+  ],
+  "satellite_compute_rates": [
+    1,
+    1,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "result_buffering": true,
+  "result_relay": true,
+  "relay_max_hops": 8,
+  "relay_contact_guard": true,
+  "image_tiling": {
+    "width_px": 46668,
+    "height_px": 66668,
+    "bands": 3,
+    "bits_per_sample": 8,
+    "window_px": 1024,
+    "stride_px": 824,
+    "windows_per_tile_axis": 4,
+    "compute_cost_per_window": 0.07026846144969265,
+    "result_size_mb_per_window": 0.000187,
+    "transport_components": [
+      {
+        "name": "PAN",
+        "downsample": 1,
+        "bands": 1,
+        "bits_per_sample": 12
+      },
+      {
+        "name": "MS",
+        "downsample": 4,
+        "bands": 6,
+        "bits_per_sample": 12
+      }
+    ],
+    "transport_compression_ratio": 3
+  },
+  "compute_service_mode": "work_conserving",
+  "scheduled_task_arrivals": [
+    {
+      "release_step": 120,
+      "source_sat_id": 1,
+      "target_id": "appalachian_vegetation",
+      "window_id": 10,
+      "geometry": {
+        "target_lat_deg": 39.30048254524335,
+        "target_lon_deg": -78.65142028463387,
+        "off_nadir_deg": 27.595561194587457,
+        "sat_elevation_deg": 59.52693386104634,
+        "slant_range_km": 715.9647179585996,
+        "sun_elevation_deg": 42.27829578325537
+      }
+    },
+    {
+      "release_step": 150,
+      "source_sat_id": 1,
+      "target_id": "appalachian_vegetation",
+      "window_id": 10,
+      "geometry": {
+        "target_lat_deg": 38.64080353024957,
+        "target_lon_deg": -78.25301989680786,
+        "off_nadir_deg": 18.069266274097306,
+        "sat_elevation_deg": 70.13521294138533,
+        "slant_range_km": 661.8826008183213,
+        "sun_elevation_deg": 42.96924505400034
+      }
+    },
+    {
+      "release_step": 180,
+      "source_sat_id": 1,
+      "target_id": "appalachian_vegetation",
+      "window_id": 10,
+      "geometry": {
+        "target_lat_deg": 37.57829190836438,
+        "target_lon_deg": -78.20539747766153,
+        "off_nadir_deg": 13.71921918216908,
+        "sat_elevation_deg": 74.8660293748437,
+        "slant_range_km": 646.1224749406857,
+        "sun_elevation_deg": 44.0388591386311
+      }
+    },
+    {
+      "release_step": 260,
+      "source_sat_id": 0,
+      "target_id": "corn_belt_agriculture",
+      "window_id": 3,
+      "geometry": {
+        "target_lat_deg": 44.35809933167656,
+        "target_lon_deg": -91.70187705278948,
+        "off_nadir_deg": 29.94993499817522,
+        "sat_elevation_deg": 56.910952354589384,
+        "slant_range_km": 735.595359537018,
+        "sun_elevation_deg": 35.33762074753192
+      }
+    },
+    {
+      "release_step": 290,
+      "source_sat_id": 0,
+      "target_id": "corn_belt_agriculture",
+      "window_id": 3,
+      "geometry": {
+        "target_lat_deg": 44.1625334801959,
+        "target_lon_deg": -91.2907524365139,
+        "off_nadir_deg": 15.305621414756915,
+        "sat_elevation_deg": 73.29738501664042,
+        "slant_range_km": 652.4445750547602,
+        "sun_elevation_deg": 35.650315923370556
+      }
+    },
+    {
+      "release_step": 320,
+      "source_sat_id": 0,
+      "target_id": "corn_belt_agriculture",
+      "window_id": 3,
+      "geometry": {
+        "target_lat_deg": 43.551720929523064,
+        "target_lon_deg": -90.58450503426144,
+        "off_nadir_deg": 0.17492107255771228,
+        "sat_elevation_deg": 89.9999999352474,
+        "slant_range_km": 627.0347190158977,
+        "sun_elevation_deg": 36.42184927417252
+      }
+    },
+    {
+      "release_step": 370,
+      "source_sat_id": 0,
+      "target_id": "great_plains_agriculture",
+      "window_id": 6,
+      "geometry": {
+        "target_lat_deg": 39.89250560215316,
+        "target_lon_deg": -95.48668546240593,
+        "off_nadir_deg": 28.25708256799984,
+        "sat_elevation_deg": 58.71241320185894,
+        "slant_range_km": 721.275018960507,
+        "sun_elevation_deg": 38.52181300216405
+      }
+    },
+    {
+      "release_step": 400,
+      "source_sat_id": 0,
+      "target_id": "great_plains_agriculture",
+      "window_id": 6,
+      "geometry": {
+        "target_lat_deg": 38.87957092884067,
+        "target_lon_deg": -95.37719151109046,
+        "off_nadir_deg": 24.198994148827566,
+        "sat_elevation_deg": 63.23328379949635,
+        "slant_range_km": 693.3593654147634,
+        "sun_elevation_deg": 39.51579094407367
+      }
+    },
+    {
+      "release_step": 430,
+      "source_sat_id": 0,
+      "target_id": "great_plains_agriculture",
+      "window_id": 6,
+      "geometry": {
+        "target_lat_deg": 37.80750920680346,
+        "target_lon_deg": -95.66853358286384,
+        "off_nadir_deg": 24.43170373285954,
+        "sat_elevation_deg": 62.91800209435124,
+        "slant_range_km": 694.6878520142698,
+        "sun_elevation_deg": 40.427729149525284
+      }
+    },
+    {
+      "release_step": 460,
+      "source_sat_id": 0,
+      "target_id": "mississippi_delta_agriculture",
+      "window_id": 9,
+      "geometry": {
+        "target_lat_deg": 34.687569391263764,
+        "target_lon_deg": -92.78883250172603,
+        "off_nadir_deg": 4.70991031236924,
+        "sat_elevation_deg": 84.96182966812967,
+        "slant_range_km": 627.5201622668183,
+        "sun_elevation_deg": 44.269912465386845
+      }
+    },
+    {
+      "release_step": 490,
+      "source_sat_id": 0,
+      "target_id": "mississippi_delta_agriculture",
+      "window_id": 9,
+      "geometry": {
+        "target_lat_deg": 33.19009318523789,
+        "target_lon_deg": -93.65241500471268,
+        "off_nadir_deg": 0.16033910875508456,
+        "sat_elevation_deg": 89.99999985959536,
+        "slant_range_km": 624.982453255827,
+        "sun_elevation_deg": 45.390486142647454
+      }
+    },
+    {
+      "release_step": 520,
+      "source_sat_id": 0,
+      "target_id": "mississippi_delta_agriculture",
+      "window_id": 9,
+      "geometry": {
+        "target_lat_deg": 31.822622462955316,
+        "target_lon_deg": -93.26892845708745,
+        "off_nadir_deg": 8.734055570670067,
+        "sat_elevation_deg": 80.31149843996072,
+        "slant_range_km": 632.8867621378555,
+        "sun_elevation_deg": 46.812066630169504
+      }
+    },
+    {
+      "release_step": 5850,
+      "source_sat_id": 1,
+      "target_id": "corn_belt_agriculture",
+      "window_id": 13,
+      "geometry": {
+        "target_lat_deg": 44.34025951975846,
+        "target_lon_deg": -95.34118043849645,
+        "off_nadir_deg": 28.64572947530073,
+        "sat_elevation_deg": 58.391097739597434,
+        "slant_range_km": 725.0269624242833,
+        "sun_elevation_deg": 37.253905792768734
+      }
+    },
+    {
+      "release_step": 5880,
+      "source_sat_id": 1,
+      "target_id": "corn_belt_agriculture",
+      "window_id": 13,
+      "geometry": {
+        "target_lat_deg": 43.84512288142706,
+        "target_lon_deg": -96.18856525353485,
+        "off_nadir_deg": 19.684188207798822,
+        "sat_elevation_deg": 68.41409783778535,
+        "slant_range_km": 670.0429316068052,
+        "sun_elevation_deg": 37.78212150727249
+      }
+    },
+    {
+      "release_step": 5910,
+      "source_sat_id": 1,
+      "target_id": "corn_belt_agriculture",
+      "window_id": 13,
+      "geometry": {
+        "target_lat_deg": 42.900201652279925,
+        "target_lon_deg": -96.94726409068912,
+        "off_nadir_deg": 15.080379967897034,
+        "sat_elevation_deg": 73.45547985759183,
+        "slant_range_km": 651.5142937399506,
+        "sun_elevation_deg": 38.74952682915634
+      }
+    },
+    {
+      "release_step": 5940,
+      "source_sat_id": 1,
+      "target_id": "great_plains_agriculture",
+      "window_id": 14,
+      "geometry": {
+        "target_lat_deg": 41.536044686593556,
+        "target_lon_deg": -99.51784148148032,
+        "off_nadir_deg": 0.17383759831682705,
+        "sat_elevation_deg": 89.99999992191843,
+        "slant_range_km": 626.6081088406016,
+        "sun_elevation_deg": 40.14606218327718
+      }
+    },
+    {
+      "release_step": 5970,
+      "source_sat_id": 1,
+      "target_id": "great_plains_agriculture",
+      "window_id": 14,
+      "geometry": {
+        "target_lat_deg": 39.709967241744835,
+        "target_lon_deg": -100.08351602489911,
+        "off_nadir_deg": 0.17211364786602862,
+        "sat_elevation_deg": 89.99999990893653,
+        "slant_range_km": 626.2295475766531,
+        "sun_elevation_deg": 41.967032626393205
+      }
+    },
+    {
+      "release_step": 6000,
+      "source_sat_id": 1,
+      "target_id": "great_plains_agriculture",
+      "window_id": 14,
+      "geometry": {
+        "target_lat_deg": 37.88168685079088,
+        "target_lon_deg": -100.62658521355279,
+        "off_nadir_deg": 0.16968803994420467,
+        "sat_elevation_deg": 89.99999989531801,
+        "slant_range_km": 625.8617506360639,
+        "sun_elevation_deg": 43.78652159003752
+      }
+    },
+    {
+      "release_step": 6210,
+      "source_sat_id": 0,
+      "target_id": "central_valley_agriculture",
+      "window_id": 1,
+      "geometry": {
+        "target_lat_deg": 37.38649135123169,
+        "target_lon_deg": -118.6350613614741,
+        "off_nadir_deg": 29.466596656833783,
+        "sat_elevation_deg": 57.44806297175258,
+        "slant_range_km": 729.8987679588687,
+        "sun_elevation_deg": 41.1623567262168
+      }
+    },
+    {
+      "release_step": 6240,
+      "source_sat_id": 0,
+      "target_id": "central_valley_agriculture",
+      "window_id": 1,
+      "geometry": {
+        "target_lat_deg": 37.13597318060485,
+        "target_lon_deg": -118.34206500139109,
+        "off_nadir_deg": 16.555109731574227,
+        "sat_elevation_deg": 71.86894963639506,
+        "slant_range_km": 655.4719083226037,
+        "sun_elevation_deg": 41.527422572379834
+      }
+    },
+    {
+      "release_step": 6270,
+      "source_sat_id": 0,
+      "target_id": "central_valley_agriculture",
+      "window_id": 1,
+      "geometry": {
+        "target_lat_deg": 36.348795922793066,
+        "target_lon_deg": -118.11559933596055,
+        "off_nadir_deg": 8.258487308566828,
+        "sat_elevation_deg": 80.89993615080752,
+        "slant_range_km": 632.7908359604514,
+        "sun_elevation_deg": 42.360984980010294
+      }
+    }
+  ],
+  "decision_tile_limit_per_sat": 64,
+  "input_relay_max_hops": 2
+}

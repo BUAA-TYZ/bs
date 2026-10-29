@@ -6,6 +6,22 @@ from sim.orbit import positions_km_at_times
 from sim.topology import _visible_from_positions, bounded_edges, link_key
 
 
+def reconcile_windows(windows, up, scan_s):
+    """当前快照否定立即接触时，保留下一扫描周期后的预测机会。
+
+粗采样窗口可能漏掉短时断链；当前down只能否定立即发送，不能否定整段未来。
+这里仍是预测，执行时须再次检查真实链路，不能据此提前建立连接。
+"""
+    result = []
+    for start, duration in windows:
+        if start == 0 and not up:
+            if duration <= scan_s:
+                continue
+            start, duration = scan_s, duration - scan_s
+        result.append((start, duration))
+    return result
+
+
 class ContactCache:
     def __init__(self, topology, horizon_s=1800.0, scan_s=30.0, update_s=60.0):
         if min(horizon_s, scan_s, update_s) <= 0:
@@ -38,7 +54,10 @@ class ContactCache:
             geometry = [_visible_from_positions(tuple(positions[i][k]), tuple(positions[j][k]),
                         topo.cfg.earth_radius_km, topo.cfg.min_elevation_deg, topo.cfg.max_range_km)
                         for i, j in pairs]
-            allowed = bounded_edges(pairs, geometry, topo.cfg.max_neighbors)
+            allowed = bounded_edges(pairs, geometry, topo.cfg.max_neighbors,
+                                    sources=getattr(topo.cfg, "source_sat_ids", ()),
+                                    limits=getattr(topo.cfg, "neighbor_limits", ()),
+                                    preferred=getattr(topo.cfg, "preferred_edges", ()))
             self._geometry[time_s] = allowed
         for time_s in sample_times:
             allowed = self._geometry[time_s]
@@ -55,6 +74,11 @@ class ContactCache:
                     start = None
             if start is not None and start < now_s + self.horizon_s:
                 intervals.append((start, now_s + self.horizon_s))
-            self.intervals[key] = intervals
+            delay = getattr(topo.cfg, "acquisition_delay_s", 0.0)
+            pair = tuple(int(value) for value in key.split("-"))
+            since = getattr(topo, "_selected_since", {}).get(pair)
+            self.intervals[key] = [(max(start, (since if start == now_s and since is not None else start) + delay), end)
+                                   for start, end in intervals
+                                   if max(start, (since if start == now_s and since is not None else start) + delay) < end]
         self.updated = now_s
         self._geometry = {t: edges for t, edges in self._geometry.items() if t >= now_s}

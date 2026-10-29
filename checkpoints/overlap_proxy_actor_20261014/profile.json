@@ -1,0 +1,30 @@
+{
+  "checkpoint": "checkpoints/overlap_proxy_mappo_1701_20261014/best.pt",
+  "episode": 0,
+  "checkpoint_sha256": "aa36a2ebf5265d20997bebf4f3b08591a9b67b7dbd6e3b312e6d8087f0b1c579",
+  "actor_parameters": 28417,
+  "fp32_parameter_bytes": 113668,
+  "artifact_bytes": 139686,
+  "under_one_million_parameters": true,
+  "inference_batch_size": 1,
+  "input_shape": [
+    1,
+    254
+  ],
+  "output_shape": [
+    1,
+    4,
+    12
+  ],
+  "cpu_threads": 1,
+  "machine": "arm64",
+  "platform": "macOS-26.4.1-arm64-arm-64bit",
+  "median_ms": 0.0658955,
+  "p95_ms": 0.07625,
+  "feature_options": {
+    "feature_set": "overlap_contact",
+    "task_features": true,
+    "window_features": true
+  },
+  "scope": "CPU network only; excludes orbit prediction, features, masks, runtime memory; not flight hardware"
+}

@@ -1,0 +1,14 @@
+{
+  "status": "ABORTED_BY_USER_AUTHORIZATION",
+  "reason": "User authorized restarting unfinished tasks to increase concurrency, then resumed after host inventory",
+  "processes": {
+    "3443": "3443     1 Ts   /opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python /Users/bytedance/Projects/bs/analysis/run_calibration_capacity.py panel --out results/redesign_20261021/calibration/capacity_20261021/load_1 --workers 3",
+    "3447": "3447  3443 T    /opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=9, pipe_handle=17) --multiprocessing-fork",
+    "3448": "3448  3443 T    /opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=9, pipe_handle=19) --multiprocessing-fork",
+    "3449": "3449  3443 T    /opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=9, pipe_handle=21) --multiprocessing-fork"
+  },
+  "completed": 0,
+  "unfinished": 9,
+  "created_utc": "2026-10-21T12:25:42.676095+00:00",
+  "old_protocol_preserved": true
+}

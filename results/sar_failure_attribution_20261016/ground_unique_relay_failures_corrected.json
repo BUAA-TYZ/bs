@@ -1,0 +1,345 @@
+{
+  "method": "ground_unique_relay",
+  "original_report_sha256": "a3ed9b9c29f96aa48ab9c46bc0548b4388fd05fcabde623bd2cce7469ef82f91",
+  "timeline_sha256": "7fa792bed6a8a71e859030d1a1801fddf33a084f6b08827949b020a89b5f1f83",
+  "panel_record_sha256": "c94b92b2d25d22496958cb4720f8722cfd700dd94e18ecdd753b685bf0b9f81e",
+  "bound_sha256": "1f185cf7bd8e2b1183bdd5c7ca1cd4963f565f38c54d7fc36720f15591b5285c",
+  "replay_identical_to_panel": true,
+  "scope": "offline correction; original replay and timelines preserved; no channel trace available",
+  "cause_counts": {
+    "physical_no_window": 14,
+    "input_delivery_wait": 2
+  },
+  "tasks": [
+    {
+      "task_id": "task_14",
+      "source_sat_id": 10,
+      "release_seconds": 8220.0,
+      "status": "completed",
+      "latency_seconds": 889.28,
+      "cause": "physical_no_window",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "bound_relay_open_s": null
+      },
+      "previous_cause": "physical_no_window"
+    },
+    {
+      "task_id": "task_21",
+      "source_sat_id": 11,
+      "release_seconds": 11160.0,
+      "status": "completed",
+      "latency_seconds": 954.61,
+      "cause": "physical_no_window",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "bound_relay_open_s": null
+      },
+      "previous_cause": "physical_no_window"
+    },
+    {
+      "task_id": "task_56",
+      "source_sat_id": 17,
+      "release_seconds": 28380.0,
+      "status": "completed",
+      "latency_seconds": 924.61,
+      "cause": "physical_no_window",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "bound_relay_open_s": null
+      },
+      "previous_cause": "physical_no_window"
+    },
+    {
+      "task_id": "task_57",
+      "source_sat_id": 17,
+      "release_seconds": 28410.0,
+      "status": "completed",
+      "latency_seconds": 898.28,
+      "cause": "physical_no_window",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "bound_relay_open_s": null
+      },
+      "previous_cause": "physical_no_window"
+    },
+    {
+      "task_id": "task_63",
+      "source_sat_id": 14,
+      "release_seconds": 31280.0,
+      "status": "completed",
+      "latency_seconds": 929.28,
+      "cause": "physical_no_window",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "bound_relay_open_s": null
+      },
+      "previous_cause": "physical_no_window"
+    },
+    {
+      "task_id": "task_72",
+      "source_sat_id": 18,
+      "release_seconds": 37055.0,
+      "status": "completed",
+      "latency_seconds": 894.28,
+      "cause": "physical_no_window",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "bound_relay_open_s": null
+      },
+      "previous_cause": "physical_no_window"
+    },
+    {
+      "task_id": "task_79",
+      "source_sat_id": 19,
+      "release_seconds": 39995.0,
+      "status": "completed",
+      "latency_seconds": 949.61,
+      "cause": "physical_no_window",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "bound_relay_open_s": null
+      },
+      "previous_cause": "physical_no_window"
+    },
+    {
+      "task_id": "task_85",
+      "source_sat_id": 20,
+      "release_seconds": 42800.0,
+      "status": "completed",
+      "latency_seconds": 924.61,
+      "cause": "physical_no_window",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "bound_relay_open_s": null
+      },
+      "previous_cause": "physical_no_window"
+    },
+    {
+      "task_id": "task_86",
+      "source_sat_id": 20,
+      "release_seconds": 42830.0,
+      "status": "completed",
+      "latency_seconds": 898.28,
+      "cause": "physical_no_window",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "bound_relay_open_s": null
+      },
+      "previous_cause": "physical_no_window"
+    },
+    {
+      "task_id": "task_92",
+      "source_sat_id": 19,
+      "release_seconds": 45700.0,
+      "status": "completed",
+      "latency_seconds": 929.28,
+      "cause": "physical_no_window",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "bound_relay_open_s": null
+      },
+      "previous_cause": "physical_no_window"
+    },
+    {
+      "task_id": "task_101",
+      "source_sat_id": 23,
+      "release_seconds": 51470.0,
+      "status": "completed",
+      "latency_seconds": 889.28,
+      "cause": "physical_no_window",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "bound_relay_open_s": null
+      },
+      "previous_cause": "physical_no_window"
+    },
+    {
+      "task_id": "task_109",
+      "source_sat_id": 22,
+      "release_seconds": 54415.0,
+      "status": "completed",
+      "latency_seconds": 949.61,
+      "cause": "physical_no_window",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "bound_relay_open_s": null
+      },
+      "previous_cause": "physical_no_window"
+    },
+    {
+      "task_id": "task_122",
+      "source_sat_id": 22,
+      "release_seconds": 60115.0,
+      "status": "completed",
+      "latency_seconds": 5479.8,
+      "cause": "input_delivery_wait",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "tail_tile": {
+          "tile_id": "task_122_tile_63",
+          "state": "DONE",
+          "failure_reason": null,
+          "processor": "ground",
+          "result_hops": 0,
+          "raw_relay_hops": 8,
+          "input_route": [],
+          "ground_relay_target": null,
+          "created": 60115.0,
+          "start_tx": 60115.94,
+          "end_tx": 60119.61,
+          "start_compute": 65594.47,
+          "end_compute": 65594.54000000001,
+          "start_downlink": null,
+          "end_downlink": 65594.54000000001
+        },
+        "stage_seconds": {
+          "source_wait": 0.9400000000023283,
+          "input_transfer": 3.6699999999982538,
+          "input_assembly_wait": 5471.25,
+          "compute_queue": 3.610000000000582,
+          "compute_service": 0.07000000000698492,
+          "result_delivery": 0.0
+        },
+        "last_input_tile": {
+          "tile_id": "task_122_tile_6",
+          "state": "DONE",
+          "failure_reason": null,
+          "processor": "ground",
+          "result_hops": 0,
+          "raw_relay_hops": 8,
+          "input_route": [],
+          "ground_relay_target": null,
+          "created": 60115.0,
+          "start_tx": 60116.32,
+          "end_tx": 65590.86,
+          "start_compute": 65591.2,
+          "end_compute": 65591.27,
+          "start_downlink": null,
+          "end_downlink": 65591.27
+        },
+        "all_input_ready_seconds": 65590.86,
+        "first_compute_seconds": 65590.86
+      },
+      "previous_cause": "compute_queue"
+    },
+    {
+      "task_id": "task_148",
+      "source_sat_id": 4,
+      "release_seconds": 71630.0,
+      "status": "completed",
+      "latency_seconds": 934.61,
+      "cause": "physical_no_window",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "bound_relay_open_s": null
+      },
+      "previous_cause": "physical_no_window"
+    },
+    {
+      "task_id": "task_149",
+      "source_sat_id": 4,
+      "release_seconds": 71660.0,
+      "status": "completed",
+      "latency_seconds": 908.28,
+      "cause": "physical_no_window",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "bound_relay_open_s": null
+      },
+      "previous_cause": "physical_no_window"
+    },
+    {
+      "task_id": "task_155",
+      "source_sat_id": 3,
+      "release_seconds": 74535.0,
+      "status": "completed",
+      "latency_seconds": 5480.5,
+      "cause": "input_delivery_wait",
+      "processor_split": {
+        "ground": 64
+      },
+      "evidence": {
+        "tail_tile": {
+          "tile_id": "task_155_tile_63",
+          "state": "DONE",
+          "failure_reason": null,
+          "processor": "ground",
+          "result_hops": 0,
+          "raw_relay_hops": 6,
+          "input_route": [],
+          "ground_relay_target": null,
+          "created": 74535.0,
+          "start_tx": 74536.34,
+          "end_tx": 80011.41,
+          "start_compute": 80015.17,
+          "end_compute": 80015.24,
+          "start_downlink": null,
+          "end_downlink": 80015.24
+        },
+        "stage_seconds": {
+          "source_wait": 1.3399999999965075,
+          "input_transfer": 5475.070000000007,
+          "input_assembly_wait": 0.14999999999417923,
+          "compute_queue": 3.610000000000582,
+          "compute_service": 0.07000000000698492,
+          "result_delivery": 0.0
+        },
+        "last_input_tile": {
+          "tile_id": "task_155_tile_12",
+          "state": "DONE",
+          "failure_reason": null,
+          "processor": "ground",
+          "result_hops": 0,
+          "raw_relay_hops": 8,
+          "input_route": [],
+          "ground_relay_target": null,
+          "created": 74535.0,
+          "start_tx": 74536.59,
+          "end_tx": 80011.56,
+          "start_compute": 80012.24,
+          "end_compute": 80012.31,
+          "start_downlink": null,
+          "end_downlink": 80012.31
+        },
+        "all_input_ready_seconds": 80011.56,
+        "first_compute_seconds": 80011.56,
+        "receiver_busy_share": null,
+        "ground_relay_tiles_late": 64,
+        "onboard_tiles_last_delivery_age_s": null,
+        "archived_tail_interval_receiver_busy_share": 0.00775149906759183
+      },
+      "previous_cause": "ground_window_wait"
+    }
+  ]
+}

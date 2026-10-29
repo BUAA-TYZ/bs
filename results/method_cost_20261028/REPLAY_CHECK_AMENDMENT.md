@@ -1,0 +1,7 @@
+# Orin snapshot reconstruction check correction
+
+The first unloaded fixed CPU1 group stopped before a valid timing result because Python float64 observation lists were not bit-identical between Mac and Orin. Preserve orin_unloaded/status.json, fixed_cpu_t1.log and tegrastats; it is a failed validation attempt, not a timing sample. No model, capture, simulation, decision interface, normalization, or probability tolerance changes.
+
+All 134 recorded observations were diagnosed. There are 192 scalar differences across 57 fixed and 57 dynamic records, exclusively in continuous image/node tensor fields, maximum absolute difference 2.220446049250313e-16. The original equality check was stricter than the actor's actual float32 input representation.
+
+The separate replay_v2 now requires bit-exact equality of every actual float32 actor tensor, every boolean mask and all remaining observation metadata. It also records the maximum float64 reconstruction difference. Any float32 difference still fails; this correction does not introduce a numerical tolerance for input tensors. Cross-platform action probabilities retain the original atol=1e-5 and rtol=1e-4. Timed paths, 50 warmup calls, batch1 and 20 repeats per scoring-hour decision remain unchanged. Original source and registration hashes remain intact; new replay source and this amendment are hashed in every new result. New suite outputs go to orin_unloaded_v2, preserving the failed attempt.

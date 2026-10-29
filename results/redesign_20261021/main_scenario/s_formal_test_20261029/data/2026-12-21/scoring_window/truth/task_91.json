@@ -1,0 +1,486 @@
+{
+  "image": {
+    "width_px": 20000,
+    "height_px": 20000,
+    "mode": "fine",
+    "gsd_m": 0.25
+  },
+  "tiling": {
+    "width_px": 20000,
+    "height_px": 20000,
+    "bands": 3,
+    "bits_per_sample": 8,
+    "window_px": 4096,
+    "stride_px": 2304,
+    "windows_per_tile_axis": 1,
+    "compute_cost_per_window": 1,
+    "result_size_mb_per_window": 0.29696408722432,
+    "transport_components": [
+      {
+        "name": "sar_amplitude",
+        "downsample": 1,
+        "bands": 1,
+        "bits_per_sample": 16
+      }
+    ],
+    "transport_compression_ratio": 1.0,
+    "deduplicate_within_tile": true,
+    "requested_num_tiles": 16
+  },
+  "global_objects": [],
+  "windows": [
+    {
+      "window_id": 0,
+      "x0": 0,
+      "y0": 0,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 1,
+      "x0": 2304,
+      "y0": 0,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 2,
+      "x0": 4608,
+      "y0": 0,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 3,
+      "x0": 6912,
+      "y0": 0,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 4,
+      "x0": 9216,
+      "y0": 0,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 5,
+      "x0": 11520,
+      "y0": 0,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 6,
+      "x0": 13824,
+      "y0": 0,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 7,
+      "x0": 15904,
+      "y0": 0,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 8,
+      "x0": 0,
+      "y0": 2304,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 9,
+      "x0": 2304,
+      "y0": 2304,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 10,
+      "x0": 4608,
+      "y0": 2304,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 11,
+      "x0": 6912,
+      "y0": 2304,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 12,
+      "x0": 9216,
+      "y0": 2304,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 13,
+      "x0": 11520,
+      "y0": 2304,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 14,
+      "x0": 13824,
+      "y0": 2304,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 15,
+      "x0": 15904,
+      "y0": 2304,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 16,
+      "x0": 0,
+      "y0": 4608,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 17,
+      "x0": 2304,
+      "y0": 4608,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 18,
+      "x0": 4608,
+      "y0": 4608,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 19,
+      "x0": 6912,
+      "y0": 4608,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 20,
+      "x0": 9216,
+      "y0": 4608,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 21,
+      "x0": 11520,
+      "y0": 4608,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 22,
+      "x0": 13824,
+      "y0": 4608,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 23,
+      "x0": 15904,
+      "y0": 4608,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 24,
+      "x0": 0,
+      "y0": 6912,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 25,
+      "x0": 2304,
+      "y0": 6912,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 26,
+      "x0": 4608,
+      "y0": 6912,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 27,
+      "x0": 6912,
+      "y0": 6912,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 28,
+      "x0": 9216,
+      "y0": 6912,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 29,
+      "x0": 11520,
+      "y0": 6912,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 30,
+      "x0": 13824,
+      "y0": 6912,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 31,
+      "x0": 15904,
+      "y0": 6912,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 32,
+      "x0": 0,
+      "y0": 9216,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 33,
+      "x0": 2304,
+      "y0": 9216,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 34,
+      "x0": 4608,
+      "y0": 9216,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 35,
+      "x0": 6912,
+      "y0": 9216,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 36,
+      "x0": 9216,
+      "y0": 9216,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 37,
+      "x0": 11520,
+      "y0": 9216,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 38,
+      "x0": 13824,
+      "y0": 9216,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 39,
+      "x0": 15904,
+      "y0": 9216,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 40,
+      "x0": 0,
+      "y0": 11520,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 41,
+      "x0": 2304,
+      "y0": 11520,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 42,
+      "x0": 4608,
+      "y0": 11520,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 43,
+      "x0": 6912,
+      "y0": 11520,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 44,
+      "x0": 9216,
+      "y0": 11520,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 45,
+      "x0": 11520,
+      "y0": 11520,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 46,
+      "x0": 13824,
+      "y0": 11520,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 47,
+      "x0": 15904,
+      "y0": 11520,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 48,
+      "x0": 0,
+      "y0": 13824,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 49,
+      "x0": 2304,
+      "y0": 13824,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 50,
+      "x0": 4608,
+      "y0": 13824,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 51,
+      "x0": 6912,
+      "y0": 13824,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 52,
+      "x0": 9216,
+      "y0": 13824,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 53,
+      "x0": 11520,
+      "y0": 13824,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 54,
+      "x0": 13824,
+      "y0": 13824,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 55,
+      "x0": 15904,
+      "y0": 13824,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 56,
+      "x0": 0,
+      "y0": 15904,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 57,
+      "x0": 2304,
+      "y0": 15904,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 58,
+      "x0": 4608,
+      "y0": 15904,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 59,
+      "x0": 6912,
+      "y0": 15904,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 60,
+      "x0": 9216,
+      "y0": 15904,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 61,
+      "x0": 11520,
+      "y0": 15904,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 62,
+      "x0": 13824,
+      "y0": 15904,
+      "records": [],
+      "output_bytes": 28
+    },
+    {
+      "window_id": 63,
+      "x0": 15904,
+      "y0": 15904,
+      "records": [],
+      "output_bytes": 28
+    }
+  ],
+  "summary": {
+    "total_output_bytes": 1792,
+    "object_count": 0,
+    "sum_record_count": 0
+  }
+}

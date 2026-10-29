@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "focused_tests": 7,
+  "smoke_methods": [
+    {
+      "method": "local",
+      "outcomes_identical_after_queue_metric_fix": true,
+      "wall_seconds": 170.47543141699862
+    },
+    {
+      "method": "ground",
+      "outcomes_identical_after_queue_metric_fix": true,
+      "wall_seconds": 169.50464337499943
+    },
+    {
+      "method": "fifo",
+      "outcomes_identical_after_queue_metric_fix": true,
+      "wall_seconds": 165.2128921250005
+    }
+  ],
+  "sources_unchanged": true,
+  "new_implementation_verified": true,
+  "day_panel_runs": 9,
+  "workers": 3,
+  "wall_hours_estimate": [
+    6,
+    10
+  ],
+  "queue_zero_wait_regression_fixed": true
+}

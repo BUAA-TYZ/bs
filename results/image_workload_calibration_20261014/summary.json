@@ -1,0 +1,970 @@
+{
+  "protocol": {
+    "window_px": 1024,
+    "stride_px": 824,
+    "nominal_overlap_px": 200,
+    "edge_rule": "shift_last_window_to_edge_no_padding",
+    "batch": 1,
+    "half": false,
+    "confidence": 0.25,
+    "window_nms_iou": 0.7,
+    "max_detections_per_window": 300,
+    "global_polygon_nms_iou": 0.1,
+    "quality_match_iou": 0.5,
+    "wire_format": "OBB1: 28-byte LE header, 40-byte float32 polygon/score + uint32 class records",
+    "scope": "local CPU/MPS proxy; no satellite hardware claim; no threshold tuning",
+    "timing_boundary": "in-memory decoded RGB input -> crop/BGR -> predict incl preprocessing/OBB NMS -> host polygon coordinates -> coordinate restoration -> serialization"
+  },
+  "host": {
+    "platform": "macOS-26.4.1-arm64-arm-64bit",
+    "python": "3.12.13",
+    "cpu": "Apple M5 Pro",
+    "ram_bytes": 51539607552,
+    "cpu_threads": 4,
+    "mps_available": true,
+    "torch": "2.12.0"
+  },
+  "devices": {
+    "cpu": {
+      "window_service_ms": {
+        "count": 168,
+        "mean": 72.654529751855,
+        "p50": 70.36012504249811,
+        "p95": 86.68853126000614,
+        "min": 62.19033384695649,
+        "max": 322.19983311370015
+      },
+      "window_predict_ms": {
+        "count": 168,
+        "mean": 69.78448019695601,
+        "p50": 67.5837507005781,
+        "p95": 83.33751703612508,
+        "min": 59.79333305731416,
+        "max": 318.8870418816805
+      },
+      "window_output_bytes": {
+        "count": 168,
+        "mean": 828.0,
+        "p50": 228.0,
+        "p95": 3900.0000000000027,
+        "min": 28.0,
+        "max": 4228.0
+      },
+      "sampled_rss_max_bytes": 755400704,
+      "sampled_mps_allocation_max_bytes": 0,
+      "merge_service_ms": {
+        "count": 21,
+        "mean": 7.913003830860059,
+        "p50": 0.16670813784003258,
+        "p95": 33.0136246047914,
+        "min": 0.02504093572497368,
+        "max": 35.47637490555644
+      }
+    },
+    "mps": {
+      "window_service_ms": {
+        "count": 168,
+        "mean": 24.049661956572283,
+        "p50": 17.63156265951693,
+        "p95": 50.686232885345824,
+        "min": 10.690124705433846,
+        "max": 135.54675038903952
+      },
+      "window_predict_ms": {
+        "count": 168,
+        "mean": 21.191831614400837,
+        "p50": 14.902292052283883,
+        "p95": 47.25219819229096,
+        "min": 8.146458305418491,
+        "max": 132.83379096537828
+      },
+      "window_output_bytes": {
+        "count": 168,
+        "mean": 828.0,
+        "p50": 228.0,
+        "p95": 3900.0000000000027,
+        "min": 28.0,
+        "max": 4228.0
+      },
+      "sampled_rss_max_bytes": 978190336,
+      "sampled_mps_allocation_max_bytes": 13615616,
+      "merge_service_ms": {
+        "count": 21,
+        "mean": 8.139011694029683,
+        "p50": 0.20025018602609634,
+        "p95": 35.112583078444004,
+        "min": 0.030499882996082306,
+        "max": 35.42991587892175
+      }
+    }
+  },
+  "device_setup": [
+    {
+      "device": "cpu",
+      "load_ms": 36.68283298611641,
+      "model_parameters": 2664432,
+      "warmup_ms": 267.56929187104106,
+      "actual_cpu_threads_after_setup": 4
+    },
+    {
+      "device": "mps",
+      "load_ms": 171.50162486359477,
+      "model_parameters": 2664432,
+      "warmup_ms": 4267.693041823804,
+      "actual_cpu_threads_after_setup": 4
+    }
+  ],
+  "images": 7,
+  "window_rows": 336,
+  "source_sha256": {
+    "/Users/bytedance/Projects/bs/workload_benchmark/runner.py": "70d2ce04020921801fe9448f3e7f401c7922fba99c954baff4eee6f76fd1cba7",
+    "/Users/bytedance/Projects/bs/workload_benchmark/assets.py": "3f8e1ae57c5b754278faed1801127b5c3cccb52ed1226374942ee5a9e09d7ebf",
+    "/Users/bytedance/Projects/bs/workload_benchmark/postprocess.py": "6c13d0914ec3443726997d455b45425627de97941b2fbf0bed5ee7842ca09984",
+    "sim/workload.py": "aa36a54f393bb97cf602ff431372a8be31754e5892af0351609a512b58cd813b"
+  },
+  "all_grouping_checks_passed": true,
+  "notes": [
+    "No mAP: small non-independent sample, official model may have seen DOTA data.",
+    "CPU and MPS are two backends on the same M5 Pro, not satellite/ground devices.",
+    "Three short repetitions do not establish thermal steady state or a general throughput distribution.",
+    "Per-window timings include processing and result serialization; decode/network/disk output excluded."
+  ],
+  "per_image": [
+    {
+      "sample": "boats",
+      "device": "cpu",
+      "width": 1920,
+      "height": 1080,
+      "window_count": 6,
+      "raw_rgb_bytes": 6220800,
+      "window_input_bytes": 18874368,
+      "window_service_ms": {
+        "count": 18,
+        "mean": 70.68474541625216,
+        "p50": 67.33610387891531,
+        "p95": 79.00234789121895,
+        "min": 65.81129226833582,
+        "max": 84.89812538027763
+      },
+      "end_to_end_service_ms": {
+        "count": 3,
+        "mean": 457.85424998030066,
+        "p50": 442.1485415659845,
+        "p95": 490.403466578573,
+        "min": 435.64908346161246,
+        "max": 495.76512491330504
+      },
+      "merge_service_ms": {
+        "count": 3,
+        "mean": 33.745777482787766,
+        "p50": 33.0136246047914,
+        "p95": 35.23009987547994,
+        "min": 32.74733293801546,
+        "max": 35.47637490555644
+      },
+      "unmerged_output_bytes": [
+        22928,
+        22928,
+        22928
+      ],
+      "merged_output_bytes": [
+        7508,
+        7508,
+        7508
+      ],
+      "merged_sha256": [
+        "c1af0f69d11905c3bb57f854e1d46015ad04c7dbfc2fe3de57c1468fd7bf95c0",
+        "c1af0f69d11905c3bb57f854e1d46015ad04c7dbfc2fe3de57c1468fd7bf95c0",
+        "c1af0f69d11905c3bb57f854e1d46015ad04c7dbfc2fe3de57c1468fd7bf95c0"
+      ],
+      "quality": {
+        "mAP": null,
+        "status": "no ground truth"
+      }
+    },
+    {
+      "sample": "boats",
+      "device": "mps",
+      "width": 1920,
+      "height": 1080,
+      "window_count": 6,
+      "raw_rgb_bytes": 6220800,
+      "window_input_bytes": 18874368,
+      "window_service_ms": {
+        "count": 18,
+        "mean": 28.76929390347666,
+        "p50": 22.254625102505088,
+        "p95": 52.161681116558604,
+        "min": 18.19466706365347,
+        "max": 57.47733265161514
+      },
+      "end_to_end_service_ms": {
+        "count": 3,
+        "mean": 207.39030481005707,
+        "p50": 167.84820798784494,
+        "p95": 287.79203202575445,
+        "min": 153.20358285680413,
+        "max": 301.1191235855222
+      },
+      "merge_service_ms": {
+        "count": 3,
+        "mean": 34.77454138919711,
+        "p50": 35.112583078444004,
+        "p95": 35.39818259887397,
+        "min": 33.78112521022558,
+        "max": 35.42991587892175
+      },
+      "unmerged_output_bytes": [
+        22928,
+        22928,
+        22928
+      ],
+      "merged_output_bytes": [
+        7508,
+        7508,
+        7508
+      ],
+      "merged_sha256": [
+        "ce46791499b8c5d8694d7a8db8e68cbf0fedcc58ff96d4941db2f99a152b8520",
+        "ce46791499b8c5d8694d7a8db8e68cbf0fedcc58ff96d4941db2f99a152b8520",
+        "ce46791499b8c5d8694d7a8db8e68cbf0fedcc58ff96d4941db2f99a152b8520"
+      ],
+      "quality": {
+        "mAP": null,
+        "status": "no ground truth"
+      }
+    },
+    {
+      "sample": "P1470__1024__3296___1648",
+      "device": "cpu",
+      "width": 1024,
+      "height": 1024,
+      "window_count": 1,
+      "raw_rgb_bytes": 3145728,
+      "window_input_bytes": 3145728,
+      "window_service_ms": {
+        "count": 3,
+        "mean": 67.24255625158548,
+        "p50": 64.62116725742817,
+        "p95": 72.81757974997163,
+        "min": 63.37820924818516,
+        "max": 73.72829224914312
+      },
+      "end_to_end_service_ms": {
+        "count": 3,
+        "mean": 67.4143759533763,
+        "p50": 64.78408398106694,
+        "p95": 72.98390874639153,
+        "min": 63.56404349207878,
+        "max": 73.89500038698316
+      },
+      "merge_service_ms": {
+        "count": 3,
+        "mean": 0.17181970179080963,
+        "p50": 0.16670813784003258,
+        "p95": 0.18392163328826427,
+        "min": 0.16291672363877296,
+        "max": 0.18583424389362335
+      },
+      "unmerged_output_bytes": [
+        188,
+        188,
+        188
+      ],
+      "merged_output_bytes": [
+        188,
+        188,
+        188
+      ],
+      "merged_sha256": [
+        "8549366f15d7b0be5c99c756e3e746a95310bbb2c1b489f2037ec7932e76ba7b",
+        "8549366f15d7b0be5c99c756e3e746a95310bbb2c1b489f2037ec7932e76ba7b",
+        "8549366f15d7b0be5c99c756e3e746a95310bbb2c1b489f2037ec7932e76ba7b"
+      ],
+      "quality": {
+        "iou_threshold": 0.5,
+        "tp": 4,
+        "fp": 0,
+        "fn": 0,
+        "label_count": 4,
+        "ignored_label_count": 0,
+        "ignored_predictions": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "mAP": null,
+        "scope": "fixed-threshold smoke diagnostic, not independent DOTA evaluation"
+      }
+    },
+    {
+      "sample": "P1470__1024__3296___1648",
+      "device": "mps",
+      "width": 1024,
+      "height": 1024,
+      "window_count": 1,
+      "raw_rgb_bytes": 3145728,
+      "window_input_bytes": 3145728,
+      "window_service_ms": {
+        "count": 3,
+        "mean": 30.138596581916016,
+        "p50": 20.621666219085455,
+        "p95": 49.37126594595611,
+        "min": 17.228457611054182,
+        "max": 52.565665915608406
+      },
+      "end_to_end_service_ms": {
+        "count": 3,
+        "mean": 30.34792949135105,
+        "p50": 20.82191640511155,
+        "p95": 49.60429021157324,
+        "min": 17.41954032331705,
+        "max": 52.80233174562454
+      },
+      "merge_service_ms": {
+        "count": 3,
+        "mean": 0.2093329094350338,
+        "p50": 0.20025018602609634,
+        "p95": 0.2330242656171322,
+        "min": 0.19108271226286888,
+        "max": 0.23666583001613617
+      },
+      "unmerged_output_bytes": [
+        188,
+        188,
+        188
+      ],
+      "merged_output_bytes": [
+        188,
+        188,
+        188
+      ],
+      "merged_sha256": [
+        "40ed863543eabb17d6d61bffde7d2a86308fc7b8a9b2e4b7ba0afbc8ef15ef24",
+        "40ed863543eabb17d6d61bffde7d2a86308fc7b8a9b2e4b7ba0afbc8ef15ef24",
+        "40ed863543eabb17d6d61bffde7d2a86308fc7b8a9b2e4b7ba0afbc8ef15ef24"
+      ],
+      "quality": {
+        "iou_threshold": 0.5,
+        "tp": 4,
+        "fp": 0,
+        "fn": 0,
+        "label_count": 4,
+        "ignored_label_count": 0,
+        "ignored_predictions": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "mAP": null,
+        "scope": "fixed-threshold smoke diagnostic, not independent DOTA evaluation"
+      }
+    },
+    {
+      "sample": "P1571__1024__2976___0",
+      "device": "cpu",
+      "width": 1024,
+      "height": 1024,
+      "window_count": 1,
+      "raw_rgb_bytes": 3145728,
+      "window_input_bytes": 3145728,
+      "window_service_ms": {
+        "count": 3,
+        "mean": 65.3519860158364,
+        "p50": 63.75029217451811,
+        "p95": 68.91074161976576,
+        "min": 62.82154098153114,
+        "max": 69.48412489145994
+      },
+      "end_to_end_service_ms": {
+        "count": 3,
+        "mean": 65.38355521236856,
+        "p50": 63.77533311024308,
+        "p95": 68.94283299334347,
+        "min": 62.85833287984133,
+        "max": 69.5169996470213
+      },
+      "merge_service_ms": {
+        "count": 3,
+        "mean": 0.031569196532169976,
+        "p50": 0.032874755561351776,
+        "p95": 0.03640018403530121,
+        "min": 0.02504093572497368,
+        "max": 0.03679189831018448
+      },
+      "unmerged_output_bytes": [
+        68,
+        68,
+        68
+      ],
+      "merged_output_bytes": [
+        68,
+        68,
+        68
+      ],
+      "merged_sha256": [
+        "312b78bb807293ae0ece1b2e55aec65215d32bdce9cf1039eda7a31a49df34ac",
+        "312b78bb807293ae0ece1b2e55aec65215d32bdce9cf1039eda7a31a49df34ac",
+        "312b78bb807293ae0ece1b2e55aec65215d32bdce9cf1039eda7a31a49df34ac"
+      ],
+      "quality": {
+        "iou_threshold": 0.5,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "label_count": 1,
+        "ignored_label_count": 0,
+        "ignored_predictions": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "mAP": null,
+        "scope": "fixed-threshold smoke diagnostic, not independent DOTA evaluation"
+      }
+    },
+    {
+      "sample": "P1571__1024__2976___0",
+      "device": "mps",
+      "width": 1024,
+      "height": 1024,
+      "window_count": 1,
+      "raw_rgb_bytes": 3145728,
+      "window_input_bytes": 3145728,
+      "window_service_ms": {
+        "count": 3,
+        "mean": 56.55479213843743,
+        "p50": 17.475792206823826,
+        "p95": 123.73965457081793,
+        "min": 16.641833819448948,
+        "max": 135.54675038903952
+      },
+      "end_to_end_service_ms": {
+        "count": 3,
+        "mean": 56.60391723116239,
+        "p50": 17.506292089819908,
+        "p95": 123.81819239817558,
+        "min": 16.674833837896585,
+        "max": 135.63062576577067
+      },
+      "merge_service_ms": {
+        "count": 3,
+        "mean": 0.04912509272495905,
+        "p50": 0.03300001844763756,
+        "p95": 0.07878784090280533,
+        "min": 0.030499882996082306,
+        "max": 0.0838753767311573
+      },
+      "unmerged_output_bytes": [
+        68,
+        68,
+        68
+      ],
+      "merged_output_bytes": [
+        68,
+        68,
+        68
+      ],
+      "merged_sha256": [
+        "312b78bb807293ae0ece1b2e55aec65215d32bdce9cf1039eda7a31a49df34ac",
+        "312b78bb807293ae0ece1b2e55aec65215d32bdce9cf1039eda7a31a49df34ac",
+        "312b78bb807293ae0ece1b2e55aec65215d32bdce9cf1039eda7a31a49df34ac"
+      ],
+      "quality": {
+        "iou_threshold": 0.5,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "label_count": 1,
+        "ignored_label_count": 0,
+        "ignored_predictions": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "mAP": null,
+        "scope": "fixed-threshold smoke diagnostic, not independent DOTA evaluation"
+      }
+    },
+    {
+      "sample": "P1580__1024__824___824",
+      "device": "cpu",
+      "width": 1024,
+      "height": 1024,
+      "window_count": 1,
+      "raw_rgb_bytes": 3145728,
+      "window_input_bytes": 3145728,
+      "window_service_ms": {
+        "count": 3,
+        "mean": 85.07447177544236,
+        "p50": 76.33187482133508,
+        "p95": 111.67033691890538,
+        "min": 63.29470779746771,
+        "max": 115.5968327075243
+      },
+      "end_to_end_service_ms": {
+        "count": 3,
+        "mean": 85.1687768784662,
+        "p50": 76.4032076112926,
+        "p95": 111.80163216777146,
+        "min": 63.36833257228136,
+        "max": 115.73479045182467
+      },
+      "merge_service_ms": {
+        "count": 3,
+        "mean": 0.09430510302384694,
+        "p50": 0.07362477481365204,
+        "p95": 0.1315244473516941,
+        "min": 0.07133278995752335,
+        "max": 0.13795774430036545
+      },
+      "unmerged_output_bytes": [
+        148,
+        148,
+        148
+      ],
+      "merged_output_bytes": [
+        148,
+        148,
+        148
+      ],
+      "merged_sha256": [
+        "fb4c0417dc2fc1adcce7d3b31bfb5a3c37c81b620522499c2eebad15d9b14c4c",
+        "fb4c0417dc2fc1adcce7d3b31bfb5a3c37c81b620522499c2eebad15d9b14c4c",
+        "fb4c0417dc2fc1adcce7d3b31bfb5a3c37c81b620522499c2eebad15d9b14c4c"
+      ],
+      "quality": {
+        "iou_threshold": 0.5,
+        "tp": 2,
+        "fp": 1,
+        "fn": 0,
+        "label_count": 2,
+        "ignored_label_count": 0,
+        "ignored_predictions": 0,
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "mAP": null,
+        "scope": "fixed-threshold smoke diagnostic, not independent DOTA evaluation"
+      }
+    },
+    {
+      "sample": "P1580__1024__824___824",
+      "device": "mps",
+      "width": 1024,
+      "height": 1024,
+      "window_count": 1,
+      "raw_rgb_bytes": 3145728,
+      "window_input_bytes": 3145728,
+      "window_service_ms": {
+        "count": 3,
+        "mean": 35.28590298568209,
+        "p50": 20.338833332061768,
+        "p95": 63.666408369317644,
+        "min": 17.03829225152731,
+        "max": 68.4805833734572
+      },
+      "end_to_end_service_ms": {
+        "count": 3,
+        "mean": 35.37288882459203,
+        "p50": 20.406166091561317,
+        "p95": 63.77799129113554,
+        "min": 17.115417402237654,
+        "max": 68.59708297997713
+      },
+      "merge_service_ms": {
+        "count": 3,
+        "mean": 0.0869858389099439,
+        "p50": 0.07712515071034431,
+        "p95": 0.1125621609389782,
+        "min": 0.06733275949954987,
+        "max": 0.11649960651993752
+      },
+      "unmerged_output_bytes": [
+        148,
+        148,
+        148
+      ],
+      "merged_output_bytes": [
+        148,
+        148,
+        148
+      ],
+      "merged_sha256": [
+        "5a24e0dfb15da538d455c4a9bcd4f04c0d19d72ee41df9c471a12f48dc2eb571",
+        "5a24e0dfb15da538d455c4a9bcd4f04c0d19d72ee41df9c471a12f48dc2eb571",
+        "5a24e0dfb15da538d455c4a9bcd4f04c0d19d72ee41df9c471a12f48dc2eb571"
+      ],
+      "quality": {
+        "iou_threshold": 0.5,
+        "tp": 2,
+        "fp": 1,
+        "fn": 0,
+        "label_count": 2,
+        "ignored_label_count": 0,
+        "ignored_predictions": 0,
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "mAP": null,
+        "scope": "fixed-threshold smoke diagnostic, not independent DOTA evaluation"
+      }
+    },
+    {
+      "sample": "P1724__1024__0___824",
+      "device": "cpu",
+      "width": 1024,
+      "height": 1024,
+      "window_count": 1,
+      "raw_rgb_bytes": 3145728,
+      "window_input_bytes": 3145728,
+      "window_service_ms": {
+        "count": 3,
+        "mean": 76.7913192200164,
+        "p50": 72.13958306238055,
+        "p95": 92.22075808793306,
+        "min": 63.78237484022975,
+        "max": 94.4519997574389
+      },
+      "end_to_end_service_ms": {
+        "count": 3,
+        "mean": 76.82508292297523,
+        "p50": 72.17066595330834,
+        "p95": 92.25334133952856,
+        "min": 63.81983309984207,
+        "max": 94.48474971577525
+      },
+      "merge_service_ms": {
+        "count": 3,
+        "mean": 0.03376370295882225,
+        "p50": 0.0327499583363533,
+        "p95": 0.036987429484725,
+        "min": 0.031082890927791595,
+        "max": 0.037458259612321854
+      },
+      "unmerged_output_bytes": [
+        68,
+        68,
+        68
+      ],
+      "merged_output_bytes": [
+        68,
+        68,
+        68
+      ],
+      "merged_sha256": [
+        "e58e5c853a5f25a6d1fd7d0a0a7710985df2311d8f68ba2afaf1aa8615670423",
+        "e58e5c853a5f25a6d1fd7d0a0a7710985df2311d8f68ba2afaf1aa8615670423",
+        "e58e5c853a5f25a6d1fd7d0a0a7710985df2311d8f68ba2afaf1aa8615670423"
+      ],
+      "quality": {
+        "iou_threshold": 0.5,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "label_count": 1,
+        "ignored_label_count": 0,
+        "ignored_predictions": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "mAP": null,
+        "scope": "fixed-threshold smoke diagnostic, not independent DOTA evaluation"
+      }
+    },
+    {
+      "sample": "P1724__1024__0___824",
+      "device": "mps",
+      "width": 1024,
+      "height": 1024,
+      "window_count": 1,
+      "raw_rgb_bytes": 3145728,
+      "window_input_bytes": 3145728,
+      "window_service_ms": {
+        "count": 3,
+        "mean": 26.308388604472082,
+        "p50": 20.803332794457674,
+        "p95": 39.83113309368491,
+        "min": 16.176499892026186,
+        "max": 41.94533312693238
+      },
+      "end_to_end_service_ms": {
+        "count": 3,
+        "mean": 26.347568879524868,
+        "p50": 20.83624852821231,
+        "p95": 39.88309921696782,
+        "min": 16.207042150199413,
+        "max": 41.99941596016288
+      },
+      "merge_service_ms": {
+        "count": 3,
+        "mean": 0.03918027505278587,
+        "p50": 0.03291573375463486,
+        "p95": 0.05196612328290939,
+        "min": 0.03054225817322731,
+        "max": 0.05408283323049545
+      },
+      "unmerged_output_bytes": [
+        68,
+        68,
+        68
+      ],
+      "merged_output_bytes": [
+        68,
+        68,
+        68
+      ],
+      "merged_sha256": [
+        "a417473a31afc53eb963d4100fa797e9941b9dcc13c65ddc10ce369a18e35527",
+        "a417473a31afc53eb963d4100fa797e9941b9dcc13c65ddc10ce369a18e35527",
+        "a417473a31afc53eb963d4100fa797e9941b9dcc13c65ddc10ce369a18e35527"
+      ],
+      "quality": {
+        "iou_threshold": 0.5,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "label_count": 1,
+        "ignored_label_count": 0,
+        "ignored_predictions": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "mAP": null,
+        "scope": "fixed-threshold smoke diagnostic, not independent DOTA evaluation"
+      }
+    },
+    {
+      "sample": "P0007",
+      "device": "cpu",
+      "width": 1490,
+      "height": 2137,
+      "window_count": 6,
+      "raw_rgb_bytes": 9552390,
+      "window_input_bytes": 18874368,
+      "window_service_ms": {
+        "count": 18,
+        "mean": 89.8910670592967,
+        "p50": 76.29504147917032,
+        "p95": 126.78918929304895,
+        "min": 64.97374968603253,
+        "max": 322.19983311370015
+      },
+      "end_to_end_service_ms": {
+        "count": 3,
+        "mean": 556.3734856744608,
+        "p50": 481.2089162878692,
+        "p95": 721.4170032646507,
+        "min": 439.80475002899766,
+        "max": 748.1067907065153
+      },
+      "merge_service_ms": {
+        "count": 3,
+        "mean": 17.027083318680525,
+        "p50": 16.92062523216009,
+        "p95": 17.432912904769182,
+        "min": 16.67079096660018,
+        "max": 17.489833757281303
+      },
+      "unmerged_output_bytes": [
+        15488,
+        15488,
+        15488
+      ],
+      "merged_output_bytes": [
+        7148,
+        7148,
+        7148
+      ],
+      "merged_sha256": [
+        "e04392a09c832e1797cfdbd87c50dab561cebb3c45537913613518db9e44c6e3",
+        "e04392a09c832e1797cfdbd87c50dab561cebb3c45537913613518db9e44c6e3",
+        "e04392a09c832e1797cfdbd87c50dab561cebb3c45537913613518db9e44c6e3"
+      ],
+      "quality": {
+        "iou_threshold": 0.5,
+        "tp": 87,
+        "fp": 73,
+        "fn": 34,
+        "label_count": 121,
+        "ignored_label_count": 35,
+        "ignored_predictions": 18,
+        "precision": 0.54375,
+        "recall": 0.71900826446281,
+        "mAP": null,
+        "scope": "fixed-threshold smoke diagnostic, not independent DOTA evaluation"
+      }
+    },
+    {
+      "sample": "P0007",
+      "device": "mps",
+      "width": 1490,
+      "height": 2137,
+      "window_count": 6,
+      "raw_rgb_bytes": 9552390,
+      "window_input_bytes": 18874368,
+      "window_service_ms": {
+        "count": 18,
+        "mean": 26.380132004204725,
+        "p50": 19.14004236459732,
+        "p95": 50.35293139517307,
+        "min": 16.332583036273718,
+        "max": 51.347041968256235
+      },
+      "end_to_end_service_ms": {
+        "count": 3,
+        "mean": 175.5594864177207,
+        "p50": 125.65741781145334,
+        "p95": 260.5136043857783,
+        "min": 125.52341632544994,
+        "max": 275.49762511625886
+      },
+      "merge_service_ms": {
+        "count": 3,
+        "mean": 17.278694392492373,
+        "p50": 17.177625093609095,
+        "p95": 17.455387534573674,
+        "min": 17.172208055853844,
+        "max": 17.486250028014183
+      },
+      "unmerged_output_bytes": [
+        15488,
+        15488,
+        15488
+      ],
+      "merged_output_bytes": [
+        7148,
+        7148,
+        7148
+      ],
+      "merged_sha256": [
+        "c37c40bcba366d3a2424f72585a82a9c10727746255a2d1c9a1b298967126f29",
+        "c37c40bcba366d3a2424f72585a82a9c10727746255a2d1c9a1b298967126f29",
+        "c37c40bcba366d3a2424f72585a82a9c10727746255a2d1c9a1b298967126f29"
+      ],
+      "quality": {
+        "iou_threshold": 0.5,
+        "tp": 87,
+        "fp": 73,
+        "fn": 34,
+        "label_count": 121,
+        "ignored_label_count": 35,
+        "ignored_predictions": 18,
+        "precision": 0.54375,
+        "recall": 0.71900826446281,
+        "mAP": null,
+        "scope": "fixed-threshold smoke diagnostic, not independent DOTA evaluation"
+      }
+    },
+    {
+      "sample": "P0019",
+      "device": "cpu",
+      "width": 6573,
+      "height": 3727,
+      "window_count": 40,
+      "raw_rgb_bytes": 73492713,
+      "window_input_bytes": 125829120,
+      "window_service_ms": {
+        "count": 120,
+        "mean": 70.26846144969265,
+        "p50": 70.26039599440992,
+        "p95": 81.13805206958205,
+        "min": 62.19033384695649,
+        "max": 90.85641708225012
+      },
+      "end_to_end_service_ms": {
+        "count": 3,
+        "mean": 2815.025166297952,
+        "p50": 2924.3400832638144,
+        "p95": 2953.5567079670727,
+        "min": 2563.9324160292745,
+        "max": 2956.802999600768
+      },
+      "merge_service_ms": {
+        "count": 3,
+        "mean": 4.286708310246468,
+        "p50": 4.355166107416153,
+        "p95": 4.3750416953116655,
+        "min": 4.127708729356527,
+        "max": 4.3772500939667225
+      },
+      "unmerged_output_bytes": [
+        7480,
+        7480,
+        7480
+      ],
+      "merged_output_bytes": [
+        3348,
+        3348,
+        3348
+      ],
+      "merged_sha256": [
+        "f5f5be77b7741945076a4d972eed9ed6a3e27a08f71e0b735d68239c59ffc1e3",
+        "f5f5be77b7741945076a4d972eed9ed6a3e27a08f71e0b735d68239c59ffc1e3",
+        "f5f5be77b7741945076a4d972eed9ed6a3e27a08f71e0b735d68239c59ffc1e3"
+      ],
+      "quality": {
+        "iou_threshold": 0.5,
+        "tp": 42,
+        "fp": 37,
+        "fn": 32,
+        "label_count": 74,
+        "ignored_label_count": 6,
+        "ignored_predictions": 4,
+        "precision": 0.5316455696202531,
+        "recall": 0.5675675675675675,
+        "mAP": null,
+        "scope": "fixed-threshold smoke diagnostic, not independent DOTA evaluation"
+      }
+    },
+    {
+      "sample": "P0019",
+      "device": "mps",
+      "width": 6573,
+      "height": 3727,
+      "window_count": 40,
+      "raw_rgb_bytes": 73492713,
+      "window_input_bytes": 125829120,
+      "window_service_ms": {
+        "count": 120,
+        "mean": 21.6899208452863,
+        "p50": 17.176416935399175,
+        "p95": 43.43445627018809,
+        "min": 10.690124705433846,
+        "max": 68.6494167894125
+      },
+      "end_to_end_service_ms": {
+        "count": 3,
+        "mean": 872.1320557718476,
+        "p50": 666.6047503240407,
+        "p95": 1223.8309021107852,
+        "min": 664.046498015523,
+        "max": 1285.744918975979
+      },
+      "merge_service_ms": {
+        "count": 3,
+        "mean": 4.535221960395575,
+        "p50": 4.4650002382695675,
+        "p95": 4.671024484559894,
+        "min": 4.446749575436115,
+        "max": 4.693916067481041
+      },
+      "unmerged_output_bytes": [
+        7480,
+        7480,
+        7480
+      ],
+      "merged_output_bytes": [
+        3348,
+        3348,
+        3348
+      ],
+      "merged_sha256": [
+        "7b165d4378cd8fbb890eb18920bbfab59384b6da49d9640de3216658b6f8cd93",
+        "7b165d4378cd8fbb890eb18920bbfab59384b6da49d9640de3216658b6f8cd93",
+        "7b165d4378cd8fbb890eb18920bbfab59384b6da49d9640de3216658b6f8cd93"
+      ],
+      "quality": {
+        "iou_threshold": 0.5,
+        "tp": 42,
+        "fp": 37,
+        "fn": 32,
+        "label_count": 74,
+        "ignored_label_count": 6,
+        "ignored_predictions": 4,
+        "precision": 0.5316455696202531,
+        "recall": 0.5675675675675675,
+        "mAP": null,
+        "scope": "fixed-threshold smoke diagnostic, not independent DOTA evaluation"
+      }
+    }
+  ]
+}

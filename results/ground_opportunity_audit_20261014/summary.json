@@ -1,0 +1,145 @@
+[
+  {
+    "case": {
+      "id": "train_2026101400_3",
+      "seed": 2026101403,
+      "orbit_offset_seconds": 128029.2274685285,
+      "arrival_rate_per_second": 0.0072872683524968646,
+      "compute_cost_per_tile": 80.31318315011413,
+      "isl_bandwidth_scale": 1.0436508548492514,
+      "ground_bandwidth_scale": 6.0880255904996865,
+      "walker": {
+        "planes": 4,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 559.5912015061222,
+        "inclination_deg": 76.02779321445338,
+        "raan_offset_deg": 81.67738566811775,
+        "phase_offset_deg": 165.9668369522258
+      },
+      "role_profile": "near",
+      "num_sats": 24,
+      "num_task_sources": 8,
+      "effective_arrival_rate_per_second": 0.0072872683524968646,
+      "config_sha256": "b66b5435ce6fe67e02ce23ae98f2b6d91b30d0ed75179dc822cfcd76cdf63b9c"
+    },
+    "policy": "cgs_ground_wait",
+    "archived_outcomes_reproduced": true,
+    "same_state_counts": {
+      "compared": 618,
+      "different": 232
+    },
+    "same_state_transitions": {
+      "(('OFFLOAD', 20, None), ('OFFLOAD', 19, None))": 2,
+      "(('OFFLOAD', 19, None), ('WAIT', None, None))": 76,
+      "(('OFFLOAD', 20, None), ('WAIT', None, None))": 70,
+      "(('LOCAL', None, None), ('OFFLOAD', 20, None))": 1,
+      "(('LOCAL', None, None), ('WAIT', None, None))": 2,
+      "(('OFFLOAD', 22, None), ('WAIT', None, None))": 39,
+      "(('OFFLOAD', 23, None), ('WAIT', None, None))": 39,
+      "(('OFFLOAD', 23, None), ('OFFLOAD', 22, None))": 1,
+      "(('OFFLOAD', 22, None), ('OFFLOAD', 23, None))": 1,
+      "(('OFFLOAD', 19, None), ('OFFLOAD', 20, None))": 1
+    },
+    "lifecycle": {
+      "event_counts": {
+        "compute_start": 359,
+        "computed": 359,
+        "created": 392,
+        "done": 392,
+        "downlink_end": 359,
+        "downlink_start": 359,
+        "ground_compute_end": 33,
+        "ground_compute_start": 33,
+        "local_ready": 7,
+        "queued": 744,
+        "result_tx_end": 590,
+        "result_tx_start": 590,
+        "task_delivered": 49,
+        "tx_end": 352,
+        "tx_end_ground": 33,
+        "tx_start": 352,
+        "tx_start_ground": 33
+      },
+      "computed_unique_tiles": {
+        "source_satellite": 7,
+        "remote_satellite": 352,
+        "ground": 33
+      }
+    }
+  },
+  {
+    "case": {
+      "id": "train_2026101400_8",
+      "seed": 2026101408,
+      "orbit_offset_seconds": 135625.54742716954,
+      "arrival_rate_per_second": 0.011528986185717783,
+      "compute_cost_per_tile": 55.7865739689189,
+      "isl_bandwidth_scale": 0.9550008804639042,
+      "ground_bandwidth_scale": 13.060633611070703,
+      "walker": {
+        "planes": 6,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 555.3771525500274,
+        "inclination_deg": 60.46765225803778,
+        "raan_offset_deg": 180.71972869458523,
+        "phase_offset_deg": 192.8207925166484
+      },
+      "role_profile": "uniform",
+      "num_sats": 36,
+      "num_task_sources": 12,
+      "effective_arrival_rate_per_second": 0.017293479278576673,
+      "config_sha256": "703312fc9c931ec71fbf4ec1450d9d09b1e59011bbe577010e2100e3c982bff9"
+    },
+    "policy": "cgs_ground_wait",
+    "archived_outcomes_reproduced": true,
+    "same_state_counts": {
+      "compared": 1753,
+      "different": 639
+    },
+    "same_state_transitions": {
+      "(('OFFLOAD', 1, None), ('WAIT', None, None))": 14,
+      "(('LOCAL', None, None), ('WAIT', None, None))": 139,
+      "(('OFFLOAD', 11, None), ('WAIT', None, None))": 54,
+      "(('OFFLOAD', 0, None), ('WAIT', None, None))": 21,
+      "(('OFFLOAD', 16, None), ('WAIT', None, None))": 6,
+      "(('OFFLOAD', 4, None), ('WAIT', None, None))": 62,
+      "(('OFFLOAD', 14, None), ('WAIT', None, None))": 122,
+      "(('OFFLOAD', 14, None), ('OFFLOAD', 4, None))": 1,
+      "(('OFFLOAD', 20, None), ('WAIT', None, None))": 22,
+      "(('OFFLOAD', 19, None), ('WAIT', None, None))": 12,
+      "(('OFFLOAD', 14, None), ('OFFLOAD', 19, None))": 1,
+      "(('OFFLOAD', 8, None), ('WAIT', None, None))": 24,
+      "(('OFFLOAD', 13, None), ('WAIT', None, None))": 124,
+      "(('OFFLOAD', 7, None), ('WAIT', None, None))": 20,
+      "(('OFFLOAD', 6, None), ('WAIT', None, None))": 17
+    },
+    "lifecycle": {
+      "event_counts": {
+        "compute_start": 1014,
+        "computed": 1014,
+        "created": 1088,
+        "done": 1085,
+        "downlink_end": 1011,
+        "downlink_start": 1014,
+        "ground_compute_end": 74,
+        "ground_compute_start": 74,
+        "local_ready": 60,
+        "queued": 2042,
+        "result_tx_end": 4792,
+        "result_tx_start": 4792,
+        "task_delivered": 133,
+        "tx_end": 954,
+        "tx_end_ground": 74,
+        "tx_start": 954,
+        "tx_start_ground": 74
+      },
+      "computed_unique_tiles": {
+        "source_satellite": 60,
+        "remote_satellite": 954,
+        "ground": 74
+      }
+    }
+  }
+]

@@ -1,0 +1,275 @@
+- generic [ref=f1e2]:
+  - banner [ref=f1e3]:
+    - heading "卫星任务调度仿真工作台" [level=1] [ref=f1e4]
+    - navigation [ref=f1e5]:
+      - button "仿真回放" [ref=f1e6] [cursor=pointer]
+      - button "结果分析" [ref=f1e7] [cursor=pointer]
+      - button "历史与对比" [ref=f1e8] [cursor=pointer]
+    - generic [ref=f1e9]: 服务正常 · 运行目录 /Users/bytedance/Projects/bs/runs
+  - generic [ref=f1e10]:
+    - complementary [ref=f1e11]:
+      - generic [ref=f1e12]:
+        - heading [level=2] [ref=f1e13]:
+          - text: 场景配置
+          - button "恢复原配置" [ref=f1e15] [cursor=pointer]
+        - generic [ref=f1e16]:
+          - generic [ref=f1e17]: 配置文件
+          - combobox "配置文件" [ref=f1e18]:
+            - option "config"
+            - option "config_committed"
+            - option "config_predictive"
+            - option "config_relay"
+            - option "config_roles"
+            - option "config_sar_current" [selected]
+            - option "config_smoke"
+            - option "config_training"
+        - generic [ref=f1e69]: 当前SAR开发场景：Jetson并发实测，24源星+22计算中继星。 4096窗口，180图，P300；历史串行结果不适用此配置。 · 46 星 · 8670100 步 · dt 0.01 s
+        - generic [ref=f1e19]:
+          - generic [ref=f1e20]: 调度策略 / 执行模式
+          - combobox "调度策略 / 执行模式" [ref=f1e21]:
+            - option "local — 全部本地计算"
+            - option "greedy — 贪心最早完成"
+            - option "load_aware — 负载感知资源匹配"
+            - option "random — 随机"
+            - option "window_aware — 窗口感知贪心" [selected]
+            - option "predictive — 保守预测启发式"
+            - option "rolling_admission — 有限承诺接单"
+            - option "task_quota — 整图机会配额"
+            - option "task_delivery — 整图试排调度"
+            - option "arrival_calendar — 跨轮到达日历"
+            - option "reservation — 容量预约"
+            - option "reservation_independent — 容量预约（独立报价消融）"
+            - option "reservation_joint — 整图预检（beam=4）"
+            - option "reservation_joint_sequential — 整图预检（顺序）"
+            - option "reservation_calendar — 服务日历预约"
+            - option "reservation_guarded — 保守接单预约"
+            - option "reservation_multihop — 多段回传预约"
+            - option "reservation_forecast — 保守接单 + 多段回传"
+            - option "reservation_deferred — 等待机会预约"
+            - option "marl — MARL（IPPO/MAPPO checkpoint）"
+            - option "ground_compute — 全地面整图计算"
+            - option "ground_relay — 原始分片中继至地面计算"
+            - option "ground_tiles — 原始分片直接下传地面计算"
+            - option "ground_unique_relay — 唯一像素原图中继至地面计算"
+            - option "heft_adapted — HEFT（滚动任务图适配）"
+            - option "cgs_compute_adapted — CGS（计算机会适配）"
+            - option "dts_tmax_onehop — DTS-TMAX（一跳选择适配）"
+            - option "dts_tmax_path — DTS-TMAX（有界路径适配）"
+            - option "dts_tmax_hybrid — DTS-TMAX（星地混合适配）"
+        - generic [ref=f1e70]: WindowAwareGreedy：在贪心估算中使用地面站过境窗口预测下传等待时间。
+        - generic [ref=f1e71]:
+          - group [ref=f1e72]:
+            - generic "▾ 基本参数" [ref=f1e73] [cursor=pointer]
+            - generic [ref=f1e74]:
+              - generic [ref=f1e75]:
+                - generic "任务到达、分片大小与链路带宽噪声均由该种子决定；配置键 seed，引擎默认 0" [ref=f1e76]: 随机种子
+                - textbox [ref=f1e77]: "1701"
+              - generic [ref=f1e78]:
+                - generic "配置键 sim_steps，引擎默认 200" [ref=f1e79]: 仿真步数
+                - textbox [ref=f1e80]: "8670100"
+              - generic [ref=f1e81]:
+                - generic "配置键 dt，引擎默认 1" [ref=f1e82]:
+                  - text: 步长 dt
+                  - generic [ref=f1e83]: s
+                - textbox [ref=f1e84]: "0.01"
+              - generic [ref=f1e85]:
+                - generic "取 TLE 文件前 N 颗卫星；配置键 num_sats，引擎默认 4" [ref=f1e86]: 卫星数量
+                - textbox [ref=f1e87]: "46"
+          - group [ref=f1e88]:
+            - generic "▾ 任务负载" [ref=f1e89] [cursor=pointer]
+            - generic [ref=f1e90]:
+              - generic [ref=f1e91]:
+                - generic "每步泊松到达均值；配置键 task_arrival_rate，引擎默认 0.3" [ref=f1e92]:
+                  - text: 任务到达率
+                  - generic [ref=f1e93]: 个/步
+                - textbox [ref=f1e94]: "0"
+              - generic [ref=f1e95]:
+                - generic "首个不再产生任务的步号；留空表示全程到达；配置键 task_arrival_end_step" [ref=f1e96]: 停止到达步号
+                - textbox "留空 = 未设置" [ref=f1e97]: "8640000"
+              - generic [ref=f1e98]:
+                - generic "配置键 image_size_mb，引擎默认 512" [ref=f1e99]:
+                  - text: 整图大小
+                  - generic [ref=f1e100]: MB
+                - textbox [ref=f1e101]: "800"
+              - generic [ref=f1e102]:
+                - generic "配置键 num_tiles，引擎默认 16" [ref=f1e103]: 分片数
+                - textbox [ref=f1e104]: "64"
+              - generic [ref=f1e105]:
+                - generic "计算时长 = 计算量 / 算力（秒）；配置键 compute_cost_per_tile，引擎默认 4" [ref=f1e106]: 单分片计算量
+                - textbox [ref=f1e107]: "1"
+              - generic [ref=f1e108]:
+                - generic "配置键 result_size_mb，引擎默认 1" [ref=f1e109]:
+                  - text: 单分片结果大小
+                  - generic [ref=f1e110]: MB
+                - textbox [ref=f1e111]: "0.86857875"
+              - generic [ref=f1e112]:
+                - generic "0 表示无截止期；配置键 deadline_steps，引擎默认 0" [ref=f1e113]: 截止步数
+                - textbox [ref=f1e114]: "0"
+          - group [ref=f1e115]:
+            - generic "▸ 星上算力与存储" [ref=f1e116] [cursor=pointer]
+            - option "wait" [selected]
+            - option "reject"
+          - group [ref=f1e117]:
+            - generic "▸ 通信与地面站" [ref=f1e118] [cursor=pointer]
+          - group [ref=f1e119]:
+            - generic "▸ 高级配置" [ref=f1e120] [cursor=pointer]
+            - option "（配置使用 tle_lines 或未指定）" [selected]
+            - option "global_spread_inc53_24.tle（24 条）"
+            - option "global_spread_inc53_66.tle（66 条）"
+            - option "starlink.tle（9888 条）"
+            - option "starlink_cluster_24.tle（24 条）"
+        - generic [ref=f1e121]:
+          - generic [ref=f1e262]: 校验通过
+          - list [ref=f1e264]:
+            - listitem [ref=f1e265]: decision_interval_steps ≠ 1：与 evaluate_policies 的可比评估设置不同。
+            - listitem [ref=f1e266]: 规模较大（46 星 × 8670100 步），运行可能需要数分钟以上。
+        - generic [ref=f1e22]:
+          - button "校验" [active] [ref=f1e23] [cursor=pointer]
+          - button "运行仿真" [ref=f1e24] [cursor=pointer]
+          - generic [ref=f1e127]: 与「config_sar_current」一致
+      - generic [ref=f1e25]:
+        - heading "仿真执行进度 已结束" [level=2] [ref=f1e128]:
+          - text: 仿真执行进度
+          - generic [ref=f1e129]: 已结束
+        - generic [ref=f1e27]:
+          - generic "运行目录 runs/20261015-172251-cgs_compute_adapted-s1701" [ref=f1e132]: 20261015-172251-cgs_compute_adapted-s1701
+          - generic [ref=f1e133]: cgs_compute_adapted · CGS（计算机会适配） · 种子 1701 · dt 0.1 s
+          - generic "后台仿真已执行步数" [ref=f1e134]
+          - generic [ref=f1e136]:
+            - generic [ref=f1e137]: 已执行 65710 / 65710 步 （仿真时刻 6571 s）
+            - generic [ref=f1e138]: 结束 · 用时 69.07 s
+          - generic [ref=f1e139]: 进度计数（运行中实时）：任务 21 个，完整交付 21，失败 0，聚合中 0；分片 6615 个，交付 6615，失败 0
+          - generic [ref=f1e140]:
+            - button "重新运行" [ref=f1e141] [cursor=pointer]
+            - button "载入回放/分析" [ref=f1e142] [cursor=pointer]
+            - button "配置载入表单" [ref=f1e143] [cursor=pointer]
+    - generic [ref=f1e30]:
+      - generic [ref=f1e31]:
+        - generic [ref=f1e144]:
+          - link [ref=f1e152] [cursor=pointer]:
+            - /url: https://cesium.com/
+            - img "Cesium ion" [ref=f1e153]
+          - generic [ref=f1e154]:
+            - button "View Home" [ref=f1e155] [cursor=pointer]
+            - button "3D" [ref=f1e159] [cursor=pointer]
+        - generic:
+          - generic [ref=f1e33]:
+            - text: 回放：20261015-172251-cgs_compute_adapted-s1701
+            - generic [ref=f1e166]: 已结束
+            - text: · cgs_compute_adapted · CGS（计算机会适配） · 种子 1701 · 24 星 · dt 0.1 s
+            - generic [ref=f1e167]: 离线底图 NaturalEarthII（未配置 ion 令牌）
+          - generic [ref=f1e34]:
+            - generic [ref=f1e35] [cursor=pointer]:
+              - checkbox "卫星标签" [checked] [ref=f1e36]
+              - text: 卫星标签
+            - generic [ref=f1e37] [cursor=pointer]:
+              - checkbox "轨道线" [checked] [ref=f1e38]
+              - text: 轨道线
+            - generic [ref=f1e39] [cursor=pointer]:
+              - checkbox "地面站" [checked] [ref=f1e40]
+              - text: 地面站
+            - generic "拓扑中处于连通状态的星间链路（几何可见且满足距离/邻居约束），不代表有数据传输" [ref=f1e41] [cursor=pointer]:
+              - checkbox "可见星间链路" [checked] [ref=f1e42]
+              - text: 可见星间链路
+            - generic "快照区间内 network_sent_mb 的实际发送量，箭头指向接收星，线宽随 MB 增大" [ref=f1e44] [cursor=pointer]:
+              - checkbox "实际星间传输" [checked] [ref=f1e45]
+              - text: 实际星间传输
+            - generic "满足地面站最小仰角的星地几何可见关系，不代表正在传输" [ref=f1e47] [cursor=pointer]:
+              - checkbox "星地几何可见" [ref=f1e48]
+              - text: 星地几何可见
+            - generic "下传结果、原始分片或整图上传，快照区间内实际发送量 > 0" [ref=f1e50] [cursor=pointer]:
+              - checkbox "星地实际传输" [checked] [ref=f1e51]
+              - text: 星地实际传输
+            - generic "未选任务时按（类型, 源, 目的）汇总全部流；选中任务时仅显示该任务的分片流" [ref=f1e53] [cursor=pointer]:
+              - checkbox "任务流向" [ref=f1e54]
+              - text: 任务流向
+      - complementary [ref=f1e56]:
+        - generic [ref=f1e168]:
+          - heading "当前时刻数据来源" [level=2] [ref=f1e169]
+          - generic [ref=f1e170]:
+            - term [ref=f1e171]: 链路/传输
+            - definition [ref=f1e172]: "快照 #0：步 0–43（区间累计；链路取末步）"
+            - term [ref=f1e173]: 状态
+            - definition [ref=f1e174]: 仿真开始时刻，尚无状态快照
+            - term [ref=f1e175]: 采样
+            - definition [ref=f1e176]: 每 44 步一个快照，共 1494 个
+        - generic [ref=f1e177]:
+          - heading "实体选择 点击地球或下方按钮（按钮跳转视角）" [level=2] [ref=f1e178]:
+            - text: 实体选择
+            - generic "按钮选择时视角直接跳到该实体上方；双击地球上的实体可持续跟随" [ref=f1e179]: 点击地球或下方按钮（按钮跳转视角）
+          - generic [ref=f1e180]:
+            - button "S0" [ref=f1e181] [cursor=pointer]
+            - button "S1" [ref=f1e183] [cursor=pointer]
+            - button "S2°" [ref=f1e185] [cursor=pointer]
+            - button "S3°" [ref=f1e187] [cursor=pointer]
+            - button "S4°" [ref=f1e189] [cursor=pointer]
+            - button "S5°" [ref=f1e191] [cursor=pointer]
+            - button "S6°" [ref=f1e193] [cursor=pointer]
+            - button "S7°" [ref=f1e195] [cursor=pointer]
+            - button "S8°" [ref=f1e197] [cursor=pointer]
+            - button "S9°" [ref=f1e199] [cursor=pointer]
+            - button "S10°" [ref=f1e201] [cursor=pointer]
+            - button "S11°" [ref=f1e203] [cursor=pointer]
+            - button "S12°" [ref=f1e205] [cursor=pointer]
+            - button "S13°" [ref=f1e207] [cursor=pointer]
+            - button "S14°" [ref=f1e209] [cursor=pointer]
+            - button "S15°" [ref=f1e211] [cursor=pointer]
+            - button "S16°" [ref=f1e213] [cursor=pointer]
+            - button "S17°" [ref=f1e215] [cursor=pointer]
+            - button "S18°" [ref=f1e217] [cursor=pointer]
+            - button "S19°" [ref=f1e219] [cursor=pointer]
+            - button "S20°" [ref=f1e221] [cursor=pointer]
+            - button "S21°" [ref=f1e223] [cursor=pointer]
+            - button "S22°" [ref=f1e225] [cursor=pointer]
+            - button "S23°" [ref=f1e227] [cursor=pointer]
+            - button "⌂ gs_beijing" [ref=f1e229] [cursor=pointer]
+          - generic [ref=f1e230]: 执行中 有排队 空闲；° 表示非任务源
+        - generic [ref=f1e234]:
+          - heading "卫星 S0 sat_0" [level=2] [ref=f1e235]:
+            - text: 卫星 S0
+            - generic [ref=f1e236]: sat_0
+          - generic [ref=f1e237]:
+            - term [ref=f1e238]: 角色
+            - definition [ref=f1e239]: 成像任务源（产生遥感任务）
+            - term [ref=f1e240]: 单窗服务率
+            - definition [ref=f1e241]: 1 U/s
+        - generic [ref=f1e242]:
+          - heading "状态 无" [level=2] [ref=f1e243]:
+            - text: 状态
+            - generic [ref=f1e244]: 无
+          - generic [ref=f1e245]: 尚无状态快照。
+        - generic [ref=f1e246]:
+          - heading "链路与传输 步 0–43" [level=2] [ref=f1e247]:
+            - text: 链路与传输
+            - generic [ref=f1e248]: 步 0–43
+          - generic [ref=f1e249]:
+            - term [ref=f1e250]: 可见星间链路
+            - definition [ref=f1e251]: S1（10000 Mbps）、S21（10000 Mbps）、S22（10000 Mbps）
+            - term [ref=f1e252]: 几何可见地面站
+            - definition [ref=f1e253]: 无
+            - term [ref=f1e254]: 实际发送
+            - definition [ref=f1e255]: "0"
+            - term [ref=f1e256]: 实际接收
+            - definition [ref=f1e257]: "0"
+          - heading "涉及该星的传输流（汇总）" [level=3] [ref=f1e258]
+          - generic [ref=f1e259]: 本快照区间无传输流
+          - heading "分片明细" [level=3] [ref=f1e260]
+          - generic [ref=f1e261]: 本快照区间无记录
+      - generic [ref=f1e59]:
+        - generic [ref=f1e60]:
+          - generic "对已结束运行的记录数据进行回放；不是仿真执行进度" [ref=f1e61]: 结果回放时间
+          - button "▶ 播放" [ref=f1e62] [cursor=pointer]
+          - button "◀" [ref=f1e63] [cursor=pointer]
+          - button "▶|" [ref=f1e64] [cursor=pointer]
+          - combobox "回放倍速（仿真秒 / 现实秒）" [ref=f1e65]:
+            - option "1×"
+            - option "5×"
+            - option "10×"
+            - option "30×"
+            - option "60×" [selected]
+            - option "120×"
+            - option "300×"
+            - option "600×"
+          - generic [ref=f1e66]: t = 0.0 s / 6571 s · 步 0 / 65709 · 2026-10-15 16:43:00 UTC
+        - generic "点击定位到该时刻" [ref=f1e67] [cursor=pointer]
+        - slider "回放时间定位" [ref=f1e68]: "0"

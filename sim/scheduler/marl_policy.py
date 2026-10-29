@@ -3,7 +3,8 @@
 import torch
 
 from sim.marl.actor import SatActorCritic
-from sim.marl.decision import OBSERVATION_VERSION, build_batch, decode_batch
+from sim.marl.checkpoint import validate_checkpoint_protocol
+from sim.marl.decision import build_batch, decode_batch
 from sim.scheduler.base import SchedulerPolicy
 
 
@@ -12,8 +13,7 @@ class MARLPolicy(SchedulerPolicy):
         self.device = torch.device(device)
         self.deterministic = deterministic
         checkpoint = torch.load(checkpoint_path, map_location=self.device, weights_only=True)
-        if not isinstance(checkpoint, dict) or checkpoint.get("observation_version") != OBSERVATION_VERSION:
-            raise ValueError("Legacy/incompatible checkpoint: retrain with the current observation and simulator version")
+        validate_checkpoint_protocol(checkpoint)
         self.metadata = checkpoint
         self.gs_ids = checkpoint["ground_station_ids"]
         self.model = SatActorCritic(**checkpoint["model_config"]).to(self.device)

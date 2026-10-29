@@ -11,6 +11,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from sim.config import load_config
 from sim.evaluation import task_age_score
 from sim.marl.actor import SatActorCritic
+from sim.marl.checkpoint import validate_checkpoint_protocol
 from sim.marl.imitation import collect_demonstrations
 from sim.marl.scenarios import ScenarioDistribution
 from sim.reproducibility import runtime_metadata
@@ -29,6 +30,7 @@ def main():
     out.mkdir(parents=True, exist_ok=False)
     torch.set_num_threads(1)
     saved = torch.load(args.checkpoint, map_location="cpu", weights_only=True)
+    validate_checkpoint_protocol(saved)
     model = SatActorCritic(**saved["model_config"])
     model.load_state_dict(saved["model_state"])
     metadata = {**runtime_metadata(), "checkpoint": args.checkpoint,

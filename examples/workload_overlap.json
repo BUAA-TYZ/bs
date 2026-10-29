@@ -1,0 +1,26 @@
+{
+  "purpose": "Synthetic accounting fixture, not a calibrated thesis workload",
+  "image_tiling": {
+    "width_px": 4000,
+    "height_px": 4000,
+    "bands": 3,
+    "bits_per_sample": 8,
+    "window_px": 1024,
+    "stride_px": 824,
+    "windows_per_tile_axis": 2,
+    "compute_cost_per_window": 1.0,
+    "result_size_mb_per_window": 0.04
+  },
+  "reasons": {
+    "image_shape": "Illustrative 4000x4000 RGB uint8 remote-sensing image; actual dataset sample must be recorded before formal evaluation",
+    "window_stride": "Oriented R-CNN ICCV 2021 uses 1024x1024 crops with stride 824; this is a candidate, not a demonstrated quality optimum here",
+    "packet_grouping": "2x2 adjacent inference windows per scheduling packet; compare 1x1 and 4x4 with the same windows and total work",
+    "compute_cost_per_window": "One abstract unit per window for accounting only; hardware service time is not measured",
+    "result_size_mb_per_window": "Synthetic 1000 OBB records of 40 bytes each (8 float32 coordinates, float32 score, uint32 class), excluding headers; not measured detections or a dataset statistic",
+    "merge": "Global detection deduplication is not run; aggregation_delay_s remains an explicit timing placeholder"
+  },
+  "sources": [
+    "https://openaccess.thecvf.com/content/ICCV2021/papers/Xie_Oriented_R-CNN_for_Object_Detection_ICCV_2021_paper.pdf",
+    "https://github.com/CAPTAIN-WHU/DOTA_devkit/blob/master/ImgSplit_multi_process.py"
+  ]
+}

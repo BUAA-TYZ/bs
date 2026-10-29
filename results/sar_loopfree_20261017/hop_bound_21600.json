@@ -1,0 +1,646 @@
+{
+  "config_sha256": "7053c84557d59e113327870e6d236fbfd2e260013ca6913b92ac52b7617827a3",
+  "auditor_sha256": "fb49ee00c572c6c9f62745f310b5513f1b0c51c404ace0450617962cedb57b46",
+  "geometry_auditor_sha256": "f8b20aa6f99f995ce1c3b690547d7a2cbca5d3a380e3b2eb7ada34e61a00b9f5",
+  "scope": "Zero compute/transfer time, unlimited resources, retained copies, perfect future. Total-hop relaxation allows waiting during input and any compute split, so it is only an upper bound.",
+  "budgets": {
+    "local_or_ground": 45,
+    "one_onboard_placement": 47
+  },
+  "tasks": [
+    {
+      "task_id": "task_0",
+      "source_sat_id": 18,
+      "release_seconds": 565.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 7
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 7
+      }
+    },
+    {
+      "task_id": "task_1",
+      "source_sat_id": 18,
+      "release_seconds": 595.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 7
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 7
+      }
+    },
+    {
+      "task_id": "task_2",
+      "source_sat_id": 18,
+      "release_seconds": 625.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 11
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 11
+      }
+    },
+    {
+      "task_id": "task_3",
+      "source_sat_id": 18,
+      "release_seconds": 715.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 7
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 7
+      }
+    },
+    {
+      "task_id": "task_4",
+      "source_sat_id": 6,
+      "release_seconds": 2355.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 8
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 8
+      }
+    },
+    {
+      "task_id": "task_5",
+      "source_sat_id": 6,
+      "release_seconds": 2445.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 9
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 9
+      }
+    },
+    {
+      "task_id": "task_6",
+      "source_sat_id": 23,
+      "release_seconds": 3555.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 8
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 8
+      }
+    },
+    {
+      "task_id": "task_7",
+      "source_sat_id": 23,
+      "release_seconds": 3640.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 9
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 9
+      }
+    },
+    {
+      "task_id": "task_8",
+      "source_sat_id": 22,
+      "release_seconds": 6315.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 8
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 8
+      }
+    },
+    {
+      "task_id": "task_9",
+      "source_sat_id": 22,
+      "release_seconds": 6345.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 8
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 8
+      }
+    },
+    {
+      "task_id": "task_10",
+      "source_sat_id": 20,
+      "release_seconds": 6355.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 7
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 7
+      }
+    },
+    {
+      "task_id": "task_11",
+      "source_sat_id": 20,
+      "release_seconds": 6385.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 14
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 14
+      }
+    },
+    {
+      "task_id": "task_12",
+      "source_sat_id": 20,
+      "release_seconds": 6415.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 14
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 14
+      }
+    },
+    {
+      "task_id": "task_13",
+      "source_sat_id": 10,
+      "release_seconds": 8150.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 14
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 14
+      }
+    },
+    {
+      "task_id": "task_14",
+      "source_sat_id": 10,
+      "release_seconds": 8220.0,
+      "local_or_ground": {
+        "potentially_on_time": false,
+        "latency_lower_bound_s": null,
+        "hops_at_first_ground": null
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": false,
+        "latency_lower_bound_s": null,
+        "hops_at_first_ground": null
+      }
+    },
+    {
+      "task_id": "task_15",
+      "source_sat_id": 23,
+      "release_seconds": 9145.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 8
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 8
+      }
+    },
+    {
+      "task_id": "task_16",
+      "source_sat_id": 23,
+      "release_seconds": 9230.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 7
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 7
+      }
+    },
+    {
+      "task_id": "task_17",
+      "source_sat_id": 1,
+      "release_seconds": 9385.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 12
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 12
+      }
+    },
+    {
+      "task_id": "task_18",
+      "source_sat_id": 9,
+      "release_seconds": 10940.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 6
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 6
+      }
+    },
+    {
+      "task_id": "task_19",
+      "source_sat_id": 9,
+      "release_seconds": 11025.0,
+      "local_or_ground": {
+        "potentially_on_time": false,
+        "latency_lower_bound_s": null,
+        "hops_at_first_ground": null
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": false,
+        "latency_lower_bound_s": null,
+        "hops_at_first_ground": null
+      }
+    },
+    {
+      "task_id": "task_20",
+      "source_sat_id": 11,
+      "release_seconds": 11070.0,
+      "local_or_ground": {
+        "potentially_on_time": false,
+        "latency_lower_bound_s": null,
+        "hops_at_first_ground": null
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": false,
+        "latency_lower_bound_s": null,
+        "hops_at_first_ground": null
+      }
+    },
+    {
+      "task_id": "task_21",
+      "source_sat_id": 11,
+      "release_seconds": 11160.0,
+      "local_or_ground": {
+        "potentially_on_time": false,
+        "latency_lower_bound_s": null,
+        "hops_at_first_ground": null
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": false,
+        "latency_lower_bound_s": null,
+        "hops_at_first_ground": null
+      }
+    },
+    {
+      "task_id": "task_22",
+      "source_sat_id": 0,
+      "release_seconds": 12085.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 15.25091760235,
+        "hops_at_first_ground": 7
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 15.25091760235,
+        "hops_at_first_ground": 7
+      }
+    },
+    {
+      "task_id": "task_23",
+      "source_sat_id": 0,
+      "release_seconds": 12115.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 7
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 7
+      }
+    },
+    {
+      "task_id": "task_24",
+      "source_sat_id": 0,
+      "release_seconds": 12145.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 14
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 14
+      }
+    },
+    {
+      "task_id": "task_25",
+      "source_sat_id": 12,
+      "release_seconds": 13775.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 5.25091760235,
+        "hops_at_first_ground": 8
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 5.25091760235,
+        "hops_at_first_ground": 8
+      }
+    },
+    {
+      "task_id": "task_26",
+      "source_sat_id": 12,
+      "release_seconds": 13865.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 7
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 7
+      }
+    },
+    {
+      "task_id": "task_27",
+      "source_sat_id": 12,
+      "release_seconds": 13965.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 15.25091760235,
+        "hops_at_first_ground": 15
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 15.25091760235,
+        "hops_at_first_ground": 15
+      }
+    },
+    {
+      "task_id": "task_28",
+      "source_sat_id": 12,
+      "release_seconds": 13995.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 15
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 15
+      }
+    },
+    {
+      "task_id": "task_29",
+      "source_sat_id": 23,
+      "release_seconds": 14985.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 5
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 5
+      }
+    },
+    {
+      "task_id": "task_30",
+      "source_sat_id": 23,
+      "release_seconds": 15015.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 5
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 5
+      }
+    },
+    {
+      "task_id": "task_31",
+      "source_sat_id": 23,
+      "release_seconds": 15045.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 5
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 5
+      }
+    },
+    {
+      "task_id": "task_32",
+      "source_sat_id": 23,
+      "release_seconds": 15135.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 5.25091760235,
+        "hops_at_first_ground": 5
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 5.25091760235,
+        "hops_at_first_ground": 5
+      }
+    },
+    {
+      "task_id": "task_33",
+      "source_sat_id": 11,
+      "release_seconds": 16775.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 5
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 5
+      }
+    },
+    {
+      "task_id": "task_34",
+      "source_sat_id": 11,
+      "release_seconds": 16860.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 200.25091760235,
+        "hops_at_first_ground": 7
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 200.25091760235,
+        "hops_at_first_ground": 7
+      }
+    },
+    {
+      "task_id": "task_35",
+      "source_sat_id": 2,
+      "release_seconds": 17975.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 7
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 7
+      }
+    },
+    {
+      "task_id": "task_36",
+      "source_sat_id": 2,
+      "release_seconds": 18060.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 10.25091760235,
+        "hops_at_first_ground": 7
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 10.25091760235,
+        "hops_at_first_ground": 7
+      }
+    },
+    {
+      "task_id": "task_37",
+      "source_sat_id": 3,
+      "release_seconds": 20735.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 5.25091760235,
+        "hops_at_first_ground": 7
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 5.25091760235,
+        "hops_at_first_ground": 7
+      }
+    },
+    {
+      "task_id": "task_38",
+      "source_sat_id": 3,
+      "release_seconds": 20765.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 7
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 7
+      }
+    },
+    {
+      "task_id": "task_39",
+      "source_sat_id": 1,
+      "release_seconds": 20775.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 5
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 5
+      }
+    },
+    {
+      "task_id": "task_40",
+      "source_sat_id": 1,
+      "release_seconds": 20805.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 5
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 5
+      }
+    },
+    {
+      "task_id": "task_41",
+      "source_sat_id": 1,
+      "release_seconds": 20835.0,
+      "local_or_ground": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 5
+      },
+      "one_onboard_placement": {
+        "potentially_on_time": true,
+        "latency_lower_bound_s": 0.25091760235,
+        "hops_at_first_ground": 5
+      }
+    }
+  ],
+  "upper_counts": {
+    "local_or_ground": 38,
+    "one_onboard_placement": 38
+  }
+}

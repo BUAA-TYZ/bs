@@ -1,0 +1,49 @@
+{
+  "status": "LOADED_COMPLETE",
+  "at": "2026-10-28T16:28:44.294015+00:00",
+  "pid": 770584,
+  "completed": [
+    {
+      "group": "fixed_cpu_t1",
+      "started_at": "2026-10-28T15:00:12.944433+00:00",
+      "start_epoch_s": 1793199612.9444745,
+      "load_pid": 770587,
+      "finished_at": "2026-10-28T15:16:17.979975+00:00",
+      "end_epoch_s": 1793200577.9800303,
+      "returncode": 0,
+      "sha256": "b12aeebb576c03830b6d3c1cc187069c733901e480d39ca6897d620c0b38fe6a"
+    },
+    {
+      "group": "dynamic_cpu_t1",
+      "started_at": "2026-10-28T15:16:17.986563+00:00",
+      "start_epoch_s": 1793200577.9866009,
+      "load_pid": 770587,
+      "finished_at": "2026-10-28T15:44:11.696525+00:00",
+      "end_epoch_s": 1793202251.6965768,
+      "returncode": 0,
+      "sha256": "43b1fd50490a114bc82083d574993e68d9773db9d055b0ec3fcca6c6ff9d07b4"
+    },
+    {
+      "group": "fixed_cpu_t2",
+      "started_at": "2026-10-28T15:44:11.702851+00:00",
+      "start_epoch_s": 1793202251.7028792,
+      "load_pid": 770587,
+      "finished_at": "2026-10-28T16:00:32.678660+00:00",
+      "end_epoch_s": 1793203232.6787086,
+      "returncode": 0,
+      "sha256": "25dac42f8c66260ffb76200ac13a1ce60bf3054f72af53e43af765245681e25d"
+    },
+    {
+      "group": "dynamic_cpu_t2",
+      "started_at": "2026-10-28T16:00:32.684934+00:00",
+      "start_epoch_s": 1793203232.6849682,
+      "load_pid": 770587,
+      "finished_at": "2026-10-28T16:28:20.342761+00:00",
+      "end_epoch_s": 1793204900.3427923,
+      "returncode": 0,
+      "sha256": "7a89a81068ef705e2b21595c21e0770634a7a8643241ae8fc1188d1ac3eac772"
+    }
+  ],
+  "load_report_sha256": "adb06fa3d901b1c13a0bd29275420e7368ef5cda58af79fca75bf2b81f0de66c",
+  "coverage": "Entire replay processes covered; GPU utilization audit pending"
+}

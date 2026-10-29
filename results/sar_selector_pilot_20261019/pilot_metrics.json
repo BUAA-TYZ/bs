@@ -1,0 +1,1256 @@
+{
+  "status": "BLOCKED",
+  "expected_states": 40,
+  "observed_states": 39,
+  "missing_states": [
+    {
+      "condition": "load_4",
+      "task_id": "task_535"
+    }
+  ],
+  "agreement": 0.5897435897435898,
+  "tie_aware_agreement": 0.6153846153846154,
+  "fastest_tie_states": 6,
+  "indeterminate_fraction": 0.0,
+  "labels": {
+    "local": 15,
+    "cgs": 21,
+    "ground": 3
+  },
+  "regret": {
+    "wrong_labels": 16,
+    "exact_count": 16,
+    "censored_count": 0,
+    "mean_exact_seconds": 136.53874999999988,
+    "median_exact_seconds": 19.00000000000091,
+    "max_exact_seconds": 946.2900000000001,
+    "all_wrong_mean_lower_bound_seconds": 136.53874999999988,
+    "all_wrong_mean_is_strict_lower_bound": false
+  },
+  "per_condition": [
+    {
+      "condition": "base",
+      "observed": 8,
+      "determinate": 8,
+      "indeterminate": 0,
+      "labels": {
+        "local": 4,
+        "cgs": 4,
+        "ground": 0
+      },
+      "agreements": 4,
+      "regret": {
+        "wrong_labels": 4,
+        "exact_count": 4,
+        "censored_count": 0,
+        "mean_exact_seconds": 73.41750000000138,
+        "median_exact_seconds": 10.485000000000582,
+        "max_exact_seconds": 272.63000000000466,
+        "all_wrong_mean_lower_bound_seconds": 73.41750000000138,
+        "all_wrong_mean_is_strict_lower_bound": false
+      }
+    },
+    {
+      "condition": "compute_4",
+      "observed": 8,
+      "determinate": 8,
+      "indeterminate": 0,
+      "labels": {
+        "local": 3,
+        "cgs": 4,
+        "ground": 1
+      },
+      "agreements": 6,
+      "regret": {
+        "wrong_labels": 2,
+        "exact_count": 2,
+        "censored_count": 0,
+        "mean_exact_seconds": 150.0699999999997,
+        "median_exact_seconds": 150.0699999999997,
+        "max_exact_seconds": 297.0099999999984,
+        "all_wrong_mean_lower_bound_seconds": 150.0699999999997,
+        "all_wrong_mean_is_strict_lower_bound": false
+      }
+    },
+    {
+      "condition": "compute_10",
+      "observed": 8,
+      "determinate": 8,
+      "indeterminate": 0,
+      "labels": {
+        "local": 2,
+        "cgs": 4,
+        "ground": 2
+      },
+      "agreements": 6,
+      "regret": {
+        "wrong_labels": 2,
+        "exact_count": 2,
+        "censored_count": 0,
+        "mean_exact_seconds": 206.00500000000102,
+        "median_exact_seconds": 206.00500000000102,
+        "max_exact_seconds": 412.0,
+        "all_wrong_mean_lower_bound_seconds": 206.00500000000102,
+        "all_wrong_mean_is_strict_lower_bound": false
+      }
+    },
+    {
+      "condition": "load_2",
+      "observed": 8,
+      "determinate": 8,
+      "indeterminate": 0,
+      "labels": {
+        "local": 3,
+        "cgs": 5,
+        "ground": 0
+      },
+      "agreements": 3,
+      "regret": {
+        "wrong_labels": 5,
+        "exact_count": 5,
+        "censored_count": 0,
+        "mean_exact_seconds": 209.03399999999803,
+        "median_exact_seconds": 0.35000000000582077,
+        "max_exact_seconds": 946.2900000000001,
+        "all_wrong_mean_lower_bound_seconds": 209.033999999998,
+        "all_wrong_mean_is_strict_lower_bound": false
+      }
+    },
+    {
+      "condition": "load_4",
+      "observed": 7,
+      "determinate": 7,
+      "indeterminate": 0,
+      "labels": {
+        "local": 3,
+        "cgs": 4,
+        "ground": 0
+      },
+      "agreements": 4,
+      "regret": {
+        "wrong_labels": 3,
+        "exact_count": 3,
+        "censored_count": 0,
+        "mean_exact_seconds": 44.54333333333367,
+        "median_exact_seconds": 42.650000000001455,
+        "max_exact_seconds": 66.92000000000007,
+        "all_wrong_mean_lower_bound_seconds": 44.54333333333367,
+        "all_wrong_mean_is_strict_lower_bound": false
+      }
+    }
+  ],
+  "details": [
+    {
+      "condition": "base",
+      "task_id": "task_7",
+      "status": "DETERMINATE",
+      "rule_choice": "cgs",
+      "label": "cgs",
+      "agrees": true,
+      "ties": [
+        "cgs"
+      ],
+      "regret": {
+        "exact_seconds": 0.0,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 35.89,
+        "cgs": 20.490000000000002,
+        "ground": 280.45920000000007
+      },
+      "actual_latencies_seconds": {
+        "local": 35.17,
+        "cgs": 20.36,
+        "ground": 280.31
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "base",
+      "task_id": "task_28",
+      "status": "DETERMINATE",
+      "rule_choice": "local",
+      "label": "local",
+      "agrees": true,
+      "ties": [
+        "local",
+        "cgs"
+      ],
+      "regret": {
+        "exact_seconds": 0.0,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 385.42,
+        "cgs": 385.42,
+        "ground": 415.58920000000006
+      },
+      "actual_latencies_seconds": {
+        "local": 385.73,
+        "cgs": 385.73,
+        "ground": 418.51
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "base",
+      "task_id": "task_60",
+      "status": "DETERMINATE",
+      "rule_choice": "ground",
+      "label": "cgs",
+      "agrees": false,
+      "ties": [
+        "cgs"
+      ],
+      "regret": {
+        "exact_seconds": 7.029999999998836,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 35.47,
+        "cgs": 19.540000000000003,
+        "ground": 12.1592
+      },
+      "actual_latencies_seconds": {
+        "local": 35.11,
+        "cgs": 17.080000000000002,
+        "ground": 24.11
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "base",
+      "task_id": "task_85",
+      "status": "DETERMINATE",
+      "rule_choice": "local",
+      "label": "local",
+      "agrees": true,
+      "ties": [
+        "local",
+        "cgs"
+      ],
+      "regret": {
+        "exact_seconds": 0.0,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 930.42,
+        "cgs": 930.42,
+        "ground": 940.3592
+      },
+      "actual_latencies_seconds": {
+        "local": 910.44,
+        "cgs": 910.44,
+        "ground": 920.52
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "base",
+      "task_id": "task_102",
+      "status": "DETERMINATE",
+      "rule_choice": "cgs",
+      "label": "cgs",
+      "agrees": true,
+      "ties": [
+        "cgs"
+      ],
+      "regret": {
+        "exact_seconds": 0.0,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 35.96,
+        "cgs": 25.3,
+        "ground": 320.84920000000005
+      },
+      "actual_latencies_seconds": {
+        "local": 35.18,
+        "cgs": 24.490000000000002,
+        "ground": 328.55
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "base",
+      "task_id": "task_117",
+      "status": "DETERMINATE",
+      "rule_choice": "cgs",
+      "label": "local",
+      "agrees": false,
+      "ties": [
+        "local"
+      ],
+      "regret": {
+        "exact_seconds": 0.06999999999970896,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 110.88000000000001,
+        "cgs": 110.52000000000001,
+        "ground": 121.7592
+      },
+      "actual_latencies_seconds": {
+        "local": 110.99000000000001,
+        "cgs": 111.06,
+        "ground": 142.8
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "base",
+      "task_id": "task_137",
+      "status": "DETERMINATE",
+      "rule_choice": "ground",
+      "label": "cgs",
+      "agrees": false,
+      "ties": [
+        "cgs"
+      ],
+      "regret": {
+        "exact_seconds": 13.940000000002328,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 35.68,
+        "cgs": 22.26,
+        "ground": 12.759200000000002
+      },
+      "actual_latencies_seconds": {
+        "local": 35.14,
+        "cgs": 19.77,
+        "ground": 33.71
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "base",
+      "task_id": "task_169",
+      "status": "DETERMINATE",
+      "rule_choice": "cgs",
+      "label": "local",
+      "agrees": false,
+      "ties": [
+        "local"
+      ],
+      "regret": {
+        "exact_seconds": 272.63000000000466,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 45.88,
+        "cgs": 9.09,
+        "ground": 52.819199999999995
+      },
+      "actual_latencies_seconds": {
+        "local": 45.56,
+        "cgs": 318.19,
+        "ground": 61.72
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "compute_4",
+      "task_id": "task_19",
+      "status": "DETERMINATE",
+      "rule_choice": "local",
+      "label": "local",
+      "agrees": true,
+      "ties": [
+        "local"
+      ],
+      "regret": {
+        "exact_seconds": 0.0,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 1075.44,
+        "cgs": 1075.44,
+        "ground": 1095.5668000000003
+      },
+      "actual_latencies_seconds": {
+        "local": 1075.75,
+        "cgs": 1075.76,
+        "ground": 1095.8
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "compute_4",
+      "task_id": "task_43",
+      "status": "DETERMINATE",
+      "rule_choice": "cgs",
+      "label": "ground",
+      "agrees": false,
+      "ties": [
+        "ground"
+      ],
+      "regret": {
+        "exact_seconds": 297.0099999999984,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 137.11999999999998,
+        "cgs": 18.44,
+        "ground": 61.6968
+      },
+      "actual_latencies_seconds": {
+        "local": 136.52,
+        "cgs": 376.66,
+        "ground": 79.65
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "compute_4",
+      "task_id": "task_48",
+      "status": "DETERMINATE",
+      "rule_choice": "ground",
+      "label": "cgs",
+      "agrees": false,
+      "ties": [
+        "cgs"
+      ],
+      "regret": {
+        "exact_seconds": 3.1300000000010186,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 355.39,
+        "cgs": 37.62,
+        "ground": 19.336800000000004
+      },
+      "actual_latencies_seconds": {
+        "local": 336.16,
+        "cgs": 31.12,
+        "ground": 34.25
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "compute_4",
+      "task_id": "task_72",
+      "status": "DETERMINATE",
+      "rule_choice": "local",
+      "label": "local",
+      "agrees": true,
+      "ties": [
+        "local",
+        "cgs"
+      ],
+      "regret": {
+        "exact_seconds": 0.0,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 895.42,
+        "cgs": 895.42,
+        "ground": 915.4968
+      },
+      "actual_latencies_seconds": {
+        "local": 885.44,
+        "cgs": 885.44,
+        "ground": 912.12
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "compute_4",
+      "task_id": "task_102",
+      "status": "DETERMINATE",
+      "rule_choice": "cgs",
+      "label": "cgs",
+      "agrees": true,
+      "ties": [
+        "cgs"
+      ],
+      "regret": {
+        "exact_seconds": 0.0,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 191.01999999999998,
+        "cgs": 48.08,
+        "ground": 330.9868
+      },
+      "actual_latencies_seconds": {
+        "local": 190.70000000000002,
+        "cgs": 32.55,
+        "ground": 336.87
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "compute_4",
+      "task_id": "task_132",
+      "status": "DETERMINATE",
+      "rule_choice": "local",
+      "label": "local",
+      "agrees": true,
+      "ties": [
+        "local"
+      ],
+      "regret": {
+        "exact_seconds": 0.0,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 235.42,
+        "cgs": 235.42,
+        "ground": 315.7868
+      },
+      "actual_latencies_seconds": {
+        "local": 216.27,
+        "cgs": 216.38,
+        "ground": 318.66
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "compute_4",
+      "task_id": "task_151",
+      "status": "DETERMINATE",
+      "rule_choice": "cgs",
+      "label": "cgs",
+      "agrees": true,
+      "ties": [
+        "cgs"
+      ],
+      "regret": {
+        "exact_seconds": 0.0,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 210.88,
+        "cgs": 42.28,
+        "ground": 231.89679999999998
+      },
+      "actual_latencies_seconds": {
+        "local": 210.70000000000002,
+        "cgs": 29.3,
+        "ground": 252.9
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "compute_4",
+      "task_id": "task_166",
+      "status": "DETERMINATE",
+      "rule_choice": "cgs",
+      "label": "cgs",
+      "agrees": true,
+      "ties": [
+        "cgs"
+      ],
+      "regret": {
+        "exact_seconds": 0.0,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 137.26,
+        "cgs": 90.4,
+        "ground": 111.49680000000001
+      },
+      "actual_latencies_seconds": {
+        "local": 136.54,
+        "cgs": 90.53,
+        "ground": 126.46000000000001
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "compute_10",
+      "task_id": "task_17",
+      "status": "DETERMINATE",
+      "rule_choice": "ground",
+      "label": "ground",
+      "agrees": true,
+      "ties": [
+        "ground"
+      ],
+      "regret": {
+        "exact_seconds": 0.0,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 1315.39,
+        "cgs": 1315.31,
+        "ground": 106.772
+      },
+      "actual_latencies_seconds": {
+        "local": 1315.99,
+        "cgs": 1316.0,
+        "ground": 121.73
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "compute_10",
+      "task_id": "task_27",
+      "status": "DETERMINATE",
+      "rule_choice": "cgs",
+      "label": "cgs",
+      "agrees": true,
+      "ties": [
+        "cgs"
+      ],
+      "regret": {
+        "exact_seconds": 0.0,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 925.39,
+        "cgs": 415.42,
+        "ground": 476.00200000000007
+      },
+      "actual_latencies_seconds": {
+        "local": 905.36,
+        "cgs": 415.61,
+        "ground": 478.94
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "compute_10",
+      "task_id": "task_63",
+      "status": "DETERMINATE",
+      "rule_choice": "local",
+      "label": "local",
+      "agrees": true,
+      "ties": [
+        "local",
+        "cgs"
+      ],
+      "regret": {
+        "exact_seconds": 0.0,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 930.42,
+        "cgs": 930.42,
+        "ground": 970.772
+      },
+      "actual_latencies_seconds": {
+        "local": 920.4200000000001,
+        "cgs": 920.4200000000001,
+        "ground": 960.9300000000001
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "compute_10",
+      "task_id": "task_69",
+      "status": "DETERMINATE",
+      "rule_choice": "cgs",
+      "label": "cgs",
+      "agrees": true,
+      "ties": [
+        "cgs",
+        "ground"
+      ],
+      "regret": {
+        "exact_seconds": 0.0,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 1530.39,
+        "cgs": 81.49000000000001,
+        "ground": 81.49000000000001
+      },
+      "actual_latencies_seconds": {
+        "local": 1521.09,
+        "cgs": 75.16,
+        "ground": 75.16
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "compute_10",
+      "task_id": "task_100",
+      "status": "DETERMINATE",
+      "rule_choice": "cgs",
+      "label": "local",
+      "agrees": false,
+      "ties": [
+        "local"
+      ],
+      "regret": {
+        "exact_seconds": 0.010000000002037268,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 955.41,
+        "cgs": 955.38,
+        "ground": 995.772
+      },
+      "actual_latencies_seconds": {
+        "local": 945.58,
+        "cgs": 945.59,
+        "ground": 985.99
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "compute_10",
+      "task_id": "task_117",
+      "status": "DETERMINATE",
+      "rule_choice": "cgs",
+      "label": "cgs",
+      "agrees": true,
+      "ties": [
+        "cgs"
+      ],
+      "regret": {
+        "exact_seconds": 0.0,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 500.46,
+        "cgs": 128.27999999999997,
+        "ground": 152.172
+      },
+      "actual_latencies_seconds": {
+        "local": 500.3,
+        "cgs": 128.11,
+        "ground": 556.27
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "compute_10",
+      "task_id": "task_154",
+      "status": "DETERMINATE",
+      "rule_choice": "cgs",
+      "label": "cgs",
+      "agrees": true,
+      "ties": [
+        "cgs"
+      ],
+      "regret": {
+        "exact_seconds": 0.0,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 1015.39,
+        "cgs": 64.69000000000001,
+        "ground": 1055.772
+      },
+      "actual_latencies_seconds": {
+        "local": 1015.5500000000001,
+        "cgs": 46.480000000000004,
+        "ground": 1056.17
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "compute_10",
+      "task_id": "task_160",
+      "status": "DETERMINATE",
+      "rule_choice": "cgs",
+      "label": "ground",
+      "agrees": false,
+      "ties": [
+        "ground"
+      ],
+      "regret": {
+        "exact_seconds": 412.0,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 635.47,
+        "cgs": 87.48000000000002,
+        "ground": 195.97199999999998
+      },
+      "actual_latencies_seconds": {
+        "local": 485.29,
+        "cgs": 610.9300000000001,
+        "ground": 198.93
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "load_2",
+      "task_id": "task_6",
+      "status": "DETERMINATE",
+      "rule_choice": "ground",
+      "label": "cgs",
+      "agrees": false,
+      "ties": [
+        "cgs"
+      ],
+      "regret": {
+        "exact_seconds": 946.2900000000001,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 185.45999999999998,
+        "cgs": 16.89,
+        "ground": 12.999200000000002
+      },
+      "actual_latencies_seconds": {
+        "local": 35.18,
+        "cgs": 21.900000000000002,
+        "ground": 968.19
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "load_2",
+      "task_id": "task_51",
+      "status": "DETERMINATE",
+      "rule_choice": "cgs",
+      "label": "local",
+      "agrees": false,
+      "ties": [
+        "local",
+        "cgs"
+      ],
+      "regret": {
+        "exact_seconds": 0.0,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 55.81,
+        "cgs": 55.64,
+        "ground": 66.71920000000001
+      },
+      "actual_latencies_seconds": {
+        "local": 56.0,
+        "cgs": 56.0,
+        "ground": 84.59
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "load_2",
+      "task_id": "task_109",
+      "status": "DETERMINATE",
+      "rule_choice": "cgs",
+      "label": "cgs",
+      "agrees": true,
+      "ties": [
+        "cgs"
+      ],
+      "regret": {
+        "exact_seconds": 0.0,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 35.82,
+        "cgs": 13.9,
+        "ground": 19.8792
+      },
+      "actual_latencies_seconds": {
+        "local": 35.17,
+        "cgs": 14.24,
+        "ground": 51.96
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "load_2",
+      "task_id": "task_135",
+      "status": "DETERMINATE",
+      "rule_choice": "cgs",
+      "label": "cgs",
+      "agrees": true,
+      "ties": [
+        "cgs"
+      ],
+      "regret": {
+        "exact_seconds": 0.0,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 35.68,
+        "cgs": 13.879999999999999,
+        "ground": 19.479200000000002
+      },
+      "actual_latencies_seconds": {
+        "local": 35.14,
+        "cgs": 13.72,
+        "ground": 69.03
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "load_2",
+      "task_id": "task_211",
+      "status": "DETERMINATE",
+      "rule_choice": "cgs",
+      "label": "cgs",
+      "agrees": true,
+      "ties": [
+        "cgs"
+      ],
+      "regret": {
+        "exact_seconds": 0.0,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 80.88,
+        "cgs": 13.92,
+        "ground": 20.279200000000003
+      },
+      "actual_latencies_seconds": {
+        "local": 2690.28,
+        "cgs": 1290.28,
+        "ground": 2712.41
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "load_2",
+      "task_id": "task_232",
+      "status": "DETERMINATE",
+      "rule_choice": "local",
+      "label": "cgs",
+      "agrees": false,
+      "ties": [
+        "cgs"
+      ],
+      "regret": {
+        "exact_seconds": 98.47999999999593,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 175.42,
+        "cgs": 175.42,
+        "ground": 185.3592
+      },
+      "actual_latencies_seconds": {
+        "local": 265.31,
+        "cgs": 166.83,
+        "ground": 183.26
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "load_2",
+      "task_id": "task_306",
+      "status": "DETERMINATE",
+      "rule_choice": "cgs",
+      "label": "local",
+      "agrees": false,
+      "ties": [
+        "local"
+      ],
+      "regret": {
+        "exact_seconds": 0.04999999998835847,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 90.88,
+        "cgs": 90.52000000000001,
+        "ground": 101.7592
+      },
+      "actual_latencies_seconds": {
+        "local": 90.71000000000001,
+        "cgs": 90.76,
+        "ground": 122.79
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "load_2",
+      "task_id": "task_326",
+      "status": "DETERMINATE",
+      "rule_choice": "cgs",
+      "label": "local",
+      "agrees": false,
+      "ties": [
+        "local"
+      ],
+      "regret": {
+        "exact_seconds": 0.35000000000582077,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 65.88,
+        "cgs": 65.43,
+        "ground": 75.5592
+      },
+      "actual_latencies_seconds": {
+        "local": 65.51,
+        "cgs": 65.86,
+        "ground": 78.82000000000001
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "load_4",
+      "task_id": "task_49",
+      "status": "DETERMINATE",
+      "rule_choice": "ground",
+      "label": "local",
+      "agrees": false,
+      "ties": [
+        "local"
+      ],
+      "regret": {
+        "exact_seconds": 66.92000000000007,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 73.14,
+        "cgs": 24.21,
+        "ground": 23.279200000000003
+      },
+      "actual_latencies_seconds": {
+        "local": 73.37,
+        "cgs": 173.49,
+        "ground": 140.29
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "load_4",
+      "task_id": "task_118",
+      "status": "DETERMINATE",
+      "rule_choice": "ground",
+      "label": "local",
+      "agrees": false,
+      "ties": [
+        "local"
+      ],
+      "regret": {
+        "exact_seconds": 24.05999999999949,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 45.46,
+        "cgs": 47.16,
+        "ground": 18.959200000000003
+      },
+      "actual_latencies_seconds": {
+        "local": 45.7,
+        "cgs": 85.89,
+        "ground": 69.76
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "load_4",
+      "task_id": "task_218",
+      "status": "DETERMINATE",
+      "rule_choice": "local",
+      "label": "cgs",
+      "agrees": false,
+      "ties": [
+        "cgs"
+      ],
+      "regret": {
+        "exact_seconds": 42.650000000001455,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 73.83,
+        "cgs": null,
+        "ground": 1115.4392000000003
+      },
+      "actual_latencies_seconds": {
+        "local": 73.18,
+        "cgs": 30.53,
+        "ground": 1109.49
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "load_4",
+      "task_id": "task_323",
+      "status": "DETERMINATE",
+      "rule_choice": "cgs",
+      "label": "cgs",
+      "agrees": true,
+      "ties": [
+        "cgs"
+      ],
+      "regret": {
+        "exact_seconds": 0.0,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 56.870000000000005,
+        "cgs": 31.650000000000002,
+        "ground": 41.029199999999996
+      },
+      "actual_latencies_seconds": {
+        "local": 56.45,
+        "cgs": 41.71,
+        "ground": 43.68
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "load_4",
+      "task_id": "task_438",
+      "status": "DETERMINATE",
+      "rule_choice": "local",
+      "label": "local",
+      "agrees": true,
+      "ties": [
+        "local"
+      ],
+      "regret": {
+        "exact_seconds": 0.0,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 955.74,
+        "cgs": 955.74,
+        "ground": 965.6791999999999
+      },
+      "actual_latencies_seconds": {
+        "local": 937.19,
+        "cgs": 937.37,
+        "ground": 958.63
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "load_4",
+      "task_id": "task_613",
+      "status": "DETERMINATE",
+      "rule_choice": "cgs",
+      "label": "cgs",
+      "agrees": true,
+      "ties": [
+        "cgs"
+      ],
+      "regret": {
+        "exact_seconds": 0.0,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 90.88,
+        "cgs": 90.65,
+        "ground": 101.9192
+      },
+      "actual_latencies_seconds": {
+        "local": 91.49,
+        "cgs": 91.35000000000001,
+        "ground": 122.92
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    },
+    {
+      "condition": "load_4",
+      "task_id": "task_658",
+      "status": "DETERMINATE",
+      "rule_choice": "cgs",
+      "label": "cgs",
+      "agrees": true,
+      "ties": [
+        "cgs"
+      ],
+      "regret": {
+        "exact_seconds": 0.0,
+        "strict_lower_bound_seconds": null
+      },
+      "quotes_seconds": {
+        "local": 54.83,
+        "cgs": 35.82,
+        "ground": 225.55919999999998
+      },
+      "actual_latencies_seconds": {
+        "local": 66.04,
+        "cgs": 43.37,
+        "ground": 228.51
+      },
+      "censored_latency_lower_bounds_seconds": {}
+    }
+  ],
+  "audit": {
+    "frozen_files_snapshot_and_live_unchanged": 159,
+    "configurations_unchanged": 5,
+    "matched_control_branches": 32,
+    "matched_controls_in_failure_evidence": 7,
+    "failure_evidence_controls": [
+      {
+        "condition": "load_4",
+        "task_id": "task_49",
+        "rule_choice": "ground",
+        "passed": true,
+        "parent_completion_seconds": 6555.29,
+        "branch_completion_seconds": 6555.29,
+        "evidence": "failed condition traceback"
+      },
+      {
+        "condition": "load_4",
+        "task_id": "task_118",
+        "rule_choice": "ground",
+        "passed": true,
+        "parent_completion_seconds": 15054.76,
+        "branch_completion_seconds": 15054.76,
+        "evidence": "failed condition traceback"
+      },
+      {
+        "condition": "load_4",
+        "task_id": "task_218",
+        "rule_choice": "local",
+        "passed": true,
+        "parent_completion_seconds": 28268.18,
+        "branch_completion_seconds": 28268.18,
+        "evidence": "failed condition traceback"
+      },
+      {
+        "condition": "load_4",
+        "task_id": "task_323",
+        "rule_choice": "cgs",
+        "passed": true,
+        "parent_completion_seconds": 40961.71,
+        "branch_completion_seconds": 40961.71,
+        "evidence": "failed condition traceback"
+      },
+      {
+        "condition": "load_4",
+        "task_id": "task_438",
+        "rule_choice": "local",
+        "passed": true,
+        "parent_completion_seconds": 55352.19,
+        "branch_completion_seconds": 55352.19,
+        "evidence": "failed condition traceback"
+      },
+      {
+        "condition": "load_4",
+        "task_id": "task_613",
+        "rule_choice": "cgs",
+        "passed": true,
+        "parent_completion_seconds": 72901.35,
+        "branch_completion_seconds": 72901.35,
+        "evidence": "failed condition traceback"
+      },
+      {
+        "condition": "load_4",
+        "task_id": "task_658",
+        "rule_choice": "cgs",
+        "passed": true,
+        "parent_completion_seconds": 80318.37,
+        "branch_completion_seconds": 80318.37,
+        "evidence": "failed condition traceback"
+      }
+    ],
+    "unforced_decisions_matched": 712,
+    "registration_hashes_verified": true,
+    "branch_records": 117
+  },
+  "cost": {
+    "condition_wall_seconds": {
+      "base": 1695.5719986250042,
+      "compute_4": 1827.1768527910463,
+      "compute_10": 1909.5773299579741,
+      "load_2": 2166.271908167051,
+      "load_4": null
+    },
+    "branch_worker_seconds": 2412.920865580789,
+    "recorded_cpu_hours": 2.5338711619444445,
+    "cpu_accounting_complete": false
+  },
+  "source_summary_sha256": "9dbfa8de153cf7798341360a5afccda537d23178180bcd47390a18c6ca296ca1",
+  "blind_dates_sha256": "f067265f9ffb3d6a7dcb6159d9ca2069e2b8a2752bce71dcb235b93c3299211f",
+  "blind_methods_amendment_sha256": "d1f9610a5456bda97efcc2c1c49fc77bb923e503f02f18910daede6a1afd3ed4",
+  "report_script_sha256": "501d8157a96679d623210c1bf65da6b1cb1ecccd00597dc1ffbc97e30a46ccff",
+  "full_labels_started": false,
+  "training_started": false
+}

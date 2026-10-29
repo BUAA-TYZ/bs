@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "started_at_utc": "2026-10-16T04:53:29.969372+00:00",
+  "status": "passed",
+  "runs": [
+    {
+      "name": "round1_batch1",
+      "mode": "batch1",
+      "round": 1,
+      "returncode": 0
+    },
+    {
+      "name": "round1_batch2",
+      "mode": "batch2",
+      "round": 1,
+      "returncode": 0
+    },
+    {
+      "name": "round1_batch4",
+      "mode": "batch4",
+      "round": 1,
+      "returncode": 0
+    },
+    {
+      "name": "round1_streams2",
+      "mode": "streams2",
+      "round": 1,
+      "returncode": 0
+    },
+    {
+      "name": "round2_batch2",
+      "mode": "batch2",
+      "round": 2,
+      "returncode": 0
+    },
+    {
+      "name": "round2_batch4",
+      "mode": "batch4",
+      "round": 2,
+      "returncode": 0
+    },
+    {
+      "name": "round2_streams2",
+      "mode": "streams2",
+      "round": 2,
+      "returncode": 0
+    },
+    {
+      "name": "round2_batch1",
+      "mode": "batch1",
+      "round": 2,
+      "returncode": 0
+    },
+    {
+      "name": "round3_batch4",
+      "mode": "batch4",
+      "round": 3,
+      "returncode": 0
+    },
+    {
+      "name": "round3_streams2",
+      "mode": "streams2",
+      "round": 3,
+      "returncode": 0
+    },
+    {
+      "name": "round3_batch1",
+      "mode": "batch1",
+      "round": 3,
+      "returncode": 0
+    },
+    {
+      "name": "round3_batch2",
+      "mode": "batch2",
+      "round": 3,
+      "returncode": 0
+    }
+  ],
+  "hypothesis": "Batching or two streams improves 64-window throughput by at least 5% without swap or OOM",
+  "selection": "Reject failures/swap; require >=5% paired speedup in all three rounds; otherwise retain batch1",
+  "time_budget_s": 1800,
+  "warmup_windows": 12,
+  "measured_windows": 64,
+  "finished_at_utc": "2026-10-16T05:04:07.671414+00:00"
+}

@@ -1,0 +1,45 @@
+{
+  "purpose": "Diagnostic, not replacement service calibration",
+  "runs": [
+    {
+      "mode": "batch1",
+      "returncode": 0,
+      "command": [
+        "/home/tianyz/anaconda3/envs/dota/bin/python",
+        "/home/tianyz/bs_concurrency_20261016_2MTC8n/benchmark_jetson_concurrency.py",
+        "--mode",
+        "batch1",
+        "--warmup",
+        "12",
+        "--windows",
+        "64",
+        "--weights",
+        "/home/tianyz/bs_jetson_20261015_7TtC5t/yolo11n-obb.pt",
+        "--workload-json",
+        "/home/tianyz/bs_concurrency_20261016_2MTC8n/workload_fixture.json",
+        "--output",
+        "/home/tianyz/bs_concurrency_20261016_2MTC8n/frequency_control/batch1_service"
+      ]
+    },
+    {
+      "mode": "streams2",
+      "returncode": 0,
+      "command": [
+        "/home/tianyz/anaconda3/envs/dota/bin/python",
+        "/home/tianyz/bs_concurrency_20261016_2MTC8n/benchmark_jetson_concurrency.py",
+        "--mode",
+        "streams2",
+        "--warmup",
+        "12",
+        "--windows",
+        "64",
+        "--weights",
+        "/home/tianyz/bs_jetson_20261015_7TtC5t/yolo11n-obb.pt",
+        "--workload-json",
+        "/home/tianyz/bs_concurrency_20261016_2MTC8n/workload_fixture.json",
+        "--output",
+        "/home/tianyz/bs_concurrency_20261016_2MTC8n/frequency_control/streams2_service"
+      ]
+    }
+  ]
+}

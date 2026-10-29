@@ -1,0 +1,115 @@
+{
+  "metric": "Ultralytics 8.3.221 OBB AP using batch_probiou, not polygon-IoU AP",
+  "scope": "development validation only; no independent final test",
+  "mAP50_supported_classes": 0.0038545573712003814,
+  "mAP50_95_supported_classes": 0.00133536073296754,
+  "supported_class_count": 14,
+  "total_class_count": 15,
+  "per_class": [
+    {
+      "id": 0,
+      "name": "Aircraft-Carrier",
+      "ground_truth_instances": 1,
+      "ap50": 0.0,
+      "ap50_95": 0.0
+    },
+    {
+      "id": 1,
+      "name": "Blurred",
+      "ground_truth_instances": 0,
+      "ap50": null,
+      "ap50_95": null
+    },
+    {
+      "id": 2,
+      "name": "Bulk-Carrier",
+      "ground_truth_instances": 10,
+      "ap50": 0.0,
+      "ap50_95": 0.0
+    },
+    {
+      "id": 3,
+      "name": "Cargo-Ship",
+      "ground_truth_instances": 13,
+      "ap50": 0.0,
+      "ap50_95": 0.0
+    },
+    {
+      "id": 4,
+      "name": "Container-Ship",
+      "ground_truth_instances": 9,
+      "ap50": 0.0,
+      "ap50_95": 0.0
+    },
+    {
+      "id": 5,
+      "name": "Fishing-Vessel",
+      "ground_truth_instances": 2,
+      "ap50": 0.0,
+      "ap50_95": 0.0
+    },
+    {
+      "id": 6,
+      "name": "LNG-LPG-Tanker",
+      "ground_truth_instances": 1,
+      "ap50": 0.0,
+      "ap50_95": 0.0
+    },
+    {
+      "id": 7,
+      "name": "Oil-Tanker",
+      "ground_truth_instances": 14,
+      "ap50": 0.021682648401826484,
+      "ap50_95": 0.009041496156945392
+    },
+    {
+      "id": 8,
+      "name": "Passenger-Cruise-Ship",
+      "ground_truth_instances": 1,
+      "ap50": 0.0,
+      "ap50_95": 0.0
+    },
+    {
+      "id": 9,
+      "name": "Passenger-Ship",
+      "ground_truth_instances": 1,
+      "ap50": 0.0,
+      "ap50_95": 0.0
+    },
+    {
+      "id": 10,
+      "name": "Tug",
+      "ground_truth_instances": 13,
+      "ap50": 0.0,
+      "ap50_95": 0.0
+    },
+    {
+      "id": 11,
+      "name": "Vehicles-Carrier",
+      "ground_truth_instances": 3,
+      "ap50": 0.0,
+      "ap50_95": 0.0
+    },
+    {
+      "id": 12,
+      "name": "Warship",
+      "ground_truth_instances": 26,
+      "ap50": 0.00030792333893490216,
+      "ap50_95": 6.158466778698043e-05
+    },
+    {
+      "id": 13,
+      "name": "others",
+      "ground_truth_instances": 9,
+      "ap50": 0.0,
+      "ap50_95": 0.0
+    },
+    {
+      "id": 14,
+      "name": "unknow",
+      "ground_truth_instances": 53,
+      "ap50": 0.03197323145604396,
+      "ap50_95": 0.009591969436813187
+    }
+  ]
+}

@@ -1,0 +1,244 @@
+{
+  "scope": "training-set fit diagnostic only; not validation, independent test, or checkpoint selection",
+  "image_count": 128,
+  "data_yaml_sha256": "f9c9d64908b88f996632e2472267485ed99612143a214310c3cb771032db7463",
+  "manifest_sha256": "d400839b1a8ce927fcb9c316f6ff632f34189581e0ad56e852323524c8191df0",
+  "reference": {
+    "path": "/Users/bytedance/Projects/bs/checkpoints/sar_pilot_20261015/train/weights/last.pt",
+    "sha256": "bb36d1c7d37ae7733b315d4af2bf0a856c8bff34afd32f7298ff52a07b355c36",
+    "metrics": {
+      "metric": "Ultralytics 8.3.221 OBB AP using batch_probiou, not polygon-IoU AP",
+      "scope": "training-set fit diagnostic only; not validation, independent test, or checkpoint selection",
+      "mAP50_supported_classes": 0.07586043144218278,
+      "mAP50_95_supported_classes": 0.032151634845184275,
+      "supported_class_count": 15,
+      "total_class_count": 15,
+      "per_class": [
+        {
+          "id": 0,
+          "name": "Aircraft-Carrier",
+          "ground_truth_instances": 1,
+          "ap50": 0.0,
+          "ap50_95": 0.0
+        },
+        {
+          "id": 1,
+          "name": "Blurred",
+          "ground_truth_instances": 1,
+          "ap50": 0.0,
+          "ap50_95": 0.0
+        },
+        {
+          "id": 2,
+          "name": "Bulk-Carrier",
+          "ground_truth_instances": 22,
+          "ap50": 0.09626646727164298,
+          "ap50_95": 0.04157078922652059
+        },
+        {
+          "id": 3,
+          "name": "Cargo-Ship",
+          "ground_truth_instances": 34,
+          "ap50": 0.16952927194872328,
+          "ap50_95": 0.08541717802932995
+        },
+        {
+          "id": 4,
+          "name": "Container-Ship",
+          "ground_truth_instances": 14,
+          "ap50": 0.33235942715170846,
+          "ap50_95": 0.13795152953892068
+        },
+        {
+          "id": 5,
+          "name": "Fishing-Vessel",
+          "ground_truth_instances": 1,
+          "ap50": 0.0,
+          "ap50_95": 0.0
+        },
+        {
+          "id": 6,
+          "name": "LNG-LPG-Tanker",
+          "ground_truth_instances": 1,
+          "ap50": 0.0,
+          "ap50_95": 0.0
+        },
+        {
+          "id": 7,
+          "name": "Oil-Tanker",
+          "ground_truth_instances": 18,
+          "ap50": 0.2911698849125333,
+          "ap50_95": 0.12812785130855117
+        },
+        {
+          "id": 8,
+          "name": "Passenger-Cruise-Ship",
+          "ground_truth_instances": 1,
+          "ap50": 0.0,
+          "ap50_95": 0.0
+        },
+        {
+          "id": 9,
+          "name": "Passenger-Ship",
+          "ground_truth_instances": 4,
+          "ap50": 0.0,
+          "ap50_95": 0.0
+        },
+        {
+          "id": 10,
+          "name": "Tug",
+          "ground_truth_instances": 12,
+          "ap50": 0.0,
+          "ap50_95": 0.0
+        },
+        {
+          "id": 11,
+          "name": "Vehicles-Carrier",
+          "ground_truth_instances": 5,
+          "ap50": 0.02178264768375887,
+          "ap50_95": 0.01083428063551891
+        },
+        {
+          "id": 12,
+          "name": "Warship",
+          "ground_truth_instances": 68,
+          "ap50": 0.06616601056955511,
+          "ap50_95": 0.02230403714209344
+        },
+        {
+          "id": 13,
+          "name": "others",
+          "ground_truth_instances": 5,
+          "ap50": 0.0,
+          "ap50_95": 0.0
+        },
+        {
+          "id": 14,
+          "name": "unknow",
+          "ground_truth_instances": 84,
+          "ap50": 0.16063276209481991,
+          "ap50_95": 0.056068856796829415
+        }
+      ]
+    }
+  },
+  "current": {
+    "path": "/Users/bytedance/Projects/bs/checkpoints/sar_pilot_40ep_20261015/train/weights/last.pt",
+    "sha256": "602553dab283490d6f4e3c58d184f7478c546e3ac7525b223ba968fda5cedaa0",
+    "metrics": {
+      "metric": "Ultralytics 8.3.221 OBB AP using batch_probiou, not polygon-IoU AP",
+      "scope": "training-set fit diagnostic only; not validation, independent test, or checkpoint selection",
+      "mAP50_supported_classes": 0.04979410833712025,
+      "mAP50_95_supported_classes": 0.020516109356066837,
+      "supported_class_count": 15,
+      "total_class_count": 15,
+      "per_class": [
+        {
+          "id": 0,
+          "name": "Aircraft-Carrier",
+          "ground_truth_instances": 1,
+          "ap50": 0.0,
+          "ap50_95": 0.0
+        },
+        {
+          "id": 1,
+          "name": "Blurred",
+          "ground_truth_instances": 1,
+          "ap50": 0.0,
+          "ap50_95": 0.0
+        },
+        {
+          "id": 2,
+          "name": "Bulk-Carrier",
+          "ground_truth_instances": 22,
+          "ap50": 0.06656595502928535,
+          "ap50_95": 0.028028943341412323
+        },
+        {
+          "id": 3,
+          "name": "Cargo-Ship",
+          "ground_truth_instances": 34,
+          "ap50": 0.0914142164191755,
+          "ap50_95": 0.05003143988686951
+        },
+        {
+          "id": 4,
+          "name": "Container-Ship",
+          "ground_truth_instances": 14,
+          "ap50": 0.3160146542734591,
+          "ap50_95": 0.12393056015189403
+        },
+        {
+          "id": 5,
+          "name": "Fishing-Vessel",
+          "ground_truth_instances": 1,
+          "ap50": 0.0,
+          "ap50_95": 0.0
+        },
+        {
+          "id": 6,
+          "name": "LNG-LPG-Tanker",
+          "ground_truth_instances": 1,
+          "ap50": 0.0,
+          "ap50_95": 0.0
+        },
+        {
+          "id": 7,
+          "name": "Oil-Tanker",
+          "ground_truth_instances": 18,
+          "ap50": 0.0911039925376644,
+          "ap50_95": 0.038615827969915514
+        },
+        {
+          "id": 8,
+          "name": "Passenger-Cruise-Ship",
+          "ground_truth_instances": 1,
+          "ap50": 0.0,
+          "ap50_95": 0.0
+        },
+        {
+          "id": 9,
+          "name": "Passenger-Ship",
+          "ground_truth_instances": 4,
+          "ap50": 0.0,
+          "ap50_95": 0.0
+        },
+        {
+          "id": 10,
+          "name": "Tug",
+          "ground_truth_instances": 12,
+          "ap50": 0.0,
+          "ap50_95": 0.0
+        },
+        {
+          "id": 11,
+          "name": "Vehicles-Carrier",
+          "ground_truth_instances": 5,
+          "ap50": 0.04609640762463343,
+          "ap50_95": 0.028332899560117298
+        },
+        {
+          "id": 12,
+          "name": "Warship",
+          "ground_truth_instances": 68,
+          "ap50": 0.028592239229302843,
+          "ap50_95": 0.007630192553496522
+        },
+        {
+          "id": 13,
+          "name": "others",
+          "ground_truth_instances": 5,
+          "ap50": 0.0,
+          "ap50_95": 0.0
+        },
+        {
+          "id": 14,
+          "name": "unknow",
+          "ground_truth_instances": 84,
+          "ap50": 0.10712415994328317,
+          "ap50_95": 0.03117177687729731
+        }
+      ]
+    }
+  }
+}

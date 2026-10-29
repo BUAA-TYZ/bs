@@ -12,12 +12,13 @@ from sim.marl.observation import MAX_NEIGHBORS
 from sim.scheduler.predictive import PredictivePolicy
 from sim.scheduler.window_aware import WindowAwareGreedy
 from sim.scheduler.greedy import GreedyEarliestFinish
+from sim.scheduler.literature import CGSComputeAdapted
 
 
 def collect_demonstrations(model, cfg, device, teacher_name="predictive", learner_rollout=False):
     """同状态查询教师；DAgger 执行学生动作，但监督标签始终来自教师。"""
     teachers = {"predictive": PredictivePolicy, "window_aware": WindowAwareGreedy,
-                "greedy": GreedyEarliestFinish}
+                "greedy": GreedyEarliestFinish, "cgs_compute_adapted": CGSComputeAdapted}
     if teacher_name not in teachers:
         raise ValueError("Unknown imitation teacher")
     env, teacher = SimulationEnv(cfg), teachers[teacher_name]()

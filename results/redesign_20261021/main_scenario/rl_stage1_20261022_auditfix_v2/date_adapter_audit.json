@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "development_audit": {
+    "status": "PASS",
+    "comparison": "160 targets vs same160; all24 sources",
+    "field_classes": {
+      "max_sun_elevation_deg": "geometry",
+      "right_censored": "geometry",
+      "sample_count": "geometry",
+      "target_id": "geometry",
+      "source_sat_id": "geometry",
+      "min_off_nadir_deg": "geometry",
+      "start_s": "geometry",
+      "left_censored": "geometry",
+      "end_s": "geometry",
+      "window_id": "identifier",
+      "scheduled_strips": "derived"
+    },
+    "strict_geometry": true,
+    "window_count_expected": 4997,
+    "window_count_actual": 4997,
+    "difference_counts": {
+      "geometry": 0,
+      "identifier": 0,
+      "derived": 0,
+      "unclassified": 0
+    },
+    "development_arrivals_exact": true,
+    "arrival_count": 1128,
+    "reason": "Strict geometry and full final maritime80 arrivals equal; only identifier/derived differences permitted",
+    "evidence_hashes": {
+      "results/redesign_20261021/main_scenario/rl_stage1_20261022_auditfix_v2/development_audit/actual_maritime80_arrivals.json": "f195fcf38b38201dc69d7f364462aeaa321b6dac8d5102627ee074df203fcb5a",
+      "results/redesign_20261021/main_scenario/rl_stage1_20261022_auditfix_v2/development_audit/actual_windows.json": "7a3375e7bb319b87c2e44ff1a993bbb020d6ceeea504d205f326c2811ac3df64",
+      "results/redesign_20261021/main_scenario/rl_stage1_20261022_auditfix_v2/development_audit/arrival_field_differences.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "results/redesign_20261021/main_scenario/rl_stage1_20261022_auditfix_v2/development_audit/expected_maritime80_arrivals.json": "f195fcf38b38201dc69d7f364462aeaa321b6dac8d5102627ee074df203fcb5a",
+      "results/redesign_20261021/main_scenario/rl_stage1_20261022_auditfix_v2/development_audit/expected_windows.json": "7a3375e7bb319b87c2e44ff1a993bbb020d6ceeea504d205f326c2811ac3df64",
+      "results/redesign_20261021/main_scenario/rl_stage1_20261022_auditfix_v2/development_audit/progress.json": "7573425221588709fd48963b72cce8f60d8a0e08e32699f89f92c68fe4e6d215",
+      "results/redesign_20261021/main_scenario/rl_stage1_20261022_auditfix_v2/development_audit/targets160.json": "2541f7ce5b0e3726cdbfeae243bdcc165d4e4dc1f6457907c9152db4baa60810",
+      "results/redesign_20261021/main_scenario/rl_stage1_20261022_auditfix_v2/development_audit/window_field_differences.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "results/redesign_20261021/calibration/load_pressure_20261022/maritime_extension/registration.json": "045aebced6064913831dd59bc9be3ac5cd10896345d052e768c6ce5f0d53a7a8",
+      "results/redesign_20261021/calibration/load_pressure_20261022/maritime_extension/windows.json": "7a3375e7bb319b87c2e44ff1a993bbb020d6ceeea504d205f326c2811ac3df64",
+      "results/redesign_20261021/calibration/load_pressure_20261022/maritime_extension/maritime80_arrivals.json": "f195fcf38b38201dc69d7f364462aeaa321b6dac8d5102627ee074df203fcb5a"
+    }
+  },
+  "fixed_TLE_epoch": true,
+  "physical_config_unchanged": true,
+  "window_ids_note": "New day's ids index its 80-target windows; old160-target archival ids not reused",
+  "wall_seconds": 15.655796125007328
+}

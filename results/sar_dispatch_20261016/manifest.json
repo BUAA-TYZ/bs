@@ -1,0 +1,3080 @@
+{
+  "schema_version": 1,
+  "config_sha256": {
+    "main_config.json": "ae6bda4e7d7f4d035a4a9a925310a12df93dfcecbdfd1d0d50280bd432781d50",
+    "tiles_64_config.json": "662044b9e90cb3a442b839ed1343992cc860b8c83d2f2d50aa1109e4139dfa4f",
+    "tiles_4_config.json": "ab5aa572a3779686b6c85398d321de02ba29358458b1c135d443af37212897b7",
+    "empty_config.json": "d37b7bc1e243eef805230873c94485e8dc2020340fbd95b528cb1e0814a7e56b",
+    "dense_config.json": "ed5f8de39f3d2f71ffb5ddbc4d32d1b996a5da2a30c808c21a77e1524c051576"
+  },
+  "inputs": {
+    "network_contract": {
+      "path": "results/sar_parameter_contract_20261016/main_config.json",
+      "sha256": "27c45fe8b1c0d65410cf551c1a6f9f4a33ce76d96d8ce54162683db0b7bf4ed1"
+    },
+    "generator": {
+      "path": "analysis/prepare_sar_dispatch.py",
+      "sha256": "a7e978f2ea868e86a509e932ae4a96480bd5602a8049f1e3d5e5a4b0f66e2769"
+    },
+    "fixture_generator": {
+      "path": "analysis/build_sar_workload_fixture.py",
+      "sha256": "44d7f2679f866d130ffc7d90c4a904ca35c61f0bdd1593b392130bfc9f2255f2"
+    }
+  },
+  "hypothesis": "Grouping adjacent windows reduces repeated input bytes and dispatch overhead but may reduce parallelism; report both gains and losses against ground relay and literature rules",
+  "fixed_work": "64 identical 4096 inference windows per image, same measured cohort curve, same arrivals and exogenous detections across methods/groups",
+  "result_model": {
+    "main_nonempty_image_objects": 30,
+    "empty_image_probability": 0.1,
+    "window_header_bytes": 28,
+    "object_record_and_preview_bytes": 262204,
+    "meaning": "Controlled synthetic output-load assumption, not measured port density or SAR accuracy",
+    "overlap_rule": "Same object may appear in multiple window outputs; all outputs sent before ground merge",
+    "information_rule": "Actual result sizes only exposed after all windows in that dispatch packet finish; scheduling before compute uses population mean",
+    "compute_rule": "Fixed service independent of detection count; conservative proxy retaining measured controlled postprocessing cost, not a new benchmark",
+    "empty_rule": "Every window must compute and return its 28-byte completion header; no image/preview for empty detections"
+  },
+  "grouping": {
+    "main_config.json": {
+      "model": "deduplicated_dispatch_packets_v3",
+      "parameters": {
+        "width_px": 20000,
+        "height_px": 20000,
+        "bands": 3,
+        "bits_per_sample": 8,
+        "window_px": 4096,
+        "stride_px": 2304,
+        "windows_per_tile_axis": 2,
+        "compute_cost_per_window": 1.0,
+        "result_size_mb_per_window": 0.23453670250000003,
+        "deduplicate_within_tile": true,
+        "transport_components": [
+          {
+            "name": "SAR_amplitude_uint16",
+            "downsample": 1,
+            "bands": 1,
+            "bits_per_sample": 16
+          }
+        ],
+        "transport_compression_ratio": 1.0
+      },
+      "coordinate_convention": "xyxy, upper bounds exclusive",
+      "edge_rule": "shift_last_window_to_edge_no_padding",
+      "packet_rule": "one_native_bounding_rectangle_per_packet; inference_windows_unchanged",
+      "result_rule": "per_window_outputs_before_global_merge",
+      "image_size_mb": 800.0,
+      "num_windows": 64,
+      "num_tiles": 16,
+      "processed_pixels": 1073741824,
+      "coverage_multiplier": 2.68435456,
+      "packet_input_mb": 1287.882752,
+      "total_compute_cost": 64.0,
+      "unmerged_result_mb": 15.010348960000002,
+      "tiles": [
+        {
+          "windows_xyxy": [
+            [
+              0,
+              0,
+              4096,
+              4096
+            ],
+            [
+              2304,
+              0,
+              6400,
+              4096
+            ],
+            [
+              0,
+              2304,
+              4096,
+              6400
+            ],
+            [
+              2304,
+              2304,
+              6400,
+              6400
+            ]
+          ],
+          "data_size_mb": 81.92,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.9381468100000001
+        },
+        {
+          "windows_xyxy": [
+            [
+              4608,
+              0,
+              8704,
+              4096
+            ],
+            [
+              6912,
+              0,
+              11008,
+              4096
+            ],
+            [
+              4608,
+              2304,
+              8704,
+              6400
+            ],
+            [
+              6912,
+              2304,
+              11008,
+              6400
+            ]
+          ],
+          "data_size_mb": 81.92,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.9381468100000001
+        },
+        {
+          "windows_xyxy": [
+            [
+              9216,
+              0,
+              13312,
+              4096
+            ],
+            [
+              11520,
+              0,
+              15616,
+              4096
+            ],
+            [
+              9216,
+              2304,
+              13312,
+              6400
+            ],
+            [
+              11520,
+              2304,
+              15616,
+              6400
+            ]
+          ],
+          "data_size_mb": 81.92,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.9381468100000001
+        },
+        {
+          "windows_xyxy": [
+            [
+              13824,
+              0,
+              17920,
+              4096
+            ],
+            [
+              15904,
+              0,
+              20000,
+              4096
+            ],
+            [
+              13824,
+              2304,
+              17920,
+              6400
+            ],
+            [
+              15904,
+              2304,
+              20000,
+              6400
+            ]
+          ],
+          "data_size_mb": 79.0528,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.9381468100000001
+        },
+        {
+          "windows_xyxy": [
+            [
+              0,
+              4608,
+              4096,
+              8704
+            ],
+            [
+              2304,
+              4608,
+              6400,
+              8704
+            ],
+            [
+              0,
+              6912,
+              4096,
+              11008
+            ],
+            [
+              2304,
+              6912,
+              6400,
+              11008
+            ]
+          ],
+          "data_size_mb": 81.92,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.9381468100000001
+        },
+        {
+          "windows_xyxy": [
+            [
+              4608,
+              4608,
+              8704,
+              8704
+            ],
+            [
+              6912,
+              4608,
+              11008,
+              8704
+            ],
+            [
+              4608,
+              6912,
+              8704,
+              11008
+            ],
+            [
+              6912,
+              6912,
+              11008,
+              11008
+            ]
+          ],
+          "data_size_mb": 81.92,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.9381468100000001
+        },
+        {
+          "windows_xyxy": [
+            [
+              9216,
+              4608,
+              13312,
+              8704
+            ],
+            [
+              11520,
+              4608,
+              15616,
+              8704
+            ],
+            [
+              9216,
+              6912,
+              13312,
+              11008
+            ],
+            [
+              11520,
+              6912,
+              15616,
+              11008
+            ]
+          ],
+          "data_size_mb": 81.92,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.9381468100000001
+        },
+        {
+          "windows_xyxy": [
+            [
+              13824,
+              4608,
+              17920,
+              8704
+            ],
+            [
+              15904,
+              4608,
+              20000,
+              8704
+            ],
+            [
+              13824,
+              6912,
+              17920,
+              11008
+            ],
+            [
+              15904,
+              6912,
+              20000,
+              11008
+            ]
+          ],
+          "data_size_mb": 79.0528,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.9381468100000001
+        },
+        {
+          "windows_xyxy": [
+            [
+              0,
+              9216,
+              4096,
+              13312
+            ],
+            [
+              2304,
+              9216,
+              6400,
+              13312
+            ],
+            [
+              0,
+              11520,
+              4096,
+              15616
+            ],
+            [
+              2304,
+              11520,
+              6400,
+              15616
+            ]
+          ],
+          "data_size_mb": 81.92,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.9381468100000001
+        },
+        {
+          "windows_xyxy": [
+            [
+              4608,
+              9216,
+              8704,
+              13312
+            ],
+            [
+              6912,
+              9216,
+              11008,
+              13312
+            ],
+            [
+              4608,
+              11520,
+              8704,
+              15616
+            ],
+            [
+              6912,
+              11520,
+              11008,
+              15616
+            ]
+          ],
+          "data_size_mb": 81.92,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.9381468100000001
+        },
+        {
+          "windows_xyxy": [
+            [
+              9216,
+              9216,
+              13312,
+              13312
+            ],
+            [
+              11520,
+              9216,
+              15616,
+              13312
+            ],
+            [
+              9216,
+              11520,
+              13312,
+              15616
+            ],
+            [
+              11520,
+              11520,
+              15616,
+              15616
+            ]
+          ],
+          "data_size_mb": 81.92,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.9381468100000001
+        },
+        {
+          "windows_xyxy": [
+            [
+              13824,
+              9216,
+              17920,
+              13312
+            ],
+            [
+              15904,
+              9216,
+              20000,
+              13312
+            ],
+            [
+              13824,
+              11520,
+              17920,
+              15616
+            ],
+            [
+              15904,
+              11520,
+              20000,
+              15616
+            ]
+          ],
+          "data_size_mb": 79.0528,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.9381468100000001
+        },
+        {
+          "windows_xyxy": [
+            [
+              0,
+              13824,
+              4096,
+              17920
+            ],
+            [
+              2304,
+              13824,
+              6400,
+              17920
+            ],
+            [
+              0,
+              15904,
+              4096,
+              20000
+            ],
+            [
+              2304,
+              15904,
+              6400,
+              20000
+            ]
+          ],
+          "data_size_mb": 79.0528,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.9381468100000001
+        },
+        {
+          "windows_xyxy": [
+            [
+              4608,
+              13824,
+              8704,
+              17920
+            ],
+            [
+              6912,
+              13824,
+              11008,
+              17920
+            ],
+            [
+              4608,
+              15904,
+              8704,
+              20000
+            ],
+            [
+              6912,
+              15904,
+              11008,
+              20000
+            ]
+          ],
+          "data_size_mb": 79.0528,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.9381468100000001
+        },
+        {
+          "windows_xyxy": [
+            [
+              9216,
+              13824,
+              13312,
+              17920
+            ],
+            [
+              11520,
+              13824,
+              15616,
+              17920
+            ],
+            [
+              9216,
+              15904,
+              13312,
+              20000
+            ],
+            [
+              11520,
+              15904,
+              15616,
+              20000
+            ]
+          ],
+          "data_size_mb": 79.0528,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.9381468100000001
+        },
+        {
+          "windows_xyxy": [
+            [
+              13824,
+              13824,
+              17920,
+              17920
+            ],
+            [
+              15904,
+              13824,
+              20000,
+              17920
+            ],
+            [
+              13824,
+              15904,
+              17920,
+              20000
+            ],
+            [
+              15904,
+              15904,
+              20000,
+              20000
+            ]
+          ],
+          "data_size_mb": 76.285952,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.9381468100000001
+        }
+      ],
+      "transport": {
+        "format": "native_components_packed_bitstream",
+        "pixel_mapping": "floor(start/downsample), ceil(end/downsample)",
+        "packing": "per_component_contiguous_bits_ceil_to_byte; no row padding or headers",
+        "compression_ratio": 1.0,
+        "compression_assumption": "Uncompressed/compressed size ratio; fixed modeling assumption, not measured codec performance",
+        "unique_uncompressed_mb": 800.0,
+        "inference_window_mb": 50.331648,
+        "inference_rule": "bands/bits_per_sample define model input and VRAM proxy, independently of native transport",
+        "compute_rule": "Per-window processing proxy; not a measured native PAN/MS pipeline; decode/pansharpen cost not modeled",
+        "component_rasters": [
+          {
+            "name": "SAR_amplitude_uint16",
+            "downsample": 1,
+            "bands": 1,
+            "bits_per_sample": 16,
+            "width_px": 20000,
+            "height_px": 20000,
+            "packed_bytes": 800000000
+          }
+        ]
+      }
+    },
+    "tiles_64_config.json": {
+      "model": "deduplicated_dispatch_packets_v3",
+      "parameters": {
+        "width_px": 20000,
+        "height_px": 20000,
+        "bands": 3,
+        "bits_per_sample": 8,
+        "window_px": 4096,
+        "stride_px": 2304,
+        "windows_per_tile_axis": 1,
+        "compute_cost_per_window": 1.0,
+        "result_size_mb_per_window": 0.23453670250000003,
+        "deduplicate_within_tile": true,
+        "transport_components": [
+          {
+            "name": "SAR_amplitude_uint16",
+            "downsample": 1,
+            "bands": 1,
+            "bits_per_sample": 16
+          }
+        ],
+        "transport_compression_ratio": 1.0
+      },
+      "coordinate_convention": "xyxy, upper bounds exclusive",
+      "edge_rule": "shift_last_window_to_edge_no_padding",
+      "packet_rule": "one_native_bounding_rectangle_per_packet; inference_windows_unchanged",
+      "result_rule": "per_window_outputs_before_global_merge",
+      "image_size_mb": 800.0,
+      "num_windows": 64,
+      "num_tiles": 64,
+      "processed_pixels": 1073741824,
+      "coverage_multiplier": 2.68435456,
+      "packet_input_mb": 2147.483648,
+      "total_compute_cost": 64.0,
+      "unmerged_result_mb": 15.010348960000002,
+      "tiles": [
+        {
+          "windows_xyxy": [
+            [
+              0,
+              0,
+              4096,
+              4096
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              2304,
+              0,
+              6400,
+              4096
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              4608,
+              0,
+              8704,
+              4096
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              6912,
+              0,
+              11008,
+              4096
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              9216,
+              0,
+              13312,
+              4096
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              11520,
+              0,
+              15616,
+              4096
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              13824,
+              0,
+              17920,
+              4096
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              15904,
+              0,
+              20000,
+              4096
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              0,
+              2304,
+              4096,
+              6400
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              2304,
+              2304,
+              6400,
+              6400
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              4608,
+              2304,
+              8704,
+              6400
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              6912,
+              2304,
+              11008,
+              6400
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              9216,
+              2304,
+              13312,
+              6400
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              11520,
+              2304,
+              15616,
+              6400
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              13824,
+              2304,
+              17920,
+              6400
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              15904,
+              2304,
+              20000,
+              6400
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              0,
+              4608,
+              4096,
+              8704
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              2304,
+              4608,
+              6400,
+              8704
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              4608,
+              4608,
+              8704,
+              8704
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              6912,
+              4608,
+              11008,
+              8704
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              9216,
+              4608,
+              13312,
+              8704
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              11520,
+              4608,
+              15616,
+              8704
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              13824,
+              4608,
+              17920,
+              8704
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              15904,
+              4608,
+              20000,
+              8704
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              0,
+              6912,
+              4096,
+              11008
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              2304,
+              6912,
+              6400,
+              11008
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              4608,
+              6912,
+              8704,
+              11008
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              6912,
+              6912,
+              11008,
+              11008
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              9216,
+              6912,
+              13312,
+              11008
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              11520,
+              6912,
+              15616,
+              11008
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              13824,
+              6912,
+              17920,
+              11008
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              15904,
+              6912,
+              20000,
+              11008
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              0,
+              9216,
+              4096,
+              13312
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              2304,
+              9216,
+              6400,
+              13312
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              4608,
+              9216,
+              8704,
+              13312
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              6912,
+              9216,
+              11008,
+              13312
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              9216,
+              9216,
+              13312,
+              13312
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              11520,
+              9216,
+              15616,
+              13312
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              13824,
+              9216,
+              17920,
+              13312
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              15904,
+              9216,
+              20000,
+              13312
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              0,
+              11520,
+              4096,
+              15616
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              2304,
+              11520,
+              6400,
+              15616
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              4608,
+              11520,
+              8704,
+              15616
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              6912,
+              11520,
+              11008,
+              15616
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              9216,
+              11520,
+              13312,
+              15616
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              11520,
+              11520,
+              15616,
+              15616
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              13824,
+              11520,
+              17920,
+              15616
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              15904,
+              11520,
+              20000,
+              15616
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              0,
+              13824,
+              4096,
+              17920
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              2304,
+              13824,
+              6400,
+              17920
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              4608,
+              13824,
+              8704,
+              17920
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              6912,
+              13824,
+              11008,
+              17920
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              9216,
+              13824,
+              13312,
+              17920
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              11520,
+              13824,
+              15616,
+              17920
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              13824,
+              13824,
+              17920,
+              17920
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              15904,
+              13824,
+              20000,
+              17920
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              0,
+              15904,
+              4096,
+              20000
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              2304,
+              15904,
+              6400,
+              20000
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              4608,
+              15904,
+              8704,
+              20000
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              6912,
+              15904,
+              11008,
+              20000
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              9216,
+              15904,
+              13312,
+              20000
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              11520,
+              15904,
+              15616,
+              20000
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              13824,
+              15904,
+              17920,
+              20000
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        },
+        {
+          "windows_xyxy": [
+            [
+              15904,
+              15904,
+              20000,
+              20000
+            ]
+          ],
+          "data_size_mb": 33.554432,
+          "compute_cost": 1.0,
+          "result_size_mb": 0.23453670250000003
+        }
+      ],
+      "transport": {
+        "format": "native_components_packed_bitstream",
+        "pixel_mapping": "floor(start/downsample), ceil(end/downsample)",
+        "packing": "per_component_contiguous_bits_ceil_to_byte; no row padding or headers",
+        "compression_ratio": 1.0,
+        "compression_assumption": "Uncompressed/compressed size ratio; fixed modeling assumption, not measured codec performance",
+        "unique_uncompressed_mb": 800.0,
+        "inference_window_mb": 50.331648,
+        "inference_rule": "bands/bits_per_sample define model input and VRAM proxy, independently of native transport",
+        "compute_rule": "Per-window processing proxy; not a measured native PAN/MS pipeline; decode/pansharpen cost not modeled",
+        "component_rasters": [
+          {
+            "name": "SAR_amplitude_uint16",
+            "downsample": 1,
+            "bands": 1,
+            "bits_per_sample": 16,
+            "width_px": 20000,
+            "height_px": 20000,
+            "packed_bytes": 800000000
+          }
+        ]
+      }
+    },
+    "tiles_4_config.json": {
+      "model": "deduplicated_dispatch_packets_v3",
+      "parameters": {
+        "width_px": 20000,
+        "height_px": 20000,
+        "bands": 3,
+        "bits_per_sample": 8,
+        "window_px": 4096,
+        "stride_px": 2304,
+        "windows_per_tile_axis": 4,
+        "compute_cost_per_window": 1.0,
+        "result_size_mb_per_window": 0.23453670250000003,
+        "deduplicate_within_tile": true,
+        "transport_components": [
+          {
+            "name": "SAR_amplitude_uint16",
+            "downsample": 1,
+            "bands": 1,
+            "bits_per_sample": 16
+          }
+        ],
+        "transport_compression_ratio": 1.0
+      },
+      "coordinate_convention": "xyxy, upper bounds exclusive",
+      "edge_rule": "shift_last_window_to_edge_no_padding",
+      "packet_rule": "one_native_bounding_rectangle_per_packet; inference_windows_unchanged",
+      "result_rule": "per_window_outputs_before_global_merge",
+      "image_size_mb": 800.0,
+      "num_windows": 64,
+      "num_tiles": 4,
+      "processed_pixels": 1073741824,
+      "coverage_multiplier": 2.68435456,
+      "packet_input_mb": 949.782528,
+      "total_compute_cost": 64.0,
+      "unmerged_result_mb": 15.010348960000002,
+      "tiles": [
+        {
+          "windows_xyxy": [
+            [
+              0,
+              0,
+              4096,
+              4096
+            ],
+            [
+              2304,
+              0,
+              6400,
+              4096
+            ],
+            [
+              4608,
+              0,
+              8704,
+              4096
+            ],
+            [
+              6912,
+              0,
+              11008,
+              4096
+            ],
+            [
+              0,
+              2304,
+              4096,
+              6400
+            ],
+            [
+              2304,
+              2304,
+              6400,
+              6400
+            ],
+            [
+              4608,
+              2304,
+              8704,
+              6400
+            ],
+            [
+              6912,
+              2304,
+              11008,
+              6400
+            ],
+            [
+              0,
+              4608,
+              4096,
+              8704
+            ],
+            [
+              2304,
+              4608,
+              6400,
+              8704
+            ],
+            [
+              4608,
+              4608,
+              8704,
+              8704
+            ],
+            [
+              6912,
+              4608,
+              11008,
+              8704
+            ],
+            [
+              0,
+              6912,
+              4096,
+              11008
+            ],
+            [
+              2304,
+              6912,
+              6400,
+              11008
+            ],
+            [
+              4608,
+              6912,
+              8704,
+              11008
+            ],
+            [
+              6912,
+              6912,
+              11008,
+              11008
+            ]
+          ],
+          "data_size_mb": 242.352128,
+          "compute_cost": 16.0,
+          "result_size_mb": 3.7525872400000004
+        },
+        {
+          "windows_xyxy": [
+            [
+              9216,
+              0,
+              13312,
+              4096
+            ],
+            [
+              11520,
+              0,
+              15616,
+              4096
+            ],
+            [
+              13824,
+              0,
+              17920,
+              4096
+            ],
+            [
+              15904,
+              0,
+              20000,
+              4096
+            ],
+            [
+              9216,
+              2304,
+              13312,
+              6400
+            ],
+            [
+              11520,
+              2304,
+              15616,
+              6400
+            ],
+            [
+              13824,
+              2304,
+              17920,
+              6400
+            ],
+            [
+              15904,
+              2304,
+              20000,
+              6400
+            ],
+            [
+              9216,
+              4608,
+              13312,
+              8704
+            ],
+            [
+              11520,
+              4608,
+              15616,
+              8704
+            ],
+            [
+              13824,
+              4608,
+              17920,
+              8704
+            ],
+            [
+              15904,
+              4608,
+              20000,
+              8704
+            ],
+            [
+              9216,
+              6912,
+              13312,
+              11008
+            ],
+            [
+              11520,
+              6912,
+              15616,
+              11008
+            ],
+            [
+              13824,
+              6912,
+              17920,
+              11008
+            ],
+            [
+              15904,
+              6912,
+              20000,
+              11008
+            ]
+          ],
+          "data_size_mb": 237.420544,
+          "compute_cost": 16.0,
+          "result_size_mb": 3.7525872400000004
+        },
+        {
+          "windows_xyxy": [
+            [
+              0,
+              9216,
+              4096,
+              13312
+            ],
+            [
+              2304,
+              9216,
+              6400,
+              13312
+            ],
+            [
+              4608,
+              9216,
+              8704,
+              13312
+            ],
+            [
+              6912,
+              9216,
+              11008,
+              13312
+            ],
+            [
+              0,
+              11520,
+              4096,
+              15616
+            ],
+            [
+              2304,
+              11520,
+              6400,
+              15616
+            ],
+            [
+              4608,
+              11520,
+              8704,
+              15616
+            ],
+            [
+              6912,
+              11520,
+              11008,
+              15616
+            ],
+            [
+              0,
+              13824,
+              4096,
+              17920
+            ],
+            [
+              2304,
+              13824,
+              6400,
+              17920
+            ],
+            [
+              4608,
+              13824,
+              8704,
+              17920
+            ],
+            [
+              6912,
+              13824,
+              11008,
+              17920
+            ],
+            [
+              0,
+              15904,
+              4096,
+              20000
+            ],
+            [
+              2304,
+              15904,
+              6400,
+              20000
+            ],
+            [
+              4608,
+              15904,
+              8704,
+              20000
+            ],
+            [
+              6912,
+              15904,
+              11008,
+              20000
+            ]
+          ],
+          "data_size_mb": 237.420544,
+          "compute_cost": 16.0,
+          "result_size_mb": 3.7525872400000004
+        },
+        {
+          "windows_xyxy": [
+            [
+              9216,
+              9216,
+              13312,
+              13312
+            ],
+            [
+              11520,
+              9216,
+              15616,
+              13312
+            ],
+            [
+              13824,
+              9216,
+              17920,
+              13312
+            ],
+            [
+              15904,
+              9216,
+              20000,
+              13312
+            ],
+            [
+              9216,
+              11520,
+              13312,
+              15616
+            ],
+            [
+              11520,
+              11520,
+              15616,
+              15616
+            ],
+            [
+              13824,
+              11520,
+              17920,
+              15616
+            ],
+            [
+              15904,
+              11520,
+              20000,
+              15616
+            ],
+            [
+              9216,
+              13824,
+              13312,
+              17920
+            ],
+            [
+              11520,
+              13824,
+              15616,
+              17920
+            ],
+            [
+              13824,
+              13824,
+              17920,
+              17920
+            ],
+            [
+              15904,
+              13824,
+              20000,
+              17920
+            ],
+            [
+              9216,
+              15904,
+              13312,
+              20000
+            ],
+            [
+              11520,
+              15904,
+              15616,
+              20000
+            ],
+            [
+              13824,
+              15904,
+              17920,
+              20000
+            ],
+            [
+              15904,
+              15904,
+              20000,
+              20000
+            ]
+          ],
+          "data_size_mb": 232.589312,
+          "compute_cost": 16.0,
+          "result_size_mb": 3.7525872400000004
+        }
+      ],
+      "transport": {
+        "format": "native_components_packed_bitstream",
+        "pixel_mapping": "floor(start/downsample), ceil(end/downsample)",
+        "packing": "per_component_contiguous_bits_ceil_to_byte; no row padding or headers",
+        "compression_ratio": 1.0,
+        "compression_assumption": "Uncompressed/compressed size ratio; fixed modeling assumption, not measured codec performance",
+        "unique_uncompressed_mb": 800.0,
+        "inference_window_mb": 50.331648,
+        "inference_rule": "bands/bits_per_sample define model input and VRAM proxy, independently of native transport",
+        "compute_rule": "Per-window processing proxy; not a measured native PAN/MS pipeline; decode/pansharpen cost not modeled",
+        "component_rasters": [
+          {
+            "name": "SAR_amplitude_uint16",
+            "downsample": 1,
+            "bands": 1,
+            "bits_per_sample": 16,
+            "width_px": 20000,
+            "height_px": 20000,
+            "packed_bytes": 800000000
+          }
+        ]
+      }
+    },
+    "empty_config.json": {
+      "model": "deduplicated_dispatch_packets_v3",
+      "parameters": {
+        "width_px": 20000,
+        "height_px": 20000,
+        "bands": 3,
+        "bits_per_sample": 8,
+        "window_px": 4096,
+        "stride_px": 2304,
+        "windows_per_tile_axis": 2,
+        "compute_cost_per_window": 1.0,
+        "result_size_mb_per_window": 2.8e-05,
+        "deduplicate_within_tile": true,
+        "transport_components": [
+          {
+            "name": "SAR_amplitude_uint16",
+            "downsample": 1,
+            "bands": 1,
+            "bits_per_sample": 16
+          }
+        ],
+        "transport_compression_ratio": 1.0
+      },
+      "coordinate_convention": "xyxy, upper bounds exclusive",
+      "edge_rule": "shift_last_window_to_edge_no_padding",
+      "packet_rule": "one_native_bounding_rectangle_per_packet; inference_windows_unchanged",
+      "result_rule": "per_window_outputs_before_global_merge",
+      "image_size_mb": 800.0,
+      "num_windows": 64,
+      "num_tiles": 16,
+      "processed_pixels": 1073741824,
+      "coverage_multiplier": 2.68435456,
+      "packet_input_mb": 1287.882752,
+      "total_compute_cost": 64.0,
+      "unmerged_result_mb": 0.001792,
+      "tiles": [
+        {
+          "windows_xyxy": [
+            [
+              0,
+              0,
+              4096,
+              4096
+            ],
+            [
+              2304,
+              0,
+              6400,
+              4096
+            ],
+            [
+              0,
+              2304,
+              4096,
+              6400
+            ],
+            [
+              2304,
+              2304,
+              6400,
+              6400
+            ]
+          ],
+          "data_size_mb": 81.92,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.000112
+        },
+        {
+          "windows_xyxy": [
+            [
+              4608,
+              0,
+              8704,
+              4096
+            ],
+            [
+              6912,
+              0,
+              11008,
+              4096
+            ],
+            [
+              4608,
+              2304,
+              8704,
+              6400
+            ],
+            [
+              6912,
+              2304,
+              11008,
+              6400
+            ]
+          ],
+          "data_size_mb": 81.92,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.000112
+        },
+        {
+          "windows_xyxy": [
+            [
+              9216,
+              0,
+              13312,
+              4096
+            ],
+            [
+              11520,
+              0,
+              15616,
+              4096
+            ],
+            [
+              9216,
+              2304,
+              13312,
+              6400
+            ],
+            [
+              11520,
+              2304,
+              15616,
+              6400
+            ]
+          ],
+          "data_size_mb": 81.92,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.000112
+        },
+        {
+          "windows_xyxy": [
+            [
+              13824,
+              0,
+              17920,
+              4096
+            ],
+            [
+              15904,
+              0,
+              20000,
+              4096
+            ],
+            [
+              13824,
+              2304,
+              17920,
+              6400
+            ],
+            [
+              15904,
+              2304,
+              20000,
+              6400
+            ]
+          ],
+          "data_size_mb": 79.0528,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.000112
+        },
+        {
+          "windows_xyxy": [
+            [
+              0,
+              4608,
+              4096,
+              8704
+            ],
+            [
+              2304,
+              4608,
+              6400,
+              8704
+            ],
+            [
+              0,
+              6912,
+              4096,
+              11008
+            ],
+            [
+              2304,
+              6912,
+              6400,
+              11008
+            ]
+          ],
+          "data_size_mb": 81.92,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.000112
+        },
+        {
+          "windows_xyxy": [
+            [
+              4608,
+              4608,
+              8704,
+              8704
+            ],
+            [
+              6912,
+              4608,
+              11008,
+              8704
+            ],
+            [
+              4608,
+              6912,
+              8704,
+              11008
+            ],
+            [
+              6912,
+              6912,
+              11008,
+              11008
+            ]
+          ],
+          "data_size_mb": 81.92,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.000112
+        },
+        {
+          "windows_xyxy": [
+            [
+              9216,
+              4608,
+              13312,
+              8704
+            ],
+            [
+              11520,
+              4608,
+              15616,
+              8704
+            ],
+            [
+              9216,
+              6912,
+              13312,
+              11008
+            ],
+            [
+              11520,
+              6912,
+              15616,
+              11008
+            ]
+          ],
+          "data_size_mb": 81.92,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.000112
+        },
+        {
+          "windows_xyxy": [
+            [
+              13824,
+              4608,
+              17920,
+              8704
+            ],
+            [
+              15904,
+              4608,
+              20000,
+              8704
+            ],
+            [
+              13824,
+              6912,
+              17920,
+              11008
+            ],
+            [
+              15904,
+              6912,
+              20000,
+              11008
+            ]
+          ],
+          "data_size_mb": 79.0528,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.000112
+        },
+        {
+          "windows_xyxy": [
+            [
+              0,
+              9216,
+              4096,
+              13312
+            ],
+            [
+              2304,
+              9216,
+              6400,
+              13312
+            ],
+            [
+              0,
+              11520,
+              4096,
+              15616
+            ],
+            [
+              2304,
+              11520,
+              6400,
+              15616
+            ]
+          ],
+          "data_size_mb": 81.92,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.000112
+        },
+        {
+          "windows_xyxy": [
+            [
+              4608,
+              9216,
+              8704,
+              13312
+            ],
+            [
+              6912,
+              9216,
+              11008,
+              13312
+            ],
+            [
+              4608,
+              11520,
+              8704,
+              15616
+            ],
+            [
+              6912,
+              11520,
+              11008,
+              15616
+            ]
+          ],
+          "data_size_mb": 81.92,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.000112
+        },
+        {
+          "windows_xyxy": [
+            [
+              9216,
+              9216,
+              13312,
+              13312
+            ],
+            [
+              11520,
+              9216,
+              15616,
+              13312
+            ],
+            [
+              9216,
+              11520,
+              13312,
+              15616
+            ],
+            [
+              11520,
+              11520,
+              15616,
+              15616
+            ]
+          ],
+          "data_size_mb": 81.92,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.000112
+        },
+        {
+          "windows_xyxy": [
+            [
+              13824,
+              9216,
+              17920,
+              13312
+            ],
+            [
+              15904,
+              9216,
+              20000,
+              13312
+            ],
+            [
+              13824,
+              11520,
+              17920,
+              15616
+            ],
+            [
+              15904,
+              11520,
+              20000,
+              15616
+            ]
+          ],
+          "data_size_mb": 79.0528,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.000112
+        },
+        {
+          "windows_xyxy": [
+            [
+              0,
+              13824,
+              4096,
+              17920
+            ],
+            [
+              2304,
+              13824,
+              6400,
+              17920
+            ],
+            [
+              0,
+              15904,
+              4096,
+              20000
+            ],
+            [
+              2304,
+              15904,
+              6400,
+              20000
+            ]
+          ],
+          "data_size_mb": 79.0528,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.000112
+        },
+        {
+          "windows_xyxy": [
+            [
+              4608,
+              13824,
+              8704,
+              17920
+            ],
+            [
+              6912,
+              13824,
+              11008,
+              17920
+            ],
+            [
+              4608,
+              15904,
+              8704,
+              20000
+            ],
+            [
+              6912,
+              15904,
+              11008,
+              20000
+            ]
+          ],
+          "data_size_mb": 79.0528,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.000112
+        },
+        {
+          "windows_xyxy": [
+            [
+              9216,
+              13824,
+              13312,
+              17920
+            ],
+            [
+              11520,
+              13824,
+              15616,
+              17920
+            ],
+            [
+              9216,
+              15904,
+              13312,
+              20000
+            ],
+            [
+              11520,
+              15904,
+              15616,
+              20000
+            ]
+          ],
+          "data_size_mb": 79.0528,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.000112
+        },
+        {
+          "windows_xyxy": [
+            [
+              13824,
+              13824,
+              17920,
+              17920
+            ],
+            [
+              15904,
+              13824,
+              20000,
+              17920
+            ],
+            [
+              13824,
+              15904,
+              17920,
+              20000
+            ],
+            [
+              15904,
+              15904,
+              20000,
+              20000
+            ]
+          ],
+          "data_size_mb": 76.285952,
+          "compute_cost": 4.0,
+          "result_size_mb": 0.000112
+        }
+      ],
+      "transport": {
+        "format": "native_components_packed_bitstream",
+        "pixel_mapping": "floor(start/downsample), ceil(end/downsample)",
+        "packing": "per_component_contiguous_bits_ceil_to_byte; no row padding or headers",
+        "compression_ratio": 1.0,
+        "compression_assumption": "Uncompressed/compressed size ratio; fixed modeling assumption, not measured codec performance",
+        "unique_uncompressed_mb": 800.0,
+        "inference_window_mb": 50.331648,
+        "inference_rule": "bands/bits_per_sample define model input and VRAM proxy, independently of native transport",
+        "compute_rule": "Per-window processing proxy; not a measured native PAN/MS pipeline; decode/pansharpen cost not modeled",
+        "component_rasters": [
+          {
+            "name": "SAR_amplitude_uint16",
+            "downsample": 1,
+            "bands": 1,
+            "bits_per_sample": 16,
+            "width_px": 20000,
+            "height_px": 20000,
+            "packed_bytes": 800000000
+          }
+        ]
+      }
+    },
+    "dense_config.json": {
+      "model": "deduplicated_dispatch_packets_v3",
+      "parameters": {
+        "width_px": 20000,
+        "height_px": 20000,
+        "bands": 3,
+        "bits_per_sample": 8,
+        "window_px": 4096,
+        "stride_px": 2304,
+        "windows_per_tile_axis": 2,
+        "compute_cost_per_window": 1.0,
+        "result_size_mb_per_window": 0.7817236750000001,
+        "deduplicate_within_tile": true,
+        "transport_components": [
+          {
+            "name": "SAR_amplitude_uint16",
+            "downsample": 1,
+            "bands": 1,
+            "bits_per_sample": 16
+          }
+        ],
+        "transport_compression_ratio": 1.0
+      },
+      "coordinate_convention": "xyxy, upper bounds exclusive",
+      "edge_rule": "shift_last_window_to_edge_no_padding",
+      "packet_rule": "one_native_bounding_rectangle_per_packet; inference_windows_unchanged",
+      "result_rule": "per_window_outputs_before_global_merge",
+      "image_size_mb": 800.0,
+      "num_windows": 64,
+      "num_tiles": 16,
+      "processed_pixels": 1073741824,
+      "coverage_multiplier": 2.68435456,
+      "packet_input_mb": 1287.882752,
+      "total_compute_cost": 64.0,
+      "unmerged_result_mb": 50.030315200000004,
+      "tiles": [
+        {
+          "windows_xyxy": [
+            [
+              0,
+              0,
+              4096,
+              4096
+            ],
+            [
+              2304,
+              0,
+              6400,
+              4096
+            ],
+            [
+              0,
+              2304,
+              4096,
+              6400
+            ],
+            [
+              2304,
+              2304,
+              6400,
+              6400
+            ]
+          ],
+          "data_size_mb": 81.92,
+          "compute_cost": 4.0,
+          "result_size_mb": 3.1268947000000002
+        },
+        {
+          "windows_xyxy": [
+            [
+              4608,
+              0,
+              8704,
+              4096
+            ],
+            [
+              6912,
+              0,
+              11008,
+              4096
+            ],
+            [
+              4608,
+              2304,
+              8704,
+              6400
+            ],
+            [
+              6912,
+              2304,
+              11008,
+              6400
+            ]
+          ],
+          "data_size_mb": 81.92,
+          "compute_cost": 4.0,
+          "result_size_mb": 3.1268947000000002
+        },
+        {
+          "windows_xyxy": [
+            [
+              9216,
+              0,
+              13312,
+              4096
+            ],
+            [
+              11520,
+              0,
+              15616,
+              4096
+            ],
+            [
+              9216,
+              2304,
+              13312,
+              6400
+            ],
+            [
+              11520,
+              2304,
+              15616,
+              6400
+            ]
+          ],
+          "data_size_mb": 81.92,
+          "compute_cost": 4.0,
+          "result_size_mb": 3.1268947000000002
+        },
+        {
+          "windows_xyxy": [
+            [
+              13824,
+              0,
+              17920,
+              4096
+            ],
+            [
+              15904,
+              0,
+              20000,
+              4096
+            ],
+            [
+              13824,
+              2304,
+              17920,
+              6400
+            ],
+            [
+              15904,
+              2304,
+              20000,
+              6400
+            ]
+          ],
+          "data_size_mb": 79.0528,
+          "compute_cost": 4.0,
+          "result_size_mb": 3.1268947000000002
+        },
+        {
+          "windows_xyxy": [
+            [
+              0,
+              4608,
+              4096,
+              8704
+            ],
+            [
+              2304,
+              4608,
+              6400,
+              8704
+            ],
+            [
+              0,
+              6912,
+              4096,
+              11008
+            ],
+            [
+              2304,
+              6912,
+              6400,
+              11008
+            ]
+          ],
+          "data_size_mb": 81.92,
+          "compute_cost": 4.0,
+          "result_size_mb": 3.1268947000000002
+        },
+        {
+          "windows_xyxy": [
+            [
+              4608,
+              4608,
+              8704,
+              8704
+            ],
+            [
+              6912,
+              4608,
+              11008,
+              8704
+            ],
+            [
+              4608,
+              6912,
+              8704,
+              11008
+            ],
+            [
+              6912,
+              6912,
+              11008,
+              11008
+            ]
+          ],
+          "data_size_mb": 81.92,
+          "compute_cost": 4.0,
+          "result_size_mb": 3.1268947000000002
+        },
+        {
+          "windows_xyxy": [
+            [
+              9216,
+              4608,
+              13312,
+              8704
+            ],
+            [
+              11520,
+              4608,
+              15616,
+              8704
+            ],
+            [
+              9216,
+              6912,
+              13312,
+              11008
+            ],
+            [
+              11520,
+              6912,
+              15616,
+              11008
+            ]
+          ],
+          "data_size_mb": 81.92,
+          "compute_cost": 4.0,
+          "result_size_mb": 3.1268947000000002
+        },
+        {
+          "windows_xyxy": [
+            [
+              13824,
+              4608,
+              17920,
+              8704
+            ],
+            [
+              15904,
+              4608,
+              20000,
+              8704
+            ],
+            [
+              13824,
+              6912,
+              17920,
+              11008
+            ],
+            [
+              15904,
+              6912,
+              20000,
+              11008
+            ]
+          ],
+          "data_size_mb": 79.0528,
+          "compute_cost": 4.0,
+          "result_size_mb": 3.1268947000000002
+        },
+        {
+          "windows_xyxy": [
+            [
+              0,
+              9216,
+              4096,
+              13312
+            ],
+            [
+              2304,
+              9216,
+              6400,
+              13312
+            ],
+            [
+              0,
+              11520,
+              4096,
+              15616
+            ],
+            [
+              2304,
+              11520,
+              6400,
+              15616
+            ]
+          ],
+          "data_size_mb": 81.92,
+          "compute_cost": 4.0,
+          "result_size_mb": 3.1268947000000002
+        },
+        {
+          "windows_xyxy": [
+            [
+              4608,
+              9216,
+              8704,
+              13312
+            ],
+            [
+              6912,
+              9216,
+              11008,
+              13312
+            ],
+            [
+              4608,
+              11520,
+              8704,
+              15616
+            ],
+            [
+              6912,
+              11520,
+              11008,
+              15616
+            ]
+          ],
+          "data_size_mb": 81.92,
+          "compute_cost": 4.0,
+          "result_size_mb": 3.1268947000000002
+        },
+        {
+          "windows_xyxy": [
+            [
+              9216,
+              9216,
+              13312,
+              13312
+            ],
+            [
+              11520,
+              9216,
+              15616,
+              13312
+            ],
+            [
+              9216,
+              11520,
+              13312,
+              15616
+            ],
+            [
+              11520,
+              11520,
+              15616,
+              15616
+            ]
+          ],
+          "data_size_mb": 81.92,
+          "compute_cost": 4.0,
+          "result_size_mb": 3.1268947000000002
+        },
+        {
+          "windows_xyxy": [
+            [
+              13824,
+              9216,
+              17920,
+              13312
+            ],
+            [
+              15904,
+              9216,
+              20000,
+              13312
+            ],
+            [
+              13824,
+              11520,
+              17920,
+              15616
+            ],
+            [
+              15904,
+              11520,
+              20000,
+              15616
+            ]
+          ],
+          "data_size_mb": 79.0528,
+          "compute_cost": 4.0,
+          "result_size_mb": 3.1268947000000002
+        },
+        {
+          "windows_xyxy": [
+            [
+              0,
+              13824,
+              4096,
+              17920
+            ],
+            [
+              2304,
+              13824,
+              6400,
+              17920
+            ],
+            [
+              0,
+              15904,
+              4096,
+              20000
+            ],
+            [
+              2304,
+              15904,
+              6400,
+              20000
+            ]
+          ],
+          "data_size_mb": 79.0528,
+          "compute_cost": 4.0,
+          "result_size_mb": 3.1268947000000002
+        },
+        {
+          "windows_xyxy": [
+            [
+              4608,
+              13824,
+              8704,
+              17920
+            ],
+            [
+              6912,
+              13824,
+              11008,
+              17920
+            ],
+            [
+              4608,
+              15904,
+              8704,
+              20000
+            ],
+            [
+              6912,
+              15904,
+              11008,
+              20000
+            ]
+          ],
+          "data_size_mb": 79.0528,
+          "compute_cost": 4.0,
+          "result_size_mb": 3.1268947000000002
+        },
+        {
+          "windows_xyxy": [
+            [
+              9216,
+              13824,
+              13312,
+              17920
+            ],
+            [
+              11520,
+              13824,
+              15616,
+              17920
+            ],
+            [
+              9216,
+              15904,
+              13312,
+              20000
+            ],
+            [
+              11520,
+              15904,
+              15616,
+              20000
+            ]
+          ],
+          "data_size_mb": 79.0528,
+          "compute_cost": 4.0,
+          "result_size_mb": 3.1268947000000002
+        },
+        {
+          "windows_xyxy": [
+            [
+              13824,
+              13824,
+              17920,
+              17920
+            ],
+            [
+              15904,
+              13824,
+              20000,
+              17920
+            ],
+            [
+              13824,
+              15904,
+              17920,
+              20000
+            ],
+            [
+              15904,
+              15904,
+              20000,
+              20000
+            ]
+          ],
+          "data_size_mb": 76.285952,
+          "compute_cost": 4.0,
+          "result_size_mb": 3.1268947000000002
+        }
+      ],
+      "transport": {
+        "format": "native_components_packed_bitstream",
+        "pixel_mapping": "floor(start/downsample), ceil(end/downsample)",
+        "packing": "per_component_contiguous_bits_ceil_to_byte; no row padding or headers",
+        "compression_ratio": 1.0,
+        "compression_assumption": "Uncompressed/compressed size ratio; fixed modeling assumption, not measured codec performance",
+        "unique_uncompressed_mb": 800.0,
+        "inference_window_mb": 50.331648,
+        "inference_rule": "bands/bits_per_sample define model input and VRAM proxy, independently of native transport",
+        "compute_rule": "Per-window processing proxy; not a measured native PAN/MS pipeline; decode/pansharpen cost not modeled",
+        "component_rasters": [
+          {
+            "name": "SAR_amplitude_uint16",
+            "downsample": 1,
+            "bands": 1,
+            "bits_per_sample": 16,
+            "width_px": 20000,
+            "height_px": 20000,
+            "packed_bytes": 800000000
+          }
+        ]
+      }
+    }
+  },
+  "limitations": [
+    "Link acquisition/repointing time and propagation are not charged by current transfer execution",
+    "No battery, thermal, SAR peak-load or whole-platform power feasibility model",
+    "Source orbit schedule is a geometric workload, not an operator-validated task plan",
+    "Planner hypothetical new work is conservatively serialized; current commitments use cohort service",
+    "No per-dispatch wall-time charge; host scheduling wall time reported separately",
+    "No object-density inference from synthetic placement; empty/dense configurations are sensitivity controls"
+  ],
+  "held_out": "Not accessed; development day only"
+}

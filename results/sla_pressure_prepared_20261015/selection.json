@@ -1,0 +1,60 @@
+{
+  "epoch": "2026-10-15T00:00:00Z",
+  "calendar_days": [
+    "2026-10-15",
+    "2026-10-16",
+    "2026-10-17"
+  ],
+  "split": "development",
+  "levels": [
+    {
+      "id": "s3_gap30",
+      "max_strips_per_pass": 3,
+      "min_spacing_seconds": 30,
+      "role": "original_main_panel"
+    },
+    {
+      "id": "s6_gap30",
+      "max_strips_per_pass": 6,
+      "min_spacing_seconds": 30,
+      "role": "pressure_sensitivity"
+    },
+    {
+      "id": "s6_gap20",
+      "max_strips_per_pass": 6,
+      "min_spacing_seconds": 20,
+      "role": "pressure_sensitivity"
+    },
+    {
+      "id": "s6_gap10",
+      "max_strips_per_pass": 6,
+      "min_spacing_seconds": 10,
+      "role": "pressure_sensitivity"
+    }
+  ],
+  "selection": "All four levels and all three days fixed before pressure outcomes; no replacement, filtering, or best-level selection",
+  "prior_information": "These dates and the original 3-strip/30-second level are previously inspected development data, not unseen confirmation",
+  "baseline_methods": [
+    "ground_relay",
+    "heft_adapted",
+    "cgs_compute_adapted",
+    "dts_tmax_hybrid"
+  ],
+  "method_rule": "Freeze candidate specifications in each evaluation manifest before running the complete panel; no best-method-per-case selection",
+  "all_levels_required_for_reporting": true,
+  "original_main_panel_must_be_retained": true,
+  "primary_seconds": 300,
+  "reported_horizons_seconds": [
+    300
+  ],
+  "followup_seconds": 301,
+  "dt": 0.1,
+  "decision_period_seconds": 1,
+  "geometry_period_seconds": 10,
+  "input_relay_max_hops": 2,
+  "ground_input_relay": true,
+  "hard_expiry": false,
+  "pressure_interpretation": "Uncalibrated imaging-occupancy sensitivity; 10/20-second spacing is not measured flight payload performance",
+  "geometry_rule": "Same SGP4/WGS84 imaging regions, off-nadir<=30 degrees, ground elevation>0, approximate solar elevation>=21 degrees; no ground-station-window selection",
+  "empty_case_rule": "Retain an empty case and report its zero arrivals; never replace its date"
+}

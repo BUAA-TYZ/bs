@@ -1,0 +1,85 @@
+from __future__ import annotations
+
+from typing import List
+
+from sim.entities import Action, ActionType, EnvState
+from sim.topology import link_key
+from sim.scheduler.base import SchedulerPolicy
+
+
+class LoadAwareResourceFit(SchedulerPolicy):
+    def select_actions(self, env_state: EnvState) -> List[Action]:
+        actions: List[Action] = []
+        dt = env_state.config["dt"]
+        # Heuristics: when local queue is high, prefer load spreading.
+        queue_trigger = 3
+        balancing_gain = 1.5
+
+        for tile_id, tile in env_state.tiles.items():
+            if tile["state"] not in ("QUEUED", "READY"):
+                continue
+            src = tile["location"]
+            if tile["in_transfer"]:
+                continue
+
+            best_action = Action(tile_id=tile_id, action_type=ActionType.WAIT)
+            best_score = float("inf")
+
+            def score_for(sat_id: int, extra_tx: float) -> float:
+                sat = env_state.satellites[sat_id]
+                if tile["vram_req_gb"] > env_state.config["vram_capacity_gb"]:
+                    return float("inf")
+                queue_penalty = sat["queue_len"] * dt
+                vram_headroom = sat["vram_remaining_gb"]
+                mem_headroom = sat["mem_remaining_gb"]
+                # Penalize low headroom
+                headroom_penalty = 0.0
+                if vram_headroom < tile["vram_req_gb"]:
+                    headroom_penalty += 1e6
+                if sat_id != src and mem_headroom < tile["data_size_gb"]:
+                    return float("inf")
+                compute_time = tile["compute_cost"] / sat["compute_rate"]
+                score = queue_penalty + extra_tx + compute_time + headroom_penalty
+                # Encourage moving work away from overloaded source queue.
+                src_queue = env_state.satellites[src]["queue_len"]
+                if sat_id != src and src_queue >= queue_trigger:
+                    queue_gap = max(0, src_queue - sat["queue_len"])
+                    score -= balancing_gain * queue_gap
+                return score
+
+            local_score = score_for(src, 0.0)
+            if local_score < best_score:
+                best_score = local_score
+                best_action = Action(tile_id=tile_id, action_type=ActionType.LOCAL)
+
+            for nb in env_state.neighbors.get(src, []):
+                lk = env_state.links.get(link_key(src, nb))
+                if not lk or not lk["up"]:
+                    continue
+                bw = lk["bandwidth_mbps"]
+                tx_time = (tile["data_size_mb"] * 8.0) / max(1e-6, bw)
+                score = score_for(nb, tx_time)
+                if score < best_score:
+                    best_score = score
+                    best_action = Action(tile_id=tile_id, action_type=ActionType.OFFLOAD, target_sat_id=nb)
+
+            for opt in env_state.ground_options.get(src, []):
+                gs_id = opt["gs_id"]
+                bw = opt["bandwidth_mbps"]
+                tx_time = (tile["data_size_mb"] * 8.0) / max(1e-6, bw)
+                gs = env_state.ground_stations.get(gs_id, {})
+                gs_queue = gs.get("queue_len", 0) + gs.get("running", 0)
+                gs_rate = max(1e-9, gs.get("compute_rate", 1.0))
+                # Ground station has no mem/vram limits in current model, only queue + compute.
+                score = gs_queue * dt + tx_time + tile["compute_cost"] / gs_rate
+                if score < best_score:
+                    best_score = score
+                    best_action = Action(
+                        tile_id=tile_id,
+                        action_type=ActionType.OFFLOAD,
+                        target_gs_id=gs_id,
+                    )
+
+            actions.append(best_action)
+
+        return actions

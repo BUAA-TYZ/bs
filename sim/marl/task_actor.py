@@ -12,7 +12,7 @@ class TaskDestinationActor(nn.Module):
         super().__init__()
         self.num_gs = num_gs
         self.hidden = hidden
-        self.predictive = feature_set in ("contact_window", "role_contact")
+        self.predictive = feature_set in ("contact_window", "role_contact", "overlap_contact")
         self.tile_encoder = nn.Linear(7 + 6 + int(self.predictive), hidden)
         self.self_encoder = nn.Linear(5 + 1 + (3 if self.predictive else 0), hidden)
         self.neighbor_encoder = nn.Linear(6 + 2 + 1 + (5 + 2 * num_gs if self.predictive else 0), hidden)

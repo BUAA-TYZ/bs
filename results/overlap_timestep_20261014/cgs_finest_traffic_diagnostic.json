@@ -1,0 +1,43 @@
+{
+  "case": "validation_near_high_1",
+  "method": "cgs_compute_adapted",
+  "analysis_kind": "posthoc inspection of existing summaries; no new simulation",
+  "dt_seconds": [1.0, 0.5, 0.25],
+  "isl_sent_mb": [26.829376, 33.118214, 196.70691600000018],
+  "result_relay_hops_sum": [2672, 2667, 2674],
+  "raw_relay_hops_sum": [0, 0, 0],
+  "scheduler_requests": [1260, 1260, 1260],
+  "scheduler_accepted": [1260, 1260, 1260],
+  "dt025_minus_dt1_largest_edge_differences_mb": {
+    "isl:3->5": 31.44942600000016,
+    "isl:15->16": 25.168442000000034,
+    "isl:18->20": 25.165824,
+    "isl:12->14": 25.161710000000017,
+    "isl:15->17": 18.87062799999999,
+    "isl:0->1": 12.585904,
+    "isl:0->2": 12.578423999999984,
+    "isl:3->4": 6.295569999999998,
+    "isl:9->10": 6.291456,
+    "isl:21->22": -6.291456,
+    "isl:6->7": 6.291456,
+    "isl:9->11": 6.291081999999995
+  },
+  "dt025_minus_dt05_largest_edge_differences_mb": {
+    "isl:3->5": 31.44942600000016,
+    "isl:15->16": 25.168816000000035,
+    "isl:18->20": 25.165824,
+    "isl:12->14": 25.160962000000016,
+    "isl:15->17": 18.87062799999999,
+    "isl:0->1": 12.585904,
+    "isl:21->22": -12.582912,
+    "isl:0->2": 12.578423999999984,
+    "isl:3->4": 6.296691999999998,
+    "isl:9->10": 6.291456,
+    "isl:6->7": 6.291456,
+    "isl:9->11": 6.291081999999995
+  },
+  "counter_semantics": "route_raw_tiles initializes raw_relay_path only in raw-relay pipeline modes; normal distributed OFFLOAD does not initialize it. Transfer completion appends a receiver only when that path is already nonempty. Zero raw_relay_hops therefore cannot establish absence of ordinary compute offload.",
+  "observation": "The 0.25s run changes MB-scale traffic on many source-to-neighbor edges. This is not floating accumulation noise, while delivery scores and completed task sets are identical.",
+  "inference_boundary": "Differences are compatible with changed raw-window packet transfers, including multiples of the 6.291456MB two-window payload plus small result traffic. Aggregate edge counters do not identify the individual packets/tasks or prove the trigger. No precise event-level causal attribution is claimed.",
+  "remaining_work": "A separate follow-up may instrument per-tile normal OFFLOAD decisions/transfers and refine timing; no rerun was performed for this diagnostic."
+}

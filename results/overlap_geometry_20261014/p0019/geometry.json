@@ -1,0 +1,368 @@
+{
+  "args": {
+    "distribution": "examples/overlap_proxy/distribution.json",
+    "profile": "p0019",
+    "image": "data/workload_assets/dota_mirror/P0019.png",
+    "output_dir": "results/overlap_geometry_20261014/p0019"
+  },
+  "image_sha256": "09b20f250e2ef23e9eeea1ff04e1f743b1ac0a496c6a62a996ba4820c3535c8c",
+  "distribution_sha256": "2eb45831d5d2906c76998d9d746d2a4724edb7eab7acc27094434b8f5a9ce28b",
+  "runner_sha256": "c70635a432efed43d43270cb41a7234ef2c07eca1b337cc35641b9bb3d1d5d79",
+  "workload": {
+    "model": "overlapping_window_packets_v1",
+    "parameters": {
+      "width_px": 6573,
+      "height_px": 3727,
+      "bands": 3,
+      "bits_per_sample": 8,
+      "window_px": 1024,
+      "stride_px": 824,
+      "windows_per_tile_axis": 2,
+      "compute_cost_per_window": 0.07026846144969265,
+      "result_size_mb_per_window": 0.000187
+    },
+    "coordinate_convention": "xyxy, upper bounds exclusive",
+    "edge_rule": "shift_last_window_to_edge_no_padding",
+    "packet_rule": "independent_full_windows_no_pixel_deduplication",
+    "result_rule": "per_window_outputs_before_global_merge",
+    "image_size_mb": 73.492713,
+    "num_windows": 40,
+    "num_tiles": 12,
+    "processed_pixels": 41943040,
+    "coverage_multiplier": 1.7121305618422333,
+    "packet_input_mb": 125.82912,
+    "total_compute_cost": 2.810738457987706,
+    "unmerged_result_mb": 0.00748,
+    "tiles": [
+      {
+        "windows_xyxy": [
+          [
+            0,
+            0,
+            1024,
+            1024
+          ],
+          [
+            824,
+            0,
+            1848,
+            1024
+          ],
+          [
+            0,
+            824,
+            1024,
+            1848
+          ],
+          [
+            824,
+            824,
+            1848,
+            1848
+          ]
+        ],
+        "data_size_mb": 12.582912,
+        "compute_cost": 0.2810738457987706,
+        "result_size_mb": 0.000748
+      },
+      {
+        "windows_xyxy": [
+          [
+            1648,
+            0,
+            2672,
+            1024
+          ],
+          [
+            2472,
+            0,
+            3496,
+            1024
+          ],
+          [
+            1648,
+            824,
+            2672,
+            1848
+          ],
+          [
+            2472,
+            824,
+            3496,
+            1848
+          ]
+        ],
+        "data_size_mb": 12.582912,
+        "compute_cost": 0.2810738457987706,
+        "result_size_mb": 0.000748
+      },
+      {
+        "windows_xyxy": [
+          [
+            3296,
+            0,
+            4320,
+            1024
+          ],
+          [
+            4120,
+            0,
+            5144,
+            1024
+          ],
+          [
+            3296,
+            824,
+            4320,
+            1848
+          ],
+          [
+            4120,
+            824,
+            5144,
+            1848
+          ]
+        ],
+        "data_size_mb": 12.582912,
+        "compute_cost": 0.2810738457987706,
+        "result_size_mb": 0.000748
+      },
+      {
+        "windows_xyxy": [
+          [
+            4944,
+            0,
+            5968,
+            1024
+          ],
+          [
+            5549,
+            0,
+            6573,
+            1024
+          ],
+          [
+            4944,
+            824,
+            5968,
+            1848
+          ],
+          [
+            5549,
+            824,
+            6573,
+            1848
+          ]
+        ],
+        "data_size_mb": 12.582912,
+        "compute_cost": 0.2810738457987706,
+        "result_size_mb": 0.000748
+      },
+      {
+        "windows_xyxy": [
+          [
+            0,
+            1648,
+            1024,
+            2672
+          ],
+          [
+            824,
+            1648,
+            1848,
+            2672
+          ],
+          [
+            0,
+            2472,
+            1024,
+            3496
+          ],
+          [
+            824,
+            2472,
+            1848,
+            3496
+          ]
+        ],
+        "data_size_mb": 12.582912,
+        "compute_cost": 0.2810738457987706,
+        "result_size_mb": 0.000748
+      },
+      {
+        "windows_xyxy": [
+          [
+            1648,
+            1648,
+            2672,
+            2672
+          ],
+          [
+            2472,
+            1648,
+            3496,
+            2672
+          ],
+          [
+            1648,
+            2472,
+            2672,
+            3496
+          ],
+          [
+            2472,
+            2472,
+            3496,
+            3496
+          ]
+        ],
+        "data_size_mb": 12.582912,
+        "compute_cost": 0.2810738457987706,
+        "result_size_mb": 0.000748
+      },
+      {
+        "windows_xyxy": [
+          [
+            3296,
+            1648,
+            4320,
+            2672
+          ],
+          [
+            4120,
+            1648,
+            5144,
+            2672
+          ],
+          [
+            3296,
+            2472,
+            4320,
+            3496
+          ],
+          [
+            4120,
+            2472,
+            5144,
+            3496
+          ]
+        ],
+        "data_size_mb": 12.582912,
+        "compute_cost": 0.2810738457987706,
+        "result_size_mb": 0.000748
+      },
+      {
+        "windows_xyxy": [
+          [
+            4944,
+            1648,
+            5968,
+            2672
+          ],
+          [
+            5549,
+            1648,
+            6573,
+            2672
+          ],
+          [
+            4944,
+            2472,
+            5968,
+            3496
+          ],
+          [
+            5549,
+            2472,
+            6573,
+            3496
+          ]
+        ],
+        "data_size_mb": 12.582912,
+        "compute_cost": 0.2810738457987706,
+        "result_size_mb": 0.000748
+      },
+      {
+        "windows_xyxy": [
+          [
+            0,
+            2703,
+            1024,
+            3727
+          ],
+          [
+            824,
+            2703,
+            1848,
+            3727
+          ]
+        ],
+        "data_size_mb": 6.291456,
+        "compute_cost": 0.1405369228993853,
+        "result_size_mb": 0.000374
+      },
+      {
+        "windows_xyxy": [
+          [
+            1648,
+            2703,
+            2672,
+            3727
+          ],
+          [
+            2472,
+            2703,
+            3496,
+            3727
+          ]
+        ],
+        "data_size_mb": 6.291456,
+        "compute_cost": 0.1405369228993853,
+        "result_size_mb": 0.000374
+      },
+      {
+        "windows_xyxy": [
+          [
+            3296,
+            2703,
+            4320,
+            3727
+          ],
+          [
+            4120,
+            2703,
+            5144,
+            3727
+          ]
+        ],
+        "data_size_mb": 6.291456,
+        "compute_cost": 0.1405369228993853,
+        "result_size_mb": 0.000374
+      },
+      {
+        "windows_xyxy": [
+          [
+            4944,
+            2703,
+            5968,
+            3727
+          ],
+          [
+            5549,
+            2703,
+            6573,
+            3727
+          ]
+        ],
+        "data_size_mb": 6.291456,
+        "compute_cost": 0.1405369228993853,
+        "result_size_mb": 0.000374
+      }
+    ]
+  },
+  "coverage_sum_pixels": 41943040,
+  "coverage_min": 1,
+  "coverage_max": 4,
+  "source": "DOTA val P0019 via isaaccorley/dota fixed mirror; see workload calibration protocol",
+  "display": "Original preview resized for display only; workload uses original pixels. Coverage map sampled every four pixels only for display."
+}

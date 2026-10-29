@@ -1,0 +1,191 @@
+{
+  "selected_mode": "streams2",
+  "modes": [
+    {
+      "mode": "batch1",
+      "rounds": 3,
+      "cohort_size": 1,
+      "image_service_s": [
+        38.16874190419912,
+        37.59993997355923,
+        37.81928195571527
+      ],
+      "mean_image_service_s": 37.86265461115787,
+      "paired_speedups": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "measured_phase_swap": [
+        {
+          "pswpin": 0,
+          "pswpout": 0
+        },
+        {
+          "pswpin": 0,
+          "pswpout": 0
+        },
+        {
+          "pswpin": 0,
+          "pswpout": 0
+        }
+      ],
+      "min_available_gb": 22.535507968,
+      "peak_reserved_gb": 5.69376768,
+      "eligible": true
+    },
+    {
+      "mode": "batch2",
+      "rounds": 3,
+      "cohort_size": 2,
+      "image_service_s": [
+        36.1973677626811,
+        35.25164812244475,
+        35.020040119532496
+      ],
+      "mean_image_service_s": 35.48968533488611,
+      "paired_speedups": [
+        1.0544618093349452,
+        1.0666150939371066,
+        1.079932570797413
+      ],
+      "measured_phase_swap": [
+        {
+          "pswpin": 0,
+          "pswpout": 0
+        },
+        {
+          "pswpin": 0,
+          "pswpout": 0
+        },
+        {
+          "pswpin": 0,
+          "pswpout": 0
+        }
+      ],
+      "min_available_gb": 15.008669696,
+      "peak_reserved_gb": 11.312037888,
+      "eligible": true
+    },
+    {
+      "mode": "batch4",
+      "rounds": 3,
+      "cohort_size": 4,
+      "image_service_s": [
+        34.37031419854611,
+        33.28953919792548,
+        33.35353533551097
+      ],
+      "mean_image_service_s": 33.67112957732752,
+      "paired_speedups": [
+        1.110514779810005,
+        1.1294821400202009,
+        1.1338912524649132
+      ],
+      "measured_phase_swap": [
+        {
+          "pswpin": 0,
+          "pswpout": 0
+        },
+        {
+          "pswpin": 0,
+          "pswpout": 0
+        },
+        {
+          "pswpin": 0,
+          "pswpout": 0
+        }
+      ],
+      "min_available_gb": 5.135413248,
+      "peak_reserved_gb": 22.552772608,
+      "eligible": true
+    },
+    {
+      "mode": "streams2",
+      "rounds": 3,
+      "cohort_size": 2,
+      "image_service_s": [
+        33.786035612691194,
+        33.602041070815176,
+        32.50856778817251
+      ],
+      "mean_image_service_s": 33.29888149055963,
+      "paired_speedups": [
+        1.1297194598901577,
+        1.1189778589437058,
+        1.1633635231840307
+      ],
+      "measured_phase_swap": [
+        {
+          "pswpin": 0,
+          "pswpout": 0
+        },
+        {
+          "pswpin": 0,
+          "pswpout": 0
+        },
+        {
+          "pswpin": 0,
+          "pswpout": 0
+        }
+      ],
+      "min_available_gb": 14.877847552,
+      "peak_reserved_gb": 11.328815104,
+      "eligible": true
+    }
+  ],
+  "identity": {
+    "weights_sha256": "b62898ebf38940ca4df323863e45ee9d84a1a46d5d11ebdde529fb33aa9f3a32",
+    "fixture_sha256": "8b40fbafc2d06e87586541bef9e1830fead025748abb9116fe183eb9de78d58e",
+    "raster_sha256": "4307e8992cefc269ceb97a1b746074f225fce928a1d28caaa3308d9a0a1c03c1",
+    "backend_flags": {
+      "cudnn_allow_tf32": true,
+      "matmul_allow_tf32": false,
+      "cudnn_benchmark": false,
+      "cudnn_deterministic": false
+    },
+    "versions": {
+      "torch": "2.3.0",
+      "torchvision": "0.18.0a0+6043bc2",
+      "ultralytics": "8.3.13",
+      "numpy": "1.23.5",
+      "shapely": "2.0.6",
+      "Pillow": "11.0.0"
+    }
+  },
+  "criterion": "Three paired rounds >=5% speedup, no swap in measured service phase, identical outputs",
+  "memory_scope": "Startup swap reported separately; MemAvailable is system-wide, not exclusive process memory",
+  "service_s": {
+    "1": 0.597,
+    "2": 1.056
+  },
+  "workspace_gb": {
+    "1": 8,
+    "2": 14
+  },
+  "max_cohort_size": 2,
+  "saturated_windows_per_s": 1.8939393939393938,
+  "ground_beta": 10,
+  "full_image_saturated_service_s": 33.792,
+  "single_window_service_s": 0.597,
+  "memory_partitions_gb": {
+    "physical_os_visible": 32.188686336,
+    "system_reserve": 8,
+    "execution": 14,
+    "data_cache": 10,
+    "unassigned_margin": 0.1886863360000035
+  },
+  "memory_budget_rule": "ceil(1.1*(CUDA reserved peak + process RSS peak)); conservative overlapping upper budget, not physical peak",
+  "system_budget_rule": "ceil(max pre-import system unavailable GB) + 1 GB margin",
+  "sustained": {
+    "windows": 546,
+    "cohorts": 273,
+    "cohort_mean_s": 1.03324608077319,
+    "cohort_p95_s": 1.0888570441864431,
+    "windows_per_s": 1.935647313080904,
+    "full_64_window_service_s": 33.06387458474208,
+    "measured_wall_s": 301.00008010538295
+  },
+  "planner_scope": "Single-window service plus cohort-aware existing commitment; new hypothetical assignments conservatively serialized",
+  "historical_results": "Previous serial day results are not scores for this configuration"
+}

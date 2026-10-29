@@ -1,0 +1,84 @@
+{
+  "status": "PREREGISTERED_NOT_GENERATED",
+  "supersedes": "Original section 5 scale definitions",
+  "scenario_shapes": {
+    "S": {
+      "sar": 12,
+      "compute": 72,
+      "planes": 12,
+      "sar_per_plane": 1,
+      "compute_per_plane": 6,
+      "total": 84,
+      "tle_formula_sha256": "222540417617cf11a052de44983fdea24cd15cc7d66b3fb6ac608848055b0639"
+    },
+    "M": {
+      "sar": 24,
+      "compute": 144,
+      "planes": 12,
+      "sar_per_plane": 2,
+      "compute_per_plane": 12,
+      "total": 168,
+      "tle_formula_sha256": "fa28cb9fcb873bd7c93e6edbc09233c11fcc689cc3a510dc253d218e5a20bcaa"
+    },
+    "L": {
+      "sar": 48,
+      "compute": 288,
+      "planes": 12,
+      "sar_per_plane": 4,
+      "compute_per_plane": 24,
+      "total": 336,
+      "tle_formula_sha256": "18db95f54551626b38b4c9aeb0073bc5d9aa647d7869be1d24255409bbde2414"
+    },
+    "L_fallback": {
+      "sar": 36,
+      "compute": 216,
+      "planes": 12,
+      "sar_per_plane": 3,
+      "compute_per_plane": 18,
+      "total": 252,
+      "tle_formula_sha256": "c907652e619f066018904848ac55e26426d1e78e2a001a76002c9af0ea4c5ebd"
+    }
+  },
+  "dates": {
+    "training_dates": [
+      "2026-10-16",
+      "2026-10-17",
+      "2026-10-18",
+      "2026-10-19",
+      "2026-10-20",
+      "2026-10-21"
+    ],
+    "validation_dates": [
+      "2026-10-22",
+      "2026-10-23",
+      "2026-10-24"
+    ],
+    "test_dates": [
+      "2026-12-21",
+      "2026-12-22",
+      "2026-12-23"
+    ]
+  },
+  "tests_sealed": true,
+  "M_tle_exact_match": true,
+  "input_hashes": {
+    "/Users/bytedance/Projects/bs/analysis/register_scale_generalization_20261025.py": "ad0c1a51a11834827ca6b6ff1bb71a859780610dc6a45ee0fb7727645a5ae1bb",
+    "results/redesign_20261021/main_scenario/SCALE_GENERALIZATION_AMENDMENT_20261025.md": "1d4e3262e8a86b5e323b7b8630ce235ad7a3c5b14857ecbdbb4374628b6c07d4",
+    "results/redesign_20261021/main_scenario/config_template.json": "cab13e735f337d7c7db4d224a55df4f150e326b889490640eac5ed190b0f75e4",
+    "results/redesign_20261021/main_scenario/manifest.json": "06bc2fb3c00b70e3b1362921c0753ab414157262e3bf6ab2053eafbece4df052",
+    "results/redesign_20261021/main_scenario/date_split.json": "00b8105cb6f6d25b3120833efb882d017a9f250e03bfba838540e06744feb5bc",
+    "sim/constellation.py": "f8fd88bbe7f831a5b108af17d0bf4ff90c6259d4e8c8b21507c391c01276307e",
+    "analysis/prepare_main_bc_stage2.py": "254683cfaf85c4141c987e82741678ffae9775113530b1b05cc009f327300706",
+    "results/redesign_20261021/main_scenario/fixed_mappo_frozen_20261025/manifest.json": "27d8c246a202b25184e24ff9c2e7dbf97c703290a8135b4787b03b5ed3f7def9"
+  },
+  "runtime_estimate_sha256": "671487f856100389b9231bc6748d9a9be4aeff8d8863c0a7fc7bbdc88abef690",
+  "finetune_gate": "Validation-day R600 only; never test-triggered",
+  "finetune_max_episodes_per_triggered_seed": 88,
+  "finetune_validation_points": [
+    44,
+    88
+  ],
+  "shortage_priority": "L zero-shot only; cancel no-teacher, scale finetuning and S first",
+  "run_manifest_required": true,
+  "test_open_marker_created": false
+}

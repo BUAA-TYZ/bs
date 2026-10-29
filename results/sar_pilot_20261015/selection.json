@@ -1,0 +1,2797 @@
+{
+  "seed": 1701,
+  "targets": {
+    "train": 128,
+    "val": 64
+  },
+  "partition": "SHA256(seed:provisional_group_id) modulo 5; zero is development validation",
+  "selection": "Deterministic inverse-frequency uncovered-class coverage, then hash order; one image/group first, at most two",
+  "excluded_groups": [
+    "ABS001",
+    "HEB012",
+    "MHD003",
+    "UBA102",
+    "UBA114"
+  ],
+  "names": [
+    "Aircraft-Carrier",
+    "Blurred",
+    "Bulk-Carrier",
+    "Cargo-Ship",
+    "Container-Ship",
+    "Fishing-Vessel",
+    "LNG-LPG-Tanker",
+    "Oil-Tanker",
+    "Passenger-Cruise-Ship",
+    "Passenger-Ship",
+    "Tug",
+    "Vehicles-Carrier",
+    "Warship",
+    "others",
+    "unknow"
+  ],
+  "native_class_counts_all_valid_labels": {
+    "Aircraft-Carrier": 427,
+    "Blurred": 160,
+    "Bulk-Carrier": 9103,
+    "Cargo-Ship": 10690,
+    "Container-Ship": 4332,
+    "Fishing-Vessel": 228,
+    "LNG-LPG-Tanker": 135,
+    "Oil-Tanker": 8362,
+    "Passenger-Cruise-Ship": 167,
+    "Passenger-Ship": 389,
+    "Tug": 4524,
+    "Vehicles-Carrier": 2275,
+    "Warship": 24339,
+    "others": 913,
+    "unknow": 27837
+  },
+  "skipped_images": {
+    "previously_inspected_group_images": 204,
+    "invalid_annotation_images": 350,
+    "out_of_bounds_annotation_images": 18265
+  },
+  "valid_candidate_images": 16771,
+  "source_scene_identity_verified": false,
+  "final_test_created": false,
+  "conversion": "Original four vertices normalized by 800; entire image excluded if any target is out of bounds, invalid or difficult. Selection biased to fully contained objects; no border-quality claim.",
+  "download_limit_bytes": 314572800,
+  "max_images": 192,
+  "max_image_bytes": 4194304,
+  "records": [
+    {
+      "image_member": "train_png/HEB058__623__.png",
+      "label_member": "train_ann/HEB058__623__.txt",
+      "provisional_group_id": "HEB058",
+      "original_split": "train",
+      "source_label_sha256": "b04269717785caa0d83e962fb7f801876c97e6a741a992740df471346ed1ffc4",
+      "class_counts": {
+        "Passenger-Ship": 1,
+        "Passenger-Cruise-Ship": 1,
+        "Warship": 11
+      },
+      "conversion_stats": {
+        "unmodified_objects": 13
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/HEB053__924__.png",
+      "label_member": "train_ann/HEB053__924__.txt",
+      "provisional_group_id": "HEB053",
+      "original_split": "train",
+      "source_label_sha256": "9ee208865de43b294b6b73c364df94ae3b73564fcda5ccfd3dcf4ba9546ebab7",
+      "class_counts": {
+        "LNG-LPG-Tanker": 1,
+        "Tug": 3,
+        "others": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 5
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/HEB024__462__.png",
+      "label_member": "train_ann/HEB024__462__.txt",
+      "provisional_group_id": "HEB024",
+      "original_split": "train",
+      "source_label_sha256": "19ac9b3879d672fd473991187f4aba4f8048709ced4601853f53131eb9808378",
+      "class_counts": {
+        "Warship": 2,
+        "Cargo-Ship": 1,
+        "unknow": 1,
+        "Aircraft-Carrier": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 5
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/SIP017__598__.png",
+      "label_member": "test_ann/SIP017__598__.txt",
+      "provisional_group_id": "SIP017",
+      "original_split": "test",
+      "source_label_sha256": "9bacad9958812c839082eeeae27955ed43b98c97c89074115c7da9ad8ccf7844",
+      "class_counts": {
+        "Blurred": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/DLP002__406__.png",
+      "label_member": "train_ann/DLP002__406__.txt",
+      "provisional_group_id": "DLP002",
+      "original_split": "train",
+      "source_label_sha256": "2c87214edeb0926cbcb13b703cacfda312c322c48ab57a39dadec39c620d6615",
+      "class_counts": {
+        "Bulk-Carrier": 1,
+        "Cargo-Ship": 1,
+        "Fishing-Vessel": 1,
+        "unknow": 2,
+        "Warship": 1,
+        "Tug": 4
+      },
+      "conversion_stats": {
+        "unmodified_objects": 10
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/CHS011__176__.png",
+      "label_member": "train_ann/CHS011__176__.txt",
+      "provisional_group_id": "CHS011",
+      "original_split": "train",
+      "source_label_sha256": "5800ab9af22891ba242d4ac93f5abdd221cc231c44b620e3fd14d73c63b4b3e6",
+      "class_counts": {
+        "Vehicles-Carrier": 2,
+        "Container-Ship": 1,
+        "Oil-Tanker": 1,
+        "Cargo-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 5
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/JIJ003__219__.png",
+      "label_member": "train_ann/JIJ003__219__.txt",
+      "provisional_group_id": "JIJ003",
+      "original_split": "train",
+      "source_label_sha256": "dfdbb7ead7fae415134ea052fb938ec065e0904898b0611c81ff6b86eb70c749",
+      "class_counts": {
+        "Oil-Tanker": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/ZSB013__541__.png",
+      "label_member": "train_ann/ZSB013__541__.txt",
+      "provisional_group_id": "ZSB013",
+      "original_split": "train",
+      "source_label_sha256": "6a3ae176f210a5b02fd2b027615d98adf04ae0ef9c7d1c55cc6ffc44803882da",
+      "class_counts": {
+        "Passenger-Ship": 2
+      },
+      "conversion_stats": {
+        "unmodified_objects": 2
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/BLT004__523__.png",
+      "label_member": "train_ann/BLT004__523__.txt",
+      "provisional_group_id": "BLT004",
+      "original_split": "train",
+      "source_label_sha256": "14586cac53ecc222d62aab25432f2cc6cd90c27427a8a0ebd43172b30eef6b64",
+      "class_counts": {
+        "Warship": 19
+      },
+      "conversion_stats": {
+        "unmodified_objects": 19
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/HEB017__218__.png",
+      "label_member": "train_ann/HEB017__218__.txt",
+      "provisional_group_id": "HEB017",
+      "original_split": "train",
+      "source_label_sha256": "5eab818033a92d1204f2810469e5001f955f779ded4b968d9308363f791eab1f",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/CHQ006__624__.png",
+      "label_member": "test_ann/CHQ006__624__.txt",
+      "provisional_group_id": "CHQ006",
+      "original_split": "test",
+      "source_label_sha256": "fb26ef380b74f4657386666a2e56a697000fe4d6d8df404a2b7e0f1ae44372a0",
+      "class_counts": {
+        "unknow": 2
+      },
+      "conversion_stats": {
+        "unmodified_objects": 2
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/HEB057__328__.png",
+      "label_member": "train_ann/HEB057__328__.txt",
+      "provisional_group_id": "HEB057",
+      "original_split": "train",
+      "source_label_sha256": "458e285596af535ff9c1a9b1f5b6d3604458dafcaff79f31aee08a89c8df87b2",
+      "class_counts": {
+        "Cargo-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/HEB055__578__.png",
+      "label_member": "train_ann/HEB055__578__.txt",
+      "provisional_group_id": "HEB055",
+      "original_split": "train",
+      "source_label_sha256": "38344c24bf91f9c20bc7314179ab475b56b398c16a078bb817feb4146b8c63fb",
+      "class_counts": {
+        "Passenger-Ship": 1,
+        "others": 1,
+        "Warship": 2
+      },
+      "conversion_stats": {
+        "unmodified_objects": 4
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/SUW001__233__.png",
+      "label_member": "test_ann/SUW001__233__.txt",
+      "provisional_group_id": "SUW001",
+      "original_split": "test",
+      "source_label_sha256": "a0dcdc27313964cc2185dc245ea5e82d72f97e40f4479730b0305464e5dcb0f3",
+      "class_counts": {
+        "Cargo-Ship": 3
+      },
+      "conversion_stats": {
+        "unmodified_objects": 3
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/BLT006__799__.png",
+      "label_member": "test_ann/BLT006__799__.txt",
+      "provisional_group_id": "BLT006",
+      "original_split": "test",
+      "source_label_sha256": "e57781c528b08d8d00beba613feebcafa59642023ebf9b20a36dd6946230cfa9",
+      "class_counts": {
+        "unknow": 2
+      },
+      "conversion_stats": {
+        "unmodified_objects": 2
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/SIP005__176__.png",
+      "label_member": "train_ann/SIP005__176__.txt",
+      "provisional_group_id": "SIP005",
+      "original_split": "train",
+      "source_label_sha256": "a028470e94fc93d40cb44c471efd75335815be345a5ea9b3953ece06d3fc3e6b",
+      "class_counts": {
+        "others": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/JLA002__563__.png",
+      "label_member": "test_ann/JLA002__563__.txt",
+      "provisional_group_id": "JLA002",
+      "original_split": "test",
+      "source_label_sha256": "cff7c331c9b9ab474113aa1bf207229629d4f9c70530f114b72e37973ebce1bd",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/UBA029__228__.png",
+      "label_member": "train_ann/UBA029__228__.txt",
+      "provisional_group_id": "UBA029",
+      "original_split": "train",
+      "source_label_sha256": "c0fe4067f1eb615bf48eb860775302185cd0bd06f6418ec6cb934b5711073399",
+      "class_counts": {
+        "Container-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/SHS002__451__.png",
+      "label_member": "test_ann/SHS002__451__.txt",
+      "provisional_group_id": "SHS002",
+      "original_split": "test",
+      "source_label_sha256": "4d89aee1a9521eeeb9f54159831ae615485438840aa64627cda1c5a696c9c1d3",
+      "class_counts": {
+        "Oil-Tanker": 1,
+        "Tug": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 2
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/HEB006__1032__.png",
+      "label_member": "test_ann/HEB006__1032__.txt",
+      "provisional_group_id": "HEB006",
+      "original_split": "test",
+      "source_label_sha256": "695cac80c3a3ea564ce3d1228e7f92f52dd0f9cf3a385af2b140a2780dedff7c",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/HEB045__631__.png",
+      "label_member": "test_ann/HEB045__631__.txt",
+      "provisional_group_id": "HEB045",
+      "original_split": "test",
+      "source_label_sha256": "7b8f9735f78eeb586d6b17c598c921ee567a41df305b778e61d952f98ad6b755",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/CHQ004__855__.png",
+      "label_member": "train_ann/CHQ004__855__.txt",
+      "provisional_group_id": "CHQ004",
+      "original_split": "train",
+      "source_label_sha256": "d1c6a230be7bde2cbf1edd443042d66ceb3a8bab48cc58e1d04010c7294e5416",
+      "class_counts": {
+        "unknow": 2
+      },
+      "conversion_stats": {
+        "unmodified_objects": 2
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/HEB021__314__.png",
+      "label_member": "train_ann/HEB021__314__.txt",
+      "provisional_group_id": "HEB021",
+      "original_split": "train",
+      "source_label_sha256": "4935662c8d6b3bbdd0357ea3755cb3d7b8db68c36b5dcc5030c3eae19324ad7d",
+      "class_counts": {
+        "unknow": 7
+      },
+      "conversion_stats": {
+        "unmodified_objects": 7
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/CPE035__736__.png",
+      "label_member": "train_ann/CPE035__736__.txt",
+      "provisional_group_id": "CPE035",
+      "original_split": "train",
+      "source_label_sha256": "17a20e1593b2019d53fa0ca6a499d9bcb2db79bdb23f47629012a391e0f829a6",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/HEB061__149__.png",
+      "label_member": "train_ann/HEB061__149__.txt",
+      "provisional_group_id": "HEB061",
+      "original_split": "train",
+      "source_label_sha256": "efb945872d8488fcb69370323a343e260d7fec8721b8016b4fde7745fc2c48c8",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/CPE016__2586__.png",
+      "label_member": "test_ann/CPE016__2586__.txt",
+      "provisional_group_id": "CPE016",
+      "original_split": "test",
+      "source_label_sha256": "8ac129aba757b6d1e372216dc1881350e6a349f0823d3671e75e76db8f6788c4",
+      "class_counts": {
+        "Container-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/CPE032__1398__.png",
+      "label_member": "train_ann/CPE032__1398__.txt",
+      "provisional_group_id": "CPE032",
+      "original_split": "train",
+      "source_label_sha256": "da6314e69b38dc78547d505b7c5e3f3e5e3c1bc41a4d4358918476c73ac1a2df",
+      "class_counts": {
+        "Container-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/HEB063__598__.png",
+      "label_member": "train_ann/HEB063__598__.txt",
+      "provisional_group_id": "HEB063",
+      "original_split": "train",
+      "source_label_sha256": "586ada9647f8cbb0a7d527122d32f4472501a30feb526be5639ba49e00107087",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/CPE036__1051__.png",
+      "label_member": "train_ann/CPE036__1051__.txt",
+      "provisional_group_id": "CPE036",
+      "original_split": "train",
+      "source_label_sha256": "6f3ade6caaf4149063e6babe429da431741adb0263860d0b8925f937bdfa90be",
+      "class_counts": {
+        "unknow": 1,
+        "Bulk-Carrier": 1,
+        "Oil-Tanker": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 3
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/SLY048__554__.png",
+      "label_member": "test_ann/SLY048__554__.txt",
+      "provisional_group_id": "SLY048",
+      "original_split": "test",
+      "source_label_sha256": "820cbe5b935e9250728b1c2aab0b7852135c6f39f27d8fd5741b845c9dd33f64",
+      "class_counts": {
+        "Cargo-Ship": 1,
+        "Oil-Tanker": 1,
+        "Bulk-Carrier": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 3
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/SIP014__549__.png",
+      "label_member": "test_ann/SIP014__549__.txt",
+      "provisional_group_id": "SIP014",
+      "original_split": "test",
+      "source_label_sha256": "624f30602e616782401a528005a6fbb11e6287695bd32075c89a0a4ccd3cd25d",
+      "class_counts": {
+        "Bulk-Carrier": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/WUS005__396__.png",
+      "label_member": "test_ann/WUS005__396__.txt",
+      "provisional_group_id": "WUS005",
+      "original_split": "test",
+      "source_label_sha256": "e5209ab08b9bfcce897ba8f22f1e97da6678563df447786c3cbed4133259dd8f",
+      "class_counts": {
+        "unknow": 2
+      },
+      "conversion_stats": {
+        "unmodified_objects": 2
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/ZHS002__668__.png",
+      "label_member": "test_ann/ZHS002__668__.txt",
+      "provisional_group_id": "ZHS002",
+      "original_split": "test",
+      "source_label_sha256": "e3ec30ca56501377166e285459b02a7c1a0043c9b8201db7478a20ff9e27ea6d",
+      "class_counts": {
+        "Tug": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/ZSB001__740__.png",
+      "label_member": "train_ann/ZSB001__740__.txt",
+      "provisional_group_id": "ZSB001",
+      "original_split": "train",
+      "source_label_sha256": "13877e575f440703a81885d1737c81ed1ed70697e84bbfed61d173b29696936b",
+      "class_counts": {
+        "Warship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/SIP010__658__.png",
+      "label_member": "train_ann/SIP010__658__.txt",
+      "provisional_group_id": "SIP010",
+      "original_split": "train",
+      "source_label_sha256": "ffe89d2237a335f211fabcc6750d92c0772a62892005bdd4a23fb0ee2074e9fa",
+      "class_counts": {
+        "Cargo-Ship": 5,
+        "Bulk-Carrier": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 6
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/JEM003__551__.png",
+      "label_member": "train_ann/JEM003__551__.txt",
+      "provisional_group_id": "JEM003",
+      "original_split": "train",
+      "source_label_sha256": "abe690b0612b3b58c626dfcdeddeb0d8bccacd168728a65cba131955261ce348",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/ZSB014__186__.png",
+      "label_member": "train_ann/ZSB014__186__.txt",
+      "provisional_group_id": "ZSB014",
+      "original_split": "train",
+      "source_label_sha256": "9b31863abf8322922fef7eaf66ee342912dee149085a040764e74959e5c3b295",
+      "class_counts": {
+        "Cargo-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/WDL042__509__.png",
+      "label_member": "train_ann/WDL042__509__.txt",
+      "provisional_group_id": "WDL042",
+      "original_split": "train",
+      "source_label_sha256": "53d8aafe19243b656f7bd0f097c6751c06c002ac089f53391a2fdde06f9eb84d",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/SSY001__622__.png",
+      "label_member": "train_ann/SSY001__622__.txt",
+      "provisional_group_id": "SSY001",
+      "original_split": "train",
+      "source_label_sha256": "3630b3d39ccb99d5e0adfeb6ff5a537ab5343bb78ebe75a5578e1179e247da5e",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/HEB005__931__.png",
+      "label_member": "test_ann/HEB005__931__.txt",
+      "provisional_group_id": "HEB005",
+      "original_split": "test",
+      "source_label_sha256": "378800aba72896680640ff429b75b02c3c8e6f52212ecb442433874d43b8ec65",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/WUS014__740__.png",
+      "label_member": "train_ann/WUS014__740__.txt",
+      "provisional_group_id": "WUS014",
+      "original_split": "train",
+      "source_label_sha256": "99cabcf592bc198e6557a3dd899ea61e6675568f50ad38f8f914035da191be6c",
+      "class_counts": {
+        "Cargo-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/CPE039__1247__.png",
+      "label_member": "test_ann/CPE039__1247__.txt",
+      "provisional_group_id": "CPE039",
+      "original_split": "test",
+      "source_label_sha256": "5f83e2d41a5d694b316d1c8186e3f43b8d4ff31b3f835c3707db54d53153b8e2",
+      "class_counts": {
+        "Bulk-Carrier": 2
+      },
+      "conversion_stats": {
+        "unmodified_objects": 2
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/HIF002__216__.png",
+      "label_member": "train_ann/HIF002__216__.txt",
+      "provisional_group_id": "HIF002",
+      "original_split": "train",
+      "source_label_sha256": "6510d12ae164af1100aac4c23d05b47f7e96ccb4fbe29e7a6f296128484007f9",
+      "class_counts": {
+        "Cargo-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/CPE031__13710__.png",
+      "label_member": "train_ann/CPE031__13710__.txt",
+      "provisional_group_id": "CPE031",
+      "original_split": "train",
+      "source_label_sha256": "1a5c21776f6e743ed089c9da6fe45c84dab1b02ba4bb43722ceb61d2ce18ef02",
+      "class_counts": {
+        "Container-Ship": 2
+      },
+      "conversion_stats": {
+        "unmodified_objects": 2
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/HLD001__465__.png",
+      "label_member": "train_ann/HLD001__465__.txt",
+      "provisional_group_id": "HLD001",
+      "original_split": "train",
+      "source_label_sha256": "630f4a3ee0a35fd9894cddb285484d81b355c8caea4c5961d87a42db86755d44",
+      "class_counts": {
+        "Cargo-Ship": 2
+      },
+      "conversion_stats": {
+        "unmodified_objects": 2
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/UBA171__122__.png",
+      "label_member": "train_ann/UBA171__122__.txt",
+      "provisional_group_id": "UBA171",
+      "original_split": "train",
+      "source_label_sha256": "9d3bbdf5fa8e12f77b4e7301f8015dec4ab84e42bf3a521d3ba66232e8fc11c1",
+      "class_counts": {
+        "Container-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/ALA002__577__.png",
+      "label_member": "test_ann/ALA002__577__.txt",
+      "provisional_group_id": "ALA002",
+      "original_split": "test",
+      "source_label_sha256": "ddb9fa3b17821ccbdc0e6ef37783af467713ef74e7509f98bb3dde922ac1af85",
+      "class_counts": {
+        "Cargo-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/BLT013__944__.png",
+      "label_member": "train_ann/BLT013__944__.txt",
+      "provisional_group_id": "BLT013",
+      "original_split": "train",
+      "source_label_sha256": "7effce28a1bc2a84c705b0787310e8ece51092b72b518e846c11ee19c77f8db3",
+      "class_counts": {
+        "unknow": 6
+      },
+      "conversion_stats": {
+        "unmodified_objects": 6
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/SLY059__489__.png",
+      "label_member": "train_ann/SLY059__489__.txt",
+      "provisional_group_id": "SLY059",
+      "original_split": "train",
+      "source_label_sha256": "d524df2c4a165ee4f0cad3631f60d090f48f61f49146bd53cfdc1a4ce102bbd0",
+      "class_counts": {
+        "Bulk-Carrier": 2
+      },
+      "conversion_stats": {
+        "unmodified_objects": 2
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/UBA089__436__.png",
+      "label_member": "train_ann/UBA089__436__.txt",
+      "provisional_group_id": "UBA089",
+      "original_split": "train",
+      "source_label_sha256": "b1e394670c81def7562de0718e1da8d9612ddf64737865189be8afb817851271",
+      "class_counts": {
+        "Container-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/HEB054__169__.png",
+      "label_member": "train_ann/HEB054__169__.txt",
+      "provisional_group_id": "HEB054",
+      "original_split": "train",
+      "source_label_sha256": "64df89e653ec5a9020b1182c8636b48eeb783d0bb43b6b32bb97a2886fa39649",
+      "class_counts": {
+        "Oil-Tanker": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/CPE008__2162__.png",
+      "label_member": "train_ann/CPE008__2162__.txt",
+      "provisional_group_id": "CPE008",
+      "original_split": "train",
+      "source_label_sha256": "8844453e5a59829de1a01780f7a0ce2689f553f96385250121e1af34a4909fa4",
+      "class_counts": {
+        "Oil-Tanker": 1,
+        "Container-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 2
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/ZSB019__668__.png",
+      "label_member": "train_ann/ZSB019__668__.txt",
+      "provisional_group_id": "ZSB019",
+      "original_split": "train",
+      "source_label_sha256": "55b97aaccc6a8f6658037a3720e99c1fb941793c69e407668a179315588d7ca1",
+      "class_counts": {
+        "Warship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/HAG005__387__.png",
+      "label_member": "test_ann/HAG005__387__.txt",
+      "provisional_group_id": "HAG005",
+      "original_split": "test",
+      "source_label_sha256": "c1ff412488c232ace6e17813f21957c05b1d015d18e08b3df59b552e218c4b14",
+      "class_counts": {
+        "unknow": 3
+      },
+      "conversion_stats": {
+        "unmodified_objects": 3
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/SLY015__422__.png",
+      "label_member": "train_ann/SLY015__422__.txt",
+      "provisional_group_id": "SLY015",
+      "original_split": "train",
+      "source_label_sha256": "ed5f0eca2419728f2f4ea3194fa91d2e50b840541ae7f6925240b5993feebf76",
+      "class_counts": {
+        "Bulk-Carrier": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/CPE033__1855__.png",
+      "label_member": "train_ann/CPE033__1855__.txt",
+      "provisional_group_id": "CPE033",
+      "original_split": "train",
+      "source_label_sha256": "5e691f8651901c8262431481326bdcba69230ad72c02bc1860079c9450de3ca9",
+      "class_counts": {
+        "Bulk-Carrier": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/SIP015__152__.png",
+      "label_member": "test_ann/SIP015__152__.txt",
+      "provisional_group_id": "SIP015",
+      "original_split": "test",
+      "source_label_sha256": "a4e44e4e1a17b1f06316ca0d8827cfd255c5a6c0d94243792c3d72c67e1a2ce0",
+      "class_counts": {
+        "Cargo-Ship": 5
+      },
+      "conversion_stats": {
+        "unmodified_objects": 5
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/WDL055__894__.png",
+      "label_member": "train_ann/WDL055__894__.txt",
+      "provisional_group_id": "WDL055",
+      "original_split": "train",
+      "source_label_sha256": "e58b5d40cb6bde47e3c01f19803c01a57a124919083c2e7f90cf37e3cc8c7277",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/UBA095__8__.png",
+      "label_member": "test_ann/UBA095__8__.txt",
+      "provisional_group_id": "UBA095",
+      "original_split": "test",
+      "source_label_sha256": "054f258ce5fb8a85474ad09fd4d83488e2a6fdfb0ed7e49ad244ab34efaebe15",
+      "class_counts": {
+        "Container-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/CHQ002__682__.png",
+      "label_member": "train_ann/CHQ002__682__.txt",
+      "provisional_group_id": "CHQ002",
+      "original_split": "train",
+      "source_label_sha256": "6c756fe074b8607b9263aae2662397b9731de132d3811ec5c61df3f895380613",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/CHQ001__571__.png",
+      "label_member": "train_ann/CHQ001__571__.txt",
+      "provisional_group_id": "CHQ001",
+      "original_split": "train",
+      "source_label_sha256": "c75014dd092f79d5813a89030f5ad06597608243274b01d51d10b1618276a486",
+      "class_counts": {
+        "unknow": 9,
+        "Warship": 3
+      },
+      "conversion_stats": {
+        "unmodified_objects": 12
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/HEB042__197__.png",
+      "label_member": "test_ann/HEB042__197__.txt",
+      "provisional_group_id": "HEB042",
+      "original_split": "test",
+      "source_label_sha256": "114aed7a766789ddaceb50cf39164c8d7ff8412a048fcb05fdc730ec31e0c8d9",
+      "class_counts": {
+        "unknow": 2
+      },
+      "conversion_stats": {
+        "unmodified_objects": 2
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/HEB008__186__.png",
+      "label_member": "train_ann/HEB008__186__.txt",
+      "provisional_group_id": "HEB008",
+      "original_split": "train",
+      "source_label_sha256": "bddf586a32cfd232c9b2b62b791b39ad9949bd74f9e9305dbdb30cb32f3022a0",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/SLY012__553__.png",
+      "label_member": "test_ann/SLY012__553__.txt",
+      "provisional_group_id": "SLY012",
+      "original_split": "test",
+      "source_label_sha256": "72d5005f088c91fcd6b9c09d1094f23a47a161f29a0462e81fb758a8d2f5ac5e",
+      "class_counts": {
+        "Bulk-Carrier": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/HEB046__454__.png",
+      "label_member": "train_ann/HEB046__454__.txt",
+      "provisional_group_id": "HEB046",
+      "original_split": "train",
+      "source_label_sha256": "bf1db2a143a502dd91d77b9427de5b127c1880299f90d6be2fa9ff860e437185",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/WUS003__858__.png",
+      "label_member": "train_ann/WUS003__858__.txt",
+      "provisional_group_id": "WUS003",
+      "original_split": "train",
+      "source_label_sha256": "846f597d4e743c862e158f14f2a2f728914403668ea697fd142b2115ea172208",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/GAX002__357__.png",
+      "label_member": "test_ann/GAX002__357__.txt",
+      "provisional_group_id": "GAX002",
+      "original_split": "test",
+      "source_label_sha256": "dee5669b3707ae905bf3bd0bb700a9621ca9d0f5dc1ef5f4b3e500aba04b78b8",
+      "class_counts": {
+        "Warship": 3
+      },
+      "conversion_stats": {
+        "unmodified_objects": 3
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/UBA174__387__.png",
+      "label_member": "test_ann/UBA174__387__.txt",
+      "provisional_group_id": "UBA174",
+      "original_split": "test",
+      "source_label_sha256": "fbc5b6e42da5a2682aacf14ebf8d304792884c4503973839efcc5e38681037e3",
+      "class_counts": {
+        "Container-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/UBA165__241__.png",
+      "label_member": "train_ann/UBA165__241__.txt",
+      "provisional_group_id": "UBA165",
+      "original_split": "train",
+      "source_label_sha256": "ad05859d20b2abfe8c805b249db5b903a4508166a18187e9373ba18aedad9084",
+      "class_counts": {
+        "Vehicles-Carrier": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/SUW003__502__.png",
+      "label_member": "train_ann/SUW003__502__.txt",
+      "provisional_group_id": "SUW003",
+      "original_split": "train",
+      "source_label_sha256": "7412a2344b16b6b83a69425f3dcb04f8e592b2f04d83155001f5bc9ff0149da4",
+      "class_counts": {
+        "Cargo-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/BLT016__833__.png",
+      "label_member": "train_ann/BLT016__833__.txt",
+      "provisional_group_id": "BLT016",
+      "original_split": "train",
+      "source_label_sha256": "606fd7770b62076ca6a0881ace81262f7bbb37b7058feaeee8e607579071cced",
+      "class_counts": {
+        "Warship": 17
+      },
+      "conversion_stats": {
+        "unmodified_objects": 17
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/JLA003__40__.png",
+      "label_member": "train_ann/JLA003__40__.txt",
+      "provisional_group_id": "JLA003",
+      "original_split": "train",
+      "source_label_sha256": "927af033e0bd62ca08bab6ddf783cc1f2981eb21e5720f142c5c00e324e24d9b",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/UBA204__186__.png",
+      "label_member": "train_ann/UBA204__186__.txt",
+      "provisional_group_id": "UBA204",
+      "original_split": "train",
+      "source_label_sha256": "36560096f5e2c4beb312e19f57e0a1057358cd9b9ac407d8f3538d5ae161f5db",
+      "class_counts": {
+        "Vehicles-Carrier": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/MNL002__569__.png",
+      "label_member": "train_ann/MNL002__569__.txt",
+      "provisional_group_id": "MNL002",
+      "original_split": "train",
+      "source_label_sha256": "c1af18b1dbfac6667423713821d19d490d89f92d297cea258b7235dd68d26112",
+      "class_counts": {
+        "Cargo-Ship": 2
+      },
+      "conversion_stats": {
+        "unmodified_objects": 2
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/SLY038__518__.png",
+      "label_member": "train_ann/SLY038__518__.txt",
+      "provisional_group_id": "SLY038",
+      "original_split": "train",
+      "source_label_sha256": "f043fd8c1175eff703cf63b94588d86a97859358de01ce8a7804ed556d45f4ec",
+      "class_counts": {
+        "Oil-Tanker": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/HEB035__367__.png",
+      "label_member": "train_ann/HEB035__367__.txt",
+      "provisional_group_id": "HEB035",
+      "original_split": "train",
+      "source_label_sha256": "f5da9ea95d7e696a476d8ea646a80248a36236a82e88142c9581731c961dc8ac",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/HEB060__688__.png",
+      "label_member": "train_ann/HEB060__688__.txt",
+      "provisional_group_id": "HEB060",
+      "original_split": "train",
+      "source_label_sha256": "30d428bf2d609c4b84bf05011f762a1900e32ff52351911746fc0f9699b59a7f",
+      "class_counts": {
+        "Warship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/UBA139__198__.png",
+      "label_member": "test_ann/UBA139__198__.txt",
+      "provisional_group_id": "UBA139",
+      "original_split": "test",
+      "source_label_sha256": "2ce322ae3aee2e3d9e06b663c2b778868ac4dc5da3422cf815fe0571c347c876",
+      "class_counts": {
+        "Vehicles-Carrier": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/WDL033__772__.png",
+      "label_member": "test_ann/WDL033__772__.txt",
+      "provisional_group_id": "WDL033",
+      "original_split": "test",
+      "source_label_sha256": "20c996158763b5773e1dcd5518a37d06c261a847c788764e9783da454ccfa97c",
+      "class_counts": {
+        "Bulk-Carrier": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/HAG002__518__.png",
+      "label_member": "test_ann/HAG002__518__.txt",
+      "provisional_group_id": "HAG002",
+      "original_split": "test",
+      "source_label_sha256": "88a7668a050ffe66e248fd63a83010e693beef573d0f2981179f7b38b5d5ede2",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/WDL009__753__.png",
+      "label_member": "train_ann/WDL009__753__.txt",
+      "provisional_group_id": "WDL009",
+      "original_split": "train",
+      "source_label_sha256": "f1e21e2c2572f339ae5c396d100e654fbca1bd01dd4ba92d23cab6d7904f76a2",
+      "class_counts": {
+        "Bulk-Carrier": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/WUS006__734__.png",
+      "label_member": "test_ann/WUS006__734__.txt",
+      "provisional_group_id": "WUS006",
+      "original_split": "test",
+      "source_label_sha256": "d8d69de63b2991968f20ecce4b59f31a908206d26faef64c133fb40c85e747f2",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/CPE015__677__.png",
+      "label_member": "train_ann/CPE015__677__.txt",
+      "provisional_group_id": "CPE015",
+      "original_split": "train",
+      "source_label_sha256": "00b7042844fd2b80178c358fa64b720743d17faa9d1c0132896a713537e14560",
+      "class_counts": {
+        "Oil-Tanker": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/SLY011__448__.png",
+      "label_member": "train_ann/SLY011__448__.txt",
+      "provisional_group_id": "SLY011",
+      "original_split": "train",
+      "source_label_sha256": "92d9564f5646bfc0177f84bfe7fa838291f9b6dda587b0a11d5d6ee1016677a0",
+      "class_counts": {
+        "Oil-Tanker": 2,
+        "Bulk-Carrier": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 3
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/DWH020__378__.png",
+      "label_member": "train_ann/DWH020__378__.txt",
+      "provisional_group_id": "DWH020",
+      "original_split": "train",
+      "source_label_sha256": "147e27b52c266d3c92d2aecdcda132aead08f7aede27b43c0f87b0670cc40090",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/HEB032__575__.png",
+      "label_member": "train_ann/HEB032__575__.txt",
+      "provisional_group_id": "HEB032",
+      "original_split": "train",
+      "source_label_sha256": "33725465bc906ca592e29c1b77763dea612ef849ee302e8d96289cb3237f63fe",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/WDL004__938__.png",
+      "label_member": "train_ann/WDL004__938__.txt",
+      "provisional_group_id": "WDL004",
+      "original_split": "train",
+      "source_label_sha256": "18cc2973cc169c611c3e76a405dcfaa06e8369c4070430bd22387d09219d976f",
+      "class_counts": {
+        "Bulk-Carrier": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/DWH005__877__.png",
+      "label_member": "train_ann/DWH005__877__.txt",
+      "provisional_group_id": "DWH005",
+      "original_split": "train",
+      "source_label_sha256": "5a4d87c00ee7e96f68ce5eeee75e4474af2537eadaae22f093fa8cfa5328b7e2",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/HEB051__568__.png",
+      "label_member": "train_ann/HEB051__568__.txt",
+      "provisional_group_id": "HEB051",
+      "original_split": "train",
+      "source_label_sha256": "c5b6cb5411ec73a80ee123e93df0fe3b5bbf59f1e5b997b382be5c4eb02f21f6",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/UBA110__391__.png",
+      "label_member": "train_ann/UBA110__391__.txt",
+      "provisional_group_id": "UBA110",
+      "original_split": "train",
+      "source_label_sha256": "300bd495b912e7fc5a895f9cd4e25efea0258cc302d4671b614648fa0bad0d25",
+      "class_counts": {
+        "Container-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/HEB036__443__.png",
+      "label_member": "train_ann/HEB036__443__.txt",
+      "provisional_group_id": "HEB036",
+      "original_split": "train",
+      "source_label_sha256": "398830be25ac24b0b073443e8ff6c9b1fca8128f292b31d7cd5352c12099a892",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/WDL008__661__.png",
+      "label_member": "test_ann/WDL008__661__.txt",
+      "provisional_group_id": "WDL008",
+      "original_split": "test",
+      "source_label_sha256": "6d3f42e444d89c77c2745bfd0b77b6b4358aea0f44dd87c4fbd9c3153a5b1e22",
+      "class_counts": {
+        "Bulk-Carrier": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/GAX001__130__.png",
+      "label_member": "train_ann/GAX001__130__.txt",
+      "provisional_group_id": "GAX001",
+      "original_split": "train",
+      "source_label_sha256": "2df7e560cd44815036b1c41776285f516a131f1888aab69f52f0bea9f5780bef",
+      "class_counts": {
+        "others": 2
+      },
+      "conversion_stats": {
+        "unmodified_objects": 2
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/CPE013__511__.png",
+      "label_member": "train_ann/CPE013__511__.txt",
+      "provisional_group_id": "CPE013",
+      "original_split": "train",
+      "source_label_sha256": "4b86991e1894431ff37f53951537dedb9ebadd8e63afac67c26424d1b7dcd095",
+      "class_counts": {
+        "Oil-Tanker": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/ZHS001__737__.png",
+      "label_member": "train_ann/ZHS001__737__.txt",
+      "provisional_group_id": "ZHS001",
+      "original_split": "train",
+      "source_label_sha256": "55fa02b17e444c15b654272a67f149830a096f7e4df1a8d19197775c7f434986",
+      "class_counts": {
+        "Cargo-Ship": 3,
+        "Tug": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 4
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/HEB049__560__.png",
+      "label_member": "test_ann/HEB049__560__.txt",
+      "provisional_group_id": "HEB049",
+      "original_split": "test",
+      "source_label_sha256": "27181ea85f446021e08da6f9007ebdc88146bd4eb08d29b60ba8c9955414d799",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/WDL063__709__.png",
+      "label_member": "train_ann/WDL063__709__.txt",
+      "provisional_group_id": "WDL063",
+      "original_split": "train",
+      "source_label_sha256": "ee5cac81d871acca6988e4d9b0606587a67825ead8b2cd1f93db882e0be2d1e4",
+      "class_counts": {
+        "Bulk-Carrier": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/CPE014__2300__.png",
+      "label_member": "train_ann/CPE014__2300__.txt",
+      "provisional_group_id": "CPE014",
+      "original_split": "train",
+      "source_label_sha256": "fac36fbbd8a9d5b18fb4e37b3e8acc5c8357f5f13c67318b77884c2f939afe25",
+      "class_counts": {
+        "Bulk-Carrier": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/BLT014__201__.png",
+      "label_member": "test_ann/BLT014__201__.txt",
+      "provisional_group_id": "BLT014",
+      "original_split": "test",
+      "source_label_sha256": "aaf8b5ab72c8d4d125b61738b139238e7a4d77e03890a512474da87a7817748d",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/ALA001__378__.png",
+      "label_member": "train_ann/ALA001__378__.txt",
+      "provisional_group_id": "ALA001",
+      "original_split": "train",
+      "source_label_sha256": "e4edd55b84727aef7029f5a5442be39fe840128fd73caafd99c55d4e6f60b2a8",
+      "class_counts": {
+        "Cargo-Ship": 3
+      },
+      "conversion_stats": {
+        "unmodified_objects": 3
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/UBA103__474__.png",
+      "label_member": "train_ann/UBA103__474__.txt",
+      "provisional_group_id": "UBA103",
+      "original_split": "train",
+      "source_label_sha256": "4c9a4c80e359b06e2022513fa6e815da6f221075db650a2bb4e8176ac2cc748e",
+      "class_counts": {
+        "Container-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/YKB005__477__.png",
+      "label_member": "train_ann/YKB005__477__.txt",
+      "provisional_group_id": "YKB005",
+      "original_split": "train",
+      "source_label_sha256": "dbad0ddb66f4a96654edd7c3762ea313ea397e9d4809a3da4979bcbc40182144",
+      "class_counts": {
+        "Cargo-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/HEB050__140__.png",
+      "label_member": "train_ann/HEB050__140__.txt",
+      "provisional_group_id": "HEB050",
+      "original_split": "train",
+      "source_label_sha256": "5a945c17a63c79dfa47c7a6906e33994a1ca40019a37f2a36913366d8fc60da6",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/CPE010__1584__.png",
+      "label_member": "train_ann/CPE010__1584__.txt",
+      "provisional_group_id": "CPE010",
+      "original_split": "train",
+      "source_label_sha256": "19df1da1799fc09617c4bf2edafa2304a6a21f968355863e2ddebc1cd4a19afc",
+      "class_counts": {
+        "Oil-Tanker": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/SLY042__657__.png",
+      "label_member": "train_ann/SLY042__657__.txt",
+      "provisional_group_id": "SLY042",
+      "original_split": "train",
+      "source_label_sha256": "5bbc2e28967a6663d41e0d33896d8e935b14a3be17ed6920002bcde876feec06",
+      "class_counts": {
+        "Bulk-Carrier": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/HEB064__973__.png",
+      "label_member": "train_ann/HEB064__973__.txt",
+      "provisional_group_id": "HEB064",
+      "original_split": "train",
+      "source_label_sha256": "c6e3799e55afb35d153c1207dd20d6ea6de73e4fbafc8d3cba724d6d58fcbf75",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/HEB002__210__.png",
+      "label_member": "test_ann/HEB002__210__.txt",
+      "provisional_group_id": "HEB002",
+      "original_split": "test",
+      "source_label_sha256": "70dfdba2d5727f65d35f56eacd6637425a243e0b865c1b6b0885b02a5b275a58",
+      "class_counts": {
+        "unknow": 6
+      },
+      "conversion_stats": {
+        "unmodified_objects": 6
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/WDL015__797__.png",
+      "label_member": "train_ann/WDL015__797__.txt",
+      "provisional_group_id": "WDL015",
+      "original_split": "train",
+      "source_label_sha256": "328e5000a60f56aae2319590ab235df30f87bda8d485465310640681c7a59416",
+      "class_counts": {
+        "Bulk-Carrier": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/CPE012__1635__.png",
+      "label_member": "train_ann/CPE012__1635__.txt",
+      "provisional_group_id": "CPE012",
+      "original_split": "train",
+      "source_label_sha256": "e99ffcfab9fcbb8bef130eb0c11d67e550af96b3e4073f2a5d9a2cec3ccc4ec2",
+      "class_counts": {
+        "Oil-Tanker": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/HEB031__270__.png",
+      "label_member": "train_ann/HEB031__270__.txt",
+      "provisional_group_id": "HEB031",
+      "original_split": "train",
+      "source_label_sha256": "855a079c640a46c404ef54cd67172f2bef83ded5a1f9628b13f51a447a0756d2",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/JIJ027__186__.png",
+      "label_member": "train_ann/JIJ027__186__.txt",
+      "provisional_group_id": "JIJ027",
+      "original_split": "train",
+      "source_label_sha256": "34c789082f04bdbfcbd7534228ec069c7024d15ea48a2391dcef96ebecb5b997",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/HEB019__431__.png",
+      "label_member": "test_ann/HEB019__431__.txt",
+      "provisional_group_id": "HEB019",
+      "original_split": "test",
+      "source_label_sha256": "94c81dea3737773c0fe9e65946a02043ea89a34186110f947c61bbd8089a2214",
+      "class_counts": {
+        "unknow": 1,
+        "Warship": 4
+      },
+      "conversion_stats": {
+        "unmodified_objects": 5
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/MSK001__1553__.png",
+      "label_member": "train_ann/MSK001__1553__.txt",
+      "provisional_group_id": "MSK001",
+      "original_split": "train",
+      "source_label_sha256": "9362bd197250aad763cfef35479efc21d2ebfa1a32d11b3d3af5212874fbe7e8",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/JIJ024__339__.png",
+      "label_member": "test_ann/JIJ024__339__.txt",
+      "provisional_group_id": "JIJ024",
+      "original_split": "test",
+      "source_label_sha256": "ab4fcaaf4d84ce575926dd628ee8e8878127704470be6b8974398a6853db57fc",
+      "class_counts": {
+        "Oil-Tanker": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/HEB029__156__.png",
+      "label_member": "train_ann/HEB029__156__.txt",
+      "provisional_group_id": "HEB029",
+      "original_split": "train",
+      "source_label_sha256": "849097eb73e6b2af42536a6fbfb97ac8dda4a68c74ad4d5161762f8e03584aae",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/HEB038__374__.png",
+      "label_member": "train_ann/HEB038__374__.txt",
+      "provisional_group_id": "HEB038",
+      "original_split": "train",
+      "source_label_sha256": "c1a20cfa6d6813e2d2503c4212789c23b084787c5d01a77bbae69714b25b473f",
+      "class_counts": {
+        "Warship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/DWH018__447__.png",
+      "label_member": "train_ann/DWH018__447__.txt",
+      "provisional_group_id": "DWH018",
+      "original_split": "train",
+      "source_label_sha256": "ebbda6d1a47472fd17413631f8dbdf3085f9d1e1f21d298f230fdf867c7dd78a",
+      "class_counts": {
+        "Warship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/DWH006__854__.png",
+      "label_member": "train_ann/DWH006__854__.txt",
+      "provisional_group_id": "DWH006",
+      "original_split": "train",
+      "source_label_sha256": "204e9e07dfd36496b49c03393ab45cb5dc56c8cd38926e5d79f86558b475db93",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/ZSB020__824__.png",
+      "label_member": "test_ann/ZSB020__824__.txt",
+      "provisional_group_id": "ZSB020",
+      "original_split": "test",
+      "source_label_sha256": "6ab9ed198985aa934504105f51fd0acd9250e0033e729750af0acef87ee4a84e",
+      "class_counts": {
+        "unknow": 1,
+        "Warship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 2
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/BLT012__642__.png",
+      "label_member": "train_ann/BLT012__642__.txt",
+      "provisional_group_id": "BLT012",
+      "original_split": "train",
+      "source_label_sha256": "116b8c83c385b329db37405f20ae950229528ccbeeafa86f77804b48f35a89a6",
+      "class_counts": {
+        "unknow": 2
+      },
+      "conversion_stats": {
+        "unmodified_objects": 2
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/UBA013__668__.png",
+      "label_member": "train_ann/UBA013__668__.txt",
+      "provisional_group_id": "UBA013",
+      "original_split": "train",
+      "source_label_sha256": "738c4b791cfc671053d43ac64374277ae9a4e5e9d965a1e09ce33eaad9823469",
+      "class_counts": {
+        "Container-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/WDL026__425__.png",
+      "label_member": "train_ann/WDL026__425__.txt",
+      "provisional_group_id": "WDL026",
+      "original_split": "train",
+      "source_label_sha256": "3bb920da4439161dd149013bdd50ce39c16bc66535b5cefd9e5873ba1d469b02",
+      "class_counts": {
+        "Oil-Tanker": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/SIP016__117__.png",
+      "label_member": "train_ann/SIP016__117__.txt",
+      "provisional_group_id": "SIP016",
+      "original_split": "train",
+      "source_label_sha256": "c2bc5d018bdea0f87039ed463f91d587387ab74616af087a10f6abab5545e1c5",
+      "class_counts": {
+        "Tug": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/WDL058__790__.png",
+      "label_member": "train_ann/WDL058__790__.txt",
+      "provisional_group_id": "WDL058",
+      "original_split": "train",
+      "source_label_sha256": "a8749a28e9d222625ec1fea50d69cce5af2d25f1a8f08baef98139d6282ba8c2",
+      "class_counts": {
+        "Bulk-Carrier": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/UBA128__223__.png",
+      "label_member": "train_ann/UBA128__223__.txt",
+      "provisional_group_id": "UBA128",
+      "original_split": "train",
+      "source_label_sha256": "d81fdde1da536dd75536604a429716821df54ab7f04b7858ddc3b14f012f1806",
+      "class_counts": {
+        "Tug": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/SIP002__286__.png",
+      "label_member": "train_ann/SIP002__286__.txt",
+      "provisional_group_id": "SIP002",
+      "original_split": "train",
+      "source_label_sha256": "05bbc4d107c1dca62cf9f4bbe8686df9f164db84464ccbf794893bd5f5f9549e",
+      "class_counts": {
+        "Oil-Tanker": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/JIJ002__415__.png",
+      "label_member": "train_ann/JIJ002__415__.txt",
+      "provisional_group_id": "JIJ002",
+      "original_split": "train",
+      "source_label_sha256": "3e1cd7d50b6048ed09e94b925241f4c08cac94bdc85c71677ee3cf8a85d5155c",
+      "class_counts": {
+        "Oil-Tanker": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "train_png/DWH019__207__.png",
+      "label_member": "train_ann/DWH019__207__.txt",
+      "provisional_group_id": "DWH019",
+      "original_split": "train",
+      "source_label_sha256": "71240b576ddf4daf76f0511e29c1ac7fa3ec88dfa9ee0bbbbe8b01f7b13728ce",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "train"
+    },
+    {
+      "image_member": "test_png/HEB052__468__.png",
+      "label_member": "test_ann/HEB052__468__.txt",
+      "provisional_group_id": "HEB052",
+      "original_split": "test",
+      "source_label_sha256": "ce476b0f4cc00860a2c15732d89ee66f6391df32ee7db423f41f1c7af641d3d5",
+      "class_counts": {
+        "Passenger-Cruise-Ship": 1,
+        "unknow": 1,
+        "Warship": 10
+      },
+      "conversion_stats": {
+        "unmodified_objects": 12
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/GNY002__282__.png",
+      "label_member": "train_ann/GNY002__282__.txt",
+      "provisional_group_id": "GNY002",
+      "original_split": "train",
+      "source_label_sha256": "dece74bdcace26975d21cec79a4146bab77cc28ad8d9ae17a978a1389d7df851",
+      "class_counts": {
+        "Fishing-Vessel": 1,
+        "Oil-Tanker": 1,
+        "Passenger-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 3
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "test_png/HEB066__202__.png",
+      "label_member": "test_ann/HEB066__202__.txt",
+      "provisional_group_id": "HEB066",
+      "original_split": "test",
+      "source_label_sha256": "8a56df47e9d0310547d6d1e292bd3916069d8daafb04d3b5588748060376df74",
+      "class_counts": {
+        "LNG-LPG-Tanker": 1,
+        "others": 4
+      },
+      "conversion_stats": {
+        "unmodified_objects": 5
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/WUS004__684__.png",
+      "label_member": "train_ann/WUS004__684__.txt",
+      "provisional_group_id": "WUS004",
+      "original_split": "train",
+      "source_label_sha256": "3445b252c626b702320969ca19628f300bcfa4402162b5886cdc3c846284ab18",
+      "class_counts": {
+        "unknow": 3,
+        "Warship": 11,
+        "Aircraft-Carrier": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 15
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/UBA121__261__.png",
+      "label_member": "train_ann/UBA121__261__.txt",
+      "provisional_group_id": "UBA121",
+      "original_split": "train",
+      "source_label_sha256": "b1c4936f265ccb21abe90cb147ad2d059215ab88b432b08953c8e5a008c7c0f6",
+      "class_counts": {
+        "Vehicles-Carrier": 1,
+        "Cargo-Ship": 1,
+        "Container-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 3
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "test_png/CPE005__1976__.png",
+      "label_member": "test_ann/CPE005__1976__.txt",
+      "provisional_group_id": "CPE005",
+      "original_split": "test",
+      "source_label_sha256": "d63bb61b6628bdc87d50c52490513f43f4d05cf0331516fe9579abe839bc3317",
+      "class_counts": {
+        "Tug": 1,
+        "Bulk-Carrier": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 2
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "test_png/CHQ005__579__.png",
+      "label_member": "test_ann/CHQ005__579__.txt",
+      "provisional_group_id": "CHQ005",
+      "original_split": "test",
+      "source_label_sha256": "6e48714caa8c48f6465f12d9fcd5bb03b1c026fb3e0924adfcc25b32aa993830",
+      "class_counts": {
+        "unknow": 3
+      },
+      "conversion_stats": {
+        "unmodified_objects": 3
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/HEB040__209__.png",
+      "label_member": "train_ann/HEB040__209__.txt",
+      "provisional_group_id": "HEB040",
+      "original_split": "train",
+      "source_label_sha256": "8d61b948ded104331a1ff6d51dd54e904bef64ded9482fa0c37fb6514bea34a2",
+      "class_counts": {
+        "unknow": 3
+      },
+      "conversion_stats": {
+        "unmodified_objects": 3
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "test_png/HEB007__342__.png",
+      "label_member": "test_ann/HEB007__342__.txt",
+      "provisional_group_id": "HEB007",
+      "original_split": "test",
+      "source_label_sha256": "6cadfb42de89a159de422c5240b8250f7af8a5e87663ad061e37ab90a7d6cfaa",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/HEB001__814__.png",
+      "label_member": "train_ann/HEB001__814__.txt",
+      "provisional_group_id": "HEB001",
+      "original_split": "train",
+      "source_label_sha256": "bd41a93f11504fb55387e5ed64dad8b9b6557fe60242a665d670e2587f188b9d",
+      "class_counts": {
+        "Warship": 2
+      },
+      "conversion_stats": {
+        "unmodified_objects": 2
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "test_png/ZSB005__881__.png",
+      "label_member": "test_ann/ZSB005__881__.txt",
+      "provisional_group_id": "ZSB005",
+      "original_split": "test",
+      "source_label_sha256": "5cce1f4aa5f5bb985cf8d7d30ef51ecc55153a1b108b37eaeff1a29ca36a9762",
+      "class_counts": {
+        "unknow": 3
+      },
+      "conversion_stats": {
+        "unmodified_objects": 3
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/UBA157__177__.png",
+      "label_member": "train_ann/UBA157__177__.txt",
+      "provisional_group_id": "UBA157",
+      "original_split": "train",
+      "source_label_sha256": "e1e9c3e27867671d75a065ca8e3de5c68c8084e1d7892b6041327b27f42d25b0",
+      "class_counts": {
+        "Container-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/SIP001__144__.png",
+      "label_member": "train_ann/SIP001__144__.txt",
+      "provisional_group_id": "SIP001",
+      "original_split": "train",
+      "source_label_sha256": "90c4caca656eb978f3f020edebae757c633f4091a665f7a8a4bbd4f5e8dc19b9",
+      "class_counts": {
+        "Cargo-Ship": 4
+      },
+      "conversion_stats": {
+        "unmodified_objects": 4
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/HEB027__896__.png",
+      "label_member": "train_ann/HEB027__896__.txt",
+      "provisional_group_id": "HEB027",
+      "original_split": "train",
+      "source_label_sha256": "c249006ab5b33c6207a1d12f2d6a71e5bc45ca6d83d3941946e74d1f30341000",
+      "class_counts": {
+        "unknow": 11
+      },
+      "conversion_stats": {
+        "unmodified_objects": 11
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "test_png/SIP004__604__.png",
+      "label_member": "test_ann/SIP004__604__.txt",
+      "provisional_group_id": "SIP004",
+      "original_split": "test",
+      "source_label_sha256": "2cbfe289ba844df8d15a9afb425ba60624da2330df29d000618231efe08601e8",
+      "class_counts": {
+        "others": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/HEB018__323__.png",
+      "label_member": "train_ann/HEB018__323__.txt",
+      "provisional_group_id": "HEB018",
+      "original_split": "train",
+      "source_label_sha256": "26c1aab57ae3d4d7b54162120290648be6219bc62377d9acf5ae74c2c6663417",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "test_png/HEB037__519__.png",
+      "label_member": "test_ann/HEB037__519__.txt",
+      "provisional_group_id": "HEB037",
+      "original_split": "test",
+      "source_label_sha256": "e74e6322a60dbc7ac02e288a57c6e88d869c42d436abeb2a972d61ee62f7200f",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "test_png/SIP019__375__.png",
+      "label_member": "test_ann/SIP019__375__.txt",
+      "provisional_group_id": "SIP019",
+      "original_split": "test",
+      "source_label_sha256": "f94e3b3b5a494ab41721f10c323d334edf76b09bebd1c2c85495b792795fc312",
+      "class_counts": {
+        "Tug": 2,
+        "Cargo-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 3
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/TGB006__346__.png",
+      "label_member": "train_ann/TGB006__346__.txt",
+      "provisional_group_id": "TGB006",
+      "original_split": "train",
+      "source_label_sha256": "679c7e94e21468b933822624679f06b763b4e6b95f13fc3347d127a26c55f184",
+      "class_counts": {
+        "unknow": 2
+      },
+      "conversion_stats": {
+        "unmodified_objects": 2
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/WDL013__495__.png",
+      "label_member": "train_ann/WDL013__495__.txt",
+      "provisional_group_id": "WDL013",
+      "original_split": "train",
+      "source_label_sha256": "877acbf244c3a8f03f1af458c0029517e85cef5378335eb5471332000d0c247a",
+      "class_counts": {
+        "Bulk-Carrier": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "test_png/CPE017__2193__.png",
+      "label_member": "test_ann/CPE017__2193__.txt",
+      "provisional_group_id": "CPE017",
+      "original_split": "test",
+      "source_label_sha256": "b8637c5fde6077259a1dc8e53e524b9d66fb265dedae394cdaee5e8e575003ee",
+      "class_counts": {
+        "Container-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/JLA006__814__.png",
+      "label_member": "train_ann/JLA006__814__.txt",
+      "provisional_group_id": "JLA006",
+      "original_split": "train",
+      "source_label_sha256": "f6aab6720f239771c0162fac451aa36a8d380ae503d171dca2696c494f6ff348",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "test_png/SHS001__161__.png",
+      "label_member": "test_ann/SHS001__161__.txt",
+      "provisional_group_id": "SHS001",
+      "original_split": "test",
+      "source_label_sha256": "78403923d50512c98585c198766ccf06ab32c2e65df9ad7c9c7e5a4808d34bce",
+      "class_counts": {
+        "Bulk-Carrier": 2,
+        "Cargo-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 3
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/SIP021__476__.png",
+      "label_member": "train_ann/SIP021__476__.txt",
+      "provisional_group_id": "SIP021",
+      "original_split": "train",
+      "source_label_sha256": "9424936c75798eb6db72d04d487bd67e2041ff55c94a2ca01e9c554210c4d99d",
+      "class_counts": {
+        "Tug": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/UBA051__818__.png",
+      "label_member": "train_ann/UBA051__818__.txt",
+      "provisional_group_id": "UBA051",
+      "original_split": "train",
+      "source_label_sha256": "44d1cdae1f8e70a0c55fcf817a6d8d70799728778027cfc326b5e33f2339e3d0",
+      "class_counts": {
+        "Container-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/WUS017__679__.png",
+      "label_member": "train_ann/WUS017__679__.txt",
+      "provisional_group_id": "WUS017",
+      "original_split": "train",
+      "source_label_sha256": "9f57bd41ebf74788e8dbf4814f699490e2f1e5a2134396752fedf85fdee5df40",
+      "class_counts": {
+        "unknow": 2
+      },
+      "conversion_stats": {
+        "unmodified_objects": 2
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/SIP018__571__.png",
+      "label_member": "train_ann/SIP018__571__.txt",
+      "provisional_group_id": "SIP018",
+      "original_split": "train",
+      "source_label_sha256": "daa485bd83b5fd68c8e06f010bb619a289fba4a95ba58545bcb9f6e425111a09",
+      "class_counts": {
+        "Oil-Tanker": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/ZSB010__749__.png",
+      "label_member": "train_ann/ZSB010__749__.txt",
+      "provisional_group_id": "ZSB010",
+      "original_split": "train",
+      "source_label_sha256": "d0219abcf2c918391272801129f62f7125025f92786f54720f23f8a10f1db5a4",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/SIP013__533__.png",
+      "label_member": "train_ann/SIP013__533__.txt",
+      "provisional_group_id": "SIP013",
+      "original_split": "train",
+      "source_label_sha256": "c52f7930018531171e3b18a53dba46da9fe64c63f03c5be1db1721cc8c3de7c6",
+      "class_counts": {
+        "Oil-Tanker": 9,
+        "Tug": 3
+      },
+      "conversion_stats": {
+        "unmodified_objects": 12
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/SLY065__672__.png",
+      "label_member": "train_ann/SLY065__672__.txt",
+      "provisional_group_id": "SLY065",
+      "original_split": "train",
+      "source_label_sha256": "d626224d075ce5f2ffe07856ca4949a3da698bcad89ff86cbabeb752338b439c",
+      "class_counts": {
+        "Bulk-Carrier": 2,
+        "Cargo-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 3
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "test_png/ZSB018__975__.png",
+      "label_member": "test_ann/ZSB018__975__.txt",
+      "provisional_group_id": "ZSB018",
+      "original_split": "test",
+      "source_label_sha256": "0f9ee346e65e37e3869dd65e77234bee3010af552e3aa0166d9d4a696efc3e8a",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "test_png/DWH008__563__.png",
+      "label_member": "test_ann/DWH008__563__.txt",
+      "provisional_group_id": "DWH008",
+      "original_split": "test",
+      "source_label_sha256": "790d11508bc98f68212ccf6a023af8ff9277f30e4dcb543e89fbdc80fa54a1dc",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/HEB033__102__.png",
+      "label_member": "train_ann/HEB033__102__.txt",
+      "provisional_group_id": "HEB033",
+      "original_split": "train",
+      "source_label_sha256": "26507b9ef23fbeb650c0dffae4efa0f85a9934441e7850448772231d7483d896",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/JLA004__152__.png",
+      "label_member": "train_ann/JLA004__152__.txt",
+      "provisional_group_id": "JLA004",
+      "original_split": "train",
+      "source_label_sha256": "0ef933f7bf0914e73bcd93bd7ad135bac35c310dff4de66cc783930ee7d23d99",
+      "class_counts": {
+        "unknow": 2
+      },
+      "conversion_stats": {
+        "unmodified_objects": 2
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/SUW004__489__.png",
+      "label_member": "train_ann/SUW004__489__.txt",
+      "provisional_group_id": "SUW004",
+      "original_split": "train",
+      "source_label_sha256": "48da3517384e5f9708644607887256c036b9bfe674d4d3d610090599d6d80b91",
+      "class_counts": {
+        "Cargo-Ship": 2
+      },
+      "conversion_stats": {
+        "unmodified_objects": 2
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/HEB047__74__.png",
+      "label_member": "train_ann/HEB047__74__.txt",
+      "provisional_group_id": "HEB047",
+      "original_split": "train",
+      "source_label_sha256": "0f0e10729516d28d8a8604eac34a8f33e0b6fd6a5b4df9dce1d0d44c8b96cdd4",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "test_png/HEB030__517__.png",
+      "label_member": "test_ann/HEB030__517__.txt",
+      "provisional_group_id": "HEB030",
+      "original_split": "test",
+      "source_label_sha256": "020934ac208ac8ec2872df11248433ad8001713d1ae4f96ee451fe01b3da5544",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/SIP020__621__.png",
+      "label_member": "train_ann/SIP020__621__.txt",
+      "provisional_group_id": "SIP020",
+      "original_split": "train",
+      "source_label_sha256": "22f133ea42e3f57937541df69e6bbc230e50d0d533f04ac95a8168d746bf629f",
+      "class_counts": {
+        "Tug": 5
+      },
+      "conversion_stats": {
+        "unmodified_objects": 5
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/GAX003__533__.png",
+      "label_member": "train_ann/GAX003__533__.txt",
+      "provisional_group_id": "GAX003",
+      "original_split": "train",
+      "source_label_sha256": "9282441bd70e9f380a7e39986584bd340106a462c707fe5139079cd77ef5792c",
+      "class_counts": {
+        "others": 2
+      },
+      "conversion_stats": {
+        "unmodified_objects": 2
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "test_png/XAG008__603__.png",
+      "label_member": "test_ann/XAG008__603__.txt",
+      "provisional_group_id": "XAG008",
+      "original_split": "test",
+      "source_label_sha256": "d11de83e95423f648bbf515f025fe05e8e021bea17367c21da8b453cc30324e0",
+      "class_counts": {
+        "others": 2
+      },
+      "conversion_stats": {
+        "unmodified_objects": 2
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/HEB011__757__.png",
+      "label_member": "train_ann/HEB011__757__.txt",
+      "provisional_group_id": "HEB011",
+      "original_split": "train",
+      "source_label_sha256": "9dc4c4ddcf53bfb88811cffd8faf6826e4eb7074bffe2246e7ef72c08461cd78",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "test_png/UBA052__471__.png",
+      "label_member": "test_ann/UBA052__471__.txt",
+      "provisional_group_id": "UBA052",
+      "original_split": "test",
+      "source_label_sha256": "08868b6dfb83a69011f4776f2972bdbef28adba989e4dba3dbf2d474e877c990",
+      "class_counts": {
+        "Container-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/WDL043__611__.png",
+      "label_member": "train_ann/WDL043__611__.txt",
+      "provisional_group_id": "WDL043",
+      "original_split": "train",
+      "source_label_sha256": "d3966d1c7686af14838c18e7e258aa28393d1101bdae4208871acf469b0e58ed",
+      "class_counts": {
+        "Bulk-Carrier": 2
+      },
+      "conversion_stats": {
+        "unmodified_objects": 2
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/UBA098__914__.png",
+      "label_member": "train_ann/UBA098__914__.txt",
+      "provisional_group_id": "UBA098",
+      "original_split": "train",
+      "source_label_sha256": "fb23829c625981bfe231a81309a0b2eac2d6385c6336001e83c1c6c4bf5a6302",
+      "class_counts": {
+        "Container-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "test_png/WDL071__664__.png",
+      "label_member": "test_ann/WDL071__664__.txt",
+      "provisional_group_id": "WDL071",
+      "original_split": "test",
+      "source_label_sha256": "faa9550a3cdc3cfc557e8a07f672756283ad4d4794477be561d25f4eda02278b",
+      "class_counts": {
+        "Bulk-Carrier": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/HIF001__81__.png",
+      "label_member": "train_ann/HIF001__81__.txt",
+      "provisional_group_id": "HIF001",
+      "original_split": "train",
+      "source_label_sha256": "b492d284232ebf034215cbb9b030e1b890b0932532a565697404f8255933a591",
+      "class_counts": {
+        "Cargo-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/WDL036__859__.png",
+      "label_member": "train_ann/WDL036__859__.txt",
+      "provisional_group_id": "WDL036",
+      "original_split": "train",
+      "source_label_sha256": "b12a2cd50ca3d7cb99dfeb3c2ac0f6cdad1ca8b5e5e428bb1b48f9cde32a9906",
+      "class_counts": {
+        "Tug": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/UBA081__160__.png",
+      "label_member": "train_ann/UBA081__160__.txt",
+      "provisional_group_id": "UBA081",
+      "original_split": "train",
+      "source_label_sha256": "03a4456ef0837728ecd9ae24fd9bba6d2eb592bcb05217a20f797fa4f46872eb",
+      "class_counts": {
+        "Container-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "test_png/YKB002__652__.png",
+      "label_member": "test_ann/YKB002__652__.txt",
+      "provisional_group_id": "YKB002",
+      "original_split": "test",
+      "source_label_sha256": "b3d194bb96abf1575766c3a5eced0b6f3b886b359c326f75fbcf51682991ddb3",
+      "class_counts": {
+        "Fishing-Vessel": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/UBA077__23__.png",
+      "label_member": "train_ann/UBA077__23__.txt",
+      "provisional_group_id": "UBA077",
+      "original_split": "train",
+      "source_label_sha256": "78ba275bced7c9351fe292d01e1cf00963492efb719e59c9ecef64aab613ff75",
+      "class_counts": {
+        "Container-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/SIP006__697__.png",
+      "label_member": "train_ann/SIP006__697__.txt",
+      "provisional_group_id": "SIP006",
+      "original_split": "train",
+      "source_label_sha256": "799643a9086d712f77a7a7a29b8d0dbf44c36ed8b7a4d0ba08b3c12a33535a95",
+      "class_counts": {
+        "Oil-Tanker": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/SIP008__248__.png",
+      "label_member": "train_ann/SIP008__248__.txt",
+      "provisional_group_id": "SIP008",
+      "original_split": "train",
+      "source_label_sha256": "e2e3e9d309b95dabd50a0ae1b1c1f5611e3b6b183cc8dd7a6b902ecf01b3193a",
+      "class_counts": {
+        "Oil-Tanker": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/UBA207__224__.png",
+      "label_member": "train_ann/UBA207__224__.txt",
+      "provisional_group_id": "UBA207",
+      "original_split": "train",
+      "source_label_sha256": "f103b5f0a7097d8857b6d8cd05b31922f70847ac4f517c3a74313c8323c1c1b4",
+      "class_counts": {
+        "Vehicles-Carrier": 2
+      },
+      "conversion_stats": {
+        "unmodified_objects": 2
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "test_png/HEB016__613__.png",
+      "label_member": "test_ann/HEB016__613__.txt",
+      "provisional_group_id": "HEB016",
+      "original_split": "test",
+      "source_label_sha256": "3178378bde10aadcb9173fcba588d506e66091b73ecf40aeb40fd7c010a7ae5a",
+      "class_counts": {
+        "unknow": 7
+      },
+      "conversion_stats": {
+        "unmodified_objects": 7
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "test_png/DWH009__616__.png",
+      "label_member": "test_ann/DWH009__616__.txt",
+      "provisional_group_id": "DWH009",
+      "original_split": "test",
+      "source_label_sha256": "cb82e3239f78581e264854703dc13fd21559f83fcbb06a27bd8c0f675508110c",
+      "class_counts": {
+        "Warship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/DWH011__258__.png",
+      "label_member": "train_ann/DWH011__258__.txt",
+      "provisional_group_id": "DWH011",
+      "original_split": "train",
+      "source_label_sha256": "eeffcd96532919fa6af4da44abd3e91fb59a7e3e8169ec94ef38f4dc3540bc29",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/CPE040__1854__.png",
+      "label_member": "train_ann/CPE040__1854__.txt",
+      "provisional_group_id": "CPE040",
+      "original_split": "train",
+      "source_label_sha256": "9e9025c6c1846ece6045badd7e095fbed327c715d7b20c629badadf11a645656",
+      "class_counts": {
+        "Oil-Tanker": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "test_png/BLT008__797__.png",
+      "label_member": "test_ann/BLT008__797__.txt",
+      "provisional_group_id": "BLT008",
+      "original_split": "test",
+      "source_label_sha256": "23d6f76bbe14272612316310beb170636b32bb3f799e42d4c39007a79f465d6a",
+      "class_counts": {
+        "Warship": 1,
+        "unknow": 2
+      },
+      "conversion_stats": {
+        "unmodified_objects": 3
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/JIJ021__222__.png",
+      "label_member": "train_ann/JIJ021__222__.txt",
+      "provisional_group_id": "JIJ021",
+      "original_split": "train",
+      "source_label_sha256": "1b6a9859c2b68bb9545a8120f6e91386cb0a703cfdf65233103c283146253eb6",
+      "class_counts": {
+        "unknow": 1,
+        "Cargo-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 2
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "test_png/SLY030__357__.png",
+      "label_member": "test_ann/SLY030__357__.txt",
+      "provisional_group_id": "SLY030",
+      "original_split": "test",
+      "source_label_sha256": "8f70cc710f1f8832275b0f5f4adbf4f7f74a251343c982e6925bd58b839c052b",
+      "class_counts": {
+        "Bulk-Carrier": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/CHS004__242__.png",
+      "label_member": "train_ann/CHS004__242__.txt",
+      "provisional_group_id": "CHS004",
+      "original_split": "train",
+      "source_label_sha256": "d5515f27836477552a0f55327b8b49def0ae7e8ec315b74c5a4624900a264957",
+      "class_counts": {
+        "Warship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/CPE007__2188__.png",
+      "label_member": "train_ann/CPE007__2188__.txt",
+      "provisional_group_id": "CPE007",
+      "original_split": "train",
+      "source_label_sha256": "f794fcb805263c06ec1fa2e75fe9a299763f2df15789b365cf2215ddc5bf5e70",
+      "class_counts": {
+        "Container-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "test_png/SLY019__633__.png",
+      "label_member": "test_ann/SLY019__633__.txt",
+      "provisional_group_id": "SLY019",
+      "original_split": "test",
+      "source_label_sha256": "98ca95c0192628e339ac2d8b99e4c789e4b3ccf7fa7758b7e1b40e7eabbb6a91",
+      "class_counts": {
+        "Cargo-Ship": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    },
+    {
+      "image_member": "train_png/HEB028__623__.png",
+      "label_member": "train_ann/HEB028__623__.txt",
+      "provisional_group_id": "HEB028",
+      "original_split": "train",
+      "source_label_sha256": "ec950fbbfc041ae64bc5720a94db6fb237a5e40d5d0c0edac07d2ae2ccf46a4f",
+      "class_counts": {
+        "unknow": 1
+      },
+      "conversion_stats": {
+        "unmodified_objects": 1
+      },
+      "split": "val"
+    }
+  ]
+}

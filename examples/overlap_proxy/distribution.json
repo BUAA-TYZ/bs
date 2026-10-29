@@ -1,0 +1,576 @@
+{
+  "version": 3,
+  "training": {
+    "orbit_offset_seconds": [
+      0,
+      172800
+    ],
+    "arrival_rate_per_second": [
+      0.0033333333333333335,
+      0.013333333333333334
+    ],
+    "isl_bandwidth_scale": [
+      0.5,
+      1.5
+    ],
+    "ground_bandwidth_scale": [
+      1,
+      19.2
+    ]
+  },
+  "walker": {
+    "layouts": [
+      {
+        "planes": 2,
+        "satellites_per_plane": 6,
+        "phasing": 1
+      },
+      {
+        "planes": 4,
+        "satellites_per_plane": 6,
+        "phasing": 1
+      }
+    ],
+    "altitude_km": [
+      650,
+      750
+    ],
+    "inclination_deg": [
+      97,
+      99
+    ],
+    "raan_offset_deg": [
+      0,
+      360
+    ],
+    "phase_offset_deg": [
+      0,
+      360
+    ]
+  },
+  "roles": {
+    "profiles": [
+      {
+        "id": "near",
+        "members": 3,
+        "source_slots": [
+          0
+        ],
+        "phase_offsets_deg": [
+          0,
+          -2,
+          2
+        ],
+        "mean_compute_rate": 1.0,
+        "imager_compute_rate": 1.0
+      },
+      {
+        "id": "uniform",
+        "members": 3,
+        "source_slots": [
+          0
+        ],
+        "phase_offsets_deg": null,
+        "mean_compute_rate": 1.0,
+        "imager_compute_rate": 1.0
+      }
+    ],
+    "load_reference_sources": 8
+  },
+  "workload": {
+    "profiles": [
+      {
+        "id": "p0019",
+        "image_tiling": {
+          "width_px": 6573,
+          "height_px": 3727,
+          "bands": 3,
+          "bits_per_sample": 8,
+          "window_px": 1024,
+          "stride_px": 824,
+          "windows_per_tile_axis": 2,
+          "compute_cost_per_window": 0.07026846144969265,
+          "result_size_mb_per_window": 0.000187
+        }
+      },
+      {
+        "id": "p0007",
+        "image_tiling": {
+          "width_px": 1490,
+          "height_px": 2137,
+          "bands": 3,
+          "bits_per_sample": 8,
+          "window_px": 1024,
+          "stride_px": 824,
+          "windows_per_tile_axis": 2,
+          "compute_cost_per_window": 0.0898910670592967,
+          "result_size_mb_per_window": 0.0025813333333333335
+        }
+      }
+    ],
+    "training_profiles": [
+      "p0019",
+      "p0007"
+    ]
+  },
+  "validation": [
+    {
+      "id": "validation_near_light_1",
+      "seed": 181001,
+      "orbit_offset_seconds": 259200,
+      "arrival_rate_per_second": 0.0033333333333333335,
+      "isl_bandwidth_scale": 1.0,
+      "ground_bandwidth_scale": 1,
+      "walker": {
+        "planes": 4,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 705,
+        "inclination_deg": 98.2,
+        "raan_offset_deg": 15,
+        "phase_offset_deg": 20
+      },
+      "role_profile": "near",
+      "workload_profile": "p0019"
+    },
+    {
+      "id": "validation_near_light_2",
+      "seed": 181002,
+      "orbit_offset_seconds": 259200,
+      "arrival_rate_per_second": 0.0033333333333333335,
+      "isl_bandwidth_scale": 1.0,
+      "ground_bandwidth_scale": 1,
+      "walker": {
+        "planes": 4,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 705,
+        "inclination_deg": 98.2,
+        "raan_offset_deg": 15,
+        "phase_offset_deg": 20
+      },
+      "role_profile": "near",
+      "workload_profile": "p0019"
+    },
+    {
+      "id": "validation_near_high_1",
+      "seed": 181003,
+      "orbit_offset_seconds": 259200,
+      "arrival_rate_per_second": 0.013333333333333334,
+      "isl_bandwidth_scale": 1.0,
+      "ground_bandwidth_scale": 1,
+      "walker": {
+        "planes": 4,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 705,
+        "inclination_deg": 98.2,
+        "raan_offset_deg": 15,
+        "phase_offset_deg": 20
+      },
+      "role_profile": "near",
+      "workload_profile": "p0019"
+    },
+    {
+      "id": "validation_near_high_2",
+      "seed": 181004,
+      "orbit_offset_seconds": 259200,
+      "arrival_rate_per_second": 0.013333333333333334,
+      "isl_bandwidth_scale": 1.0,
+      "ground_bandwidth_scale": 1,
+      "walker": {
+        "planes": 4,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 705,
+        "inclination_deg": 98.2,
+        "raan_offset_deg": 15,
+        "phase_offset_deg": 20
+      },
+      "role_profile": "near",
+      "workload_profile": "p0019"
+    },
+    {
+      "id": "validation_near_high_fast_ground_1",
+      "seed": 181005,
+      "orbit_offset_seconds": 259200,
+      "arrival_rate_per_second": 0.013333333333333334,
+      "isl_bandwidth_scale": 1.0,
+      "ground_bandwidth_scale": 19.2,
+      "walker": {
+        "planes": 4,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 705,
+        "inclination_deg": 98.2,
+        "raan_offset_deg": 15,
+        "phase_offset_deg": 20
+      },
+      "role_profile": "near",
+      "workload_profile": "p0019"
+    },
+    {
+      "id": "validation_near_high_fast_ground_2",
+      "seed": 181006,
+      "orbit_offset_seconds": 259200,
+      "arrival_rate_per_second": 0.013333333333333334,
+      "isl_bandwidth_scale": 1.0,
+      "ground_bandwidth_scale": 19.2,
+      "walker": {
+        "planes": 4,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 705,
+        "inclination_deg": 98.2,
+        "raan_offset_deg": 15,
+        "phase_offset_deg": 20
+      },
+      "role_profile": "near",
+      "workload_profile": "p0019"
+    },
+    {
+      "id": "validation_uniform_high_1",
+      "seed": 181007,
+      "orbit_offset_seconds": 259200,
+      "arrival_rate_per_second": 0.013333333333333334,
+      "isl_bandwidth_scale": 1.0,
+      "ground_bandwidth_scale": 1,
+      "walker": {
+        "planes": 4,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 705,
+        "inclination_deg": 98.2,
+        "raan_offset_deg": 15,
+        "phase_offset_deg": 20
+      },
+      "role_profile": "uniform",
+      "workload_profile": "p0019"
+    },
+    {
+      "id": "validation_uniform_high_2",
+      "seed": 181008,
+      "orbit_offset_seconds": 259200,
+      "arrival_rate_per_second": 0.013333333333333334,
+      "isl_bandwidth_scale": 1.0,
+      "ground_bandwidth_scale": 1,
+      "walker": {
+        "planes": 4,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 705,
+        "inclination_deg": 98.2,
+        "raan_offset_deg": 15,
+        "phase_offset_deg": 20
+      },
+      "role_profile": "uniform",
+      "workload_profile": "p0019"
+    },
+    {
+      "id": "validation_uniform_high_fast_ground_1",
+      "seed": 181009,
+      "orbit_offset_seconds": 259200,
+      "arrival_rate_per_second": 0.013333333333333334,
+      "isl_bandwidth_scale": 1.0,
+      "ground_bandwidth_scale": 19.2,
+      "walker": {
+        "planes": 4,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 705,
+        "inclination_deg": 98.2,
+        "raan_offset_deg": 15,
+        "phase_offset_deg": 20
+      },
+      "role_profile": "uniform",
+      "workload_profile": "p0019"
+    },
+    {
+      "id": "validation_uniform_high_fast_ground_2",
+      "seed": 181010,
+      "orbit_offset_seconds": 259200,
+      "arrival_rate_per_second": 0.013333333333333334,
+      "isl_bandwidth_scale": 1.0,
+      "ground_bandwidth_scale": 19.2,
+      "walker": {
+        "planes": 4,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 705,
+        "inclination_deg": 98.2,
+        "raan_offset_deg": 15,
+        "phase_offset_deg": 20
+      },
+      "role_profile": "uniform",
+      "workload_profile": "p0019"
+    },
+    {
+      "id": "validation_near_small_image_1",
+      "seed": 181011,
+      "orbit_offset_seconds": 259200,
+      "arrival_rate_per_second": 0.013333333333333334,
+      "isl_bandwidth_scale": 1.0,
+      "ground_bandwidth_scale": 1,
+      "walker": {
+        "planes": 4,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 705,
+        "inclination_deg": 98.2,
+        "raan_offset_deg": 15,
+        "phase_offset_deg": 20
+      },
+      "role_profile": "near",
+      "workload_profile": "p0007"
+    },
+    {
+      "id": "validation_near_small_image_2",
+      "seed": 181012,
+      "orbit_offset_seconds": 259200,
+      "arrival_rate_per_second": 0.013333333333333334,
+      "isl_bandwidth_scale": 1.0,
+      "ground_bandwidth_scale": 1,
+      "walker": {
+        "planes": 4,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 705,
+        "inclination_deg": 98.2,
+        "raan_offset_deg": 15,
+        "phase_offset_deg": 20
+      },
+      "role_profile": "near",
+      "workload_profile": "p0007"
+    }
+  ],
+  "test": [
+    {
+      "id": "test_near_light_1",
+      "seed": 191001,
+      "orbit_offset_seconds": 604800,
+      "arrival_rate_per_second": 0.0033333333333333335,
+      "isl_bandwidth_scale": 1.0,
+      "ground_bandwidth_scale": 1,
+      "walker": {
+        "planes": 4,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 705,
+        "inclination_deg": 98.2,
+        "raan_offset_deg": 15,
+        "phase_offset_deg": 20
+      },
+      "role_profile": "near",
+      "workload_profile": "p0019"
+    },
+    {
+      "id": "test_near_light_2",
+      "seed": 191002,
+      "orbit_offset_seconds": 604800,
+      "arrival_rate_per_second": 0.0033333333333333335,
+      "isl_bandwidth_scale": 1.0,
+      "ground_bandwidth_scale": 1,
+      "walker": {
+        "planes": 4,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 705,
+        "inclination_deg": 98.2,
+        "raan_offset_deg": 15,
+        "phase_offset_deg": 20
+      },
+      "role_profile": "near",
+      "workload_profile": "p0019"
+    },
+    {
+      "id": "test_near_high_1",
+      "seed": 191003,
+      "orbit_offset_seconds": 604800,
+      "arrival_rate_per_second": 0.013333333333333334,
+      "isl_bandwidth_scale": 1.0,
+      "ground_bandwidth_scale": 1,
+      "walker": {
+        "planes": 4,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 705,
+        "inclination_deg": 98.2,
+        "raan_offset_deg": 15,
+        "phase_offset_deg": 20
+      },
+      "role_profile": "near",
+      "workload_profile": "p0019"
+    },
+    {
+      "id": "test_near_high_2",
+      "seed": 191004,
+      "orbit_offset_seconds": 604800,
+      "arrival_rate_per_second": 0.013333333333333334,
+      "isl_bandwidth_scale": 1.0,
+      "ground_bandwidth_scale": 1,
+      "walker": {
+        "planes": 4,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 705,
+        "inclination_deg": 98.2,
+        "raan_offset_deg": 15,
+        "phase_offset_deg": 20
+      },
+      "role_profile": "near",
+      "workload_profile": "p0019"
+    },
+    {
+      "id": "test_near_high_fast_ground_1",
+      "seed": 191005,
+      "orbit_offset_seconds": 604800,
+      "arrival_rate_per_second": 0.013333333333333334,
+      "isl_bandwidth_scale": 1.0,
+      "ground_bandwidth_scale": 19.2,
+      "walker": {
+        "planes": 4,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 705,
+        "inclination_deg": 98.2,
+        "raan_offset_deg": 15,
+        "phase_offset_deg": 20
+      },
+      "role_profile": "near",
+      "workload_profile": "p0019"
+    },
+    {
+      "id": "test_near_high_fast_ground_2",
+      "seed": 191006,
+      "orbit_offset_seconds": 604800,
+      "arrival_rate_per_second": 0.013333333333333334,
+      "isl_bandwidth_scale": 1.0,
+      "ground_bandwidth_scale": 19.2,
+      "walker": {
+        "planes": 4,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 705,
+        "inclination_deg": 98.2,
+        "raan_offset_deg": 15,
+        "phase_offset_deg": 20
+      },
+      "role_profile": "near",
+      "workload_profile": "p0019"
+    },
+    {
+      "id": "test_uniform_high_1",
+      "seed": 191007,
+      "orbit_offset_seconds": 604800,
+      "arrival_rate_per_second": 0.013333333333333334,
+      "isl_bandwidth_scale": 1.0,
+      "ground_bandwidth_scale": 1,
+      "walker": {
+        "planes": 4,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 705,
+        "inclination_deg": 98.2,
+        "raan_offset_deg": 15,
+        "phase_offset_deg": 20
+      },
+      "role_profile": "uniform",
+      "workload_profile": "p0019"
+    },
+    {
+      "id": "test_uniform_high_2",
+      "seed": 191008,
+      "orbit_offset_seconds": 604800,
+      "arrival_rate_per_second": 0.013333333333333334,
+      "isl_bandwidth_scale": 1.0,
+      "ground_bandwidth_scale": 1,
+      "walker": {
+        "planes": 4,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 705,
+        "inclination_deg": 98.2,
+        "raan_offset_deg": 15,
+        "phase_offset_deg": 20
+      },
+      "role_profile": "uniform",
+      "workload_profile": "p0019"
+    },
+    {
+      "id": "test_uniform_high_fast_ground_1",
+      "seed": 191009,
+      "orbit_offset_seconds": 604800,
+      "arrival_rate_per_second": 0.013333333333333334,
+      "isl_bandwidth_scale": 1.0,
+      "ground_bandwidth_scale": 19.2,
+      "walker": {
+        "planes": 4,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 705,
+        "inclination_deg": 98.2,
+        "raan_offset_deg": 15,
+        "phase_offset_deg": 20
+      },
+      "role_profile": "uniform",
+      "workload_profile": "p0019"
+    },
+    {
+      "id": "test_uniform_high_fast_ground_2",
+      "seed": 191010,
+      "orbit_offset_seconds": 604800,
+      "arrival_rate_per_second": 0.013333333333333334,
+      "isl_bandwidth_scale": 1.0,
+      "ground_bandwidth_scale": 19.2,
+      "walker": {
+        "planes": 4,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 705,
+        "inclination_deg": 98.2,
+        "raan_offset_deg": 15,
+        "phase_offset_deg": 20
+      },
+      "role_profile": "uniform",
+      "workload_profile": "p0019"
+    },
+    {
+      "id": "test_near_small_image_1",
+      "seed": 191011,
+      "orbit_offset_seconds": 604800,
+      "arrival_rate_per_second": 0.013333333333333334,
+      "isl_bandwidth_scale": 1.0,
+      "ground_bandwidth_scale": 1,
+      "walker": {
+        "planes": 4,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 705,
+        "inclination_deg": 98.2,
+        "raan_offset_deg": 15,
+        "phase_offset_deg": 20
+      },
+      "role_profile": "near",
+      "workload_profile": "p0007"
+    },
+    {
+      "id": "test_near_small_image_2",
+      "seed": 191012,
+      "orbit_offset_seconds": 604800,
+      "arrival_rate_per_second": 0.013333333333333334,
+      "isl_bandwidth_scale": 1.0,
+      "ground_bandwidth_scale": 1,
+      "walker": {
+        "planes": 4,
+        "satellites_per_plane": 6,
+        "phasing": 1,
+        "altitude_km": 705,
+        "inclination_deg": 98.2,
+        "raan_offset_deg": 15,
+        "phase_offset_deg": 20
+      },
+      "role_profile": "near",
+      "workload_profile": "p0007"
+    }
+  ]
+}

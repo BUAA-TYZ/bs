@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "at": "2026-10-28T00:42:57.140962+00:00",
+  "records": 99,
+  "methods": 33,
+  "hashes_checked": 316,
+  "script_sha256": "66a05723b60765a86b8a056f0c34ab556c97261ebb5c9333c9495387877e09a4",
+  "report_hashes_sha256": "1fbfda9dfd4bfbdfa8153e8a04a11ebf960a71ceeaa55cf89ba305ff8340f6cb",
+  "checks": [
+    "frozen inputs/models/protocols",
+    "scored IDs and 600 followup",
+    "all day-equal metrics and full step curves",
+    "resource categories/utilization/segment conservation",
+    "granularity and tail records",
+    "both complete envelopes",
+    "162 pairs and 648 metric bootstrap intervals",
+    "local Pareto frontiers"
+  ],
+  "limitations": [
+    "Saved resource counters, not independent packet replay",
+    "Orin four-block peak memory not measured"
+  ]
+}

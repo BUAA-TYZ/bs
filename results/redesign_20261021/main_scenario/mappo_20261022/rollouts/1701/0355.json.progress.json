@@ -1,0 +1,18 @@
+{
+  "status": "RUNNING",
+  "pid": 42461,
+  "job": {
+    "kind": "train",
+    "method": "mappo",
+    "seed": 1701,
+    "episode": 355,
+    "protocol": "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-17/hour_1/protocol.json",
+    "checkpoint": "results/redesign_20261021/main_scenario/mappo_20261022/resume_20261025/transport/1701/episode_0352.pt",
+    "checkpoint_sha256": "648910baf5180b34efebda7a8e7e37e1d46aab901df81c50c8f2c34bdcc2307d",
+    "policy_signature": "f9bb0dc98d74e8b0b7669fb8d376b15ca6d7293dff98a90649a5f216d78e46a9",
+    "out": "results/redesign_20261021/main_scenario/mappo_20261022/rollouts/1701/0355.json.gz"
+  },
+  "sim_seconds": 4440.0,
+  "total_sim_seconds": 4810,
+  "wall_seconds": 987.4703420829974
+}

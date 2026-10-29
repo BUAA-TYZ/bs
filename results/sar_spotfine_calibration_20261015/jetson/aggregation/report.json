@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "started_at_utc": "2026-10-15T13:28:16.956735+00:00",
+  "scope": "CPU reference measurement on the recorded machine; not automatically a ground-server measurement",
+  "measurement_boundary": "Already-received bytes -> parse and copy previews -> global coordinates -> class-wise polygon NMS -> encode merged bytes",
+  "excluded": [
+    "Disk and network IO",
+    "Fixture packet construction",
+    "Model inference",
+    "SHA256 and correctness checks",
+    "Global image recognition accuracy"
+  ],
+  "preview_content": "All-zero dummy uint8 rasters; measures parsing/copying/encoding only, no codec or visual processing",
+  "iou_threshold": 0.1,
+  "ordering": "Descending confidence, ascending source window_id and detection_id",
+  "coordinate_check_tolerance_px": 0.0025,
+  "runtime": {
+    "python": "3.10.15 (main, Oct  3 2024, 07:21:53) [GCC 11.2.0]",
+    "system": "Linux",
+    "machine": "aarch64",
+    "logical_cpu_count": 12,
+    "shapely": "2.0.6"
+  },
+  "fixture_sha256": "8b40fbafc2d06e87586541bef9e1830fead025748abb9116fe183eb9de78d58e",
+  "script_sha256": "0d3dc4b1d60513c6e3749f7a7e256dc0b3448bcde29b3be1e3c9a0d8c4a5641c",
+  "warmup": 3,
+  "repeats": 20,
+  "samples": [
+    {
+      "repeat": 0,
+      "packet_order": "forward",
+      "service_ms": 249.325607,
+      "input_records": 212,
+      "output_records": 100,
+      "output_bytes": 26220428,
+      "output_sha256": "2e6b57e9dcdfccfe8ec61381e8ed056b333cfbdc8c2bd03768d8e58bfe52c580"
+    },
+    {
+      "repeat": 1,
+      "packet_order": "reverse",
+      "service_ms": 249.630499,
+      "input_records": 212,
+      "output_records": 100,
+      "output_bytes": 26220428,
+      "output_sha256": "2e6b57e9dcdfccfe8ec61381e8ed056b333cfbdc8c2bd03768d8e58bfe52c580"
+    },
+    {
+      "repeat": 2,
+      "packet_order": "forward",
+      "service_ms": 250.053407,
+      "input_records": 212,
+      "output_records": 100,
+      "output_bytes": 26220428,
+      "output_sha256": "2e6b57e9dcdfccfe8ec61381e8ed056b333cfbdc8c2bd03768d8e58bfe52c580"
+    },
+    {
+      "repeat": 3,
+      "packet_order": "reverse",
+      "service_ms": 250.785782,
+      "input_records": 212,
+      "output_records": 100,
+      "output_bytes": 26220428,
+      "output_sha256": "2e6b57e9dcdfccfe8ec61381e8ed056b333cfbdc8c2bd03768d8e58bfe52c580"
+    },
+    {
+      "repeat": 4,
+      "packet_order": "forward",
+      "service_ms": 251.234384,
+      "input_records": 212,
+      "output_records": 100,
+      "output_bytes": 26220428,
+      "output_sha256": "2e6b57e9dcdfccfe8ec61381e8ed056b333cfbdc8c2bd03768d8e58bfe52c580"
+    },
+    {
+      "repeat": 5,
+      "packet_order": "reverse",
+      "service_ms": 250.668888,
+      "input_records": 212,
+      "output_records": 100,
+      "output_bytes": 26220428,
+      "output_sha256": "2e6b57e9dcdfccfe8ec61381e8ed056b333cfbdc8c2bd03768d8e58bfe52c580"
+    },
+    {
+      "repeat": 6,
+      "packet_order": "forward",
+      "service_ms": 250.437722,
+      "input_records": 212,
+      "output_records": 100,
+      "output_bytes": 26220428,
+      "output_sha256": "2e6b57e9dcdfccfe8ec61381e8ed056b333cfbdc8c2bd03768d8e58bfe52c580"
+    },
+    {
+      "repeat": 7,
+      "packet_order": "reverse",
+      "service_ms": 252.783391,
+      "input_records": 212,
+      "output_records": 100,
+      "output_bytes": 26220428,
+      "output_sha256": "2e6b57e9dcdfccfe8ec61381e8ed056b333cfbdc8c2bd03768d8e58bfe52c580"
+    },
+    {
+      "repeat": 8,
+      "packet_order": "forward",
+      "service_ms": 249.801889,
+      "input_records": 212,
+      "output_records": 100,
+      "output_bytes": 26220428,
+      "output_sha256": "2e6b57e9dcdfccfe8ec61381e8ed056b333cfbdc8c2bd03768d8e58bfe52c580"
+    },
+    {
+      "repeat": 9,
+      "packet_order": "reverse",
+      "service_ms": 251.418287,
+      "input_records": 212,
+      "output_records": 100,
+      "output_bytes": 26220428,
+      "output_sha256": "2e6b57e9dcdfccfe8ec61381e8ed056b333cfbdc8c2bd03768d8e58bfe52c580"
+    },
+    {
+      "repeat": 10,
+      "packet_order": "forward",
+      "service_ms": 249.972191,
+      "input_records": 212,
+      "output_records": 100,
+      "output_bytes": 26220428,
+      "output_sha256": "2e6b57e9dcdfccfe8ec61381e8ed056b333cfbdc8c2bd03768d8e58bfe52c580"
+    },
+    {
+      "repeat": 11,
+      "packet_order": "reverse",
+      "service_ms": 251.257424,
+      "input_records": 212,
+      "output_records": 100,
+      "output_bytes": 26220428,
+      "output_sha256": "2e6b57e9dcdfccfe8ec61381e8ed056b333cfbdc8c2bd03768d8e58bfe52c580"
+    },
+    {
+      "repeat": 12,
+      "packet_order": "forward",
+      "service_ms": 251.033202,
+      "input_records": 212,
+      "output_records": 100,
+      "output_bytes": 26220428,
+      "output_sha256": "2e6b57e9dcdfccfe8ec61381e8ed056b333cfbdc8c2bd03768d8e58bfe52c580"
+    },
+    {
+      "repeat": 13,
+      "packet_order": "reverse",
+      "service_ms": 252.128965,
+      "input_records": 212,
+      "output_records": 100,
+      "output_bytes": 26220428,
+      "output_sha256": "2e6b57e9dcdfccfe8ec61381e8ed056b333cfbdc8c2bd03768d8e58bfe52c580"
+    },
+    {
+      "repeat": 14,
+      "packet_order": "forward",
+      "service_ms": 250.037758,
+      "input_records": 212,
+      "output_records": 100,
+      "output_bytes": 26220428,
+      "output_sha256": "2e6b57e9dcdfccfe8ec61381e8ed056b333cfbdc8c2bd03768d8e58bfe52c580"
+    },
+    {
+      "repeat": 15,
+      "packet_order": "reverse",
+      "service_ms": 251.838857,
+      "input_records": 212,
+      "output_records": 100,
+      "output_bytes": 26220428,
+      "output_sha256": "2e6b57e9dcdfccfe8ec61381e8ed056b333cfbdc8c2bd03768d8e58bfe52c580"
+    },
+    {
+      "repeat": 16,
+      "packet_order": "forward",
+      "service_ms": 251.629067,
+      "input_records": 212,
+      "output_records": 100,
+      "output_bytes": 26220428,
+      "output_sha256": "2e6b57e9dcdfccfe8ec61381e8ed056b333cfbdc8c2bd03768d8e58bfe52c580"
+    },
+    {
+      "repeat": 17,
+      "packet_order": "reverse",
+      "service_ms": 252.082373,
+      "input_records": 212,
+      "output_records": 100,
+      "output_bytes": 26220428,
+      "output_sha256": "2e6b57e9dcdfccfe8ec61381e8ed056b333cfbdc8c2bd03768d8e58bfe52c580"
+    },
+    {
+      "repeat": 18,
+      "packet_order": "forward",
+      "service_ms": 250.653622,
+      "input_records": 212,
+      "output_records": 100,
+      "output_bytes": 26220428,
+      "output_sha256": "2e6b57e9dcdfccfe8ec61381e8ed056b333cfbdc8c2bd03768d8e58bfe52c580"
+    },
+    {
+      "repeat": 19,
+      "packet_order": "reverse",
+      "service_ms": 251.578732,
+      "input_records": 212,
+      "output_records": 100,
+      "output_bytes": 26220428,
+      "output_sha256": "2e6b57e9dcdfccfe8ec61381e8ed056b333cfbdc8c2bd03768d8e58bfe52c580"
+    }
+  ],
+  "validation": {
+    "packet_count": 64,
+    "input_bytes": 55589040,
+    "input_records": 212,
+    "output_records": 100,
+    "output_bytes": 26220428,
+    "output_sha256": "2e6b57e9dcdfccfe8ec61381e8ed056b333cfbdc8c2bd03768d8e58bfe52c580",
+    "canonical_global_objects_match": true,
+    "arrival_order_invariant": true,
+    "validation_aggregations_before_warmup": 2
+  },
+  "summary": {
+    "mean_ms": 250.91760235,
+    "median_ms": 250.909492,
+    "p95_ms": 252.16168629999999,
+    "min_ms": 249.325607,
+    "max_ms": 252.783391,
+    "total_measured_ms": 5018.352046999999,
+    "completed_repeats": 20
+  },
+  "finished_at_utc": "2026-10-15T13:28:23.895368+00:00"
+}

@@ -1,0 +1,62 @@
+{
+  "native_class_counts_all_valid_labels": {
+    "Aircraft-Carrier": 427,
+    "Blurred": 160,
+    "Bulk-Carrier": 9103,
+    "Cargo-Ship": 10690,
+    "Container-Ship": 4332,
+    "Fishing-Vessel": 228,
+    "LNG-LPG-Tanker": 135,
+    "Oil-Tanker": 8362,
+    "Passenger-Cruise-Ship": 167,
+    "Passenger-Ship": 389,
+    "Tug": 4524,
+    "Vehicles-Carrier": 2275,
+    "Warship": 24339,
+    "others": 913,
+    "unknow": 27837
+  },
+  "excluded_image_counts": {
+    "previously_inspected_group_images": 204,
+    "invalid_annotation_images": 350,
+    "out_of_bounds_annotation_images": 18265
+  },
+  "excluded_object_counts_by_image_exclusion_reason": {
+    "previously_inspected_group_images": {
+      "Aircraft-Carrier": 14,
+      "Bulk-Carrier": 4,
+      "Cargo-Ship": 99,
+      "Container-Ship": 43,
+      "Oil-Tanker": 23,
+      "Tug": 60,
+      "Vehicles-Carrier": 20,
+      "Warship": 357,
+      "unknow": 117
+    },
+    "out_of_bounds_annotation_images": {
+      "Aircraft-Carrier": 352,
+      "Blurred": 77,
+      "Bulk-Carrier": 6641,
+      "Cargo-Ship": 5748,
+      "Container-Ship": 3125,
+      "Fishing-Vessel": 73,
+      "LNG-LPG-Tanker": 83,
+      "Oil-Tanker": 5347,
+      "Passenger-Cruise-Ship": 132,
+      "Passenger-Ship": 229,
+      "Tug": 2360,
+      "Vehicles-Carrier": 1725,
+      "Warship": 16983,
+      "others": 412,
+      "unknow": 13407
+    }
+  },
+  "exclusion_order": [
+    "invalid_annotation_images",
+    "difficulty_nonzero_images",
+    "previously_inspected_group_images",
+    "out_of_bounds_annotation_images"
+  ],
+  "valid_candidate_images": 16771,
+  "note": "Reasons are mutually exclusive per image in listed order. Classes in invalid rows are not inferred."
+}

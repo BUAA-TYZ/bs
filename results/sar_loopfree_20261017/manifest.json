@@ -1,0 +1,31 @@
+{
+  "scope": "shared routing protocol; physics, workload and scoring unchanged",
+  "changed_fields": {
+    "relay_max_hops": {
+      "before": 8,
+      "after": 45
+    }
+  },
+  "hop_budget_rule": "max(1, num_sats - 1), no revisits",
+  "source": "results/sar_temporal_study_20261017/main_config.json",
+  "source_sha256": "77fd35ad19ca0e8618bcafeec11c4abd90d1448c4cc4817155128d81eaca7866",
+  "inputs": {
+    "network_contract": {
+      "path": "results/sar_parameter_contract_20261016/main_config.json",
+      "sha256": "27c45fe8b1c0d65410cf551c1a6f9f4a33ce76d96d8ce54162683db0b7bf4ed1"
+    },
+    "generator": {
+      "path": "analysis/prepare_sar_dispatch.py",
+      "sha256": "a7e978f2ea868e86a509e932ae4a96480bd5602a8049f1e3d5e5a4b0f66e2769"
+    },
+    "fixture_generator": {
+      "path": "analysis/build_sar_workload_fixture.py",
+      "sha256": "44d7f2679f866d130ffc7d90c4a904ca35c61f0bdd1593b392130bfc9f2255f2"
+    }
+  },
+  "source_manifest_sha256": "462db9dbcf9e6b7f58cdaffa3bca88faba39a1f495eae67a45f270c21d7fdb88",
+  "config_sha256": {
+    "main_config.json": "83ef7d48495c8f6aa499f963eab45f99062c54a63c243ccb7e8447aea702dcb8"
+  },
+  "generator_sha256": "7d7691129248191de58bd14b8ba48c41980ab96b9a78d76ac5c3e5bcacfb128f"
+}

@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "started_at_utc": "2026-10-15T13:05:45.537297+00:00",
+  "status": "passed",
+  "purpose": "Composition-based real-device proxy calibration; not SAR accuracy or flight hardware measurement",
+  "python": "3.10.15",
+  "command": [
+    "/home/tianyz/bs_sar_calibration_20261015_IBZujO/probe_runner.py",
+    "--weights",
+    "/home/tianyz/bs_jetson_20261015_7TtC5t/yolo11n-obb.pt",
+    "--output",
+    "/home/tianyz/bs_sar_calibration_20261015_IBZujO/probe",
+    "--warmup",
+    "2",
+    "--repeats",
+    "3"
+  ],
+  "protocol": {
+    "window_px": 4096,
+    "pixel_spacing_m": 0.25,
+    "input": "One seeded uniform-random uint16 amplitude raster; synthetic, not an observed SAR product",
+    "input_seed": 20261015,
+    "work_unit": "1 native-scale window = 1 U",
+    "precision": "fp32",
+    "batch": 1,
+    "threads": 1,
+    "warmup": 2,
+    "repeats": 3,
+    "duration_sec": null,
+    "normalization": "uint16 >> 8 to uint8; replicated 3 channels; float32 / 255 on CUDA",
+    "resize_for_inference": false,
+    "model": "official YOLO11n-OBB, 15-class optical proxy",
+    "controlled_targets": 2,
+    "controlled_candidates": 100,
+    "ship_length_m": 200,
+    "ship_width_m": 32,
+    "angle_deg": 30,
+    "context_m": 16,
+    "window_nms_iou": 0.7,
+    "result_format": "SRP1: 28-byte <4s6I header; each target has 40-byte <9fI OBB, 20-byte <5I local source ROI xyxy and byte length, then 512x512 uint8 raw preview; header stores window ID and global origin; OBB coordinates are local",
+    "preview": "Full axis-aligned OBB envelope plus context, clipped to source, aspect-preserving bilinear resize and centered zero padding to 512; source coordinates enable reconstruction",
+    "timing_boundary": "host uint16 raster -> preprocessing -> CUDA transfer/normalization -> fused FP32 forward including head decode -> full decoded prediction to CPU -> controlled polygon NMS -> ROI preview and SRP1 encoding",
+    "excluded": [
+      "raster generation",
+      "model load",
+      "warmup",
+      "result hashing",
+      "log I/O",
+      "original file decode",
+      "inter-window/global aggregation",
+      "network transmission"
+    ],
+    "limitations": [
+      "Synthetic pixels and controlled candidates are engineering assumptions",
+      "Optical predictions are discarded and do not estimate SAR accuracy or target density",
+      "Preview downsampling preserves the complete crop but not native image detail",
+      "One resident model and serial window execution; no flight resource contention model",
+      "No package installs, downloads, power-mode changes or clock changes"
+    ],
+    "context_px": 64
+  },
+  "weights": {
+    "path": "/home/tianyz/bs_jetson_20261015_7TtC5t/yolo11n-obb.pt",
+    "sha256": "b62898ebf38940ca4df323863e45ee9d84a1a46d5d11ebdde529fb33aa9f3a32",
+    "bytes": 5795654
+  },
+  "script_sha256": "48fd1c25eaafbb52849f38f93bbe353a193dccd8cb13ef98153af4bb10051ec9",
+  "versions": {
+    "numpy": "1.23.5",
+    "Pillow": "11.0.0",
+    "torch": "2.3.0",
+    "torchvision": "0.18.0a0+6043bc2",
+    "ultralytics": "8.3.13",
+    "shapely": "2.0.6",
+    "torch_cuda_build": "12.2",
+    "cudnn": 8904
+  },
+  "device": {
+    "name": "Orin",
+    "total_memory_bytes": 32188686336,
+    "compute_capability": [
+      8,
+      7
+    ],
+    "torch_cpu_threads": 1
+  },
+  "raster": {
+    "bytes": 33554432,
+    "sha256": "4307e8992cefc269ceb97a1b746074f225fce928a1d28caaa3308d9a0a1c03c1",
+    "dtype": "uint16",
+    "shape": [
+      4096,
+      4096
+    ]
+  },
+  "model_load_ms_excluded": 504.3116877786815,
+  "model": {
+    "parameters": 2656648,
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "head_classes": 15,
+    "fused": true
+  },
+  "warmup_completed": 2,
+  "measured_wall_s": 1.7104485458694398,
+  "workload_cycles": {
+    "completed": 3,
+    "partial_cycle_windows": 0
+  },
+  "memory": {
+    "peak_cuda_allocated_bytes": 4764569600,
+    "peak_cuda_reserved_bytes": 5691670528,
+    "process_max_rss_bytes": 997322752,
+    "rss_convention": "Linux ru_maxrss KiB; process lifetime maximum"
+  },
+  "summary": {
+    "count": 3,
+    "total_service_s": 1.7060209140181541,
+    "mean_ms": 568.6736380060514,
+    "p50_ms": 563.1214501336217,
+    "p95_ms": 584.0437562670559,
+    "min_ms": 556.5310069359839,
+    "max_ms": 586.3684569485486,
+    "service_rate_windows_per_s": 1.7584778564842825,
+    "phase_mean_ms": {
+      "preprocess_ms": 20.80289088189602,
+      "host_to_device_ms": 11.443368004014095,
+      "forward_ms": 455.55988047271967,
+      "device_to_host_ms": 6.693575996905565,
+      "controlled_nms_ms": 54.73091142872969,
+      "preview_encode_ms": 19.44301122178634
+    },
+    "output_bytes_min": 524436,
+    "output_bytes_max": 524436
+  },
+  "minute_bins": [
+    {
+      "minute": 0,
+      "count": 3,
+      "total_service_s": 1.7060209140181541,
+      "mean_ms": 568.6736380060514,
+      "p50_ms": 563.1214501336217,
+      "p95_ms": 584.0437562670559,
+      "min_ms": 556.5310069359839,
+      "max_ms": 586.3684569485486,
+      "service_rate_windows_per_s": 1.7584778564842825,
+      "phase_mean_ms": {
+        "preprocess_ms": 20.80289088189602,
+        "host_to_device_ms": 11.443368004014095,
+        "forward_ms": 455.55988047271967,
+        "device_to_host_ms": 6.693575996905565,
+        "controlled_nms_ms": 54.73091142872969,
+        "preview_encode_ms": 19.44301122178634
+      },
+      "output_bytes_min": 524436,
+      "output_bytes_max": 524436
+    }
+  ],
+  "finished_at_utc": "2026-10-15T13:05:54.254689+00:00"
+}

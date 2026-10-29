@@ -1,0 +1,824 @@
+{
+  "scope": "development re-scoring; no hard expiry, no new learned policy, not an independent test",
+  "primary_seconds": 300,
+  "sensitivity_seconds": [
+    60,
+    120,
+    180,
+    300,
+    600
+  ],
+  "aggregation": "case equal for rates and capped latency; pooled counts also disclosed",
+  "deadline_disposition": "late tasks continue and retain physical resource competition",
+  "source_files_sha256": {
+    "results/highres_fixed_nominal_ground_20261015/day01_ground_compute.json": "2cb194f45496753aa49534f82c65ab4dda6d5071625c35a63e8dac714a93a76c",
+    "results/highres_fixed_nominal_ground_20261015/day01_ground_tiles.json": "b99243ca372c114750303dcbf5d65456283deb9df9d60289b45a03b89d325e4e",
+    "results/highres_fixed_nominal_ground_20261015/day01_ground_relay.json": "5407d10f1191f2a073323f8152610780b4035929b42b56553846c21e7de12ebe",
+    "results/highres_fixed_nominal_star_20261015/day01_greedy.json": "3c30c2995067448e27ae8a7884c499c2624588a59cbb77c6b2746ab0ba90dae0",
+    "results/highres_fixed_nominal_star_20261015/day01_window_aware.json": "b534fc25eb0cbafbef8fb311e8348f3250c62e09ed8ea35ff3c4c7ada5322e94",
+    "results/highres_fixed_nominal_star_20261015/day01_local.json": "79a49897c38ff1db32f569503648abe259cdacfa5af858254cb715e15ccc1cdb",
+    "results/highres_fixed_nominal_literature_20261015/day01_heft_adapted.json": "e4c7c0c62f629df171d7fe1e033e9870a7b3e54d5ab8da7e52f85dc136b8a4ed",
+    "results/highres_fixed_nominal_literature_20261015/day01_cgs_compute_adapted.json": "c7e0de36baeb4d49d4a4ff027484555e88f997870a9bb202c053616f4bc3621d",
+    "results/highres_fixed_three_days_20261015/day01_ground_relay.json": "680e7272754ee6d1b8fd3169ab3420cc03ac443b96862fcace9f947a403e14c3",
+    "results/highres_fixed_three_days_20261015/day01_greedy.json": "c874a198f73594a4e380d1407202151ead1eb51e6becb2bd40b606c4f6c8f92b",
+    "results/highres_fixed_three_days_20261015/day01_heft_adapted.json": "5fdbe4fe39ff8b34880f7683e245c697d3f836266b205cee04502ae376521225",
+    "results/highres_fixed_three_days_20261015/day02_ground_relay.json": "3ca495a3abd56f9d0078d223f0ff4a5ad754ba873859cce287b23d433959144d",
+    "results/highres_fixed_three_days_20261015/day03_ground_relay.json": "9313a0e7961bd3ea6533af6b12a60d71d42cbe29f87bf32a62b67c26be69814d",
+    "results/highres_fixed_three_days_20261015/day02_greedy.json": "3ff62bbe9f05f4363d6f07fc77d2b1683ba49b0f27c52f6b5f48e6317609f2a6",
+    "results/highres_fixed_three_days_20261015/day02_heft_adapted.json": "49c5354d957221a45b7030fe491db04dbb14a90cfe28a8d665b736cbf2b31451",
+    "results/highres_fixed_three_days_20261015/day03_greedy.json": "faebf670e6033905a81db1836fc2aa9a9556162518506ed32a6143b1a42f342c",
+    "results/highres_fixed_three_days_20261015/day03_heft_adapted.json": "c9810e065e46197c9e74a72242360fda8ff5f59220f0ab3a02f2761d155721a9",
+    "results/highres_short_cgs_20261015/day02_cgs_compute_adapted.json": "9231748f6f4d01cb41280ec29a05cfeb3088435bd2aa56a1a78c9f57a7670bab",
+    "results/highres_short_cgs_20261015/day01_cgs_compute_adapted.json": "9d06e46e87cf42db2847646f4b8edf33242ca455466b1856f1f79b0f5de76104",
+    "results/highres_short_cgs_20261015/day03_cgs_compute_adapted.json": "b75ca713b597b4fb96d39e7a221ed6be7f6abd47e458ad7fcf9cdc66a1678f84"
+  },
+  "reporter_sha256": "719b7ec2955f2e8e630bc87b725c22965f44bbc1ced54679ae6f32200a7746ab",
+  "first_day": [
+    {
+      "method": "ground_compute",
+      "cases": 1,
+      "on_time_tasks": 0,
+      "total_tasks": 21,
+      "on_time_rate": 0.0,
+      "capped_mean_latency_300s": 300.0,
+      "delivery_rates": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "ground_tiles",
+      "cases": 1,
+      "on_time_tasks": 0,
+      "total_tasks": 21,
+      "on_time_rate": 0.0,
+      "capped_mean_latency_300s": 300.0,
+      "delivery_rates": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "ground_relay",
+      "cases": 1,
+      "on_time_tasks": 4,
+      "total_tasks": 21,
+      "on_time_rate": 0.19047619047619047,
+      "capped_mean_latency_300s": 283.7142857142857,
+      "delivery_rates": [
+        0.0,
+        0.047619047619047616,
+        0.047619047619047616,
+        0.19047619047619047,
+        0.6666666666666666
+      ]
+    },
+    {
+      "method": "local",
+      "cases": 1,
+      "on_time_tasks": 0,
+      "total_tasks": 21,
+      "on_time_rate": 0.0,
+      "capped_mean_latency_300s": 300.0,
+      "delivery_rates": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.19047619047619047
+      ]
+    },
+    {
+      "method": "greedy",
+      "cases": 1,
+      "on_time_tasks": 16,
+      "total_tasks": 21,
+      "on_time_rate": 0.7619047619047619,
+      "capped_mean_latency_300s": 242.1904761904762,
+      "delivery_rates": [
+        0.0,
+        0.0,
+        0.14285714285714285,
+        0.7619047619047619,
+        1.0
+      ]
+    },
+    {
+      "method": "window_aware",
+      "cases": 1,
+      "on_time_tasks": 9,
+      "total_tasks": 21,
+      "on_time_rate": 0.42857142857142855,
+      "capped_mean_latency_300s": 265.3809523809524,
+      "delivery_rates": [
+        0.0,
+        0.0,
+        0.09523809523809523,
+        0.42857142857142855,
+        0.6190476190476191
+      ]
+    },
+    {
+      "method": "heft_adapted",
+      "cases": 1,
+      "on_time_tasks": 19,
+      "total_tasks": 21,
+      "on_time_rate": 0.9047619047619048,
+      "capped_mean_latency_300s": 217.47619047619048,
+      "delivery_rates": [
+        0.0,
+        0.09523809523809523,
+        0.23809523809523808,
+        0.9047619047619048,
+        1.0
+      ]
+    },
+    {
+      "method": "cgs_compute_adapted",
+      "cases": 1,
+      "on_time_tasks": 19,
+      "total_tasks": 21,
+      "on_time_rate": 0.9047619047619048,
+      "capped_mean_latency_300s": 217.14285714285714,
+      "delivery_rates": [
+        0.0,
+        0.09523809523809523,
+        0.23809523809523808,
+        0.9047619047619048,
+        1.0
+      ]
+    }
+  ],
+  "three_days": [
+    {
+      "method": "ground_relay",
+      "cases": 3,
+      "on_time_tasks": 12,
+      "total_tasks": 53,
+      "on_time_rate": 0.22558356676003735,
+      "capped_mean_latency_300s": 279.97535014005604,
+      "delivery_rates": [
+        0.0,
+        0.015873015873015872,
+        0.055088702147525676,
+        0.22558356676003735,
+        0.6209150326797386
+      ]
+    },
+    {
+      "method": "greedy",
+      "cases": 3,
+      "on_time_tasks": 30,
+      "total_tasks": 53,
+      "on_time_rate": 0.5493930905695612,
+      "capped_mean_latency_300s": 243.93800186741365,
+      "delivery_rates": [
+        0.0,
+        0.044444444444444446,
+        0.19794584500466852,
+        0.5493930905695612,
+        0.9215686274509803
+      ]
+    },
+    {
+      "method": "heft_adapted",
+      "cases": 3,
+      "on_time_tasks": 36,
+      "total_tasks": 53,
+      "on_time_rate": 0.6610644257703081,
+      "capped_mean_latency_300s": 224.5874883286648,
+      "delivery_rates": [
+        0.0,
+        0.13762838468720823,
+        0.2911297852474323,
+        0.6610644257703081,
+        0.9215686274509803
+      ]
+    },
+    {
+      "method": "cgs_compute_adapted",
+      "cases": 3,
+      "on_time_tasks": 36,
+      "total_tasks": 53,
+      "on_time_rate": 0.6610644257703081,
+      "capped_mean_latency_300s": 224.39010270774975,
+      "delivery_rates": [
+        0.0,
+        0.13762838468720823,
+        0.2911297852474323,
+        0.6610644257703081,
+        0.9215686274509803
+      ]
+    }
+  ],
+  "daily": [
+    {
+      "case": "day01",
+      "method": "ground_relay",
+      "total_tasks": 21,
+      "on_time_tasks": 4,
+      "on_time_rate": 0.19047619047619047,
+      "capped_mean_latency_300s": 283.7142857142857,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 21,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 1,
+          "not_delivered_within_horizon": 20,
+          "delivery_rate": 0.047619047619047616
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 1,
+          "not_delivered_within_horizon": 20,
+          "delivery_rate": 0.047619047619047616
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 4,
+          "not_delivered_within_horizon": 17,
+          "delivery_rate": 0.19047619047619047
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 14,
+          "not_delivered_within_horizon": 7,
+          "delivery_rate": 0.6666666666666666
+        }
+      ]
+    },
+    {
+      "case": "day01",
+      "method": "greedy",
+      "total_tasks": 21,
+      "on_time_tasks": 16,
+      "on_time_rate": 0.7619047619047619,
+      "capped_mean_latency_300s": 242.1904761904762,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 21,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 21,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 3,
+          "not_delivered_within_horizon": 18,
+          "delivery_rate": 0.14285714285714285
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 16,
+          "not_delivered_within_horizon": 5,
+          "delivery_rate": 0.7619047619047619
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 21,
+          "not_delivered_within_horizon": 0,
+          "delivery_rate": 1.0
+        }
+      ]
+    },
+    {
+      "case": "day01",
+      "method": "heft_adapted",
+      "total_tasks": 21,
+      "on_time_tasks": 19,
+      "on_time_rate": 0.9047619047619048,
+      "capped_mean_latency_300s": 217.47619047619048,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 21,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 19,
+          "delivery_rate": 0.09523809523809523
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 5,
+          "not_delivered_within_horizon": 16,
+          "delivery_rate": 0.23809523809523808
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 19,
+          "not_delivered_within_horizon": 2,
+          "delivery_rate": 0.9047619047619048
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 21,
+          "not_delivered_within_horizon": 0,
+          "delivery_rate": 1.0
+        }
+      ]
+    },
+    {
+      "case": "day02",
+      "method": "ground_relay",
+      "total_tasks": 15,
+      "on_time_tasks": 2,
+      "on_time_rate": 0.13333333333333333,
+      "capped_mean_latency_300s": 293.8,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 15,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 15,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 15,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 13,
+          "delivery_rate": 0.13333333333333333
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 10,
+          "not_delivered_within_horizon": 5,
+          "delivery_rate": 0.6666666666666666
+        }
+      ]
+    },
+    {
+      "case": "day03",
+      "method": "ground_relay",
+      "total_tasks": 17,
+      "on_time_tasks": 6,
+      "on_time_rate": 0.35294117647058826,
+      "capped_mean_latency_300s": 262.4117647058824,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 17,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 17,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 15,
+          "delivery_rate": 0.11764705882352941
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 6,
+          "not_delivered_within_horizon": 11,
+          "delivery_rate": 0.35294117647058826
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 9,
+          "not_delivered_within_horizon": 8,
+          "delivery_rate": 0.5294117647058824
+        }
+      ]
+    },
+    {
+      "case": "day02",
+      "method": "greedy",
+      "total_tasks": 15,
+      "on_time_tasks": 8,
+      "on_time_rate": 0.5333333333333333,
+      "capped_mean_latency_300s": 223.8,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 15,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 13,
+          "delivery_rate": 0.13333333333333333
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 5,
+          "not_delivered_within_horizon": 10,
+          "delivery_rate": 0.3333333333333333
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 8,
+          "not_delivered_within_horizon": 7,
+          "delivery_rate": 0.5333333333333333
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 15,
+          "not_delivered_within_horizon": 0,
+          "delivery_rate": 1.0
+        }
+      ]
+    },
+    {
+      "case": "day02",
+      "method": "heft_adapted",
+      "total_tasks": 15,
+      "on_time_tasks": 10,
+      "on_time_rate": 0.6666666666666666,
+      "capped_mean_latency_300s": 205.93333333333334,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 15,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 3,
+          "not_delivered_within_horizon": 12,
+          "delivery_rate": 0.2
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 6,
+          "not_delivered_within_horizon": 9,
+          "delivery_rate": 0.4
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 10,
+          "not_delivered_within_horizon": 5,
+          "delivery_rate": 0.6666666666666666
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 15,
+          "not_delivered_within_horizon": 0,
+          "delivery_rate": 1.0
+        }
+      ]
+    },
+    {
+      "case": "day03",
+      "method": "greedy",
+      "total_tasks": 17,
+      "on_time_tasks": 6,
+      "on_time_rate": 0.35294117647058826,
+      "capped_mean_latency_300s": 265.8235294117647,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 17,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 17,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 15,
+          "delivery_rate": 0.11764705882352941
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 6,
+          "not_delivered_within_horizon": 11,
+          "delivery_rate": 0.35294117647058826
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 13,
+          "not_delivered_within_horizon": 4,
+          "delivery_rate": 0.7647058823529411
+        }
+      ]
+    },
+    {
+      "case": "day03",
+      "method": "heft_adapted",
+      "total_tasks": 17,
+      "on_time_tasks": 7,
+      "on_time_rate": 0.4117647058823529,
+      "capped_mean_latency_300s": 250.35294117647058,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 17,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 15,
+          "delivery_rate": 0.11764705882352941
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 4,
+          "not_delivered_within_horizon": 13,
+          "delivery_rate": 0.23529411764705882
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 7,
+          "not_delivered_within_horizon": 10,
+          "delivery_rate": 0.4117647058823529
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 13,
+          "not_delivered_within_horizon": 4,
+          "delivery_rate": 0.7647058823529411
+        }
+      ]
+    },
+    {
+      "case": "day02",
+      "method": "cgs_compute_adapted",
+      "total_tasks": 15,
+      "on_time_tasks": 10,
+      "on_time_rate": 0.6666666666666666,
+      "capped_mean_latency_300s": 205.73333333333332,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 15,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 3,
+          "not_delivered_within_horizon": 12,
+          "delivery_rate": 0.2
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 6,
+          "not_delivered_within_horizon": 9,
+          "delivery_rate": 0.4
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 10,
+          "not_delivered_within_horizon": 5,
+          "delivery_rate": 0.6666666666666666
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 15,
+          "delivered_within_horizon": 15,
+          "not_delivered_within_horizon": 0,
+          "delivery_rate": 1.0
+        }
+      ]
+    },
+    {
+      "case": "day01",
+      "method": "cgs_compute_adapted",
+      "total_tasks": 21,
+      "on_time_tasks": 19,
+      "on_time_rate": 0.9047619047619048,
+      "capped_mean_latency_300s": 217.14285714285714,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 21,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 19,
+          "delivery_rate": 0.09523809523809523
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 5,
+          "not_delivered_within_horizon": 16,
+          "delivery_rate": 0.23809523809523808
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 19,
+          "not_delivered_within_horizon": 2,
+          "delivery_rate": 0.9047619047619048
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 21,
+          "delivered_within_horizon": 21,
+          "not_delivered_within_horizon": 0,
+          "delivery_rate": 1.0
+        }
+      ]
+    },
+    {
+      "case": "day03",
+      "method": "cgs_compute_adapted",
+      "total_tasks": 17,
+      "on_time_tasks": 7,
+      "on_time_rate": 0.4117647058823529,
+      "capped_mean_latency_300s": 250.2941176470588,
+      "curve": [
+        {
+          "horizon_seconds": 60.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 0,
+          "not_delivered_within_horizon": 17,
+          "delivery_rate": 0.0
+        },
+        {
+          "horizon_seconds": 120.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 2,
+          "not_delivered_within_horizon": 15,
+          "delivery_rate": 0.11764705882352941
+        },
+        {
+          "horizon_seconds": 180.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 4,
+          "not_delivered_within_horizon": 13,
+          "delivery_rate": 0.23529411764705882
+        },
+        {
+          "horizon_seconds": 300.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 7,
+          "not_delivered_within_horizon": 10,
+          "delivery_rate": 0.4117647058823529
+        },
+        {
+          "horizon_seconds": 600.0,
+          "total_tasks": 17,
+          "delivered_within_horizon": 13,
+          "not_delivered_within_horizon": 4,
+          "delivery_rate": 0.7647058823529411
+        }
+      ]
+    }
+  ],
+  "paired_on_time_against_heft": [
+    {
+      "case": "day01",
+      "reference": "heft_adapted",
+      "candidate": "greedy",
+      "total_tasks": 21,
+      "both_on_time": 16,
+      "reference_only_on_time": 3,
+      "candidate_only_on_time": 0,
+      "neither_on_time": 2
+    },
+    {
+      "case": "day01",
+      "reference": "heft_adapted",
+      "candidate": "cgs_compute_adapted",
+      "total_tasks": 21,
+      "both_on_time": 19,
+      "reference_only_on_time": 0,
+      "candidate_only_on_time": 0,
+      "neither_on_time": 2
+    },
+    {
+      "case": "day02",
+      "reference": "heft_adapted",
+      "candidate": "greedy",
+      "total_tasks": 15,
+      "both_on_time": 8,
+      "reference_only_on_time": 2,
+      "candidate_only_on_time": 0,
+      "neither_on_time": 5
+    },
+    {
+      "case": "day02",
+      "reference": "heft_adapted",
+      "candidate": "cgs_compute_adapted",
+      "total_tasks": 15,
+      "both_on_time": 10,
+      "reference_only_on_time": 0,
+      "candidate_only_on_time": 0,
+      "neither_on_time": 5
+    },
+    {
+      "case": "day03",
+      "reference": "heft_adapted",
+      "candidate": "greedy",
+      "total_tasks": 17,
+      "both_on_time": 6,
+      "reference_only_on_time": 1,
+      "candidate_only_on_time": 0,
+      "neither_on_time": 10
+    },
+    {
+      "case": "day03",
+      "reference": "heft_adapted",
+      "candidate": "cgs_compute_adapted",
+      "total_tasks": 17,
+      "both_on_time": 7,
+      "reference_only_on_time": 0,
+      "candidate_only_on_time": 0,
+      "neither_on_time": 10
+    }
+  ]
+}

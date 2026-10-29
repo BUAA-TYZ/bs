@@ -1,0 +1,595 @@
+{
+  "timestamp_utc": "2026-10-14T09:53:55.258112+00:00",
+  "protocol": {
+    "window_px": 1024,
+    "stride_px": 824,
+    "nominal_overlap_px": 200,
+    "edge_rule": "shift_last_window_to_edge_no_padding",
+    "batch": 1,
+    "half": false,
+    "confidence": 0.25,
+    "window_nms_iou": 0.7,
+    "max_detections_per_window": 300,
+    "global_polygon_nms_iou": 0.1,
+    "quality_match_iou": 0.5,
+    "wire_format": "OBB1: 28-byte LE header, 40-byte float32 polygon/score + uint32 class records",
+    "scope": "local CPU/MPS proxy; no satellite hardware claim; no threshold tuning",
+    "timing_boundary": "in-memory decoded RGB input -> crop/BGR -> predict incl preprocessing/OBB NMS -> host polygon coordinates -> coordinate restoration -> serialization"
+  },
+  "command": [
+    "analysis/benchmark_image_workload.py",
+    "--include-mirror",
+    "--devices",
+    "cpu",
+    "mps",
+    "--warmup",
+    "3",
+    "--repeats",
+    "3",
+    "--threads",
+    "4"
+  ],
+  "assets": [
+    {
+      "name": "yolo11n-obb.pt",
+      "url": "https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n-obb.pt",
+      "sha256": "b62898ebf38940ca4df323863e45ee9d84a1a46d5d11ebdde529fb33aa9f3a32",
+      "bytes": 5795654
+    },
+    {
+      "name": "dota8.zip",
+      "url": "https://github.com/ultralytics/assets/releases/download/v0.0.0/dota8.zip",
+      "sha256": "6f901955660fc5c613a0389f44240db359f07741effb48afc99d17155ee3e7ec",
+      "bytes": 1295657
+    },
+    {
+      "name": "boats.jpg",
+      "url": "https://github.com/ultralytics/assets/releases/download/v0.0.0/boats.jpg",
+      "sha256": "8c5ada657cf8110a9f8aaac954c1dd96cde0187315b581276c32b0d1863e756f",
+      "bytes": 194872
+    }
+  ],
+  "mirror": {
+    "repository": "isaaccorley/dota",
+    "revision": "672e63236622f7da6ee37fca44c50ac368b77cab",
+    "provenance": "third-party mirror of DOTA val; not an official DOTA host",
+    "image_archive_url": "https://huggingface.co/datasets/isaaccorley/dota/resolve/672e63236622f7da6ee37fca44c50ac368b77cab/dotav1.0_images_val.tar.gz",
+    "image_archive_etag": "\"73b7a5a2171f95ce69cd795f907c4f6e4b90ea3cdd5afcc15c8c73c150c44e16\"",
+    "compressed_image_bytes_read": 48936960,
+    "network_limit_bytes": 100000000,
+    "label_archive_url": "https://huggingface.co/datasets/isaaccorley/dota/resolve/672e63236622f7da6ee37fca44c50ac368b77cab/dotav1.0_annotations_val.tar.gz",
+    "label_archive_sha256": "879e8f013a5231cb52c3dc95b5ade7d4aeb3a0d3e600cb658a5a4d13ea7116c2",
+    "images": [
+      {
+        "image": "P0007.png",
+        "image_sha256": "0821677ab2be8f0fa44133cec37cb99f123e4f8f7af264258e1b230dcdbb21dd",
+        "width": 1490,
+        "height": 2137,
+        "archive_member": "val/images/P0007.png",
+        "label": "P0007.txt",
+        "label_sha256": "6eb1079d753faaa3b0878ae25d05dcca969d76e99cc5bcb6d024002ccc034d11"
+      },
+      {
+        "image": "P0019.png",
+        "image_sha256": "09b20f250e2ef23e9eeea1ff04e1f743b1ac0a496c6a62a996ba4820c3535c8c",
+        "width": 6573,
+        "height": 3727,
+        "archive_member": "val/images/P0019.png",
+        "label": "P0019.txt",
+        "label_sha256": "1253418d3423ab14c02809ee8b6811d06e51a5fec85d32152f350439ca1cac20"
+      }
+    ]
+  },
+  "samples": [
+    {
+      "id": "boats",
+      "width": 1920,
+      "height": 1080,
+      "file_bytes": 194872,
+      "raw_rgb_bytes": 6220800,
+      "image_sha256": "8c5ada657cf8110a9f8aaac954c1dd96cde0187315b581276c32b0d1863e756f",
+      "windows": [
+        [
+          0,
+          0,
+          1024,
+          1024
+        ],
+        [
+          824,
+          0,
+          1848,
+          1024
+        ],
+        [
+          896,
+          0,
+          1920,
+          1024
+        ],
+        [
+          0,
+          56,
+          1024,
+          1080
+        ],
+        [
+          824,
+          56,
+          1848,
+          1080
+        ],
+        [
+          896,
+          56,
+          1920,
+          1080
+        ]
+      ],
+      "window_input_bytes": 18874368,
+      "decode_ms": 9.216582868248224,
+      "source": "Ultralytics official aerial OBB example; no labels supplied",
+      "labels_sha256": null,
+      "label_count": 0,
+      "difficult_label_count": 0
+    },
+    {
+      "id": "P1470__1024__3296___1648",
+      "width": 1024,
+      "height": 1024,
+      "file_bytes": 111845,
+      "raw_rgb_bytes": 3145728,
+      "image_sha256": "70f74153fdf528b45df34609b4fe0d56f5e1a28832a8bf2552bad4f90dea1462",
+      "windows": [
+        [
+          0,
+          0,
+          1024,
+          1024
+        ]
+      ],
+      "window_input_bytes": 3145728,
+      "decode_ms": 2.7660001069307327,
+      "source": "DOTA8 val smoke-test tile; not independent test",
+      "labels_sha256": "2cdc0f7b972ec2a692d881f55bb5366cb54ca63af333efc0408afeed574fcae9",
+      "label_count": 4,
+      "difficult_label_count": 0
+    },
+    {
+      "id": "P1571__1024__2976___0",
+      "width": 1024,
+      "height": 1024,
+      "file_bytes": 102768,
+      "raw_rgb_bytes": 3145728,
+      "image_sha256": "106989c8abe610e280a5da60d57b631979eaa8e2ed799392771a0abb7daea094",
+      "windows": [
+        [
+          0,
+          0,
+          1024,
+          1024
+        ]
+      ],
+      "window_input_bytes": 3145728,
+      "decode_ms": 2.750458661466837,
+      "source": "DOTA8 val smoke-test tile; not independent test",
+      "labels_sha256": "3d1b6251ca4a86044eb51e5f9978abfab62930cb62869755a6c8bc49ac59825c",
+      "label_count": 1,
+      "difficult_label_count": 0
+    },
+    {
+      "id": "P1580__1024__824___824",
+      "width": 1024,
+      "height": 1024,
+      "file_bytes": 78973,
+      "raw_rgb_bytes": 3145728,
+      "image_sha256": "a8d0fc5d08edadc88f3f7839cf38514df3791a9141ea54e307c042cf8fd9bcbd",
+      "windows": [
+        [
+          0,
+          0,
+          1024,
+          1024
+        ]
+      ],
+      "window_input_bytes": 3145728,
+      "decode_ms": 4.107167012989521,
+      "source": "DOTA8 val smoke-test tile; not independent test",
+      "labels_sha256": "d5e9f0b7e455ed3d50f91275398284867fa50d1174553df36fce576bffd1cfe5",
+      "label_count": 2,
+      "difficult_label_count": 0
+    },
+    {
+      "id": "P1724__1024__0___824",
+      "width": 1024,
+      "height": 1024,
+      "file_bytes": 104919,
+      "raw_rgb_bytes": 3145728,
+      "image_sha256": "a745750f3d635a89ae6ecca443eec832516a92c9091a24dace54d9288e679bab",
+      "windows": [
+        [
+          0,
+          0,
+          1024,
+          1024
+        ]
+      ],
+      "window_input_bytes": 3145728,
+      "decode_ms": 2.6009581051766872,
+      "source": "DOTA8 val smoke-test tile; not independent test",
+      "labels_sha256": "82f39146878b439dfac76c11f3f7db2a4b48360eec3c2087a8b7f79ddaa206cd",
+      "label_count": 1,
+      "difficult_label_count": 0
+    },
+    {
+      "id": "P0007",
+      "width": 1490,
+      "height": 2137,
+      "file_bytes": 5345871,
+      "raw_rgb_bytes": 9552390,
+      "image_sha256": "0821677ab2be8f0fa44133cec37cb99f123e4f8f7af264258e1b230dcdbb21dd",
+      "windows": [
+        [
+          0,
+          0,
+          1024,
+          1024
+        ],
+        [
+          466,
+          0,
+          1490,
+          1024
+        ],
+        [
+          0,
+          824,
+          1024,
+          1848
+        ],
+        [
+          466,
+          824,
+          1490,
+          1848
+        ],
+        [
+          0,
+          1113,
+          1024,
+          2137
+        ],
+        [
+          466,
+          1113,
+          1490,
+          2137
+        ]
+      ],
+      "window_input_bytes": 18874368,
+      "decode_ms": 49.94629183784127,
+      "source": "third-party mirror of DOTA val; not an official DOTA host",
+      "labels_sha256": "6eb1079d753faaa3b0878ae25d05dcca969d76e99cc5bcb6d024002ccc034d11",
+      "label_count": 121,
+      "difficult_label_count": 35
+    },
+    {
+      "id": "P0019",
+      "width": 6573,
+      "height": 3727,
+      "file_bytes": 42605794,
+      "raw_rgb_bytes": 73492713,
+      "image_sha256": "09b20f250e2ef23e9eeea1ff04e1f743b1ac0a496c6a62a996ba4820c3535c8c",
+      "windows": [
+        [
+          0,
+          0,
+          1024,
+          1024
+        ],
+        [
+          824,
+          0,
+          1848,
+          1024
+        ],
+        [
+          1648,
+          0,
+          2672,
+          1024
+        ],
+        [
+          2472,
+          0,
+          3496,
+          1024
+        ],
+        [
+          3296,
+          0,
+          4320,
+          1024
+        ],
+        [
+          4120,
+          0,
+          5144,
+          1024
+        ],
+        [
+          4944,
+          0,
+          5968,
+          1024
+        ],
+        [
+          5549,
+          0,
+          6573,
+          1024
+        ],
+        [
+          0,
+          824,
+          1024,
+          1848
+        ],
+        [
+          824,
+          824,
+          1848,
+          1848
+        ],
+        [
+          1648,
+          824,
+          2672,
+          1848
+        ],
+        [
+          2472,
+          824,
+          3496,
+          1848
+        ],
+        [
+          3296,
+          824,
+          4320,
+          1848
+        ],
+        [
+          4120,
+          824,
+          5144,
+          1848
+        ],
+        [
+          4944,
+          824,
+          5968,
+          1848
+        ],
+        [
+          5549,
+          824,
+          6573,
+          1848
+        ],
+        [
+          0,
+          1648,
+          1024,
+          2672
+        ],
+        [
+          824,
+          1648,
+          1848,
+          2672
+        ],
+        [
+          1648,
+          1648,
+          2672,
+          2672
+        ],
+        [
+          2472,
+          1648,
+          3496,
+          2672
+        ],
+        [
+          3296,
+          1648,
+          4320,
+          2672
+        ],
+        [
+          4120,
+          1648,
+          5144,
+          2672
+        ],
+        [
+          4944,
+          1648,
+          5968,
+          2672
+        ],
+        [
+          5549,
+          1648,
+          6573,
+          2672
+        ],
+        [
+          0,
+          2472,
+          1024,
+          3496
+        ],
+        [
+          824,
+          2472,
+          1848,
+          3496
+        ],
+        [
+          1648,
+          2472,
+          2672,
+          3496
+        ],
+        [
+          2472,
+          2472,
+          3496,
+          3496
+        ],
+        [
+          3296,
+          2472,
+          4320,
+          3496
+        ],
+        [
+          4120,
+          2472,
+          5144,
+          3496
+        ],
+        [
+          4944,
+          2472,
+          5968,
+          3496
+        ],
+        [
+          5549,
+          2472,
+          6573,
+          3496
+        ],
+        [
+          0,
+          2703,
+          1024,
+          3727
+        ],
+        [
+          824,
+          2703,
+          1848,
+          3727
+        ],
+        [
+          1648,
+          2703,
+          2672,
+          3727
+        ],
+        [
+          2472,
+          2703,
+          3496,
+          3727
+        ],
+        [
+          3296,
+          2703,
+          4320,
+          3727
+        ],
+        [
+          4120,
+          2703,
+          5144,
+          3727
+        ],
+        [
+          4944,
+          2703,
+          5968,
+          3727
+        ],
+        [
+          5549,
+          2703,
+          6573,
+          3727
+        ]
+      ],
+      "window_input_bytes": 125829120,
+      "decode_ms": 247.6214161142707,
+      "source": "third-party mirror of DOTA val; not an official DOTA host",
+      "labels_sha256": "1253418d3423ab14c02809ee8b6811d06e51a5fec85d32152f350439ca1cac20",
+      "label_count": 74,
+      "difficult_label_count": 6
+    }
+  ],
+  "host": {
+    "platform": "macOS-26.4.1-arm64-arm-64bit",
+    "python": "3.12.13",
+    "cpu": "Apple M5 Pro",
+    "ram_bytes": 51539607552,
+    "cpu_threads": 4,
+    "mps_available": true,
+    "torch": "2.12.0"
+  },
+  "dependencies": {
+    "fsspec": "2026.4.0",
+    "kiwisolver": "1.5.1",
+    "torch": "2.12.0",
+    "fonttools": "4.66.1",
+    "ultralytics-thop": "2.2.2",
+    "packaging": "26.3",
+    "skyfield": "1.54",
+    "requests": "2.34.2",
+    "jplephem": "2.24",
+    "networkx": "3.6.1",
+    "polars-runtime-32": "2.0.0",
+    "polars": "2.0.0",
+    "certifi": "2026.4.22",
+    "setuptools": "81.0.0",
+    "contourpy": "1.4.0",
+    "sympy": "1.14.0",
+    "urllib3": "2.8.0",
+    "ultralytics": "8.3.221",
+    "python-dateutil": "2.9.0.post0",
+    "mpmath": "1.3.0",
+    "PyYAML": "6.0.3",
+    "sgp4": "2.25",
+    "matplotlib": "3.11.2",
+    "typing_extensions": "4.15.0",
+    "shapely": "2.2.0",
+    "cycler": "0.12.1",
+    "Jinja2": "3.1.6",
+    "MarkupSafe": "3.0.3",
+    "pip": "26.1",
+    "filelock": "3.29.0",
+    "opencv-python": "4.13.0.92",
+    "tqdm": "4.67.3",
+    "numpy": "2.4.4",
+    "psutil": "7.2.2",
+    "charset-normalizer": "3.5.2",
+    "pillow": "12.3.0",
+    "pyparsing": "3.3.3",
+    "torchvision": "0.27.0",
+    "six": "1.17.0",
+    "scipy": "1.18.1",
+    "idna": "3.20"
+  },
+  "warmup_windows_per_device": 3,
+  "repeats": 3,
+  "methodology": {
+    "power_mode": "not instrumented",
+    "thermal_steady_state": false,
+    "background": "project training/simulation/tests paused; user applications still running; not dedicated server",
+    "memory": "sampled RSS/MPS allocation, not activation peak",
+    "quality": "fixed confidence/IoU counts; mAP not computed; tiny non-independent set",
+    "io": "decode and artifact disk writes excluded from per-window service"
+  }
+}

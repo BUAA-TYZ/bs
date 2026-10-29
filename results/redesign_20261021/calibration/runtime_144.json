@@ -1,0 +1,83 @@
+{
+  "compute_count": 144,
+  "init_with_visibility_s": 10.513390541000263,
+  "empty_step_median_s": 0.00046379150080611,
+  "empty_day_extrapolated_s": 400.715856696479,
+  "route_samples": [
+    {
+      "source": 0,
+      "size_mb": 0.01,
+      "seconds": 0.022687249998853076,
+      "route": [
+        "sat",
+        161
+      ]
+    },
+    {
+      "source": 0,
+      "size_mb": 50.0,
+      "seconds": 0.020296333001169842,
+      "route": [
+        "sat",
+        161
+      ]
+    },
+    {
+      "source": 0,
+      "size_mb": 800.0,
+      "seconds": 0.020660333000705577,
+      "route": [
+        "sat",
+        161
+      ]
+    },
+    {
+      "source": 8,
+      "size_mb": 0.01,
+      "seconds": 0.019409291999181733,
+      "route": null
+    },
+    {
+      "source": 8,
+      "size_mb": 50.0,
+      "seconds": 0.02838749999864376,
+      "route": null
+    },
+    {
+      "source": 8,
+      "size_mb": 800.0,
+      "seconds": 0.020361791997856926,
+      "route": null
+    },
+    {
+      "source": 16,
+      "size_mb": 0.01,
+      "seconds": 0.01994770900273579,
+      "route": [
+        "sat",
+        111
+      ]
+    },
+    {
+      "source": 16,
+      "size_mb": 50.0,
+      "seconds": 0.02026829100213945,
+      "route": [
+        "sat",
+        111
+      ]
+    },
+    {
+      "source": 16,
+      "size_mb": 800.0,
+      "seconds": 0.020665500000177417,
+      "route": [
+        "sat",
+        111
+      ]
+    }
+  ],
+  "route_median_s": 0.020361791997856926,
+  "peak_rss_bytes": 443006976,
+  "scope": "Original executor, empty workload, warm routing at one epoch. Microbenchmark, not full-day wall-time measurement; route calls and queues vary with workload."
+}

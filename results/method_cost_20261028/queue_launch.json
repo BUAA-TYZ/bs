@@ -1,0 +1,21 @@
+{
+  "pid": 5494,
+  "started_at": "2026-10-28T07:18:59.572377+00:00",
+  "command": "analysis.method_cost_queue_20261028",
+  "waits_for": {
+    "pid": 28766,
+    "supervisor_pid": 28758,
+    "caffeinate_pid": 28767,
+    "command": [
+      "/Users/bytedance/Projects/bs/.venv/bin/python",
+      "-B",
+      "-m",
+      "analysis.run_l_reduced_validation_20261028",
+      "panel"
+    ],
+    "identity": "28766 Wed Oct 28 08:46:09 2026     /opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python -B -m analysis.run_l_reduced_validation_20261028 panel",
+    "started_at": "2026-10-28T00:46:09.065300+00:00",
+    "manifest_sha256": "a65d9d4722540ac733ed50ceb2a75955ee59ace09720d02826f8caef52610c42"
+  },
+  "execution": "Two sequential single-process Mac recordings, no pool"
+}

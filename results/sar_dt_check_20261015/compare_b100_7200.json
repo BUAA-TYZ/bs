@@ -1,0 +1,297 @@
+{
+  "scope": "numerical timestep diagnostic on a frozen prefix; not a performance result",
+  "coarse": "results/sar_dt_check_20261015/b100_7200_dt0p1",
+  "fine": "results/sar_dt_check_20261015/b100_7200_dt0p01",
+  "acceptance": {
+    "on_time_status": "identical",
+    "max_abs_latency_diff_s": 1.0,
+    "invariants": "work/byte conservation, timestamp order, no early completion"
+  },
+  "all_passed": true,
+  "results": [
+    {
+      "method": "ground_compute",
+      "coarse_dt": 0.1,
+      "fine_dt": 0.01,
+      "coarse_P300": 0.0,
+      "fine_P300": 0.0,
+      "coarse_R300": 300.0,
+      "fine_R300": 300.0,
+      "max_abs_latency_diff_s": 0.13000000000010914,
+      "mean_signed_latency_diff_s": -0.11500000000012278,
+      "on_time_mismatch": [],
+      "over_threshold": [],
+      "threshold_s": 1.0,
+      "invariants_passed": [
+        true,
+        true
+      ],
+      "wall_seconds": [
+        7.828979957999991,
+        42.020031875000086
+      ],
+      "passed": true,
+      "tasks": [
+        {
+          "task_id": "task_0",
+          "release_seconds": 565.0,
+          "coarse_latency_s": null,
+          "fine_latency_s": null,
+          "fine_minus_coarse_s": null,
+          "coarse_on_time": false,
+          "fine_on_time": false
+        },
+        {
+          "task_id": "task_1",
+          "release_seconds": 595.0,
+          "coarse_latency_s": null,
+          "fine_latency_s": null,
+          "fine_minus_coarse_s": null,
+          "coarse_on_time": false,
+          "fine_on_time": false
+        },
+        {
+          "task_id": "task_2",
+          "release_seconds": 625.0,
+          "coarse_latency_s": null,
+          "fine_latency_s": null,
+          "fine_minus_coarse_s": null,
+          "coarse_on_time": false,
+          "fine_on_time": false
+        },
+        {
+          "task_id": "task_3",
+          "release_seconds": 715.0,
+          "coarse_latency_s": null,
+          "fine_latency_s": null,
+          "fine_minus_coarse_s": null,
+          "coarse_on_time": false,
+          "fine_on_time": false
+        },
+        {
+          "task_id": "task_4",
+          "release_seconds": 2355.0,
+          "coarse_latency_s": null,
+          "fine_latency_s": null,
+          "fine_minus_coarse_s": null,
+          "coarse_on_time": false,
+          "fine_on_time": false
+        },
+        {
+          "task_id": "task_5",
+          "release_seconds": 2445.0,
+          "coarse_latency_s": null,
+          "fine_latency_s": null,
+          "fine_minus_coarse_s": null,
+          "coarse_on_time": false,
+          "fine_on_time": false
+        },
+        {
+          "task_id": "task_6",
+          "release_seconds": 3555.0,
+          "coarse_latency_s": 1376.4,
+          "fine_latency_s": 1376.3,
+          "fine_minus_coarse_s": -0.10000000000013642,
+          "coarse_on_time": false,
+          "fine_on_time": false
+        },
+        {
+          "task_id": "task_7",
+          "release_seconds": 3640.0,
+          "coarse_latency_s": 1291.8000000000002,
+          "fine_latency_s": 1291.67,
+          "fine_minus_coarse_s": -0.13000000000010914,
+          "coarse_on_time": false,
+          "fine_on_time": false
+        },
+        {
+          "task_id": "task_8",
+          "release_seconds": 6315.0,
+          "coarse_latency_s": null,
+          "fine_latency_s": null,
+          "fine_minus_coarse_s": null,
+          "coarse_on_time": false,
+          "fine_on_time": false
+        },
+        {
+          "task_id": "task_9",
+          "release_seconds": 6345.0,
+          "coarse_latency_s": null,
+          "fine_latency_s": null,
+          "fine_minus_coarse_s": null,
+          "coarse_on_time": false,
+          "fine_on_time": false
+        },
+        {
+          "task_id": "task_10",
+          "release_seconds": 6355.0,
+          "coarse_latency_s": null,
+          "fine_latency_s": null,
+          "fine_minus_coarse_s": null,
+          "coarse_on_time": false,
+          "fine_on_time": false
+        },
+        {
+          "task_id": "task_11",
+          "release_seconds": 6385.0,
+          "coarse_latency_s": null,
+          "fine_latency_s": null,
+          "fine_minus_coarse_s": null,
+          "coarse_on_time": false,
+          "fine_on_time": false
+        },
+        {
+          "task_id": "task_12",
+          "release_seconds": 6415.0,
+          "coarse_latency_s": null,
+          "fine_latency_s": null,
+          "fine_minus_coarse_s": null,
+          "coarse_on_time": false,
+          "fine_on_time": false
+        }
+      ]
+    },
+    {
+      "method": "ground_unique_relay",
+      "coarse_dt": 0.1,
+      "fine_dt": 0.01,
+      "coarse_P300": 1.0,
+      "fine_P300": 1.0,
+      "coarse_R300": 7.084615384615385,
+      "fine_R300": 6.703846153846154,
+      "max_abs_latency_diff_s": 0.9299999999999997,
+      "mean_signed_latency_diff_s": -0.38076923076923097,
+      "on_time_mismatch": [],
+      "over_threshold": [],
+      "threshold_s": 1.0,
+      "invariants_passed": [
+        true,
+        true
+      ],
+      "wall_seconds": [
+        21.022762249999914,
+        132.69591495900022
+      ],
+      "passed": true,
+      "tasks": [
+        {
+          "task_id": "task_0",
+          "release_seconds": 565.0,
+          "coarse_latency_s": 6.800000000000001,
+          "fine_latency_s": 6.34,
+          "fine_minus_coarse_s": -0.46000000000000085,
+          "coarse_on_time": true,
+          "fine_on_time": true
+        },
+        {
+          "task_id": "task_1",
+          "release_seconds": 595.0,
+          "coarse_latency_s": 6.7,
+          "fine_latency_s": 6.3500000000000005,
+          "fine_minus_coarse_s": -0.34999999999999964,
+          "coarse_on_time": true,
+          "fine_on_time": true
+        },
+        {
+          "task_id": "task_2",
+          "release_seconds": 625.0,
+          "coarse_latency_s": 6.7,
+          "fine_latency_s": 6.34,
+          "fine_minus_coarse_s": -0.3600000000000003,
+          "coarse_on_time": true,
+          "fine_on_time": true
+        },
+        {
+          "task_id": "task_3",
+          "release_seconds": 715.0,
+          "coarse_latency_s": 6.6000000000000005,
+          "fine_latency_s": 6.38,
+          "fine_minus_coarse_s": -0.22000000000000064,
+          "coarse_on_time": true,
+          "fine_on_time": true
+        },
+        {
+          "task_id": "task_4",
+          "release_seconds": 2355.0,
+          "coarse_latency_s": 7.2,
+          "fine_latency_s": 6.6000000000000005,
+          "fine_minus_coarse_s": -0.5999999999999996,
+          "coarse_on_time": true,
+          "fine_on_time": true
+        },
+        {
+          "task_id": "task_5",
+          "release_seconds": 2445.0,
+          "coarse_latency_s": 7.0,
+          "fine_latency_s": 7.05,
+          "fine_minus_coarse_s": 0.04999999999999982,
+          "coarse_on_time": true,
+          "fine_on_time": true
+        },
+        {
+          "task_id": "task_6",
+          "release_seconds": 3555.0,
+          "coarse_latency_s": 7.2,
+          "fine_latency_s": 6.66,
+          "fine_minus_coarse_s": -0.54,
+          "coarse_on_time": true,
+          "fine_on_time": true
+        },
+        {
+          "task_id": "task_7",
+          "release_seconds": 3640.0,
+          "coarse_latency_s": 7.1000000000000005,
+          "fine_latency_s": 6.8500000000000005,
+          "fine_minus_coarse_s": -0.25,
+          "coarse_on_time": true,
+          "fine_on_time": true
+        },
+        {
+          "task_id": "task_8",
+          "release_seconds": 6315.0,
+          "coarse_latency_s": 7.7,
+          "fine_latency_s": 6.7700000000000005,
+          "fine_minus_coarse_s": -0.9299999999999997,
+          "coarse_on_time": true,
+          "fine_on_time": true
+        },
+        {
+          "task_id": "task_9",
+          "release_seconds": 6345.0,
+          "coarse_latency_s": 7.300000000000001,
+          "fine_latency_s": 6.84,
+          "fine_minus_coarse_s": -0.46000000000000085,
+          "coarse_on_time": true,
+          "fine_on_time": true
+        },
+        {
+          "task_id": "task_10",
+          "release_seconds": 6355.0,
+          "coarse_latency_s": 7.2,
+          "fine_latency_s": 7.43,
+          "fine_minus_coarse_s": 0.22999999999999954,
+          "coarse_on_time": true,
+          "fine_on_time": true
+        },
+        {
+          "task_id": "task_11",
+          "release_seconds": 6385.0,
+          "coarse_latency_s": 7.300000000000001,
+          "fine_latency_s": 6.7700000000000005,
+          "fine_minus_coarse_s": -0.5300000000000002,
+          "coarse_on_time": true,
+          "fine_on_time": true
+        },
+        {
+          "task_id": "task_12",
+          "release_seconds": 6415.0,
+          "coarse_latency_s": 7.300000000000001,
+          "fine_latency_s": 6.7700000000000005,
+          "fine_minus_coarse_s": -0.5300000000000002,
+          "coarse_on_time": true,
+          "fine_on_time": true
+        }
+      ]
+    }
+  ]
+}

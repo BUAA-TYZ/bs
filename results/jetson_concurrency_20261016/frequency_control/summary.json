@@ -1,0 +1,87 @@
+{
+  "scope": "GPU activity is not SM/DRAM saturation. CPU download wait includes prior asynchronous forward.",
+  "modes": [
+    {
+      "mode": "batch1",
+      "service": {
+        "windows": 64,
+        "cohorts": 64,
+        "cohort_mean_s": 0.5951854166851263,
+        "cohort_p95_s": 0.6166645150864497,
+        "windows_per_s": 1.6801486931072351,
+        "full_64_window_service_s": 38.09186666784808,
+        "measured_wall_s": 40.24443764705211
+      },
+      "telemetry": {
+        "gpu_busy_percent": {
+          "samples": 374,
+          "mean": 77.3288770053476,
+          "min": 0.0,
+          "max": 99.0
+        },
+        "emc_busy_percent": {
+          "samples": 0,
+          "status": "unavailable"
+        },
+        "system_ram_reported_MB": {
+          "samples": 374,
+          "mean": 8722.7192513369,
+          "min": 8673.0,
+          "max": 8774.0
+        },
+        "gpu_temperature_C": {
+          "samples": 0,
+          "status": "unavailable"
+        },
+        "gpu_frequency_MHz": {
+          "samples": 374,
+          "mean": 1300.090909090909,
+          "min": 1224.0,
+          "max": 1300.5
+        }
+      }
+    },
+    {
+      "mode": "streams2",
+      "service": {
+        "windows": 64,
+        "cohorts": 32,
+        "cohort_mean_s": 1.021265361996484,
+        "cohort_p95_s": 1.061047851596959,
+        "windows_per_s": 1.9583548746725101,
+        "full_64_window_service_s": 32.68049158388749,
+        "measured_wall_s": 35.006061856169254
+      },
+      "telemetry": {
+        "gpu_busy_percent": {
+          "samples": 324,
+          "mean": 73.90432098765432,
+          "min": 0.0,
+          "max": 99.0
+        },
+        "emc_busy_percent": {
+          "samples": 0,
+          "status": "unavailable"
+        },
+        "system_ram_reported_MB": {
+          "samples": 324,
+          "mean": 14412.024691358025,
+          "min": 14321.0,
+          "max": 14426.0
+        },
+        "gpu_temperature_C": {
+          "samples": 324,
+          "mean": 54.179685185185186,
+          "min": 50.937,
+          "max": 57.218
+        },
+        "gpu_frequency_MHz": {
+          "samples": 324,
+          "mean": 1285.625,
+          "min": 1020.0,
+          "max": 1300.5
+        }
+      }
+    }
+  ]
+}

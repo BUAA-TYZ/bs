@@ -1,0 +1,685 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "purpose": "Real Jetson service calibration of a fixed synthetic SAR computation proxy, for simulation parameter selection",
+  "window_px": 4096,
+  "compute_unit": "One native-scale 4096x4096 window is one U",
+  "rounds": [
+    {
+      "name": "round1",
+      "sample_count": 64,
+      "raw_mean_service_ms": 576.1007417750079,
+      "active_service_rate_windows_per_s": 1.7358075202592655,
+      "observed_wall_rate_windows_per_s": 1.7292063634708925,
+      "measured_wall_s": 37.01119851972908,
+      "phase_mean_ms": {
+        "preprocess_ms": 22.73436963878339,
+        "host_to_device_ms": 11.445735442976002,
+        "forward_ms": 458.1144898911589,
+        "device_to_host_ms": 5.423693204647861,
+        "controlled_nms_ms": 49.80387350224191,
+        "preview_encode_ms": 28.578580095199868
+      },
+      "memory": {
+        "peak_cuda_allocated_bytes": 4764569600,
+        "peak_cuda_reserved_bytes": 5691670528,
+        "process_max_rss_bytes": 999055360,
+        "rss_convention": "Linux ru_maxrss KiB; process lifetime maximum"
+      }
+    },
+    {
+      "name": "round2",
+      "sample_count": 64,
+      "raw_mean_service_ms": 561.0690241664997,
+      "active_service_rate_windows_per_s": 1.782311902685338,
+      "observed_wall_rate_windows_per_s": 1.7764809483231911,
+      "measured_wall_s": 36.02627996681258,
+      "phase_mean_ms": {
+        "preprocess_ms": 21.228095603873953,
+        "host_to_device_ms": 11.50018740008818,
+        "forward_ms": 445.29009024699917,
+        "device_to_host_ms": 5.430338955193292,
+        "controlled_nms_ms": 48.92077657132177,
+        "preview_encode_ms": 28.699535389023367
+      },
+      "memory": {
+        "peak_cuda_allocated_bytes": 4764569600,
+        "peak_cuda_reserved_bytes": 5691670528,
+        "process_max_rss_bytes": 1003126784,
+        "rss_convention": "Linux ru_maxrss KiB; process lifetime maximum"
+      }
+    },
+    {
+      "name": "round3",
+      "sample_count": 64,
+      "raw_mean_service_ms": 572.9759419264155,
+      "active_service_rate_windows_per_s": 1.7452739754445485,
+      "observed_wall_rate_windows_per_s": 1.7396302004668858,
+      "measured_wall_s": 36.789427996147424,
+      "phase_mean_ms": {
+        "preprocess_ms": 21.381399725214578,
+        "host_to_device_ms": 11.398978742363397,
+        "forward_ms": 456.9491879810812,
+        "device_to_host_ms": 5.419764151156414,
+        "controlled_nms_ms": 49.232155208301265,
+        "preview_encode_ms": 28.594456118298694
+      },
+      "memory": {
+        "peak_cuda_allocated_bytes": 4764569600,
+        "peak_cuda_reserved_bytes": 5691670528,
+        "process_max_rss_bytes": 996724736,
+        "rss_convention": "Linux ru_maxrss KiB; process lifetime maximum"
+      }
+    }
+  ],
+  "sustained_full_run": {
+    "name": "sustained",
+    "sample_count": 1562,
+    "raw_mean_service_ms": 573.9675987993037,
+    "active_service_rate_windows_per_s": 1.7422586259083674,
+    "observed_wall_rate_windows_per_s": 1.7351328439192832,
+    "measured_wall_s": 900.2192572597414,
+    "phase_mean_ms": {
+      "preprocess_ms": 22.99092262482483,
+      "host_to_device_ms": 11.36826429570931,
+      "forward_ms": 456.49729897721255,
+      "device_to_host_ms": 5.399644249637591,
+      "controlled_nms_ms": 49.37763229011297,
+      "preview_encode_ms": 28.333836361806405
+    },
+    "memory": {
+      "peak_cuda_allocated_bytes": 4764569600,
+      "peak_cuda_reserved_bytes": 5691670528,
+      "process_max_rss_bytes": 1039060992,
+      "rss_convention": "Linux ru_maxrss KiB; process lifetime maximum"
+    }
+  },
+  "throughput_acceptance": {
+    "status": "passed",
+    "threshold_relative_deviation": 0.05,
+    "mean_wall_throughput_windows_per_s": 1.7333333333333334,
+    "maximum_relative_deviation": 0.0,
+    "bins": [
+      {
+        "minute": 10,
+        "start_s": 600,
+        "end_s": 660,
+        "completed_windows": 104,
+        "wall_throughput_windows_per_s": 1.7333333333333334,
+        "mean_service_ms": 573.0326883315754,
+        "relative_deviation_from_five_bin_mean": 0.0
+      },
+      {
+        "minute": 11,
+        "start_s": 660,
+        "end_s": 720,
+        "completed_windows": 104,
+        "wall_throughput_windows_per_s": 1.7333333333333334,
+        "mean_service_ms": 573.8166213134089,
+        "relative_deviation_from_five_bin_mean": 0.0
+      },
+      {
+        "minute": 12,
+        "start_s": 720,
+        "end_s": 780,
+        "completed_windows": 104,
+        "wall_throughput_windows_per_s": 1.7333333333333334,
+        "mean_service_ms": 573.4700966545811,
+        "relative_deviation_from_five_bin_mean": 0.0
+      },
+      {
+        "minute": 13,
+        "start_s": 780,
+        "end_s": 840,
+        "completed_windows": 104,
+        "wall_throughput_windows_per_s": 1.7333333333333334,
+        "mean_service_ms": 574.4568213524942,
+        "relative_deviation_from_five_bin_mean": 0.0
+      },
+      {
+        "minute": 14,
+        "start_s": 840,
+        "end_s": 900,
+        "completed_windows": 104,
+        "wall_throughput_windows_per_s": 1.7333333333333334,
+        "mean_service_ms": 574.5802986829614,
+        "relative_deviation_from_five_bin_mean": 0.0
+      }
+    ],
+    "meaning": "Completed windows per 60 seconds over the last five complete bins; finite-run throughput stability, not thermal equilibrium"
+  },
+  "selection": {
+    "interval_start_s": 600.2192572597414,
+    "interval_end_s": 900.2192572597414,
+    "window_seconds": 300,
+    "rule": "Use only complete iteration//64 cycles whose preceding sample completion is at/after the lower boundary and final completion is within the interval",
+    "selected_cycles": [
+      {
+        "cycle_index": 17,
+        "iteration_start": 1088,
+        "iteration_end_inclusive": 1151,
+        "conservative_start_s": 627.0109521276318,
+        "last_completion_s": 663.7928363508545
+      },
+      {
+        "cycle_index": 18,
+        "iteration_start": 1152,
+        "iteration_end_inclusive": 1215,
+        "conservative_start_s": 663.7928363508545,
+        "last_completion_s": 700.6876854789443
+      },
+      {
+        "cycle_index": 19,
+        "iteration_start": 1216,
+        "iteration_end_inclusive": 1279,
+        "conservative_start_s": 700.6876854789443,
+        "last_completion_s": 737.6201330916956
+      },
+      {
+        "cycle_index": 20,
+        "iteration_start": 1280,
+        "iteration_end_inclusive": 1343,
+        "conservative_start_s": 737.6201330916956,
+        "last_completion_s": 774.4543079775758
+      },
+      {
+        "cycle_index": 21,
+        "iteration_start": 1344,
+        "iteration_end_inclusive": 1407,
+        "conservative_start_s": 774.4543079775758,
+        "last_completion_s": 811.4011168829165
+      },
+      {
+        "cycle_index": 22,
+        "iteration_start": 1408,
+        "iteration_end_inclusive": 1471,
+        "conservative_start_s": 811.4011168829165,
+        "last_completion_s": 848.3267754218541
+      },
+      {
+        "cycle_index": 23,
+        "iteration_start": 1472,
+        "iteration_end_inclusive": 1535,
+        "conservative_start_s": 848.3267754218541,
+        "last_completion_s": 885.2066959938966
+      }
+    ],
+    "sample_count": 448,
+    "cycle_count": 7,
+    "raw_t_window_s": 0.573845931921304,
+    "raw_mean_service_ms": 573.845931921304,
+    "rounded_t_window_s": 0.574,
+    "rounding": "Ceiling to the next whole millisecond",
+    "phase_mean_ms": {
+      "preprocess_ms": 23.031596497665824,
+      "host_to_device_ms": 11.345514289652263,
+      "forward_ms": 456.4143164492894,
+      "device_to_host_ms": 5.386129959203702,
+      "controlled_nms_ms": 49.29998047841114,
+      "preview_encode_ms": 28.368394247081596
+    },
+    "mean_output_bytes_per_window": 868578.75,
+    "mean_targets_per_window": 3.3125
+  },
+  "aggregation_delay_s": 0.25091760235,
+  "aggregation": {
+    "mean_service_ms": 250.91760235,
+    "aggregation_delay_s": 0.25091760235,
+    "sample_count": 20,
+    "runtime": {
+      "python": "3.10.15 (main, Oct  3 2024, 07:21:53) [GCC 11.2.0]",
+      "system": "Linux",
+      "machine": "aarch64",
+      "logical_cpu_count": 12,
+      "shapely": "2.0.6"
+    },
+    "scope": "CPU reference measurement on the recorded machine; not automatically a ground-server measurement",
+    "measurement_boundary": "Already-received bytes -> parse and copy previews -> global coordinates -> class-wise polygon NMS -> encode merged bytes",
+    "excluded": [
+      "Disk and network IO",
+      "Fixture packet construction",
+      "Model inference",
+      "SHA256 and correctness checks",
+      "Global image recognition accuracy"
+    ],
+    "validation": {
+      "packet_count": 64,
+      "input_bytes": 55589040,
+      "input_records": 212,
+      "output_records": 100,
+      "output_bytes": 26220428,
+      "output_sha256": "2e6b57e9dcdfccfe8ec61381e8ed056b333cfbdc8c2bd03768d8e58bfe52c580",
+      "canonical_global_objects_match": true,
+      "arrival_order_invariant": true,
+      "validation_aggregations_before_warmup": 2
+    },
+    "script_sha256": "0d3dc4b1d60513c6e3749f7a7e256dc0b3448bcde29b3be1e3c9a0d8c4a5641c"
+  },
+  "execution_memory_gb": 8.0,
+  "memory_budget_validation": {
+    "status": "passed",
+    "execution_reservation_gb": 8,
+    "per_metric_checks": [
+      {
+        "run": "round1",
+        "metrics": {
+          "peak_cuda_allocated_bytes": {
+            "bytes": 4764569600,
+            "below_8_decimal_GB": true
+          },
+          "peak_cuda_reserved_bytes": {
+            "bytes": 5691670528,
+            "below_8_decimal_GB": true
+          },
+          "process_max_rss_bytes": {
+            "bytes": 999055360,
+            "below_8_decimal_GB": true
+          }
+        }
+      },
+      {
+        "run": "round2",
+        "metrics": {
+          "peak_cuda_allocated_bytes": {
+            "bytes": 4764569600,
+            "below_8_decimal_GB": true
+          },
+          "peak_cuda_reserved_bytes": {
+            "bytes": 5691670528,
+            "below_8_decimal_GB": true
+          },
+          "process_max_rss_bytes": {
+            "bytes": 1003126784,
+            "below_8_decimal_GB": true
+          }
+        }
+      },
+      {
+        "run": "round3",
+        "metrics": {
+          "peak_cuda_allocated_bytes": {
+            "bytes": 4764569600,
+            "below_8_decimal_GB": true
+          },
+          "peak_cuda_reserved_bytes": {
+            "bytes": 5691670528,
+            "below_8_decimal_GB": true
+          },
+          "process_max_rss_bytes": {
+            "bytes": 996724736,
+            "below_8_decimal_GB": true
+          }
+        }
+      },
+      {
+        "run": "sustained",
+        "metrics": {
+          "peak_cuda_allocated_bytes": {
+            "bytes": 4764569600,
+            "below_8_decimal_GB": true
+          },
+          "peak_cuda_reserved_bytes": {
+            "bytes": 5691670528,
+            "below_8_decimal_GB": true
+          },
+          "process_max_rss_bytes": {
+            "bytes": 1039060992,
+            "below_8_decimal_GB": true
+          }
+        }
+      }
+    ],
+    "meaning": "Each observed CUDA peak and process RSS individually fits the proposed reservation; these overlapping/asynchronous metrics are not summed and do not prove joint physical peak usage",
+    "shared_memory_budget": "Simulation reserves 8 decimal GB for execution and 8 GB for queues within a nominal 32 GB shared-memory proxy; remaining 16 GB is a system/reserve assumption"
+  },
+  "runtime": {
+    "python": "3.10.15",
+    "versions": {
+      "numpy": "1.23.5",
+      "Pillow": "11.0.0",
+      "torch": "2.3.0",
+      "torchvision": "0.18.0a0+6043bc2",
+      "ultralytics": "8.3.13",
+      "shapely": "2.0.6",
+      "torch_cuda_build": "12.2",
+      "cudnn": 8904
+    },
+    "device": {
+      "name": "Orin",
+      "total_memory_bytes": 32188686336,
+      "compute_capability": [
+        8,
+        7
+      ],
+      "torch_cpu_threads": 1
+    },
+    "backend_flags": {
+      "cudnn_benchmark": false,
+      "cudnn_deterministic": false,
+      "cudnn_allow_tf32": true,
+      "matmul_allow_tf32": false
+    },
+    "model": {
+      "parameters": 2656648,
+      "dtype": "torch.float32",
+      "device": "cuda:0",
+      "head_classes": 15,
+      "fused": true
+    }
+  },
+  "measurement_boundary": "host uint16 raster -> preprocessing -> CUDA transfer/normalization -> fused FP32 forward including head decode -> full decoded prediction to CPU -> controlled polygon NMS -> ROI preview and SRP1 encoding",
+  "excluded": [
+    "raster generation",
+    "model load",
+    "warmup",
+    "result hashing",
+    "log I/O",
+    "original file decode",
+    "inter-window/global aggregation",
+    "network transmission"
+  ],
+  "weights_sha256": "b62898ebf38940ca4df323863e45ee9d84a1a46d5d11ebdde529fb33aa9f3a32",
+  "fixture_sha256": "8b40fbafc2d06e87586541bef9e1830fead025748abb9116fe183eb9de78d58e",
+  "measurement_script_sha256": "e507562fbdac572a72acc6cd64c71e74e623b2d46a9bf3e23216e7fac9cb2cef",
+  "telemetry": {
+    "status": "observed",
+    "whole_series": {
+      "sample_count": 1136,
+      "first_utc": "2026-10-15T13:08:57.716123+00:00",
+      "last_utc": "2026-10-15T13:28:04.980445+00:00",
+      "system_ram_used_reported_MB": {
+        "count": 1136,
+        "min": 6970,
+        "max": 9745,
+        "mean": 9644.698943661971,
+        "first": 7125,
+        "last": 9683
+      },
+      "system_ram_total_reported_MB": [
+        30698
+      ],
+      "gpu_utilization_percent": {
+        "count": 1136,
+        "min": 0.0,
+        "max": 99.0,
+        "mean": 77.0105633802817,
+        "first": 0.0,
+        "last": 0.0
+      },
+      "gpu_frequency_MHz": {
+        "count": 0
+      },
+      "temperature_C": {
+        "cpu": {
+          "count": 1136,
+          "min": 48.906,
+          "max": 62.937,
+          "mean": 60.10731426056338,
+          "first": 49.031,
+          "last": 62.25,
+          "linear_trend_C_per_minute": 0.45284935782800084
+        },
+        "soc0": {
+          "count": 1136,
+          "min": 46.593,
+          "max": 60.75,
+          "mean": 58.146160211267606,
+          "first": 46.656,
+          "last": 60.062,
+          "linear_trend_C_per_minute": 0.4573498254241188
+        },
+        "soc1": {
+          "count": 1136,
+          "min": 46.437,
+          "max": 59.968,
+          "mean": 57.38360035211267,
+          "first": 46.468,
+          "last": 59.562,
+          "linear_trend_C_per_minute": 0.4514015379585902
+        },
+        "soc2": {
+          "count": 1136,
+          "min": 45.75,
+          "max": 60.281,
+          "mean": 57.55509242957746,
+          "first": 45.906,
+          "last": 59.531,
+          "linear_trend_C_per_minute": 0.4652048465922446
+        },
+        "tboard": {
+          "count": 1136,
+          "min": 38.0,
+          "max": 50.375,
+          "mean": 47.910981514084504,
+          "first": 38.0,
+          "last": 50.375,
+          "linear_trend_C_per_minute": 0.4679722213156146
+        },
+        "tdiode": {
+          "count": 1136,
+          "min": 39.375,
+          "max": 53.25,
+          "mean": 50.71445862676056,
+          "first": 39.375,
+          "last": 52.875,
+          "linear_trend_C_per_minute": 0.4314142008747715
+        },
+        "tj": {
+          "count": 1136,
+          "min": 48.718,
+          "max": 63.125,
+          "mean": 60.10447799295775,
+          "first": 49.031,
+          "last": 62.437,
+          "linear_trend_C_per_minute": 0.457823460502625
+        }
+      }
+    },
+    "sustained_last_300s": {
+      "sample_count": 296,
+      "first_utc": "2026-10-15T13:23:05.785826+00:00",
+      "last_utc": "2026-10-15T13:28:03.967702+00:00",
+      "system_ram_used_reported_MB": {
+        "count": 296,
+        "min": 9685,
+        "max": 9744,
+        "mean": 9727.780405405405,
+        "first": 9718,
+        "last": 9730
+      },
+      "system_ram_total_reported_MB": [
+        30698
+      ],
+      "gpu_utilization_percent": {
+        "count": 296,
+        "min": 0.0,
+        "max": 99.0,
+        "mean": 79.03716216216216,
+        "first": 99.0,
+        "last": 99.0
+      },
+      "gpu_frequency_MHz": {
+        "count": 0
+      },
+      "temperature_C": {
+        "cpu": {
+          "count": 296,
+          "min": 61.843,
+          "max": 62.937,
+          "mean": 62.276756756756754,
+          "first": 61.906,
+          "last": 62.5,
+          "linear_trend_C_per_minute": 0.0962475427116602
+        },
+        "soc0": {
+          "count": 296,
+          "min": 59.843,
+          "max": 60.75,
+          "mean": 60.35031418918919,
+          "first": 60.156,
+          "last": 60.531,
+          "linear_trend_C_per_minute": 0.06190868661062678
+        },
+        "soc1": {
+          "count": 296,
+          "min": 59.187,
+          "max": 59.968,
+          "mean": 59.53812837837838,
+          "first": 59.25,
+          "last": 59.687,
+          "linear_trend_C_per_minute": 0.06989017518868412
+        },
+        "soc2": {
+          "count": 296,
+          "min": 59.343,
+          "max": 60.281,
+          "mean": 59.774317567567564,
+          "first": 59.593,
+          "last": 59.968,
+          "linear_trend_C_per_minute": 0.0655914409619059
+        },
+        "tboard": {
+          "count": 296,
+          "min": 50.0,
+          "max": 50.375,
+          "mean": 50.18116554054054,
+          "first": 50.0,
+          "last": 50.375,
+          "linear_trend_C_per_minute": 0.07104275036870254
+        },
+        "tdiode": {
+          "count": 296,
+          "min": 52.25,
+          "max": 53.25,
+          "mean": 52.785472972972975,
+          "first": 52.875,
+          "last": 53.125,
+          "linear_trend_C_per_minute": 0.054512942856209286
+        },
+        "tj": {
+          "count": 296,
+          "min": 61.812,
+          "max": 63.125,
+          "mean": 62.31234797297297,
+          "first": 61.906,
+          "last": 62.5,
+          "linear_trend_C_per_minute": 0.09805712929790222
+        }
+      }
+    },
+    "startup_system_ram_reference": {
+      "utc": "2026-10-15T13:08:57.716123+00:00",
+      "used_reported_MB": 7125,
+      "total_reported_MB": 30698,
+      "meaning": "First controller telemetry sample during process startup; not a controlled idle or resident-model baseline"
+    },
+    "device_total_memory_bytes": 32188686336,
+    "frequency_observed": false,
+    "thermal_validation": {
+      "status": "not_certified",
+      "frequency_stability": "No GPU MHz samples: GR3D_FREQ utilization alone cannot establish frequency stability",
+      "temperature_scope": "Record finite-run sensor levels and trends; stable throughput does not prove complete thermal equilibrium",
+      "extrapolation": "No guarantee beyond the observed 15-minute sustained interval or under flight cooling and resource contention"
+    },
+    "energy_scope": "Power rails are preserved only in raw telemetry; no incremental energy or idle-subtracted power is inferred",
+    "ram_scope": "System-wide RAM includes other processes and shared allocations; reported MB labels are retained without summing CUDA allocation and process RSS",
+    "time_alignment": "UTC origin inferred from first sustained row completion minus its elapsed wall time; sub-millisecond alignment is not claimed",
+    "stderr_nonempty": false
+  },
+  "thermal_validation": {
+    "status": "not_certified",
+    "frequency_stability": "No GPU MHz samples: GR3D_FREQ utilization alone cannot establish frequency stability",
+    "temperature_scope": "Record finite-run sensor levels and trends; stable throughput does not prove complete thermal equilibrium",
+    "extrapolation": "No guarantee beyond the observed 15-minute sustained interval or under flight cooling and resource contention"
+  },
+  "inputs": {
+    "controller": {
+      "path": "results/sar_spotfine_calibration_20261015/jetson/series/series.json",
+      "sha256": "457b73f13c0e8d2d9d1cc87ded5bb92e271d2d12246917587543f01daeda0c84",
+      "bytes": 3045
+    },
+    "round1": {
+      "report": {
+        "path": "results/sar_spotfine_calibration_20261015/jetson/series/round1/report.json",
+        "sha256": "5cb73443bc92f30a646f45aea08fdca3951478663bad5d19cb4cea6bad238468",
+        "bytes": 6723
+      },
+      "samples": {
+        "path": "results/sar_spotfine_calibration_20261015/jetson/series/round1/windows.jsonl",
+        "sha256": "0571be27a6da8883791d9c6519defee64eab5a77b80729127b4e19df3b6bb4b7",
+        "bytes": 70869
+      }
+    },
+    "round2": {
+      "report": {
+        "path": "results/sar_spotfine_calibration_20261015/jetson/series/round2/report.json",
+        "sha256": "53d73ca37e2029c01f422f71fbb72ff62ad2dd990bc68a255722d57aee84e0d7",
+        "bytes": 6730
+      },
+      "samples": {
+        "path": "results/sar_spotfine_calibration_20261015/jetson/series/round2/windows.jsonl",
+        "sha256": "13c6b59b71571a3c161863ba3ff709417f841db49021f68b7c622d401a0bb8ad",
+        "bytes": 70885
+      }
+    },
+    "round3": {
+      "report": {
+        "path": "results/sar_spotfine_calibration_20261015/jetson/series/round3/report.json",
+        "sha256": "2d45dfb32f7c5ddfa19046b05f95c11d05e497d65bdc7c8ae9f3af0d73f5f029",
+        "bytes": 6735
+      },
+      "samples": {
+        "path": "results/sar_spotfine_calibration_20261015/jetson/series/round3/windows.jsonl",
+        "sha256": "41141cc6a29234284b15cf5e1aa06cd19b35195ab847e74d5106af49d47b377f",
+        "bytes": 70882
+      }
+    },
+    "sustained": {
+      "report": {
+        "path": "results/sar_spotfine_calibration_20261015/jetson/series/sustained/report.json",
+        "sha256": "f6653d66ca5f0183426081fd1328c88cc786def44b73373bbb39fc22dfa4c152",
+        "bytes": 17382
+      },
+      "samples": {
+        "path": "results/sar_spotfine_calibration_20261015/jetson/series/sustained/windows.jsonl",
+        "sha256": "ff6a7fcd84a60d692dfe4a95c9dbdb1288e55ef0d5707ba238925d67d4120f76",
+        "bytes": 1731844
+      }
+    },
+    "aggregation": {
+      "path": "results/sar_spotfine_calibration_20261015/jetson/aggregation/report.json",
+      "sha256": "b3e2cd38772a8e0c6465fd7bcb03166ea8775eb23948b1f8fdb5b94a30a3e151",
+      "bytes": 7437
+    },
+    "telemetry": {
+      "path": "results/sar_spotfine_calibration_20261015/jetson/series/tegrastats.jsonl",
+      "sha256": "94edd8188c3d6cd6f3e93ef4a7faca25bc11e47edc1b033f624e4df414c8a205",
+      "bytes": 530845
+    },
+    "telemetry_stderr": {
+      "path": "results/sar_spotfine_calibration_20261015/jetson/series/tegrastats.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  "summary_builder": {
+    "path": "analysis/summarize_jetson_sar.py",
+    "sha256": "4b0d1f1cc5af58b7d1f94a4724d82403cce55ab13b85a27e94010e23100d0254",
+    "bytes": 25180
+  },
+  "limitations": [
+    "Synthetic uint16 pixels and canonical controlled detections; no SAR image recognition accuracy or real harbor density estimate",
+    "Official optical YOLO11n-OBB is a computation proxy; optical predictions are discarded before controlled NMS",
+    "FP32 refers to tensor and parameter dtype; reported backend flags may allow TF32 for cuDNN",
+    "Active service excludes hashes, file/log IO and function-scope cleanup after the timer; it is not measured end-to-end wall throughput",
+    "One resident model and serial execution; no guarantee under other onboard workloads, flight cooling, radiation or power limits",
+    "Input normalization truncates uint16 amplitude to uint8; target previews retain full ROI extent but lose native detail at 512x512",
+    "Image focusing and source-file decoding remain outside the calibrated boundary",
+    "Aggregation is the measured CPU reference on its recorded machine, not an unmeasured production server",
+    "No controlled idle or resident-model baseline was recorded; no incremental power or per-task energy is inferred",
+    "Finite-run throughput acceptance does not certify GPU clock stability, complete thermal equilibrium or longer-duration behavior",
+    "Individual CUDA/RSS budget checks and system RAM observations do not prove a shared-memory simultaneous peak bound"
+  ],
+  "t_window_s": 0.574,
+  "compute_rate_u_per_s": 1.7421602787456447
+}

@@ -1,0 +1,462 @@
+{
+  "source_sha256": "e2eaf88c00e1d3ce4709f6ed94f768599a0506b8370be9fbfea4b94df2bb2e47",
+  "python_version": "3.12.13",
+  "packages": {
+    "numpy": "2.4.4",
+    "torch": "2.12.0",
+    "skyfield": "1.54",
+    "PyYAML": "6.0.3"
+  },
+  "args": {
+    "prepared_dir": "results/sla_pressure_prepared_20261015",
+    "out_dir": "results/sla_pressure_development_v9_20261015",
+    "methods": [
+      "cgs_compute_adapted",
+      "heft_adapted",
+      "dts_tmax_hybrid",
+      "ground_relay",
+      "task_delivery",
+      "task_delivery_fcfs",
+      "arrival_calendar"
+    ],
+    "case_ids": null,
+    "workers": 8,
+    "split": "development"
+  },
+  "method_specs": {
+    "cgs_compute_adapted": {
+      "policy": "cgs_compute_adapted",
+      "kwargs": {}
+    },
+    "heft_adapted": {
+      "policy": "heft_adapted",
+      "kwargs": {}
+    },
+    "dts_tmax_hybrid": {
+      "policy": "dts_tmax_hybrid",
+      "kwargs": {}
+    },
+    "ground_relay": {
+      "policy": "ground_relay",
+      "kwargs": {}
+    },
+    "task_delivery": {
+      "policy": "task_delivery",
+      "kwargs": {}
+    },
+    "task_delivery_fcfs": {
+      "policy": "task_delivery",
+      "kwargs": {
+        "max_orders": 1
+      }
+    },
+    "arrival_calendar": {
+      "policy": "arrival_calendar",
+      "kwargs": {}
+    }
+  },
+  "analysis_source_sha256": {
+    "/Users/bytedance/Projects/bs/analysis/evaluate_sla_research.py": "3b8d7b3db099db10e5b2ce3757e5cc013e1ec2b0b8c008557ad69c7de25c15c4",
+    "analysis/evaluate_literature.py": "59c7eab9cb4ae342c480307e147cf7c0277689ad7274591754a28a6314acfcad",
+    "analysis/report_short_deadline.py": "58b4e675abbe8683c814be71ba1f3dde96893ff6951bd2883b36396fbc584902"
+  },
+  "case_info": [
+    {
+      "id": "day01_s3_gap30",
+      "base_day_id": "day01",
+      "calendar_day": "2026-10-15",
+      "epoch_offset_seconds": 60180,
+      "level": "s3_gap30",
+      "max_strips_per_pass": 3,
+      "min_spacing_seconds": 30,
+      "split": "development",
+      "all_qualifying_events_retained": true,
+      "num_acquisitions": 21
+    },
+    {
+      "id": "day02_s3_gap30",
+      "base_day_id": "day02",
+      "calendar_day": "2026-10-16",
+      "epoch_offset_seconds": 147590,
+      "level": "s3_gap30",
+      "max_strips_per_pass": 3,
+      "min_spacing_seconds": 30,
+      "split": "development",
+      "all_qualifying_events_retained": true,
+      "num_acquisitions": 15
+    },
+    {
+      "id": "day03_s3_gap30",
+      "base_day_id": "day03",
+      "calendar_day": "2026-10-17",
+      "epoch_offset_seconds": 229480,
+      "level": "s3_gap30",
+      "max_strips_per_pass": 3,
+      "min_spacing_seconds": 30,
+      "split": "development",
+      "all_qualifying_events_retained": true,
+      "num_acquisitions": 17
+    },
+    {
+      "id": "day01_s6_gap30",
+      "base_day_id": "day01",
+      "calendar_day": "2026-10-15",
+      "epoch_offset_seconds": 60180,
+      "level": "s6_gap30",
+      "max_strips_per_pass": 6,
+      "min_spacing_seconds": 30,
+      "split": "development",
+      "all_qualifying_events_retained": true,
+      "num_acquisitions": 30
+    },
+    {
+      "id": "day02_s6_gap30",
+      "base_day_id": "day02",
+      "calendar_day": "2026-10-16",
+      "epoch_offset_seconds": 147590,
+      "level": "s6_gap30",
+      "max_strips_per_pass": 6,
+      "min_spacing_seconds": 30,
+      "split": "development",
+      "all_qualifying_events_retained": true,
+      "num_acquisitions": 26
+    },
+    {
+      "id": "day03_s6_gap30",
+      "base_day_id": "day03",
+      "calendar_day": "2026-10-17",
+      "epoch_offset_seconds": 229480,
+      "level": "s6_gap30",
+      "max_strips_per_pass": 6,
+      "min_spacing_seconds": 30,
+      "split": "development",
+      "all_qualifying_events_retained": true,
+      "num_acquisitions": 24
+    },
+    {
+      "id": "day01_s6_gap20",
+      "base_day_id": "day01",
+      "calendar_day": "2026-10-15",
+      "epoch_offset_seconds": 60180,
+      "level": "s6_gap20",
+      "max_strips_per_pass": 6,
+      "min_spacing_seconds": 20,
+      "split": "development",
+      "all_qualifying_events_retained": true,
+      "num_acquisitions": 40
+    },
+    {
+      "id": "day02_s6_gap20",
+      "base_day_id": "day02",
+      "calendar_day": "2026-10-16",
+      "epoch_offset_seconds": 147590,
+      "level": "s6_gap20",
+      "max_strips_per_pass": 6,
+      "min_spacing_seconds": 20,
+      "split": "development",
+      "all_qualifying_events_retained": true,
+      "num_acquisitions": 30
+    },
+    {
+      "id": "day03_s6_gap20",
+      "base_day_id": "day03",
+      "calendar_day": "2026-10-17",
+      "epoch_offset_seconds": 229480,
+      "level": "s6_gap20",
+      "max_strips_per_pass": 6,
+      "min_spacing_seconds": 20,
+      "split": "development",
+      "all_qualifying_events_retained": true,
+      "num_acquisitions": 32
+    },
+    {
+      "id": "day01_s6_gap10",
+      "base_day_id": "day01",
+      "calendar_day": "2026-10-15",
+      "epoch_offset_seconds": 60180,
+      "level": "s6_gap10",
+      "max_strips_per_pass": 6,
+      "min_spacing_seconds": 10,
+      "split": "development",
+      "all_qualifying_events_retained": true,
+      "num_acquisitions": 42
+    },
+    {
+      "id": "day02_s6_gap10",
+      "base_day_id": "day02",
+      "calendar_day": "2026-10-16",
+      "epoch_offset_seconds": 147590,
+      "level": "s6_gap10",
+      "max_strips_per_pass": 6,
+      "min_spacing_seconds": 10,
+      "split": "development",
+      "all_qualifying_events_retained": true,
+      "num_acquisitions": 30
+    },
+    {
+      "id": "day03_s6_gap10",
+      "base_day_id": "day03",
+      "calendar_day": "2026-10-17",
+      "epoch_offset_seconds": 229480,
+      "level": "s6_gap10",
+      "max_strips_per_pass": 6,
+      "min_spacing_seconds": 10,
+      "split": "development",
+      "all_qualifying_events_retained": true,
+      "num_acquisitions": 34
+    }
+  ],
+  "prepared_manifest_sha256": "9baaa46fd17191b8d48ce9d7025cb30d63c5af0b2b78cf910e71bfda35c52b05",
+  "selection_sha256": "62e12c88c431ee246f5a157b53ea610366a32b38537ba58193b9aad69a4741b2",
+  "provenance": {
+    "scope": "specification-based network pilot with proxy compute; not flight measurements or final MARL evaluation",
+    "epoch": "2026-10-15T00:00:00Z",
+    "orbit": {
+      "architecture": "heterogeneous",
+      "source_ids": [
+        0,
+        1
+      ],
+      "imagers": {
+        "count": 2,
+        "altitude_km": 620,
+        "inclination_deg": 97.9,
+        "raan_deg": [
+          357.5,
+          12.5
+        ],
+        "phase_deg": [
+          0,
+          15
+        ]
+      },
+      "helpers": {
+        "count": 22,
+        "description": "two 550 km, 53 degree planes; 11 per plane; RAAN 0 and 90; Walker phase 1"
+      },
+      "synthetic_tle": true
+    },
+    "nominal_rates_mbps": {
+      "isl": 10000,
+      "downlink": 1200
+    },
+    "payload_efficiency_assumption": 1,
+    "parameter_evidence": "docs/thesis/highres_link_evidence.md",
+    "compute_proxy": "RGB detector CPU/MPS calibration on one Apple M5 Pro; native PAN/MS preprocessing, codec, flight hardware uncalibrated",
+    "result_proxy": "187 bytes per window transferred from old measured RGB workload; high-resolution detection density unvalidated",
+    "aggregation_proxy": "fixed old measured merge time; full-strip merge scaling uncalibrated",
+    "assumptions": [
+      "64 GB per-node data buffer is a design allocation, not a SCOT80 memory specification",
+      "four simultaneous ISL neighbors, 4500 km design range, instantaneous acquisition, zero terminal setup delay",
+      "one Beijing-coordinate receiver, one satellite at a time using aggregate 1.2 Gbps",
+      "full topology prediction and current queue information; no control-plane delay",
+      "day episodes start empty before first acquisition; no cross-day residual carry-over",
+      "fixed one-second decision cadence for every dt; packet batch shared by all star heuristics",
+      "source compression and image conversion are excluded timing terms; equal representation for both paths"
+    ],
+    "workload": {
+      "model": "overlapping_native_window_packets_v2",
+      "parameters": {
+        "width_px": 46668,
+        "height_px": 66668,
+        "bands": 3,
+        "bits_per_sample": 8,
+        "window_px": 1024,
+        "stride_px": 824,
+        "windows_per_tile_axis": 4,
+        "compute_cost_per_window": 0.07026846144969265,
+        "result_size_mb_per_window": 0.000187,
+        "transport_components": [
+          {
+            "name": "PAN",
+            "downsample": 1,
+            "bands": 1,
+            "bits_per_sample": 12
+          },
+          {
+            "name": "MS",
+            "downsample": 4,
+            "bands": 6,
+            "bits_per_sample": 12
+          }
+        ],
+        "transport_compression_ratio": 3
+      },
+      "coordinate_convention": "xyxy, upper bounds exclusive",
+      "edge_rule": "shift_last_window_to_edge_no_padding",
+      "packet_rule": "independent_full_windows_no_pixel_deduplication",
+      "result_rule": "per_window_outputs_before_global_merge",
+      "image_size_mb": 2138.9927789999997,
+      "num_windows": 4617,
+      "num_tiles": 315,
+      "processed_pixels": 4841275392,
+      "coverage_multiplier": 1.5560486527476958,
+      "packet_input_mb": 3328.3768320000004,
+      "total_compute_cost": 324.429486513231,
+      "unmerged_result_mb": 0.863379,
+      "transport": {
+        "format": "native_components_packed_bitstream",
+        "pixel_mapping": "floor(start/downsample), ceil(end/downsample)",
+        "packing": "per_component_contiguous_bits_ceil_to_byte; no row padding or headers",
+        "compression_ratio": 3,
+        "compression_assumption": "Uncompressed/compressed size ratio; fixed modeling assumption, not measured codec performance",
+        "unique_uncompressed_mb": 6416.978336999999,
+        "inference_window_mb": 3.145728,
+        "inference_rule": "bands/bits_per_sample define model input and VRAM proxy, independently of native transport",
+        "compute_rule": "Per-window processing proxy; not a measured native PAN/MS pipeline; decode/pansharpen cost not modeled",
+        "component_rasters": [
+          {
+            "name": "PAN",
+            "downsample": 1,
+            "bands": 1,
+            "bits_per_sample": 12,
+            "width_px": 46668,
+            "height_px": 66668,
+            "packed_bytes": 4666893336
+          },
+          {
+            "name": "MS",
+            "downsample": 4,
+            "bands": 6,
+            "bits_per_sample": 12,
+            "width_px": 11667,
+            "height_px": 16667,
+            "packed_bytes": 1750085001
+          }
+        ]
+      }
+    },
+    "maximum_packet_mb": 11.534336000000001,
+    "serialization_seconds": {
+      "whole_image_downlink": 14.259951859999997,
+      "largest_packet_isl": 0.009227468800000001,
+      "largest_packet_downlink": 0.07689557333333334
+    },
+    "input_protocol_revision": {
+      "input_relay_max_hops": 2,
+      "ground_input_relay": true,
+      "base_manifest_sha256": "c9e7ff2c09156cd5d2f862e4dfce6289d1cb67b27d3e6fdcfe750391b4a067b0",
+      "base_prepared_dir": "results/highres_three_days_prepared_20261015",
+      "scope": "common store-and-forward input capability for every method; not an algorithm-only gain",
+      "preparer_sha256": "b7b1aa92f44b322fe2c05b8ba9d3fa59cb57781c421c5c1e88c72af3bbd8af86",
+      "base_config_sha256": {
+        "day01_config.json": "92dd8747108137cf3cdab877765a6d8d4d133f5316f36aaf58fdbbe8df89b679",
+        "day02_config.json": "72558789125cdadc1765ff199ae575145e7686034c003e5c9ab3b52a07cc1495",
+        "day03_config.json": "45c1706e3163ca060a296721dd83f58fe05eb9300cc4ee9d45cade2cdc86e086"
+      }
+    },
+    "numerical_protocol_revision": {
+      "dt": 0.1,
+      "followup_seconds": 301,
+      "base_prepared_dir": "results/sla_hybrid_development_prepared_20261015",
+      "base_manifest_sha256": "8fed63a501cb3979356b1cdf41b54eb3d239e4dca53cdecdc3b08e6ae60bfe79",
+      "preparer_sha256": "fea3245716f6c499fcf3fc53a511808101db13e53c2de2fad8dbd3c9facb102e",
+      "scope": "same physical arrivals and periods; complete P300/R300 observation, not eventual completion",
+      "cases": {
+        "day01": {
+          "base_config_sha256": "92c91d820c555f2041bff0201d52e702dcfd08c513afa1bf7d322eaaffea91e6",
+          "arrival_count": 21,
+          "last_release_seconds": 6270.0,
+          "original_end_seconds": 20670.0,
+          "observation_end_seconds": 6571.0,
+          "ground_input_relay": true
+        },
+        "day02": {
+          "base_config_sha256": "0cff5e136d6a7b1539d656499f815cf5ed31a6d09f7b7ffd49b0dccee4e52249",
+          "arrival_count": 15,
+          "last_release_seconds": 6290.0,
+          "original_end_seconds": 20690.0,
+          "observation_end_seconds": 6591.0,
+          "ground_input_relay": true
+        },
+        "day03": {
+          "base_config_sha256": "91882bfe0ff71d2b3e7c0f18f288d97a52023f25feaa3a0c6417b83ae2c80882",
+          "arrival_count": 17,
+          "last_release_seconds": 11560.0,
+          "original_end_seconds": 25960.0,
+          "observation_end_seconds": 11861.0,
+          "ground_input_relay": true
+        }
+      }
+    },
+    "pressure_protocol": {
+      "epoch": "2026-10-15T00:00:00Z",
+      "calendar_days": [
+        "2026-10-15",
+        "2026-10-16",
+        "2026-10-17"
+      ],
+      "split": "development",
+      "levels": [
+        {
+          "id": "s3_gap30",
+          "max_strips_per_pass": 3,
+          "min_spacing_seconds": 30,
+          "role": "original_main_panel"
+        },
+        {
+          "id": "s6_gap30",
+          "max_strips_per_pass": 6,
+          "min_spacing_seconds": 30,
+          "role": "pressure_sensitivity"
+        },
+        {
+          "id": "s6_gap20",
+          "max_strips_per_pass": 6,
+          "min_spacing_seconds": 20,
+          "role": "pressure_sensitivity"
+        },
+        {
+          "id": "s6_gap10",
+          "max_strips_per_pass": 6,
+          "min_spacing_seconds": 10,
+          "role": "pressure_sensitivity"
+        }
+      ],
+      "selection": "All four levels and all three days fixed before pressure outcomes; no replacement, filtering, or best-level selection",
+      "prior_information": "These dates and the original 3-strip/30-second level are previously inspected development data, not unseen confirmation",
+      "baseline_methods": [
+        "ground_relay",
+        "heft_adapted",
+        "cgs_compute_adapted",
+        "dts_tmax_hybrid"
+      ],
+      "method_rule": "Freeze candidate specifications in each evaluation manifest before running the complete panel; no best-method-per-case selection",
+      "all_levels_required_for_reporting": true,
+      "original_main_panel_must_be_retained": true,
+      "primary_seconds": 300,
+      "reported_horizons_seconds": [
+        300
+      ],
+      "followup_seconds": 301,
+      "dt": 0.1,
+      "decision_period_seconds": 1,
+      "geometry_period_seconds": 10,
+      "input_relay_max_hops": 2,
+      "ground_input_relay": true,
+      "hard_expiry": false,
+      "pressure_interpretation": "Uncalibrated imaging-occupancy sensitivity; 10/20-second spacing is not measured flight payload performance",
+      "geometry_rule": "Same SGP4/WGS84 imaging regions, off-nadir<=30 degrees, ground elevation>0, approximate solar elevation>=21 degrees; no ground-station-window selection",
+      "empty_case_rule": "Retain an empty case and report its zero arrivals; never replace its date"
+    }
+  },
+  "primary_seconds": 300,
+  "reported_horizons_seconds": [
+    300
+  ],
+  "scope": "paired short-SLA heuristic research; not MARL or original-paper full reproduction",
+  "prepared_configs_sha256": {
+    "results/sla_pressure_prepared_20261015/day01_s3_gap30_config.json": "481737ade8bd127293131079857b8875dbaaef54244687d96249d9c7cf386f7c",
+    "results/sla_pressure_prepared_20261015/day02_s3_gap30_config.json": "0ed2416bdc16b2a6374f85f49b85027a48677977c84279e556370c220e7b9658",
+    "results/sla_pressure_prepared_20261015/day03_s3_gap30_config.json": "0f06d217cdd1e47020933fdce135bf474cb23d6c18219c152c37df6418f32913",
+    "results/sla_pressure_prepared_20261015/day01_s6_gap30_config.json": "2018f27298cd5ddc7876a5580af852dbd4e01af652d33959749185cbbdd52811",
+    "results/sla_pressure_prepared_20261015/day02_s6_gap30_config.json": "68dc43f5446c2d80fea4b8178caada1d4bc2b71ca1486b34d21f3af639a60a19",
+    "results/sla_pressure_prepared_20261015/day03_s6_gap30_config.json": "821ca72c465c633cabd140cccf908cd9e93b58a51798cf379dd36987c2a747c7",
+    "results/sla_pressure_prepared_20261015/day01_s6_gap20_config.json": "60d0188070f6a297ad3d1a7f4ac3b8982258fad86fb9b2c60939af5cee8de359",
+    "results/sla_pressure_prepared_20261015/day02_s6_gap20_config.json": "67c01d3f9f5b784f917d3b85d51682af314c4ae4014ad5e78131dded21a4d8e2",
+    "results/sla_pressure_prepared_20261015/day03_s6_gap20_config.json": "e50bf82480b5ba8c2bfea56c99842ffd2089f51ad1b65ed3fbf43e1a6b9b6465",
+    "results/sla_pressure_prepared_20261015/day01_s6_gap10_config.json": "5d73e0f4c911c6a5a5428801cfc4b07d9c4be76935eb56b94babdae17ed98d19",
+    "results/sla_pressure_prepared_20261015/day02_s6_gap10_config.json": "f0cf41a2a20a55b43da9a476a6bb41ecfc87e47d8a3ea864e3ba709bc8ebeb16",
+    "results/sla_pressure_prepared_20261015/day03_s6_gap10_config.json": "6a41720e6f651ab5d5ae5ec97fb86d4d0adb0dc3aadbf7bd84b8c82cad1a3c58"
+  }
+}

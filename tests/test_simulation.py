@@ -72,7 +72,7 @@ def add_task(env, src=0, count=1, size=1.0, deadline=None):
         tiles.append(tile)
         env.metrics.total_tiles += 1
     env._task_tile_index[task_id] = task.tile_ids
-    if env.pipeline_mode in {"distributed", "ground_relay", "ground_tiles"}:
+    if env.pipeline_mode in {"distributed", "ground_relay", "ground_tiles", "ground_unique_relay"}:
         for tile in tiles:
             env._enqueue_tile(src, tile)
     else:
