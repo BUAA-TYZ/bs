@@ -1,0 +1,87 @@
+{
+  "blocked": null,
+  "complete": true,
+  "counts": {
+    "PASS": 3
+  },
+  "jobs": [
+    {
+      "experiment": "teacher_bounds_20261111",
+      "heartbeat": 1794401083.6800227,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_bounds",
+      "owner": "local:gate1:19621",
+      "result": {
+        "path": "results/nonuniform_20261111/teacher_analysis/bounds/2026-10-22.json",
+        "sha256": "fa9dd1c615aab3950f1bae91d138dcab27ccee11e10931d2f189d9dadd220620",
+        "status": "PASS"
+      },
+      "spec": {
+        "hosts": [
+          "local"
+        ],
+        "id": "2026-10-22_bounds",
+        "job": [
+          "TEACHER_BOUNDS",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "bounds"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/teacher_analysis/bounds/2026-10-22.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "teacher_bounds_20261111",
+      "heartbeat": 1794401057.7980435,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_bounds",
+      "owner": "local:gate1:19621",
+      "result": {
+        "path": "results/nonuniform_20261111/teacher_analysis/bounds/2026-10-23.json",
+        "sha256": "8f3e50f26e760a8861cc0224da98921a4ec3132a23f7339d3a8478cba7d7bab6",
+        "status": "PASS"
+      },
+      "spec": {
+        "hosts": [
+          "local"
+        ],
+        "id": "2026-10-23_bounds",
+        "job": [
+          "TEACHER_BOUNDS",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "bounds"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/teacher_analysis/bounds/2026-10-23.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "teacher_bounds_20261111",
+      "heartbeat": 1794401057.7980435,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_bounds",
+      "owner": "local:gate1:19621",
+      "result": {
+        "path": "results/nonuniform_20261111/teacher_analysis/bounds/2026-10-24.json",
+        "sha256": "ec598d1ba2fcd4e1050a24ecc3719d5602bf1c7308ca0266e651913e50e33669",
+        "status": "PASS"
+      },
+      "spec": {
+        "hosts": [
+          "local"
+        ],
+        "id": "2026-10-24_bounds",
+        "job": [
+          "TEACHER_BOUNDS",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "bounds"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/teacher_analysis/bounds/2026-10-24.json"
+      },
+      "state": "PASS"
+    }
+  ]
+}

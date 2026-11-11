@@ -1,0 +1,58 @@
+{
+  "at": "2026-11-11T12:26:43.639500+00:00",
+  "manifest_sha256": "d32dad083ef03b775d77138fc5303d1bd2e57fe6f1a1d27ea93840f59b0b08d1",
+  "spec": {
+    "id": "teacher_bounds_20261111",
+    "deadline": 1795004803.640575,
+    "hosts": {
+      "local": 3
+    },
+    "jobs": [
+      {
+        "id": "2026-10-22_bounds",
+        "job": [
+          "TEACHER_BOUNDS",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "bounds"
+        ],
+        "output": "results/nonuniform_20261111/teacher_analysis/bounds/2026-10-22.json",
+        "legacy_host": "local",
+        "hosts": [
+          "local"
+        ]
+      },
+      {
+        "id": "2026-10-23_bounds",
+        "job": [
+          "TEACHER_BOUNDS",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "bounds"
+        ],
+        "output": "results/nonuniform_20261111/teacher_analysis/bounds/2026-10-23.json",
+        "legacy_host": "local",
+        "hosts": [
+          "local"
+        ]
+      },
+      {
+        "id": "2026-10-24_bounds",
+        "job": [
+          "TEACHER_BOUNDS",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "bounds"
+        ],
+        "output": "results/nonuniform_20261111/teacher_analysis/bounds/2026-10-24.json",
+        "legacy_host": "local",
+        "hosts": [
+          "local"
+        ]
+      }
+    ]
+  },
+  "final_tests_sealed": true,
+  "no_retry": true,
+  "estimated_run_hours": [
+    0.5,
+    1.0
+  ]
+}

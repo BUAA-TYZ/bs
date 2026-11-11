@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "at": "2026-11-11T12:47:06.731119+00:00",
+  "command": [
+    ".venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "tests",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "-p",
+    "analysis.cleanup_test_clock_20261111"
+  ],
+  "returncode": 0,
+  "wall_seconds": 60.258814096450806,
+  "log_sha256": "e4ee2abe9166f0968485f2eec4860d0f604cd433997fd5bc1b22afffd4b30b82"
+}

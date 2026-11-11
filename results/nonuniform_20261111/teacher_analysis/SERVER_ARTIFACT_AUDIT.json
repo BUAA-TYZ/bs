@@ -1,0 +1,80 @@
+{
+  "status": "PASS",
+  "at": "2026-11-11T13:32:33.375079+00:00",
+  "tasks": 6,
+  "experiments": [
+    {
+      "status": "PASS",
+      "experiment": "teacher_bounds_20261111",
+      "jobs": [
+        {
+          "id": "2026-10-22_bounds",
+          "sha256": "fa9dd1c615aab3950f1bae91d138dcab27ccee11e10931d2f189d9dadd220620",
+          "bytes": 1729117,
+          "owner": "local:gate1:19621",
+          "path": "results/nonuniform_20261111/teacher_analysis/bounds/2026-10-22.json",
+          "claim_count": 1,
+          "finish_count": 1
+        },
+        {
+          "id": "2026-10-23_bounds",
+          "sha256": "8f3e50f26e760a8861cc0224da98921a4ec3132a23f7339d3a8478cba7d7bab6",
+          "bytes": 1713042,
+          "owner": "local:gate1:19621",
+          "path": "results/nonuniform_20261111/teacher_analysis/bounds/2026-10-23.json",
+          "claim_count": 1,
+          "finish_count": 1
+        },
+        {
+          "id": "2026-10-24_bounds",
+          "sha256": "ec598d1ba2fcd4e1050a24ecc3719d5602bf1c7308ca0266e651913e50e33669",
+          "bytes": 1731144,
+          "owner": "local:gate1:19621",
+          "path": "results/nonuniform_20261111/teacher_analysis/bounds/2026-10-24.json",
+          "claim_count": 1,
+          "finish_count": 1
+        }
+      ],
+      "at": "2026-11-11T13:02:36.131238+00:00",
+      "local_hashes_match": true
+    },
+    {
+      "status": "PASS",
+      "experiment": "teacher_ablation_20261111",
+      "jobs": [
+        {
+          "id": "2026-10-22_heft_cooperative",
+          "sha256": "c3dccd9f248f98af7a9e4b03a1eedf6867e885d563b081068e3f099b36e650a0",
+          "bytes": 395681,
+          "owner": "local:gate1:17729",
+          "path": "results/nonuniform_20261111/teacher_analysis/results/2026-10-22_heft_cooperative.json",
+          "claim_count": 1,
+          "finish_count": 1
+        },
+        {
+          "id": "2026-10-23_heft_cooperative",
+          "sha256": "be3b8c46fdba554d1806558310e649de6a99a61e506baf588cf34b0302ba285d",
+          "bytes": 399375,
+          "owner": "local:gate1:17729",
+          "path": "results/nonuniform_20261111/teacher_analysis/results/2026-10-23_heft_cooperative.json",
+          "claim_count": 1,
+          "finish_count": 1
+        },
+        {
+          "id": "2026-10-24_heft_cooperative",
+          "sha256": "24734c56880b5abf0fb0b15affab53a3837e5511ec424ad41f6b13ab7e81fa5b",
+          "bytes": 404596,
+          "owner": "local:gate1:17729",
+          "path": "results/nonuniform_20261111/teacher_analysis/results/2026-10-24_heft_cooperative.json",
+          "claim_count": 1,
+          "finish_count": 1
+        }
+      ],
+      "at": "2026-11-11T13:32:33.373222+00:00",
+      "local_hashes_match": true
+    }
+  ],
+  "local_hashes_match": true,
+  "one_claim_and_one_finish_per_job": true,
+  "remote_access": "Read-only SQLite URI and artifact bytes"
+}

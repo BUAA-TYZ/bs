@@ -1,0 +1,58 @@
+{
+  "at": "2026-11-11T12:18:38.841866+00:00",
+  "manifest_sha256": "e5ca4e2d0ef5e90b670967e96b732ddce56b8e1d6efb7a18f5faaa40af2e3531",
+  "spec": {
+    "id": "teacher_ablation_20261111",
+    "deadline": 1795004318.8421361,
+    "hosts": {
+      "local": 3
+    },
+    "jobs": [
+      {
+        "id": "2026-10-22_heft_cooperative",
+        "job": [
+          "TEACHER_ABLATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "heft_cooperative"
+        ],
+        "output": "results/nonuniform_20261111/teacher_analysis/results/2026-10-22_heft_cooperative.json",
+        "legacy_host": "local",
+        "hosts": [
+          "local"
+        ]
+      },
+      {
+        "id": "2026-10-23_heft_cooperative",
+        "job": [
+          "TEACHER_ABLATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "heft_cooperative"
+        ],
+        "output": "results/nonuniform_20261111/teacher_analysis/results/2026-10-23_heft_cooperative.json",
+        "legacy_host": "local",
+        "hosts": [
+          "local"
+        ]
+      },
+      {
+        "id": "2026-10-24_heft_cooperative",
+        "job": [
+          "TEACHER_ABLATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "heft_cooperative"
+        ],
+        "output": "results/nonuniform_20261111/teacher_analysis/results/2026-10-24_heft_cooperative.json",
+        "legacy_host": "local",
+        "hosts": [
+          "local"
+        ]
+      }
+    ]
+  },
+  "no_retry": true,
+  "final_tests_sealed": true,
+  "estimated_run_hours": [
+    1,
+    2
+  ]
+}

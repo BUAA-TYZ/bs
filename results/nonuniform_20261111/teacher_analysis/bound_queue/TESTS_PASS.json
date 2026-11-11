@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "at": "2026-11-11T12:26:19.739308+00:00",
+  "command": [
+    ".venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "tests/test_teacher_bounds_20261111.py",
+    "tests/test_teacher_ablation_20261111.py",
+    "-q",
+    "-p",
+    "no:cacheprovider"
+  ],
+  "returncode": 0,
+  "wall_seconds": 2.1945080757141113,
+  "log_sha256": "0c5bc5cedce4e6f0f396b1ac9f98a7ea67129af134aed215bd855ef75b926029"
+}
