@@ -1,0 +1,21 @@
+# 2026-10-30 启动前绝对路径校验错误修正登记
+
+用户已明确回答“允许修正部署路径并续跑（推荐）”，授权保留失败证据、另行登记后重新启动这18项并继续L。此例外仅针对本次已查明的启动前部署路径错误；不变更模型、源文件、物理、观测或统计，不允许今后自动重试。
+
+## 错误及审计边界
+
+首次distributed_20261030三机各首6项共18项在run_scale_validation_20261027.simulate第147行调用verify时失败，尚未执行第152行GranularityEnv创建，未产生仿真轨迹/性能结果。旧final_status及FAILED progress均保留，不称原组PASS。错误为旧frozen_protocol.implementation_hashes以绝对__file__路径为字典键：原键/Users/bytedance/Projects/bs/analysis/run_calibration_capacity.py，远端实际键/data00/home/tianyuzhe/bs_ground_scaling_20261030/analysis/run_calibration_capacity.py；两者SHA256均f174e5d0c4ca9443538adf71adcd3c82892cced340e8fbcc21aa4e99a2f81686。其他共有项无hash差异，source_hashes一致。此前预检验证了429原hash与验证日几何/玩具执行，但遗漏正式调用的这一完整绝对路径字典校验，属于迁移预检遗漏。
+
+## 修正方法
+
+三台远端在/Users/bytedance/Projects/bs建立真实目录，不再将其作为符号链接；解包同一冻结输入与同一环境。旧/home/tianyuzhe/bs_ground_scaling_20261030目录、全部失败文件和登记保留不动。不修改check_frozen，不放宽或绕过hash校验，不修改原协议中的路径。
+
+新增check_ground_deployment_path_20261030在真实spawn子进程中调用原engine.verify，对三日全部协议执行完整验证，比较source_hashes与implementation_hashes字典逐项完全相等；不创建仿真环境。各机PATH_PREFLIGHT为PASS及新增调度测试PASS后，本v2 REGISTRATION先冻结。依赖版本与既有通过的跨平台20方法验证/玩具检查保持相同，不重新选择模型。
+
+## 续跑隔离
+
+v2使用独立distributed_20261030_v2登记、启动、监督、控制和审计目录。三机仍各20完整方法乘日期任务、6单线程进程、按批全PASS才继续、不预取重试。旧三台首批已全部停止。v2M在新真实目录无旧输出时启动，不覆盖旧远端失败；沿用原唯一TEST_OPENED，不重新生成数据或开启测试。
+
+旧本地distributed_20261030协调器93893/93906继续把当时在途L9项收齐，退休原88943/88955组后因已登记STOP_AFTER_BATCH而退出BLOCKED。v2本地同时等待旧TAKEOVER_COMPLETE、旧最终状态及父/监督进程退出，不启动第二个L池。等待期间仅同步远端状态，不写原M结果目录；待旧同步彻底停止后，将本地18个FAILED progress逐字节归档到v2/retired_startup_failures并登记前后hash，再同步新M输出。旧三个final_status仍永久保留。此时才以原hash校验复用已PASS L任务并接续尚未开始L，保持本地9进程。
+
+首次部署失败不能计作方法性能失败或填0；报告披露本修正与历史失败证据。最终校验147新任务、每个M唯一机器归属，再调用冻结报告器。硬截止仍11-04T16Z，各机独立监督；后续失败收批后BLOCKED，不自动修复重跑。不训练、不调参、不改论文、不提交。

@@ -1,5 +1,35 @@
 # 动态阶段状态（优先于10-25状态文件）
 
+## 2026-10-31 23:35 北京时间更新（代表基线45项完整交付并停止）
+
+ground_scaling_20261029/representatives_20261031全部45项PASS，报告/独立审计PASS：372独立记录、432逻辑行、2310区间、2656来源hash。6报告hash和完成标记/审计hash、45项唯一归属与原字节结果hash均已复核，所有执行worker/监督和coordinator正常退出。报告见该目录report/REPORT.md，NOTIFIED已登记，删除automation自动跟进并停止，不恢复任何旧任务。
+
+M档扩站后F/D相对最好代表局部的P60表现变差、R600优势缩小；L档P60优势缩小而R600优势扩大。原图下传L档P60增加10.888个百分点、R600下降46.275秒、未完成143降至115；S缺六代表仍NA，完整代表比较不可判定。原实验与成功标准保留，教师近似/三日描述性区间/跨架构边界均披露。不训练调参，不改论文，不提交推送。
+
+## 2026-10-31 13:35 北京时间更新（用户授权代表基线补跑45项）
+
+原扩站147项完整交付保留不变。用户新增六代表方法补跑，独立目录ground_scaling_20261029/representatives_20261031，先读其中HANDOFF.md/SUPPLEMENT.md。M/L扩站各18项，L单站缺local_16/global_heft_16/global_cgs_16共9，合计45项；登记SHA256 `6e9e370e278b87f338d2e7f5054f8ba53a345ce1e51403210480751a17f445b7`。四机新入口run_ground_representatives_20261031已于05:31至05:32Z启动，复用原HTTP服务，experiment ID ground_representatives_20261031。Mac9/各devbox6按空闲槽领取M/L，当前27 RUNNING/18 PENDING，无失败，Mac实际仿真进度已推进。首次发布HTTP包装409在创建前拒绝，正确spec包装随后发布成功，未重试仿真。四机冻结哈希/真实spawn九协议及新增方法测试PASS。自动跟进automation已创建，正常静默；硬截止11-04T16Z，失败停发、不自行重跑。
+
+完成自动372独立记录/432逻辑行/2310配对区间报告和独立审计，重点原图下传变化与GTD-GAT减最好代表局部P60/R600差值。S缺六代表不在本次范围，保留NA；原科学协议/模型/成功标准不变，教师报价近似仅记局限。不训练调参、不改论文、不提交推送。完整交付后删除本轮自动跟进并停止。
+
+## 2026-10-31 13:04 北京时间更新（扩站补充完整结束）
+
+ground_scaling_20261029已完成147新增任务，300独立记录/360逻辑行和2820配对区间独立审计PASS；147项分布式唯一归属核验PASS。10报告hash及完成标记已复核，曲线已目视。SSH下载认证通过kinit恢复后原coordinator自动收尾，无仿真重跑。完整报告为ground_scaling_20261029/report/REPORT.md。M扩站六模型交付均值均下降；L大多数模型改善但全局参考P600/R600变差。完整两套包络均可判定，所有种子仍未四项全过。S引用原单站，S/M6h、L1h，同日期场景变体和跨架构局限如实披露。已交付并登记NOTIFIED，删除本轮automation；不再启动实验，不改论文，不提交推送，等待用户命令。
+
+## 2026-10-30 14:40 北京时间更新（HTTP队列接管，优先于历史静态分片）
+
+用户要求devbox3统一HTTP队列，现有Mac/devbox1至3按空闲进程领取，不增加机器。已部署analysis.evaluation_queue及run_ground_queue_20261030；新登记ground_scaling_20261029/http_queue_20261030/REGISTRATION.json SHA256 be27584b65895de0ab44cfd269187b5c1398892c7b3bc1f9586e20e21ad34d78。17调度测试及四机HTTP鉴权/三机全部新旧冻结哈希预检PASS。服务、四worker和Mac汇总协调器已启动，旧v2收到STOP_AFTER_BATCH，仅收当前批；新worker正常DRAINING_LEGACY_BATCH，逐机核验已启动项PASS后才解除RESERVED并接续，不重复执行。旧控制导致BLOCKED不等于新失败，先看最新HANDOFF和LEGACY_RELEASE。
+
+Mac9、三devbox各6 spawn单线程；按空闲槽领取替代旧批次门槛，失败停止新领取、在途收尾，断联不回收重发。L仍Mac优先，L全完Mac接M，远端M不再固定20项。总147新增任务及原科学协议/输入/模型/唯一开启/截止完全不变，不改论文不提交。总状态看http_queue_20261030/QUEUE_STATUS.json；完成新147项归属审计后自动原报告及独立审计。详细角色身份和交接规则在ground_scaling_20261029/HANDOFF最新顶部。自动跟进automation已更新，正常静默。
+
+## 2026-10-30 更新（用户授权修正启动前部署路径并续跑）
+
+三机首次18项在仿真环境创建前因冻结字典绝对路径键不同而失败，实际源码hash一致；用户已明确授权保留证据、修正真实部署路径后重启这些项并继续L。新登记ground_scaling_20261029/distributed_20261030_v2/REGISTRATION.json SHA256 7c39067d74bc221bfb528e9c406cb854e9f31099c388ecea453c8d6734ec862a。真实远端路径/Users/bytedance/Projects/bs，三机spawn完整冻结校验通过，原源码/协议/模型不改。入口run_ground_distributed_v2_20261030；旧v1只收L当前批后退出，v2等待交接后接续L，M三机各20项/6进程独立启动。旧FAILED记录归档不删除，不能用旧状态判断v2。先读ground_scaling_20261029/HANDOFF最新顶部，不重复启动，不恢复旧池，硬截止不变。
+
+## 2026-10-30 11:45 北京时间更新（扩站补充评估跨机执行登记）
+
+用户后续已批准地面站扩展补充评估，原M/L/S和METHOD-COST已完成结果不变。当前扩站原147新任务运行中，L_single_completion27已PASS，L_scaled仍在原本地池执行。用户现授权devbox1-3均多进程承担尚未开始的M_scaled60，已完成验证日独立一致性预检及登记：ground_scaling_20261029/distributed_20261030/REGISTRATION.json SHA256 2853bde863c710b91f4b041d68fffc4a783671b5b789bf7242925b082b133229。三机各20项/6单线程进程，本地L9进程；原协议、manifest、源模型、输入与统计冻结不改。排他暂停旧派发，保留在途L批次收尾，再续L，M可同时跑。先读ground_scaling_20261029/HANDOFF.md顶部及新local/三机launch与status，不重复启动或恢复旧协调器。硬截止11-04T16Z，完成自动原报告独立审计与新增机器归属审计。仅本任务授权SSH devbox1-3，不改论文、不提交。
+
 ## 2026-10-29 17:00 北京时间更新（S完成，全计划停止）
 
 S正式60/60 PASS，自动报告及独立复核于08:20:56Z完成。837项溯源hash、3协议、评分ID与600随访、资源及候选OOD保存计数器核验PASS；60结果、84组配对比较/336指标bootstrap区间、完整曲线/两套包络/99行跨规模对照独立复核PASS。本次核验10份报告hash及REPORT_COMPLETE两个hash，协议/manifest未变，曲线已目视检查，原协调器/监督/防休眠及池全部退出，无失败标记。

@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-30T06:32:11.253779+00:00",
+  "hashes": {
+    "/Users/bytedance/Projects/bs/analysis/run_ground_queue_20261030.py": "5fb33c03dc5f039c386b2c996f1d20a609c9bf3fd749c420733e7b769e4d4938",
+    "/Users/bytedance/Projects/bs/analysis/evaluation_queue.py": "74ecc965ffdeb9818479b5c134a6c950b5af434eee8f134bbe26cc211a6eee11",
+    "analysis/EVALUATION_QUEUE.md": "53fa410baca52218cc33d181a35afce9a17c1f29f205e7e35e3534f07fc197c0",
+    "tests/test_evaluation_queue.py": "416a466bd42b486a4c41832aa6a1fb91e45f56dd21d8dfad60b52d8a571d1206",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/http_queue_20261030/DISPATCH_TESTS.json": "7629bc3ccdc56f67ac4a831c41ac0ef6a84a3341f6de0eccefb08f60a6b3cbb3",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/http_queue_20261030/QUEUE_HANDOFF_AMENDMENT.md": "64b34672561dd9bdfc16e35afc85b2b1b409d4da23ffcae512c3142e9382682a",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/http_queue_20261030/EXPERIMENT.json": "4f323b76293ec54e05757238633bafcf97981c04bc5a1c3b7222f2bfa1c98dad",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/distributed_20261030_v2/REGISTRATION.json": "7c39067d74bc221bfb528e9c406cb854e9f31099c388ecea453c8d6734ec862a",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_single_completion/run_manifest.json": "9a42bffa7c5c2f0ab45a5f5abca0ca32ea3373e51d28c31fc5e190a354ece69c",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_single_completion/data/2026-12-21/protocol.json": "3ee462b1247564874df8725960b9d90bf7b091856253ded320aae59151047cab",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_single_completion/data/2026-12-22/protocol.json": "c91cf4ebe7516549b57172cf3da76df4fd4614fe756ae4a064ccfb18bb0d2db6",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_single_completion/data/2026-12-23/protocol.json": "9d28d172e555e251f04b0ce0eea22e6a6487ed0cbaa6b26467cecd9e31627b63",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_scaled/run_manifest.json": "b2020996cf9b8dbeca06374c54c69d72b2593ed5783b38823e7aeccf65d41a27",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_scaled/data/2026-12-21/protocol.json": "f17c239fb92d6f90189a8b4915539dab8496b1590d41c53dbe454f4a18671558",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_scaled/data/2026-12-22/protocol.json": "29c958ce70655f75a26caaf688a5139c17c290b8697a37ffaf512f62717eca25",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_scaled/data/2026-12-23/protocol.json": "883a7927b3314e4cdce36612ff0098fdbd579fa7bd818c3d90e20039a26a1b80",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/run_manifest.json": "cd92a5c8a1327b624a64c1543b46c4c31f85c479ca77817b8f9cf881b81598b1",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-21/protocol.json": "fac1240e805ea8885720f9786f2b5e6c595198cccf32cfac070bf1e5cec7f4af",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-22/protocol.json": "6d1d3771d523d0012dff01cd37cf8ef2c9382f76aca075d0addbeed59ad041c5",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-23/protocol.json": "484c1c54d700a127d638975a73feab6afaecfacbc4be05603aa49a56f3495dce"
+  },
+  "original_manifest_sha256": "135b7b93c3348f249f46aea382a64aef0ed6cd9e7ac0715f1cdbae545a9df4c7",
+  "previous_registration_sha256": "7c39067d74bc221bfb528e9c406cb854e9f31099c388ecea453c8d6734ec862a",
+  "deadline": "2026-11-04T16:00:00+00:00",
+  "host_workers": {
+    "local": 9,
+    "devbox1": 6,
+    "devbox2": 6,
+    "devbox3": 6
+  },
+  "user_authorization": "2026-10-30 HTTP queue on devbox3; existing four machines; no new machine",
+  "unchanged": "simulation/model/inputs/protocol/statistics; no retry, no tuning, no paper edits"
+}

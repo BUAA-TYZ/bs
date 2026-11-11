@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "reference_sha256": "2c3b3e32f0da449cb520c5d760fc5867472d6b08d1eba05f8d9e6cbf7319221f",
+  "hosts": {
+    "devbox1": {
+      "sha256": "fe05e88b466cf442c702e559bcd87c934b07bee5420771b468c69f65eb2e6612",
+      "environment": {
+        "host": "n37-056-085",
+        "system": "Linux-5.4.143.bsk.8-amd64-x86_64-with-glibc2.28",
+        "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+        "packages": {
+          "torch": "2.12.0+cpu",
+          "numpy": "2.4.4",
+          "networkx": "3.6.1",
+          "skyfield": "1.54",
+          "sgp4": "2.25",
+          "PyYAML": "6.0.3",
+          "tqdm": "4.67.3",
+          "matplotlib": "3.11.2"
+        }
+      },
+      "wall_seconds": 80.15289986296557
+    },
+    "devbox2": {
+      "sha256": "14b8cc4ba18f48c07ba4604fe21c3e0ad72f0a1775aaa2a2476bd1c1231a460d",
+      "environment": {
+        "host": "n37-056-194",
+        "system": "Linux-5.4.143.bsk.8-amd64-x86_64-with-glibc2.28",
+        "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+        "packages": {
+          "torch": "2.12.0+cpu",
+          "numpy": "2.4.4",
+          "networkx": "3.6.1",
+          "skyfield": "1.54",
+          "sgp4": "2.25",
+          "PyYAML": "6.0.3",
+          "tqdm": "4.67.3",
+          "matplotlib": "3.11.2"
+        }
+      },
+      "wall_seconds": 80.95936437207274
+    },
+    "devbox3": {
+      "sha256": "dd26a690d3c33bdf637b3f26f9b5922155e01faa0bd9ba0f319aaea7b0c234b9",
+      "environment": {
+        "host": "n251-250-034",
+        "system": "Linux-5.15.120.bsk.3-amd64-x86_64-with-glibc2.36",
+        "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+        "packages": {
+          "torch": "2.12.0+cpu",
+          "numpy": "2.4.4",
+          "networkx": "3.6.1",
+          "skyfield": "1.54",
+          "sgp4": "2.25",
+          "PyYAML": "6.0.3",
+          "tqdm": "4.67.3",
+          "matplotlib": "3.11.2"
+        }
+      },
+      "wall_seconds": 43.53261225705501
+    }
+  },
+  "real_validation_cases_per_host": 20,
+  "toy_followup600_cases_per_host": 20,
+  "rules": "Float32 actor inputs/masks/discrete actions/toy traces exact; probabilities atol1e-5/rtol1e-4; other physical floats atol1e-6/rtol1e-9",
+  "limitation": "Validation smoke and toy equality are not proof of bitwise equality for all full test trajectories"
+}

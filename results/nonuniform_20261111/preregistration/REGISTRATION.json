@@ -1,0 +1,49 @@
+{
+  "registered_date": "2026-11-11",
+  "stage": "0_PREREGISTRATION",
+  "test_status": "SEALED_NOT_GENERATED_NOT_RUN",
+  "test_dates": [
+    "2026-12-28",
+    "2026-12-29",
+    "2026-12-30"
+  ],
+  "training_dates": [
+    "2026-10-16",
+    "2026-10-17",
+    "2026-10-18",
+    "2026-10-19",
+    "2026-10-20",
+    "2026-10-21"
+  ],
+  "validation_dates": [
+    "2026-10-22",
+    "2026-10-23",
+    "2026-10-24"
+  ],
+  "training_validation_split_user_confirmed": true,
+  "seeds": [
+    1701,
+    1702,
+    1703
+  ],
+  "gate1": {
+    "R600_reduction_seconds_at_least": 2,
+    "or_P60_gain_at_least": 0.01,
+    "and_P600_drop_at_most": 0.005
+  },
+  "gate2": {
+    "R600_vs_F": "strictly_lower",
+    "P60_drop_vs_F_at_most": 0.01,
+    "aggregation": "three days equally weighted, then mean of all three seeds"
+  },
+  "files_sha256": {
+    "docs/thesis/NONUNIFORM_PREREGISTRATION_20261111.md": "60cfff8fba32dee8989777f695cf0df3a3597504e20f511f94384296f5d4e9ac",
+    "results/nonuniform_20261111/preregistration/REPORT.md": "a9678b4269b893b8ca241400ca63dc72ca194513284a5e1555a6de54d6a536ff",
+    "results/nonuniform_20261111/preregistration/DATE_AUDIT.json": "5ab64ac3fb997ffe785f6c15bff3e9a239aaf68e3a4e57b98826856f8194c615"
+  },
+  "existing_source_anchor_check": "PASS",
+  "new_simulations": 0,
+  "research_implementation_started": false,
+  "cleanup_started": false,
+  "next_stage": "0.5_CLEANUP_REQUIRES_USER_CONFIRMATION"
+}

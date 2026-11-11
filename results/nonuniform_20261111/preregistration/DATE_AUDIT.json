@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "base_commit": "22f64612d8a66b52473b0b53ef76f9f6c501e2da",
+  "date_audit_scope": "Tracked and nonignored untracked filenames; UTF-8 text metadata/source/report formats excluding truth payloads. Before new registration. Historical exclusion inventory included. No scenario generation or propagation.",
+  "scanned_text_files": 15289,
+  "inventory_sha256": "b0eee679f89511f81eda0a5849299cf2e4909eecb5094cf9567b149ab799d64c",
+  "existing_literal_dates": ["2016-06-01", "2019-09-25", "2019-11-13", "2022-11-04", "2023-02-16", "2023-04-03", "2023-06-15", "2024-06-13", "2025-01-01", "2025-03-15", "2025-05-14", "2025-06-27", "2025-08-06", "2025-09-09", "2025-10-15", "2026-01-30", "2026-03-20", "2026-03-21", "2026-03-22", "2026-03-23", "2026-03-24", "2026-03-27", "2026-03-28", "2026-05-19", "2026-06-25", "2026-08-24", "2026-09-19", "2026-09-30", "2026-10-08", "2026-10-09", "2026-10-10", "2026-10-12", "2026-10-14", "2026-10-15", "2026-10-16", "2026-10-17", "2026-10-18", "2026-10-19", "2026-10-20", "2026-10-21", "2026-10-22", "2026-10-23", "2026-10-24", "2026-10-25", "2026-10-26", "2026-10-27", "2026-10-28", "2026-10-29", "2026-10-30", "2026-10-31", "2026-11-02", "2026-11-04", "2026-11-05", "2026-11-06", "2026-11-15", "2026-11-19", "2026-11-20", "2026-11-21", "2026-11-22", "2026-11-23", "2026-11-24", "2026-11-25", "2026-11-26", "2026-12-01", "2026-12-02", "2026-12-03", "2026-12-04", "2026-12-05", "2026-12-06", "2026-12-15", "2026-12-16", "2026-12-17", "2026-12-21", "2026-12-22", "2026-12-23"],
+  "new_test_dates": ["2026-12-28", "2026-12-29", "2026-12-30"],
+  "candidate_existing_hits": [],
+  "nearest_existing_date_days": {"2026-12-28": 5, "2026-12-29": 6, "2026-12-30": 7},
+  "anchors_sha256": {
+    "sim/workload.py": "5ebbbd322fd9d3c95177cae9acb2390c286925eca88b5a52b599cb4ba23ded80",
+    "analysis/dynamic_granularity.py": "3271a205b58997e9045dab0437b936870ca0a704c3b424284d7c67d87f6837cd",
+    "analysis/dynamic_granularity_v2.py": "689aa18d4928e36210cd6092d8e3746909594cccd56d15c249a011d180e359ca",
+    "analysis/dynamic_learning_interface.py": "e5982ad24b29c03029399bf17d550bd315558e1eef7e345a1fa5bad52281280a",
+    "analysis/sar_three_plan.py": "fb51280c59711f9d8e41e6f732d29821d8d920dfddcd1237dc0e288195d36561",
+    "analysis/freeze_main_scenario.py": "c6e0c5f61c2dc129ba4d9146e54045f98e285e07f1fe1c292eaeddc80633f40b",
+    "results/redesign_20261021/main_scenario/date_exclusion_audit.json": "5143ea187ef6c6e790ca4cf219139eba5e034828283f66aded7160975697e6a2",
+    "results/redesign_20261021/main_scenario/date_split.json": "00b8105cb6f6d25b3120833efb882d017a9f250e03bfba838540e06744feb5bc",
+    "results/sar_selector_pilot_20261019/blind_dates.json": "f067265f9ffb3d6a7dcb6159d9ca2069e2b8a2752bce71dcb235b93c3299211f",
+    "results/redesign_20261021/main_scenario/dynamic_heuristics_v2_20261025/REPORT.md": "c0a6e59a2a547fc8aa8e00a33f9539a4ea0a06d97ce5a7d4230748fd78d7677e",
+    "results/redesign_20261021/main_scenario/dynamic_heuristics_v2_20261025/independent_audit_20261026/REPORT.md": "b4d995d75762711ad9afaf155c4e71bc7bb9d2dbad1302cbbcb247b1b0c7c1d8"
+  },
+  "new_scenarios_generated": 0,
+  "new_test_runs": 0
+}

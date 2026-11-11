@@ -1,0 +1,111 @@
+{
+  "status": "PASS",
+  "at": "2026-10-31T05:26:08.498894+00:00",
+  "cases": [
+    {
+      "stations": 1,
+      "method": "ground_16",
+      "actions": 0
+    },
+    {
+      "stations": 1,
+      "method": "local_16",
+      "actions": 16
+    },
+    {
+      "stations": 1,
+      "method": "local_heft_16",
+      "actions": 16
+    },
+    {
+      "stations": 1,
+      "method": "local_cgs_16",
+      "actions": 16
+    },
+    {
+      "stations": 1,
+      "method": "global_heft_16",
+      "actions": 16
+    },
+    {
+      "stations": 1,
+      "method": "global_cgs_16",
+      "actions": 16
+    },
+    {
+      "stations": 2,
+      "method": "ground_16",
+      "actions": 0
+    },
+    {
+      "stations": 2,
+      "method": "local_16",
+      "actions": 16
+    },
+    {
+      "stations": 2,
+      "method": "local_heft_16",
+      "actions": 16
+    },
+    {
+      "stations": 2,
+      "method": "local_cgs_16",
+      "actions": 16
+    },
+    {
+      "stations": 2,
+      "method": "global_heft_16",
+      "actions": 16
+    },
+    {
+      "stations": 2,
+      "method": "global_cgs_16",
+      "actions": 16
+    },
+    {
+      "stations": 3,
+      "method": "ground_16",
+      "actions": 0
+    },
+    {
+      "stations": 3,
+      "method": "local_16",
+      "actions": 16
+    },
+    {
+      "stations": 3,
+      "method": "local_heft_16",
+      "actions": 16
+    },
+    {
+      "stations": 3,
+      "method": "local_cgs_16",
+      "actions": 16
+    },
+    {
+      "stations": 3,
+      "method": "global_heft_16",
+      "actions": 16
+    },
+    {
+      "stations": 3,
+      "method": "global_cgs_16",
+      "actions": 16
+    }
+  ],
+  "validation_protocol": "results/redesign_20261021/main_scenario/scale_validation_20261027/data/2026-10-22/hour_1/protocol.json",
+  "validation_sha256": "721fdbbd2f845d4dad33a3e69b2a88fd35e3ef05c01f1f84a451bcbbfd5316d3",
+  "test_command": [
+    "/Users/bytedance/Projects/bs/.venv/bin/python",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_ground_representatives_20261031.py"
+  ],
+  "test_output": "REPRESENTATIVE REPORT 372 432\nREPRESENTATIVE INDEPENDENT AUDIT PASS 2310\n....\n----------------------------------------------------------------------\nRan 4 tests in 2.250s\n\nOK\n",
+  "boundary": "18 validation-day geometry interfaces; 24 toy full 600-second followups; six single-station identity comparisons; no formal scores"
+}

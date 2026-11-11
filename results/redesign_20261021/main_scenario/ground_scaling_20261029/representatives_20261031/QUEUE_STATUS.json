@@ -1,0 +1,1360 @@
+{
+  "at": "2026-10-31T15:30:54.950312+00:00",
+  "blocked": null,
+  "complete": true,
+  "counts": {
+    "PASS": 45
+  },
+  "jobs": [
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793433871.2229123,
+      "heartbeat_stale": false,
+      "id": "f35657860f05cd0d624844a22b03c80edfa2b5ea221d992248bd0f95c3dcfd84",
+      "owner": "local:17e4b55c257d4b56a693460a604ab12f",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_single_representatives/validation/2026-12-21/local_16.json",
+        "sha256": "9856ee6f822cddd92a1e305ae868c0927e4277fe7741d768e486f92737ae8a93",
+        "status": "PASS",
+        "wall_seconds": 9168.181759542029
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "f35657860f05cd0d624844a22b03c80edfa2b5ea221d992248bd0f95c3dcfd84",
+        "job": [
+          "L_single_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_single_completion/data/2026-12-21/protocol.json",
+          "local_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_single_representatives/validation/2026-12-21/local_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793434284.5966792,
+      "heartbeat_stale": false,
+      "id": "672c50c7f8861e4713311360d018705fe35c1041519f16eafdee09fde7707996",
+      "owner": "local:17e4b55c257d4b56a693460a604ab12f",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_single_representatives/validation/2026-12-22/local_16.json",
+        "sha256": "2c43a7873d5d1d5e5094869f53a1d059bd04fa7a22258a5de1b05c1a4550bade",
+        "status": "PASS",
+        "wall_seconds": 9581.031091999961
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "672c50c7f8861e4713311360d018705fe35c1041519f16eafdee09fde7707996",
+        "job": [
+          "L_single_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_single_completion/data/2026-12-22/protocol.json",
+          "local_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_single_representatives/validation/2026-12-22/local_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793435311.308268,
+      "heartbeat_stale": false,
+      "id": "d27e16ca44cf35c323930fe97ed0eb1e23fe551dcd401f60e42f78d6f3125503",
+      "owner": "local:17e4b55c257d4b56a693460a604ab12f",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_single_representatives/validation/2026-12-23/local_16.json",
+        "sha256": "9b17a86c269e0a22816ec8e4db5e64debc087987ecebfd928cd7c58e09c9b5cb",
+        "status": "PASS",
+        "wall_seconds": 10605.852677583054
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "d27e16ca44cf35c323930fe97ed0eb1e23fe551dcd401f60e42f78d6f3125503",
+        "job": [
+          "L_single_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_single_completion/data/2026-12-23/protocol.json",
+          "local_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_single_representatives/validation/2026-12-23/local_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793433749.9050968,
+      "heartbeat_stale": false,
+      "id": "ae9146f0bda93a1b2fba74d39fabc163ae4309c23a5d64e8144f24cf197547b1",
+      "owner": "local:17e4b55c257d4b56a693460a604ab12f",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_single_representatives/validation/2026-12-21/global_heft_16.json",
+        "sha256": "af523214e8fb205f61b91e2c63c62477d423f20407167795e6e61f53ddee5855",
+        "status": "PASS",
+        "wall_seconds": 9047.395837415941
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "ae9146f0bda93a1b2fba74d39fabc163ae4309c23a5d64e8144f24cf197547b1",
+        "job": [
+          "L_single_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_single_completion/data/2026-12-21/protocol.json",
+          "global_heft_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_single_representatives/validation/2026-12-21/global_heft_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793433391.5701284,
+      "heartbeat_stale": false,
+      "id": "b7f93d5c94b831f22474895af3ab18321d20b98b1487980c64d9ff9490829977",
+      "owner": "local:17e4b55c257d4b56a693460a604ab12f",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_single_representatives/validation/2026-12-22/global_heft_16.json",
+        "sha256": "67a378270ce210111a9555f7d4e95f6bb0f942ae7a02edda94c60608a42dbe96",
+        "status": "PASS",
+        "wall_seconds": 8688.888984791993
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "b7f93d5c94b831f22474895af3ab18321d20b98b1487980c64d9ff9490829977",
+        "job": [
+          "L_single_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_single_completion/data/2026-12-22/protocol.json",
+          "global_heft_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_single_representatives/validation/2026-12-22/global_heft_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793434130.0756452,
+      "heartbeat_stale": false,
+      "id": "782f3c1a644ec17311b3b24c60a0d5de2718161f8cff205696972101c1a1bd63",
+      "owner": "local:17e4b55c257d4b56a693460a604ab12f",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_single_representatives/validation/2026-12-23/global_heft_16.json",
+        "sha256": "098502a9eef28176509bd2715ecc7ddc865f6b3a5910d2d6d4d54fb67c0a22e2",
+        "status": "PASS",
+        "wall_seconds": 9422.84999925003
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "782f3c1a644ec17311b3b24c60a0d5de2718161f8cff205696972101c1a1bd63",
+        "job": [
+          "L_single_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_single_completion/data/2026-12-23/protocol.json",
+          "global_heft_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_single_representatives/validation/2026-12-23/global_heft_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793433867.0297956,
+      "heartbeat_stale": false,
+      "id": "1d432311d4fe5a68d578e3f5c0804933d385080fe76b4cf4d18f14febccfb7e7",
+      "owner": "local:17e4b55c257d4b56a693460a604ab12f",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_single_representatives/validation/2026-12-21/global_cgs_16.json",
+        "sha256": "51148972677b6039668f170a2b4b128676cc57a365c925beecc9ba1514ef2a8f",
+        "status": "PASS",
+        "wall_seconds": 9163.033411875018
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "1d432311d4fe5a68d578e3f5c0804933d385080fe76b4cf4d18f14febccfb7e7",
+        "job": [
+          "L_single_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_single_completion/data/2026-12-21/protocol.json",
+          "global_cgs_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_single_representatives/validation/2026-12-21/global_cgs_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793433340.3111444,
+      "heartbeat_stale": false,
+      "id": "c39505de8ad7994eddf9c19f12c800ca0c55d5ca101736624fae6c495979988a",
+      "owner": "local:17e4b55c257d4b56a693460a604ab12f",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_single_representatives/validation/2026-12-22/global_cgs_16.json",
+        "sha256": "8d287e4b1ade1694d5d48456d1e7c22df260a3fb4f396df446ef79ae3c758c3e",
+        "status": "PASS",
+        "wall_seconds": 8634.10298174998
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "c39505de8ad7994eddf9c19f12c800ca0c55d5ca101736624fae6c495979988a",
+        "job": [
+          "L_single_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_single_completion/data/2026-12-22/protocol.json",
+          "global_cgs_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_single_representatives/validation/2026-12-22/global_cgs_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793434029.8342488,
+      "heartbeat_stale": false,
+      "id": "8114c655e909b7f93c9727b68fce9c110ab2cec1b8aaf23cdcc84e07598fa2d5",
+      "owner": "local:17e4b55c257d4b56a693460a604ab12f",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_single_representatives/validation/2026-12-23/global_cgs_16.json",
+        "sha256": "47047cefe2401eac8ec5ab94508d956d1a2c0ed1d9ea85f803febca93facfa15",
+        "status": "PASS",
+        "wall_seconds": 9326.47598691599
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "8114c655e909b7f93c9727b68fce9c110ab2cec1b8aaf23cdcc84e07598fa2d5",
+        "job": [
+          "L_single_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_single_completion/data/2026-12-23/protocol.json",
+          "global_cgs_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_single_representatives/validation/2026-12-23/global_cgs_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793442738.4007404,
+      "heartbeat_stale": false,
+      "id": "979a42a7bef6be251c39070840d971f5865bc7539199c5bf5ad67870f687af2b",
+      "owner": "devbox3:e28d04fb904a4916ad9a88c33c721ae6",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-21/ground_16.json",
+        "sha256": "464afa517f124dc39241dd514f7affa39ee9b237cdf478827b6dee11b959814e",
+        "status": "PASS",
+        "wall_seconds": 18009.921380489017
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "979a42a7bef6be251c39070840d971f5865bc7539199c5bf5ad67870f687af2b",
+        "job": [
+          "L_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_scaled/data/2026-12-21/protocol.json",
+          "ground_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-21/ground_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793443022.689516,
+      "heartbeat_stale": false,
+      "id": "9d0e834119f4924225905c52e9643f6f3a761e3a3cd87798269727bda672fcc7",
+      "owner": "devbox3:e28d04fb904a4916ad9a88c33c721ae6",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-22/ground_16.json",
+        "sha256": "eae53a485293290ba6f2ea33cd405246b9dbc015a9cb0ab9736cbc4bbc3ccdc0",
+        "status": "PASS",
+        "wall_seconds": 18292.822880560998
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "9d0e834119f4924225905c52e9643f6f3a761e3a3cd87798269727bda672fcc7",
+        "job": [
+          "L_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_scaled/data/2026-12-22/protocol.json",
+          "ground_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-22/ground_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793443506.1951673,
+      "heartbeat_stale": false,
+      "id": "517e93b244eb4125ba22857171b5d74ecd95fa22fde588a33de06138196bc9cf",
+      "owner": "devbox3:e28d04fb904a4916ad9a88c33c721ae6",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-23/ground_16.json",
+        "sha256": "b233e92b7dec8593e759f144f075d2ffee96efdd70b6529aea312891cafb983b",
+        "status": "PASS",
+        "wall_seconds": 18777.37813456799
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "517e93b244eb4125ba22857171b5d74ecd95fa22fde588a33de06138196bc9cf",
+        "job": [
+          "L_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_scaled/data/2026-12-23/protocol.json",
+          "ground_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-23/ground_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793441874.0781686,
+      "heartbeat_stale": false,
+      "id": "c712fa70a8344ebbb1b18dd6a003a1e8ad8051dc8c18927c472fa0492211c516",
+      "owner": "devbox3:e28d04fb904a4916ad9a88c33c721ae6",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-21/local_16.json",
+        "sha256": "f0ea9aa18f91104688fcbac8f8232758a9fb332f26f4f3183630e1f04b1f5d81",
+        "status": "PASS",
+        "wall_seconds": 17146.526674601017
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "c712fa70a8344ebbb1b18dd6a003a1e8ad8051dc8c18927c472fa0492211c516",
+        "job": [
+          "L_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_scaled/data/2026-12-21/protocol.json",
+          "local_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-21/local_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793442529.6205459,
+      "heartbeat_stale": false,
+      "id": "94a47d42bb918e0a19e4bd04ac2c0b72eac83bacb5c4bf45709ecee0aac7635c",
+      "owner": "devbox3:e28d04fb904a4916ad9a88c33c721ae6",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-22/local_16.json",
+        "sha256": "2b750b2e3ce138d04a2f5668e89bcc0f5419c07d0bca25bbd9d62a8406e10177",
+        "status": "PASS",
+        "wall_seconds": 17800.5835937449
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "94a47d42bb918e0a19e4bd04ac2c0b72eac83bacb5c4bf45709ecee0aac7635c",
+        "job": [
+          "L_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_scaled/data/2026-12-22/protocol.json",
+          "local_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-22/local_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793444542.4451911,
+      "heartbeat_stale": false,
+      "id": "7fa7a67bd558374b751df7d5587b665155fe6163c78e5e4fb574a32c3ad18917",
+      "owner": "devbox3:e28d04fb904a4916ad9a88c33c721ae6",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-23/local_16.json",
+        "sha256": "c3a460f8e22f4bff2805070ec1acef8052fb5bd7591be78560c1c4dded52d81d",
+        "status": "PASS",
+        "wall_seconds": 19813.55963310995
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "7fa7a67bd558374b751df7d5587b665155fe6163c78e5e4fb574a32c3ad18917",
+        "job": [
+          "L_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_scaled/data/2026-12-23/protocol.json",
+          "local_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-23/local_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793457077.0040314,
+      "heartbeat_stale": false,
+      "id": "27ab6b4e57e8ca4f2aa48feba77494870e11e0b9e699aed2b040d0c82ab280fb",
+      "owner": "devbox1:43f5d813809b4c988f6e32c883ebde3b",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-21/local_heft_16.json",
+        "sha256": "90fa2f7943c9c1b59700bd109f0c0b995400f41be4a1a61c9b19809cb8f9e68b",
+        "status": "PASS",
+        "wall_seconds": 32336.602040415048
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "27ab6b4e57e8ca4f2aa48feba77494870e11e0b9e699aed2b040d0c82ab280fb",
+        "job": [
+          "L_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_scaled/data/2026-12-21/protocol.json",
+          "local_heft_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-21/local_heft_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793457511.7641797,
+      "heartbeat_stale": false,
+      "id": "63c37d8a12a75261d4cd660738946d27c61e30db67ad209072c6525f7f041123",
+      "owner": "devbox1:43f5d813809b4c988f6e32c883ebde3b",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-22/local_heft_16.json",
+        "sha256": "a18beeab41ead97e2fee6e16d7f6ba3f2427ec9a64923fb8c755bb1a349033ee",
+        "status": "PASS",
+        "wall_seconds": 32768.06999825896
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "63c37d8a12a75261d4cd660738946d27c61e30db67ad209072c6525f7f041123",
+        "job": [
+          "L_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_scaled/data/2026-12-22/protocol.json",
+          "local_heft_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-22/local_heft_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793457793.6360116,
+      "heartbeat_stale": false,
+      "id": "a939f284de1840b99bbeb97d8d013586f9a4934d891b7d870c5453da925bbfae",
+      "owner": "devbox1:43f5d813809b4c988f6e32c883ebde3b",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-23/local_heft_16.json",
+        "sha256": "3b08132e8e6d6a5b0ccae1399237deb4330563e5c473ae6c7ab0a9f6c7a6c5e2",
+        "status": "PASS",
+        "wall_seconds": 33051.29912338499
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "a939f284de1840b99bbeb97d8d013586f9a4934d891b7d870c5453da925bbfae",
+        "job": [
+          "L_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_scaled/data/2026-12-23/protocol.json",
+          "local_heft_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-23/local_heft_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793460131.0445209,
+      "heartbeat_stale": false,
+      "id": "505a96d30c539f4a3477fe452100ceb3ce2f4a362f4da6e271b8914d95e8f641",
+      "owner": "devbox1:43f5d813809b4c988f6e32c883ebde3b",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-21/local_cgs_16.json",
+        "sha256": "35654054a99e496be3f76d0a7fb5a71d41c439443843ae4d0d8ea8518a4ad185",
+        "status": "PASS",
+        "wall_seconds": 35386.87144916493
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "505a96d30c539f4a3477fe452100ceb3ce2f4a362f4da6e271b8914d95e8f641",
+        "job": [
+          "L_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_scaled/data/2026-12-21/protocol.json",
+          "local_cgs_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-21/local_cgs_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793459301.9556477,
+      "heartbeat_stale": false,
+      "id": "da864c56ccc0c67ea92fe2c22d077bc8ecce093d929abf4e887885f7cec88c1f",
+      "owner": "devbox1:43f5d813809b4c988f6e32c883ebde3b",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-22/local_cgs_16.json",
+        "sha256": "42c47ad6e51e49a0c774d7a82b42df08d8385fa82de465c7d04b733b28a838e1",
+        "status": "PASS",
+        "wall_seconds": 34555.956757182954
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "da864c56ccc0c67ea92fe2c22d077bc8ecce093d929abf4e887885f7cec88c1f",
+        "job": [
+          "L_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_scaled/data/2026-12-22/protocol.json",
+          "local_cgs_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-22/local_cgs_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793460644.9079208,
+      "heartbeat_stale": false,
+      "id": "ac7d1dd0d6d02abc3d8d0cb0af6ec7d38db70ced533bf4ca7f0e4f2b296a7044",
+      "owner": "devbox1:43f5d813809b4c988f6e32c883ebde3b",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-23/local_cgs_16.json",
+        "sha256": "0a4bbd57159364a2122f1fcd9fd880b95cadafd273c078103fea8a4cea344f96",
+        "status": "PASS",
+        "wall_seconds": 35900.716786645935
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "ac7d1dd0d6d02abc3d8d0cb0af6ec7d38db70ced533bf4ca7f0e4f2b296a7044",
+        "job": [
+          "L_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_scaled/data/2026-12-23/protocol.json",
+          "local_cgs_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-23/local_cgs_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793456485.592314,
+      "heartbeat_stale": false,
+      "id": "b45914ac607ab6444a445467d883781e37addfacf468f6ad10455671e12d2331",
+      "owner": "devbox2:3d65a316eef348a89ad61b7353a2abaa",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-21/global_heft_16.json",
+        "sha256": "23a8533c7815d845a571d2e006261fd692cfd7a177d7ccce594a412fb1982ea7",
+        "status": "PASS",
+        "wall_seconds": 31741.811667590984
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "b45914ac607ab6444a445467d883781e37addfacf468f6ad10455671e12d2331",
+        "job": [
+          "L_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_scaled/data/2026-12-21/protocol.json",
+          "global_heft_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-21/global_heft_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793457159.383174,
+      "heartbeat_stale": false,
+      "id": "6690fef84606b1dfa49de1f2c2ccda3abc8cb3e31adbe26e650da46144fd52a3",
+      "owner": "devbox2:3d65a316eef348a89ad61b7353a2abaa",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-22/global_heft_16.json",
+        "sha256": "0a3c268ca4c3bb8b4d1244eb8e754a04a88e1e82528390b0b469e8ab9a79a322",
+        "status": "PASS",
+        "wall_seconds": 32417.31145117199
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "6690fef84606b1dfa49de1f2c2ccda3abc8cb3e31adbe26e650da46144fd52a3",
+        "job": [
+          "L_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_scaled/data/2026-12-22/protocol.json",
+          "global_heft_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-22/global_heft_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793459064.7019856,
+      "heartbeat_stale": false,
+      "id": "b8e3b5dccb437e7f6ee3ffccb4f807de671a8d4cf26a89a0bd28842f5c2ece0e",
+      "owner": "devbox2:3d65a316eef348a89ad61b7353a2abaa",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-23/global_heft_16.json",
+        "sha256": "cacf14a5cf6ea01f1f79727768a45c8848287e020776f778f0dafcbd8ae0c691",
+        "status": "PASS",
+        "wall_seconds": 34321.27348795999
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "b8e3b5dccb437e7f6ee3ffccb4f807de671a8d4cf26a89a0bd28842f5c2ece0e",
+        "job": [
+          "L_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_scaled/data/2026-12-23/protocol.json",
+          "global_heft_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-23/global_heft_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793458541.3763332,
+      "heartbeat_stale": false,
+      "id": "94111f447a3ef519bd43666d0b37cd47e2e591f812ae5fcb405ee115a2574599",
+      "owner": "devbox2:3d65a316eef348a89ad61b7353a2abaa",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-21/global_cgs_16.json",
+        "sha256": "13579b9ae4922535908b45e2fdb88794298021f4a546ddaf5a986bf0994f5275",
+        "status": "PASS",
+        "wall_seconds": 33796.81680604303
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "94111f447a3ef519bd43666d0b37cd47e2e591f812ae5fcb405ee115a2574599",
+        "job": [
+          "L_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_scaled/data/2026-12-21/protocol.json",
+          "global_cgs_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-21/global_cgs_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793455261.8698046,
+      "heartbeat_stale": false,
+      "id": "0a4879eef63cb48cb9345e5767acc28094a6df0ef1f4b2ad51a4a801f226499b",
+      "owner": "devbox2:3d65a316eef348a89ad61b7353a2abaa",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-22/global_cgs_16.json",
+        "sha256": "f64a1f39ad95b598efe88e5e4471c2445108ec1b296ea7f5c21eaad52cc5fb8b",
+        "status": "PASS",
+        "wall_seconds": 30519.44178520399
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "0a4879eef63cb48cb9345e5767acc28094a6df0ef1f4b2ad51a4a801f226499b",
+        "job": [
+          "L_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_scaled/data/2026-12-22/protocol.json",
+          "global_cgs_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-22/global_cgs_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793458829.8352926,
+      "heartbeat_stale": false,
+      "id": "8196b6b89a8eb8926dc90fd51872fb65bbd2e466ba64887fedd72a332f77d65d",
+      "owner": "devbox2:3d65a316eef348a89ad61b7353a2abaa",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-23/global_cgs_16.json",
+        "sha256": "17ccedc883d4efc04f0dd55c71c1747d28a080a63dc98d2eca9af600768102d2",
+        "status": "PASS",
+        "wall_seconds": 34084.28162219201
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "8196b6b89a8eb8926dc90fd51872fb65bbd2e466ba64887fedd72a332f77d65d",
+        "job": [
+          "L_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_scaled/data/2026-12-23/protocol.json",
+          "global_cgs_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/L_scaled_representatives/validation/2026-12-23/global_cgs_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793441028.8169224,
+      "heartbeat_stale": false,
+      "id": "4b90c6f77333e9746cb9774b5c6eccb2065c261a6a75dadb99ac80a8e2927eb2",
+      "owner": "local:17e4b55c257d4b56a693460a604ab12f",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-21/ground_16.json",
+        "sha256": "964893e29abbf45d187adf3ec6a5d5aeee60081c003c372e27aec6d795b85ba5",
+        "status": "PASS",
+        "wall_seconds": 7687.257923291996
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "4b90c6f77333e9746cb9774b5c6eccb2065c261a6a75dadb99ac80a8e2927eb2",
+        "job": [
+          "M_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-21/protocol.json",
+          "ground_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-21/ground_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793440199.5824537,
+      "heartbeat_stale": false,
+      "id": "2388a6eff81a88c83395b434c047d973ab43a1d671fb93f258cb6ea80ee2e25c",
+      "owner": "local:17e4b55c257d4b56a693460a604ab12f",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-22/ground_16.json",
+        "sha256": "142a8056bc65fc9842df0114817bb56a5a166db20920b343ade19789ff787063",
+        "status": "PASS",
+        "wall_seconds": 6803.950230083079
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2388a6eff81a88c83395b434c047d973ab43a1d671fb93f258cb6ea80ee2e25c",
+        "job": [
+          "M_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-22/protocol.json",
+          "ground_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-22/ground_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793440277.1675525,
+      "heartbeat_stale": false,
+      "id": "b6bbd39aa649d9e7ddec0f8ac1899c91aa7966f4542151efa3b614857b838cb6",
+      "owner": "local:17e4b55c257d4b56a693460a604ab12f",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-23/ground_16.json",
+        "sha256": "8f5385ca80e4d21646579a7a0fd2cf08959c96c93655b9d154f51fae30658c3c",
+        "status": "PASS",
+        "wall_seconds": 6522.102142167045
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "b6bbd39aa649d9e7ddec0f8ac1899c91aa7966f4542151efa3b614857b838cb6",
+        "job": [
+          "M_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-23/protocol.json",
+          "ground_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-23/ground_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793442370.1454597,
+      "heartbeat_stale": false,
+      "id": "936a1a385a4190e3ad8b84e600d013711f759fbc9cdd05ff63e2a563689dd419",
+      "owner": "local:17e4b55c257d4b56a693460a604ab12f",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-21/local_16.json",
+        "sha256": "d05279a433be2f2db05f6dc879f1cbaeaa04a1506ee67cab3a8436ab2afa0910",
+        "status": "PASS",
+        "wall_seconds": 8497.744524499984
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "936a1a385a4190e3ad8b84e600d013711f759fbc9cdd05ff63e2a563689dd419",
+        "job": [
+          "M_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-21/protocol.json",
+          "local_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-21/local_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793441937.8360176,
+      "heartbeat_stale": false,
+      "id": "97fe1e73f615919d646e4aa85061c34386533ba189969343bfad91e85cb0e8ae",
+      "owner": "local:17e4b55c257d4b56a693460a604ab12f",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-22/local_16.json",
+        "sha256": "e080aa6af67588c37c12ea4c09eb5cac2bbd17ecdbffd07b8affe47ce8fe1876",
+        "status": "PASS",
+        "wall_seconds": 8060.408118916908
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "97fe1e73f615919d646e4aa85061c34386533ba189969343bfad91e85cb0e8ae",
+        "job": [
+          "M_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-22/protocol.json",
+          "local_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-22/local_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793441827.990791,
+      "heartbeat_stale": false,
+      "id": "ee991402c96fc310edac98c66d6f831ec128d34d518c53ab370889a170c18944",
+      "owner": "local:17e4b55c257d4b56a693460a604ab12f",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-23/local_16.json",
+        "sha256": "655827fb83a046bc25de28bb7bb2a5395be29282ed1a0489dd7b222e92376365",
+        "status": "PASS",
+        "wall_seconds": 7795.584672749974
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "ee991402c96fc310edac98c66d6f831ec128d34d518c53ab370889a170c18944",
+        "job": [
+          "M_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-23/protocol.json",
+          "local_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-23/local_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793441363.730253,
+      "heartbeat_stale": false,
+      "id": "0058d7eeb64ef3ab942440d138a2d5ca6677f5118a59f635c97161ac9f0cf1c0",
+      "owner": "local:17e4b55c257d4b56a693460a604ab12f",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-21/local_heft_16.json",
+        "sha256": "9eaac3b9e885e713abcfae970718548a01f03c6a355bd1de69ea3bab98c27962",
+        "status": "PASS",
+        "wall_seconds": 7235.775440250058
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "0058d7eeb64ef3ab942440d138a2d5ca6677f5118a59f635c97161ac9f0cf1c0",
+        "job": [
+          "M_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-21/protocol.json",
+          "local_heft_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-21/local_heft_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793440917.3389192,
+      "heartbeat_stale": false,
+      "id": "21e5a8a9dbab21036b310bd2bd7c00d597d2118e74305a977b59f3ebae001a27",
+      "owner": "local:17e4b55c257d4b56a693460a604ab12f",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-22/local_heft_16.json",
+        "sha256": "614cbc157eec4620b97329e953cb911c25d8116400a6ad00b6fe76c9eaa90846",
+        "status": "PASS",
+        "wall_seconds": 6631.459653625032
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "21e5a8a9dbab21036b310bd2bd7c00d597d2118e74305a977b59f3ebae001a27",
+        "job": [
+          "M_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-22/protocol.json",
+          "local_heft_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-22/local_heft_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793441648.5316834,
+      "heartbeat_stale": false,
+      "id": "2edf868973aa302026664f069e09151bbf2999c52deec1070bd785d20a00dfec",
+      "owner": "local:17e4b55c257d4b56a693460a604ab12f",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-23/local_heft_16.json",
+        "sha256": "c9418a009a91089cc345903b2867007d7d5e1260ed4a567c3fa1cbe496faba47",
+        "status": "PASS",
+        "wall_seconds": 6334.36963099998
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2edf868973aa302026664f069e09151bbf2999c52deec1070bd785d20a00dfec",
+        "job": [
+          "M_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-23/protocol.json",
+          "local_heft_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-23/local_heft_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793446951.7563353,
+      "heartbeat_stale": false,
+      "id": "317fad2c9bc8f160a4881cd36044221398bd70b91c6530bf9f74bd15be365af0",
+      "owner": "local:17e4b55c257d4b56a693460a604ab12f",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-21/local_cgs_16.json",
+        "sha256": "dc0bf41ae02adef1789f6651166ad0df0304bc178110a6fc1870a0096d50968d",
+        "status": "PASS",
+        "wall_seconds": 6750.140673666028
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "317fad2c9bc8f160a4881cd36044221398bd70b91c6530bf9f74bd15be365af0",
+        "job": [
+          "M_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-21/protocol.json",
+          "local_cgs_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-21/local_cgs_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793446538.2446053,
+      "heartbeat_stale": false,
+      "id": "8a271133bc8ed8ed46b0c1f28debac0d690796eea0a613651b1170e5c0554409",
+      "owner": "local:17e4b55c257d4b56a693460a604ab12f",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-22/local_cgs_16.json",
+        "sha256": "c409a13b2a59887908efde7e47999c466d35b93513a9a33337e0900d6e551fda",
+        "status": "PASS",
+        "wall_seconds": 6259.156160542043
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "8a271133bc8ed8ed46b0c1f28debac0d690796eea0a613651b1170e5c0554409",
+        "job": [
+          "M_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-22/protocol.json",
+          "local_cgs_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-22/local_cgs_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793446850.6921213,
+      "heartbeat_stale": false,
+      "id": "90ec4b84e9cc6bdf58dd95c334085d81b821137229b05d70421c79630e10e3f9",
+      "owner": "local:17e4b55c257d4b56a693460a604ab12f",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-23/local_cgs_16.json",
+        "sha256": "7e3c6855b46cfcd204da5bcedac61abcb88639b5da925f21fae1d2b0283a5c13",
+        "status": "PASS",
+        "wall_seconds": 5929.014925165917
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "90ec4b84e9cc6bdf58dd95c334085d81b821137229b05d70421c79630e10e3f9",
+        "job": [
+          "M_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-23/protocol.json",
+          "local_cgs_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-23/local_cgs_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793447175.3413131,
+      "heartbeat_stale": false,
+      "id": "52489b4e1a538c54dcd79c5d04eb2bd2f07c1a8f2430345fcbf40f93ac4bb290",
+      "owner": "local:17e4b55c257d4b56a693460a604ab12f",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-21/global_heft_16.json",
+        "sha256": "bb7427d69528fb3e7e9348db3bd4830849ae688b899bdf4cc526b960fa2f71fb",
+        "status": "PASS",
+        "wall_seconds": 6146.646636874997
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "52489b4e1a538c54dcd79c5d04eb2bd2f07c1a8f2430345fcbf40f93ac4bb290",
+        "job": [
+          "M_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-21/protocol.json",
+          "global_heft_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-21/global_heft_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793447074.7551513,
+      "heartbeat_stale": false,
+      "id": "ac79515b0785a5e784934df9a8b1b0fbf618b75cd74131e059ef2f5622940243",
+      "owner": "local:17e4b55c257d4b56a693460a604ab12f",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-22/global_heft_16.json",
+        "sha256": "89f883d6b881c5ff64d7b1fc2924b449122302336f22367d7bb71ecfbe9a7829",
+        "status": "PASS",
+        "wall_seconds": 5706.883525500074
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "ac79515b0785a5e784934df9a8b1b0fbf618b75cd74131e059ef2f5622940243",
+        "job": [
+          "M_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-22/protocol.json",
+          "global_heft_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-22/global_heft_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793447064.2714748,
+      "heartbeat_stale": false,
+      "id": "0de5124ff083b4a2edd6f1b6db42ed6c30fbcc3fa31c73ae102db6ed0c0c6bfb",
+      "owner": "local:17e4b55c257d4b56a693460a604ab12f",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-23/global_heft_16.json",
+        "sha256": "58a43724a12e42c90f961698e89c4aea1e24fb3074dbfd6a4346861ae4401ee1",
+        "status": "PASS",
+        "wall_seconds": 5417.1123375829775
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "0de5124ff083b4a2edd6f1b6db42ed6c30fbcc3fa31c73ae102db6ed0c0c6bfb",
+        "job": [
+          "M_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-23/protocol.json",
+          "global_heft_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-23/global_heft_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793447557.170859,
+      "heartbeat_stale": false,
+      "id": "ef2725183a51a302ea97f23dcc9bb775c970229556506ae0b9d08dade5a64600",
+      "owner": "local:17e4b55c257d4b56a693460a604ab12f",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-21/global_cgs_16.json",
+        "sha256": "e3ee3865c13c6601cd98221c928fac75890453ab310954d704fc24926191ca93",
+        "status": "PASS",
+        "wall_seconds": 5724.348695707973
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "ef2725183a51a302ea97f23dcc9bb775c970229556506ae0b9d08dade5a64600",
+        "job": [
+          "M_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-21/protocol.json",
+          "global_cgs_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-21/global_cgs_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793453467.1417193,
+      "heartbeat_stale": false,
+      "id": "ba190e086b3b67753107b15fc50962984fc9bfcc228bc523383d4f824a82c585",
+      "owner": "devbox3:e28d04fb904a4916ad9a88c33c721ae6",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-22/global_cgs_16.json",
+        "sha256": "6ef2bed1cf1c3475416c184296cf647a871071dc65db2921a409c8a6fe52b6ad",
+        "status": "PASS",
+        "wall_seconds": 11588.60408774193
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "ba190e086b3b67753107b15fc50962984fc9bfcc228bc523383d4f824a82c585",
+        "job": [
+          "M_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-22/protocol.json",
+          "global_cgs_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-22/global_cgs_16.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "ground_representatives_20261031",
+      "heartbeat": 1793447245.383452,
+      "heartbeat_stale": false,
+      "id": "c7e92531e4f0a4619bdf654ba30c05cd879920740301d52ec5254eba3d77273e",
+      "owner": "local:17e4b55c257d4b56a693460a604ab12f",
+      "result": {
+        "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-23/global_cgs_16.json",
+        "sha256": "b77932a72397f626f93e43404a18a507d3e9dfa03c3b48cf7195713cc8479d34",
+        "status": "PASS",
+        "wall_seconds": 5306.776818374987
+      },
+      "spec": {
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "c7e92531e4f0a4619bdf654ba30c05cd879920740301d52ec5254eba3d77273e",
+        "job": [
+          "M_scaled_representatives",
+          "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-23/protocol.json",
+          "global_cgs_16"
+        ],
+        "legacy_host": "local",
+        "output": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/M_scaled_representatives/validation/2026-12-23/global_cgs_16.json"
+      },
+      "state": "PASS"
+    }
+  ]
+}

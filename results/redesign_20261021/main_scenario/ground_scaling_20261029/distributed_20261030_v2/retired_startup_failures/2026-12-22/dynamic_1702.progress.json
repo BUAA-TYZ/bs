@@ -1,0 +1,6 @@
+{
+  "status": "FAILED",
+  "method": "dynamic_1702",
+  "date": "2026-12-22",
+  "traceback": "Traceback (most recent call last):\n  File \"/data00/home/tianyuzhe/bs_ground_scaling_20261030/analysis/run_scale_validation_20261027.py\", line 147, in simulate\n    assert not out.exists() and not progress.exists();check_time();m=verify_manifest();verify(p)\n                                                                                       ^^^^^^^^^\n  File \"/data00/home/tianyuzhe/bs_ground_scaling_20261030/analysis/run_load_pressure_short.py\", line 43, in verify\n    check_frozen(protocol[\"frozen_protocol\"])\n  File \"/data00/home/tianyuzhe/bs_ground_scaling_20261030/analysis/run_calibration_capacity.py\", line 202, in check_frozen\n    raise RuntimeError(\"Frozen source or diagnostic implementation changed\")\nRuntimeError: Frozen source or diagnostic implementation changed\n"
+}

@@ -1,0 +1,168 @@
+{
+  "status": "PASS",
+  "registration_sha256": "6e9e370e278b87f338d2e7f5054f8ba53a345ce1e51403210480751a17f445b7",
+  "local": {
+    "status": "PASS",
+    "host": "GK941VQDQ9",
+    "root": "/Users/bytedance/Projects/bs",
+    "spawn_protocol_count": 9,
+    "tests": "PREFLIGHT.json"
+  },
+  "remote": {
+    "devbox1": {
+      "probe": {
+        "status": "PASS",
+        "host": "n37-056-085",
+        "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+        "root": "/Users/bytedance/Projects/bs",
+        "registration_sha256": "6e9e370e278b87f338d2e7f5054f8ba53a345ce1e51403210480751a17f445b7",
+        "protocols": [
+          {
+            "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_scaled/data/2026-12-21/protocol.json",
+            "sha256": "f17c239fb92d6f90189a8b4915539dab8496b1590d41c53dbe454f4a18671558"
+          },
+          {
+            "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_scaled/data/2026-12-22/protocol.json",
+            "sha256": "29c958ce70655f75a26caaf688a5139c17c290b8697a37ffaf512f62717eca25"
+          },
+          {
+            "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_scaled/data/2026-12-23/protocol.json",
+            "sha256": "883a7927b3314e4cdce36612ff0098fdbd579fa7bd818c3d90e20039a26a1b80"
+          },
+          {
+            "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_single_completion/data/2026-12-21/protocol.json",
+            "sha256": "3ee462b1247564874df8725960b9d90bf7b091856253ded320aae59151047cab"
+          },
+          {
+            "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_single_completion/data/2026-12-22/protocol.json",
+            "sha256": "c91cf4ebe7516549b57172cf3da76df4fd4614fe756ae4a064ccfb18bb0d2db6"
+          },
+          {
+            "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_single_completion/data/2026-12-23/protocol.json",
+            "sha256": "9d28d172e555e251f04b0ce0eea22e6a6487ed0cbaa6b26467cecd9e31627b63"
+          },
+          {
+            "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-21/protocol.json",
+            "sha256": "fac1240e805ea8885720f9786f2b5e6c595198cccf32cfac070bf1e5cec7f4af"
+          },
+          {
+            "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-22/protocol.json",
+            "sha256": "6d1d3771d523d0012dff01cd37cf8ef2c9382f76aca075d0addbeed59ad041c5"
+          },
+          {
+            "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-23/protocol.json",
+            "sha256": "484c1c54d700a127d638975a73feab6afaecfacbc4be05603aa49a56f3495dce"
+          }
+        ]
+      },
+      "test_output": "....\n----------------------------------------------------------------------\nRan 4 tests in 8.329s\n\nOK\nREPRESENTATIVE REPORT 372 432\nREPRESENTATIVE INDEPENDENT AUDIT PASS 2310\n"
+    },
+    "devbox2": {
+      "probe": {
+        "status": "PASS",
+        "host": "n37-056-194",
+        "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+        "root": "/Users/bytedance/Projects/bs",
+        "registration_sha256": "6e9e370e278b87f338d2e7f5054f8ba53a345ce1e51403210480751a17f445b7",
+        "protocols": [
+          {
+            "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_scaled/data/2026-12-21/protocol.json",
+            "sha256": "f17c239fb92d6f90189a8b4915539dab8496b1590d41c53dbe454f4a18671558"
+          },
+          {
+            "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_scaled/data/2026-12-22/protocol.json",
+            "sha256": "29c958ce70655f75a26caaf688a5139c17c290b8697a37ffaf512f62717eca25"
+          },
+          {
+            "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_scaled/data/2026-12-23/protocol.json",
+            "sha256": "883a7927b3314e4cdce36612ff0098fdbd579fa7bd818c3d90e20039a26a1b80"
+          },
+          {
+            "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_single_completion/data/2026-12-21/protocol.json",
+            "sha256": "3ee462b1247564874df8725960b9d90bf7b091856253ded320aae59151047cab"
+          },
+          {
+            "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_single_completion/data/2026-12-22/protocol.json",
+            "sha256": "c91cf4ebe7516549b57172cf3da76df4fd4614fe756ae4a064ccfb18bb0d2db6"
+          },
+          {
+            "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_single_completion/data/2026-12-23/protocol.json",
+            "sha256": "9d28d172e555e251f04b0ce0eea22e6a6487ed0cbaa6b26467cecd9e31627b63"
+          },
+          {
+            "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-21/protocol.json",
+            "sha256": "fac1240e805ea8885720f9786f2b5e6c595198cccf32cfac070bf1e5cec7f4af"
+          },
+          {
+            "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-22/protocol.json",
+            "sha256": "6d1d3771d523d0012dff01cd37cf8ef2c9382f76aca075d0addbeed59ad041c5"
+          },
+          {
+            "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-23/protocol.json",
+            "sha256": "484c1c54d700a127d638975a73feab6afaecfacbc4be05603aa49a56f3495dce"
+          }
+        ]
+      },
+      "test_output": "....\n----------------------------------------------------------------------\nRan 4 tests in 8.467s\n\nOK\nREPRESENTATIVE REPORT 372 432\nREPRESENTATIVE INDEPENDENT AUDIT PASS 2310\n"
+    },
+    "devbox3": {
+      "probe": {
+        "status": "PASS",
+        "host": "n251-250-034",
+        "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+        "root": "/Users/bytedance/Projects/bs",
+        "registration_sha256": "6e9e370e278b87f338d2e7f5054f8ba53a345ce1e51403210480751a17f445b7",
+        "protocols": [
+          {
+            "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_scaled/data/2026-12-21/protocol.json",
+            "sha256": "f17c239fb92d6f90189a8b4915539dab8496b1590d41c53dbe454f4a18671558"
+          },
+          {
+            "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_scaled/data/2026-12-22/protocol.json",
+            "sha256": "29c958ce70655f75a26caaf688a5139c17c290b8697a37ffaf512f62717eca25"
+          },
+          {
+            "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_scaled/data/2026-12-23/protocol.json",
+            "sha256": "883a7927b3314e4cdce36612ff0098fdbd579fa7bd818c3d90e20039a26a1b80"
+          },
+          {
+            "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_single_completion/data/2026-12-21/protocol.json",
+            "sha256": "3ee462b1247564874df8725960b9d90bf7b091856253ded320aae59151047cab"
+          },
+          {
+            "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_single_completion/data/2026-12-22/protocol.json",
+            "sha256": "c91cf4ebe7516549b57172cf3da76df4fd4614fe756ae4a064ccfb18bb0d2db6"
+          },
+          {
+            "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/L_single_completion/data/2026-12-23/protocol.json",
+            "sha256": "9d28d172e555e251f04b0ce0eea22e6a6487ed0cbaa6b26467cecd9e31627b63"
+          },
+          {
+            "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-21/protocol.json",
+            "sha256": "fac1240e805ea8885720f9786f2b5e6c595198cccf32cfac070bf1e5cec7f4af"
+          },
+          {
+            "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-22/protocol.json",
+            "sha256": "6d1d3771d523d0012dff01cd37cf8ef2c9382f76aca075d0addbeed59ad041c5"
+          },
+          {
+            "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-23/protocol.json",
+            "sha256": "484c1c54d700a127d638975a73feab6afaecfacbc4be05603aa49a56f3495dce"
+          }
+        ]
+      },
+      "test_output": "....\n----------------------------------------------------------------------\nRan 4 tests in 5.314s\n\nOK\nREPRESENTATIVE REPORT 372 432\nREPRESENTATIVE INDEPENDENT AUDIT PASS 2310\n"
+    }
+  },
+  "memory_check": {
+    "local_historical_peak_rss_gb": {
+      "M": 0.648773632,
+      "L": 0.59506688
+    },
+    "remote_available_mb": {
+      "devbox1": 14268,
+      "devbox2": 14293,
+      "devbox3": 14390
+    }
+  }
+}

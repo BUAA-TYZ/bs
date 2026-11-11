@@ -1,0 +1,43 @@
+{
+  "stage": "0_PREREGISTRATION_AND_EXISTING_WORK_SNAPSHOT",
+  "date": "2026-11-11",
+  "target": "origin/master",
+  "base_commit": "22f64612d8a66b52473b0b53ef76f9f6c501e2da",
+  "initial_scan": {
+    "staged_files": 5274,
+    "staged_bytes": 97915402,
+    "inventory_sha256": "b382d1707ce3c7b357b070a4fd561c065a4cf9e6e7aba7a61e45de41e62ef19c",
+    "scope_note": "Before adding REGISTRATION.json and this submission check; both metadata files are checked again before commit.",
+    "large_file_command": "find <staged ACMR paths in batches of 200> -type f -size +50M -print",
+    "staged_over_50_MiB": [],
+    "largest_blob_bytes": 5547547,
+    "largest_blob_path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/report/FINAL_AUDIT.json"
+  },
+  "new_lfs_files": [],
+  "regenerable_archive_ignored": {
+    "path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/distributed_20261030/input_bundle.tar.gz",
+    "bytes": 178553234,
+    "local_file_deleted": false
+  },
+  "secret_scan": {
+    "scope": "All staged blob contents, including archived logs and binary files; no matched credential contents printed",
+    "rules": ["private keys", "provider token formats", "JWT", "literal Bearer", "literal password/token/secret/API-key assignments", "exact current local queue credential"],
+    "exact_current_local_queue_credential_present": false,
+    "confirmed_secrets": 0,
+    "reviewed_false_positives": [
+      {"path": "analysis/run_ground_queue_20261030.py", "line": 103, "reason": "User authorization prose, not an HTTP credential"},
+      {"path": "analysis/run_ground_representatives_20261031.py", "line": 169, "reason": "User authorization prose, not an HTTP credential"},
+      {"path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/http_queue_20261030/REGISTRATION.json", "line": 34, "reason": "User authorization prose"},
+      {"path": "results/redesign_20261021/main_scenario/ground_scaling_20261029/representatives_20261031/REGISTRATION.json", "line": 473, "reason": "User authorization prose"}
+    ],
+    "limitation": "Pattern and exact-known-value checks are not a proof of absence of every possible unknown credential encoding."
+  },
+  "ignored_paths_verified": ["runs/", "workbench/settings.json"],
+  "whitespace_check": {
+    "code_tests_new_docs": "PASS",
+    "full_archive": "1162 CR line-ending warnings in the historical HTTP coordinator process.log; preserve raw evidence bytes rather than rewrite logs"
+  },
+  "simulation_tests_run_this_stage": false,
+  "files_deleted_this_stage": 0,
+  "pre_cleanup_tag_created": false
+}

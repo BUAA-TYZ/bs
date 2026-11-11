@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/bytedance/Projects/bs/analysis/run_ground_distributed_v2_20261030.py", line 291, in <module>
+    globals()[args.mode](args.host)
+  File "/Users/bytedance/Projects/bs/analysis/run_ground_distributed_v2_20261030.py", line 253, in panel
+    assert ok, 'Local failure; current batch drained; no retry'
+           ^^
+AssertionError: Local failure; current batch drained; no retry

@@ -1,0 +1,401 @@
+{
+  "at": "2026-10-30T03:56:04.443933+00:00",
+  "status": "FROZEN_BEFORE_REMOTE_TESTS",
+  "manifest_sha256": "135b7b93c3348f249f46aea382a64aef0ed6cd9e7ac0715f1cdbae545a9df4c7",
+  "protocol_sha256": "cd1a3d97f70d0b60b33abaaf0931db616983c17e7aa6c3bb6e1794792b1207f1",
+  "opening_sha256": "5d29edd52397f9bd70fd7cd62e44e7f83991a14e31963313cdcc12bf6eb246f7",
+  "hashes": {
+    "analysis/preflight_ground_devbox_20261030.py": "402d798e43c1d748e43d4a990ea14e7d22968d98c92ddfe9b4a42be1ff31baf5",
+    "analysis/verify_ground_devbox_preflight_20261030.py": "9c55b3d31dc1727d88749ffbe053510dbd3e062c6af131005b307dd68e0caafb",
+    "analysis/run_ground_distributed_v2_20261030.py": "bdcede8f0dad70b2f9ce3f5f0f8b43637fc47d56dac0c7d1b5fc017a45e5e007",
+    "analysis/register_ground_distributed_v2_20261030.py": "d159a8a4e9c529db227616870a95b5a716cddc11d4c926bff9fb9b7cac336aaf",
+    "analysis/check_ground_deployment_path_20261030.py": "c90c1c2b31deae6387c1926a7a484048a8bd765a1cddeb097213c20d8fc20f74",
+    "tests/test_ground_distributed_v2_20261030.py": "188d6143c039c87d690ae91fd99943c3f0e4fa26a886fff67cb4327a000c3866",
+    "examples/config.yaml": "ad556b4087e3bd71e54c3de85e03d2b887762170d33352cfd1eb63cbd7de160f",
+    "data/tle/global_spread_inc53_66.tle": "0b98f87fecfd703ad35f7b891a052b2caa199f465490ea594b24889ef893e981",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/distributed_20261030/REGISTRATION.json": "2853bde863c710b91f4b041d68fffc4a783671b5b789bf7242925b082b133229",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/distributed_20261030/EXECUTION_PLACEMENT_AMENDMENT.md": "2dae7f4c2f2d0ee18bb631dda8d88d543522aef062a8bf5d6f9484fcc456fe9d",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/distributed_20261030/BUNDLE_HASHES.json": "93dc982eb03664f371fa2730313b0f3eaa95d07c5150e6339ef037d5cfe96302",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/distributed_20261030/PREFLIGHT_AUDIT.json": "b2ccc880da9e03ac2403e46288c0c689c70097a2ac2e228d5e3807f588ba6da1",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/distributed_20261030/preflight_mac.json": "2c3b3e32f0da449cb520c5d760fc5867472d6b08d1eba05f8d9e6cbf7319221f",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/distributed_20261030/preflight_devbox1.json": "fe05e88b466cf442c702e559bcd87c934b07bee5420771b468c69f65eb2e6612",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/distributed_20261030/preflight_devbox2.json": "14b8cc4ba18f48c07ba4604fe21c3e0ad72f0a1775aaa2a2476bd1c1231a460d",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/distributed_20261030/preflight_devbox3.json": "dd26a690d3c33bdf637b3f26f9b5922155e01faa0bd9ba0f319aaea7b0c234b9",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/distributed_20261030_v2/PATH_CORRECTION_AMENDMENT.md": "92c73445cb293768deedbb787e737ee2136be3c1cdcb1d592c2eccd1cb50d36c",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/distributed_20261030_v2/RUNTIME_ENVIRONMENTS.json": "063f964a0e711f531192e26aae073a74bb374ee2eff781122c9b51fae3e04b52",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/distributed_20261030_v2/DISPATCH_TESTS.json": "806a2460c104fcad6e776ebd68bf4fa7d76bdd1205479c22bfeb4643438dfe98",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/distributed_20261030_v2/PATH_PREFLIGHT_devbox1.json": "411398ad50752f0c0f8b74b66b1cadba6917f4fcae08fbeeb2a7e0d4b5ce7e7c",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/distributed_20261030_v2/PATH_PREFLIGHT_devbox2.json": "6c4250dbaa65b63088e2b26e519a3276b65711ac21ef9c902a3751035123ac47",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/distributed_20261030_v2/PATH_PREFLIGHT_devbox3.json": "5f20183cf29ade75d23517c266e6e5a6e23076275112157be8afdad38a886c69",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/distributed_20261030/devbox1/final_status.json": "6ab930026218bf438d0bc0b2a67317cc5ae5458800b2d95e0489d14ff8b7a5f6",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/distributed_20261030/devbox2/final_status.json": "95c08aa45bfcb7fb1e7a42614f139cbc09cbb71914f86c7572328a4af69606a7",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/distributed_20261030/devbox3/final_status.json": "f0ef5e5bf7772a660c25c0fa438503eef576a170b7e4db2801fac1e896b44f8f",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/distributed_20261030/local/launch.json": "6d9a4acddaa6a62b02599e9b5110a39771562f01ba2a9340fb35eac59c7c0c97"
+  },
+  "assignments": {
+    "devbox1": [
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-21/protocol.json",
+        "fixed_1701"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-23/protocol.json",
+        "fixed_1702"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-22/protocol.json",
+        "fixed_1703"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-21/protocol.json",
+        "dynamic_1701"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-23/protocol.json",
+        "dynamic_1702"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-22/protocol.json",
+        "dynamic_1703"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-21/protocol.json",
+        "zero_1_4"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-23/protocol.json",
+        "zero_1_16"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-22/protocol.json",
+        "zero_2_4"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-21/protocol.json",
+        "zero_2_16"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-23/protocol.json",
+        "history_1_4"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-22/protocol.json",
+        "history_1_16"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-21/protocol.json",
+        "history_2_4"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-23/protocol.json",
+        "history_2_16"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-22/protocol.json",
+        "minload_1_4"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-21/protocol.json",
+        "minload_1_16"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-23/protocol.json",
+        "minload_2_4"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-22/protocol.json",
+        "minload_2_16"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-21/protocol.json",
+        "global_v3_16"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-23/protocol.json",
+        "global_v3_dynamic"
+      ]
+    ],
+    "devbox2": [
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-22/protocol.json",
+        "fixed_1701"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-21/protocol.json",
+        "fixed_1702"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-23/protocol.json",
+        "fixed_1703"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-22/protocol.json",
+        "dynamic_1701"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-21/protocol.json",
+        "dynamic_1702"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-23/protocol.json",
+        "dynamic_1703"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-22/protocol.json",
+        "zero_1_4"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-21/protocol.json",
+        "zero_1_16"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-23/protocol.json",
+        "zero_2_4"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-22/protocol.json",
+        "zero_2_16"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-21/protocol.json",
+        "history_1_4"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-23/protocol.json",
+        "history_1_16"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-22/protocol.json",
+        "history_2_4"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-21/protocol.json",
+        "history_2_16"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-23/protocol.json",
+        "minload_1_4"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-22/protocol.json",
+        "minload_1_16"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-21/protocol.json",
+        "minload_2_4"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-23/protocol.json",
+        "minload_2_16"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-22/protocol.json",
+        "global_v3_16"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-21/protocol.json",
+        "global_v3_dynamic"
+      ]
+    ],
+    "devbox3": [
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-23/protocol.json",
+        "fixed_1701"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-22/protocol.json",
+        "fixed_1702"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-21/protocol.json",
+        "fixed_1703"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-23/protocol.json",
+        "dynamic_1701"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-22/protocol.json",
+        "dynamic_1702"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-21/protocol.json",
+        "dynamic_1703"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-23/protocol.json",
+        "zero_1_4"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-22/protocol.json",
+        "zero_1_16"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-21/protocol.json",
+        "zero_2_4"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-23/protocol.json",
+        "zero_2_16"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-22/protocol.json",
+        "history_1_4"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-21/protocol.json",
+        "history_1_16"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-23/protocol.json",
+        "history_2_4"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-22/protocol.json",
+        "history_2_16"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-21/protocol.json",
+        "minload_1_4"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-23/protocol.json",
+        "minload_1_16"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-22/protocol.json",
+        "minload_2_4"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-21/protocol.json",
+        "minload_2_16"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-23/protocol.json",
+        "global_v3_16"
+      ],
+      [
+        "M_scaled",
+        "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/data/2026-12-22/protocol.json",
+        "global_v3_dynamic"
+      ]
+    ]
+  },
+  "old_launch": {
+    "pid": 88955,
+    "supervisor_pid": 88943,
+    "caffeinate_pid": 88956,
+    "command": [
+      "/Users/bytedance/Projects/bs/.venv/bin/python",
+      "-B",
+      "-m",
+      "analysis.run_ground_scaling_20261029",
+      "panel"
+    ],
+    "identity": "88955 Thu Oct 29 21:07:23 2026     /opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python -B -m analysis.run_ground_scaling_20261029 panel",
+    "started_at": "2026-10-29T13:07:23.944804+00:00",
+    "manifest_sha256": "135b7b93c3348f249f46aea382a64aef0ed6cd9e7ac0715f1cdbae545a9df4c7"
+  },
+  "remote_workers": 6,
+  "local_workers": 9,
+  "torch_threads": 1,
+  "deadline": "2026-11-04T16:00:00+00:00",
+  "preflight_hashes": {
+    "analysis/preflight_ground_devbox_20261030.py": "402d798e43c1d748e43d4a990ea14e7d22968d98c92ddfe9b4a42be1ff31baf5",
+    "analysis/verify_ground_devbox_preflight_20261030.py": "9c55b3d31dc1727d88749ffbe053510dbd3e062c6af131005b307dd68e0caafb",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/distributed_20261030/preflight_mac.json": "2c3b3e32f0da449cb520c5d760fc5867472d6b08d1eba05f8d9e6cbf7319221f",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/distributed_20261030/preflight_devbox1.json": "fe05e88b466cf442c702e559bcd87c934b07bee5420771b468c69f65eb2e6612",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/distributed_20261030/preflight_devbox2.json": "14b8cc4ba18f48c07ba4604fe21c3e0ad72f0a1775aaa2a2476bd1c1231a460d",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/distributed_20261030/preflight_devbox3.json": "dd26a690d3c33bdf637b3f26f9b5922155e01faa0bd9ba0f319aaea7b0c234b9"
+  },
+  "input_bundle_sha256": "7cb948476483df8101a20e4277bfe8e6c1af6189bddde9100eddf8a5ed923916",
+  "runtime_archive_sha256": "a295cb71b192162dedace71ca1c53b5c33b38850fc19112e455162e738f8567d",
+  "startup_failures": {
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/validation/2026-12-22/fixed_1703.progress.json": "11a8643f3c7cb5b0c35f65c02a00534f0b436a44597f717b1c0eb88ec3dc1637",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/validation/2026-12-22/dynamic_1701.progress.json": "69cd191ee50bb61ccfd2423425e6280c4031530867f9e09799379ca60c348d0f",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/validation/2026-12-22/dynamic_1702.progress.json": "98d3d80cbe976ecb1924d4d3af3704077012a8fccd127c11e65acd2448a69c48",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/validation/2026-12-22/dynamic_1703.progress.json": "a6436268db23ef76f4a3c1c5648d0d4bebe7221e70edd7e2d23d6b1f784a7084",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/validation/2026-12-22/fixed_1702.progress.json": "3104b3652cfcb78bbaa3bfb7265a0c90f9ad39eee1e6c20e5a08cca451b44ee1",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/validation/2026-12-22/fixed_1701.progress.json": "31c6fe79bcb91eb4e6eb1a16536d1a08bc63575c1fcc8c5be8c8dd21ab60d984",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/validation/2026-12-23/fixed_1703.progress.json": "18aebca0587c2b64f672bf61f663d0052090133f9baa027cffb41c35663109c2",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/validation/2026-12-23/dynamic_1701.progress.json": "ea3ad61a9e9a543618949412803f35ce43b7aea4c459b0115d53c7d7c1d87658",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/validation/2026-12-23/dynamic_1702.progress.json": "7a38b6f1e9b5bed9314c73543e83b2abe7eca59c5c50049bb9f32904689ac306",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/validation/2026-12-23/dynamic_1703.progress.json": "fab29cf58251d0a28bac4e81dfa144d6a648669d3702e6ff1ebc567cfb0d06e1",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/validation/2026-12-23/fixed_1702.progress.json": "876a492b0b0e5b0661aea6911f8035fefc1c76ae0b3b5af113bfd3fb2447897f",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/validation/2026-12-23/fixed_1701.progress.json": "07f0041f8c5ce19015b533a7aa4b913d007fe6dd57168d13c6094d39ed1245b5",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/validation/2026-12-21/fixed_1703.progress.json": "06f5ec1128af1ea19b56c8e3740587c355d3a32e310a3205efb139b3d1d9a2e5",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/validation/2026-12-21/dynamic_1701.progress.json": "4fbe646bdbbd1e2b276246a34efc09beec42e39c7d8007d4579555369bf0724a",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/validation/2026-12-21/dynamic_1702.progress.json": "44b62528a4c4edeeb10635a1201e695ab92c2861da0af663906211e8eb75df87",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/validation/2026-12-21/dynamic_1703.progress.json": "b4f6e42c88cc67c7c89aa49ee5dedbae2f76c6ac73740483ee29851433b3f945",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/validation/2026-12-21/fixed_1702.progress.json": "8c1b7eb99f63e595b0a779d5d5852746e016711fad611e1f8b8f7f8d9ec52656",
+    "results/redesign_20261021/main_scenario/ground_scaling_20261029/M_scaled/validation/2026-12-21/fixed_1701.progress.json": "2196cdfca26d765427b074ea243ee84d31fd1f8a1c6b078c40c00786e18bddf0"
+  },
+  "notes": [
+    "User explicitly authorized deployment-path correction and restarting 18 pre-simulation failures on 2026-10-30.",
+    "60 M_scaled jobs, 20 per host, batch size 6, no prefetch/retry; local L batch size 9.",
+    "Previous coordinator drains existing L batch then exits; v2 resumes only unstarted L. Failure records are archived before output sync.",
+    "Remote real root is /Users/bytedance/Projects/bs, not a symlink; full frozen verification is proven in spawn before restart.",
+    "Linux x86_64 CPU and Mac ARM CPU are heterogeneous. Validation smoke equality does not prove all trajectories bitwise identical.",
+    "No data regeneration, new test opening, model selection, training, tuning or paper edits.",
+    "Original simulation, physics, model, observation, metrics and report source hashes remain frozen."
+  ]
+}
