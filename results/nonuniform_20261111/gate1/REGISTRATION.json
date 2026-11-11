@@ -1,0 +1,100 @@
+{
+  "at": "2026-11-11T09:38:31.626083+00:00",
+  "manifest_sha256": "2793c1a985c82ca5d8753458464b4211e54ef32fb1321321fdba0bb470916553",
+  "spec": {
+    "id": "nonuniform_gate1_20261111",
+    "deadline": 1794994711.626078,
+    "hosts": {
+      "local": 6
+    },
+    "jobs": [
+      {
+        "id": "2026-10-22_baseline",
+        "job": [
+          "GATE1",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "baseline"
+        ],
+        "output": "results/nonuniform_20261111/gate1/results/2026-10-22_baseline.json",
+        "legacy_host": "local",
+        "hosts": [
+          "local"
+        ]
+      },
+      {
+        "id": "2026-10-22_nu",
+        "job": [
+          "GATE1",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "nu"
+        ],
+        "output": "results/nonuniform_20261111/gate1/results/2026-10-22_nu.json",
+        "legacy_host": "local",
+        "hosts": [
+          "local"
+        ]
+      },
+      {
+        "id": "2026-10-23_baseline",
+        "job": [
+          "GATE1",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "baseline"
+        ],
+        "output": "results/nonuniform_20261111/gate1/results/2026-10-23_baseline.json",
+        "legacy_host": "local",
+        "hosts": [
+          "local"
+        ]
+      },
+      {
+        "id": "2026-10-23_nu",
+        "job": [
+          "GATE1",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "nu"
+        ],
+        "output": "results/nonuniform_20261111/gate1/results/2026-10-23_nu.json",
+        "legacy_host": "local",
+        "hosts": [
+          "local"
+        ]
+      },
+      {
+        "id": "2026-10-24_baseline",
+        "job": [
+          "GATE1",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "baseline"
+        ],
+        "output": "results/nonuniform_20261111/gate1/results/2026-10-24_baseline.json",
+        "legacy_host": "local",
+        "hosts": [
+          "local"
+        ]
+      },
+      {
+        "id": "2026-10-24_nu",
+        "job": [
+          "GATE1",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "nu"
+        ],
+        "output": "results/nonuniform_20261111/gate1/results/2026-10-24_nu.json",
+        "legacy_host": "local",
+        "hosts": [
+          "local"
+        ]
+      }
+    ]
+  },
+  "tasks": 6,
+  "no_retry": true,
+  "final_tests_sealed": true,
+  "estimated_run_hours": [
+    2,
+    5
+  ],
+  "implementation_start_utc": "2026-11-11T09:17:14Z",
+  "scope": "Same-code paired validation, no training"
+}

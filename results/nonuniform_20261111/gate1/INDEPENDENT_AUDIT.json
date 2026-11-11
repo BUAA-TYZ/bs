@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "at": "2026-11-11T11:02:13.676982+00:00",
+  "records": [
+    {
+      "job": "2026-10-22_baseline",
+      "owner": "local:gate1:77422",
+      "sha256": "807cd8d58116bd879804c1d7f8377c670dd5857ef60b66d5f7d3bad15a83e729",
+      "geometry_blocks": 0
+    },
+    {
+      "job": "2026-10-22_nu",
+      "owner": "local:gate1:77422",
+      "sha256": "63c310029e30f2186f7530313619968ea2c1dbf405f8fa1fc0e5c8a0cff61533",
+      "geometry_blocks": 1071
+    },
+    {
+      "job": "2026-10-23_baseline",
+      "owner": "local:gate1:77422",
+      "sha256": "64dee97d9f745798e4afcd77f2f16f56c8dc10a9797ae284bcbbea0dc698276f",
+      "geometry_blocks": 0
+    },
+    {
+      "job": "2026-10-23_nu",
+      "owner": "local:gate1:77422",
+      "sha256": "dfb56ece0c5bf4a5d43459f071404418224524ca68867ac37d1164b590fd3745",
+      "geometry_blocks": 1106
+    },
+    {
+      "job": "2026-10-24_baseline",
+      "owner": "local:gate1:77422",
+      "sha256": "32102095c389a13723a0893e6c7cfd5dc51fe8b4f72250360acc310b7b39c04e",
+      "geometry_blocks": 0
+    },
+    {
+      "job": "2026-10-24_nu",
+      "owner": "local:gate1:77422",
+      "sha256": "4e4d43f48ea8287c96bb60263c41d825871e2a27f31f229f603c7ec5f8f41460",
+      "geometry_blocks": 1101
+    }
+  ],
+  "input_hashes_verified": 1503,
+  "output_hashes": {
+    "results/nonuniform_20261111/gate1/summary.json": "8e099283b21be3634a32339ec889a3ca9122b0f3fcad1fbe2f8820f7eb50efa9",
+    "results/nonuniform_20261111/gate1/REPORT.md": "c3a9896968ef1cc9342408dedeff694021f73aca0c3ce5acf0094c5aa915bf52",
+    "results/nonuniform_20261111/gate1/curves.png": "9808c10488bbb52050cf47bf0a17668c6a5352831bf453c2694586934c4bbf0b"
+  },
+  "audit_wall_seconds": 2.0033302307128906
+}

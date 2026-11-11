@@ -1,0 +1,165 @@
+{
+  "blocked": null,
+  "complete": true,
+  "counts": {
+    "PASS": 6
+  },
+  "jobs": [
+    {
+      "experiment": "nonuniform_gate1_20261111",
+      "heartbeat": 1794394827.9269907,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_baseline",
+      "owner": "local:gate1:77422",
+      "result": {
+        "path": "results/nonuniform_20261111/gate1/results/2026-10-22_baseline.json",
+        "sha256": "807cd8d58116bd879804c1d7f8377c670dd5857ef60b66d5f7d3bad15a83e729",
+        "status": "PASS"
+      },
+      "spec": {
+        "hosts": [
+          "local"
+        ],
+        "id": "2026-10-22_baseline",
+        "job": [
+          "GATE1",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "baseline"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/gate1/results/2026-10-22_baseline.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "nonuniform_gate1_20261111",
+      "heartbeat": 1794394546.688348,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_nu",
+      "owner": "local:gate1:77422",
+      "result": {
+        "path": "results/nonuniform_20261111/gate1/results/2026-10-22_nu.json",
+        "sha256": "63c310029e30f2186f7530313619968ea2c1dbf405f8fa1fc0e5c8a0cff61533",
+        "status": "PASS"
+      },
+      "spec": {
+        "hosts": [
+          "local"
+        ],
+        "id": "2026-10-22_nu",
+        "job": [
+          "GATE1",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "nu"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/gate1/results/2026-10-22_nu.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "nonuniform_gate1_20261111",
+      "heartbeat": 1794394814.6131134,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_baseline",
+      "owner": "local:gate1:77422",
+      "result": {
+        "path": "results/nonuniform_20261111/gate1/results/2026-10-23_baseline.json",
+        "sha256": "64dee97d9f745798e4afcd77f2f16f56c8dc10a9797ae284bcbbea0dc698276f",
+        "status": "PASS"
+      },
+      "spec": {
+        "hosts": [
+          "local"
+        ],
+        "id": "2026-10-23_baseline",
+        "job": [
+          "GATE1",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "baseline"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/gate1/results/2026-10-23_baseline.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "nonuniform_gate1_20261111",
+      "heartbeat": 1794394583.250716,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_nu",
+      "owner": "local:gate1:77422",
+      "result": {
+        "path": "results/nonuniform_20261111/gate1/results/2026-10-23_nu.json",
+        "sha256": "dfb56ece0c5bf4a5d43459f071404418224524ca68867ac37d1164b590fd3745",
+        "status": "PASS"
+      },
+      "spec": {
+        "hosts": [
+          "local"
+        ],
+        "id": "2026-10-23_nu",
+        "job": [
+          "GATE1",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "nu"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/gate1/results/2026-10-23_nu.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "nonuniform_gate1_20261111",
+      "heartbeat": 1794394814.6131134,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_baseline",
+      "owner": "local:gate1:77422",
+      "result": {
+        "path": "results/nonuniform_20261111/gate1/results/2026-10-24_baseline.json",
+        "sha256": "32102095c389a13723a0893e6c7cfd5dc51fe8b4f72250360acc310b7b39c04e",
+        "status": "PASS"
+      },
+      "spec": {
+        "hosts": [
+          "local"
+        ],
+        "id": "2026-10-24_baseline",
+        "job": [
+          "GATE1",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "baseline"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/gate1/results/2026-10-24_baseline.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "nonuniform_gate1_20261111",
+      "heartbeat": 1794394511.9697635,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_nu",
+      "owner": "local:gate1:77422",
+      "result": {
+        "path": "results/nonuniform_20261111/gate1/results/2026-10-24_nu.json",
+        "sha256": "4e4d43f48ea8287c96bb60263c41d825871e2a27f31f229f603c7ec5f8f41460",
+        "status": "PASS"
+      },
+      "spec": {
+        "hosts": [
+          "local"
+        ],
+        "id": "2026-10-24_nu",
+        "job": [
+          "GATE1",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "nu"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/gate1/results/2026-10-24_nu.json"
+      },
+      "state": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "at": "2026-11-11T09:38:28.508614+00:00",
+  "total": 787,
+  "new_tests": 19,
+  "log_sha256": "3c4078c601f58873f018f0cfee705f1f5ce9f9e0902df930524b05bff09d3c81",
+  "clock_plugin": "analysis.cleanup_test_clock_20261111: 17 expired legacy tests only",
+  "command": "PYTHONPATH=/Users/bytedance/.cache/bs-cleanup-20261111/pytest:tests:. PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B -m pytest tests -q -p no:cacheprovider -p analysis.cleanup_test_clock_20261111"
+}
