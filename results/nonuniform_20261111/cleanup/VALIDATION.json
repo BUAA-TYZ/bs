@@ -1,0 +1,52 @@
+{
+  "retained_reference_audit": {
+    "registered_reference_files": 611,
+    "retained_files_checked": 608,
+    "paper_tex_files_including_comments": 32,
+    "hash_mismatches": 0,
+    "modified_preexisting_tracked_files": 0,
+    "actual_deletion_set_matches_plan": true
+  },
+  "pytest_real_clock": {
+    "passed": 751,
+    "failed": 17,
+    "wall_seconds": 38.41,
+    "log": "pytest.log",
+    "failure_cause": "All 17 fail at unchanged historical hard deadlines before the tested operation. Current date is 2026-11-11."
+  },
+  "pytest_scoped_clock_fixture": {
+    "passed": 768,
+    "failed": 0,
+    "wall_seconds": 49.54,
+    "log": "pytest_fixed_clock.log",
+    "command": "PYTHONPATH=/Users/bytedance/.cache/bs-cleanup-20261111/pytest:tests:. PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -B -m pytest tests -q -p no:cacheprovider -p analysis.cleanup_test_clock_20261111",
+    "scope": "Only the 17 named legacy tests get a temporary in-process 2026-10-25 clock; restored immediately after each test. No production source or existing tests changed.",
+    "test_runtime": "Existing project .venv Python 3.12.13; pytest 8.3.5 installed into external cache, not into .venv."
+  },
+  "deadline_boundary_audit": {
+    "modules": [
+      "analysis.run_dynamic_learning",
+      "analysis.run_ground_scaling_20261029",
+      "analysis.run_m_formal_20261027",
+      "analysis.run_l_reduced_validation_20261028",
+      "analysis.run_s_formal_20261029",
+      "analysis.run_scale_validation_20261027"
+    ],
+    "checks_per_module": {
+      "one_second_before_deadline": "allowed",
+      "at_deadline": "blocked",
+      "one_second_after_deadline": "blocked",
+      "real_current_clock_after_fixture_restored": "blocked"
+    },
+    "passed": 24,
+    "failed": 0
+  },
+  "prior_http_experiment": {
+    "id": "ground_representatives_20261031",
+    "counts": {"PASS": 45},
+    "complete": true,
+    "restarted": false
+  },
+  "new_final_test_dates_opened": false,
+  "new_research_implementation_started": false
+}

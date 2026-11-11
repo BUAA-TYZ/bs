@@ -1,0 +1,25 @@
+{
+  "published": {
+    "status": "CREATED"
+  },
+  "released": {
+    "status": "RELEASED"
+  },
+  "claim": {
+    "jobs": [
+      {
+        "hosts": [
+          "local"
+        ],
+        "id": "M_validation_2026-10-22_v3_dynamic_1h",
+        "job": [
+          "M_cleanup",
+          "results/nonuniform_20261111/cleanup/smoke/protocol.json",
+          "v3_dynamic"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cleanup/smoke/QUEUE_RESULT.json"
+      }
+    ]
+  }
+}

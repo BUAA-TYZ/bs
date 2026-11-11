@@ -1,0 +1,81 @@
+{
+  "at": "2026-11-11T08:48:46.552057+00:00",
+  "staged_added_modified_files": 16,
+  "staged_bytes": 4591366,
+  "deleted_files": 910,
+  "inventory": {
+    "analysis/audit_cleanup_20261111.py": {
+      "bytes": 11107,
+      "sha256": "edb494ab3f20e7699e2d5cb40003fd7ad7d731c1af16667b74e42889d636b9bb"
+    },
+    "analysis/check_cleanup_submission_20261111.py": {
+      "bytes": 5024,
+      "sha256": "e8387b29fb5eae9975c52e41196bcd6f9327a930c4c667b5826d257600b6abae"
+    },
+    "analysis/cleanup_test_clock_20261111.py": {
+      "bytes": 2234,
+      "sha256": "7a7034c1b9a3194e147aab920976b3bf2a98b9fcc407f43b512c50dcd8e64cd6"
+    },
+    "analysis/smoke_cleanup_20261111.py": {
+      "bytes": 7652,
+      "sha256": "9761c6e9d1bd03593b99fe7c962913b2b28a67b54274f3b716a5dd77ca34073f"
+    },
+    "docs/CLEANUP_20261111.md": {
+      "bytes": 56657,
+      "sha256": "cfdb5620731f50cd2dd52ce573bef985e3b25899a636e5da2b37174c6ddf9b83"
+    },
+    "docs/thesis/NONUNIFORM_AMENDMENT_20261111.md": {
+      "bytes": 2615,
+      "sha256": "6a1bed750b68cfdc1ee665cefdfefa0ffdf19c84447d106d77eb84279b393e45"
+    },
+    "requirements-test.txt": {
+      "bytes": 97,
+      "sha256": "a0a7bcb07f8e21dc567a3fc250feef3031da0ae48a7de935ccf50baebd7d9cff"
+    },
+    "results/nonuniform_20261111/cleanup/EXECUTION.json": {
+      "bytes": 594,
+      "sha256": "8d6c35dbf6a273d598598ad945de7b3ba25ef9c6206d8fa3b8b1d1416aeee74f"
+    },
+    "results/nonuniform_20261111/cleanup/PLAN.json": {
+      "bytes": 704958,
+      "sha256": "08f6d37b36c02b68c05ea2d142f78e342a856c14edafa7ebec2d3af14618aab5"
+    },
+    "results/nonuniform_20261111/cleanup/pytest.log": {
+      "bytes": 36377,
+      "sha256": "c549e613e8ba791d85075746fac7cd09e8c550351511451cbe1cc93115e8b54e"
+    },
+    "results/nonuniform_20261111/cleanup/pytest_fixed_clock.log": {
+      "bytes": 901,
+      "sha256": "5f2a40a60653c5c471e1245513afb3e81d20818e0c56167ba04ab6e50d0cbd59"
+    },
+    "results/nonuniform_20261111/cleanup/smoke/CLAIM.json": {
+      "bytes": 507,
+      "sha256": "1b69d773213f1e88df93390484656b00b901159c316da0d14b01cb98d01915f3"
+    },
+    "results/nonuniform_20261111/cleanup/smoke/LAUNCH.json": {
+      "bytes": 105,
+      "sha256": "db2059747c10840cbf75dffa046f41d08b7aa6daee7d4c626c82e3d76ba354cd"
+    },
+    "results/nonuniform_20261111/cleanup/smoke/REGISTRATION.json": {
+      "bytes": 1182,
+      "sha256": "dc718aadafc5d794b8974d58cd99ca96068a740e793f82d2bb5af5c0d63e522d"
+    },
+    "results/nonuniform_20261111/cleanup/smoke/manifest.json": {
+      "bytes": 7646,
+      "sha256": "67651d51dee20ca90eb0f374fa26058151b2ac4fceef25c5d329bfd4ff02ba3a"
+    },
+    "results/nonuniform_20261111/cleanup/smoke/protocol.json": {
+      "bytes": 3753710,
+      "sha256": "2a493a06598f31521f136091a866108686813dd55ecf7b22cb175113bd6a1152"
+    }
+  },
+  "over_50_MiB": [],
+  "large_file_command": "find <all staged ACMR paths in batches> -type f -size +50M -print",
+  "matches": [],
+  "known_queue_credential_checked": true,
+  "ignored_paths": [
+    "runs/",
+    "workbench/settings.json"
+  ],
+  "limitation": "Pattern and exact-known-value checks do not prove absence of every possible unknown credential encoding."
+}

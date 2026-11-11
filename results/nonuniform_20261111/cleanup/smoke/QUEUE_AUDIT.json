@@ -1,0 +1,41 @@
+{
+  "saved": {
+    "status": "SAVED"
+  },
+  "status": {
+    "blocked": null,
+    "complete": true,
+    "counts": {
+      "PASS": 1
+    },
+    "jobs": [
+      {
+        "experiment": "cleanup_smoke_20261111",
+        "heartbeat": 1794387380.4915638,
+        "heartbeat_stale": false,
+        "id": "M_validation_2026-10-22_v3_dynamic_1h",
+        "owner": "local:cleanup:66735",
+        "result": {
+          "path": "results/nonuniform_20261111/cleanup/smoke/QUEUE_RESULT.json",
+          "sha256": "306f6d04fb6b6f42ec39e66a6d9c4e315b4de21539f63a461991e6ee53cd36ea",
+          "status": "PASS"
+        },
+        "spec": {
+          "hosts": [
+            "local"
+          ],
+          "id": "M_validation_2026-10-22_v3_dynamic_1h",
+          "job": [
+            "M_cleanup",
+            "results/nonuniform_20261111/cleanup/smoke/protocol.json",
+            "v3_dynamic"
+          ],
+          "legacy_host": "local",
+          "output": "results/nonuniform_20261111/cleanup/smoke/QUEUE_RESULT.json"
+        },
+        "state": "PASS"
+      }
+    ]
+  },
+  "wall_seconds": 698.5482888221741
+}

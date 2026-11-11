@@ -1,0 +1,535 @@
+........................................................................ [  9%]
+........................................................................ [ 18%]
+......FF...........................................F...F.F....F......... [ 28%]
+...............................F........................................ [ 37%]
+.....................................F.FF..F..F......................... [ 46%]
+.....F.................................................................. [ 56%]
+........................................................................ [ 65%]
+...................................................FF.F................. [ 75%]
+................................................................F....... [ 84%]
+........................................................................ [ 93%]
+................................................                         [100%]
+=================================== FAILURES ===================================
+______ DynamicPPOTests.test_training_rollout_records_real_terminal_credit ______
+
+self = <test_dynamic_mappo.DynamicPPOTests testMethod=test_training_rollout_records_real_terminal_credit>
+
+    def test_training_rollout_records_real_terminal_credit(self):
+        env = fixture(); env.cfg.sim_steps = 4200; env.cfg.decision_tile_limit_per_sat = 32
+        actor = DynamicActor(); critic = m.Critic()
+        with torch.no_grad(): actor.image_head.bias.copy_(torch.tensor([100.,-100.,-100.]))
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp); cp = root/'parent.pt'
+            torch.save(dict(state_dict=actor.state_dict(),critic=critic.state_dict()),cp)
+            initial = root/'training/pure_imitation_1701.pt'; initial.parent.mkdir()
+            torch.save(dict(state_dict=actor.state_dict()),initial)
+            protocol = dict(date='2026-10-16',score_start_s=0,score_end_s=3600,sim_duration_s=4200,
+                scored_task_ids=['task_0'],config=asdict(env.cfg))
+            path = root/'protocol.json'; path.write_text(json.dumps(protocol))
+            job = dict(kind='train',seed=1701,episode=1,protocol=str(path),checkpoint=str(cp),
+                checkpoint_sha256=runner.sha(cp),out=str(root/'rollout.json.gz'))
+            with patch.object(runner,'ROOT',root), patch.object(runner,'verify_run',return_value={}), \
+                    patch.object(runner,'verify'), patch.object(runner.teacher,'GranularityEnv',return_value=env):
+                result = runner.simulate(job)
+>           self.assertEqual(result['status'],'PASS',result)
+E           AssertionError: 'FAILED' != 'PASS'
+E           - FAILED
+E           + PASS
+E            : {'status': 'FAILED', 'job': {'kind': 'train', 'seed': 1701, 'episode': 1, 'protocol': '/var/folders/8g/1kdzrpvd1kj89_vn4t8ry_8w0000gn/T/tmpnfnwjom4/protocol.json', 'checkpoint': '/var/folders/8g/1kdzrpvd1kj89_vn4t8ry_8w0000gn/T/tmpnfnwjom4/parent.pt', 'checkpoint_sha256': 'd926505531b71dc702da8e038205b2098641704454dcdb80288e75facf25f6e5', 'out': '/var/folders/8g/1kdzrpvd1kj89_vn4t8ry_8w0000gn/T/tmpnfnwjom4/rollout.json.gz'}, 'traceback': 'Traceback (most recent call last):\n  File "/Users/bytedance/Projects/bs/analysis/run_dynamic_learning.py", line 182, in simulate\n    check_time()\n  File "/Users/bytedance/Projects/bs/analysis/run_dynamic_learning.py", line 58, in check_time\n    if datetime.now(timezone.utc) >= END: raise TimeoutError(\'Dynamic freeze deadline\')\n                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTimeoutError: Dynamic freeze deadline\n'}
+
+tests/test_dynamic_mappo.py:111: AssertionError
+_ DynamicPPOTests.test_validation_records_all_deadlines_and_passive_resources __
+
+self = <test_dynamic_mappo.DynamicPPOTests testMethod=test_validation_records_all_deadlines_and_passive_resources>
+
+    def test_validation_records_all_deadlines_and_passive_resources(self):
+        env = fixture(); env.cfg.sim_steps = 22260; env.cfg.decision_tile_limit_per_sat = 32
+        actor = DynamicActor(); critic = m.Critic()
+        with torch.no_grad(): actor.image_head.bias.copy_(torch.tensor([-100.,100.,-100.]))
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp); cp = root/'parent.pt'
+            torch.save(dict(state_dict=actor.state_dict(),critic=critic.state_dict()),cp)
+            initial = root/'training/pure_imitation_1701.pt'; initial.parent.mkdir()
+            torch.save(dict(state_dict=actor.state_dict()),initial)
+            path = root/'protocol.json'
+            path.write_text(json.dumps(dict(date='2026-10-22',score_start_s=60,score_end_s=21660,
+                sim_duration_s=22260,scored_task_ids=['task_0'],config=asdict(env.cfg))))
+            job = dict(kind='validation',seed=1701,episode=0,protocol=str(path),checkpoint=str(cp),
+                checkpoint_sha256=runner.sha(cp),out=str(root/'validation.json'))
+            with patch.object(runner,'ROOT',root), patch.object(runner,'verify_run',return_value={}), \
+                    patch.object(runner,'verify'), patch.object(runner.teacher,'GranularityEnv',return_value=env):
+                result = runner.simulate(job)
+>           self.assertEqual(result['status'],'PASS',result)
+E           AssertionError: 'FAILED' != 'PASS'
+E           - FAILED
+E           + PASS
+E            : {'status': 'FAILED', 'job': {'kind': 'validation', 'seed': 1701, 'episode': 0, 'protocol': '/var/folders/8g/1kdzrpvd1kj89_vn4t8ry_8w0000gn/T/tmpt3e6lt8n/protocol.json', 'checkpoint': '/var/folders/8g/1kdzrpvd1kj89_vn4t8ry_8w0000gn/T/tmpt3e6lt8n/parent.pt', 'checkpoint_sha256': '507b1eb5d943456efa1dee87ed42820c493c069e9dc402e06fa80d4dbf299b46', 'out': '/var/folders/8g/1kdzrpvd1kj89_vn4t8ry_8w0000gn/T/tmpt3e6lt8n/validation.json'}, 'traceback': 'Traceback (most recent call last):\n  File "/Users/bytedance/Projects/bs/analysis/run_dynamic_learning.py", line 182, in simulate\n    check_time()\n  File "/Users/bytedance/Projects/bs/analysis/run_dynamic_learning.py", line 58, in check_time\n    if datetime.now(timezone.utc) >= END: raise TimeoutError(\'Dynamic freeze deadline\')\n                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTimeoutError: Dynamic freeze deadline\n'}
+
+tests/test_dynamic_mappo.py:137: AssertionError
+_________ DistributedTests.test_failed_batch_drains_without_next_batch _________
+
+self = <test_ground_distributed_20261030.DistributedTests testMethod=test_failed_batch_drains_without_next_batch>
+
+    def test_failed_batch_drains_without_next_batch(self):
+        class Pool:
+            calls=[]
+            def __init__(self,**kwargs): pass
+            def __enter__(self): return self
+            def __exit__(self,*args): pass
+            def submit(self,fn,job):
+                self.calls.append(job); f=Future()
+                f.set_result(dict(status='FAILED' if len(self.calls)==2 else 'PASS'))
+                return f
+        with tempfile.TemporaryDirectory() as tmp,patch.object(d,'DIST',Path(tmp)),patch.object(d,'ProcessPoolExecutor',Pool):
+>           rows,ok=d.run_batches('devbox1',list(range(20)),6)
+
+tests/test_ground_distributed_20261030.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+analysis/run_ground_distributed_20261030.py:154: in run_batches
+    r.check_time()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def check_time():
+        if datetime.now(timezone.utc) >= END:
+>           raise TimeoutError('Before November 5 Beijing cutoff; no extension')
+E           TimeoutError: Before November 5 Beijing cutoff; no extension
+
+analysis/run_ground_scaling_20261029.py:43: TimeoutError
+_____________ DistributedTests.test_stop_control_prevents_dispatch _____________
+
+self = <test_ground_distributed_20261030.DistributedTests testMethod=test_stop_control_prevents_dispatch>
+
+    def test_stop_control_prevents_dispatch(self):
+        class Pool:
+            def __init__(self,**kwargs): pass
+            def __enter__(self): return self
+            def __exit__(self,*args): pass
+            def submit(self,*args): raise AssertionError('must not dispatch')
+        with tempfile.TemporaryDirectory() as tmp,patch.object(d,'DIST',Path(tmp)),patch.object(d,'ProcessPoolExecutor',Pool):
+            d.exclusive(Path(tmp)/'devbox1/STOP_AFTER_BATCH.json',{'reason':'peer failure'})
+>           rows,ok=d.run_batches('devbox1',list(range(20)),6)
+
+tests/test_ground_distributed_20261030.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+analysis/run_ground_distributed_20261030.py:154: in run_batches
+    r.check_time()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def check_time():
+        if datetime.now(timezone.utc) >= END:
+>           raise TimeoutError('Before November 5 Beijing cutoff; no extension')
+E           TimeoutError: Before November 5 Beijing cutoff; no extension
+
+analysis/run_ground_scaling_20261029.py:43: TimeoutError
+_________ DistributedTests.test_failed_batch_drains_without_next_batch _________
+
+self = <test_ground_distributed_v2_20261030.DistributedTests testMethod=test_failed_batch_drains_without_next_batch>
+
+    def test_failed_batch_drains_without_next_batch(self):
+        class Pool:
+            calls=[]
+            def __init__(self,**kwargs): pass
+            def __enter__(self): return self
+            def __exit__(self,*args): pass
+            def submit(self,fn,job):
+                self.calls.append(job); f=Future()
+                f.set_result(dict(status='FAILED' if len(self.calls)==2 else 'PASS'))
+                return f
+        with tempfile.TemporaryDirectory() as tmp,patch.object(d,'DIST',Path(tmp)),patch.object(d,'ProcessPoolExecutor',Pool):
+>           rows,ok=d.run_batches('devbox1',list(range(20)),6)
+
+tests/test_ground_distributed_v2_20261030.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+analysis/run_ground_distributed_v2_20261030.py:150: in run_batches
+    r.check_time()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def check_time():
+        if datetime.now(timezone.utc) >= END:
+>           raise TimeoutError('Before November 5 Beijing cutoff; no extension')
+E           TimeoutError: Before November 5 Beijing cutoff; no extension
+
+analysis/run_ground_scaling_20261029.py:43: TimeoutError
+_____________ DistributedTests.test_stop_control_prevents_dispatch _____________
+
+self = <test_ground_distributed_v2_20261030.DistributedTests testMethod=test_stop_control_prevents_dispatch>
+
+    def test_stop_control_prevents_dispatch(self):
+        class Pool:
+            def __init__(self,**kwargs): pass
+            def __enter__(self): return self
+            def __exit__(self,*args): pass
+            def submit(self,*args): raise AssertionError('must not dispatch')
+        with tempfile.TemporaryDirectory() as tmp,patch.object(d,'DIST',Path(tmp)),patch.object(d,'ProcessPoolExecutor',Pool):
+            d.exclusive(Path(tmp)/'devbox1/STOP_AFTER_BATCH.json',{'reason':'peer failure'})
+>           rows,ok=d.run_batches('devbox1',list(range(20)),6)
+
+tests/test_ground_distributed_v2_20261030.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+analysis/run_ground_distributed_v2_20261030.py:150: in run_batches
+    r.check_time()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def check_time():
+        if datetime.now(timezone.utc) >= END:
+>           raise TimeoutError('Before November 5 Beijing cutoff; no extension')
+E           TimeoutError: Before November 5 Beijing cutoff; no extension
+
+analysis/run_ground_scaling_20261029.py:43: TimeoutError
+______ GroundScalingTests.test_failed_batch_drains_and_does_not_prefetch _______
+
+self = <test_ground_scaling_20261029.GroundScalingTests testMethod=test_failed_batch_drains_and_does_not_prefetch>
+
+    def test_failed_batch_drains_and_does_not_prefetch(self):
+        class Pool:
+            def __init__(self):self.calls=[]
+            def submit(self,fn,job):
+                self.calls.append(job);f=Future();f.set_result(dict(status='FAILED' if len(self.calls)==2 else 'PASS'));return f
+        pool=Pool();results=[]
+        with TemporaryDirectory() as tmp,patch.object(r,'ROOT',Path(tmp)):
+>           self.assertFalse(r.batches(pool,[('L_scaled','p','m')]*20,results))
+
+tests/test_ground_scaling_20261029.py:122: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+analysis/run_ground_scaling_20261029.py:190: in batches
+    check_time(); current = []
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def check_time():
+        if datetime.now(timezone.utc) >= END:
+>           raise TimeoutError('Before November 5 Beijing cutoff; no extension')
+E           TimeoutError: Before November 5 Beijing cutoff; no extension
+
+analysis/run_ground_scaling_20261029.py:43: TimeoutError
+____________ LFormalTests.test_failed_batch_drains_without_prefetch ____________
+
+self = <test_l_formal_20261028.LFormalTests testMethod=test_failed_batch_drains_without_prefetch>
+
+    def test_failed_batch_drains_without_prefetch(self):
+        class Pool:
+            def __init__(self): self.calls = []
+            def submit(self, fn, job):
+                self.calls.append(job); f = Future()
+                if len(self.calls) == 2: f.set_exception(RuntimeError('test'))
+                else: f.set_result({'status':'PASS'})
+                return f
+        pool = Pool()
+        with TemporaryDirectory() as tmp, patch.object(r, 'ROOT', Path(tmp)):
+>           result = r.batches(pool, list(range(42)))
+
+tests/test_l_formal_20261028.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+analysis/run_l_formal_20261028.py:116: in batches
+    check_time(); current = []
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def check_time():
+        if datetime.now(timezone.utc) >= END:
+>           raise TimeoutError('11-06 Beijing hard deadline; no extension')
+E           TimeoutError: 11-06 Beijing hard deadline; no extension
+
+analysis/run_m_formal_20261027.py:47: TimeoutError
+________ LFormalTests.test_real_toy_formal_records_all_policy_families _________
+
+self = <test_l_formal_20261028.LFormalTests testMethod=test_real_toy_formal_records_all_policy_families>
+
+    def test_real_toy_formal_records_all_policy_families(self):
+        base = fixture(); config = asdict(base.cfg); base.close()
+        config.update(sim_steps=710, decision_tile_limit_per_sat=64)
+        config['scheduled_task_arrivals'][0]['release_step'] = 20
+        real_env = r.engine.GranularityEnv
+        def environment(cfg):
+            with patch('sim.env.TopologyModel', FakeTopology), patch('sim.env.VisibilityCache', FakeVisibility):
+                env = real_env(cfg)
+            env.vis_cache.windows_at = lambda sid,t:{'gs':(0,1000)}
+            return env
+        with TemporaryDirectory() as tmp:
+            root = Path(tmp); p = dict(date=r.DATES[0], config=config, scored_task_ids=['task_0'], score_start_s=10, score_end_s=110, sim_duration_s=710)
+            r.write_json(root/'p.json', p); r.write_json(root/'run_manifest.json', dict(hashes={}))
+            r.write_json(root/'manifest.json', {}); r.write_json(root/'open.json', dict(scope='L', manifest_sha256=r.sha(root/'manifest.json')))
+            models = {}
+            for family, actor in [('fixed', r.engine.fixed.HierarchicalActor()), ('dynamic', r.engine.dynamic.DynamicActor())]:
+                path = root/f'{family}.pt'; torch.save(dict(state_dict=actor.state_dict()), path); models[f'{family}_1701'] = str(path)
+            r.write_json(root/'ranges.json', dict(ranges={n:{} for n in models}))
+            with patch.object(r, 'ROOT', root), patch.object(r, 'OPEN', root/'open.json'), \
+                 patch.object(r, 'verify_manifest', return_value=dict(models=models, ranges=str(root/'ranges.json'))), \
+                 patch.object(r.engine, 'verify'), patch.object(r.engine, 'GranularityEnv', side_effect=environment):
+                for method in ('ground_16', 'global_v3_16', 'global_v3_dynamic', 'fixed_1701', 'dynamic_1701', 'minload_2_4', 'minload_2_16', 'zero_2_16', 'local_cgs_16', 'local_heft_16'):
+                    short = r.simulate((str(root/'p.json'), method))
+>                   self.assertEqual(short['status'], 'PASS', short)
+E                   AssertionError: 'FAILED' != 'PASS'
+E                   - FAILED
+E                   + PASS
+E                    : {'status': 'FAILED', 'method': 'ground_16', 'date': '2026-12-21', 'traceback': 'Traceback (most recent call last):\n  File "/Users/bytedance/Projects/bs/analysis/run_scale_validation_20261027.py", line 147, in simulate\n    assert not out.exists() and not progress.exists();check_time();m=verify_manifest();verify(p)\n                                                      ^^^^^^^^^^^^\n  File "/Users/bytedance/Projects/bs/analysis/run_m_formal_20261027.py", line 47, in check_time\n    raise TimeoutError(\'11-06 Beijing hard deadline; no extension\')\nTimeoutError: 11-06 Beijing hard deadline; no extension\n'}
+
+tests/test_l_formal_20261028.py:77: AssertionError
+____________________ LFormalTests.test_second_open_rejected ____________________
+
+self = <test_l_formal_20261028.LFormalTests testMethod=test_second_open_rejected>
+
+    def test_second_open_rejected(self):
+        with TemporaryDirectory() as tmp, patch.object(r, 'OPEN', Path(tmp)/'open.json'), \
+             patch.object(r, 'verify_manifest', return_value={'dates':r.DATES}), patch.object(r, 'read') as read:
+            read.side_effect = [dict(status='COMPLETE'), dict(status='NOTIFIED'), dict(finetune_diagnostic={'needs':{'fixed':False}}), dict(status='MAC_CAPTURE_COMPLETE_ORIN_REPLAY_PENDING')]
+            r.OPEN.write_text('original')
+            with self.assertRaises(FileExistsError):
+>               r.open_once()
+
+tests/test_l_formal_20261028.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+analysis/run_l_formal_20261028.py:102: in open_once
+    check_time(); m = verify_manifest()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def check_time():
+        if datetime.now(timezone.utc) >= END:
+>           raise TimeoutError('11-06 Beijing hard deadline; no extension')
+E           TimeoutError: 11-06 Beijing hard deadline; no extension
+
+analysis/run_m_formal_20261027.py:47: TimeoutError
+________ ReducedValidationTests.test_failure_drains_only_current_batch _________
+
+self = <test_l_reduced_validation_20261028.ReducedValidationTests testMethod=test_failure_drains_only_current_batch>
+
+    def test_failure_drains_only_current_batch(self):
+        class Pool:
+            def __init__(self):self.calls=[]
+            def submit(self,fn,args):
+                self.calls.append(args);f=Future()
+                if len(self.calls)==2:f.set_exception(RuntimeError('worker failure'))
+                else:f.set_result(dict(status='PASS'))
+                return f
+        pool=Pool()
+        with TemporaryDirectory() as tmp,patch.object(r,'ROOT',Path(tmp)):
+>           results=r.execute_batches(pool,list(range(33)),[dict(status='PASS')]*9)
+
+tests/test_l_reduced_validation_20261028.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+analysis/run_l_reduced_validation_20261028.py:123: in execute_batches
+    check_time()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def check_time():
+        if datetime.now(timezone.utc) >= END:
+>           raise TimeoutError('L validation cutoff 10-31 00:00 Beijing')
+E           TimeoutError: L validation cutoff 10-31 00:00 Beijing
+
+analysis/run_l_reduced_validation_20261028.py:34: TimeoutError
+___ ReducedValidationTests.test_real_toy_worker_all_retained_policy_families ___
+
+self = <test_l_reduced_validation_20261028.ReducedValidationTests testMethod=test_real_toy_worker_all_retained_policy_families>
+
+    def test_real_toy_worker_all_retained_policy_families(self):
+        base=fixture();config=asdict(base.cfg);base.close()
+        config.update(sim_steps=710,decision_tile_limit_per_sat=64)
+        config['scheduled_task_arrivals'][0]['release_step']=20
+        real_env=r.engine.GranularityEnv
+        def environment(cfg):
+            with patch('sim.env.TopologyModel',FakeTopology),patch('sim.env.VisibilityCache',FakeVisibility):
+                env=real_env(cfg)
+            env.vis_cache.windows_at=lambda sid,t:{'gs':(0,1000)}
+            return env
+        with TemporaryDirectory() as tmp:
+            root=Path(tmp);p=dict(date='2026-10-22',config=config,scored_task_ids=['task_0'],
+                score_start_s=10,score_end_s=110,sim_duration_s=710)
+            r.write_json(root/'p.json',p);r.write_json(root/'run_manifest.json',dict(hashes={}))
+            models={}
+            for family,actor in [('fixed',r.engine.fixed.HierarchicalActor()),('dynamic',r.engine.dynamic.DynamicActor())]:
+                path=root/f'{family}.pt';torch.save(dict(state_dict=actor.state_dict()),path)
+                models[f'{family}_1701']=str(path)
+            r.write_json(root/'ranges.json',dict(ranges={n:{} for n in models}))
+            with patch.object(r,'ROOT',root),patch.object(r,'verify_manifest',return_value=dict(models=models,ranges=str(root/'ranges.json'))),\
+                 patch.object(r.engine,'verify'),patch.object(r.engine,'GranularityEnv',side_effect=environment):
+                for method in ('ground_16','global_v3_16','global_v3_dynamic','fixed_1701','dynamic_1701',
+                               'minload_2_4','minload_2_16','zero_2_16','local_cgs_16','local_heft_16'):
+                    short=r.simulate((str(root/'p.json'),method))
+>                   self.assertEqual(short['status'],'PASS',short)
+E                   AssertionError: 'FAILED' != 'PASS'
+E                   - FAILED
+E                   + PASS
+E                    : {'status': 'FAILED', 'method': 'ground_16', 'date': '2026-10-22', 'traceback': 'Traceback (most recent call last):\n  File "/Users/bytedance/Projects/bs/analysis/run_scale_validation_20261027.py", line 147, in simulate\n    assert not out.exists() and not progress.exists();check_time();m=verify_manifest();verify(p)\n                                                      ^^^^^^^^^^^^\n  File "/Users/bytedance/Projects/bs/analysis/run_l_reduced_validation_20261028.py", line 34, in check_time\n    raise TimeoutError(\'L validation cutoff 10-31 00:00 Beijing\')\nTimeoutError: L validation cutoff 10-31 00:00 Beijing\n'}
+
+tests/test_l_reduced_validation_20261028.py:90: AssertionError
+_____________ FormalTests.test_real_toy_execution_all_new_families _____________
+
+self = <test_m_formal_20261027.FormalTests testMethod=test_real_toy_execution_all_new_families>
+
+    def test_real_toy_execution_all_new_families(self):
+        base=fixture();config=asdict(base.cfg);base.close()
+        config.update(sim_steps=710,decision_tile_limit_per_sat=64)
+        config['scheduled_task_arrivals'][0]['release_step']=20
+        real_env=r.GranularityEnv
+        def environment(cfg):
+            with patch('sim.env.TopologyModel',FakeTopology),patch('sim.env.VisibilityCache',FakeVisibility):
+                env=real_env(cfg)
+            env.vis_cache.windows_at=lambda sid,t:{'gs':(0,1000)}
+            env.topology.sat_recs={i:i for i in env.satellites};env.topology.t0=None
+            return env
+        with TemporaryDirectory() as tmp:
+            root=Path(tmp);p=dict(date='2026-12-21',config=config,scored_task_ids=['task_0'],
+                score_start_s=10,score_end_s=110,sim_duration_s=710)
+            r.write_json(root/'p.json',p);r.write_json(root/'run_manifest.json',dict(hashes={}))
+            r.write_json(root/'opening.json',{})
+            models={}
+            for family,actor in [('fixed',old.fixed.HierarchicalActor()),('dynamic',old.dynamic.DynamicActor())]:
+                path=root/f'{family}.pt';torch.save(dict(state_dict=actor.state_dict()),path)
+                for seed in r.SEEDS:
+                    models[f'{family}_{seed}']=str(path);models[f'{family}_bc_{seed}']=str(path)
+            r.write_json(root/'ranges.json',dict(ranges={n:{} for n in models}))
+            manifest=dict(models=models,ranges=str(root/'ranges.json'))
+            with patch.object(r,'ROOT',root),patch.object(r,'OPEN',root/'opening.json'),\
+                patch.object(r,'verify_manifest',return_value=manifest),patch.object(r,'require_open'),\
+                patch.object(r,'GranularityEnv',side_effect=environment),patch.object(old,'verify'),\
+                patch('analysis.run_calibration_capacity.position_km',side_effect=lambda sid,t0,t:[sid,0,0]):
+                for method in r.METHODS:
+                    short=r.simulate((str(root/'p.json'),method))
+>                   self.assertEqual(short['status'],'PASS',short)
+E                   AssertionError: 'FAILED' != 'PASS'
+E                   - FAILED
+E                   + PASS
+E                    : {'status': 'FAILED', 'method': 'fixed_1701', 'date': '2026-12-21', 'traceback': 'Traceback (most recent call last):\n  File "/Users/bytedance/Projects/bs/analysis/run_scale_validation_20261027.py", line 147, in simulate\n    assert not out.exists() and not progress.exists();check_time();m=verify_manifest();verify(p)\n                                                      ^^^^^^^^^^^^\n  File "/Users/bytedance/Projects/bs/analysis/run_m_formal_20261027.py", line 47, in check_time\n    raise TimeoutError(\'11-06 Beijing hard deadline; no extension\')\nTimeoutError: 11-06 Beijing hard deadline; no extension\n'}
+
+tests/test_m_formal_20261027.py:92: AssertionError
+_ SFormalTests.test_all20_real_toy_and60_synthetic_report_with_independent_verifier _
+
+self = <test_s_formal_20261029.SFormalTests testMethod=test_all20_real_toy_and60_synthetic_report_with_independent_verifier>
+
+    def test_all20_real_toy_and60_synthetic_report_with_independent_verifier(self):
+        base=fixture();cfg=asdict(base.cfg);base.close()
+        cfg.update(sim_steps=710,decision_tile_limit_per_sat=64)
+        cfg['scheduled_task_arrivals'][0]['release_step']=20
+        real_env=r.engine.GranularityEnv
+        def environment(config):
+            with patch('sim.env.TopologyModel',FakeTopology),patch('sim.env.VisibilityCache',FakeVisibility):
+                env=real_env(config)
+            env.vis_cache.windows_at=lambda sid,t:{'gs':(0,1000)}
+            return env
+        with TemporaryDirectory() as tmp:
+            root=Path(tmp)/'s';root.mkdir();opening=root.parent/'S_TEST_OPENED.json'
+            p=dict(date=r.DATES[0],config=cfg,scored_task_ids=['task_0'],score_start_s=10,score_end_s=110,sim_duration_s=710)
+            r.write_json(root/'p.json',p);r.write_json(root/'run_manifest.json',dict(hashes={}))
+            r.write_json(root/'manifest.json',{});r.write_json(opening,dict(scope='S',manifest_sha256=r.sha(root/'manifest.json')))
+            models={}
+            for name in r.MAPPO:
+                actor=r.engine.fixed.HierarchicalActor() if name.startswith('fixed_') else r.engine.dynamic.DynamicActor()
+                path=root/f'{name}.pt';torch.save(dict(state_dict=actor.state_dict()),path);models[name]=str(path)
+            r.write_json(root/'ranges.json',dict(ranges={n:{} for n in models}))
+            manifest=dict(models=models,ranges=str(root/'ranges.json'))
+            with patch.object(r,'ROOT',root),patch.object(r,'OPEN',opening),patch.object(r,'verify_manifest',return_value=manifest), \
+                    patch.object(r.engine,'verify'),patch.object(r.engine,'GranularityEnv',side_effect=environment):
+                for method in r.METHODS:
+                    short=r.simulate((str(root/'p.json'),method))
+>                   self.assertEqual(short['status'],'PASS',short)
+E                   AssertionError: 'FAILED' != 'PASS'
+E                   - FAILED
+E                   + PASS
+E                    : {'status': 'FAILED', 'method': 'fixed_1701', 'date': '2026-12-21', 'traceback': 'Traceback (most recent call last):\n  File "/Users/bytedance/Projects/bs/analysis/run_scale_validation_20261027.py", line 147, in simulate\n    assert not out.exists() and not progress.exists();check_time();m=verify_manifest();verify(p)\n                                                      ^^^^^^^^^^^^\n  File "/Users/bytedance/Projects/bs/analysis/run_s_formal_20261029.py", line 35, in check_time\n    raise TimeoutError(\'S cutoff: 2026-11-05 00:00 Beijing; no extension\')\nTimeoutError: S cutoff: 2026-11-05 00:00 Beijing; no extension\n'}
+
+tests/test_s_formal_20261029.py:101: AssertionError
+______________ SFormalTests.test_failed_batch_drains_no_prefetch _______________
+
+self = <test_s_formal_20261029.SFormalTests testMethod=test_failed_batch_drains_no_prefetch>
+
+    def test_failed_batch_drains_no_prefetch(self):
+        class Pool:
+            def __init__(self): self.calls=[]
+            def submit(self,fn,job):
+                self.calls.append(job); f=Future()
+                if len(self.calls)==2: f.set_exception(RuntimeError('test'))
+                else: f.set_result({'status':'PASS'})
+                return f
+        pool=Pool()
+        with TemporaryDirectory() as tmp,patch.object(r,'ROOT',Path(tmp)):
+>           rows=r.batches(pool,list(range(60)))
+
+tests/test_s_formal_20261029.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+analysis/run_s_formal_20261029.py:175: in batches
+    check_time(); current = []
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def check_time():
+        if datetime.now(timezone.utc) >= END:
+>           raise TimeoutError('S cutoff: 2026-11-05 00:00 Beijing; no extension')
+E           TimeoutError: S cutoff: 2026-11-05 00:00 Beijing; no extension
+
+analysis/run_s_formal_20261029.py:35: TimeoutError
+_____________ SFormalTests.test_open_gate_and_second_open_rejected _____________
+
+self = <test_s_formal_20261029.SFormalTests testMethod=test_open_gate_and_second_open_rejected>
+
+    def test_open_gate_and_second_open_rejected(self):
+        with TemporaryDirectory() as tmp, patch.object(r,'ROOT',Path(tmp)), patch.object(r,'OPEN',Path(tmp)/'open.json'):
+            r.write_json(r.ROOT/'manifest.json',dict(methods=r.METHODS))
+            with self.assertRaises(FileNotFoundError): r.require_open(r.DATES[0])
+            r.write_json(r.OPEN,dict(scope='S',manifest_sha256=r.sha(r.ROOT/'manifest.json')))
+            r.require_open(r.DATES[0])
+            with self.assertRaises(AssertionError): r.require_open('2026-10-22')
+            with patch.object(r,'verify_manifest',return_value={'dates':r.DATES}):
+>               with self.assertRaises(FileExistsError): r.open_once()
+
+tests/test_s_formal_20261029.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+analysis/run_s_formal_20261029.py:164: in open_once
+    check_time(); m = verify_manifest()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def check_time():
+        if datetime.now(timezone.utc) >= END:
+>           raise TimeoutError('S cutoff: 2026-11-05 00:00 Beijing; no extension')
+E           TimeoutError: S cutoff: 2026-11-05 00:00 Beijing; no extension
+
+analysis/run_s_formal_20261029.py:35: TimeoutError
+_ ScaleValidation.test_worker_record_resources_and_followup_for_all_policy_families _
+
+self = <test_scale_validation_20261027.ScaleValidation testMethod=test_worker_record_resources_and_followup_for_all_policy_families>
+
+    def test_worker_record_resources_and_followup_for_all_policy_families(self):
+        base=fixture();c=asdict(base.cfg);base.close()
+        c.update(sim_steps=710,decision_tile_limit_per_sat=64)
+        c['scheduled_task_arrivals'][0]['release_step']=20
+        def environment(cfg):
+            with patch('sim.env.TopologyModel',FakeTopology),patch('sim.env.VisibilityCache',FakeVisibility):
+                env=r.GranularityEnv_original(cfg)
+            env.vis_cache.windows_at=lambda sid,t:{'gs':(0,1000)}
+            return env
+        with TemporaryDirectory() as tmp:
+            root=Path(tmp);p=dict(date='2026-10-22',config=c,scored_task_ids=['task_0'],
+                score_start_s=10,score_end_s=110,sim_duration_s=710)
+            r.write_json(root/'protocol.json',p);r.write_json(root/'run_manifest.json',dict(hashes={}))
+            r.write_json(root/'ranges.json',dict(ranges={'fixed_1701':{},'dynamic_1701':{}}))
+            models={}
+            for family,actor in [('fixed',r.fixed.HierarchicalActor()),('dynamic',r.dynamic.DynamicActor())]:
+                path=root/f'{family}.pt';torch.save(dict(state_dict=actor.state_dict()),path);models[family+'_1701']=str(path)
+            manifest=dict(models=models,ranges=str(root/'ranges.json'))
+            with patch.object(r,'ROOT',root),patch.object(r,'verify_manifest',return_value=manifest),\
+                patch.object(r,'verify'),patch.object(r,'GranularityEnv_original',r.GranularityEnv,create=True),\
+                patch.object(r,'GranularityEnv',side_effect=environment):
+                for method in ('fixed_1701','dynamic_1701','global_v3_dynamic','minload_2_4','local_heft_16'):
+                    short=r.simulate((str(root/'protocol.json'),method))
+>                   self.assertEqual(short['status'],'PASS',short)
+E                   AssertionError: 'FAILED' != 'PASS'
+E                   - FAILED
+E                   + PASS
+E                    : {'status': 'FAILED', 'method': 'fixed_1701', 'date': '2026-10-22', 'traceback': 'Traceback (most recent call last):\n  File "/Users/bytedance/Projects/bs/analysis/run_scale_validation_20261027.py", line 147, in simulate\n    assert not out.exists() and not progress.exists();check_time();m=verify_manifest();verify(p)\n                                                      ^^^^^^^^^^^^\n  File "/Users/bytedance/Projects/bs/analysis/run_scale_validation_20261027.py", line 44, in check_time\n    if datetime.now(timezone.utc)>=END: raise TimeoutError(\'Scale validation cutoff; no extension\')\n                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTimeoutError: Scale validation cutoff; no extension\n'}
+
+tests/test_scale_validation_20261027.py:82: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_dynamic_mappo.py::DynamicPPOTests::test_training_rollout_records_real_terminal_credit
+FAILED tests/test_dynamic_mappo.py::DynamicPPOTests::test_validation_records_all_deadlines_and_passive_resources
+FAILED tests/test_ground_distributed_20261030.py::DistributedTests::test_failed_batch_drains_without_next_batch
+FAILED tests/test_ground_distributed_20261030.py::DistributedTests::test_stop_control_prevents_dispatch
+FAILED tests/test_ground_distributed_v2_20261030.py::DistributedTests::test_failed_batch_drains_without_next_batch
+FAILED tests/test_ground_distributed_v2_20261030.py::DistributedTests::test_stop_control_prevents_dispatch
+FAILED tests/test_ground_scaling_20261029.py::GroundScalingTests::test_failed_batch_drains_and_does_not_prefetch
+FAILED tests/test_l_formal_20261028.py::LFormalTests::test_failed_batch_drains_without_prefetch
+FAILED tests/test_l_formal_20261028.py::LFormalTests::test_real_toy_formal_records_all_policy_families
+FAILED tests/test_l_formal_20261028.py::LFormalTests::test_second_open_rejected
+FAILED tests/test_l_reduced_validation_20261028.py::ReducedValidationTests::test_failure_drains_only_current_batch
+FAILED tests/test_l_reduced_validation_20261028.py::ReducedValidationTests::test_real_toy_worker_all_retained_policy_families
+FAILED tests/test_m_formal_20261027.py::FormalTests::test_real_toy_execution_all_new_families
+FAILED tests/test_s_formal_20261029.py::SFormalTests::test_all20_real_toy_and60_synthetic_report_with_independent_verifier
+FAILED tests/test_s_formal_20261029.py::SFormalTests::test_failed_batch_drains_no_prefetch
+FAILED tests/test_s_formal_20261029.py::SFormalTests::test_open_gate_and_second_open_rejected
+FAILED tests/test_scale_validation_20261027.py::ScaleValidation::test_worker_record_resources_and_followup_for_all_policy_families
+17 failed, 751 passed in 38.41s

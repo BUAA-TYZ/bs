@@ -1,0 +1,14 @@
+{
+  "host": "devbox3",
+  "pid": 136663,
+  "started_utc": "2026-11-11T08:44:01Z",
+  "entry": "analysis.evaluation_queue",
+  "database": "results/redesign_20261021/main_scenario/ground_scaling_20261029/http_queue_20261030/server/queue.sqlite",
+  "initial_state": "No queue listener or matching service process; persisted database present.",
+  "old_experiment": {"id": "ground_representatives_20261031", "PASS": 45, "complete": true},
+  "new_experiment": {"id": "cleanup_smoke_20261111", "PASS": 1, "complete": true},
+  "shutdown": "Verified PID command and zero RUNNING jobs in read-only SQLite connection, then SIGTERM to this newly launched service only.",
+  "database_preserved": true,
+  "old_workers_restarted": false,
+  "credential_content_recorded": false
+}

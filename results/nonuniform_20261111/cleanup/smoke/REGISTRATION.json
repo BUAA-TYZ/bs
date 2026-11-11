@@ -1,0 +1,43 @@
+{
+  "at": "2026-11-11T08:44:01.349566+00:00",
+  "purpose": "Post-cleanup dependency smoke, not Gate 1 and not a scientific comparison.",
+  "date": "2026-10-22",
+  "tasks": 1,
+  "score_window_s": 3600,
+  "warmup_s": 650,
+  "followup_s": 600,
+  "scored_images": 65,
+  "estimated_wall_minutes": [
+    5,
+    30
+  ],
+  "allocation": "One Mac slot through the existing devbox3 HTTP queue; other hosts idle because only one local-cleanup smoke is needed.",
+  "no_retry": true,
+  "new_final_test_dates_opened": false,
+  "manifest_sha256": "67651d51dee20ca90eb0f374fa26058151b2ac4fceef25c5d329bfd4ff02ba3a",
+  "spec": {
+    "id": "cleanup_smoke_20261111",
+    "deadline": 1794393841.349556,
+    "hosts": {
+      "local": 1,
+      "devbox1": 6,
+      "devbox2": 6,
+      "devbox3": 6
+    },
+    "jobs": [
+      {
+        "id": "M_validation_2026-10-22_v3_dynamic_1h",
+        "job": [
+          "M_cleanup",
+          "results/nonuniform_20261111/cleanup/smoke/protocol.json",
+          "v3_dynamic"
+        ],
+        "output": "results/nonuniform_20261111/cleanup/smoke/QUEUE_RESULT.json",
+        "legacy_host": "local",
+        "hosts": [
+          "local"
+        ]
+      }
+    ]
+  }
+}
