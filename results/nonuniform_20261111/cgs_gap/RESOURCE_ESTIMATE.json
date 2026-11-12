@@ -1,0 +1,32 @@
+{
+  "at": "2026-11-11T15:16:51.989552+00:00",
+  "tasks": 146,
+  "quote_budget_upper": 500498,
+  "mac_median_seconds_per_quote": {
+    "4": 0.019339522047175706,
+    "16": 0.06833120571934614
+  },
+  "relative_per_slot_speed": {
+    "local": 1.0,
+    "devbox1": 0.25894469758380334,
+    "devbox2": 0.2559738738069912,
+    "devbox3": 0.4589144593574494
+  },
+  "slots": {
+    "local": 6,
+    "devbox1": 6,
+    "devbox2": 6,
+    "devbox3": 6
+  },
+  "ideal_parallel_seconds": 2789.5030294080384,
+  "estimated_enumeration_hours": [
+    1.3780788934454893,
+    2.42048226027483
+  ],
+  "estimated_report_finish_utc": [
+    "2026-11-11T16:39:33.073561+00:00",
+    "2026-11-11T17:42:05.725682+00:00"
+  ],
+  "assumptions": "Measured single-slot rates; 30%-100% throughput allowance plus slowest whole shard tail and up to 30 minutes final collection/audit. Local search uses registered worst-case 20-round budget. Not a completion guarantee.",
+  "over_two_hours_warning_already_given": true
+}

@@ -1,0 +1,87 @@
+{
+  "blocked": null,
+  "complete": true,
+  "counts": {
+    "PASS": 3
+  },
+  "jobs": [
+    {
+      "experiment": "cgs_gap_replay_20261111",
+      "heartbeat": 1794410160.8995252,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_capture",
+      "owner": "local:gate1:48621",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/replay/results/2026-10-22.json",
+        "sha256": "2ca19fe6fd828eb008619879d5779d8d336480f6448abfaa451902c229180fee",
+        "status": "PASS"
+      },
+      "spec": {
+        "hosts": [
+          "local"
+        ],
+        "id": "2026-10-22_capture",
+        "job": [
+          "CGS_GAP_REPLAY",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "capture"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/replay/results/2026-10-22.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_replay_20261111",
+      "heartbeat": 1794410149.8337197,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_capture",
+      "owner": "local:gate1:48621",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/replay/results/2026-10-23.json",
+        "sha256": "5f185596dd71fecaede7568284c62623250b73be44b9f87668564b7c5f401032",
+        "status": "PASS"
+      },
+      "spec": {
+        "hosts": [
+          "local"
+        ],
+        "id": "2026-10-23_capture",
+        "job": [
+          "CGS_GAP_REPLAY",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "capture"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/replay/results/2026-10-23.json"
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_replay_20261111",
+      "heartbeat": 1794410160.8995252,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_capture",
+      "owner": "local:gate1:48621",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/replay/results/2026-10-24.json",
+        "sha256": "17a007ab518fd796c66655a8dab47dc5d25bd2c16642bbed8b4bb294dfa222ad",
+        "status": "PASS"
+      },
+      "spec": {
+        "hosts": [
+          "local"
+        ],
+        "id": "2026-10-24_capture",
+        "job": [
+          "CGS_GAP_REPLAY",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "capture"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/replay/results/2026-10-24.json"
+      },
+      "state": "PASS"
+    }
+  ]
+}

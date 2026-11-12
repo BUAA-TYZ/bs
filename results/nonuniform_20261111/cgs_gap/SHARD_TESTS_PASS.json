@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "at": "2026-11-11T14:17:57.698166+00:00",
+  "command": [
+    ".venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "tests/test_cgs_gap_20261111.py",
+    "tests/test_cgs_gap_shards_20261111.py",
+    "-q",
+    "-p",
+    "no:cacheprovider"
+  ],
+  "wall_seconds": 1.1216175419976935
+}

@@ -1,0 +1,531 @@
+{
+  "snapshot": {
+    "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-23_task_99.pkl.gz",
+    "sha256": "eca27b833b361df0f5adfecf853e44cc5d7065494918669980d6f5bffa8d00fc",
+    "bytes": 55980,
+    "sample": {
+      "date": "2026-10-23",
+      "task_id": "task_99",
+      "time_seconds": 6831.0,
+      "quotes_seconds": {
+        "local_4": 21.200000000000003,
+        "cgs_4": 11.5,
+        "local_16": 21.200000000000003,
+        "cgs_16": 11.5,
+        "ground": 51.15440000000002
+      },
+      "selected": "cgs_4",
+      "nu": {
+        "status": "DISABLED"
+      },
+      "requested": 4,
+      "actual": 4,
+      "windows": 9,
+      "unique_mb": 200.0,
+      "packet_mb": 237.445632,
+      "overlap_mb": 37.44563199999999,
+      "id": "2026-10-23_task_99"
+    },
+    "calendar_quote": 11.5
+  },
+  "plan": {
+    "status": "ELIGIBLE",
+    "blocks": 4,
+    "ordered": [
+      "task_99_tile_0",
+      "task_99_tile_1",
+      "task_99_tile_2",
+      "task_99_tile_3"
+    ],
+    "cgs": [
+      3,
+      30,
+      31,
+      42
+    ],
+    "cgs_quote": 11.5,
+    "used_positions": 4,
+    "positions": [
+      3,
+      30,
+      31,
+      42,
+      29
+    ],
+    "top_five": [
+      3,
+      30,
+      31,
+      42,
+      29
+    ],
+    "local_search_positions": [
+      29,
+      3,
+      30,
+      31,
+      42
+    ],
+    "single_block_quotes": [
+      {
+        "tile": "task_99_tile_0",
+        "feasible": [
+          {
+            "position": [
+              "ground",
+              "gs_beijing"
+            ],
+            "quote": 49.50000000000001
+          },
+          {
+            "position": 29,
+            "quote": 4.5
+          },
+          {
+            "position": 3,
+            "quote": 4.1
+          },
+          {
+            "position": 30,
+            "quote": 4.199999999999999
+          },
+          {
+            "position": 31,
+            "quote": 4.3
+          },
+          {
+            "position": 42,
+            "quote": 4.4
+          }
+        ]
+      },
+      {
+        "tile": "task_99_tile_1",
+        "feasible": [
+          {
+            "position": [
+              "ground",
+              "gs_beijing"
+            ],
+            "quote": 49.7
+          },
+          {
+            "position": 29,
+            "quote": 6.6
+          },
+          {
+            "position": 3,
+            "quote": 6.0
+          },
+          {
+            "position": 30,
+            "quote": 6.199999999999999
+          },
+          {
+            "position": 31,
+            "quote": 6.3999999999999995
+          },
+          {
+            "position": 42,
+            "quote": 6.5
+          }
+        ]
+      },
+      {
+        "tile": "task_99_tile_2",
+        "feasible": [
+          {
+            "position": [
+              "ground",
+              "gs_beijing"
+            ],
+            "quote": 49.7
+          },
+          {
+            "position": 29,
+            "quote": 6.6
+          },
+          {
+            "position": 3,
+            "quote": 6.0
+          },
+          {
+            "position": 30,
+            "quote": 6.199999999999999
+          },
+          {
+            "position": 31,
+            "quote": 6.3999999999999995
+          },
+          {
+            "position": 42,
+            "quote": 6.5
+          }
+        ]
+      },
+      {
+        "tile": "task_99_tile_3",
+        "feasible": [
+          {
+            "position": [
+              "ground",
+              "gs_beijing"
+            ],
+            "quote": 50.1
+          },
+          {
+            "position": 29,
+            "quote": 11.0
+          },
+          {
+            "position": 3,
+            "quote": 10.2
+          },
+          {
+            "position": 30,
+            "quote": 10.5
+          },
+          {
+            "position": 31,
+            "quote": 10.8
+          },
+          {
+            "position": 42,
+            "quote": 10.9
+          }
+        ]
+      }
+    ],
+    "planned_quotes": 625,
+    "cross_satellite_blocks": 3
+  },
+  "seconds_per_quote": 0.01740085026574434,
+  "candidate_seconds": 0.19011624999984633,
+  "records": [
+    {
+      "index": 0,
+      "quote": 21.000000000000004,
+      "seconds": 0.014685166002891492
+    },
+    {
+      "index": 9,
+      "quote": 11.3,
+      "seconds": 0.01512070800526999
+    },
+    {
+      "index": 19,
+      "quote": 11.3,
+      "seconds": 0.015020209000795148
+    },
+    {
+      "index": 29,
+      "quote": 11.3,
+      "seconds": 0.015504916998906992
+    },
+    {
+      "index": 39,
+      "quote": 11.6,
+      "seconds": 0.015297459001885727
+    },
+    {
+      "index": 49,
+      "quote": 15.3,
+      "seconds": 0.0180289170020842
+    },
+    {
+      "index": 59,
+      "quote": 11.6,
+      "seconds": 0.025524541997583583
+    },
+    {
+      "index": 69,
+      "quote": 11.6,
+      "seconds": 0.018016083995462395
+    },
+    {
+      "index": 79,
+      "quote": 11.3,
+      "seconds": 0.017873540993605275
+    },
+    {
+      "index": 89,
+      "quote": 11.6,
+      "seconds": 0.016720125000574626
+    },
+    {
+      "index": 99,
+      "quote": 15.3,
+      "seconds": 0.017050583999662194
+    },
+    {
+      "index": 108,
+      "quote": 11.5,
+      "seconds": 0.016409042000304908
+    },
+    {
+      "index": 118,
+      "quote": 15.2,
+      "seconds": 0.01616749999811873
+    },
+    {
+      "index": 128,
+      "quote": 11.1,
+      "seconds": 0.01669041599961929
+    },
+    {
+      "index": 138,
+      "quote": 11.4,
+      "seconds": 0.01815083400288131
+    },
+    {
+      "index": 148,
+      "quote": 11.4,
+      "seconds": 0.018245125000248663
+    },
+    {
+      "index": 158,
+      "quote": 12.7,
+      "seconds": 0.01613599999836879
+    },
+    {
+      "index": 168,
+      "quote": 15.4,
+      "seconds": 0.016780999998445623
+    },
+    {
+      "index": 178,
+      "quote": 11.4,
+      "seconds": 0.016808125001261942
+    },
+    {
+      "index": 188,
+      "quote": 11.7,
+      "seconds": 0.024200167004892137
+    },
+    {
+      "index": 198,
+      "quote": 11.7,
+      "seconds": 0.01734004200261552
+    },
+    {
+      "index": 208,
+      "quote": 15.1,
+      "seconds": 0.017047000001184642
+    },
+    {
+      "index": 217,
+      "quote": 11.6,
+      "seconds": 0.016937915999733377
+    },
+    {
+      "index": 227,
+      "quote": 11.3,
+      "seconds": 0.017380834004143253
+    },
+    {
+      "index": 237,
+      "quote": 15.3,
+      "seconds": 0.01687412500177743
+    },
+    {
+      "index": 247,
+      "quote": 11.6,
+      "seconds": 0.0167877080020844
+    },
+    {
+      "index": 257,
+      "quote": 12.8,
+      "seconds": 0.01651300000230549
+    },
+    {
+      "index": 267,
+      "quote": 12.8,
+      "seconds": 0.015742833995318506
+    },
+    {
+      "index": 277,
+      "quote": 12.8,
+      "seconds": 0.016120000000228174
+    },
+    {
+      "index": 287,
+      "quote": 17.0,
+      "seconds": 0.015398458002891857
+    },
+    {
+      "index": 297,
+      "quote": 12.8,
+      "seconds": 0.017133082998043392
+    },
+    {
+      "index": 307,
+      "quote": 17.0,
+      "seconds": 0.020601542004442308
+    },
+    {
+      "index": 316,
+      "quote": 11.3,
+      "seconds": 0.016013333006412722
+    },
+    {
+      "index": 326,
+      "quote": 11.0,
+      "seconds": 0.01560208299633814
+    },
+    {
+      "index": 336,
+      "quote": 11.3,
+      "seconds": 0.015676040995458607
+    },
+    {
+      "index": 346,
+      "quote": 11.3,
+      "seconds": 0.0158141669962788
+    },
+    {
+      "index": 356,
+      "quote": 15.1,
+      "seconds": 0.024005792001844384
+    },
+    {
+      "index": 366,
+      "quote": 11.3,
+      "seconds": 0.01582191700435942
+    },
+    {
+      "index": 376,
+      "quote": 10.7,
+      "seconds": 0.016315875000145752
+    },
+    {
+      "index": 386,
+      "quote": 11.0,
+      "seconds": 0.015965792001225054
+    },
+    {
+      "index": 396,
+      "quote": 11.0,
+      "seconds": 0.016671040997607633
+    },
+    {
+      "index": 406,
+      "quote": 19.000000000000004,
+      "seconds": 0.01698095899337204
+    },
+    {
+      "index": 416,
+      "quote": 14.8,
+      "seconds": 0.01736216599965701
+    },
+    {
+      "index": 425,
+      "quote": 14.4,
+      "seconds": 0.01747945799434092
+    },
+    {
+      "index": 435,
+      "quote": 10.8,
+      "seconds": 0.01757966599689098
+    },
+    {
+      "index": 445,
+      "quote": 10.2,
+      "seconds": 0.01783287500438746
+    },
+    {
+      "index": 455,
+      "quote": 10.2,
+      "seconds": 0.018268125000759028
+    },
+    {
+      "index": 465,
+      "quote": 12.9,
+      "seconds": 0.01763237500563264
+    },
+    {
+      "index": 475,
+      "quote": 14.4,
+      "seconds": 0.017817583000578452
+    },
+    {
+      "index": 485,
+      "quote": 10.2,
+      "seconds": 0.024299374999827705
+    },
+    {
+      "index": 495,
+      "quote": 11.0,
+      "seconds": 0.017309374998148996
+    },
+    {
+      "index": 505,
+      "quote": 14.4,
+      "seconds": 0.017864125002233777
+    },
+    {
+      "index": 515,
+      "quote": 14.4,
+      "seconds": 0.01876300000003539
+    },
+    {
+      "index": 524,
+      "quote": 17.200000000000003,
+      "seconds": 0.016746041997976135
+    },
+    {
+      "index": 534,
+      "quote": 13.0,
+      "seconds": 0.016933165999944322
+    },
+    {
+      "index": 544,
+      "quote": 13.0,
+      "seconds": 0.01773295900056837
+    },
+    {
+      "index": 554,
+      "quote": 13.0,
+      "seconds": 0.017579457999090664
+    },
+    {
+      "index": 564,
+      "quote": 13.0,
+      "seconds": 0.017203458002768457
+    },
+    {
+      "index": 574,
+      "quote": 17.200000000000003,
+      "seconds": 0.017605542001547292
+    },
+    {
+      "index": 584,
+      "quote": 13.0,
+      "seconds": 0.017132250002759974
+    },
+    {
+      "index": 594,
+      "quote": 13.0,
+      "seconds": 0.017534833001263905
+    },
+    {
+      "index": 604,
+      "quote": 17.200000000000003,
+      "seconds": 0.0175401249944116
+    },
+    {
+      "index": 614,
+      "quote": 17.200000000000003,
+      "seconds": 0.01728000000002794
+    },
+    {
+      "index": 624,
+      "quote": 21.400000000000006,
+      "seconds": 0.016984457994112745
+    }
+  ],
+  "total_space": 625,
+  "extrapolated_quote_seconds": 10.875531416090212,
+  "selection": "64 evenly spaced vector indices; timing only, never changes scientific search",
+  "at": "2026-11-11T14:32:35.533238+00:00",
+  "source_sha256": "4731605e679bcf496787635095835b528cf15097de49bf1f09ab0329446b3f3c"
+}

@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "at": "2026-11-11T16:21:26.108110+00:00",
+  "wall_seconds": 6295.016925811768,
+  "steps": [
+    {
+      "module": "analysis.plan_cgs_gap_20261111",
+      "args": [
+        "pilot"
+      ],
+      "log": "results/nonuniform_20261111/cgs_gap/continuation/plan_cgs_gap_20261111_pilot.log",
+      "wall_seconds": 1.0684971809387207
+    },
+    {
+      "module": "analysis.run_cgs_gap_shards_20261111",
+      "args": [
+        "prepare"
+      ],
+      "log": "results/nonuniform_20261111/cgs_gap/continuation/run_cgs_gap_shards_20261111_prepare.log",
+      "wall_seconds": 19.07798194885254
+    },
+    {
+      "module": "analysis.run_cgs_gap_shards_20261111",
+      "args": [
+        "publish"
+      ],
+      "log": "results/nonuniform_20261111/cgs_gap/continuation/run_cgs_gap_shards_20261111_publish.log",
+      "wall_seconds": 3.115941047668457
+    },
+    {
+      "module": "analysis.collect_cgs_gap_20261111",
+      "args": [],
+      "log": "results/nonuniform_20261111/cgs_gap/continuation/collect_cgs_gap_20261111_main.log",
+      "wall_seconds": 5.7600929737091064
+    },
+    {
+      "module": "analysis.report_cgs_gap_20261111",
+      "args": [],
+      "log": "results/nonuniform_20261111/cgs_gap/continuation/report_cgs_gap_20261111_main.log",
+      "wall_seconds": 10.944614887237549
+    }
+  ]
+}

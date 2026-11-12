@@ -1,0 +1,991 @@
+{
+  "status": "PASS",
+  "stage": "CGS_GAP_REPLAY",
+  "protocol": "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+  "method": "capture",
+  "host": "local",
+  "job_id": "2026-10-22_capture",
+  "runtime": {
+    "python": "3.12.13 (main, Mar  3 2026, 12:39:30) [Clang 21.0.0 (clang-2100.0.123.102)]",
+    "platform": "macOS-26.4.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "numpy": "2.4.4",
+    "torch": "2.12.0",
+    "cpu_count": 18
+  },
+  "registration_sha256": "f38fdb5f6c520021ed2eda949344e230e87b6f08e3c08a7661ac32a01fc0b706",
+  "manifest_sha256": "db643d6fbb3f2747d93fc13a5687e0a9b5884bde202bb3af60a788d2216f1ca4",
+  "started_utc": "2026-11-11T14:09:26.764673+00:00",
+  "finished_utc": "2026-11-11T15:15:59.718760+00:00",
+  "wall_seconds": 3992.954090118408,
+  "replay_checks": {
+    "action_trace_sha256": true,
+    "decisions": true,
+    "outcomes": true,
+    "resources": true,
+    "granularity": true,
+    "R600": true,
+    "config_sha256": true
+  },
+  "snapshots": [
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_35.pkl.gz",
+      "sha256": "01ba35e747d0f699f3dd975c80910940efe9b89491adb795a642351ab98caf22",
+      "bytes": 56235,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_35",
+        "time_seconds": 2171.0,
+        "quotes_seconds": {
+          "local_4": 21.300000000000004,
+          "cgs_4": 11.5,
+          "local_16": 21.300000000000004,
+          "cgs_16": 11.5,
+          "ground": 45.2408
+        },
+        "selected": "cgs_4",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 4,
+        "actual": 4,
+        "windows": 9,
+        "unique_mb": 200.0,
+        "packet_mb": 237.445632,
+        "overlap_mb": 37.44563199999999,
+        "id": "2026-10-22_task_35"
+      },
+      "calendar_quote": 11.5
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_37.pkl.gz",
+      "sha256": "584238524299d23ff9c2f480754970737cf6d23343ca8b1a6e9f847ef1873dad",
+      "bytes": 55942,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_37",
+        "time_seconds": 2871.0,
+        "quotes_seconds": {
+          "local_4": 216.20000000000002,
+          "cgs_4": 65.7,
+          "local_16": 216.20000000000002,
+          "cgs_16": 48.6,
+          "ground": 64.46
+        },
+        "selected": "cgs_16",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 16,
+        "actual": 16,
+        "windows": 100,
+        "unique_mb": 1800.0,
+        "packet_mb": 2137.010688,
+        "overlap_mb": 337.01068799999985,
+        "id": "2026-10-22_task_37"
+      },
+      "calendar_quote": 47.2
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_40.pkl.gz",
+      "sha256": "57880c69926327bdfa5b0329ce80d7b1ca0bbea064809c8b6b4e416021e90cce",
+      "bytes": 56551,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_40",
+        "time_seconds": 3631.0,
+        "quotes_seconds": {
+          "local_4": 218.20000000000002,
+          "cgs_4": 77.9,
+          "local_16": 218.20000000000002,
+          "cgs_16": 48.900000000000006,
+          "ground": 64.46
+        },
+        "selected": "cgs_16",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 16,
+        "actual": 16,
+        "windows": 100,
+        "unique_mb": 1800.0,
+        "packet_mb": 2137.010688,
+        "overlap_mb": 337.01068799999985,
+        "id": "2026-10-22_task_40"
+      },
+      "calendar_quote": 47.2
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_43.pkl.gz",
+      "sha256": "bbfb22d06df58ae156e092bc21079ac611915e8d6867d4f7f87a1fbd6b8f4df6",
+      "bytes": 56309,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_43",
+        "time_seconds": 3801.0,
+        "quotes_seconds": {
+          "local_4": 21.500000000000004,
+          "cgs_4": 11.7,
+          "local_16": 21.500000000000004,
+          "cgs_16": 11.7,
+          "ground": 45.2408
+        },
+        "selected": "cgs_4",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 4,
+        "actual": 4,
+        "windows": 9,
+        "unique_mb": 200.0,
+        "packet_mb": 237.445632,
+        "overlap_mb": 37.44563199999999,
+        "id": "2026-10-22_task_43"
+      },
+      "calendar_quote": 11.7
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_45.pkl.gz",
+      "sha256": "bad65db12b08188c561bdc6733df5bb7eb6fb6192fc06f95287e0eda288667a1",
+      "bytes": 56533,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_45",
+        "time_seconds": 3861.0,
+        "quotes_seconds": {
+          "local_4": 218.70000000000002,
+          "cgs_4": 90.1,
+          "local_16": 218.70000000000002,
+          "cgs_16": 48.800000000000004,
+          "ground": 64.46
+        },
+        "selected": "cgs_16",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 16,
+        "actual": 16,
+        "windows": 100,
+        "unique_mb": 1800.0,
+        "packet_mb": 2137.010688,
+        "overlap_mb": 337.01068799999985,
+        "id": "2026-10-22_task_45"
+      },
+      "calendar_quote": 47.2
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_59.pkl.gz",
+      "sha256": "1790db365c32ddf162c81acdd20fd428a2560cab1750453590dd40cb681f2dc6",
+      "bytes": 56674,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_59",
+        "time_seconds": 4156.0,
+        "quotes_seconds": {
+          "local_4": 170.8,
+          "cgs_4": 39.2,
+          "local_16": 170.8,
+          "cgs_16": 35.400000000000006,
+          "ground": 70.37360000000001
+        },
+        "selected": "cgs_16",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 16,
+        "actual": 16,
+        "windows": 64,
+        "unique_mb": 800.0,
+        "packet_mb": 1287.882752,
+        "overlap_mb": 487.882752,
+        "id": "2026-10-22_task_59"
+      },
+      "calendar_quote": 35.400000000000006
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_70.pkl.gz",
+      "sha256": "fde5a19760cae30e06dbdbd76e0341744731ee8c3b61a49ff2bf7e253cf05ded",
+      "bytes": 55832,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_70",
+        "time_seconds": 4411.0,
+        "quotes_seconds": {
+          "local_4": 217.70000000000002,
+          "cgs_4": 62.800000000000004,
+          "local_16": 217.70000000000002,
+          "cgs_16": 57.800000000000004,
+          "ground": 106.7
+        },
+        "selected": "cgs_16",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 16,
+        "actual": 16,
+        "windows": 100,
+        "unique_mb": 1800.0,
+        "packet_mb": 2137.010688,
+        "overlap_mb": 337.01068799999985,
+        "id": "2026-10-22_task_70"
+      },
+      "calendar_quote": 49.800000000000004
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_78.pkl.gz",
+      "sha256": "eb5e850e746f56f82ae09e7baf9685b076f4ece9c39749ef12e5d08e3aec8923",
+      "bytes": 55480,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_78",
+        "time_seconds": 5331.0,
+        "quotes_seconds": {
+          "local_4": 21.400000000000002,
+          "cgs_4": 11.6,
+          "local_16": 21.400000000000002,
+          "cgs_16": 11.6,
+          "ground": 87.4808
+        },
+        "selected": "cgs_4",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 4,
+        "actual": 4,
+        "windows": 9,
+        "unique_mb": 200.0,
+        "packet_mb": 237.445632,
+        "overlap_mb": 37.44563199999999,
+        "id": "2026-10-22_task_78"
+      },
+      "calendar_quote": 11.6
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_84.pkl.gz",
+      "sha256": "9d4373568c9c0db7d7b300562d8c0fda49de10e7954fe4450f8427a3f3edcb01",
+      "bytes": 56355,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_84",
+        "time_seconds": 6536.0,
+        "quotes_seconds": {
+          "local_4": 137.5,
+          "cgs_4": 39.50000000000001,
+          "local_16": 137.5,
+          "cgs_16": 35.7,
+          "ground": 99.0968
+        },
+        "selected": "cgs_16",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 16,
+        "actual": 16,
+        "windows": 64,
+        "unique_mb": 800.0,
+        "packet_mb": 1287.882752,
+        "overlap_mb": 487.882752,
+        "id": "2026-10-22_task_84"
+      },
+      "calendar_quote": 35.7
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_99.pkl.gz",
+      "sha256": "60da16dae1b5e52e056dac3976cc8993786e35b7bb1fa164327c58b15926dc89",
+      "bytes": 56916,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_99",
+        "time_seconds": 6936.0,
+        "quotes_seconds": {
+          "local_4": 137.20000000000002,
+          "cgs_4": 39.400000000000006,
+          "local_16": 137.20000000000002,
+          "cgs_16": 35.400000000000006,
+          "ground": 91.4936
+        },
+        "selected": "cgs_16",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 16,
+        "actual": 16,
+        "windows": 64,
+        "unique_mb": 800.0,
+        "packet_mb": 1287.882752,
+        "overlap_mb": 487.882752,
+        "id": "2026-10-22_task_99"
+      },
+      "calendar_quote": 35.400000000000006
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_103.pkl.gz",
+      "sha256": "f822ea925d7c9a77064e8d8f6eb4542ce206bd7441b3ede76e2061c44fe91e9d",
+      "bytes": 56643,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_103",
+        "time_seconds": 7001.0,
+        "quotes_seconds": {
+          "local_4": 21.300000000000004,
+          "cgs_4": 11.5,
+          "local_16": 21.300000000000004,
+          "cgs_16": 11.5,
+          "ground": 87.4808
+        },
+        "selected": "cgs_4",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 4,
+        "actual": 4,
+        "windows": 9,
+        "unique_mb": 200.0,
+        "packet_mb": 237.445632,
+        "overlap_mb": 37.44563199999999,
+        "id": "2026-10-22_task_103"
+      },
+      "calendar_quote": 11.5
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_107.pkl.gz",
+      "sha256": "80e4c8c46f39ce93f33eb2fedf3500215736113c4f4013dd4f4a7f10a11bb4d5",
+      "bytes": 56261,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_107",
+        "time_seconds": 7121.0,
+        "quotes_seconds": {
+          "local_4": 217.70000000000002,
+          "cgs_4": 63.00000000000001,
+          "local_16": 217.70000000000002,
+          "cgs_16": 58.400000000000006,
+          "ground": 98.70000000000002
+        },
+        "selected": "cgs_16",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 16,
+        "actual": 16,
+        "windows": 100,
+        "unique_mb": 1800.0,
+        "packet_mb": 2137.010688,
+        "overlap_mb": 337.01068799999985,
+        "id": "2026-10-22_task_107"
+      },
+      "calendar_quote": 50.10000000000001
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_119.pkl.gz",
+      "sha256": "2179edb6155de2bd0895c80db29eb4afa2fc4f2dfefde836e4d0e9e611c107e3",
+      "bytes": 56288,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_119",
+        "time_seconds": 9336.0,
+        "quotes_seconds": {
+          "local_4": 137.20000000000002,
+          "cgs_4": 39.60000000000001,
+          "local_16": 137.20000000000002,
+          "cgs_16": 35.7,
+          "ground": 77.97680000000001
+        },
+        "selected": "cgs_16",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 16,
+        "actual": 16,
+        "windows": 64,
+        "unique_mb": 800.0,
+        "packet_mb": 1287.882752,
+        "overlap_mb": 487.882752,
+        "id": "2026-10-22_task_119"
+      },
+      "calendar_quote": 35.7
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_141.pkl.gz",
+      "sha256": "ee8acdfa8fabf5798f00486d6cf9a37c8ef56845a050d8ddc6d2dd13a88135da",
+      "bytes": 56934,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_141",
+        "time_seconds": 10006.0,
+        "quotes_seconds": {
+          "local_4": 137.1,
+          "cgs_4": 38.0,
+          "local_16": 137.1,
+          "cgs_16": 33.00000000000001,
+          "ground": 41.372800000000005
+        },
+        "selected": "cgs_16",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 16,
+        "actual": 16,
+        "windows": 64,
+        "unique_mb": 800.0,
+        "packet_mb": 1287.882752,
+        "overlap_mb": 487.882752,
+        "id": "2026-10-22_task_141"
+      },
+      "calendar_quote": 30.400000000000002
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_146.pkl.gz",
+      "sha256": "23fc1204008882486d74716dffbd110a4b7ba7195a4e82b971527b5affb6fc60",
+      "bytes": 55910,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_146",
+        "time_seconds": 10291.0,
+        "quotes_seconds": {
+          "local_4": 21.400000000000002,
+          "cgs_4": 11.8,
+          "local_16": 21.400000000000002,
+          "cgs_16": 11.8,
+          "ground": 45.2408
+        },
+        "selected": "cgs_4",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 4,
+        "actual": 4,
+        "windows": 9,
+        "unique_mb": 200.0,
+        "packet_mb": 237.445632,
+        "overlap_mb": 37.44563199999999,
+        "id": "2026-10-22_task_146"
+      },
+      "calendar_quote": 11.8
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_154.pkl.gz",
+      "sha256": "fc8415e201967fd8159af54379174037eb16ef401131ee3238b6ffd5cc54a3da",
+      "bytes": 55794,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_154",
+        "time_seconds": 11876.0,
+        "quotes_seconds": {
+          "local_4": 137.1,
+          "cgs_4": 39.300000000000004,
+          "local_16": 137.1,
+          "cgs_16": 35.400000000000006,
+          "ground": 56.85680000000001
+        },
+        "selected": "cgs_16",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 16,
+        "actual": 16,
+        "windows": 64,
+        "unique_mb": 800.0,
+        "packet_mb": 1287.882752,
+        "overlap_mb": 487.882752,
+        "id": "2026-10-22_task_154"
+      },
+      "calendar_quote": 35.400000000000006
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_164.pkl.gz",
+      "sha256": "f642a76f6b1d2f7b6e90d162928f97083c88c2f2b60047ee63347398d4b9fe66",
+      "bytes": 56428,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_164",
+        "time_seconds": 12156.0,
+        "quotes_seconds": {
+          "local_4": 137.1,
+          "cgs_4": 39.400000000000006,
+          "local_16": 137.1,
+          "cgs_16": 35.50000000000001,
+          "ground": 56.85680000000001
+        },
+        "selected": "cgs_16",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 16,
+        "actual": 16,
+        "windows": 64,
+        "unique_mb": 800.0,
+        "packet_mb": 1287.882752,
+        "overlap_mb": 487.882752,
+        "id": "2026-10-22_task_164"
+      },
+      "calendar_quote": 35.50000000000001
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_173.pkl.gz",
+      "sha256": "0e8c559a778745e21bc262a39867e6992c365651aea19e3a99e2cf665803c1df",
+      "bytes": 56263,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_173",
+        "time_seconds": 12311.0,
+        "quotes_seconds": {
+          "local_4": 217.20000000000002,
+          "cgs_4": 84.0,
+          "local_16": 217.20000000000002,
+          "cgs_16": 48.900000000000006,
+          "ground": 64.46
+        },
+        "selected": "cgs_16",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 16,
+        "actual": 16,
+        "windows": 100,
+        "unique_mb": 1800.0,
+        "packet_mb": 2137.010688,
+        "overlap_mb": 337.01068799999985,
+        "id": "2026-10-22_task_173"
+      },
+      "calendar_quote": 47.2
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_206.pkl.gz",
+      "sha256": "cf3eb8e8daa71f5afcc7352648eb88b58ef150fd27188793c83cfc556312ccea",
+      "bytes": 57085,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_206",
+        "time_seconds": 14911.0,
+        "quotes_seconds": {
+          "local_4": 21.200000000000003,
+          "cgs_4": 12.7,
+          "local_16": 21.200000000000003,
+          "cgs_16": 12.7,
+          "ground": 106.91120000000001
+        },
+        "selected": "cgs_4",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 4,
+        "actual": 4,
+        "windows": 9,
+        "unique_mb": 200.0,
+        "packet_mb": 237.445632,
+        "overlap_mb": 37.44563199999999,
+        "id": "2026-10-22_task_206"
+      },
+      "calendar_quote": 12.6
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_209.pkl.gz",
+      "sha256": "dca6a8b5b4a4ec6e7ad101eda067dd042c948279c7e2cdb010bbb9c3ce06577d",
+      "bytes": 57105,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_209",
+        "time_seconds": 14966.0,
+        "quotes_seconds": {
+          "local_4": 137.0,
+          "cgs_4": 39.400000000000006,
+          "local_16": 137.0,
+          "cgs_16": 40.60000000000001,
+          "ground": 118.52720000000001
+        },
+        "selected": "cgs_4",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 4,
+        "actual": 4,
+        "windows": 64,
+        "unique_mb": 800.0,
+        "packet_mb": 949.782528,
+        "overlap_mb": 149.78252799999996,
+        "id": "2026-10-22_task_209"
+      },
+      "calendar_quote": 39.400000000000006
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_219.pkl.gz",
+      "sha256": "9823b555ac28d9a8c447274e5e14ac07f0b55fd518ea3333b7bca5fa518f1c3b",
+      "bytes": 56036,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_219",
+        "time_seconds": 15221.0,
+        "quotes_seconds": {
+          "local_4": 21.100000000000005,
+          "cgs_4": 11.4,
+          "local_16": 21.100000000000005,
+          "cgs_16": 11.4,
+          "ground": 128.0312
+        },
+        "selected": "cgs_4",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 4,
+        "actual": 4,
+        "windows": 9,
+        "unique_mb": 200.0,
+        "packet_mb": 237.445632,
+        "overlap_mb": 37.44563199999999,
+        "id": "2026-10-22_task_219"
+      },
+      "calendar_quote": 11.4
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_226.pkl.gz",
+      "sha256": "0c3278f9163267b202226adc1d1a75c4154ed227ca31f2ca94ae688806aba46c",
+      "bytes": 56430,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_226",
+        "time_seconds": 15811.0,
+        "quotes_seconds": {
+          "local_4": 217.70000000000002,
+          "cgs_4": 67.3,
+          "local_16": 217.70000000000002,
+          "cgs_16": 67.3,
+          "ground": 147.2504
+        },
+        "selected": "cgs_4",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 4,
+        "actual": 4,
+        "windows": 100,
+        "unique_mb": 1800.0,
+        "packet_mb": 1909.125632,
+        "overlap_mb": 109.125632,
+        "id": "2026-10-22_task_226"
+      },
+      "calendar_quote": 67.3
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_234.pkl.gz",
+      "sha256": "60ddaa6aa1a61b2ee948d4d30ae62205b1919d9bb6119119d7ef4c49807cdfd5",
+      "bytes": 55970,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_234",
+        "time_seconds": 16151.0,
+        "quotes_seconds": {
+          "local_4": 218.20000000000002,
+          "cgs_4": 63.2,
+          "local_16": 218.20000000000002,
+          "cgs_16": 58.2,
+          "ground": 181.8872
+        },
+        "selected": "cgs_16",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 16,
+        "actual": 16,
+        "windows": 100,
+        "unique_mb": 1800.0,
+        "packet_mb": 2137.010688,
+        "overlap_mb": 337.01068799999985,
+        "id": "2026-10-22_task_234"
+      },
+      "calendar_quote": 50.00000000000001
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_247.pkl.gz",
+      "sha256": "9ca62dbbbf931135f5780ca57351f357b0a2af021aa96f1e5a0f8c173d4c99eb",
+      "bytes": 56788,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_247",
+        "time_seconds": 17561.0,
+        "quotes_seconds": {
+          "local_4": null,
+          "cgs_4": 65.3,
+          "local_16": null,
+          "cgs_16": 58.00000000000001,
+          "ground": 147.2504
+        },
+        "selected": "cgs_16",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 16,
+        "actual": 16,
+        "windows": 100,
+        "unique_mb": 1800.0,
+        "packet_mb": 2137.010688,
+        "overlap_mb": 337.01068799999985,
+        "id": "2026-10-22_task_247"
+      },
+      "calendar_quote": 49.900000000000006
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_248.pkl.gz",
+      "sha256": "d049694eb8eb879aa3d29971df371282dd8338f42737b52549f5706e3a65ca91",
+      "bytes": 56834,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_248",
+        "time_seconds": 17571.0,
+        "quotes_seconds": {
+          "local_4": 21.100000000000005,
+          "cgs_4": 11.4,
+          "local_16": 21.100000000000005,
+          "cgs_16": 11.4,
+          "ground": 128.0312
+        },
+        "selected": "cgs_4",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 4,
+        "actual": 4,
+        "windows": 9,
+        "unique_mb": 200.0,
+        "packet_mb": 237.445632,
+        "overlap_mb": 37.44563199999999,
+        "id": "2026-10-22_task_248"
+      },
+      "calendar_quote": 11.4
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_270.pkl.gz",
+      "sha256": "e92b109acac7675c743d58ce357dd65ddc41460dc687a32ea77c20f1e0140bf6",
+      "bytes": 57129,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_270",
+        "time_seconds": 18491.0,
+        "quotes_seconds": {
+          "local_4": 55.9,
+          "cgs_4": 11.5,
+          "local_16": 55.9,
+          "cgs_16": 11.5,
+          "ground": 149.15120000000002
+        },
+        "selected": "cgs_4",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 4,
+        "actual": 4,
+        "windows": 9,
+        "unique_mb": 200.0,
+        "packet_mb": 237.445632,
+        "overlap_mb": 37.44563199999999,
+        "id": "2026-10-22_task_270"
+      },
+      "calendar_quote": 11.5
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_278.pkl.gz",
+      "sha256": "685aee62a5c391298e0226c39f04331cebabd45e50e5ad381adefb7c912093c7",
+      "bytes": 55692,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_278",
+        "time_seconds": 18896.0,
+        "quotes_seconds": {
+          "local_4": 137.1,
+          "cgs_4": 39.400000000000006,
+          "local_16": 137.1,
+          "cgs_16": 35.400000000000006,
+          "ground": 160.7672
+        },
+        "selected": "cgs_16",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 16,
+        "actual": 16,
+        "windows": 64,
+        "unique_mb": 800.0,
+        "packet_mb": 1287.882752,
+        "overlap_mb": 487.882752,
+        "id": "2026-10-22_task_278"
+      },
+      "calendar_quote": 35.400000000000006
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_281.pkl.gz",
+      "sha256": "9e90a790790eeafc813fd943c2a9fa28d1f0e346abc50bae9054ac003dd52a8d",
+      "bytes": 56804,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_281",
+        "time_seconds": 19026.0,
+        "quotes_seconds": {
+          "local_4": 212.5,
+          "cgs_4": 40.60000000000001,
+          "local_16": 212.5,
+          "cgs_16": 42.10000000000001,
+          "ground": 160.7672
+        },
+        "selected": "cgs_4",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 4,
+        "actual": 4,
+        "windows": 64,
+        "unique_mb": 800.0,
+        "packet_mb": 949.782528,
+        "overlap_mb": 149.78252799999996,
+        "id": "2026-10-22_task_281"
+      },
+      "calendar_quote": 40.60000000000001
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_297.pkl.gz",
+      "sha256": "b9b149bd70feed9ac53a0af5ed6037335813e1cbdf45164e29dda9d77e3fc815",
+      "bytes": 56331,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_297",
+        "time_seconds": 20421.0,
+        "quotes_seconds": {
+          "local_4": 21.200000000000003,
+          "cgs_4": 11.6,
+          "local_16": 21.200000000000003,
+          "cgs_16": 11.6,
+          "ground": 149.15120000000002
+        },
+        "selected": "cgs_4",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 4,
+        "actual": 4,
+        "windows": 9,
+        "unique_mb": 200.0,
+        "packet_mb": 237.445632,
+        "overlap_mb": 37.44563199999999,
+        "id": "2026-10-22_task_297"
+      },
+      "calendar_quote": 11.6
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_298.pkl.gz",
+      "sha256": "61cc3b1da6e14d53f49e3be433593560c03a4d4d7f89c0bc7e5aa7537890306c",
+      "bytes": 55910,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_298",
+        "time_seconds": 20431.0,
+        "quotes_seconds": {
+          "local_4": 21.100000000000005,
+          "cgs_4": 11.4,
+          "local_16": 21.100000000000005,
+          "cgs_16": 11.4,
+          "ground": 149.15120000000002
+        },
+        "selected": "cgs_4",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 4,
+        "actual": 4,
+        "windows": 9,
+        "unique_mb": 200.0,
+        "packet_mb": 237.445632,
+        "overlap_mb": 37.44563199999999,
+        "id": "2026-10-22_task_298"
+      },
+      "calendar_quote": 11.4
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_313.pkl.gz",
+      "sha256": "728d664d86aebfee952838c075ba80e2b63012ffe22f04f8382c4e1295b3f02f",
+      "bytes": 56662,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_313",
+        "time_seconds": 21101.0,
+        "quotes_seconds": {
+          "local_4": 217.20000000000002,
+          "cgs_4": 62.7,
+          "local_16": 217.20000000000002,
+          "cgs_16": 57.800000000000004,
+          "ground": 147.2504
+        },
+        "selected": "cgs_16",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 16,
+        "actual": 16,
+        "windows": 100,
+        "unique_mb": 1800.0,
+        "packet_mb": 2137.010688,
+        "overlap_mb": 337.01068799999985,
+        "id": "2026-10-22_task_313"
+      },
+      "calendar_quote": 49.800000000000004
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_325.pkl.gz",
+      "sha256": "7ea46ea1b5393eca0de3533a9b0d17324f2432e01016c1e8172c3aaf6420b9d7",
+      "bytes": 56525,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_325",
+        "time_seconds": 21791.0,
+        "quotes_seconds": {
+          "local_4": 217.20000000000002,
+          "cgs_4": 62.60000000000001,
+          "local_16": 217.20000000000002,
+          "cgs_16": 57.50000000000001,
+          "ground": 168.37040000000002
+        },
+        "selected": "cgs_16",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 16,
+        "actual": 16,
+        "windows": 100,
+        "unique_mb": 1800.0,
+        "packet_mb": 2137.010688,
+        "overlap_mb": 337.01068799999985,
+        "id": "2026-10-22_task_325"
+      },
+      "calendar_quote": 56.20000000000001
+    },
+    {
+      "path": "results/nonuniform_20261111/cgs_gap/snapshots/2026-10-22_task_329.pkl.gz",
+      "sha256": "616b4a320d98e415ce197741f80b183b922974f9ee05a7860961501f1f071c8b",
+      "bytes": 56033,
+      "sample": {
+        "date": "2026-10-22",
+        "task_id": "task_329",
+        "time_seconds": 21976.0,
+        "quotes_seconds": {
+          "local_4": 137.1,
+          "cgs_4": 39.50000000000001,
+          "local_16": 137.1,
+          "cgs_16": 35.6,
+          "ground": 160.7672
+        },
+        "selected": "cgs_16",
+        "nu": {
+          "status": "DISABLED"
+        },
+        "requested": 16,
+        "actual": 16,
+        "windows": 64,
+        "unique_mb": 800.0,
+        "packet_mb": 1287.882752,
+        "overlap_mb": 487.882752,
+        "id": "2026-10-22_task_329"
+      },
+      "calendar_quote": 35.6
+    }
+  ],
+  "original_record_sha256": "cb4972bc758473facef64a970ac8133136891aee31ed8064096b7a45d8eb3167",
+  "full_result_path": "results/nonuniform_20261111/cgs_gap/replay/full_run/validation/2026-10-22/v3_dynamic.json"
+}

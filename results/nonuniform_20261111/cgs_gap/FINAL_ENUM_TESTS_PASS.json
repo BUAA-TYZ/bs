@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "command": [
+    ".venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "tests",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "-p",
+    "analysis.cleanup_test_clock_20261111"
+  ],
+  "exit_code": 0,
+  "wall_seconds": 54.913330078125,
+  "summary": "837 passed in 54.17s",
+  "log_sha256": "01b18059234e0b4a538b33cf007c98345d89698345e1cc8303b2bf9c836a4b07"
+}

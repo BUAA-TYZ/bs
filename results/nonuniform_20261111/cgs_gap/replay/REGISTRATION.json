@@ -1,0 +1,59 @@
+{
+  "at": "2026-11-11T14:08:55.908041+00:00",
+  "manifest_sha256": "db643d6fbb3f2747d93fc13a5687e0a9b5884bde202bb3af60a788d2216f1ca4",
+  "spec": {
+    "id": "cgs_gap_replay_20261111",
+    "deadline": 1795010935.90866,
+    "hosts": {
+      "local": 3
+    },
+    "jobs": [
+      {
+        "id": "2026-10-22_capture",
+        "job": [
+          "CGS_GAP_REPLAY",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "capture"
+        ],
+        "output": "results/nonuniform_20261111/cgs_gap/replay/results/2026-10-22.json",
+        "legacy_host": "local",
+        "hosts": [
+          "local"
+        ]
+      },
+      {
+        "id": "2026-10-23_capture",
+        "job": [
+          "CGS_GAP_REPLAY",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "capture"
+        ],
+        "output": "results/nonuniform_20261111/cgs_gap/replay/results/2026-10-23.json",
+        "legacy_host": "local",
+        "hosts": [
+          "local"
+        ]
+      },
+      {
+        "id": "2026-10-24_capture",
+        "job": [
+          "CGS_GAP_REPLAY",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "capture"
+        ],
+        "output": "results/nonuniform_20261111/cgs_gap/replay/results/2026-10-24.json",
+        "legacy_host": "local",
+        "hosts": [
+          "local"
+        ]
+      }
+    ]
+  },
+  "final_tests_sealed": true,
+  "no_retry": true,
+  "estimated_replay_hours": [
+    1,
+    1.5
+  ],
+  "enumeration_estimate": "May exceed two hours; estimate from frozen snapshot quote timing before publication"
+}

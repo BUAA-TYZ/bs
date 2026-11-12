@@ -1,0 +1,4827 @@
+{
+  "blocked": null,
+  "complete": true,
+  "counts": {
+    "PASS": 146
+  },
+  "jobs": [
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794410615.8163307,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_141_enumerate_000000_005000",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_141_enumerate_000000_005000.json",
+        "sha256": "4d61e0bdca89b1690850d7df4aaa433c7a373c3b34f5d78ffe40701a51af3f29",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 5000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_141_enumerate_000000_005000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_141_enumerate_000000_005000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-22_task_141",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794410604.4430034,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_141_enumerate_005000_010000",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_141_enumerate_005000_010000.json",
+        "sha256": "7501427b71cd630b8c791525c7dbe1f5779ead475d8ac7f90c597b27ecf2458e",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 10000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_141_enumerate_005000_010000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_141_enumerate_005000_010000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-22_task_141",
+        "start": 5000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794410604.4430034,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_141_enumerate_010000_015000",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_141_enumerate_010000_015000.json",
+        "sha256": "0d39be06ab1ea49c3816e739b2190fa09ff4f2c8676554a97fbafe50ac68cdab",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 15000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_141_enumerate_010000_015000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_141_enumerate_010000_015000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-22_task_141",
+        "start": 10000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794410593.2660468,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_141_enumerate_015000_020000",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_141_enumerate_015000_020000.json",
+        "sha256": "38077b6ea201c37e8b7ef3e4863515892047787848d05201e245b1dbaff46762",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 20000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_141_enumerate_015000_020000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_141_enumerate_015000_020000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-22_task_141",
+        "start": 15000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794410637.4698093,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_173_enumerate_000000_005000",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_173_enumerate_000000_005000.json",
+        "sha256": "598d4c8549b4ba0ceb6e61ac79373d593167725b351c531e3b91a8ad7bfd099f",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 5000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_173_enumerate_000000_005000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_173_enumerate_000000_005000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-22_task_173",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794410637.4698093,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_173_enumerate_005000_010000",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_173_enumerate_005000_010000.json",
+        "sha256": "d3b54549c94023a5e54b6ebdd3ae8784f177ee4f4b109e24e20f1800ee040c95",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 10000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_173_enumerate_005000_010000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_173_enumerate_005000_010000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-22_task_173",
+        "start": 5000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794411095.360077,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_173_enumerate_010000_015000",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_173_enumerate_010000_015000.json",
+        "sha256": "40bb86cd055754a69f0d351cb37d74af83c5b75f3fafade18ddf474896de19aa",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 15000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_173_enumerate_010000_015000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_173_enumerate_010000_015000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-22_task_173",
+        "start": 10000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794411085.3299532,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_173_enumerate_015000_020000",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_173_enumerate_015000_020000.json",
+        "sha256": "9e85323caffae19477054a71d8cf2193a9b86418b037c5cb29b1d2268c324bd9",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 20000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_173_enumerate_015000_020000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_173_enumerate_015000_020000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-22_task_173",
+        "start": 15000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794410985.1288006,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_37_enumerate_000000_005000",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_37_enumerate_000000_005000.json",
+        "sha256": "63f3ad07313932e9cfed0e2728cbc38afcac0ebec93e2c9b107229b2e93879ef",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 5000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_37_enumerate_000000_005000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_37_enumerate_000000_005000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-22_task_37",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794410985.1288006,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_37_enumerate_005000_010000",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_37_enumerate_005000_010000.json",
+        "sha256": "46cee437b34b9e86a34bb662030897b08bf9c87d9393c706e785e95314c44215",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 10000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_37_enumerate_005000_010000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_37_enumerate_005000_010000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-22_task_37",
+        "start": 5000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794410985.1288006,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_37_enumerate_010000_015000",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_37_enumerate_010000_015000.json",
+        "sha256": "0132bcefd841fe2159860298ee611717b40f4e91b8068788964035474a770d11",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 15000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_37_enumerate_010000_015000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_37_enumerate_010000_015000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-22_task_37",
+        "start": 10000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794410995.1853318,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_37_enumerate_015000_020000",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_37_enumerate_015000_020000.json",
+        "sha256": "2781b55fb374accda5218e6ef4ed77ddd74d530b04953a3e215e0fad19bef68f",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 20000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_37_enumerate_015000_020000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_37_enumerate_015000_020000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-22_task_37",
+        "start": 15000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412167.1144743,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_40_enumerate_000000_005000",
+      "owner": "devbox2:gate1:2899111",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_40_enumerate_000000_005000.json",
+        "sha256": "12a8a8015309ed3e0e0c5d18809be42c06cbd0ee919b437789951cdab0f5f14b",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 5000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_40_enumerate_000000_005000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_40_enumerate_000000_005000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-22_task_40",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412134.5582073,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_40_enumerate_005000_010000",
+      "owner": "devbox2:gate1:2899111",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_40_enumerate_005000_010000.json",
+        "sha256": "856eaa6225a439b4e1b5ef68ac793bd520250ddbbf2c998897d2978dc5573607",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 10000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_40_enumerate_005000_010000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_40_enumerate_005000_010000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-22_task_40",
+        "start": 5000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412102.2311947,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_40_enumerate_010000_015000",
+      "owner": "devbox2:gate1:2899111",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_40_enumerate_010000_015000.json",
+        "sha256": "74e2e7d2b04936c9ce41177ebf3b9b6129701caf0f33507dbdc449c51fbff752",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 15000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_40_enumerate_010000_015000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_40_enumerate_010000_015000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-22_task_40",
+        "start": 10000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412080.6022527,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_40_enumerate_015000_020000",
+      "owner": "devbox2:gate1:2899111",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_40_enumerate_015000_020000.json",
+        "sha256": "e211ac350f956e5a944c783a505574f742f6555eeef8e99f87c42bcddd5d837f",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 20000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_40_enumerate_015000_020000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_40_enumerate_015000_020000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-22_task_40",
+        "start": 15000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412242.9490404,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_45_enumerate_000000_005000",
+      "owner": "devbox2:gate1:2899111",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_45_enumerate_000000_005000.json",
+        "sha256": "8b5b8f7988b88c58db437f2613a32efa53c3d71048679ab057a82fa295922b0d",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 5000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_45_enumerate_000000_005000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_45_enumerate_000000_005000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-22_task_45",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412221.0938053,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_45_enumerate_005000_010000",
+      "owner": "devbox2:gate1:2899111",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_45_enumerate_005000_010000.json",
+        "sha256": "f13d37e5b4f453e068272ce3c6935ed063c0d8c7d12208c11e92f259868ce050",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 10000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_45_enumerate_005000_010000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_45_enumerate_005000_010000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-22_task_45",
+        "start": 5000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412222.8049273,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_45_enumerate_010000_015000",
+      "owner": "devbox1:gate1:2904646",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_45_enumerate_010000_015000.json",
+        "sha256": "e0b66b3eac84cf2718f4323b462c925e3bb35da0886b112cc15307280a74225e",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 15000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_45_enumerate_010000_015000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_45_enumerate_010000_015000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-22_task_45",
+        "start": 10000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412168.7645328,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_45_enumerate_015000_020000",
+      "owner": "devbox1:gate1:2904646",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_45_enumerate_015000_020000.json",
+        "sha256": "58b286d92bb63b21a64f766e722c0dacd02c65e64e8e64d0ad2a6e6870cbf8dd",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 20000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_45_enumerate_015000_020000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_45_enumerate_015000_020000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-22_task_45",
+        "start": 15000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412039.0140054,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_108_enumerate_000000_005000",
+      "owner": "devbox1:gate1:2904646",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_108_enumerate_000000_005000.json",
+        "sha256": "d6e4fd60b56b87863019e0a9a291697a7416ce51af376346688beaf57747c48b",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 5000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_108_enumerate_000000_005000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_108_enumerate_000000_005000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-23_task_108",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412147.018704,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_108_enumerate_005000_010000",
+      "owner": "devbox1:gate1:2904646",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_108_enumerate_005000_010000.json",
+        "sha256": "1266566b3635b8d200197928acb2abda7c99ea7ffd60432b383fc70e7becf153",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 10000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_108_enumerate_005000_010000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_108_enumerate_005000_010000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-23_task_108",
+        "start": 5000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412125.3880305,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_108_enumerate_010000_015000",
+      "owner": "devbox1:gate1:2904646",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_108_enumerate_010000_015000.json",
+        "sha256": "978a3c67f3ff544a6fac9e0bab60a3bf76c47e0671393dfff21211f081fcf5ce",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 15000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_108_enumerate_010000_015000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_108_enumerate_010000_015000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-23_task_108",
+        "start": 10000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412298.445495,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_108_enumerate_015000_020000",
+      "owner": "devbox1:gate1:2904646",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_108_enumerate_015000_020000.json",
+        "sha256": "64e168294a5cbc71198fd2537053f12ef7866e2793c445508ca21b8e6a7bbf95",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 20000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_108_enumerate_015000_020000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_108_enumerate_015000_020000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-23_task_108",
+        "start": 15000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794411009.886687,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_131_enumerate_000000_005000",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_131_enumerate_000000_005000.json",
+        "sha256": "437280f96e771dc9b29105a5da74b97146f961d12dce4e3068a544a5d9de82e6",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 5000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_131_enumerate_000000_005000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_131_enumerate_000000_005000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-23_task_131",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794411021.6114697,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_131_enumerate_005000_010000",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_131_enumerate_005000_010000.json",
+        "sha256": "c73def7fbb7bc55051bea82865ca6b0d808c471c954c1de9bfc827640ff36969",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 10000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_131_enumerate_005000_010000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_131_enumerate_005000_010000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-23_task_131",
+        "start": 5000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794411021.6114697,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_131_enumerate_010000_015000",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_131_enumerate_010000_015000.json",
+        "sha256": "feb054bdba1ff1ae0902d6ba94405edb312205c7d229d2c7312bf8e45c57f62d",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 15000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_131_enumerate_010000_015000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_131_enumerate_010000_015000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-23_task_131",
+        "start": 10000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794411021.6114697,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_131_enumerate_015000_020000",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_131_enumerate_015000_020000.json",
+        "sha256": "8e75150829435ded24fbb9b94cb6a992020aaabbbb563f90c928e21846fe253b",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 20000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_131_enumerate_015000_020000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_131_enumerate_015000_020000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-23_task_131",
+        "start": 15000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794411043.8740559,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_135_enumerate_000000_005000",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_135_enumerate_000000_005000.json",
+        "sha256": "3d2491867b17ee44b034c4bec35bad9d5c444a4afc0c4f2de6e54ff4b4c1f383",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 5000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_135_enumerate_000000_005000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_135_enumerate_000000_005000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-23_task_135",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794411043.8740559,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_135_enumerate_005000_010000",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_135_enumerate_005000_010000.json",
+        "sha256": "1d5d7b28d46a873f2e5560be710d489247e1c30e9e3abed0de42b57522a70bcd",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 10000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_135_enumerate_005000_010000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_135_enumerate_005000_010000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-23_task_135",
+        "start": 5000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794411836.5488105,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_135_enumerate_010000_015000",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_135_enumerate_010000_015000.json",
+        "sha256": "d25f1e970935b2e538697b4e08751f9f4de9a67cd9aa32405cdeb4d7d835a94e",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 15000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_135_enumerate_010000_015000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_135_enumerate_010000_015000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-23_task_135",
+        "start": 10000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794411826.52069,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_135_enumerate_015000_020000",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_135_enumerate_015000_020000.json",
+        "sha256": "c407db29bdb49dd945879d69e6b1ee951770279ae7b2e1ea052306c9796ccb74",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 20000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_135_enumerate_015000_020000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_135_enumerate_015000_020000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-23_task_135",
+        "start": 15000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794411736.3440034,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_236_enumerate_000000_005000",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_236_enumerate_000000_005000.json",
+        "sha256": "d4e0ba7346fbed79e7fa4e32f77664cfd1a152f79fb350ba25b23f8bc9af053f",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 5000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_236_enumerate_000000_005000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_236_enumerate_000000_005000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-23_task_236",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794411736.3440034,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_236_enumerate_005000_010000",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_236_enumerate_005000_010000.json",
+        "sha256": "b6866550410f9435d51b5bfca9d19288c62073a8a2130b23b63f094cb28e10e8",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 10000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_236_enumerate_005000_010000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_236_enumerate_005000_010000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-23_task_236",
+        "start": 5000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794411352.470234,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_236_enumerate_010000_015000",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_236_enumerate_010000_015000.json",
+        "sha256": "2adabcc28195f9ebacd2587912a246750e9e9897fb52d295a59745604ac8f583",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 15000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_236_enumerate_010000_015000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_236_enumerate_010000_015000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-23_task_236",
+        "start": 10000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794411363.4882488,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_236_enumerate_015000_020000",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_236_enumerate_015000_020000.json",
+        "sha256": "4641c25bb723b594f9b9ee781760eddab53bcd9c843bd3b036dbc3b8936b361e",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 20000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_236_enumerate_015000_020000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_236_enumerate_015000_020000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-23_task_236",
+        "start": 15000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794411460.8504314,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_9_enumerate_000000_005000",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_9_enumerate_000000_005000.json",
+        "sha256": "f77fe32a5e29188daaf52b762e6a9a1c5d2385e046c4042a1cce97c26e2fc28a",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 5000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_9_enumerate_000000_005000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_9_enumerate_000000_005000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-23_task_9",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794411449.4219532,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_9_enumerate_005000_010000",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_9_enumerate_005000_010000.json",
+        "sha256": "585553b887f83b1d5c69c1dc4904cba032e33b93adfc602889bb4cf02b72fea3",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 10000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_9_enumerate_005000_010000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_9_enumerate_005000_010000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-23_task_9",
+        "start": 5000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794411472.4249995,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_9_enumerate_010000_015000",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_9_enumerate_010000_015000.json",
+        "sha256": "5aa44f31dd5e2e25772d4d700fe865e2d6aab34e70ffa5bb225f4d51a0e3a5ed",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 15000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_9_enumerate_010000_015000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_9_enumerate_010000_015000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-23_task_9",
+        "start": 10000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794411460.8504314,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_9_enumerate_015000_020000",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_9_enumerate_015000_020000.json",
+        "sha256": "b2be0f032833eb00a93b1f7eb88aca495b8c659049caec9e91853ebefdbdc04b",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 20000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_9_enumerate_015000_020000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_9_enumerate_015000_020000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-23_task_9",
+        "start": 15000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412036.8447793,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_108_enumerate_000000_005000",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_108_enumerate_000000_005000.json",
+        "sha256": "d6a4ae3c88a869f55a14ff36879f39e0363f94e6ad0b9e355d5e2b4e2b1ac78b",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 5000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_108_enumerate_000000_005000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_108_enumerate_000000_005000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-24_task_108",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412046.8739116,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_108_enumerate_005000_010000",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_108_enumerate_005000_010000.json",
+        "sha256": "69764ba245f01ad537df314f3f5f0cc6020bdd32393edda32b956efda45ef93b",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 10000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_108_enumerate_005000_010000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_108_enumerate_005000_010000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-24_task_108",
+        "start": 5000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794411795.84502,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_108_enumerate_010000_015000",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_108_enumerate_010000_015000.json",
+        "sha256": "475f1b8cdf0cc3d1520716473b9b33cca64d76726ab8f60ff2bf970d40898896",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 15000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_108_enumerate_010000_015000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_108_enumerate_010000_015000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-24_task_108",
+        "start": 10000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794411795.84502,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_108_enumerate_015000_020000",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_108_enumerate_015000_020000.json",
+        "sha256": "b27deafe10a9cccf212afc86e3ea101185aee98e32dcba47f417407fc99ce453",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 20000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_108_enumerate_015000_020000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_108_enumerate_015000_020000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-24_task_108",
+        "start": 15000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794411882.9779243,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_37_enumerate_000000_005000",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_37_enumerate_000000_005000.json",
+        "sha256": "31842c6f88f8fcb69d09718690224af44e71d66ef8072cbd6a7977335741409b",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 5000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_37_enumerate_000000_005000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_37_enumerate_000000_005000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-24_task_37",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794411882.9779243,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_37_enumerate_005000_010000",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_37_enumerate_005000_010000.json",
+        "sha256": "3940cbded2a9df780205498ec67140ca879dd188ac8d168f24673f8ce9018c8d",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 10000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_37_enumerate_005000_010000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_37_enumerate_005000_010000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-24_task_37",
+        "start": 5000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794411882.9779243,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_37_enumerate_010000_015000",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_37_enumerate_010000_015000.json",
+        "sha256": "09ff9fe047ff0174453ca21d8e70a94d713a7a2d4ec9a9defc8e220103f8f69f",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 15000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_37_enumerate_010000_015000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_37_enumerate_010000_015000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-24_task_37",
+        "start": 10000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794411882.9779243,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_37_enumerate_015000_020000",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_37_enumerate_015000_020000.json",
+        "sha256": "4539c083b50b5f4014dff360d7caed9f4325a1aeb1ea671b17e92aef026b31f9",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 20000,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_37_enumerate_015000_020000",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_37_enumerate_015000_020000.json",
+        "quote_budget_upper": 5000,
+        "sample_id": "2026-10-24_task_37",
+        "start": 15000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412497.518455,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_107_enumerate_000000_004845",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_107_enumerate_000000_004845.json",
+        "sha256": "757d254700b53b449a3b6c029386f977776b21fed417cb2c478ea61abaf0f0ad",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_107_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_107_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-22_task_107",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412517.576808,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_119_enumerate_000000_004845",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_119_enumerate_000000_004845.json",
+        "sha256": "c26b9c25b67fdf1099261c79d87d8e4058fa91ce4e265f0d78eaa892c5c0a029",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_119_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_119_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-22_task_119",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412109.475219,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_154_enumerate_000000_004845",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_154_enumerate_000000_004845.json",
+        "sha256": "8913be2cb6182d2a54c7d03bd1e02cc30ec5c41992b9b53f96697135ab964c4c",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_154_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_154_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-22_task_154",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412152.6637387,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_164_enumerate_000000_004845",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_164_enumerate_000000_004845.json",
+        "sha256": "5a7eb4e4e04d962934524a951e81b960810d731e8d3e03bd378dea63081d27e1",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_164_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_164_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-22_task_164",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412637.7880611,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_234_enumerate_000000_004845",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_234_enumerate_000000_004845.json",
+        "sha256": "cb2f05341064a3e66dcc462a61ed6cafa76d93dba355c1aedb64769ad3c475e8",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_234_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_234_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-22_task_234",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412607.728056,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_247_enumerate_000000_004845",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_247_enumerate_000000_004845.json",
+        "sha256": "536e6622a46addb0c4cea61884f378a7c9481d1ab38fb585a7f4834091b20caf",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_247_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_247_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-22_task_247",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412196.4067688,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_278_enumerate_000000_004845",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_278_enumerate_000000_004845.json",
+        "sha256": "39061a8b51b6f8ad56ed37cba07c13ccab28972bdadfd3b75afebe66b943e892",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_278_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_278_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-22_task_278",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412239.6849768,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_313_enumerate_000000_004845",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_313_enumerate_000000_004845.json",
+        "sha256": "61b0aaa9dadcf02701b0681b81fe546963a7486346253be024f6a0236b00e5ff",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_313_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_313_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-22_task_313",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412251.0638201,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_325_enumerate_000000_004845",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_325_enumerate_000000_004845.json",
+        "sha256": "25b2b1199782bd6c6e566a576437e2dc314ae8ddb9555058457db2088bc40f03",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_325_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_325_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-22_task_325",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412239.6849768,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_329_enumerate_000000_004845",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_329_enumerate_000000_004845.json",
+        "sha256": "933db290142103324c376345a491ee74c963e0faed2acae775872195ad1ddfc8",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_329_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_329_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-22_task_329",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412747.9928691,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_59_enumerate_000000_004845",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_59_enumerate_000000_004845.json",
+        "sha256": "17ae93ad4af05b354a7567603e8739417b3debad5dcc5da39e248e981fbebada",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_59_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_59_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-22_task_59",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413741.9072316,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_70_enumerate_000000_004845",
+      "owner": "devbox1:gate1:2904646",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_70_enumerate_000000_004845.json",
+        "sha256": "b89c867be94e37399de7b48d0d652527932e827b56500b9369c6468f42c79ae9",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_70_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_70_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-22_task_70",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412818.1186807,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_84_enumerate_000000_004845",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_84_enumerate_000000_004845.json",
+        "sha256": "024e3314644990da978a05fedf5920986ce8f21f50ebdc04161c0c766cd5b900",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_84_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_84_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-22_task_84",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413674.459012,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_99_enumerate_000000_004845",
+      "owner": "devbox2:gate1:2899111",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_99_enumerate_000000_004845.json",
+        "sha256": "59e7f52ab9526834ec2e42eb175e293abd36da3f8cf325baae9c460e73ee6e38",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_99_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_99_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-22_task_99",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413805.607421,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_122_enumerate_000000_004845",
+      "owner": "devbox2:gate1:2899111",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_122_enumerate_000000_004845.json",
+        "sha256": "8991ec466c4585e5f320720a7be485f2c637b851cf9810c07adb84728cab630f",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_122_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_122_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-23_task_122",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412476.2610254,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_128_enumerate_000000_004845",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_128_enumerate_000000_004845.json",
+        "sha256": "15980074bcfa4d30c486c15dcc590b32ad6cc79f29e3933f9eebebefe7aa1ee8",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_128_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_128_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-23_task_128",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413874.310757,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_145_enumerate_000000_004845",
+      "owner": "devbox1:gate1:2904646",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_145_enumerate_000000_004845.json",
+        "sha256": "08eca981f6f12b37c953997409ae7b7413cbf10c90b8c2289c030ed07f71b567",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_145_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_145_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-23_task_145",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413924.9915419,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_189_enumerate_000000_004845",
+      "owner": "devbox2:gate1:2899111",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_189_enumerate_000000_004845.json",
+        "sha256": "7477b79b8943f8560360865efaa2c9aa6790069edb22eddc7614cc59a1f9e9b4",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_189_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_189_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-23_task_189",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413720.0377777,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_199_enumerate_000000_004845",
+      "owner": "devbox1:gate1:2904646",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_199_enumerate_000000_004845.json",
+        "sha256": "a4d28b999e8b8d2f062f9482440728e84a90ebecd66a79b7865fce8b1f7e156b",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_199_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_199_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-23_task_199",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412487.434267,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_270_enumerate_000000_004845",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_270_enumerate_000000_004845.json",
+        "sha256": "e721f3a65f7171560a65a2eaeb6497834a982b42df6d6352d511589c57162295",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_270_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_270_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-23_task_270",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413870.8046455,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_272_enumerate_000000_004845",
+      "owner": "devbox2:gate1:2899111",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_272_enumerate_000000_004845.json",
+        "sha256": "b4bbbf15d73a46fa6e7f174bd0c755e0d0aba76a6935c6e872cba0cbf450cce1",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_272_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_272_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-23_task_272",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413939.311127,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_273_enumerate_000000_004845",
+      "owner": "devbox1:gate1:2904646",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_273_enumerate_000000_004845.json",
+        "sha256": "c0ed651bc2b8fe0500d9040459b04d51c62572a5b17d76ab7eb3605a0fd9eae4",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_273_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_273_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-23_task_273",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412584.4558654,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_283_enumerate_000000_004845",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_283_enumerate_000000_004845.json",
+        "sha256": "b31d358e4bbfc87bac0bf5c1042a8911173cb53ad637941676c818eb19d07d8e",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_283_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_283_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-23_task_283",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413936.0313618,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_292_enumerate_000000_004845",
+      "owner": "devbox2:gate1:2899111",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_292_enumerate_000000_004845.json",
+        "sha256": "fdda4c5a75896f57e6a1bca0880844cc9677f28041bf0c42a817c711b49d3326",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_292_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_292_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-23_task_292",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413819.1285522,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_308_enumerate_000000_004845",
+      "owner": "devbox1:gate1:2904646",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_308_enumerate_000000_004845.json",
+        "sha256": "7b0606012b4748dd0b4b48b1fc80b402d4d1c058df1c67799f85383bcb9abafe",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_308_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_308_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-23_task_308",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412573.0146635,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_309_enumerate_000000_004845",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_309_enumerate_000000_004845.json",
+        "sha256": "0e02689d2262a52ab7ba322a5a82cd329a66f4723cbde863c1325c9daed2078b",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_309_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_309_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-23_task_309",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412573.0146635,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_314_enumerate_000000_004845",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_314_enumerate_000000_004845.json",
+        "sha256": "9730874aed6b0a3d47fad2bb4f0834bd57b6bd716ad9693b308c2e5e0f46be6d",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_314_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_314_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-23_task_314",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794414022.7319307,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_45_enumerate_000000_004845",
+      "owner": "devbox2:gate1:2899111",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_45_enumerate_000000_004845.json",
+        "sha256": "1ebea0df5d3339c1d687f15132a1f2fe41fb5a20dcdf7857f135b9796a060d7d",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_45_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_45_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-23_task_45",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412627.5224617,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_47_enumerate_000000_004845",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_47_enumerate_000000_004845.json",
+        "sha256": "312c59d935b45817a12bdc68315457373e4d17d9977a0ff6bc5dc2aa8133bf57",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_47_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_47_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-23_task_47",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794414068.9346397,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_86_enumerate_000000_004845",
+      "owner": "devbox1:gate1:2904646",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_86_enumerate_000000_004845.json",
+        "sha256": "9f54b1ce4e721534abad744502fea78240d5b4dbd816901242c90deefeaceae0",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_86_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_86_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-23_task_86",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412841.67535,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_100_enumerate_000000_004845",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_100_enumerate_000000_004845.json",
+        "sha256": "980d8c471582227074f76907074b00d990bd490fabebd1e3884dff3757275c8c",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_100_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_100_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-24_task_100",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412809.306378,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_110_enumerate_000000_004845",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_110_enumerate_000000_004845.json",
+        "sha256": "0c36396c74eac6e47a01201853283ba40ba61044a45112f9f0b00cf6125d85c3",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_110_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_110_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-24_task_110",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413178.6724713,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_130_enumerate_000000_004845",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_130_enumerate_000000_004845.json",
+        "sha256": "7981759f00e97def3715f2473b0fff9aea11b164ea21b90d8c50cdb1f497d5af",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_130_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_130_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-24_task_130",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413258.819804,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_140_enumerate_000000_004845",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_140_enumerate_000000_004845.json",
+        "sha256": "b8fcc62795a57965cc5301ace4a1fcb69c20201c94212f9edb431fe6cc51afa4",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_140_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_140_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-24_task_140",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412874.2536364,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_142_enumerate_000000_004845",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_142_enumerate_000000_004845.json",
+        "sha256": "fd687357ba08afc17883515df8a35bf6322676547b13a3d89274182e5c2b7b46",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_142_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_142_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-24_task_142",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412896.5266283,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_146_enumerate_000000_004845",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_146_enumerate_000000_004845.json",
+        "sha256": "397a29affdd520554564304f61ff47cab4a015b1b5be1932a4ae454e6602f873",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_146_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_146_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-24_task_146",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412960.9206011,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_171_enumerate_000000_004845",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_171_enumerate_000000_004845.json",
+        "sha256": "559ecebc2c0f13d9a3b339bbadc57117568a0b5caffd0e9670a71fe7537fb8de",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_171_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_171_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-24_task_171",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413329.0018728,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_193_enumerate_000000_004845",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_193_enumerate_000000_004845.json",
+        "sha256": "05521f41bee1611b21dd5266546fd13ce77b98bb4a3dd99a611e2f4a1be5db77",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_193_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_193_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-24_task_193",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794412983.3534646,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_212_enumerate_000000_004845",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_212_enumerate_000000_004845.json",
+        "sha256": "ed0673ae1af01339eb00d1c9f29d4f4d35d8992c4a6a0d3d074ce6105209a0ce",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_212_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_212_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-24_task_212",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413308.9434218,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_220_enumerate_000000_004845",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_220_enumerate_000000_004845.json",
+        "sha256": "1a87f1b9e6ca2887c94a502d2b88285927e69ff324a8489706c5f9908c6cb6e7",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_220_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_220_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-24_task_220",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413469.3600397,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_22_enumerate_000000_004845",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_22_enumerate_000000_004845.json",
+        "sha256": "87c7d25e7a6c0c523f0c89db7f43f9e341e047b7cfefdd66912f7f036e2bbb47",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_22_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_22_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-24_task_22",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413155.6695735,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_252_enumerate_000000_004845",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_252_enumerate_000000_004845.json",
+        "sha256": "9b9241ec8a54e7d5634a6b62d87d80405692a4c26ac9a4d65fe0b990d25d0d64",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_252_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_252_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-24_task_252",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413629.7229548,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_273_enumerate_000000_004845",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_273_enumerate_000000_004845.json",
+        "sha256": "cbe017bc656bb634f08c9f1e14c6a9c5b4d2d7ddf209040691088e9ec18c2642",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_273_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_273_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-24_task_273",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413199.818597,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_288_enumerate_000000_004845",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_288_enumerate_000000_004845.json",
+        "sha256": "65af1646951ee4b3eddcada378afe76be8238686ad37bd7f571e9af59844d8cd",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_288_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_288_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-24_task_288",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413177.4646034,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_294_enumerate_000000_004845",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_294_enumerate_000000_004845.json",
+        "sha256": "bd3a477479847f7e54141fba5857408eb01ae5b088786f94965324191317f31c",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_294_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_294_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-24_task_294",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413199.818597,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_295_enumerate_000000_004845",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_295_enumerate_000000_004845.json",
+        "sha256": "18015514bf0d3f41b467a2e3e3a5831fe6c33f956e3d43665e1c2b597aa4ec55",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_295_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_295_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-24_task_295",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413270.8182054,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_317_enumerate_000000_004845",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_317_enumerate_000000_004845.json",
+        "sha256": "998d6e0e034dc1dab1ed9ebd0e16ea194f5b17316a9dc90e7c778fb93b513d3f",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_317_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_317_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-24_task_317",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413329.5139842,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_73_enumerate_000000_004845",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_73_enumerate_000000_004845.json",
+        "sha256": "d1c0a5c6dd7851d9d34b9fee6e8da46a3be1f3b42082bb46dbc38149e37c893f",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 4845,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_73_enumerate_000000_004845",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_73_enumerate_000000_004845.json",
+        "quote_budget_upper": 4845,
+        "sample_id": "2026-10-24_task_73",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413177.4646034,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_103_enumerate_000000_000625",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_103_enumerate_000000_000625.json",
+        "sha256": "6675035179948d877c7fefe1c8d374051c1e76a9dc6ac9a096915352eaa3ab45",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_103_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_103_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-22_task_103",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413199.818597,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_146_enumerate_000000_000625",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_146_enumerate_000000_000625.json",
+        "sha256": "93e52bc87a95437414d0c80a3027889019a93482c2b47aa6a0002df2312d06c7",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_146_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_146_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-22_task_146",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413199.818597,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_206_enumerate_000000_000625",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_206_enumerate_000000_000625.json",
+        "sha256": "62e89ea58a241f707c184e1245cbaf5c0e39e5f1ad3642b5c152fd2300bde15c",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_206_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_206_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-22_task_206",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413218.7443752,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_209_enumerate_000000_000625",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_209_enumerate_000000_000625.json",
+        "sha256": "218ee44977042b7468b38cae600b9b2f1677afa26446b9eaf7a9ddd49d8e94e1",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_209_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_209_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-22_task_209",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413222.3578427,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_219_enumerate_000000_000625",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_219_enumerate_000000_000625.json",
+        "sha256": "fe11cff3fa85a3f38e3ab8c855e7cf10ae7d383a392687f24ef0908520842a95",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_219_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_219_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-22_task_219",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413222.3578427,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_226_enumerate_000000_000625",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_226_enumerate_000000_000625.json",
+        "sha256": "dc5d47ae8fcd65a8878668b86087861522638e90b7189630e76d3f6a04e2a314",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_226_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_226_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-22_task_226",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413222.3578427,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_248_enumerate_000000_000625",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_248_enumerate_000000_000625.json",
+        "sha256": "d790922850429de14a06e5076f45c3535bc0f4ffcfa00031507f771ca1f2e372",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_248_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_248_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-22_task_248",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413222.3578427,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_270_enumerate_000000_000625",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_270_enumerate_000000_000625.json",
+        "sha256": "2d32be6a89e27a3b9124257f579df1d8e5ff67e069556527558abaf2325334da",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_270_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_270_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-22_task_270",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413258.819804,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_281_enumerate_000000_000625",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_281_enumerate_000000_000625.json",
+        "sha256": "c04461fd9606d541dc84484e4c4baab17cf2392259242f6baa3248e9f4e3f876",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_281_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_281_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-22_task_281",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413247.7165492,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_297_enumerate_000000_000625",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_297_enumerate_000000_000625.json",
+        "sha256": "a4ca0a10ab1f76d7e159ff80568f7c50236a539f7c55dd0f725eba6bb52f7d7d",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_297_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_297_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-22_task_297",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413236.2202008,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_298_enumerate_000000_000625",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_298_enumerate_000000_000625.json",
+        "sha256": "a88ace5eccf8bf2a64fda6a85ecfe502fa4c7b8952d5f9293aa805b0882cdc3c",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_298_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_298_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-22_task_298",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413247.7165492,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_35_enumerate_000000_000625",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_35_enumerate_000000_000625.json",
+        "sha256": "f4b69c4462b27e371f39bf287a8170a97226a941c915870d51dd3c3000e1743b",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_35_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_35_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-22_task_35",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413247.7165492,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_43_enumerate_000000_000625",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_43_enumerate_000000_000625.json",
+        "sha256": "cbf4a48181a11cc7fefad011d83c66f5493e9a27b6489625e4f8ce16708c233f",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_43_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_43_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-22_task_43",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413259.358098,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_78_enumerate_000000_000625",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_78_enumerate_000000_000625.json",
+        "sha256": "58681c9e88af84fa2da1bf057b78110be6a0e8656a478c4fd9aeb1887ce4348c",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_78_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_78_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-22_task_78",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413270.8182054,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_119_enumerate_000000_000625",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_119_enumerate_000000_000625.json",
+        "sha256": "63fe8a91304a8f1fccc11df0d4d3df70660369a3572ff40bf3e55f16dc559bc2",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_119_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_119_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-23_task_119",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413270.8182054,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_137_enumerate_000000_000625",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_137_enumerate_000000_000625.json",
+        "sha256": "544e0e2d16813483ff7ecbb7ed296cc7f6be34c046e6e3b90587978c5e3c3611",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_137_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_137_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-23_task_137",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413270.8182054,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_160_enumerate_000000_000625",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_160_enumerate_000000_000625.json",
+        "sha256": "b877c7cf08562b9b3b17d6a888f5205635e35abe775f34f9597ce222e90a62cd",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_160_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_160_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-23_task_160",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413298.904732,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_171_enumerate_000000_000625",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_171_enumerate_000000_000625.json",
+        "sha256": "fe4074103a5bbbe3144bfaa03d23bc3318c0784083beb0a73aff7f0302bf01d6",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_171_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_171_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-23_task_171",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413298.904732,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_204_enumerate_000000_000625",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_204_enumerate_000000_000625.json",
+        "sha256": "d686efe51e3c16bde7f100be56e8f8fe2d2be40aa70cf60c3168633dbc2f5930",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_204_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_204_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-23_task_204",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413270.8182054,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_211_enumerate_000000_000625",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_211_enumerate_000000_000625.json",
+        "sha256": "57c2b30cb4e1cecf4c4fd1bb8b6839872001474b2c3a8bd5e8a927c858c08b88",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_211_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_211_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-23_task_211",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413294.3268194,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_234_enumerate_000000_000625",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_234_enumerate_000000_000625.json",
+        "sha256": "5c839efaa8883839331639f1fd18ff685ef7b6a18dd810577ab3ae65913c01c1",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_234_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_234_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-23_task_234",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413294.3268194,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_255_enumerate_000000_000625",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_255_enumerate_000000_000625.json",
+        "sha256": "7a8243b24897e72bcf493ecaea1f50c5ba99bf8e0ac55daae4b1fddb1b6c0b2e",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_255_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_255_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-23_task_255",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413294.3268194,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_263_enumerate_000000_000625",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_263_enumerate_000000_000625.json",
+        "sha256": "376a1172b49156159f231646756b7ef030052ae6b180214802dd2ce6254a92e8",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_263_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_263_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-23_task_263",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413294.3268194,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_305_enumerate_000000_000625",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_305_enumerate_000000_000625.json",
+        "sha256": "21bdc5695f585d50dcfbd0bbf4fa9a92df757b99ece9acc5cd51de21021e4c7f",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_305_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_305_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-23_task_305",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413294.3268194,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_99_enumerate_000000_000625",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_99_enumerate_000000_000625.json",
+        "sha256": "4c3b24bd14baeb3ec800631e4ed7ab1760aac0f87a10af1f8a52ec758d5cdb1f",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_99_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_99_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-23_task_99",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413317.5909994,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_117_enumerate_000000_000625",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_117_enumerate_000000_000625.json",
+        "sha256": "86aac3929a75f20fdc968b5fc17de9cfc181fea7456303636cb32ec43f9305e5",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_117_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_117_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-24_task_117",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413317.5909994,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_134_enumerate_000000_000625",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_134_enumerate_000000_000625.json",
+        "sha256": "eb4c403435a320858d7f610e4a3f05d1f3f4bb0ae5def90554c48bd253429f8c",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_134_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_134_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-24_task_134",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413317.5909994,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_139_enumerate_000000_000625",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_139_enumerate_000000_000625.json",
+        "sha256": "3fb6ff619fb0babb6bef7e8849d128292c0fe279ec7b66840f884a6975ae344a",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_139_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_139_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-24_task_139",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413317.5909994,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_178_enumerate_000000_000625",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_178_enumerate_000000_000625.json",
+        "sha256": "70c12db3f681510f7e4f1f31318419315f5543d3355986ea7f96012e01a2e708",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_178_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_178_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-24_task_178",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413317.5909994,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_234_enumerate_000000_000625",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_234_enumerate_000000_000625.json",
+        "sha256": "a2992a43a23eac02bd0bacabb68695607574f5a4a3a17e5baf80d07c8b65ce1d",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_234_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_234_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-24_task_234",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413339.032745,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_235_enumerate_000000_000625",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_235_enumerate_000000_000625.json",
+        "sha256": "8106b4928691c92a6b52fc2dc865d83d89340dc4ea9a152d6f3872f1b4ec060c",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_235_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_235_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-24_task_235",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413339.032745,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_249_enumerate_000000_000625",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_249_enumerate_000000_000625.json",
+        "sha256": "5bae1599ce67d217afac954ffabdcaa405f4da124b2db1d4feeb3b445b2fb808",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_249_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_249_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-24_task_249",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413349.0718381,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_265_enumerate_000000_000625",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_265_enumerate_000000_000625.json",
+        "sha256": "74a10532f0745dfc423c3f2a05bf20370c30d22a2d3545bb036ac150432d96c9",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_265_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_265_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-24_task_265",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413340.8883793,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_267_enumerate_000000_000625",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_267_enumerate_000000_000625.json",
+        "sha256": "44a4db934d0f07bb75e3641b9ab86203f8a397facb7983609abd65f52d19e1d1",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_267_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_267_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-24_task_267",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413340.8883793,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_270_enumerate_000000_000625",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_270_enumerate_000000_000625.json",
+        "sha256": "9e71e5e5b23f5bb524cd9d5855149bd731392ee65c734c805bf15770a57bcd92",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_270_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_270_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-24_task_270",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413340.8883793,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_279_enumerate_000000_000625",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_279_enumerate_000000_000625.json",
+        "sha256": "d2d76a767aad249598956d31f2f5b5bf24c596a3e703c9a4fe45262cf7c8beda",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_279_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_279_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-24_task_279",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413340.8883793,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_27_enumerate_000000_000625",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_27_enumerate_000000_000625.json",
+        "sha256": "ee9e2f945c851e340981e79f6f2ef0d3122f1aeed6d13d774f5e3b6f4640f8ca",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_27_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_27_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-24_task_27",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413340.8883793,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_8_enumerate_000000_000625",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_8_enumerate_000000_000625.json",
+        "sha256": "06e5a21811f26478e91f03c08536e2e44b10dc00f8324ad9280fbc250958f796",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 625,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_8_enumerate_000000_000625",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_8_enumerate_000000_000625.json",
+        "quote_budget_upper": 625,
+        "sample_id": "2026-10-24_task_8",
+        "start": 0
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413389.142508,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_141_enumerate_020000_020349",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_141_enumerate_020000_020349.json",
+        "sha256": "287d320efc0080a08fefee2fbb734fbba8f3fe47611d7e5b57c0ff180b7bc661",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 20349,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_141_enumerate_020000_020349",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_141_enumerate_020000_020349.json",
+        "quote_budget_upper": 349,
+        "sample_id": "2026-10-22_task_141",
+        "start": 20000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413364.8477328,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_173_enumerate_020000_020349",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_173_enumerate_020000_020349.json",
+        "sha256": "b4703240327fed61f5eb063f4bf1ae5298375c05efa24ade64686360df659045",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 20349,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_173_enumerate_020000_020349",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_173_enumerate_020000_020349.json",
+        "quote_budget_upper": 349,
+        "sample_id": "2026-10-22_task_173",
+        "start": 20000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413399.1730447,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_37_enumerate_020000_020349",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_37_enumerate_020000_020349.json",
+        "sha256": "a10b85df03729bf88e0a398db08b0bd4cf560e104fc64aa30e52cd071f887464",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 20349,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_37_enumerate_020000_020349",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_37_enumerate_020000_020349.json",
+        "quote_budget_upper": 349,
+        "sample_id": "2026-10-22_task_37",
+        "start": 20000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413409.2055938,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_40_enumerate_020000_020349",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_40_enumerate_020000_020349.json",
+        "sha256": "415682d46c053d57e3ab732aa3969c774c21d6026d96df35d04e97b8e40ad073",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 20349,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_40_enumerate_020000_020349",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_40_enumerate_020000_020349.json",
+        "quote_budget_upper": 349,
+        "sample_id": "2026-10-22_task_40",
+        "start": 20000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413376.5175555,
+      "heartbeat_stale": false,
+      "id": "2026-10-22_task_45_enumerate_020000_020349",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_45_enumerate_020000_020349.json",
+        "sha256": "e516e1c478e1e00f329ec6e8f8843d7ea9043a8aba7a7970cf71a83c10ac93ee",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 20349,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-22_task_45_enumerate_020000_020349",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-22/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-22_task_45_enumerate_020000_020349.json",
+        "quote_budget_upper": 349,
+        "sample_id": "2026-10-22_task_45",
+        "start": 20000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413376.5175555,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_108_enumerate_020000_020349",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_108_enumerate_020000_020349.json",
+        "sha256": "4183f1cdd00899b29b3a675802dbe69885351568a13dac41412c08f102c90d47",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 20349,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_108_enumerate_020000_020349",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_108_enumerate_020000_020349.json",
+        "quote_budget_upper": 349,
+        "sample_id": "2026-10-23_task_108",
+        "start": 20000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413376.5175555,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_131_enumerate_020000_020349",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_131_enumerate_020000_020349.json",
+        "sha256": "0352ecb33a8012183139ba9d1be01723a316d8eeced238f841fabd71f3459751",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 20349,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_131_enumerate_020000_020349",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_131_enumerate_020000_020349.json",
+        "quote_budget_upper": 349,
+        "sample_id": "2026-10-23_task_131",
+        "start": 20000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413376.5175555,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_135_enumerate_020000_020349",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_135_enumerate_020000_020349.json",
+        "sha256": "7b8d603a1c10d239b5bcb30a05b3545acef34574bfde070dc95356705f303c90",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 20349,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_135_enumerate_020000_020349",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_135_enumerate_020000_020349.json",
+        "quote_budget_upper": 349,
+        "sample_id": "2026-10-23_task_135",
+        "start": 20000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413364.8477328,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_236_enumerate_020000_020349",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_236_enumerate_020000_020349.json",
+        "sha256": "dff13907865a372728e0908a2d7ff7133f458c2aaf6c7520aae94a345728acbf",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 20349,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_236_enumerate_020000_020349",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox2",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_236_enumerate_020000_020349.json",
+        "quote_budget_upper": 349,
+        "sample_id": "2026-10-23_task_236",
+        "start": 20000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413419.2392225,
+      "heartbeat_stale": false,
+      "id": "2026-10-23_task_9_enumerate_020000_020349",
+      "owner": "devbox3:gate1:195596",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_9_enumerate_020000_020349.json",
+        "sha256": "06c60f7d59a05412c7b434f73bb82039500494b9d92678b251f5f5cd06ecc987",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 20349,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-23_task_9_enumerate_020000_020349",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-23/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox3",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-23_task_9_enumerate_020000_020349.json",
+        "quote_budget_upper": 349,
+        "sample_id": "2026-10-23_task_9",
+        "start": 20000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413399.2320504,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_108_enumerate_020000_020349",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_108_enumerate_020000_020349.json",
+        "sha256": "1ce3ca363af18c75e2b8d95db6834b63e664a8555f3eaf65a75102e57cad11b6",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 20349,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_108_enumerate_020000_020349",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "local",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_108_enumerate_020000_020349.json",
+        "quote_budget_upper": 349,
+        "sample_id": "2026-10-24_task_108",
+        "start": 20000
+      },
+      "state": "PASS"
+    },
+    {
+      "experiment": "cgs_gap_enumeration_20261111",
+      "heartbeat": 1794413399.2320504,
+      "heartbeat_stale": false,
+      "id": "2026-10-24_task_37_enumerate_020000_020349",
+      "owner": "local:gate1:75071",
+      "result": {
+        "path": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_37_enumerate_020000_020349.json",
+        "sha256": "b317e2a8e90ebde943b7836b61651b6c4416325afc9e7116b8e1320c51bf05ed",
+        "status": "PASS"
+      },
+      "spec": {
+        "end": 20349,
+        "hosts": [
+          "local",
+          "devbox1",
+          "devbox2",
+          "devbox3"
+        ],
+        "id": "2026-10-24_task_37_enumerate_020000_020349",
+        "job": [
+          "CGS_GAP_ENUMERATION",
+          "results/redesign_20261021/main_scenario/bc_stage2_20261022/data/2026-10-24/six_hours/protocol.json",
+          "enumerate"
+        ],
+        "legacy_host": "devbox1",
+        "output": "results/nonuniform_20261111/cgs_gap/enumeration/results/2026-10-24_task_37_enumerate_020000_020349.json",
+        "quote_budget_upper": 349,
+        "sample_id": "2026-10-24_task_37",
+        "start": 20000
+      },
+      "state": "PASS"
+    }
+  ]
+}
